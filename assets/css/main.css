@@ -1685,7 +1685,8 @@ select:focus {
 #PhonePebtn1,#PhonePebtn2{
   background-color: #0e2a71;
   color: white; 
-  padding: 3px;
+  padding: 6px;
+  border-radius: 3px;
 }
 #PhonePebtn1:hover,#PhonePebtn2:hover{
   background-color: white;

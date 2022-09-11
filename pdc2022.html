@@ -192,92 +192,232 @@
         <div class="event-card-on-reg-page on-contact">
             <div class="event-card event-card-reg mb-5 membership-form-card" style="background: #5449a447; backdrop-filter: blur(6px);">
             	<div class="membership-form-wrapper">
-            		<h1 style="color: white;">Membership</h1>
-            		<p style="color: white;">Membership For 2021-22 has been officially closed.</p>
-<!--             	
-            	<form id="reg-form" style="width:100%">
+            		
+             	
+            	<form id="pdc-form" style="width:100%">
             		<div class="event-card-body event-card-body-reg" style="width: 100%; height: auto;  background: transparent;">
                     	<div style="width: 100%;">
-                    		<h1 style="color: #32b0d4; font-weight: 800; margin-bottom: 14px; text-transform: uppercase;margin-top: 4%;margin-bottom: 2%" align="center">Membership Form</h1>
+                    		<h1 style="color: #32b0d4; font-weight: 800; margin-bottom: 14px; text-transform: uppercase;margin-top: 4%;margin-bottom: 2%" align="center">Project Development Challenge</h1>
                     		<div class="d-flex flex-wrap align-content-center justify-content-center my-4">
 									<div class="membership-info-card my-3">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam temporibus minus voluptate? Sit impedit, tempora odit corrupti, magnam adipisci amet ipsum voluptate nesciunt accusantium dolorum ducimus reprehenderit veritatis maxime ex.
 									</div>
-							</div 
-														<p style="font-size: 1.3em">All field are Mandatory</p>
-							<p style="font-size: 1.5em">INSTRUCTIONS TO FILL THE FORM<br>1.Fill details and Upload documents using upload button before clicking the submit button.</p>
-              				<label class="mb-2 ml-2" for="name">Full Name</label><br>
-              				<input type="text" id="name" name="Name" placeholder="Your name" required>
-              				<label class="mb-2 ml-2" for="">Date of Birth</label><br>
-             				<input type="date" name="DOB" id="DOB" placeholder="DOB" required ><br>
-              				<label class="mb-2 ml-2" for="Semester">Semester</label><br>
-              				<select id="Semester" name="Semester" required onclick="updateAmt()">
-                        		<option value="null" hidden>Select semester</option>
-                        		<option value="S1">S1</option>
-                        		<option value="S3">S3</option>
-                        		<option value="S5">S5</option>
-                        		<option value="S7">S7</option>
-                        	 </select>
-                        	<label class="mb-2 ml-2" for="Branch">Branch of Study</label><br>
-                        	<select id="Branch" name="Branch" required>
-                        		<option value="null" hidden>Select branch</option>
-                        		<option value="Civil Engineering">Civil Engineering</option>
-                        		<option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
-                        		<option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
-                        		<option value="Information Technology">Information Technology</option>
-                        		<option value="Mechanical Engineering">Mechanical Engineering</option>
-                        	</select>
-                        	<label class="mb-2 ml-2" for="Address">Home Address</label><br>
-                        	<textarea name="Address" id="Address" rows="3" cols="40" placeholder="Address" required></textarea>
-                        	<label class="mb-2 ml-2" for="Phone-Number">Phone Number</label><br>
-                        	<input type="tel" name="Phone-Number" id="Phone-Number" placeholder="Phone number" pattern="[6-9]{1}[0-9]{9}" required>
-                        	<label class="mb-2 ml-2" for="Email-Id">Email Address</label><br>
-                       		<input type="email" name="Email-Id" id="Email-Id" placeholder="Email address" required>
-                       		<label class="mb-2 ml-2">Membership options</label><br>
-                       		<label class="form-check-label"><i class="fas fa-check-square"></i></label>
-  							<label class="form-check-label" for="">ISTE</label><br>
-  							<label class="form-check-label"><i class="fas fa-check-square"></i></label>
-  							<label class="form-check-label" for="">BARTONOIDZ</label><br>
-
-  							 Hidden form inputs for ISTE AND BARTONOIDZ MEMBERSHIP 
-  							<input id="ISTE" name="ISTE" value="YES" type="text" hidden>
-							<input id="BARTONOIDZ" name="BARTONOIDZ" value="YES" type="text" hidden>
-
-  							<input  name="BARTONAIR" id="BARTONAIR" value="YES" class="form-check-input" type="checkbox" onclick="updateAmt()">
-  							<label class="form-check-label" for="BARTONAIR">Bartonair</label><br>
-
-  							<p id="ttlamt" style="font-size: 1.2em">Total Amount - ISTE+BARTONOIDZ : Rs.700/-</p>
+                                </div >
+							<p style="font-size: 1.3em">All field are Mandatory</p>
+							<p style="font-size: 1.5em; ">LOOK INTO INSTRUCTIONS TO FILL THE FORM<br><br>
+                                <br>Fill details and Upload Screenshot using upload button before clicking the submit button.</p>
 
 
-  							<div>
-  								<h6>PAYMENT DETAILS</h6>
-  								<p style="font-size: 1.2em">Account holder name : R B YADUKRISHNAN<br>IFSC code : SBIN0004182<br>Account number : 20093221976<br>Gpay and Phonepe number  : 90480 66825<br>UPI id  : yadukk33@oksbi</p>
-  								<span onclick="openQR1()" id="PhonePebtn1">PhonePe QR</span>
+
+
+								
+								<label for="teamname" class="mb-2 ml-2">Team Name</label>
+								<input placeholder="Your Team Name" name="teamname" type="text" tabindex="1" required autofocus>
+								<label for="projectname"  class="mb-2 ml-2">Project Name</label>
+								<input placeholder="Project Name" name="projectname" type="text" tabindex="1" required autofocus>
+
+								<br>
+								
+								<div class="team-lead">
+									<h2 style="color: rgb(214, 91, 20);">Enter the Details of  Team Leader </h2>
+									<label for = "teamlead"  class="mb-2 ml-2">Team Leader</label>
+									<input placeholder="Enter your Name" name="teamlead" type="text" required autofocus >
+									<label for="mobilenumber" class="mb-2 ml-2" >Mobile Number</label>
+									<input placeholder="Enter Mobile number" name="mobilenumber" type="tel" pattern="[6-9]{1}[0-9]{9}" required autofocus>
+									<label for="Email"  class="mb-2 ml-2">Email ID</label>
+									<input placeholder="Enter your Email ID" name="Email" type="text" required autofocus>
+									<label for="Semester" class="mb-2 ml-2" >Semester</label>
+									<select id="Semester" name="Semester" required autofocus>
+										<option value="null" hidden>Select semester</option>
+										<option value="S1">S1</option>
+										<option value="S3">S3</option>
+										<option value="S5">S5</option>
+										<option value="S7">S7</option>
+									 </select>
+									<label for="Branch"  class="mb-2 ml-2" >Branch</label> 
+									<select id="Branch" name="Branch" required autofocus>
+										<option value="null" hidden>Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+										<option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+					
+						 
+									<label for="Are You Iste member"  class="mb-2 ml-2" >Are you an ISTE member ?</label>
+									<select id="ISiste" name="Are You Iste member" required autofocus>
+										<option value="null" hidden>Select option</option>
+										<option value="Yes" >YES</option>
+										<option value="No" >NO</option>
+									</select>
+								
+									<div class="iste-id-enter"  >
+										<label for="ISTE ID" class="mb-2 ml-2">If Yes , Enter your ISTE Membership ID</label>
+										<input type="text"  name="ISTE ID" placeholder="ISTE membership ID">
+									</div>
+					 
+								</div>
+								<div class="team-mem-1">
+									<h2  style="color: rgb(214, 91, 20);">Enter the Details of First Team Member </h2>
+									<label for = "Team Member1" class="mb-2 ml-2">Team Member 1</label>
+									<input placeholder="Enter  Name" name="Team Member1" type="text" required autofocus >
+									<label for="mobile member1"  class="mb-2 ml-2">Mobile Number</label>
+									<input placeholder="Enter Mobile number" name="mobile member1" type="tel" pattern="[6-9]{1}[0-9]{9}" required autofocus>
+									<label for="Email Member1" class="mb-2 ml-2" >Email ID</label>
+									<input placeholder="Enter your Email ID" name="Email member1" type="text" required autofocus>
+									<label for="Sem member1"  class="mb-2 ml-2" >Semester</label> 
+									<select id="Semester" name="Sem member1" required autofocus>
+										<option value="null" hidden>Select semester</option>
+										<option value="S1">S1</option>
+										<option value="S3">S3</option>
+										<option value="S5">S5</option>
+										<option value="S7">S7</option>
+									 </select>
+									<label for="Branch member1"  class="mb-2 ml-2" >Branch</label> 
+									<select id="Branch" name="Branch member1" required autofocus>
+										<option value="null" hidden>Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+										<option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+									
+								 
+								
+									<label for="Are You Iste member1" class="mb-2 ml-2">Are you an ISTE member ?</label>
+									<select id="ISiste" name="Are You Iste member1" required autofocus>
+										<option value="null" hidden>Select option</option>
+										<option value="Yes" >YES</option>
+										<option value="No" >NO</option>
+									</select>
+									
+									<div class="iste-id-enter-mem1" >
+										<label for="ISTE ID member1" class="mb-2 ml-2">If Yes , Enter your ISTE Membership ID</label>
+										<input type="text"  name="ISTE ID member1" placeholder="ISTE membership ID">
+									</div>
+								</div>
+					
+								<div class="team-mem-1">
+									<h2  style="color: rgb(214, 91, 20);">Enter the Details of Second Team Member </h2>
+									<label for = "Team Member2" class="mb-2 ml-2">Team Member 2</label>
+									<input placeholder="Enter  Name" name="Team Member2" type="text" required autofocus >
+									<label for="mobile member2"  class="mb-2 ml-2">Mobile Number</label><br>
+									<input placeholder="Enter Mobile number" name="mobile member2" type="tel"  pattern="[6-9]{1}[0-9]{9}" required autofocus>
+									<label for="Email Member2" class="mb-2 ml-2" >Email ID</label>
+									<input placeholder="Enter your Email ID" name="Email member2" type="text" required autofocus>
+									<label for="Semester member2"  class="mb-2 ml-2" >Semester</label> 
+									<select id="Semester" name="Semester member2" required autofocus >
+										<option value="null" hidden>Select semester</option>
+										<option value="S1">S1</option>
+										<option value="S3">S3</option>
+										<option value="S5">S5</option>
+										<option value="S7">S7</option>
+									 </select>
+									<label for="Branch member2"  class="mb-2 ml-2" >Branch</label> 
+									<select id="Branch" name="Branch member2" required autofocus>
+										<option value="null" hidden>Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+										<option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+									
+								 
+									<label for="Are You Iste member2"  class="mb-2 ml-2">Are you an ISTE member ?</label>
+									<select id="ISiste" name="Are You Iste member2" required autofocus>
+										<option value="null" hidden>Select option</option>
+										<option value="Yes" >YES</option>
+										<option value="No" >NO</option>
+									</select>
+									
+									<div class="iste-id-enter-mem2">
+										<label for="ISTE ID member2" class="mb-2 ml-2">If Yes , Enter your ISTE Membership ID</label>
+										<input type="text"  name="ISTE ID member2" placeholder="ISTE membership ID">
+									</div>
+								</div>
+					
+								<div class="team-mem-1">
+									<h2  style="color: rgb(214, 91, 20);">Enter the Details of Third Team Member </h2>
+									<label for = "Team Member3" class="mb-2 ml-2">Team Member 3</label>
+									<input placeholder="Enter  Name" name="Team Member3" type="text" required autofocus >
+									<label for="mobile member3" class="mb-2 ml-2" >Mobile Number</label>
+									<input placeholder="Enter Mobile number" name="mobile member3" type="tel" pattern="[6-9]{1}[0-9]{9}" required autofocus>
+									
+									<label for="Email member3" class="mb-2 ml-2" >Email ID</label>
+									<input placeholder="Enter your Email ID" name="Email member3" type="text" required autofocus>
+									<label for="Semester member3"  class="mb-2 ml-2" >Semester</label> 
+									<select id="Semester member3" name="Semester member3" required autofocus>
+										<option value="null" hidden>Select semester</option>
+										<option value="S1">S1</option>
+										<option value="S3">S3</option>
+										<option value="S5">S5</option>
+										<option value="S7">S7</option>
+									 </select>
+									<label for="Branch member3"  class="mb-2 ml-2" >Branch<label> 
+									<select id="Branch" name="Branch member3" required autofocus>
+										<option value="null" hidden>Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+										<option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+									
+								 
+									<label for="Are You Iste member3"  class="mb-2 ml-2">Are you an ISTE member ?</label>
+									<select id="ISiste" name="Are You Iste member3" required autofocus>
+										<option value="null" hidden>Select option</option>
+										<option value="Yes" >YES</option>
+										<option value="No" >NO</option>
+									</select>
+						
+									<div class="iste-id-enter-mem3">
+										<label for="ISTE ID member3" class="mb-2 ml-2">If Yes , Enter your ISTE Membership ID</label>
+										<input type="text"  name="ISTE ID member3" placeholder="ISTE membership ID">
+									</div>
+								</div>
+						
+              				
+  							
+								<h6 style="font-size: 1.5em;color: rgb(214, 91, 20);" >PAYMENT AMOUNT </h6>
+  							<p id="ttlamt" style="font-size: 1.2em">For ISTE/Bartanoidz members - Rupees 50/- per Team</p>
+							<p id="ttlamt" style="font-size: 1.2em">For team with atleast 1 Non ISTE member - Rupees 100 per Team</p>
+
+
+  							<div class = "account-details">
+  								<h6 style="font-size: 1.5em;color: rgb(214, 91, 20);" >PAYMENT DETAILS</h6>
+  								<p style="font-size: 1.2em">Account holder name : UTHARA MURALI U<br>IFSC code : SBIN0071192<br>Account number : 39371924444<br>Gpay / Phonepay / Paytm  : 62383 52197<br>UPI id  : uthara159@oksbi</p>
+  								<!-- <span onclick="openQR1()" id="PhonePebtn1">PhonePe QR</span>
   								<img id="PhonePeqr1" src="assets/img/paymentqr/phonepe.png" style="display:none; width: 90%;">
   								<span onclick="openQR2()" id="PhonePebtn2">Gpay QR</span>
-  								<img id="PhonePeqr2" src="assets/img/paymentqr/gpay.png" style="display:none; width: 90%;">
+  								<img id="PhonePeqr2" src="assets/img/paymentqr/gpay.png" style="display:none; width: 90%;"> -->
   							</div>
 
-  							<iframe src="https://script.google.com/macros/s/AKfycbxAc64G6173OTJhMlrGZuuCBEyDWdqtOPGSVQyiuiZDBQY7BTc/exec" width="100%" height="450px" style="margin-top: 12px;"></iframe>
-  							<label class="mb-2 ml-2" for="Sign">Upload Signature</label><br>
-                        	<input type="file" placeholder="upload sign" required>
-                        	<label class="mb-2 ml-2" for="">Payment Receipt</label><br> 
+  							<!-- <iframe src="https://script.google.com/macros/s/AKfycbxAc64G6173OTJhMlrGZuuCBEyDWdqtOPGSVQyiuiZDBQY7BTc/exec" width="100%" height="450px" style="margin-top: 12px;"></iframe> -->
+  							
+                        	<label class="mb-2 ml-2" for="" style="font-size: 1.5em;color: rgb(214, 91, 20);">Payment Receipt</label><br> 
 
 
                         	<div class="d-flex justify-content-center">
                         	<div id="process" class="spinner-border" role="status" style="display: none;width: 2rem;">
- 								 <span class="visually-hidden">Loading...</span>
+ 								 <span class="visually-hidden" style="font-size: 1.3em;color: rgb(29, 182, 18);">Loading...</span>
 							</div>
 							</div>
-							<a href="https://docs.google.com/forms/d/e/1FAIpQLSfK2pnd1Na6o9UV79vrTXlRwgLMmoTtNtPwRSovZ-HOLV7NJQ/viewform" style="color:rgba(255, 0, 0, 0.692); font-size: 1.2em; padding: 0;">If above section is unavailable,click here to register</a>
+							
 
-  							<h4 id="successtext">Please Upload Files before submit</h4>
+  							<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Upload Files before submit</h4>
+							
+                              <label class="mb-2 ml-2" for="Screenshot">Upload Screenshot of Payment</label><br>
+                              <input type="file" placeholder="upload Screenshot" name="Screenshot" required>
 
   						</div>
   							<input type="submit" value="Submit" class="theme-btn gradient mt-3" style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;" >
   							
   					 </div>
-				</form> -->
+				</form> 
 			
             </div>
         </div>
@@ -322,20 +462,24 @@
 			document.getElementById("process").style.display="block";
 			document.getElementById("successtext").innerHTML="Submitting form...Please dont panic if stuck!!";
 		}
-		document.getElementById("reg-form").addEventListener('submit',a);
+		document.getElementById("pdc-form").addEventListener('submit',a);
 
 
 
-		$("#reg-form").submit((e)=>{
+
+
+
+
+		$("#pdc-form").submit((e)=>{
             e.preventDefault();
             $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbzK1TF2p_mEyjEL975ngWtSWmhhZ3NRXoS8pplo0NTJdbOlvsR-/exec",
+                url:"https://script.google.com/macros/s/AKfycbzgvhrzOD53qzj4P0d5rvgKs1vweKRP5_MftviG6KJAV6sDnLqQBNG96PUr9LKkZuSN9w/exec",
                 data:$("#reg-form").serialize(),
                 method:"POST",
                 success:function (response){
                 	document.getElementById("process").style.display="none";
                 	document.getElementById("successtext").innerHTML="Form submitted Successfully!";
-                	document.getElementById("reg-form").innerHTML="<h4 id='successtextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4>";
+                	document.getElementById("pdc-form").innerHTML="<h4 id='successtextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4>";
 
 
                 },
@@ -345,7 +489,12 @@
                 }
             })
         })
-		// latest news 
+
+
+
+
+
+
 		var swiper = new Swiper(".mySwiper", {
 			slidesPerView: 'auto',
 			spaceBetween: 0,
@@ -405,23 +554,23 @@
 		// }
 		// }
 
-		function updateAmt(){
-			var p=document.getElementById("BARTONAIR");
-			var q=document.getElementById("Semester").value;
-			if (p.checked == true && q=="S1")
-			{
-					document.getElementById("ttlamt").innerHTML="Total Amount - ISTE+BARTONOIDZ+BARTONAIR : Rs.<del>1000</del>  800/-";
-			}
-			else if(p.checked == true && q!="S1")
-			{
-				document.getElementById("ttlamt").innerHTML="Total Amount - ISTE+BARTONOIDZ+BARTONAIR : Rs.1000/-";
-			}
-			else if(p.checked == false)
-			{
-				document.getElementById("ttlamt").innerHTML="Total Amount - ISTE+BARTONOIDZ : Rs.700/-"
-			}
+		// function updateAmt(){
+		// 	var p=document.getElementById("BARTONAIR");
+		// 	var q=document.getElementById("Semester").value;
+		// 	if (p.checked == true && q=="S1")
+		// 	{
+		// 			document.getElementById("ttlamt").innerHTML="Total Amount - ISTE+BARTONOIDZ+BARTONAIR : Rs.<del>1000</del>  800/-";
+		// 	}
+		// 	else if(p.checked == true && q!="S1")
+		// 	{
+		// 		document.getElementById("ttlamt").innerHTML="Total Amount - ISTE+BARTONOIDZ+BARTONAIR : Rs.1000/-";
+		// 	}
+		// 	else if(p.checked == false)
+		// 	{
+		// 		document.getElementById("ttlamt").innerHTML="Total Amount - ISTE+BARTONOIDZ : Rs.700/-"
+		// 	}
 
-		}
+		// }
 	</script>
 
 	<!-- youtube  -->
