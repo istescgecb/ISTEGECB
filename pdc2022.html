@@ -194,24 +194,26 @@
             	<div class="membership-form-wrapper">
             		
              	
-            	<form id="pdcform" method="post"  action="https://script.google.com/macros/s/AKfycbzadmPOHCRPj-vy-6VHobcSbS1klgcTFfHkirfVlRQKISQeEp6WIFRD4dJKhJWgcoZe/exec" style="width:100%">
+            	<form id="pdcform"   action="" style="width:100%">
             		<div class="event-card-body event-card-body-reg" style="width: 100%; height: auto;  background: transparent;">
                     	<div style="width: 100%;">
                     		<h1 style="color: #32b0d4; font-weight: 800; margin-bottom: 14px; text-transform: uppercase;margin-top: 4%;margin-bottom: 2%" align="center">Project Development Challenge</h1>
                     		<div class="d-flex flex-wrap align-content-center justify-content-center my-4">
 									<div class="membership-info-card my-3">
 										💫 ISTE SC GECB is here with an exciting opportunity to help you explore your craftsmanship in engineering👨🏻‍🔧and to quench your thirst for building things using your own hands. We present to you our flagship event Project Development Challenge(PDC)💫
-
+										<br><br>
 										👩‍🏫All you have to do is register as a team of 4 and we will guide you in every step and provide you with components, software and much more!! In one month you will have the experience of completing a project!! 🥳🥳
-										
+										<br><br>
 										🏆Prizes worth ₹3000 await the team who will present the best project🤩
-										
+										<br><br>
 										💰Registration fees:
 										▪️For ISTE bartonoidz members ₹50 per team
 										▪️For non-ISTE members ₹100 per team
-										
+										<br><br>
 										🥳🥳Hurry up!! seize this golden opportunity to widen your exposure and develop your skills⚙️. You will also earn certificates and activity points✨. Why wait?
-										
+										<br>
+										<br>
+										<br>
 										
 										For more details contact:
 										📞 Sooraj A R:+91 7025168693
@@ -343,7 +345,7 @@
 					
 						 
 									<label for="Are You Iste" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select id="ISiste" name="Are You Iste member" required="" autofocus="">
+									<select id="ISiste" name="Are You Iste" required="" autofocus="">
 										<option value="null" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
@@ -383,7 +385,7 @@
 								 
 								
 									<label for="Are You Iste1" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select id="ISiste" name="Are You Iste member1" required="" autofocus="">
+									<select id="ISiste" name="Are You Iste1" required="" autofocus="">
 										<option value="null" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
@@ -396,13 +398,13 @@
 								<div class="team-mem-1">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Second Team Member </h2>
 									<label for="team member2" class="mb-2 ml-2">Team Member 2</label>
-									<input placeholder="Enter  Name" name="team member2" type="text" required="" autofocus="">
+									<input placeholder="Enter  Name" name="team member2" type="text" required autofocus="">
 									<label for="mobile member2" class="mb-2 ml-2">Mobile Number</label><br>
 									<input placeholder="Enter Mobile number" name="mobile member2" type="tel" pattern="[6-9]{1}[0-9]{9}" required="" autofocus="">
-									<label for="Email member2" class="mb-2 ml-2">Email ID</label>
-									<input placeholder="Enter your Email ID" name="Email member2" type="text" required="" autofocus="">
-									<label for="Semester member2" class="mb-2 ml-2">Semester</label> 
-									<select id="Semester" name="Semester member2" required="" autofocus="">
+									<label for="email member2" class="mb-2 ml-2">Email ID</label>
+									<input placeholder="Enter your Email ID" name="email member2" type="text" required autofocus="">
+									<label for="Sem member2" class="mb-2 ml-2">Semester</label> 
+									<select id="Semester" name="Sem member2" required="" autofocus="">
 										<option value="null" hidden="">Select semester</option>
 										<option value="S1">S1</option>
 										<option value="S3">S3</option>
@@ -439,8 +441,8 @@
 									
 									<label for="Email member3" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="Email member3" type="text" required="" autofocus="">
-									<label for="Semester member3" class="mb-2 ml-2">Semester</label> 
-									<select id="Semester member3" name="Semester member3" required="" autofocus="">
+									<label for="Sem member3" class="mb-2 ml-2">Semester</label> 
+									<select id="Semester member3" name="Sem member3" required="" autofocus="">
 										<option value="null" hidden="">Select semester</option>
 										<option value="S1">S1</option>
 										<option value="S3">S3</option>
@@ -558,25 +560,25 @@
 
 
 
-		// $("#pdcform").submit((e)=>{
-        //     e.preventDefault();
-        //     $.ajax({
-        //         url:"https://script.google.com/macros/s/AKfycbzSJPXOAJGR7mKbEoKpHGyWZIlyEGkHz-4it3Z4rLk5BKVoXiCKHCTrLje4rMKwKrOx/exec",
-        //         data:$("#pdcform").serialize(),
-        //         method:"POST",
-        //         success:function (response){
-        //         	document.getElementById("process").style.display="none";
-        //         	document.getElementById("successtext").innerHTML="Form submitted Successfully!";
-        //         	document.getElementById("pdc-form").innerHTML="<h4 id='successtextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4>";
+		$("#pdcform").submit((e)=>{
+            e.preventDefault();
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzadmPOHCRPj-vy-6VHobcSbS1klgcTFfHkirfVlRQKISQeEp6WIFRD4dJKhJWgcoZe/exec",
+                data:$("#pdcform").serialize(),
+                method:"POST",
+                success:function (response){
+                	document.getElementById("process").style.display="none";
+                	document.getElementById("successtext").innerHTML="Form submitted Successfully!";
+                	document.getElementById("pdcform").innerHTML="<h4 id='successtextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4>";
 
 
-        //         },
-        //         error:function (err){
-        //             document.getElementById("successtext").innerHTML="Error Submitting Form.Please retry Filling the form.";
+                },
+                error:function (err){
+                    document.getElementById("successtext").innerHTML="Error Submitting Form.Please retry Filling the form.";
     
-        //         }
-        //     })
-        // })
+                }
+            })
+        })
 
 
 
