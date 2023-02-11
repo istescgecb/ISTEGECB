@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- cache contro  -->
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- cache control ends  -->
+	<link rel="icon" href="assets/img/ISTE logo White.png" type="image/icon type">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="assets/css/final-face-off.css">
+	<link rel="stylesheet" href="assets/css/stars.css">
+    <link rel="stylesheet" href="assets/css/spectra.css">
+	<title>ISTE GECBH</title>
+</head>
+<!-- oncontextmenu="return false" -->
+<body>
+	<!-- bg animated dots -->
+	<div style="z-index: 0;">
+		<div class="starsec"></div>
+		<div class="starthird"></div>
+		<div class="starfourth"></div>
+		<div class="starfifth"></div>
+	</div>
+	<!-- desktop view nav  -->
+	<div class="container-fluid d-none d-md-block">
+		<div class="d-flex flex-wrap align-items-center justify-content-between mt-3 mx-5 py-2">
+			<div class="d-flex flex-wrap justify-content-center align-items-center" style="margin-left: 1rem;">
+				<img src="assets/img/ISTE logo White.png" style="width: 70px; height: auto;">
+				<a href="index.html" class="headingdropbtn" style="margin-left: 1rem;">ISTE GECBH</a>
+			</div>
+			<div id="header" class="d-flex flex-wrap align-items-center justify-content-center header">
+				<a class="nav-item" href="index.html">HOME</a>
+				<!-- <a class="nav-item" href="pdc.html">PDC</a> -->
+				<!-- <a class="nav-item" href="events.html">EVENTS</a> -->
+				<a class="nav-item " href="contact-us.html">CONTACT US</a>
+			</div>
+		</div>
+	</div>
+	<!-- mobile nav  -->
+	<div class="mobile-nav container-fluid d-block d-md-none py-3 px-3 backdrop-blur" style="top: 0;">
+		<div class="d-flex flex-wrap align-items-center justify-content-between">
+			<img src="assets/img/ISTE logo White.png" style="width: 48px; height: auto;">
+			<a href="" class="headingdropbtn">ISTE GECBH</a>
+			<a onclick="openNav()"><img src="assets/svg/menu.svg" alt="iste gecbh" style="width: 33px;"></a>
+		</div>
+	</div>
+	<!-- mobile drawer -->
+	<div class="nav-container backdrop-blur">
+		<p
+			style="position: absolute;top: 15px;left: 32px;font-size: 22px;font-weight: 600;font-family: 'Poppins';margin: 0; padding: 0;">
+			ISTE GECBH</p>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="assets/svg/close.svg"
+				alt="istegecbh"></a>
+		<ul>
+			<li>
+				<a href="index.html">
+					<span class="icon"><i class="fas fa-home"></i></span>
+					<span class="title">Home</span>
+				</a>
+			</li>
+			<li>
+				<a href="events.html">
+					<span class="icon"><i class="fas fa-calendar-week"></i></span>
+					<span class="title">Events</span>
+				</a>
+			</li>
+			<li>
+				<a href="membership-benefits.html">
+					<span class="icon"><i class="fas fa-user-shield"></i></span>
+					<span class="title">Membership</span>
+				</a>
+			</li>
+			<li>
+				<a href="bartonair.html">
+					<span class="icon"><i class="fas fa-plane"></i></span>
+					<span class="title">Bartonair</span>
+				</a>
+			</li>
+			<li>
+				<a href="bartonoidz.html">
+					<span class="icon"><i class="fas fa-robot"></i></span>
+					<span class="title">Bartonoidz</span>
+				</a>
+			</li>
+			<li>
+				<a href="contact-us.html">
+					<span class="icon"><i class="fas fa-comment-alt"></i></span>
+					<span class="title">Contact</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" onclick="closeNav()">
+					<span class="icon"><img src="assets/svg/back-right.svg" style="width: 39px;" alt="istegecbh"></span>
+					<span class="title">Close</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="landing-section d-flex flex-column flex-wrap justify-content-center align-items-center" data-aos="zoom-in">
+		<img src="assets/img/SPECTRA/spectra logo.png" class="main-logo">
+	</div>
+
+	<div class="oracle-intro" data-aos="fade-up">
+		<p class="final-face-off-p">
+			The Final Face Off is a three month long mega championship, consisting of five competitions for a grand cash prize of 5K! After a neck and neck competition in all domains of the Project Development Challenge, the same teams will again fiercely battle in the remaining four competitions of the Final Face Off. The ultimate champion will be determined by the final status of the leaderboard that will be updated after every event in this grand competition series.
+       </p>
+        <!-- <br class="final-face-off-p"> -->
+        <!-- <hr style="color: #4c1201;"> -->
+	</div>
+
+
+
+
+
+    <div class="sec" id="sec">
+        <div data-aos="fade-up" class="content-div" style="margin-bottom: 3rem;">
+          <h1 class="hero-title" style="font-size: 2em; transform: unset;"><span style="text-align: center;word-spacing: 10px;" class="hero-title-text"><strong>ABOUT GECBARTONHILL</strong></h1>
+          <p style="color:antiquewhite;padding-left: 24%;padding-right: 24%;">
+            Government Engineering College, Barton Hill (GECBH), situated in the
+            heart of the capital city of Thiruvananthapuram,Kerala is one of the
+            premier Institutes for engineering education in Kerala. GEC Barton Hill
+            was established by Government of Kera la in the academic year
+            1999-2000.Within a short span of of twenty two years from inception,
+            the college has achieved notable academic, technical as well as career
+            excellence.
+          </p > <br>
+		
+          
+        </div>
+      </div>
+
+
+
+	  <div class="sec" id="sec">
+        <div data-aos="fade-up" class="content-div" style="margin-bottom: 3rem;">
+          <h1 class="hero-title" style="font-size: 2em; transform: unset;"><span style="text-align: center;" class="hero-title-text"><strong>ABOUT   ISTE   SC   GECB</strong></h1>
+			<p style="color:antiquewhite;padding-left: 24%;padding-right: 24%;">
+				The Indian Society for Technical Education (ISTE) is the leading National Professional Society for the engineers in our country with the objective of assisting and contributing to the development of top quality engineers. ISTE helps in enhancing professional ideals & standards to bring about an effective linkage between technical institutions, indus try & society. Established in 2013, our chapter is the one of the oldest and largest technical societies on campus. We’ve always strived towards the multilateral development of the innate potential within every student. We have two major sub societies, Bartonair and Bartonoidz.
+
+			  </p>
+          </p > <br>
+		</div>
+		</div>
+    
+	<!-- <div data-aos="fade-up">
+		<h1 class="latest-news"  style="margin-left: 550px;color: red;">CHAMPIONS</h1>
+	</div>
+    <div class="swiper mySwiper mt-3">
+		<div class="swiper-wrapper">
+
+			<div class="swiper-slide first-card latest-event">
+				<div class="event-card execom-poster-wrapper" style="margin-left: 300px;" >
+						<img class="rounted" style="width: 100%; height: auto;" src="assets/img/The-final-face-off/finalFaceChamp.jpeg" alt="istegecbh">
+				</div>
+			</div>
+			
+			
+
+		</div>
+	</div> -->
+
+
+	<div style="height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: center;">
+          <h1 class="hero-title" style="text-align: center;
+        margin: unset;
+        margin-bottom: 2em;
+        margin-left: 2em;
+      "><span class="hero-title-text"><strong>EVENTS</strong></h1>
+          <div
+            style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: column; width: 100%;">
+            <a href="specta-events/ambassador-call.html">
+              <h1 class="hero-title" style="
+              transform: unset;
+              font-size: 2rem;
+              text-align: center;
+              margin-bottom: 23px;
+              color: #752cff;
+              text-shadow: none;"><span class="hero-title-text"><strong>Ambassador Call</strong></h1>
+            </a>
+            <a href="specta-events/technicals.html">
+              <h1 class="hero-title" style="
+              transform: unset;
+              font-size: 2rem;
+              text-align: center;
+              margin-bottom: 23px;
+              color: #2cffa7;
+              text-shadow: none;"><span class="hero-title-text"><strong>Competitions</strong></h1>
+            </a>
+            <a href="events/entrepreneurial.html">
+              <h1 class="hero-title" style="
+              transform: unset;
+              font-size: 2rem;
+              text-align: center;
+              margin-bottom: 23px;
+              color: #2cf0ff;
+              text-shadow: none;"><span class="hero-title-text"><strong>Intenship</strong></h1>
+            </a>
+            <a href="events/culturals.html">
+              <h1 class="hero-title" style="
+              transform: unset;
+              font-size: 2rem;
+              text-align: center;
+              margin-bottom: 23px;
+              color: #ed2cff;
+              text-shadow: none;"><span class="hero-title-text"><strong>Cultural</strong></h1>
+            </a>
+            <a href="events/others.html">
+              <h1 class="hero-title" style="
+              transform: unset;
+              font-size: 2rem;
+              text-align: center;
+              margin-bottom: 23px;
+              color: #ff2c2c;
+              text-shadow: none;"><span class="hero-title-text"><strong>Others</strong></h1>
+            </a>
+          </div>
+        </div>
+
+
+
+	<div class="container mb-5">
+		<div class="row justify-content-center align-items-center mb-4" data-aos="zoom-in">
+			<!-- <img class="leaderboard-head" src="assets/img/The-final-face-off/challenges.png" alt="istegecbh"> -->
+		</div>
+		<div class="row justify-content-center align-items-center">
+
+			<div class="col-12 col-md-5" data-aos="fade-up">
+
+				<!-- <div class="col-12 leaderboard-row mb-3">
+					<div class="row challenges-card justify-content-evenly align-items-center p-2">
+						<h4 class="col-12 p-0 m-0 fw-bolder">PROJECT DEVELOPMENT CHALLENGE</h4>
+						<hr style="color: #4c1201a9;" class="mt-2 mb-2">
+						<div class="col-6">
+							<h5 class="col-12 p-0 m-0">CASH PRIZE 2K</h5>
+							<p class="col-12 p-0 m-0">SEPTEMBER 2021</p>
+						</div>
+						<div class="col-6 d-flex justify-content-center align-items-center">
+							<a href="pdc.html" class="challenge-btn">View</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 leaderboard-row mb-3">
+					<div class="row challenges-card justify-content-evenly align-items-center p-2">
+						<h4 class="col-12 p-0 m-0 fw-bolder">SCRUTINY</h4>
+						<hr style="color: #4c1201a9;" class="mt-2 mb-2">
+						<h5 class="col-12 p-0 m-0">COMPLETED</h5>
+						 <p class="col-12 p-0 m-0">SEPTEMBER 2021</p> 
+					</div>
+				</div>
+
+				<div class="col-12 leaderboard-row mb-3">
+					<div class="row challenges-card justify-content-evenly align-items-center p-2">
+						<h4 class="col-12 p-0 m-0 fw-bolder">Letter of reccomendation</h4>
+						<hr style="color: #4c1201a9;" class="mt-2 mb-2">
+						<h5 class="col-12 p-0 m-0">COMPLETED</h5>
+						<p class="col-12 p-0 m-0">SEPTEMBER 2021</p> 
+					</div>
+				</div>
+
+				<div class="col-12 leaderboard-row mb-3">
+					<div class="row challenges-card justify-content-evenly align-items-center p-2">
+						<h4 class="col-12 p-0 m-0 fw-bolder">BUILD YOUR CV</h4>
+						<hr style="color: #4c1201a9;" class="mt-2 mb-2">
+						<h5 class="col-12 p-0 m-0">COMPLETED</h5>
+						 <p class="col-12 p-0 m-0">SEPTEMBER 2021</p> -->
+					<!-- </div>
+				</div>
+
+				<div class="col-12 leaderboard-row mb-3">
+					<div class="row challenges-card justify-content-evenly align-items-center p-2">
+						<h4 class="col-12 p-0 m-0 fw-bolder">SOAR HIGH</h4>
+						<hr style="color: #4c1201a9;" class="mt-2 mb-2">
+						<h5 class="col-12 p-0 m-0">COMPLETED</h5> --> 
+						<!-- <p class="col-12 p-0 m-0">SEPTEMBER 2021</p> -->
+					<!-- </div>
+				</div>  -->
+
+			</div>
+
+			<!-- <div class="col-12 row justify-content-center align-items-center mt-5">
+				<img data-aos="zoom-in-up" class="final-face-map" src="assets/img/The-final-face-off/map.png" alt="istegecbh">
+			</div> -->
+
+		</div>
+	</div>
+
+<!-- 
+	<div data-aos="fade-up">
+		<h1 class="latest-news">CHALLENGE WINNERS</h1>
+	</div>
+    <div class="swiper mySwiper mt-3">
+		<div class="swiper-wrapper">
+
+			<div class="swiper-slide first-card latest-event">
+				<div class="event-card execom-poster-wrapper">
+						<img class="rounted" style="width: 100%; height:300px;" src="assets/img/The-final-face-off/WinSoarhigh.jpeg" alt="istegecbh">
+				</div>
+			</div>
+			<div class="swiper-slide  latest-event">
+				<div class="event-card execom-poster-wrapper">
+						<img class="rounted" style="width: 100%; height: 300px; " src ="assets/img/The-final-face-off/WinScrutiny.jpeg" alt="istegecbh">
+				</div>
+			</div>
+
+			<div class="swiper-slide  latest-event">
+				<div class="event-card execom-poster-wrapper">
+						<img class="rounted" style="width: 100%; height: 300px" src="assets/img/The-final-face-off/WinBuildCV.jpeg" alt="istegecbh">
+				</div>
+			</div>
+
+			<div class="swiper-slide  latest-event">
+				<div class="event-card execom-poster-wrapper">
+						<img class="rounted" style="width: 100%; height: 300px;" src="assets/img/The-final-face-off/WinPDC.jpeg" alt="istegecbh">
+				</div>
+			</div>
+			
+			
+
+		</div>
+	</div> -->
+
+    <!-- <div class="swiper mySwiper mt-3">
+		<div class="swiper-wrapper">
+
+			<div class="swiper-slide first-card latest-event">
+				<div class="event-card">
+					<div class="event-card-img rounded">
+						<img src="assets/img/state-student-convention/2.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide latest-event">
+				<div class="event-card">
+					<div class="event-card-img rounded">
+						<img src="assets/img/state-student-convention/3.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide latest-event">
+				<div class="event-card">
+					<div class="event-card-img rounded">
+						<img src="assets/img/state-student-convention/4.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide latest-event">
+				<div class="event-card">
+					<div class="event-card-img rounded">
+						<img src="assets/img/state-student-convention/5.jpg" alt="">
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div> -->
+
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+	<!-- Initialize Swiper -->
+	<script>
+		// latest news 
+		var swiper = new Swiper(".mySwiper", {
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			centeredSlides: false,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true
+			},
+		});
+		// past events
+		var swiper2 = new Swiper(".mySwiper2", {
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			centeredSlides: false,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true
+			},
+		});
+		// teams swiper
+		var swiper3 = new Swiper(".mySwiper3", {
+			slidesPerView: 'auto',
+			loop: false,
+			spaceBetween: 0,
+			centeredSlides: false,
+			autoplay: {
+			delay: 2000,
+			disableOnInteraction: false,
+			},
+			pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+			},
+			navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+			},
+		});
+
+		// document.onkeydown = function(e) {
+		// if(event.keyCode == 123) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// }
+	</script>
+	<script>
+		AOS.init({
+			duration: 1000
+		});
+	</script>
+
+	<!-- youtube  -->
+	<script src="https://apis.google.com/js/platform.js"></script>
+	<script src="./assets/js/main.js"></script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

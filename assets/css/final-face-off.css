@@ -19,7 +19,7 @@
 }
   
 body {
-  background-image: url("../img/The-final-face-off/final-face-bgpng.png");
+  background-image: url("../img/SPECTRA/Backpic.jpg");
   background-repeat: no-repeat, repeat;
   background-color: var(--background-color);
   font-family: Poppins, sans serif;
@@ -1205,7 +1205,7 @@ textarea:focus {
     animation: box-move 1s infinite alternate-reverse;
 } 
 .final-face-off-p{
-  color: #4c1201 !important;
+  color: #eee4e2 !important;
   font-weight: 500 !important;
 }
 .leaderboard-row{
@@ -1482,7 +1482,7 @@ textarea:focus {
     max-width: 300px;
   }
   .job-op-body{
-    background-image: url("../img/mob-bg.png");
+    background-image: url("../img/SPECTRA/OLO2EG0.jpg");
     background-size: cover;
   }
   .dep-card{
@@ -1493,7 +1493,7 @@ textarea:focus {
     margin-top: 0;
   }
   body {
-    background-image: url("../img/The-final-face-off/final-face-mob-bg.jpg");
+    background-image: url("../img/SPECTRA/OLO2EG0.jpg");
     background-size: cover;
   }
   .leaderboard-head{

@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en" id="html">
+
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- cache contro  -->
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- cache control ends  -->
+	<link rel="icon" href="../assets/img/ISTE logo White.png" type="image/icon type">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="../assets/css/final-face-off.css">
+	<link rel="stylesheet" href="../assets/css/stars.css">
+    <link rel="stylesheet" href="../assets/css/spectra.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<title>ISTE GECBH</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: rgb(14, 11, 26);
+            overflow-x: hidden;
+        }
+
+
+        
+
+        .box{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: auto;
+    max-height: 90vh;
+    max-width: 700px;
+    box-shadow: 0 5px 30px rgb(0 0 0 / 30%);
+    background: rgb(22, 18, 37);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    color: #ffff;
+}
+.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    z-index: 999;
+
+}
+
+.box {
+	padding: 4.5em 0;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.box:before{  
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  background: #fff;
+  filter: blur(40px);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.box:after{  
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0px;
+  right: -2px;
+  background: #fff;
+  /* filter: blur(40px); */
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.box:after,
+.box:before{  
+  background: linear-gradient(235deg, #6c32d9, #010615, #6c32d9);
+}
+
+
+
+.box h2{
+    margin-bottom: 20px;
+}
+.box p{
+    margin-bottom: 28px;
+}
+        .poster{
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .poster-card{
+            background: #4f2b93;
+            margin: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all .2s ease-in-out;
+        }
+        .poster-card:hover{
+          transform: scale(1.04);
+        }
+        .poster-on-popup{
+          display: none;
+          border-radius: 5px;
+        }
+        .close-btn{
+          right: 9px;
+          top: 11px;
+          cursor: pointer;
+          position: absolute;
+          width: 30px;
+        }
+        @media (max-width: 459px) {
+            .poster-card{
+            background: #4f2b93;
+            margin: 3px;
+            width: 48%;
+         }
+         .poster-on-popup{
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+          }
+
+          #pop-up1.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    z-index: 999;
+}
+        }
+
+    </style>
+</head>
+<!-- oncontextmenu="return false" -->
+<body>
+	<!-- bg animated dots -->
+	<div style="z-index: 0;">
+		<div class="starsec"></div>
+		<div class="starthird"></div>
+		<div class="starfourth"></div>
+		<div class="starfifth"></div>
+	</div>
+	<!-- desktop view nav  -->
+	<div class="container-fluid d-none d-md-block">
+		<div class="d-flex flex-wrap align-items-center justify-content-between mt-3 mx-5 py-2">
+			<div class="d-flex flex-wrap justify-content-center align-items-center" style="margin-left: 1rem;">
+				<img src="../assets/img/ISTE logo White.png" style="width: 70px; height: auto;">
+				<a href="index.html" class="headingdropbtn" style="margin-left: 1rem;">ISTE GECBH</a>
+			</div>
+			<div id="header" class="d-flex flex-wrap align-items-center justify-content-center header">
+				<a class="nav-item" href="index.html">HOME</a>
+      
+				<!-- <a class="nav-item" href="pdc.html">PDC</a> -->
+				<!-- <a class="nav-item" href="events.html">EVENTS</a> -->
+				<a class="nav-item " href="contact-us.html">CONTACT US</a>
+			</div>
+		</div>
+	</div>
+	<!-- mobile nav  -->
+	<div class="mobile-nav container-fluid d-block d-md-none py-3 px-3 backdrop-blur" style="top: 0;">
+		<div class="d-flex flex-wrap align-items-center justify-content-between">
+			<img src="../assets/img/ISTE logo White.png" style="width: 48px; height: auto;">
+			<a href="" class="headingdropbtn">ISTE GECBH</a>
+			<a onclick="openNav()"><img src="../assets/svg/menu.svg" alt="iste gecbh" style="width: 33px;"></a>
+		</div>
+	</div>
+	<!-- mobile drawer -->
+	<div class="nav-container backdrop-blur">
+		<p
+			style="position: absolute;top: 15px;left: 32px;font-size: 22px;font-weight: 600;font-family: 'Poppins';margin: 0; padding: 0;">
+			ISTE GECBH</p>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="../assets/svg/close.svg"
+				alt="istegecbh"></a>
+		<ul>
+			<li>
+				<a href="index.html">
+					<span class="icon"><i class="fas fa-home"></i></span>
+					<span class="title">Home</span>
+				</a>
+			</li>
+			<li>
+				<a href="events.html">
+					<span class="icon"><i class="fas fa-calendar-week"></i></span>
+					<span class="title">Events</span>
+				</a>
+			</li>
+			<li>
+				<a href="membership-benefits.html">
+					<span class="icon"><i class="fas fa-user-shield"></i></span>
+					<span class="title">Membership</span>
+				</a>
+			</li>
+			<li>
+				<a href="bartonair.html">
+					<span class="icon"><i class="fas fa-plane"></i></span>
+					<span class="title">Bartonair</span>
+				</a>
+			</li>
+			<li>
+				<a href="bartonoidz.html">
+					<span class="icon"><i class="fas fa-robot"></i></span>
+					<span class="title">Bartonoidz</span>
+				</a>
+			</li>
+			<li>
+				<a href="contact-us.html">
+					<span class="icon"><i class="fas fa-comment-alt"></i></span>
+					<span class="title">Contact</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" onclick="closeNav()">
+					<span class="icon"><img src="../assets/svg/back-right.svg" style="width: 39px;" alt="istegecbh"></span>
+					<span class="title">Close</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+
+    <div class="container" id="blur">
+        <h1 class="hero-title tech-event-head" style="text-align: center;
+        margin: unset;
+        margin-bottom: 1em;
+        padding-top: 1em;
+        margin-left: 1.1em;
+        color: #752cff;
+      "><span class="hero-title-text"><strong>Ambassador</strong> <span>Call</span></h1>
+        <div class="row justify-content-center align-items-center pb-3" style="margin: 0px;">
+          <!-- <div onclick="showEvent_2_Details()" class="col-6 col-md-3 p-1 poster-card"><img class="poster" src="../technicals/inside-engines.jpeg" alt=""></div>
+        
+            <div onclick="showEvent_3_Details()" class="col-6 col-md-3 p-1 poster-card"><img class="poster" src="../technicals/modeladora.jpeg" alt=""></div> -->
+            <div onclick="showEvent_1_Details()" class="col-6 col-md-3 p-1 poster-card"><img class="poster" src="../assets/img/SPECTRA/spectra_ca_call.jpg" alt=""></div>
+            <!-- <div onclick="showEvent_1_Details()" class="col-6 col-md-3 p-1 poster-card"><img class="poster" src="../assets/img/SPECTRA/samasya quiz.jpg" alt=""></div>
+            
+        <div onclick="showEvent_1_Details()" class="col-6 col-md-3 p-1 poster-card"><img class="poster" src="../assets/img/SPECTRA/samasya quiz.jpg" alt=""></div>
+        <div onclick="showEvent_1_Details()" class="col-6 col-md-3 p-1 poster-card"><img class="poster" src="../assets/img/SPECTRA/samasya quiz.jpg" alt=""></div> -->
+    </div>
+    </div>
+
+
+
+      
+    <div id="pop-up1" class="box" style="padding: 0; margin: 0;">
+        <div class="content-container">
+          <img onclick="showEvent_1_Details()" class="close-btn" src="../assets/icons/Close-icon.png" alt="close">
+          <img class="poster-on-popup" style="width: 100%;height: auto;max-width: 300px;" src="../assets/img/SPECTRA/spectra_ca_call.jpg" alt="">
+          <h2 style="font-family: 'Poppins'; margin-top: 5px; text-align: center; margin-top: 25px; color: #4224b9;     font-weight: 900;">Campus Ambassadors</h2>
+          <div class="popup-content">
+            <p>
+			
+              ISTE SC GECBH in collaboration with Agni Edutainment announces a call for Campus Ambassadors, as a part of our flagship event SPECTRA🌈 
+              <br> 
+              <br>
+              🕘  Deadline : 3rd Feb 2023
+              <br>
+            
+              ✨ Prizes worth 9k await the winners! <br> <br>
+              <!-- <a class="guidlines" style="background: #998105;" href="http://http://bit.ly/Cadbuzz_guidelines">GUIDELINES</a> -->
+              Contact: <br>
+              📞Gouri Chandana- 62826 49020              <br>
+              📞Hridhya - 79071 59600 <br>
+            </p>
+        </div>
+        <div
+        style="display: block; justify-content: center; align-items: center; flex-direction: column; flex-wrap: wrap;">
+        <a href ="bit.ly/_Spectra_Campus_Ambassador" class="green-neon-btn" style="margin-bottom: 15px; width: 100%; text-align: center; margin-top: 0;">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Register
+        </a>  
+        </div>
+    </div>
+ </div>
+
+
+
+   
+
+
+	
+
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+ 
+    <script>
+
+          
+      </script>
+	<!-- Initialize Swiper -->
+	<script>
+
+
+
+		// latest news 
+		var swiper = new Swiper(".mySwiper", {
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			centeredSlides: false,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true
+			},
+		});
+		// past events
+		var swiper2 = new Swiper(".mySwiper2", {
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			centeredSlides: false,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true
+			},
+		});
+		// teams swiper
+		var swiper3 = new Swiper(".mySwiper3", {
+			slidesPerView: 'auto',
+			loop: false,
+			spaceBetween: 0,
+			centeredSlides: false,
+			autoplay: {
+			delay: 2000,
+			disableOnInteraction: false,
+			},
+			pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+			},
+			navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+			},
+		});
+
+		// document.onkeydown = function(e) {
+		// if(event.keyCode == 123) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// }
+	</script>
+	<script>
+		AOS.init({
+			duration: 1000
+		});
+	</script>
+
+	<!-- youtube  -->
+	<script src="https://apis.google.com/js/platform.js"></script>
+	<script src="../assets/js/main.js"></script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
