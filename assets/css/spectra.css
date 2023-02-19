@@ -127,6 +127,43 @@
     position : absolute;
     display : block;
   }
+
+
+
+
+
+  
+  .green-neon-btn-managerial {
+    position: relative;
+    width: 204px;
+    display: inline-block;
+    padding: 16px 30px;
+    margin: 40px 0;
+    color: black;
+    font-size: x-large;
+    font-weight: bolder;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    -webkit-box-reflect: below 10px linear-gradient(transparent,transparent,rgba(0,0,0,.13333333333333333));
+  }
+  .green-neon-btn-managerial:link, .green-neon-btn-managerial:active{
+    color : rgba(168, 49, 20, 0.929);
+  }
+  .green-neon-btn-managerial:hover {
+    background :rgba(207, 71, 26, 0.929);
+    color : #050801;
+    box-shadow : 0 0 5px rgba(23, 23, 22, 0.929),
+                  0 0 25px rgba(34, 34, 33, 0.929),
+                0 0 50px rgba(28, 28, 26, 0.929),
+                0 0 200px rgba(35, 34, 32, 0.929);
+  }
+  .green-neon-btn-managerial span {
+    position : absolute;
+    display : block;
+  }
   
 
   .content-container{
@@ -138,6 +175,17 @@
     top: 8px;
   
   }
+
+  .card{
+    margin: 5% 0%;
+  }
+  
+  .card-body{
+    margin: 0% 0% 0% 3%;
+    padding: 6% 0%;
+  }
+  
+  
 
   @media (min-width: 992px) { p{
     color: antiquewhite;
@@ -154,3 +202,6 @@
     margin-left: 25%;
     border-radius: 20px;
 }
+
+
+
