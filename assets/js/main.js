@@ -40,3 +40,13 @@ function showEvent_1_Details() {
   let html = document.getElementById('html');
   html.classList.toggle('active')
 }
+
+
+function showEvent_2_Details() {
+  let blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  let popup = document.getElementById('pop-up2');
+  popup.classList.toggle('active')
+  let html = document.getElementById('html');
+  html.classList.toggle('active')
+}
