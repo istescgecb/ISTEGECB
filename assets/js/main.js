@@ -50,3 +50,22 @@ function showEvent_2_Details() {
   let html = document.getElementById('html');
   html.classList.toggle('active')
 }
+
+function showEvent_3_Details() {
+  let blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  let popup = document.getElementById('pop-up3');
+  popup.classList.toggle('active')
+  let html = document.getElementById('html');
+  html.classList.toggle('active')
+}
+
+
+function showEvent_4_Details() {
+  let blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  let popup = document.getElementById('pop-up3');
+  popup.classList.toggle('active')
+  let html = document.getElementById('html');
+  html.classList.toggle('active')
+}
