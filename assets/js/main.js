@@ -64,7 +64,39 @@ function showEvent_3_Details() {
 function showEvent_4_Details() {
   let blur = document.getElementById('blur');
   blur.classList.toggle('active')
-  let popup = document.getElementById('pop-up3');
+  let popup = document.getElementById('pop-up4');
+  popup.classList.toggle('active')
+  let html = document.getElementById('html');
+  html.classList.toggle('active')
+}
+
+
+
+
+function showEvent_5_Details() {
+  let blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  let popup = document.getElementById('pop-up5');
+  popup.classList.toggle('active')
+  let html = document.getElementById('html');
+  html.classList.toggle('active')
+}
+
+
+function showEvent_6_Details() {
+  let blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  let popup = document.getElementById('pop-up6');
+  popup.classList.toggle('active')
+  let html = document.getElementById('html');
+  html.classList.toggle('active')
+}
+
+
+function showEvent_7_Details() {
+  let blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  let popup = document.getElementById('pop-up7');
   popup.classList.toggle('active')
   let html = document.getElementById('html');
   html.classList.toggle('active')
