@@ -593,6 +593,7 @@
 		</a>
 	</div>
 	<div class="swiper mySwiper2">
+
 		<div class="swiper-wrapper">
 			<div class="swiper-slide past-event first-card">
 			
@@ -788,7 +789,7 @@
 
 
 
-			<!-- <div class="swiper-slide">
+			<div class="swiper-slide">
 				<div class="swiper-image">
 					<img src="assets/img/Latest-news/5.jpg" alt="">
 				</div>
@@ -799,7 +800,9 @@
 				</a>
 			</div> -->
 
-		--></div>
+		</div>
+
+
 	</div>
 	<!-- video  -->
 	<div class="past-event-heading">
@@ -1179,8 +1182,10 @@
 				</div>
 	
 				
+				</div>
+				<div class="swiper-button-next" style="color:rgb(189, 186, 186);"></div>
+				<div class="swiper-button-prev" style="color:rgb(189, 186, 186);"></div>
 			</div>
-		</div>
 	</div>
 
 	<div class="container d-flex justify-content-center align-items-center mb-3">
@@ -1233,37 +1238,76 @@
 			return false;
 		}
 		}
+		// Get all Swiper containers
+		// var swiperContainers = document.querySelectorAll('.mySwiper, .mySwiper2, .mySwiper3, .swiper');
+
+		// // For each Swiper container
+		// swiperContainers.forEach(function(container) {
+		// 	// Create next button
+		// 	var nextButton = document.createElement('div');
+		// 	nextButton.className = 'swiper-button-next';
+		// 	nextButton.style.color = 'rgb(189, 186, 186)';
+			
+		// 	// Create previous button
+		// 	var prevButton = document.createElement('div');
+		// 	prevButton.className = 'swiper-button-prev';
+		// 	prevButton.style.color = 'rgb(189, 186, 186)';
+			
+		// 	// Append buttons to the Swiper container
+		// 	container.appendChild(nextButton);
+		// 	container.appendChild(prevButton);
+		// });
 
 		// latest news 
 		var swiper = new Swiper(".mySwiper", {
 			slidesPerView: 'auto',
 			spaceBetween: 0,
 			centeredSlides: false,
+			//loop: true,
+
 			pagination: {
-				el: ".swiper-pagination",
-				clickable: true
+			el: ".swiper-pagination",
+			clickable: true,
+			},
+			// autoplay: {
+			// delay: 2000,
+			// disableOnInteraction: true,
+			// },
+			navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
 			},
 		});
 		// past events
 		var swiper2 = new Swiper(".mySwiper2", {
 			slidesPerView: 'auto',
 			spaceBetween: 0,
+			//loop: true,
+
 			centeredSlides: false,
 			pagination: {
-				el: ".swiper-pagination",
-				clickable: true
+			el: ".swiper-pagination",
+			clickable: true,
+			},
+			// autoplay: {
+			// delay: 2000,
+			// disableOnInteraction: true,
+			// },
+			navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
 			},
 		});
 		// teams swiper
 		var swiper3 = new Swiper(".mySwiper3", {
 			slidesPerView: 'auto',
-			loop: false,
+			//loop: true,
 			spaceBetween: 0,
 			centeredSlides: false,
-			// autoplay: {
-			// delay: 2000,
-			// disableOnInteraction: false,
-			// },
+			autoplay: {
+			delay: 2000,
+			disableOnInteraction: true,
+			},
 			pagination: {
 			el: ".swiper-pagination",
 			clickable: true,
@@ -1389,7 +1433,10 @@
 	<script src="https://apis.google.com/js/platform.js"></script>
 	<script src="./assets/js/main.js"></script>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 		crossorigin="anonymous"></script>
 	<!-- Option 2: Separate Popper and Bootstrap JS -->

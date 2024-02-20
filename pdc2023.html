@@ -3,7 +3,7 @@
 
 <head>
 
-	<!-- Required meta tags -->
+	<!--  meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- cache contro  -->
@@ -25,7 +25,6 @@
 	<link rel="stylesheet" href="assets/css/stars.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>ISTE GECBH</title>
-
 
 
 </head>
@@ -241,7 +240,7 @@
 									</div>
 								</div>
 								<p style="font-size: 1.3em">All field are Mandatory</p>
-								<p style="font-size: 1.5em; ">LOOK INTO INSTRUCTIONS TO FILL THE FORM<br><br>
+								<p style="font-size: 1.5em; ">LOOK INTO INSTRUCTIONS TO FILL THE FORM<br>
 									<br>Fill details and Upload Screenshot using upload button after clicking the submit
 									button.
 								</p>
@@ -251,14 +250,14 @@
 
 
 								<label for="teamname" class="mb-2 ml-2">Team Name</label>
-								<input placeholder="Your Team Name" name="teamname" type="text" tabindex="1" required=""
-									autofocus="">
+								<input placeholder="Your Team Name" name="teamname" type="text" tabindex="1"
+									autofocus="" required="">
 
 
 
 								<label for="firstproject" class="mb-2 ml-2">Project First Preference</label>
-								<select id="firstproject" name="firstproject" required="" autofocus="">
-									<option value="null" hidden>Select Project</option>
+								<select id="firstproject" name="firstproject" autofocus="" required="">
+									<option value="" hidden>Select Project</option>
 
 									<option value="Obstacle Avoider">Obstacle Avoider</option>
 									<option value="Line Follower">Line Follower</option>
@@ -286,8 +285,8 @@
 								</select>
 
 								<label for="secondproject" class="mb-2 ml-2">Project Second Preference</label>
-								<select id="secondproject" name="secondproject" required="" autofocus="">
-									<option value="null" hidden>Select Project</option>
+								<select id="secondproject" name="secondproject" autofocus="" required="">
+									<option value="" hidden>Select Project</option>
 
 									<option value="Obstacle Avoider">Obstacle Avoider</option>
 									<option value="Line Follower">Line Follower</option>
@@ -313,8 +312,8 @@
 								</select>
 
 								<label for="thirdproject" class="mb-2 ml-2">Project Third Preference</label>
-								<select id="thirdproject" name="thirdproject" required="" autofocus="">
-									<option value="null" hidden>Select zProject</option>
+								<select id="thirdproject" name="thirdproject" autofocus="" required="">
+									<option value="" hidden>Select Project</option>
 
 									<option value="Obstacle Avoider">Obstacle Avoider</option>
 									<option value="Line Follower">Line Follower</option>
@@ -347,24 +346,24 @@
 								<div class="team-lead">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Team Leader </h2>
 									<label for="teamlead" class="mb-2 ml-2">Team Leader</label>
-									<input placeholder="Enter your Name" name="teamlead" type="text" required=""
-										autofocus="">
+									<input placeholder="Enter your Name" name="teamlead" type="text" id="teamlead"
+										autofocus="" required="">
 									<label for="mobilenumber" class="mb-2 ml-2">Mobile Number</label>
 									<input placeholder="Enter Mobile number" name="mobilenumber" type="tel"
-										pattern="[6-9]{1}[0-9]{9}" required="" autofocus="">
+										pattern="[6-9]{1}[0-9]{9}" id="mobilenumber" autofocus="" required="">
 									<label for="Email" class="mb-2 ml-2">Email ID</label>
-									<input placeholder="Enter your Email ID" name="Email" type="text" required=""
-										autofocus="">
+									<input placeholder="Enter your Email ID" name="Email" type="text" id="Email"
+										autofocus="" required="">
 									<label for="Semester" class="mb-2 ml-2">Semester</label>
-									<select id="Semester" name="Semester" required="" autofocus="">
-										<option value="null" hidden="">Select semester</option>
+									<select id="Semester" name="Semester" autofocus="" required="">
+										<option value="" hidden="">Select semester</option>
 
-										<option value="S3">S3</option>
-
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
 									</select>
 									<label for="Branch" class="mb-2 ml-2">Branch</label>
-									<select id="Branch" name="Branch" required="" autofocus="">
-										<option value="null" hidden="">Select branch</option>
+									<select id="Branch" name="Branch" autofocus="" required="">
+										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
 											Electronics Engineering</option>
@@ -374,15 +373,12 @@
 										<option value="Mechanical Engineering">Mechanical Engineering</option>
 									</select>
 
-
 									<label for="Are You Iste" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select id="ISiste" name="Are You Iste" required="" autofocus="">
-										<option value="null" hidden="">Select option</option>
+									<select id="isIste" name="Are You ISTE" autofocus="" required="">
+										<option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
 									</select>
-
-
 
 								</div>
 
@@ -390,24 +386,24 @@
 								<div class="team-mem-1">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Second Team Member </h2>
 									<label for="team member1" class="mb-2 ml-2">Team Member 2</label>
-									<input placeholder="Enter  Name" name="team member1" type="text" required=""
-										autofocus="">
+									<input placeholder="Enter  Name" name="team member1" type="text" id="team-member2"
+										autofocus="" required="">
 									<label for="mobile member1" class="mb-2 ml-2">Mobile Number</label>
 									<input placeholder="Enter Mobile number" name="mobile member1" type="tel"
-										pattern="[6-9]{1}[0-9]{9}" required="" autofocus="">
+										pattern="[6-9]{1}[0-9]{9}" id="mobile-member2" autofocus="" required="">
 									<label for="Email member1" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="Email member1" type="text"
-										required="" autofocus="">
+										id="email-member2" autofocus="" required="">
 									<label for="Sem member1" class="mb-2 ml-2">Semester</label>
-									<select id="Semester" name="Sem member1" required="" autofocus="">
-										<option value="null" hidden="">Select semester</option>
+									<select name="Sem member1" id="sem-member2" autofocus="" required="">
+										<option value="" hidden="">Select semester</option>
 
-										<option value="S3">S3</option>
-
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member1" class="mb-2 ml-2">Branch</label>
-									<select id="Branch" name="Branch member1" required="" autofocus="">
-										<option value="null" hidden="">Select branch</option>
+									<select name="Branch member1" id="branch-member2" autofocus="" required="">
+										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
 											Electronics Engineering</option>
@@ -420,12 +416,11 @@
 
 
 									<label for="Are You Iste1" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select id="ISiste" name="Are You Iste1" required="" autofocus="">
-										<option value="null" hidden="">Select option</option>
+									<select name="Are You Iste1" id="is-iste2" autofocus="" required="">
+										<option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
 									</select>
-
 
 								</div>
 
@@ -433,24 +428,24 @@
 								<div class="team-mem-1">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Third Team Member </h2>
 									<label for="team member2" class="mb-2 ml-2">Team Member 3</label>
-									<input placeholder="Enter  Name" name="team member2" type="text" required=""
-										autofocus=""="">
+									<input placeholder="Enter  Name" name="team member2" type="text" id="team-member3"
+										autofocus="" required="">
 									<label for="mobile member2" class="mb-2 ml-2">Mobile Number</label><br>
 									<input placeholder="Enter Mobile number" name="mobile member2" type="tel"
-										pattern="[6-9]{1}[0-9]{9}" required="" autofocus="">
+										pattern="[6-9]{1}[0-9]{9}" id="mobile-member3" autofocus="" required="">
 									<label for="email member2" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="email member2" type="text"
-										required="" autofocus=""="">
+										id="email-member3" autofocus="" required="">
 									<label for="Sem member2" class="mb-2 ml-2">Semester</label>
-									<select id="Semester" name="Sem member2" required="" autofocus="">
-										<option value="null" hidden="">Select semester</option>
+									<select name="Sem member2" id="sem-member3" autofocus="" required="">
+										<option value="" hidden="">Select semester</option>
 
-										<option value="S3">S3</option>
-
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member2" class="mb-2 ml-2">Branch</label>
-									<select id="Branch" name="Branch member2" required="" autofocus="">
-										<option value="null" hidden="">Select branch</option>
+									<select name="Branch member2" id="branch-member3" autofocus="" required="">
+										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
 											Electronics Engineering</option>
@@ -462,8 +457,8 @@
 
 
 									<label for="Are You Iste2" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select id="ISiste" name="Are You Iste2" required="" autofocus="">
-										<option value="null" hidden="">Select option</option>
+									<select name="Are You Iste2" id="is-iste3" autofocus="" required="">
+										<option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
 									</select>
@@ -474,24 +469,25 @@
 								<div class="team-mem-1">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fourth Team Member </h2>
 									<label for="team member3" class="mb-2 ml-2">Team Member 4</label>
-									<input placeholder="Enter  Name" name="team member3" type="text" autofocus="">
+									<input placeholder="Enter  Name" name="team member3" type="text" id="team-member4"
+										autofocus="" required="">
 									<label for="mobile member3" class="mb-2 ml-2">Mobile Number</label>
 									<input placeholder="Enter Mobile number" name="mobile member3" type="tel"
-										pattern="[6-9]{1}[0-9]{9}" autofocus="">
+										pattern="[6-9]{1}[0-9]{9}" id="mobile-member4" autofocus="" required="">
 
 									<label for="Email member3" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="Email member3" type="text"
-										autofocus="">
+										id="email-member4" autofocus="" required="">
 									<label for="Sem member3" class="mb-2 ml-2">Semester</label>
-									<select id="Semester member3" name="Sem member3" autofocus="">
-										<option value="null" hidden="">Select semester</option>
+									<select name="Sem member3" id="sem-member4" autofocus="" required="">
+										<option value="" hidden="">Select semester</option>
 
-										<option value="S3">S3</option>
-
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member3" class="mb-2 ml-2">Branch<label>
-											<select id="Branch" name="Branch member3" autofocus="">
-												<option value="null" hidden="">Select branch</option>
+											<select name="Branch member3" id="branch-member4" autofocus="" required="">
+												<option value="" hidden="">Select branch</option>
 												<option value="Civil Engineering">Civil Engineering</option>
 												<option value="Electrical and Electronics Engineering">Electrical and
 													Electronics Engineering</option>
@@ -502,14 +498,12 @@
 											</select>
 
 
-											<label for="Are You Iste3" class="mb-2 ml-2">Are you an ISTE member
-												?</label>
-											<select id="ISiste" name="Are You Iste3" autofocus="">
-												<option value="null" hidden="">Select option</option>
+											<label for="Are You Iste3" class="mb-2 ml-2">Are you an ISTE member?</label>
+											<select name="Are You Iste3" id="is-iste4" autofocus="" required="">
+												<option value="" hidden="">Select option</option>
 												<option value="Yes">YES</option>
 												<option value="No">NO</option>
 											</select>
-
 
 								</div>
 
@@ -522,19 +516,18 @@
 									<p style="font-size: 1.2em">
 										Registration fees:
 										<br>For ISTE bartonoidz members ₹50 per team
-										<br>For team with atleast 1 Non ISTE members ₹150 per team
+										<br>For team with atleast 1 Non ISTE members ₹100 per team
 									</p>
 
 									</h6>
 
 								</div>
 
-
 								<div class="account-details">
 									<h6 style="font-size: 1.5em;color: rgb(214, 91, 20);">PAYMENT DETAILS</h6>
-									<p style="font-size: 1.2em">Account holder name : UTHARA MURALI U<br>IFSC code :
-										SBIN0071192<br>Account number : 39371924444<br>Gpay / Phonepay / Paytm : 62383
-										52197<br>UPI id : uthara159@oksbi</p>
+									<p style="font-size: 1.2em">Account holder name : ARYA M GUPTHAN<br>IFSC code:
+										CNRB0006200<br>Account number: 2791120000002<br>Gpay/PhonePe/Paytm:
+										9447475576<br>UPI id: aryamgupthan@okicici</p>
 									<!-- <span onclick="openQR1()" id="PhonePebtn1">PhonePe QR</span>
   								<img id="PhonePeqr1" src="assets/img/paymentqr/phonepe.png" style="display:none; width: 90%;">
   								<span onclick="openQR2()" id="PhonePebtn2">Gpay QR</span>
@@ -558,36 +551,57 @@
 								</div>
 
 
-								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Upload
-									Files after submit</h4>
+								<!-- <h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Upload Files after submit</h4>  -->
+								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Complete
+									Payment and Upload Screen Shot of Payment before submit</h4>
+
+								<!-- <div id="ttlamt"  style="font-size: 1.2em;color:rgb(214, 91, 20);">
+                                  Total Amount - ISTE + BARTONOIDZ + BARTONAIR : Rs. 700/-
+                              </div> -->
 
 
 
 
-
+								<div>
+									<br>
+									<label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT*<aaa
+												style="color:rgb(214, 91, 20);"></aaa></b></label><br>
+									<input name="image" id="image" placeholder="Image or PDF" type="file"
+										accept="image/*,application/pdf" required>
+									<img src="" style="aspect-ratio:auto;max-height: 100px;" align="center" id="drive"
+										alt="">
+								</div>
+								<br>
 
 							</div>
-							<input type="submit" value="Submit" class="theme-btn gradient mt-3"
-								style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;">
+							<br>
 
+
+
+							<p style="font-size: 1.2em">
+								If any doubts ,,,,
+								<br><a style="font-size: 1.2rem;font-weight: lighter;"
+									href="https://wa.me/+918714317709" target="_blank">📞Nithin A</a>
+								<br><a style="font-size: 1.2rem;font-weight: lighter;"
+									href="https://wa.me/+918606361862" target="_blank">📞Aiswarya Lakshmi</a>
+							</p>
 						</div>
-					</form>
-
+						<input type="submit" value="Submit" class="theme-btn gradient mt-3"
+							style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;">
 				</div>
+				</form>
+
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 	<!-- Initialize Swiper -->
 	<script>
-		// registration ended
-		const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
-		membershipFormWrapper.innerHTML = `
-    <h1 style="color: white;">Project Development Challenge</h1>
-    <p style="color: white;">The challenge for 2022-23 has been officially closed.</p>
-`;
+
+
 		function openQR1() {
 			document.getElementById("PhonePebtn1").setAttribute("onclick", "closeQR1()");
 			document.getElementById("PhonePebtn1").innerHTML = "X Close";
@@ -620,29 +634,149 @@
 
 
 
+		//for upload document
 
 
+		let fileInput = document.getElementById("image");
+		let file = document.getElementById("image");
 
+		let img = document.getElementById("drive");
+		let glob; // Define glob here
 
+		fileInput.addEventListener('change', () => {
+			let file = fileInput.files[0];
+
+			if (file) {
+				let fr = new FileReader();
+
+				fr.onload = (e) => {
+					let res = e.target.result;
+					// img.src = res;
+					glob = res.split("base64,")[1]; // Assign the value to glob without redeclaring it
+				};
+
+				fr.readAsDataURL(file);
+			}
+		});
+
+		// request
+
+		let url = "https://script.google.com/macros/s/AKfycbzRKmpy2RShTWuMRYVKWhidwQWvC-m7i03aG8kKAmeXWf9Yzh5eba96tJISSmAsjb7Y/exec";
 		$("#pdcform").submit((e) => {
 			e.preventDefault();
-			$.ajax({
-				url: "https://script.google.com/macros/s/AKfycbzadmPOHCRPj-vy-6VHobcSbS1klgcTFfHkirfVlRQKISQeEp6WIFRD4dJKhJWgcoZe/exec",
-				data: $("#pdcform").serialize(),
-				method: "POST",
-				success: function (response) {
-					document.getElementById("process").style.display = "none";
-					document.getElementById("successtext").innerHTML = "Form submitted Successfully!";
-					document.getElementById("pdcform").innerHTML = "<h4 id='successtextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4> <br><a class='theme-btn gradient' style='margin-left: 14%;padding: 3px 11px;border-radius: 13px;' href='https://forms.gle/NX9DatcVYjH36Pxy6'>Go Upload Screen Shot </a>";
+
+			var semMember2 = document.getElementById("sem-member2");
+
+			var teamName = document.getElementsByName('teamname')[0].value;
+			var firstProject = document.getElementById('firstproject').value;
+			var secondProject = document.getElementById('secondproject').value;
+			var thirdProject = document.getElementById('thirdproject').value;
+			var teamLead = document.getElementById('teamlead').value;
+			var mobileNumber = document.getElementById('mobilenumber').value;
+			var email = document.getElementById('Email').value;
+			var semester = document.getElementById('Semester').value;
+			var branch = document.getElementById('Branch').value;
+			var isIste = document.getElementById('isIste').value;
+
+			var teamMember2 = document.getElementById("team-member2").value;
+
+			var mobileMember2 = document.getElementById("mobile-member2").value;
+			var emailMember2 = document.getElementById("email-member2").value;
+			var semMember2 = document.getElementById("sem-member2").value;
+			var branchMember2 = document.getElementById("branch-member2").value;
+			var isIste2 = document.getElementById("is-iste2").value;
+
+			var teamMember3 = document.getElementById("team-member3").value;
+			var mobileMember3 = document.getElementById("mobile-member3").value;
+			var emailMember3 = document.getElementById("email-member3").value;
+			var semMember3 = document.getElementById("sem-member3").value;
+			var branchMember3 = document.getElementById("branch-member3").value;
+			var isIste3 = document.getElementById("is-iste3").value;
+
+			var teamMember4 = document.getElementById("team-member4").value;
+
+			var mobileMember4 = document.getElementById("mobile-member4").value;
+			var emailMember4 = document.getElementById("email-member4").value;
+			var semMember4 = document.getElementById("sem-member4").value;
+			var branchMember4 = document.getElementById("branch-member4").value;
+			var isIste4 = document.getElementById("is-iste4").value;
+			let file = document.getElementById("image");
+
+			// let img= document.getElementById("drive");
+			let fr = new FileReader();
+			fr.readAsDataURL(file.files[0]);
+			fr.addEventListener('loadend', () => {
+				let res = fr.result;
+				// img.src=res;
+				let glob = res.split("base64,")[1];
+				let obj = {
+					base64: glob,
+					type: file.files[0].type,
+					name: file.files[0].name,
+					teamName: teamName,
+					firstProject: firstProject,
+					secondProject: secondProject,
+					thirdProject: thirdProject,
+					TeamLead: teamLead,
+					mobileMember1: mobileNumber,
+					emailMember1: email,
+					semMember1: semester,
+					branchMember1: branch,
+					isIste1: isIste,
+					teamMember2: teamMember2,
+					mobileMember2: mobileMember2,
+					emailMember2: emailMember2,
+					semMember2: semMember2,
+					branchMember2: branchMember2,
+					isIste2: isIste2,
+					teamMember3: teamMember3,
+					mobileMember3: mobileMember3,
+					emailMember3: emailMember3,
+					semMember3: semMember3,
+					branchMember3: branchMember3,
+					isIste3: isIste3,
+					teamMember4: teamMember4,
+					mobileMember4: mobileMember4,
+					emailMember4: emailMember4,
+					semMember4: semMember4,
+					branchMember4: branchMember4,
+					isIste4: isIste4
+				};
 
 
-				},
-				error: function (err) {
-					document.getElementById("successtext").innerHTML = "Error Submitting Form.Please retry Filling the form.";
+				fetch(
+					url,
+					{
+						method: "POST",
+						body: JSON.stringify(obj)
+					}).then(r => r.text()).then(data => {
+						if (data == "success") {
 
-				}
+							document.getElementById("process").style.display = "none";
+							document.getElementById("successtext").innerHTML = "<>Form submitted Successfully!";
+							document.getElementById("pdcform").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4><br><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='		https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW\";'>Join Our Whatsapp Group</button></a>";
+
+							var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"
+
+
+
+							//<br><a class='theme-btn gradient' style='margin-left: 14%;padding: 3px 11px;border-radius: 13px;' href='https://forms.gle/NX9DatcVYjH36Pxy6'>Go Upload Screen Shot </a>
+
+
+						} else {
+							document.getElementById("successtext").innerHTML = "Error Submitting Form.Please retry Filling the form.";
+						}
+					})
+
 			})
+
+
+
 		})
+
+
+
+
 
 
 

@@ -215,13 +215,13 @@
                            <input type="date" name="DOB" id="DOB" placeholder="DOB" required ><br>
                             
                           <label class="mb-2 ml-2" for="Semester">Semester</label><br>
-                            <select id="Semester" name="Semester" required onclick="updateAmt()">
+                            <select id="Semester" name="Semester" required onclick="updateAmt()" required>
                             <!-- <select id="Semester" name="Semester" required > -->
                               <option value="null" hidden>Select Semester</option>
-                              <option value="S1">S1</option>
-                              <option value="S3">S3</option>
-                              <option value="S5">S5</option>
-                              <option value="S7">S7</option>
+                              <option value="S2">S2</option>
+                              <option value="S4">S4</option>
+                              <option value="S6">S6</option>
+                              <option value="S8">S8</option>
                            </select>
 
 
@@ -298,11 +298,10 @@
   							
 							  
 
-
-                        	<div class="d-flex justify-content-center">
-                        	<div id="process" class="spinner-border" role="status" style="display: none;width: 2rem;">
- 								 <span class="visually-hidden" style="font-size: 1.3em;color: rgb(29, 182, 18);;">Loading...</span>
-							</div>
+							  <div class="d-flex justify-content-center">
+								<div id="process" class="spinner-border" role="status" style="display: none;width: 3.5rem;height: 3.5rem;">
+									<span class="visually-hidden" style="font-size: 3.5rem;color: rgb(29, 182, 18);">Loading...</span>
+								</div>
 							</div>
 							<br>
 
@@ -325,7 +324,7 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 							<!-- MAIN IFRAME <iframe src="https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFAO8_HBvr_HgBl_AljiLM1VFM7k-xeQ/exec"  width="100%" height="250px"  style="margin-top: 12px;"></iframe> -->
 							<div>
                                 <br>
-							<label class="mb-2 ml-2" for="image" ><b>SCREENSHOT OF PAYMENT*<aaa style="color:rgb(214, 91, 20);">(Required Size Below 2 MB)</aaa></b></label><br>
+							<label class="mb-2 ml-2" for="image" ><b>SCREENSHOT OF PAYMENT*<aaa style="color:rgb(214, 91, 20);"></aaa></b></label><br>
                             <input name="image" id="image" placeholder="Image or PDF" type="file" accept="image/*,application/pdf" required>
                             <img src="" style="aspect-ratio:auto;max-height: 100px;"align="center" id="drive" alt="">
                             </div>
@@ -333,12 +332,18 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 
 							 	<!-- <label for="signature"   class="mb-2 ml-2">Upload Your Signature</label>
 							    <input type="file" name="signature" id="signature" required > -->
-						 <br>
 
 						 <p style="font-size: 1.2em">
 						If any doubts ,,,,
+						<br><a style="font-size: 1.2rem;font-weight: lighter;" href="https://wa.me/+918714317709">📞Nithin A</a>
+						<br><a style="font-size: 1.2rem;font-weight: lighter;" href="https://wa.me/+918606361862">📞Aiswarya Lakshmi</a>
+						<!-- // before
+												If any doubts ,,,,
 						<br>📞Nithin A : 871431 7709
 						<br>📞Aiswarya Lakshmi : 86063 61862</p>
+
+ -->
+					</p>
 								
 
 
@@ -395,7 +400,7 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 		function a()
 		{
 			document.getElementById("process").style.display="block";
-			document.getElementById("successtext").innerHTML="Submitting form...Please dont panic if stuck!!";
+			document.getElementById("successtext").innerHTML="Submitting form...Please dont panic if stuck!!<br>Please wait while the file is being uploaded...";
 		}
 		document.getElementById("istecall").addEventListener('submit',a);
 
@@ -439,12 +444,12 @@ var address=document.getElementById("Address").value;
 var membership=document.getElementById("FULL").value;
 var phone=document.getElementById("PhoneNumber").value;
 let file =document.getElementById("image");
-let img= document.getElementById("drive");
+// let img= document.getElementById("drive");
     let fr=new FileReader();
     fr.readAsDataURL(file.files[0]);
     fr.addEventListener('loadend',()=>{
         let res=fr.result;
-        img.src=res;
+        // img.src=res;
         let glob=res.split("base64,")[1];
         let obj={
         fullName:fullName,
@@ -470,12 +475,12 @@ let img= document.getElementById("drive");
     }) .then(r=>r.text()) .then(data=>{
         if(data=="success"){
             
-            document.getElementById("process").style.display="none";
-            document.getElementById("successtext").innerHTML="Form submitted Successfully!";
-			document.getElementById("istecall").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4><br><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca\";'>Join Our Whatsapp Group</button></a>";
+document.getElementById("process").style.display="none";
+document.getElementById("successtext").innerHTML="Form submitted Successfully!";
+document.getElementById("istecall").innerHTML = "<h4 id='successtextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4><br><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code: CNRB0006200<br>Account number: 2791120000002<br>Gpay/PhonePe/Paytm: 9447475576<br>UPI id: aryamgupthan@okicici</p><a href='https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca\";'>Join Our Whatsapp Group</button></a>";
 
-			var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"
-              temp = temp +"<p style='font-size: 1.2em'>Account holder name : UTHARA MURALI U<br>IFSC code : SBIN0071192<br>Account number : 39371924444<br>Gpay / Phonepay / Paytm  : 62383 52197<br>UPI id  : uthara159@oksbi</p><br><br><br><div id='ttlamt'></div>"		
+var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"
+temp = temp +"<p style='font-size: 1.2em'>Account holder name : ARYA M GUPTHAN<br>IFSC code: CNRB0006200<br>Account number: 2791120000002<br>Gpay/PhonePe/Paytm: 9447475576<br>UPI id: aryamgupthan@okicici</p><br><br><br><div id='ttlamt'></div>"		
                           
 
                       
@@ -589,7 +594,7 @@ let img= document.getElementById("drive");
 
             fr.onload = (e) => {
                 let res = e.target.result;
-                img.src = res;
+                // img.src = res;
                 let glob = res.split("base64,")[1];
             };
 

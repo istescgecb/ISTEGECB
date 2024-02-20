@@ -192,7 +192,7 @@
         <div class="event-card-on-reg-page on-contact">
             <div class="event-card event-card-reg mb-5 membership-form-card" style="background: #5449a447; backdrop-filter: blur(6px);">
             	<div class="membership-form-wrapper">
-            		
+
              	
             	<form id="istecall"   action="" style="width:100%">
             		<div class="event-card-body event-card-body-reg" style="width: 100%; height: auto;  background: transparent;">
@@ -354,6 +354,14 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 
 	<!-- Initialize Swiper -->
 	<script>
+
+		// registration ended
+		const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
+membershipFormWrapper.innerHTML = `
+	<h1 style="color: white;">Membership</h1>
+	<p style="color: white;">Membership For 2022-23 has been officially closed.</p>
+`;
+
 
 		function openQR1()
 		{
