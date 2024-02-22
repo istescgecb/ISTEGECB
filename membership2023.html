@@ -20,6 +20,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link
+		href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+		rel="stylesheet">
+	
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/main.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
@@ -424,8 +428,7 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
         total = parseInt(BARTONOIDZ.value);
         labelBARTONOIDZ.style = 'display: block;font-weight: bold;color:forestgreen;font-size:1.2rem;'; // set color to forest green
     } else {
-        labelBARTONOIDZ.style = 'display: block;font-weight: 600;font-size:1.2rem;'; 
-    }
+		labelBARTONOIDZ.style = 'display: block; font-weight: bold; font-size: 1.2rem; color: white; background-color: transparent; padding: 10px; border: 2px solid black;';    }
 
     ttlamt.style.fontWeight = '600'; // set font weight to 600
     ttlamt.style.fontSize = '1.35rem'; // set font size to 1.35rem
@@ -562,13 +565,10 @@ window.onload = updateTotal;
 
 							document.getElementById("process").style.display = "none";
 							document.getElementById("successtext").innerHTML = "Form submitted Successfully!";
-							document.getElementById("istecall").innerHTML = "<h4 id='successtextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4><br><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code: CNRB0006200<br>Account number: 2791120000002<br>Gpay/PhonePe/Paytm: 9447475576<br>UPI id: aryamgupthan@okicici</p><a href='https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca\";'>Join Our Whatsapp Group</button></a>";
+							document.getElementById("istecall").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;padding-top:10px;'>Form submitted Successfully!</h4><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='		https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW\";'>Join Our Whatsapp Group</button></a>";
 
 							var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"
 							temp = temp + "<p style='font-size: 1.2em'>Account holder name : ARYA M GUPTHAN<br>IFSC code: CNRB0006200<br>Account number: 2791120000002<br>Gpay/PhonePe/Paytm: 9447475576<br>UPI id: aryamgupthan@okicici</p><br><br><br><div id='ttlamt'></div>"
-
-
-
 							//<br><a class='theme-btn gradient' style='margin-left: 14%;padding: 3px 11px;border-radius: 13px;' href='https://forms.gle/NX9DatcVYjH36Pxy6'>Go Upload Screen Shot </a>
 
 

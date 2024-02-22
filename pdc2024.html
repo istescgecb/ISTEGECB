@@ -501,16 +501,7 @@
 
 
 								<br>
-								<div class="register-detail">
-									<h6 style="font-size: 1.5em;color: rgb(214, 91, 20);">REGISTRATION DETIAILS</h6>
-									<p style="font-size: 1.2em">
-										▪️For <i>ISTE bartonoidz</i> members <i>₹50 per team</i> <br>
-										▪️For teams with at least 1 <i>Non-ISTE</i> member <i>₹150 per team</i>
-									</p>
 
-									</h6>
-
-								</div>
 
 								<div class="account-details">
 									<h6 style="font-size: 1.5em;color: rgb(214, 91, 20);">PAYMENT DETAILS</h6>
@@ -521,9 +512,12 @@
 											style="user-select: all;font: inherit;">2791120000002</span><br>
 										Gpay/PhonePe/Paytm: <span
 											style="user-select: all;font: inherit;">9447475576</span><br>
-										UPI ID: <a id="upiLink"
-											style="user-select: all;font: inherit;padding: inherit;">aryamgupthan@okicici</a>
+										UPI ID: <span
+											style="user-select: all;font: inherit;padding: inherit;">aryamgupthan@okicici</span>
+
 									</p>
+
+
 								</div>
 								<!-- <span onclick="openQR1()" id="PhonePebtn1">PhonePe QR</span>
   								<img id="PhonePeqr1" src="assets/img/paymentqr/phonepe.png" style="display:none; width: 90%;">
@@ -540,23 +534,43 @@
 
 
 
-								<div class="d-flex justify-content-center">
-									<div id="process" class="spinner-border" role="status"
-										style="display: none;width: 2rem;">
-										<span class="visually-hidden"
-											style="font-size: 1.3em;color: rgb(29, 182, 18);">Loading...</span>
-									</div>
-								</div>
+								<br>
+
 
 
 								<!-- <h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Upload Files after submit</h4>  -->
-								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Complete
-									Payment and Upload Screen Shot of Payment before submit</h4>
+
+
+								<div class="register-detail">
+									<h6 style="font-size: 1.5em;color: rgb(214, 91, 20);">REGISTRATION DETIAILS</h6>
+									<p style="font-size: 1.2em">
+										▪️<b>For teams</b>
+										with <b>all ISTE Members</b> members <b>₹50 per team</b> <br>
+										▪️<b>For teams</b>
+										with <b>atleast 1 </b><b>Non-ISTE</b> member <b>₹150 per team</b>
+									</p>
+
+									</h6>
+
+								</div>
 
 								<div id="ttlamt" style="font-size: 1.2em;color:rgb(214, 91, 20);">
 								</div>
+								<div id="UPI">
 
+								</div>
+								<br>
 
+								<div class="d-flex justify-content-center">
+									<div id="process" class="spinner-border" role="status"
+										style="display: none;width: 3.5rem;height: 3.5rem;">
+										<span class="visually-hidden"
+											style="font-size: 3.5rem;color: rgb(29, 182, 18);">Loading...</span>
+									</div>
+								</div>
+
+								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Complete
+									Payment and Upload Screen Shot of Payment before submit</h4>
 
 
 								<div>
@@ -602,21 +616,69 @@
 		function setUPILink() {
 			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 			var teamNameInput = document.getElementById('teamname');
-			var upiLink = document.getElementById('upiLink');
-
+			var UPI = document.getElementById('UPI');
 			if (isMobile) {
-				var teamName = teamNameInput.value ? teamNameInput.value : "Default Team Name";
-				var url = "upi://pay?pn=" + encodeURIComponent("PDC reg for TeamName " + teamName + " Rs." + updateTotal()) + "&pa=aryamgupthan@okicici&cu=INR";
-				upiLink.href = url;
+				var teamName = teamNameInput.value ? "of " + teamNameInput.value : "";
+				UPI.classList.add("call", "mb-2", "mt-0");
+				UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
+				UPI.innerHTML = `
+    <a  id="upiLink" class="iste-btn__inner" style="display: flex; justify-content: center; align-items: center; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: all 0.15s ease;">
+        <img class="mysvg" src="assets/svg/upi.svg" alt="iste gecbh" style="width: auto; max-height: 1.7rem;">
+        <i> PAY NOW </i>
+    </a>
+`.trim();
 
+				var upiLink = document.getElementById('upiLink');
+				var url = "upi://pay?pn=" + encodeURIComponent("PDC reg " + teamName + "Total  Rs." + updateTotal()) + "&pa=aryamgupthan@okicici&cu=INR&am=" + updateTotal();
+				upiLink.href = url;
 			}
 		}
 
-		var teamNameInput = document.getElementById('teamname');
 
-		teamNameInput.addEventListener('change', function () {
-			setUPILink();
+
+
+
+
+		// event listeners
+		var elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
+
+		for (var i = 0; i < elements.length; i++) {
+			document.getElementById(elements[i]).addEventListener('change', () => {
+				updateTotal();
+				//	setUPILink();
+
+			});
+		}
+		var elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
+
+		function checkAllIste() {
+			var allSelected = elements.every(function (id) {
+				var select = document.getElementById(id);
+				localStorage.setItem(id, select.value);
+				return select.value !== "";
+			});
+
+			if (allSelected) {
+				alert("Please make sure all fields are correct!!!");
+				setUPILink();
+			} 
+		}
+
+		elements.forEach(function (id) {
+			document.getElementById(id).addEventListener('change', checkAllIste);
 		});
+
+		window.onload = function () {
+			elements.forEach(function (id) {
+				var select = document.getElementById(id);
+				select.value = localStorage.getItem(id) || "";
+			});
+			checkAllIste();
+		};
+
+
+
+
 
 
 		//total amount
@@ -626,7 +688,7 @@
 			var isIste3 = document.getElementById('is-iste3').value.toLowerCase();
 			var isIste4 = document.getElementById('is-iste4').value.toLowerCase();
 
-			//console.log(isIste, isIste2, isIste3, isIste4); // log the values to the console
+			//console.log(isIste, isIste2, isIste3, isIste4); 
 
 			var total = 150; // default total
 
@@ -641,7 +703,7 @@
 			return total;
 		}
 
-		window.onload = updateTotal;
+		window.onload = updateTotal, setUPILink;
 
 
 		function openQR1() {
@@ -665,9 +727,6 @@
 			document.getElementById("PhonePebtn2").innerHTML = "Gpay QR";
 			document.getElementById("PhonePeqr2").style.display = "none";
 		}
-
-
-
 		function a() {
 			document.getElementById("process").style.display = "block";
 			document.getElementById("successtext").innerHTML = "Submitting form...Please dont panic if stuck!!";
@@ -677,8 +736,6 @@
 
 
 		//for upload document
-
-
 		let fileInput = document.getElementById("image");
 		let file = document.getElementById("image");
 
@@ -706,10 +763,8 @@
 		let url = "https://script.google.com/macros/s/AKfycbzRKmpy2RShTWuMRYVKWhidwQWvC-m7i03aG8kKAmeXWf9Yzh5eba96tJISSmAsjb7Y/exec";
 		$("#pdcform").submit((e) => {
 			e.preventDefault();
-
 			var semMember2 = document.getElementById("sem-member2");
-
-			var teamName = document.getElementsByName('teamname')[0].value;
+			var teamName = document.getElementById('teamname');
 			var firstProject = document.getElementById('firstproject').value;
 			var secondProject = document.getElementById('secondproject').value;
 			var thirdProject = document.getElementById('thirdproject').value;
@@ -790,12 +845,10 @@
 						if (data == "success") {
 
 							document.getElementById("process").style.display = "none";
-							document.getElementById("successtext").innerHTML = "<>Form submitted Successfully!";
-							document.getElementById("pdcform").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;'>Form submitted Successfully!</h4><br><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='		https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW\";'>Join Our Whatsapp Group</button></a>";
+							document.getElementById("successtext").innerHTML = "Form submitted Successfully!"; // doesnt matter
+							document.getElementById("pdcform").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;padding-top:10px;'>Form submitted Successfully!</h4><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='		https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW\";'>Join Our Whatsapp Group</button></a>";
 
 							var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"
-
-
 
 							//<br><a class='theme-btn gradient' style='margin-left: 14%;padding: 3px 11px;border-radius: 13px;' href='https://forms.gle/NX9DatcVYjH36Pxy6'>Go Upload Screen Shot </a>
 
@@ -810,13 +863,6 @@
 
 
 		})
-
-
-
-
-
-
-
 
 
 
