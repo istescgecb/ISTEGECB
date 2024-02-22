@@ -239,8 +239,12 @@
 
 
 										For more details contact:
-										<br><a href="https://wa.me/+918590464162" target="_blank" style="text-decoration: none;font: inherit;padding: inherit;">    📲<i>Abhinav MB: 8590464162</i></a><br>
-										<a href="https://wa.me/+916238816968" target="_blank" style="text-decoration: none;font: inherit;padding: inherit;">     📲<i>Allen Bobby: 6238816968</i></a>
+										<br><a href="https://wa.me/+918590464162" target="_blank"
+											style="text-decoration: none;font: inherit;padding: inherit;"> 📲<i>Abhinav
+												MB: 8590464162</i></a><br>
+										<a href="https://wa.me/+916238816968" target="_blank"
+											style="text-decoration: none;font: inherit;padding: inherit;"> 📲<i>Allen
+												Bobby: 6238816968</i></a>
 									</div>
 								</div>
 								<p style="font-size: 1.3em">All field are Mandatory</p>
@@ -254,8 +258,8 @@
 
 
 								<label for="teamname" class="mb-2 ml-2">Team Name</label>
-								<input placeholder="Your Team Name" name="teamname" type="text" tabindex="1"
-									autofocus="" required="">
+								<input placeholder="Your Team Name" name="teamname" id="teamname" type="text"
+									onchange="" tabindex="1" autofocus="" required="">
 
 
 
@@ -356,7 +360,8 @@
 									</select>
 
 									<label for="Are You Iste" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select id="isIste" name="Are You ISTE" autofocus="" required="">
+									<select id="isIste" name="Are You ISTE" onclick="updateTotal()" autofocus=""
+										required="">
 										<option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
@@ -398,7 +403,8 @@
 
 
 									<label for="Are You Iste1" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select name="Are You Iste1" id="is-iste2" autofocus="" required="">
+									<select name="Are You Iste1" id="is-iste2" onclick="updateTotal()" autofocus=""
+										required="">
 										<option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
@@ -439,7 +445,8 @@
 
 
 									<label for="Are You Iste2" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select name="Are You Iste2" id="is-iste3" autofocus="" required="">
+									<select name="Are You Iste2" id="is-iste3" autofocus="" onchange="updateTotal()"
+										required="">
 										<option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
@@ -481,7 +488,8 @@
 
 
 											<label for="Are You Iste3" class="mb-2 ml-2">Are you an ISTE member?</label>
-											<select name="Are You Iste3" id="is-iste4" autofocus="" required="">
+											<select name="Are You Iste3" id="is-iste4" autofocus=""
+												onchange="updateTotal()" required="">
 												<option value="" hidden="">Select option</option>
 												<option value="Yes">YES</option>
 												<option value="No">NO</option>
@@ -496,8 +504,8 @@
 								<div class="register-detail">
 									<h6 style="font-size: 1.5em;color: rgb(214, 91, 20);">REGISTRATION DETIAILS</h6>
 									<p style="font-size: 1.2em">
-▪️For <i>ISTE bartonoidz</i> members <i>₹50 per team</i> <br>
-▪️For teams with at least 1 <i>Non-ISTE</i> member <i>₹150 per team</i>
+										▪️For <i>ISTE bartonoidz</i> members <i>₹50 per team</i> <br>
+										▪️For teams with at least 1 <i>Non-ISTE</i> member <i>₹150 per team</i>
 									</p>
 
 									</h6>
@@ -506,18 +514,23 @@
 
 								<div class="account-details">
 									<h6 style="font-size: 1.5em;color: rgb(214, 91, 20);">PAYMENT DETAILS</h6>
-									<p style="font-size: 1.2em" style="user-select: none;">
+									<p style="font-size: 1.2em">
 										Account holder name : ARYA M GUPTHAN<br>
-										IFSC code: <span style="user-select: all;font: inherit;"></span>CNRB0006200</span><br>
-										Account number: <span style="user-select: all;font: inherit;">2791120000002</span><br>
-										Gpay/PhonePe/Paytm: <span style="user-select: all;font: inherit;">9447475576</span><br>
-										UPI id: <span style="user-select: all;font: inherit;">aryamgupthan@okicici</span>
+										IFSC code: <span style="user-select: all;font: inherit;">CNRB0006200</span><br>
+										Account number: <span
+											style="user-select: all;font: inherit;">2791120000002</span><br>
+										Gpay/PhonePe/Paytm: <span
+											style="user-select: all;font: inherit;">9447475576</span><br>
+										UPI ID: <a id="upiLink"
+											style="user-select: all;font: inherit;padding: inherit;">aryamgupthan@okicici</a>
 									</p>
-									<!-- <span onclick="openQR1()" id="PhonePebtn1">PhonePe QR</span>
+								</div>
+								<!-- <span onclick="openQR1()" id="PhonePebtn1">PhonePe QR</span>
   								<img id="PhonePeqr1" src="assets/img/paymentqr/phonepe.png" style="display:none; width: 90%;">
   								<span onclick="openQR2()" id="PhonePebtn2">Gpay QR</span>
   								<img id="PhonePeqr2" src="assets/img/paymentqr/gpay.png" style="display:none; width: 90%;"> -->
-								</div>
+
+
 
 
 
@@ -540,9 +553,8 @@
 								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Complete
 									Payment and Upload Screen Shot of Payment before submit</h4>
 
-								<!-- <div id="ttlamt"  style="font-size: 1.2em;color:rgb(214, 91, 20);">
-                                  Total Amount - ISTE + BARTONOIDZ + BARTONAIR : Rs. 700/-
-                              </div> -->
+								<div id="ttlamt" style="font-size: 1.2em;color:rgb(214, 91, 20);">
+								</div>
 
 
 
@@ -559,31 +571,77 @@
 								<br>
 
 							</div>
-							<br>
+
 
 
 
 							<p style="font-size: 1.2rem;">
 								If any doubts ,,,,
 								<br><a style="font-size: 1.2rem;font-weight: lighter;"
-									href="https://wa.me/+918590464162" target="_blank" style="font: inherit;">📲Abhinav MB: 8590464162</a>
+									href="https://wa.me/+918590464162" target="_blank" style="font: inherit;">📲Abhinav
+									MB: 8590464162</a>
 								<br><a style="font-size: 1.2rem;font-weight: lighter;"
-									href="https://wa.me/+916238816968" target="_blank" style="font: inherit;">📲Allen Bobby: 6238816968</a>
+									href="https://wa.me/+916238816968" target="_blank" style="font: inherit;">📲Allen
+									Bobby: 6238816968</a>
 							</p>
-						<input type="submit" value="Submit" class="theme-btn gradient mt-3"
-							style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;">
-				</div>
-				</form>
+							<input type="submit" value="Submit" class="theme-btn gradient mt-3"
+								style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;">
+						</div>
+					</form>
 
+				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 	<!-- Initialize Swiper -->
 	<script>
+		// for opening upiLink on mobiles only
+		function setUPILink() {
+			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+			var teamNameInput = document.getElementById('teamname');
+			var upiLink = document.getElementById('upiLink');
+
+			if (isMobile) {
+				var teamName = teamNameInput.value ? teamNameInput.value : "Default Team Name";
+				var url = "upi://pay?pn=" + encodeURIComponent("PDC reg for TeamName " + teamName + " Rs." + updateTotal()) + "&pa=aryamgupthan@okicici&cu=INR";
+				upiLink.href = url;
+
+			}
+		}
+
+		var teamNameInput = document.getElementById('teamname');
+
+		teamNameInput.addEventListener('change', function () {
+			setUPILink();
+		});
+
+
+		//total amount
+		function updateTotal() {
+			var isIste = document.getElementById('isIste').value.toLowerCase();
+			var isIste2 = document.getElementById('is-iste2').value.toLowerCase();
+			var isIste3 = document.getElementById('is-iste3').value.toLowerCase();
+			var isIste4 = document.getElementById('is-iste4').value.toLowerCase();
+
+			//console.log(isIste, isIste2, isIste3, isIste4); // log the values to the console
+
+			var total = 150; // default total
+
+			if (isIste === "yes" || isIste2 === "yes" || isIste3 === "yes" || isIste4 === "yes") {
+				total = 50;
+
+			}
+
+			var ttlamt = document.getElementById('ttlamt');
+			ttlamt.style.fontWeight = 'bold';
+			ttlamt.innerHTML = 'Total Amount - ₹' + total + '/-';
+			return total;
+		}
+
+		window.onload = updateTotal;
 
 
 		function openQR1() {
@@ -661,29 +719,24 @@
 			var semester = document.getElementById('Semester').value;
 			var branch = document.getElementById('Branch').value;
 			var isIste = document.getElementById('isIste').value;
-
+			var isIste3 = document.getElementById("is-iste3").value;
+			var isIste4 = document.getElementById("is-iste4").value;
+			var isIste2 = document.getElementById("is-iste2").value;
 			var teamMember2 = document.getElementById("team-member2").value;
-
 			var mobileMember2 = document.getElementById("mobile-member2").value;
 			var emailMember2 = document.getElementById("email-member2").value;
 			var semMember2 = document.getElementById("sem-member2").value;
 			var branchMember2 = document.getElementById("branch-member2").value;
-			var isIste2 = document.getElementById("is-iste2").value;
-
 			var teamMember3 = document.getElementById("team-member3").value;
 			var mobileMember3 = document.getElementById("mobile-member3").value;
 			var emailMember3 = document.getElementById("email-member3").value;
 			var semMember3 = document.getElementById("sem-member3").value;
 			var branchMember3 = document.getElementById("branch-member3").value;
-			var isIste3 = document.getElementById("is-iste3").value;
-
 			var teamMember4 = document.getElementById("team-member4").value;
-
 			var mobileMember4 = document.getElementById("mobile-member4").value;
 			var emailMember4 = document.getElementById("email-member4").value;
 			var semMember4 = document.getElementById("sem-member4").value;
 			var branchMember4 = document.getElementById("branch-member4").value;
-			var isIste4 = document.getElementById("is-iste4").value;
 			let file = document.getElementById("image");
 
 			// let img= document.getElementById("drive");
