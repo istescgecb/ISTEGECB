@@ -17,6 +17,7 @@
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,6 +25,7 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
 	<title>ISTE GECBH</title>
 
 
@@ -338,8 +340,8 @@
 									<input placeholder="Enter Mobile number" name="mobilenumber" type="tel"
 										pattern="[6-9]{1}[0-9]{9}" id="mobilenumber" autofocus="" required="">
 									<label for="Email" class="mb-2 ml-2">Email ID</label>
-									<input placeholder="Enter your Email ID" name="Email" type="text" id="Email"
-										autofocus="" required="">
+									<input placeholder="Enter your Email ID" name="Email" type="email" autofocus=""
+										required="">
 									<label for="Semester" class="mb-2 ml-2">Semester</label>
 									<select id="Semester" name="Semester" autofocus="" required="">
 										<option value="" hidden="">Select semester</option>
@@ -379,7 +381,7 @@
 									<input placeholder="Enter Mobile number" name="mobile member1" type="tel"
 										pattern="[6-9]{1}[0-9]{9}" id="mobile-member2" autofocus="" required="">
 									<label for="Email member1" class="mb-2 ml-2">Email ID</label>
-									<input placeholder="Enter your Email ID" name="Email member1" type="text"
+									<input placeholder="Enter your Email ID" name="Email member1" type="email"
 										id="email-member2" autofocus="" required="">
 									<label for="Sem member1" class="mb-2 ml-2">Semester</label>
 									<select name="Sem member1" id="sem-member2" autofocus="" required="">
@@ -422,7 +424,7 @@
 									<input placeholder="Enter Mobile number" name="mobile member2" type="tel"
 										pattern="[6-9]{1}[0-9]{9}" id="mobile-member3" autofocus="" required="">
 									<label for="email member2" class="mb-2 ml-2">Email ID</label>
-									<input placeholder="Enter your Email ID" name="email member2" type="text"
+									<input placeholder="Enter your Email ID" name="email member2" type="email"
 										id="email-member3" autofocus="" required="">
 									<label for="Sem member2" class="mb-2 ml-2">Semester</label>
 									<select name="Sem member2" id="sem-member3" autofocus="" required="">
@@ -465,7 +467,7 @@
 										pattern="[6-9]{1}[0-9]{9}" id="mobile-member4" autofocus="" required="">
 
 									<label for="Email member3" class="mb-2 ml-2">Email ID</label>
-									<input placeholder="Enter your Email ID" name="Email member3" type="text"
+									<input placeholder="Enter your Email ID" name="Email member3" type="email"
 										id="email-member4" autofocus="" required="">
 									<label for="Sem member3" class="mb-2 ml-2">Semester</label>
 									<select name="Sem member3" id="sem-member4" autofocus="" required="">
@@ -540,13 +542,13 @@
 									</h6>
 
 								</div>
-<!-- =============================================================================================================================================================
+								<!-- =============================================================================================================================================================
 ========================================TOTAL AMOUNT || UPI PAYMENT BUTTON ================================================================================
 ================================================================================================================================ ========================================-->
 								<div style="font-size: 1.2em;  background: #5a54f37c;max-width: 100%; border-radius: 20px; padding: 10px;"
 									align="center">
 									<div id="ttlamt">
-
+										Total Amount - ₹150/-
 									</div>
 									<div id="UPI">
 
@@ -610,11 +612,18 @@
 
 	<!-- Initialize Swiper -->
 	<script>
+		let previousTotal = 150; // history
+
 		// for opening upiLink on mobiles only
 		function setUPILink() {
 			// Update total amount header ttlamt
 			const total = updateTotal();
-			// List of elements
+			// Check if total has changed
+			if (total !== previousTotal) {
+				alert("Make sure all details are correct before SUBMISSION (>_<)");
+
+				previousTotal = total;
+			}
 			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
 
 			// Check if all elements have some value
@@ -628,7 +637,7 @@
 			var teamNameInput = document.getElementById('teamname');
 			var UPI = document.getElementById('UPI');
 			if (isMobile) {
-				var teamName = teamNameInput.value ? "of " + teamNameInput.value : "";
+				var teamName = teamNameInput.value ? "of " + teamNameInput.value +" " : "";
 				UPI.classList.add("call", "mb-2", "mt-0");
 				UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
 				UPI.innerHTML = `
@@ -816,8 +825,7 @@
 
 							document.getElementById("process").style.display = "none";
 							document.getElementById("successtext").innerHTML = "Form submitted Successfully!"; // doesnt matter
-							document.getElementById("pdcform").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;padding-top:10px;'>Form submitted Successfully!</h4><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='		https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW\";'>Join Our Whatsapp Group</button></a>";
-
+							document.getElementById("pdcform").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;padding-top:10px;'>Form submitted Successfully!</h4><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='https://chat.whatsapp.com/D8K6IDXKEos0F5H2DsXIdy'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; padding-bottom:10px;' onclick='window.location.href=\"https://chat.whatsapp.com/D8K6IDXKEos0F5H2DsXIdy\";'>Join Our Whatsapp Group</button></a>";
 							var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"
 
 							//<br><a class='theme-btn gradient' style='margin-left: 14%;padding: 3px 11px;border-radius: 13px;' href='https://forms.gle/NX9DatcVYjH36Pxy6'>Go Upload Screen Shot </a>
@@ -833,7 +841,6 @@
 
 
 		})
-
 
 
 		var swiper = new Swiper(".mySwiper", {

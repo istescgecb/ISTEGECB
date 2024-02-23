@@ -352,7 +352,7 @@
 								<br>
 								<div style="font-size: 1.2em;  background: #5a54f37c;max-width: 100%; border-radius: 20px; padding: 10px;"
 									align="center">
-									<div id="ttlamt" >
+									<div id="ttlamt">
 										Total Amount - ISTE + BARTONAIR : ₹300/-
 									</div>
 									<div id="UPI">
@@ -464,18 +464,18 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 			});
 
 			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-			if(isMobile){
+			if (isMobile) {
 				ttlamt.style.fontSize = '1.4rem';
-			if (total === 700)
-				ttlamt.innerHTML = 'Total Amount - ₹700/-';
-			else
-				ttlamt.innerHTML = 'Total Amount - ₹300/-';
-			}else{
 				if (total === 700)
-				ttlamt.innerHTML = ' ISTE + BARTONOIDZ + BARTONAIR <br> Total Amount : ₹700/-';
+					ttlamt.innerHTML = 'Total Amount - ₹700/-';
+				else
+					ttlamt.innerHTML = 'Total Amount - ₹300/-';
+			} else {
+				if (total === 700)
+					ttlamt.innerHTML = ' ISTE + BARTONOIDZ + BARTONAIR <br> Total Amount : ₹700/-';
 
-			else
-				ttlamt.innerHTML = 'Total Amount - ISTE + BARTONAIR : ₹300/-';
+				else
+					ttlamt.innerHTML = 'Total Amount - ISTE + BARTONAIR : ₹300/-';
 			}
 			setUPILink(total);
 		}
@@ -490,8 +490,8 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 			var UPI = document.getElementById('UPI');
 			if (isMobile) {
-				var name  =document.getElementById("name").value.trim()
-				 name = name.value ? " for " + name.value : "";
+				var name = document.getElementById("name").value.trim()
+				name = name.value ? " for " + name.value : "";
 				UPI.classList.add("call", "mb-2", "mt-0");
 				UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
 				UPI.innerHTML = `
@@ -500,9 +500,9 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 						<i> PAY NOW </i>
 					</a> `.trim();
 				var upiLink = document.getElementById('upiLink');
-				if(total ===300)
-				var url = "upi://pay?pn=" + encodeURIComponent("ISTE+BARTONAIR"+" INR " +total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
-				if (total===700)var url = "upi://pay?pn=" + encodeURIComponent("ISTE FULL MEMBERSHIP"+ name +"INR " +total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
+				if (total === 300)
+					var url = "upi://pay?pn=" + encodeURIComponent("ISTE+BARTONAIR" + " INR " + total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
+				if (total === 700) var url = "upi://pay?pn=" + encodeURIComponent("ISTE FULL MEMBERSHIP" + name + " INR " + total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
 				upiLink.href = url;
 			}
 		}
