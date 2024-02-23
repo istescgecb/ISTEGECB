@@ -519,23 +519,10 @@
 
 
 								</div>
-								<!-- <span onclick="openQR1()" id="PhonePebtn1">PhonePe QR</span>
-  								<img id="PhonePeqr1" src="assets/img/paymentqr/phonepe.png" style="display:none; width: 90%;">
-  								<span onclick="openQR2()" id="PhonePebtn2">Gpay QR</span>
-  								<img id="PhonePeqr2" src="assets/img/paymentqr/gpay.png" style="display:none; width: 90%;"> -->
-
-
-
-
-
-
-								<!-- <iframe src="https://script.google.com/macros/s/AKfycbxAc64G6173OTJhMlrGZuuCBEyDWdqtOPGSVQyiuiZDBQY7BTc/exec" width="100%" height="450px" style="margin-top: 12px;"></iframe> -->
-
 
 
 
 								<br>
-
 
 
 								<!-- <h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Upload Files after submit</h4>  -->
@@ -553,12 +540,21 @@
 									</h6>
 
 								</div>
+<!-- =============================================================================================================================================================
+========================================TOTAL AMOUNT || UPI PAYMENT BUTTON ================================================================================
+================================================================================================================================ ========================================-->
+								<div style="font-size: 1.2em;  background: #5a54f37c;max-width: 100%; border-radius: 20px; padding: 10px;"
+									align="center">
+									<div id="ttlamt">
 
-								<div id="ttlamt" style="font-size: 1.2em;color:rgb(214, 91, 20);">
-								</div>
-								<div id="UPI">
+									</div>
+									<div id="UPI">
+
+
+									</div>
 
 								</div>
+
 								<br>
 
 								<div class="d-flex justify-content-center">
@@ -568,9 +564,11 @@
 											style="font-size: 3.5rem;color: rgb(29, 182, 18);">Loading...</span>
 									</div>
 								</div>
+								<br>
 
-								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Complete
-									Payment and Upload Screen Shot of Payment before submit</h4>
+								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">
+									Please Upload Screen Shot of Payment before submit
+								</h4>
 
 
 								<div>
@@ -614,6 +612,18 @@
 	<script>
 		// for opening upiLink on mobiles only
 		function setUPILink() {
+			// Update total amount header ttlamt
+			const total = updateTotal();
+			// List of elements
+			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
+
+			// Check if all elements have some value
+			const allHaveValue = elements.every(id => document.getElementById(id).value.trim() !== "");
+
+			// If not all elements have some value, return to exit the function
+			if (!allHaveValue) {
+				return;
+			}
 			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 			var teamNameInput = document.getElementById('teamname');
 			var UPI = document.getElementById('UPI');
@@ -622,88 +632,48 @@
 				UPI.classList.add("call", "mb-2", "mt-0");
 				UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
 				UPI.innerHTML = `
-    <a  id="upiLink" class="iste-btn__inner" style="display: flex; justify-content: center; align-items: center; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: all 0.15s ease;">
-        <img class="mysvg" src="assets/svg/upi.svg" alt="iste gecbh" style="width: auto; max-height: 1.7rem;">
-        <i> PAY NOW </i>
-    </a>
-`.trim();
-
+					<a  id="upiLink" class="iste-btn__inner" style="display: flex; justify-content: center; align-items: center; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: all 0.15s ease;">
+						<img class="mysvg" src="assets/svg/upi.svg" alt="iste gecbh" style="width: auto; max-height: 1.7rem;">
+						<i> PAY NOW </i>
+					</a> `.trim();
 				var upiLink = document.getElementById('upiLink');
-				var url = "upi://pay?pn=" + encodeURIComponent("PDC reg " + teamName + "Total  Rs." + updateTotal()) + "&pa=aryamgupthan@okicici&cu=INR&am=" + updateTotal();
+				var url = "upi://pay?pn=" + encodeURIComponent("PDC reg " + teamName + "Total  Rs." + total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
 				upiLink.href = url;
 			}
 		}
 
 
-
-
-
-
-		// event listeners
-		var elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
-
-		for (var i = 0; i < elements.length; i++) {
-			document.getElementById(elements[i]).addEventListener('change', () => {
-				updateTotal();
-				//	setUPILink();
-
-			});
-		}
-		var elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
-
-		function checkAllIste() {
-			var allSelected = elements.every(function (id) {
-				var select = document.getElementById(id);
-				localStorage.setItem(id, select.value);
-				return select.value !== "";
-			});
-
-			if (allSelected) {
-				alert("Please make sure all fields are correct!!!");
-				setUPILink();
-			} 
-		}
-
-		elements.forEach(function (id) {
-			document.getElementById(id).addEventListener('change', checkAllIste);
-		});
-
-		window.onload = function () {
-			elements.forEach(function (id) {
-				var select = document.getElementById(id);
-				select.value = localStorage.getItem(id) || "";
-			});
-			checkAllIste();
-		};
-
-
-
-
-
-
-		//total amount
 		function updateTotal() {
-			var isIste = document.getElementById('isIste').value.toLowerCase();
-			var isIste2 = document.getElementById('is-iste2').value.toLowerCase();
-			var isIste3 = document.getElementById('is-iste3').value.toLowerCase();
-			var isIste4 = document.getElementById('is-iste4').value.toLowerCase();
+			// List of elements
+			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
 
-			//console.log(isIste, isIste2, isIste3, isIste4); 
-
-			var total = 150; // default total
-
-			if (isIste === "yes" && isIste2 === "yes" && isIste3 === "yes" && isIste4 === "yes") {
-				total = 50;
-
-			}
-
-			var ttlamt = document.getElementById('ttlamt');
-			ttlamt.style.fontWeight = 'bold';
+			// Check if all elements have the value "yes"
+			const allYes = elements.every(id => document.getElementById(id).value.toLowerCase() === "yes");
+			// Set total based on whether all elements have the value "yes"
+			const total = allYes ? 50 : 150;
+			// Update ttlamt styles and content
+			const ttlamt = document.getElementById('ttlamt');
+			Object.assign(ttlamt.style, {
+				fontSize: '1.5rem',
+				color: 'rgb(255, 255, 255)',
+				textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+				padding: '10px',
+				borderRadius: '5px',
+				fontWeight: '600',
+				textAlign: 'center'
+			});
 			ttlamt.innerHTML = 'Total Amount - ₹' + total + '/-';
+
 			return total;
 		}
+		// event listeners
+		const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
 
-		window.onload = updateTotal, setUPILink;
+		elements.forEach(function (id) {
+			document.getElementById(id).addEventListener('change', () => { setUPILink() });
+		});
+		window.onload = setUPILink();
+
 
 
 		function openQR1() {

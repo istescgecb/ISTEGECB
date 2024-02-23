@@ -20,10 +20,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link
+	<link
 		href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
 		rel="stylesheet">
-	
+
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/main.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
@@ -275,15 +275,23 @@
 								<label class="mb-2 ml-2"
 									style="font-size: 1.8em;font-weight: 400;color: rgb(214, 91, 20);">MEMBERSHIP
 									OPTIONS(EARLY BIRD) </label>
-									<br>
-									<div style="display: block;font-weight: bold;font-size:1.2rem;align-items: center;">
-										<label id="labelBARTONAIR" style="color: forestgreen; padding-top: 10px;font-weight: bold;font-size:1.2rem;"><input type="checkbox" id="BARTONAIR" name="BARTONAIR" value="300" onchange="updateTotal()" style="width: 1.2rem; height: 1.2rem;" checked disabled> ISTE + BARTONAIR: ₹300/-</label>
-										<label id="labelBARTONOIDZ" style="font-weight: bold;font-size:1.2rem;"><input type="checkbox" id="BARTONOIDZ" name="BARTONOIDZ" value="700" onchange="updateTotal()" style="width: 20px; height: 20px;"> ISTE+BARTONOIDZ+BARTONAIR: ₹700/- <label>
-									</div>
-									<p style="font-size: 1.2em">
+								<br>
+								<div
+									style="display: block;font-weight: bold;font-size:1.2rem;align-items: center;overflow-wrap:break-word;">
+									<label id="labelBARTONAIR"
+										style="color: forestgreen; padding-top: 10px;font-weight: bold;font-size:1.2rem;"><input
+											type="checkbox" id="BARTONAIR" name="BARTONAIR" value="300"
+											onchange="updateTotal()" style="width: 1.2rem; height: 1.2rem;" checked
+											disabled> ISTE + BARTONAIR: ₹300/-</label>
+									<label id="labelBARTONOIDZ" style="font-weight: bold;font-size:1.2rem;"><input
+											type="checkbox" id="BARTONOIDZ" name="BARTONOIDZ" value="700"
+											onchange="updateTotal()" style="width: 20px; height: 20px;"> ISTE +
+										BARTONOIDZ + BARTONAIR: ₹700/- <label>
+								</div>
+								<p style="font-size: 1.2em">
 
-									
-			
+
+
 									<!-- <br><span style="font-size: 1.5em;color: rgb(214, 91, 20);font-weight: 400;">Exclusively For FIRST YEARS </span>
 							<br>📢For ISTE + Bartonoidz + Bartonair - ₹800 (For All 4 Years) -->
 
@@ -324,8 +332,9 @@
 											style="user-select: all;font: inherit;">2791120000002</span><br>
 										Gpay/PhonePe/Paytm: <span
 											style="user-select: all;font: inherit;">9447475576</span><br>
-										UPI ID: <a id="upiLink"
-											style="user-select: all;font: inherit;padding: inherit;">aryamgupthan@okicici</a>
+										UPI ID: <span
+											style="user-select: all;font: inherit;padding: inherit;">aryamgupthan@okicici
+											</>
 									</p>
 								</div>
 
@@ -336,24 +345,34 @@
 
 
 
+
+
+
+
+								<br>
+								<div style="font-size: 1.2em;  background: #5a54f37c;max-width: 100%; border-radius: 20px; padding: 10px;"
+									align="center">
+									<div id="ttlamt" >
+										Total Amount - ISTE + BARTONAIR : ₹300/-
+									</div>
+									<div id="UPI">
+
+									</div>
+								</div>
+								<br>
+								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Complete
+									Payment and Upload Screen Shot of Payment before submit</h4>
+								<br>
+
 								<div class="d-flex justify-content-center">
 									<div id="process" class="spinner-border" role="status"
 										style="display: none;width: 3.5rem;height: 3.5rem;">
 										<span class="visually-hidden"
 											style="font-size: 3.5rem;color: rgb(29, 182, 18);">Loading...</span>
+										<br>
 									</div>
 								</div>
-								<br>
 
-
-
-								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Complete
-									Payment and Upload Screen Shot of Payment before submit</h4>
-								<br>
-								<div id="ttlamt" style="font-size: 1.2em;color:rgb(214, 91, 20);">
-									Total Amount -  ISTE + BARTONOIDZ + BARTONAIR : ₹700/- <br>
-									Total Amount - ISTE + BARTONAIR  : ₹300/-
-								</div>
 
 
 
@@ -410,49 +429,84 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 
 	<!-- Initialize Swiper -->
 	<script>
-		
+
 		// for membership ttlamount update
 		function updateTotal() {
-			
 
-    const BARTONOIDZ = document.getElementById('BARTONOIDZ');
-    const BARTONAIR = document.getElementById('BARTONAIR');
-    const labelBARTONAIR = document.getElementById('labelBARTONAIR');
-    const labelBARTONOIDZ = document.getElementById('labelBARTONOIDZ');
-    const ttlamt = document.getElementById('ttlamt');
 
-    let total = parseInt(BARTONAIR.value);; // BARTONAIR is always checked and its value is always added to the total
-    labelBARTONAIR.style.color = 'forestgreen'; // BARTONAIR is always checked, so its label is always forest green
+			const BARTONOIDZ = document.getElementById('BARTONOIDZ');
+			const BARTONAIR = document.getElementById('BARTONAIR');
+			const labelBARTONAIR = document.getElementById('labelBARTONAIR');
+			const labelBARTONOIDZ = document.getElementById('labelBARTONOIDZ');
+			const ttlamt = document.getElementById('ttlamt');
 
-    if (BARTONOIDZ.checked) {
-        total = parseInt(BARTONOIDZ.value);
-        labelBARTONOIDZ.style = 'display: block;font-weight: bold;color:forestgreen;font-size:1.2rem;'; // set color to forest green
-    } else {
-		labelBARTONOIDZ.style = 'display: block; font-weight: bold; font-size: 1.2rem; color: white; background-color: transparent; padding: 10px; border: 2px solid black;';    }
+			let total = parseInt(BARTONAIR.value);// BARTONAIR is always checked and its value is always added to the total
+			labelBARTONAIR.style.color = 'forestgreen'; // BARTONAIR is always checked, so its label is always forest green
 
-    ttlamt.style.fontWeight = '600'; // set font weight to 600
-    ttlamt.style.fontSize = '1.35rem'; // set font size to 1.35rem
-	
-    if (total === 700) {
-        ttlamt.innerHTML = 'Total Amount - <br> ISTE + BARTONOIDZ + BARTONAIR : ₹700/-';
-    } else if (total === 300) {
-        ttlamt.innerHTML = 'Total Amount - <br> ISTE + BARTONAIR  : ₹300/-';
-    } else {
-        ttlamt.innerHTML = 'Please select a membership';
-    }
-}
-window.onload = updateTotal;
+			if (BARTONOIDZ.checked) {
+				total = parseInt(BARTONOIDZ.value);
+				labelBARTONOIDZ.style = 'display: block;font-weight: bold;color:forestgreen;font-size:1.2rem;'; // set color to forest green
+				BARTONOIDZ.innerHTML = 'ISTE + BARTONOIDZ + BARTONAIR: ₹700/-';
+
+			} else {
+				labelBARTONOIDZ.style = 'display: block; font-weight: 600; color: white; background-color: transparent; padding: 10px; border: 1.2px solid #f2f2fe; border-radius: 10px;'
+			}
+			BARTONOIDZ.innerHTML = '<h1> ISTE + BARTONOIDZ + BARTONAIR: ₹700/- <h2>';
+
+			Object.assign(ttlamt.style, {
+				fontSize: '1.35rem',
+				color: 'rgb(255, 255, 255)',
+				textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+				padding: '10px',
+				borderRadius: '5px',
+				fontWeight: '600',
+				textAlign: 'center'
+			});
+
+			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+			if(isMobile){
+				ttlamt.style.fontSize = '1.4rem';
+			if (total === 700)
+				ttlamt.innerHTML = 'Total Amount - ₹700/-';
+			else
+				ttlamt.innerHTML = 'Total Amount - ₹300/-';
+			}else{
+				if (total === 700)
+				ttlamt.innerHTML = ' ISTE + BARTONOIDZ + BARTONAIR <br> Total Amount : ₹700/-';
+
+			else
+				ttlamt.innerHTML = 'Total Amount - ISTE + BARTONAIR : ₹300/-';
+			}
+			setUPILink(total);
+		}
+		window.onload = updateTotal;
 
 
 		// for opening upiLink on mobiles only
-		document.addEventListener('DOMContentLoaded', function () {
-			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)
-			var upiLink = document.getElementById('upiLink');
+		function setUPILink(total) {
+			console.log('setting upi link');
 
+
+			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+			var UPI = document.getElementById('UPI');
 			if (isMobile) {
-				upiLink.href = "upi://pay?pn=ISTE%20Membership%20fee&pa=aryamgupthan@okicici&cu=INR";
+				var name  =document.getElementById("name").value.trim()
+				 name = name.value ? " for " + name.value : "";
+				UPI.classList.add("call", "mb-2", "mt-0");
+				UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
+				UPI.innerHTML = `
+					<a  id="upiLink" class="iste-btn__inner" style="display: flex; justify-content: center; align-items: center; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: all 0.15s ease;">
+						<img class="mysvg" src="assets/svg/upi.svg" alt="iste gecbh" style="width: auto; max-height: 1.7rem;">
+						<i> PAY NOW </i>
+					</a> `.trim();
+				var upiLink = document.getElementById('upiLink');
+				if(total ===300)
+				var url = "upi://pay?pn=" + encodeURIComponent("ISTE+BARTONAIR"+" INR " +total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
+				if (total===700)var url = "upi://pay?pn=" + encodeURIComponent("ISTE FULL MEMBERSHIP"+ name +"INR " +total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
+				upiLink.href = url;
 			}
-		});
+		}
+
 
 
 
@@ -649,21 +703,21 @@ window.onload = updateTotal;
 		// }
 		// }
 
-		function updateAmt() {
-			var p = document.getElementById("FULL");
-			var q = document.getElementById("Semester").value;
+		// function updateAmt() {
+		// 	var p = document.getElementById("FULL");
+		// 	var q = document.getElementById("Semester").value;
 
-			if (p.checked == true && q == "S1") {
-				document.getElementById("ttlamt").innerHTML = "Total Amount - ISTE+BARTONOIDZ+BARTONAIR : Rs.<del>1000</del>  800/-";
-			}
-			else if (p.checked == true && q != "S1") {
-				document.getElementById("ttlamt").innerHTML = "Total Amount - ISTE+BARTONOIDZ+BARTONAIR : Rs.1000/-";
-			}
-			else if (p.checked == false) {
-				document.getElementById("ttlamt").innerHTML = "Total Amount - ISTE+BARTONOIDZ : Rs.700/-"
-			}
+		// 	if (p.checked == true && q == "S1") {
+		// 		document.getElementById("ttlamt").innerHTML = "Total Amount - ISTE+BARTONOIDZ+BARTONAIR : Rs.<del>1000</del>  800/-";
+		// 	}
+		// 	else if (p.checked == true && q != "S1") {
+		// 		document.getElementById("ttlamt").innerHTML = "Total Amount - ISTE+BARTONOIDZ+BARTONAIR : Rs.1000/-";
+		// 	}
+		// 	else if (p.checked == false) {
+		// 		document.getElementById("ttlamt").innerHTML = "Total Amount - ISTE+BARTONOIDZ : Rs.700/-"
+		// 	}
 
-		}
+		// }
 
 		let fileInput = document.getElementById("image");
 		let img = document.getElementById("drive");
