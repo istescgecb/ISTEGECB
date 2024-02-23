@@ -340,7 +340,7 @@
 									<input placeholder="Enter Mobile number" name="mobilenumber" type="tel"
 										pattern="[6-9]{1}[0-9]{9}" id="mobilenumber" autofocus="" required="">
 									<label for="Email" class="mb-2 ml-2">Email ID</label>
-									<input placeholder="Enter your Email ID" name="Email" type="email" autofocus=""
+									<input placeholder="Enter your Email ID" name="Email" type="email" id="Email1" autofocus=""
 										required="">
 									<label for="Semester" class="mb-2 ml-2">Semester</label>
 									<select id="Semester" name="Semester" autofocus="" required="">
@@ -612,23 +612,18 @@
 
 	<!-- Initialize Swiper -->
 	<script>
-		let previousTotal = 150; // history
 
-		// for opening upiLink on mobiles only
+		//UPI PAYMENT BUTTON
+
 		function setUPILink() {
 			// Update total amount header ttlamt
 			const total = updateTotal();
 			// Check if total has changed
-			if (total !== previousTotal) {
-				alert("Make sure all details are correct before SUBMISSION (>_<)");
-
-				previousTotal = total;
-			}
 			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
 
 			// Check if all elements have some value
 			const allHaveValue = elements.every(id => document.getElementById(id).value.trim() !== "");
-
+			if(allHaveValue) alert("Make sure all details are correct before SUBMISSION (>_<)");
 			// If not all elements have some value, return to exit the function
 			if (!allHaveValue) {
 				return;
@@ -653,7 +648,6 @@
 
 
 		function updateTotal() {
-			// List of elements
 			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
 
 			// Check if all elements have the value "yes"
@@ -742,14 +736,13 @@
 		let url = "https://script.google.com/macros/s/AKfycbzRKmpy2RShTWuMRYVKWhidwQWvC-m7i03aG8kKAmeXWf9Yzh5eba96tJISSmAsjb7Y/exec";
 		$("#pdcform").submit((e) => {
 			e.preventDefault();
-			var semMember2 = document.getElementById("sem-member2");
-			var teamName = document.getElementById('teamname');
+			var teamName = document.getElementById('teamname').value;
 			var firstProject = document.getElementById('firstproject').value;
 			var secondProject = document.getElementById('secondproject').value;
 			var thirdProject = document.getElementById('thirdproject').value;
 			var teamLead = document.getElementById('teamlead').value;
 			var mobileNumber = document.getElementById('mobilenumber').value;
-			var email = document.getElementById('Email').value;
+			var email = document.getElementById('Email1').value;
 			var semester = document.getElementById('Semester').value;
 			var branch = document.getElementById('Branch').value;
 			var isIste = document.getElementById('isIste').value;
@@ -823,7 +816,7 @@
 					}).then(r => r.text()).then(data => {
 						if (data == "success") {
 
-							document.getElementById("process").style.display = "none";
+							// document.getElementById("process").style.display = "none";
 							document.getElementById("successtext").innerHTML = "Form submitted Successfully!"; // doesnt matter
 							document.getElementById("pdcform").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;padding-top:10px;'>Form submitted Successfully!</h4><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='https://chat.whatsapp.com/D8K6IDXKEos0F5H2DsXIdy'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; padding-bottom:10px;' onclick='window.location.href=\"https://chat.whatsapp.com/D8K6IDXKEos0F5H2DsXIdy\";'>Join Our Whatsapp Group</button></a>";
 							var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"

@@ -1137,12 +1137,12 @@ select:focus {
 input:invalid:focus{
   /* border-color: #f96773; */
   border: solid 1px #f96773;
-  transition:ease-in-out 0.3s;
+  transition:ease-in-out 10s;
 } 
 select:invalid:focus{
   /* border-color: #f96773; */
   border-color:#f96773;
-  transition:ease-in-out 0.3s;
+  transition:ease-in-out 10s;
 } 
 
 
