@@ -17,7 +17,9 @@
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,7 +27,7 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
+
 	<title>ISTE GECBH</title>
 
 
@@ -340,8 +342,8 @@
 									<input placeholder="Enter Mobile number" name="mobilenumber" type="tel"
 										pattern="[6-9]{1}[0-9]{9}" id="mobilenumber" autofocus="" required="">
 									<label for="Email" class="mb-2 ml-2">Email ID</label>
-									<input placeholder="Enter your Email ID" name="Email" type="email" id="Email1" autofocus=""
-										required="">
+									<input placeholder="Enter your Email ID" name="Email" type="email" id="Email1"
+										autofocus="" required="">
 									<label for="Semester" class="mb-2 ml-2">Semester</label>
 									<select id="Semester" name="Semester" autofocus="" required="">
 										<option value="" hidden="">Select semester</option>
@@ -612,9 +614,14 @@
 
 	<!-- Initialize Swiper -->
 	<script>
+		// registration ended
+		const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
+		membershipFormWrapper.innerHTML = `
+    <h1 style="color: white;">Project Development Challenge</h1>
+    <p style="color: white;">The challenge for 2024 has been officially closed.</p>
+`;
 
 		//UPI PAYMENT BUTTON
-
 		function setUPILink() {
 			// Update total amount header ttlamt
 			const total = updateTotal();
@@ -623,7 +630,7 @@
 
 			// Check if all elements have some value
 			const allHaveValue = elements.every(id => document.getElementById(id).value.trim() !== "");
-			if(allHaveValue) alert("Make sure all details are correct before SUBMISSION (>_<)");
+			if (allHaveValue) alert("Make sure all details are correct before SUBMISSION (>_<)");
 			// If not all elements have some value, return to exit the function
 			if (!allHaveValue) {
 				return;
@@ -632,7 +639,7 @@
 			var teamNameInput = document.getElementById('teamname');
 			var UPI = document.getElementById('UPI');
 			if (isMobile) {
-				var teamName = teamNameInput.value ? "of " + teamNameInput.value +" " : "";
+				var teamName = teamNameInput.value ? "of " + teamNameInput.value + " " : "";
 				UPI.classList.add("call", "mb-2", "mt-0");
 				UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
 				UPI.innerHTML = `
