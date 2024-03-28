@@ -1201,7 +1201,7 @@ select:invalid:focus{
   line-height: 40px;
   border-radius: 50%;
   color: #ffffff;
-  transition: all 0den5s ease;
+  transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover {
   color: #24262b;
@@ -1703,4 +1703,18 @@ select:invalid:focus{
   background-color: white;
   color: black;
 
+}
+
+
+.rowlly {
+  display: flex;
+  height: max-content;
+  width: fit-content;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.rowlly div:first-child,
+.rowlly div:nth-child(2) {
+    flex: 1;
 }

@@ -477,40 +477,32 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 				else
 					ttlamt.innerHTML = 'Total Amount - ISTE + BARTONAIR : ₹300/-';
 			}
-			setUPILink(total);
+			// setUPILink(total);
 		}
 		window.onload = updateTotal;
-
-
 		// for opening upiLink on mobiles only
-		function setUPILink(total) {
-			console.log('setting upi link');
+		// function setUPILink(total) {
 
 
-			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-			var UPI = document.getElementById('UPI');
-			if (isMobile) {
-				var name = document.getElementById("name").value.trim()
-				name = name.value ? " for " + name.value : "";
-				UPI.classList.add("call", "mb-2", "mt-0");
-				UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
-				UPI.innerHTML = `
-					<a  id="upiLink" class="iste-btn__inner" style="display: flex; justify-content: center; align-items: center; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: all 0.15s ease;">
-						<img class="mysvg" src="assets/svg/upi.svg" alt="iste gecbh" style="width: auto; max-height: 1.7rem;">
-						<i> PAY NOW </i>
-					</a> `.trim();
-				var upiLink = document.getElementById('upiLink');
-				if (total === 300)
-					var url = "upi://pay?pn=" + encodeURIComponent("ISTE+BARTONAIR" + " INR " + total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
-				if (total === 700) var url = "upi://pay?pn=" + encodeURIComponent("ISTE FULL MEMBERSHIP" + name + " INR " + total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
-				upiLink.href = url;
-			}
-		}
-
-
-
-
-
+		// 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+		// 	var UPI = document.getElementById('UPI');
+		// 	if (isMobile) {
+		// 		var name = document.getElementById("name").value.trim()
+		// 		name = name.value ? " for " + name.value : "";
+		// 		UPI.classList.add("call", "mb-2", "mt-0");
+		// 		UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
+		// 		UPI.innerHTML = `
+		// 			<a  id="upiLink" class="iste-btn__inner" style="display: flex; justify-content: center; align-items: center; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: all 0.15s ease;">
+		// 				<img class="mysvg" src="assets/svg/upi.svg" alt="iste gecbh" style="width: auto; max-height: 1.7rem;">
+		// 				<i> PAY NOW </i>
+		// 			</a> `.trim();
+		// 		var upiLink = document.getElementById('upiLink');
+		// 		if (total === 300)
+		// 			var url = "upi://pay?pn=" + encodeURIComponent("ISTE+BARTONAIR" + " INR " + total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
+		// 		if (total === 700) var url = "upi://pay?pn=" + encodeURIComponent("ISTE FULL MEMBERSHIP" + name + " INR " + total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
+		// 		upiLink.href = url;
+		// 	}
+		// }
 
 
 
@@ -619,7 +611,7 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 
 							document.getElementById("process").style.display = "none";
 							document.getElementById("successtext").innerHTML = "Form submitted Successfully!";
-							document.getElementById("istecall").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;padding-top:10px;'>Form submitted Successfully!</h4><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='		https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/IxtCqGEf4kiCPc0WoJ7QoW\";'>Join Our Whatsapp Group</button></a>";
+							document.getElementById("istecall").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;padding-top:10px;'>Form submitted Successfully!</h4><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca\";'>Join Our Whatsapp Group</button></a>";
 
 							var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"
 							temp = temp + "<p style='font-size: 1.2em'>Account holder name : ARYA M GUPTHAN<br>IFSC code: CNRB0006200<br>Account number: 2791120000002<br>Gpay/PhonePe/Paytm: 9447475576<br>UPI id: aryamgupthan@okicici</p><br><br><br><div id='ttlamt'></div>"

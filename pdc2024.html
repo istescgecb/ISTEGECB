@@ -69,8 +69,7 @@
 	</div>
 	<!-- mobile drawer -->
 	<div class="nav-container backdrop-blur">
-		<p
-			style="position: absolute;top: 15px;left: 32px;font-size: 22px;font-weight: 600;font-family: 'Poppins';margin: 0; padding: 0;">
+		<p style="position: absolute;top: 15px;left: 32px;font-size: 22px;font-weight: 600;font-family: 'Poppins';margin: 0; padding: 0;">
 			ISTE GECBH</p>
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="assets/svg/close.svg"
 				alt="istegecbh"></a>
@@ -617,42 +616,40 @@
 		// registration ended
 		const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
 		membershipFormWrapper.innerHTML = `
-    <h1 style="color: white;">Project Development Challenge</h1>
-    <p style="color: white;">The challenge for 2024 has been officially closed.</p>
-`;
+   		<h1 style="color: white;">Project Development Challenge</h1>
+    	<p style="color: white;">The challenge for 2024 has been officially closed.</p>`;
 
 		//UPI PAYMENT BUTTON
-		function setUPILink() {
-			// Update total amount header ttlamt
-			const total = updateTotal();
-			// Check if total has changed
-			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
+		// function setUPILink() {
+		// 	// Update total amount header ttlamt
+		// 	const total = updateTotal();
+		// 	// Check if total has changed
+		// 	const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
 
-			// Check if all elements have some value
-			const allHaveValue = elements.every(id => document.getElementById(id).value.trim() !== "");
-			if (allHaveValue) alert("Make sure all details are correct before SUBMISSION (>_<)");
-			// If not all elements have some value, return to exit the function
-			if (!allHaveValue) {
-				return;
-			}
-			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-			var teamNameInput = document.getElementById('teamname');
-			var UPI = document.getElementById('UPI');
-			if (isMobile) {
-				var teamName = teamNameInput.value ? "of " + teamNameInput.value + " " : "";
-				UPI.classList.add("call", "mb-2", "mt-0");
-				UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
-				UPI.innerHTML = `
-					<a  id="upiLink" class="iste-btn__inner" style="display: flex; justify-content: center; align-items: center; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: all 0.15s ease;">
-						<img class="mysvg" src="assets/svg/upi.svg" alt="iste gecbh" style="width: auto; max-height: 1.7rem;">
-						<i> PAY NOW </i>
-					</a> `.trim();
-				var upiLink = document.getElementById('upiLink');
-				var url = "upi://pay?pn=" + encodeURIComponent("PDC reg " + teamName + "Total  Rs." + total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
-				upiLink.href = url;
-			}
-		}
-
+		// 	// Check if all elements have some value
+		// 	const allHaveValue = elements.every(id => document.getElementById(id).value.trim() !== "");
+		// 	if (allHaveValue) alert("Make sure all details are correct before SUBMISSION (>_<)");
+		// 	// If not all elements have some value, return to exit the function
+		// 	if (!allHaveValue) {
+		// 		return;
+		// 	}
+		// 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+		// 	var teamNameInput = document.getElementById('teamname');
+		// 	var UPI = document.getElementById('UPI');
+		// 	if (isMobile) {
+		// 		var teamName = teamNameInput.value ? "of " + teamNameInput.value + " " : "";
+		// 		UPI.classList.add("call", "mb-2", "mt-0");
+		// 		UPI.style = "display: flex; justify-content: center; margin-bottom: 20px;padding: 0; text-align: center;align-items: center;max-height:40px; max-width:fit-content;"
+		// 		UPI.innerHTML = `
+		// 			<a  id="upiLink" class="iste-btn__inner" style="display: flex; justify-content: center; align-items: center; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: all 0.15s ease;">
+		// 				<img class="mysvg" src="assets/svg/upi.svg" alt="iste gecbh" style="width: auto; max-height: 1.7rem;">
+		// 				<i> PAY NOW </i>
+		// 			</a> `.trim();
+		// 		var upiLink = document.getElementById('upiLink');
+		// 		var url = "upi://pay?pn=" + encodeURIComponent("PDC reg " + teamName + "Total  Rs." + total) + "&pa=aryamgupthan@okicici&cu=INR&am=" + total;
+		// 		upiLink.href = url;
+		// 	}
+		// }
 
 		function updateTotal() {
 			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
@@ -680,11 +677,9 @@
 		const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
 
 		elements.forEach(function (id) {
-			document.getElementById(id).addEventListener('change', () => { setUPILink() });
+			document.getElementById(id).addEventListener('change', () => { updateTotal() });
 		});
-		window.onload = setUPILink();
-
-
+		window.onload = updateTotal();
 
 		function openQR1() {
 			document.getElementById("PhonePebtn1").setAttribute("onclick", "closeQR1()");
@@ -737,9 +732,7 @@
 				fr.readAsDataURL(file);
 			}
 		});
-
 		// request
-
 		let url = "https://script.google.com/macros/s/AKfycbzRKmpy2RShTWuMRYVKWhidwQWvC-m7i03aG8kKAmeXWf9Yzh5eba96tJISSmAsjb7Y/exec";
 		$("#pdcform").submit((e) => {
 			e.preventDefault();
@@ -814,7 +807,6 @@
 					isIste4: isIste4
 				};
 
-
 				fetch(
 					url,
 					{
@@ -823,24 +815,19 @@
 					}).then(r => r.text()).then(data => {
 						if (data == "success") {
 
-							// document.getElementById("process").style.display = "none";
+							// document.getElementById("process").style.display = "none"; //not needed 
 							document.getElementById("successtext").innerHTML = "Form submitted Successfully!"; // doesnt matter
 							document.getElementById("pdcform").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;padding-top:10px;'>Form submitted Successfully!</h4><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='https://chat.whatsapp.com/D8K6IDXKEos0F5H2DsXIdy'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; padding-bottom:10px;' onclick='window.location.href=\"https://chat.whatsapp.com/D8K6IDXKEos0F5H2DsXIdy\";'>Join Our Whatsapp Group</button></a>";
 							var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"
 
 							//<br><a class='theme-btn gradient' style='margin-left: 14%;padding: 3px 11px;border-radius: 13px;' href='https://forms.gle/NX9DatcVYjH36Pxy6'>Go Upload Screen Shot </a>
-
-
 						} else {
 							document.getElementById("successtext").innerHTML = "Error Submitting Form.Please retry Filling the form.";
 						}
 					})
-
 			})
-
-
-
 		})
+
 
 
 		var swiper = new Swiper(".mySwiper", {
@@ -925,8 +912,7 @@
 	<script src="https://apis.google.com/js/platform.js"></script>
 	<script src="./assets/js/main.js"></script>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 		crossorigin="anonymous"></script>
 	<!-- Option 2: Separate Popper and Bootstrap JS -->
 	<!--
