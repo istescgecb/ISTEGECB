@@ -333,8 +333,7 @@
 										Gpay/PhonePe/Paytm: <span
 											style="user-select: all;font: inherit;">9447475576</span><br>
 										UPI ID: <span
-											style="user-select: all;font: inherit;padding: inherit;">aryamgupthan@okicici
-											</>
+											style="user-select: all;font: inherit;padding: inherit;">aryamgupthan@okicici </span>
 									</p>
 								</div>
 
@@ -440,18 +439,18 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 			const labelBARTONOIDZ = document.getElementById('labelBARTONOIDZ');
 			const ttlamt = document.getElementById('ttlamt');
 
-			let total = parseInt(BARTONAIR.value);// BARTONAIR is always checked and its value is always added to the total
+			let total = parseInt(BARTONAIR.value);
 			labelBARTONAIR.style.color = 'forestgreen'; // BARTONAIR is always checked, so its label is always forest green
 
 			if (BARTONOIDZ.checked) {
 				total = parseInt(BARTONOIDZ.value);
-				labelBARTONOIDZ.style = 'display: block;font-weight: bold;color:forestgreen;font-size:1.2rem;'; // set color to forest green
+				labelBARTONOIDZ.style = 'display: block;font-weight: bold;color:forestgreen;font-size:1.2rem;';
 				BARTONOIDZ.innerHTML = 'ISTE + BARTONOIDZ + BARTONAIR: ₹700/-';
 
 			} else {
 				labelBARTONOIDZ.style = 'display: block; font-weight: 600; color: white; background-color: transparent; padding: 10px; border: 1.2px solid #f2f2fe; border-radius: 10px;'
 			}
-			BARTONOIDZ.innerHTML = '<h1> ISTE + BARTONOIDZ + BARTONAIR: ₹700/- <h2>';
+			BARTONOIDZ.innerHTML = '<h1> ISTE + BARTONOIDZ + BARTONAIR: ₹700/- </h1>';
 
 			Object.assign(ttlamt.style, {
 				fontSize: '1.35rem',
