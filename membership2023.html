@@ -234,7 +234,7 @@
 								<label class="mb-2 ml-2" for="DOB">Date of Birth</label><br>
 								<input type="date" name="DOB" id="DOB" placeholder="DOB" required><br>
 
-								<label class="mb-2 ml-2" for="Semester">Semester</label><br>
+								<label class="mb-2 ml-2" for="Semester">Year</label><br>
 								<select id="Semester" name="Semester" required onclick="updateAmt()" required>
 									<!-- <select id="Semester" name="Semester" required > -->
 									<option value="" hidden>Select Semester</option>
@@ -607,14 +607,24 @@ https://script.google.com/macros/s/AKfycbyPbfxFq7eiKT4x52tw177WKOLWZ4TgRzwb6KRFA
 						body: JSON.stringify(obj)
 					}).then(r => r.text()).then(data => {
 						if (data == "success") {
-
-							document.getElementById("process").style.display = "none";
-							document.getElementById("successtext").innerHTML = "Form submitted Successfully!";
-							document.getElementById("istecall").innerHTML = "<h4 id='succisstextfinal' style='color:white;size:3rem;padding-top:10px;'>Form submitted Successfully!</h4><br><h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6><p style='font-size: 1.2em;color: green;'>Account holder name : ARYA M GUPTHAN<br>IFSC code : CNRB0006200<br>Account number : 2791120000002<br>Gpay / Phonepay / Paytm  : 9447475576<br>UPI id  : aryamgupthan@okicici</p><a href='https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca'><button id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;' onclick='window.location.href=\"https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca\";'>Join Our Whatsapp Group</button></a>";
-
-							var temp = "<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);' >PAYMENT DETAILS</h6>"
-							temp = temp + "<p style='font-size: 1.2em'>Account holder name : ARYA M GUPTHAN<br>IFSC code: CNRB0006200<br>Account number: 2791120000002<br>Gpay/PhonePe/Paytm: 9447475576<br>UPI id: aryamgupthan@okicici</p><br><br><br><div id='ttlamt'></div>"
-							//<br><a class='theme-btn gradient' style='margin-left: 14%;padding: 3px 11px;border-radius: 13px;' href='https://forms.gle/NX9DatcVYjH36Pxy6'>Go Upload Screen Shot </a>
+							const paymentDetails = `
+					<br>
+						<form id="istecall" action="" style="width:100%"><h4 id="succisstextfinal" style="color:white;size:3rem;">Form submitted Successfully!</h4><br>
+                        <br>
+                        <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
+                        <p style='font-size: 1.2em;color: green;'>
+                            Account holder name: ARYA M GUPTHAN<br>
+                            IFSC code: CNRB0006200<br>
+                            Account number: 2791120000002<br>
+                            Gpay / PhonePe / Paytm: 9447475576<br>
+                            UPI id: aryamgupthan@okicici
+                        </p>
+                        <a id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'  
+                        href='https://chat.whatsapp.com/CD4s2gkEFQeD8jpxz7zMca' target="_blank">Join Our Whatsapp Group</a>
+                        <br>
+                        <br>
+                    `;
+                    document.getElementById("istecall").innerHTML = paymentDetails;
 
 
 						} else {
