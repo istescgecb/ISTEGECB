@@ -246,8 +246,8 @@
                                 <label class="mb-2 ml-2" for="Address">Home Address</label><br>
                                 <textarea name="Address" id="Address" rows="3" cols="40" placeholder="Address" required></textarea><br>
                     
-                                <label class="mb-2 ml-2" for="PhoneNumber">Phone Number</label><br>
-                                <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="[6-9]{1}[0-9]{9}" required><br>
+                                <label class="mb-2 ml-2" for="PhoneNumber">Phone Number(10 digits)</label><br>
+                                <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}" required><br>
                     
                                 <label class="mb-2 ml-2" for="EmailId">Email Address</label><br>
                                 <input type="email" name="EmailId" id="EmailId" placeholder="Email address" required><br>
@@ -369,10 +369,11 @@
         });
 
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-        ttlamt.style.fontSize = isMobile ? '1.4rem' : '1.35rem';
+        ttlamt.style.fontSize = isMobile ? '1.4rem' : '1.35rem'; // mobile style haha
 
         if (total === 700) {
             ttlamt.innerHTML = isMobile ? 'Total Amount - ₹700/-' : 'ISTE + BARTONOIDZ + BARTONAIR <br> Total Amount : ₹700/-';
+			
         } else {
             ttlamt.innerHTML = isMobile ? 'Total Amount - ₹300/-' : 'Total Amount - ISTE + BARTONAIR : ₹300/-';
         }
@@ -430,7 +431,7 @@
         $.ajax({
             url: 	`
 			
-        https://script.google.com/macros/s/AKfycbyyKW50D5pewlvcZi3ffxfG7q0WQAjIesI_48b1LP3jtn7NccWClkcFhV8I5K0QkcrK/exec
+https://script.google.com/macros/s/AKfycbxFVNORdFdlGtH5k-y6kT84-cFY0Wrr4aQIkJ8kz65rNiCb61ataJ0lxIrX2kgns_pi/exec
 
 
 			`.trim(),

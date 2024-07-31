@@ -2,4 +2,6 @@
 questions.json
 spacequiz.html
 venv
+env
 eventGenSrc
+.env

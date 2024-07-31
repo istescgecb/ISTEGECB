@@ -1134,16 +1134,44 @@ select:focus {
   border-color: #4159e4;
   /* box-shadow:0 0 8px 0 var(--primary-color); */
 }
+
+/* addition by nithin */
+input:valid:not(:focus),
+textarea:valid:not(:focus),
+select:valid:not(:focus) {
+  border-color: #4159e4;
+  box-shadow:0 0 8px 0 var(--primary-color);
+}
+label:checked{
+  border-color: #4159e4;
+  box-shadow:0 0 8px 0 var(--primary-color);
+}
+
+
+
 input:invalid:focus{
   /* border-color: #f96773; */
-  border: solid 1px #f96773;
-  transition:ease-in-out 10s;
+  border: solid 1px #fc4b59;
+  transition:ease-in-out 0.3s;
 } 
 select:invalid:focus{
   /* border-color: #f96773; */
-  border-color:#f96773;
-  transition:ease-in-out 10s;
+  border-color:#fc4b59;
+  transition: ease-in-out 0.3s;
 } 
+
+
+
+
+/* addition by nithin */
+input:not(:focus):not(:empty):not(:valid) {
+  border-color: #fc4b59;
+  transition: ease-in-out 0.3s;
+}
+
+
+
+
 
 
 .event-card-body-reg {
