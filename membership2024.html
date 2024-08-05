@@ -253,15 +253,15 @@
                                 <input type="email" name="EmailId" id="EmailId" placeholder="Email address" required><br>
                     
                                 <br>
-                                <label class="mb-2 ml-2" style="font-size: 1.8em; font-weight: 400; color: rgb(214, 91, 20);">MEMBERSHIP OPTIONS (EARLY BIRD)</label><br>
-                                <div style="display: block; font-weight: bold; font-size: 1.2rem; align-items: center; overflow-wrap: break-word;">
-                                    <label id="labelBARTONAIR" style="color: forestgreen; padding-top: 10px; font-weight: bold; font-size: 1.2rem;">
-                                        <input type="checkbox" id="BARTONAIR" name="BARTONAIR" value="300" onchange="updateTotal()" style="width: 1.2rem; height: 1.2rem;" checked disabled> ISTE + BARTONAIR: ₹300/-
-                                    </label>
-                                    <label id="labelBARTONOIDZ" style="font-weight: bold; font-size: 1.2rem;">
-                                        <input type="checkbox" id="BARTONOIDZ" name="BARTONOIDZ" value="700" onchange="updateTotal()" style="width: 20px; height: 20px;"> ISTE + BARTONOIDZ + BARTONAIR: ₹700/-
-                                    </label>
-                                </div>
+								<label class="mb-2 ml-2" style="font-size: 1.8em; font-weight: 400; color: rgb(214, 91, 20);">MEMBERSHIP OPTIONS (EARLY BIRD)</label><br>
+								<div style="display: block; font-weight: bold; font-size: 1.2rem; align-items: center; overflow-wrap: break-word;">
+									<label id="labelBARTONAIR" style="color: forestgreen; padding-top: 10px; font-weight: bold; font-size: 1.2rem;">
+										<input type="checkbox" id="BARTONAIR" name="BARTONAIR" value="300" onchange="updateTotal()" style="width: 1.2rem; height: 1.2rem;" checked disabled> ISTE + BARTONAIR: ₹300/-
+									</label>
+									<label id="labelBARTONOIDZ" style="font-weight: bold; font-size: 1.2rem;">
+										<input type="checkbox" id="BARTONOIDZ" name="BARTONOIDZ" value="700" onchange="updateTotal()" style="width: 20px; height: 20px;"> ISTE + BARTONOIDZ + BARTONAIR: ₹700/-
+									</label>
+								</div>
                                 <p style="font-size: 1.2em"></p>
                     
                                 <div class="account-details">
@@ -329,55 +329,56 @@
 
 	<script>
 	// for membership ttlamount update
-    function updateTotal() {
-        const BARTONOIDZ = document.getElementById('BARTONOIDZ');
-        const BARTONAIR = document.getElementById('BARTONAIR');
-        const labelBARTONAIR = document.getElementById('labelBARTONAIR');
-        const labelBARTONOIDZ = document.getElementById('labelBARTONOIDZ');
-        const ttlamt = document.getElementById('ttlamt');
+	function updateTotal() {
+    const BARTONOIDZ = document.getElementById('BARTONOIDZ');
+    const BARTONAIR = document.getElementById('BARTONAIR');
+    const labelBARTONAIR = document.getElementById('labelBARTONAIR');
+    const labelBARTONOIDZ = document.getElementById('labelBARTONOIDZ');
+    const ttlamt = document.getElementById('ttlamt');
 
-        let total = parseInt(BARTONAIR.value);
-        labelBARTONAIR.style.color = 'forestgreen';
+    let total = parseInt(BARTONAIR.value);
+    labelBARTONAIR.style.color = 'forestgreen';
 
-        if (BARTONOIDZ.checked) {
-            total = parseInt(BARTONOIDZ.value);
-            labelBARTONOIDZ.style.display = 'block';
-            labelBARTONOIDZ.style.fontWeight = 'bold';
-            labelBARTONOIDZ.style.color = 'forestgreen';
-            labelBARTONOIDZ.style.fontSize = '1.2rem';
-            BARTONOIDZ.innerHTML = 'ISTE + BARTONOIDZ + BARTONAIR: ₹700/-';
-        } else {
-            labelBARTONOIDZ.style.display = 'block';
-            labelBARTONOIDZ.style.fontWeight = '600';
-            labelBARTONOIDZ.style.color = 'white';
-            labelBARTONOIDZ.style.backgroundColor = 'transparent';
-            labelBARTONOIDZ.style.padding = '10px';
-            labelBARTONOIDZ.style.border = '1.2px solid #f2f2fe';
-            labelBARTONOIDZ.style.borderRadius = '10px';
-        }
-
-        BARTONOIDZ.innerHTML = '<h1>ISTE + BARTONOIDZ + BARTONAIR: ₹700/-</h1>';
-
-        Object.assign(ttlamt.style, {
-            fontSize: '1.35rem',
-            color: 'rgb(255, 255, 255)',
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-            padding: '10px',
-            borderRadius: '5px',
-            fontWeight: '600',
-            textAlign: 'center'
-        });
-
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-        ttlamt.style.fontSize = isMobile ? '1.4rem' : '1.35rem'; // mobile style haha
-
-        if (total === 700) {
-            ttlamt.innerHTML = isMobile ? 'Total Amount - ₹700/-' : 'ISTE + BARTONOIDZ + BARTONAIR <br> Total Amount : ₹700/-';
-			
-        } else {
-            ttlamt.innerHTML = isMobile ? 'Total Amount - ₹300/-' : 'Total Amount - ISTE + BARTONAIR : ₹300/-';
-        }
+    if (BARTONOIDZ.checked) {
+        total = parseInt(BARTONOIDZ.value);
+        labelBARTONOIDZ.style.display = 'block';
+        labelBARTONOIDZ.style.fontWeight = 'bold';
+        labelBARTONOIDZ.style.color = 'forestgreen';
+        labelBARTONOIDZ.style.fontSize = '1.2rem';
+        BARTONOIDZ.innerHTML = 'ISTE + BARTONOIDZ + BARTONAIR: ₹700/-';
+    } else {
+        labelBARTONOIDZ.style.display = 'block';
+        labelBARTONOIDZ.style.fontWeight = '600';
+        labelBARTONOIDZ.style.color = 'white';
+        labelBARTONOIDZ.style.backgroundColor = 'transparent';
+        labelBARTONOIDZ.style.padding = '10px';
+        labelBARTONOIDZ.style.border = '1.2px solid #f2f2fe';
+        labelBARTONOIDZ.style.borderRadius = '10px';
     }
+
+		BARTONOIDZ.innerHTML = '<h1>ISTE + BARTONOIDZ + BARTONAIR: ₹700/-</h1>';
+
+		Object.assign(ttlamt.style, {
+			fontSize: '1.35rem',
+			color: 'rgb(255, 255, 255)',
+			textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+			padding: '10px',
+			borderRadius: '5px',
+			fontWeight: '600',
+			textAlign: 'center'
+		});
+
+		const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+		ttlamt.style.fontSize = isMobile ? '1.4rem' : '1.35rem'; // mobile style haha
+
+		if (total === 700) {
+			ttlamt.innerHTML = isMobile ? 'Total Amount - ₹700/-' : 'ISTE + BARTONOIDZ + BARTONAIR <br> Total Amount : ₹700/-';
+		} else {
+			ttlamt.innerHTML = isMobile ? 
+		`Total Amount - ₹300/-` : 
+		`Total Amount - ISTE + BARTONAIR : ₹300/- <input type="hidden" name="BARTONOIDZ" value="300">`;
+		}
+	}
 
     window.onload = updateTotal;
 
@@ -431,7 +432,7 @@
         $.ajax({
             url: 	`
 			
-https://script.google.com/macros/s/AKfycbxFVNORdFdlGtH5k-y6kT84-cFY0Wrr4aQIkJ8kz65rNiCb61ataJ0lxIrX2kgns_pi/exec
+https://script.google.com/macros/s/AKfycbzmua6FXVs710gevrsW5uN90fsTlPsueonqABDXag33UHfri30rCAjfDE33ozAYCfBW/exec
 
 
 			`.trim(),
@@ -518,4 +519,4 @@ https://script.google.com/macros/s/AKfycbxFVNORdFdlGtH5k-y6kT84-cFY0Wrr4aQIkJ8kz
     -->
 </body>
 
-</html>
+</html>S
