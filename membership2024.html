@@ -318,54 +318,57 @@
                 </label>
                 <br>
                 <div style="font-size: 1.2rem;">
-                  Lifetime membership for <del>₹900</del> ₹650 only!
+                  Lifetime membership for <del>₹800</del> ₹650 only!
 
                 </div>
+                
+<div class="membership-option">
+  <label id="labelBARTONAIR" style="padding-top: 10px; font-size: 1.2rem; color: #888;">
+    <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
+      style="width: 1.2rem; height: 1.2rem" disabled />
+    &nbsp;ISTE + BARTONAIR: <i>₹650/-</i>
+  </label>
+</div>
+<div class="membership-option">
+  <label id="labelBARTONOIDZ" style="font-size: 1.2rem; color: #888;">
+    <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
+      style="width: 20px; height: 20px" disabled />
+    &nbsp;ISTE + BARTONOIDZ: <i>₹650/-</i>
+  </label>
+</div>
+<div class="membership-option">
+  <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
+    <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)"
+      style="width: 20px; height: 20px" checked />
+    &nbsp;ISTE + FULL MEMBERSHIP (Early Bird): <del>₹800/-</del> <i>₹650/-</i>
+  </label>
+</div>
 
 
-                <div class="membership-option">
-                  <label id="labelBARTONAIR" style=" padding-top: 10px;  font-size: 1.2rem;">
-                    <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
-                      style="width: 1.2rem; height: 1.2rem" />
-                    &nbsp;ISTE + BARTONAIR: <i>₹650/-</i>
-                  </label>
-                </div>
-                <div class="membership-option">
-                  <label id="labelBARTONOIDZ" style=" font-size: 1.2rem;">
-                    <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
-                      style="width: 20px; height: 20px" />
-                    &nbsp;ISTE + BARTONOIDZ: <i>₹650/-</i>
-                  </label>
-                </div>
-                <div class="membership-option">
-                  <label id="labelFULLMEMBERSHIP" style=" font-size: 1.2rem;">
-                    <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
-                      onclick="updateTotal(this)" style="width: 20px; height: 20px" />
-                    &nbsp;ISTE + FULL MEMBERSHIP (Early Bird): <del>₹900/-</del> <i>₹650/-</i>
-                  </label>
-                </div>
+
                 <p style="font-size: 1.2em"></p>
 
-                <div class="account-  details">
-                  <h6 style="font-size: 1.5em; color: rgb(214, 91, 20)">
-                    PAYMENT DETAILS
-                  </h6>
-                  <p style="font-size: 1.2em">
-                    Account holder name: ARYA M GUPTHAN<br />
-                    IFSC code:
-                    <span style="user-select: all; font: inherit">CNRB0006200</span><br />
-                    Account number:
-                    <span style="user-select: all; font: inherit">2791120000002</span><br />
-                    Gpay/PhonePe/Paytm:
-                    <span style="user-select: all; font: inherit">9447475576</span><br />
-                    UPI ID:
-                    <span style="
-                          user-select: all;
-                          font: inherit;
-                          padding: inherit;
-                        ">aryamgupthan@okicici</span>
-                  </p>
-                </div>
+<div class="account-details">
+  <h6 style="font-size: 1.5em; color: rgb(214, 91, 20)">
+    PAYMENT DETAILS
+  </h6>
+  <p style="font-size: 1.2em">
+    Account holder name: Devika Asok<br />
+    IFSC code:
+    <span style="user-select: all; font: inherit">CNRB0005114</span><br />
+    Account number:
+    <span style="user-select: all; font: inherit">110191178480</span><br />
+    Gpay/PhonePe/Paytm:
+    <span style="user-select: all; font: inherit">7012310891</span><br />
+    UPI ID:
+    <span style="
+          user-select: all;
+          font: inherit;
+          padding: inherit;
+        ">deepzdevika@oksbi</span>
+  </p>
+</div>
+
 
                 <br />
 
@@ -378,8 +381,7 @@
                       border-radius: 20px;
                       padding: 10px;
                     " align="center">
-                  <div id="ttlamt">
-                    Total Amount - ISTE + BARTONAIR: ₹300/-
+                  <div id="ttlamt" style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; font-weight: 600; text-align: center;">
                   </div>
                   <div id="UPI"></div>
                 </div>
@@ -399,10 +401,11 @@
                 </div>
 
                 <div>
-                  <br />
-                  <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT*<span
-                        style="color: rgb(214, 91, 20)"></span></b></label><br />
-                  <input name="image" id="image" placeholder="Image or PDF" type="file" accept="image/*" required />
+                  
+<label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
+      style="color: rgb(214, 91, 20)"></span></b></label><br />
+
+                  <input name="image" id="image" placeholder="Image or PDF" type="file" accept="image/*" required onchange="checkFileSize(this)" />
                   <img src="" style="aspect-ratio: auto; max-height: 100px" align="center" id="drive" alt="" />
                 </div>
                 <br />
@@ -434,7 +437,7 @@
       </div>
     </div>
   </div>
-  <!-- loader gif -->
+  <!-- loader gif --> 
   <div class="send-div">
     <img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
     <div class="loader-text">
@@ -446,7 +449,6 @@
 
   <script>
     // for membership ttlamount update
-
     function updateTotal(selectedOption) {
 
       const ttlamt = document.getElementById("ttlamt");
@@ -474,14 +476,35 @@
       if (isMobile) {
         ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
       } else {
-        if (selectedOption.value === "BR") {
-          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹900/-</del>  <i>₹${total}/-</i>`;
+        if (selectedOption.value === "FULL") {
+          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹800/-</del>  <i>₹${total}/-</i>`;
         } else {
           ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
         }
       }
     }
 
+    // check size
+
+
+  function checkFileSize(input) {
+    const msg = document.getElementById('successtext');
+    if (input.files && input.files[0]) {
+      const fileSize = input.files[0].size / 1024 / 1024;
+      if (fileSize > 4) {
+        msg.textContent = 'File size exceeds 4MB limit. Please choose a smaller file.';
+        msg.style.color = 'red';
+        input.value = ''; 
+      } else {
+        msg.textContent = 'File uploaded successfully. Please proceed with submission.';
+        msg.style.color = 'rgb(29, 182, 18)';
+        
+      }
+    } else {
+      msg.textContent = 'Please complete payment and upload screenshot of payment before submitting.';
+      msg.style.color = 'rgb(29, 182, 18)';
+    }
+  }
 
 
 
@@ -555,13 +578,14 @@
 						<form id="istecall" action="" style="width:100%"><h4 id="succisstextfinal" style="color:white;size:3rem;">Form submitted Successfully!</h4><br>
                         <br>
                         <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
-                        <p style='font-size: 1.2em;color: green;'>
-                            Account holder name: ARYA M GUPTHAN<br>
-                            IFSC code: CNRB0006200<br>
-                            Account number: 2791120000002<br>
-                            Gpay / PhonePe / Paytm: 9447475576<br>
-                            UPI id: aryamgupthan@okicici
-                        </p>
+<p style='font-size: 1.2em;color: green;'>
+    Account holder name: Devika Asok<br>
+    IFSC code: CNRB0005114<br>
+    Account number: 110191178480<br>
+    Gpay / PhonePe / Paytm: 7012310891<br>
+    UPI id: deepzdevika@oksbi
+</p>
+
                         <a id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'  
                         href='https://chat.whatsapp.com/I0fBcT1aoHI0ZdHRylrfGA' target="_blank">Join Our Whatsapp Group</a>
                         <br>
