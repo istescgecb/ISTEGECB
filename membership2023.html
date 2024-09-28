@@ -322,10 +322,7 @@
 									MEMBERSHIP OPTIONS (EARLY BIRD)
 								</label>
 								<br>
-								<div style="font-size: 1.2rem;">
-									Lifetime membership for <del>₹900</del> ₹650 only!
-
-								</div>
+		
 
 
 								<div class="membership-option">
@@ -457,42 +454,45 @@
 	<script>
 		// for membership ttlamount update
 
-		function updateTotal(selectedOption) {
+		// function updateTotal(selectedOption) {
 
-			const ttlamt = document.getElementById("ttlamt");
-			ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style haha
+		// 	const ttlamt = document.getElementById("ttlamt");
+		// 	ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style haha
 
-			let total = 0;
-			let membershipText = "";
+		// 	let total = 0;
+		// 	let membershipText = "";
 
-			switch (selectedOption.value) {
-				case "BR":
-					total = 650;
-					membershipText = "ISTE + BARTONAIR";
-					break;
-				case "BZ":
-					total = 650;
-					membershipText = "ISTE + BARTONOIDZ";
-					break;
-				case "FULL":
-					total = 650;
-					membershipText = "ISTE + FULL MEMBERSHIP";
-					break;
-			}
+		// 	switch (selectedOption.value) {
+		// 		case "BR":
+		// 			total = 650;
+		// 			membershipText = "ISTE + BARTONAIR";
+		// 			break;
+		// 		case "BZ":
+		// 			total = 650;
+		// 			membershipText = "ISTE + BARTONOIDZ";
+		// 			break;
+		// 		case "FULL":
+		// 			total = 650;
+		// 			membershipText = "ISTE + FULL MEMBERSHIP";
+		// 			break;
+		// 	}
 
-			ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
-			if (isMobile) {
-				ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
-			} else {
-				if (selectedOption.value === "BR") {
-					ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹900/-</del>  <i>₹${total}/-</i>`;
-				} else {
-					ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
-				}
-			}
-		}
+		// 	ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+		// 	if (isMobile) {
+		// 		ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+		// 	} else {
+		// 		if (selectedOption.value === "BR") {
+		// 			ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹900/-</del>  <i>₹${total}/-</i>`;
+		// 		} else {
+		// 			ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+		// 		}
+		// 	}
+		// }
 
-
+			const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
+			membershipFormWrapper.innerHTML = `<div style ="margin:10px";padding:10px	>
+   		<h1 style="color: white;"> MEMBERSHIP DRIVE 2023</h1>
+    	<p style="color: white;">The membership drive for 2023 has been officially closed.</p></div>`;
 
 
 
@@ -500,7 +500,7 @@
 			navigator.userAgent
 		);
 
-		window.onload = updateTotal(document.getElementById("FULLMEMBERSHIP"));
+		// window.onload = updateTotal(document.getElementById("FULLMEMBERSHIP"));
 
 		function openQR1() {
 			document

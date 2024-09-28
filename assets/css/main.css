@@ -1114,7 +1114,7 @@ input[type="date"],
 select {
   width: 100%;
   border: 1px solid white;
-  border-radius: 24px;
+  border-radius: 20px;
   margin: 0 0 12px 0;
   outline: none;
   padding: 8px 8px 8px 14px;
@@ -1145,6 +1145,12 @@ select:valid:not(:focus) {
 label:checked{
   border-color: #4159e4;
   box-shadow:0 0 8px 0 var(--primary-color);
+}
+
+label{
+  font-size: 1rem;
+  padding-left: 4px;
+  padding-bottom: 2px;
 }
 
 
@@ -1745,4 +1751,20 @@ input:not(:focus):not(:empty):not(:valid) {
 .rowlly div:first-child,
 .rowlly div:nth-child(2) {
     flex: 1;
+}
+
+
+
+#ttlamt {
+  font-size: 1.35rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.membership-options {
+  border: 1.2px solid #f2f2fe;
 }
