@@ -1604,10 +1604,7 @@ input:not(:focus):not(:empty):not(:valid) {
     padding-bottom: 2rem;
   }
 
-  #payment-completed{
-    padding: 1rem 1rem;
-    
-  }
+
 
 
 }
@@ -1779,6 +1776,13 @@ input:not(:focus):not(:empty):not(:valid) {
 
 
 
+
+
+
+
+
+/* membership form */
+
 #ttlamt {
   font-size: 1.35rem;
   color: rgb(255, 255, 255);
@@ -1806,7 +1810,7 @@ input:not(:focus):not(:empty):not(:valid) {
   cursor: pointer;
   font-size: 1rem;
   overflow: hidden;
-  width:100%;
+  width:90%;
 
 }
 
@@ -1816,4 +1820,8 @@ input:not(:focus):not(:empty):not(:valid) {
 
 .file-label:hover {
   background-color: #0056b3;
+}
+
+#payment-completed {
+    padding: 1rem 1rem;
 }
