@@ -22,7 +22,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet" />
-
+<!-- cdn for file upload -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/stars.css" />
@@ -240,8 +241,8 @@
       <div class="event-card event-card-reg mb-5 membership-form-card"
         style="background: #5449a447; backdrop-filter: blur(6px)">
         <div class="membership-form-wrapper">
-          <form id="istecall" action="" style="width: 100%">
-            <div class="event-card-body event-card-body-reg" style="width: 100%; height: auto; background: transparent">
+          <form id="istecall" action="" style="width:100%;">
+              <div class="event-card-body event-card-body-reg" style="width: 100%; height: auto; background: transparent">
               <div style="width: 100%">
                 <h1 style="
 
@@ -401,12 +402,12 @@
                 </div>
 
                 <div>
-                  
-<label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
-      style="color: rgb(214, 91, 20)"></span></b></label><br />
-
-                  <input name="image" id="image" placeholder="Image or PDF" type="file" accept="image/*" required onchange="checkFileSize(this)" />
-                  <img src="" style="aspect-ratio: auto; max-height: 100px" align="center" id="drive" alt="" />
+                    <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
+                          style="color: rgb(214, 91, 20)"></span></b></label><br />
+                    <label for="image" class="file-label" id="display-file">
+                      <i class="fas fa-upload"></i> <span id="file-label-text">Choose an Image or PDF</span>
+                      <input name="image" id="image" type="file" accept="image/*,application/pdf" required style="display:none;">
+                    </label>
                 </div>
                 <br />
 
@@ -437,11 +438,13 @@
       </div>
     </div>
   </div>
+
+
   <!-- loader gif --> 
   <div class="send-div">
     <img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
     <div class="loader-text">
-      Submitting form...Please dont panic if stuck!! <br />
+      Submitting form... <br> Please dont panic if stuck!! <br>
       Please wait a minute the file is being uploaded...
     </div>
   </div>
@@ -485,8 +488,6 @@
     }
 
     // check size
-
-
   function checkFileSize(input) {
     const msg = document.getElementById('successtext');
     if (input.files && input.files[0]) {
@@ -561,7 +562,9 @@
       $.ajax({
         url: `
 
-        https://script.google.com/macros/s/AKfycbztkbjkY4QEXZd5z2agbAwUdTHqwTHKWDyLPRD6pWo3hRvEX0yk9HRY4s2iTTj4CKaz/exec
+          https://script.google.com/macros/s/AKfycbztkbjkY4QEXZd5z2agbAwUdTHqwTHKWDyLPRD6pWo3hRvEX0yk9HRY4s2iTTj4CKaz/exec
+
+
 
 			`.trim(),
 
@@ -574,22 +577,23 @@
           if (response.result === "success") {
 
             const paymentDetails = `
-					<br>d
-						<form id="istecall" action="" style="width:100%"><h4 id="succisstextfinal" style="color:white;size:3rem;">Form submitted Successfully!</h4><br>
-                        <br>
-                        <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
-<p style='font-size: 1.2em;color: green;'>
-    Account holder name: Devika Asok<br>
-    IFSC code: CNRB0005114<br>
-    Account number: 110191178480<br>
-    Gpay / PhonePe / Paytm: 7012310891<br>
-    UPI id: deepzdevika@oksbi
-</p>
+            <div id ="payment-completed">
+              <h4 id="succisstextfinal" style="color:white;size:3rem;margin:2rem 0;">Form submitted Successfully!</h4>
 
-                        <a id='register-now' class='theme-btn gradient mt-3' style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'  
-                        href='https://chat.whatsapp.com/I0fBcT1aoHI0ZdHRylrfGA' target="_blank">Join Our Whatsapp Group</a>
-                        <br>
-                        <br>
+              <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
+              <p style='font-size: 1.2em;color: green;'>
+                Account holder name: Devika Asok<br>
+                IFSC code: CNRB0005114<br>
+                Account number: 110191178480<br>
+                Gpay / PhonePe / Paytm: 7012310891<br>
+                UPI id: deepzdevika@oksbi
+              </p>
+
+              <a id='register-now' class='theme-btn gradient mt-3'
+                style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
+                href='https://chat.whatsapp.com/I0fBcT1aoHI0ZdHRylrfGA' target="_blank">Join Our Whatsapp Group</a>
+              <br>
+              </div>
                     `;
             document.getElementById("istecall").innerHTML = paymentDetails;
           } else {
@@ -614,6 +618,8 @@
     let filetype = document.getElementById("filetype");
     let filename = document.getElementById("filename");
     let fileglob = document.getElementById("glob");
+    const fileLabelText = document.getElementById("file-label-text");
+
 
     fileInput.addEventListener("change", () => {
       let file = fileInput.files[0];
@@ -621,13 +627,52 @@
       let fr = new FileReader();
       fr.onload = (e) => {
         let res = e.target.result;
+
         let glob = res.split("base64,")[1];
         filetype.value = file.type;
         filename.value = file.name;
         fileglob.value = glob;
+
+        const fileName = file.name;
+        const fileExtension = fileName.split('.').pop();
+        const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
+        const additionalText = baseName.slice(-3);
+        const displayName = baseName.length > 30 ? baseName.slice(0, 27) + '...' + additionalText : baseName;
+        fileLabelText.textContent = `${displayName}.${fileExtension}`;
       };
       fr.readAsDataURL(file);
     });
+
+    
+      const paymentDetails = `
+            <div id ="payment-completed">
+              <h4 id="succisstextfinal" style="color:white;size:3rem;margin:2rem 0;">Form submitted Successfully!</h4>
+
+              <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
+              <p style='font-size: 1.2em;color: green;'>
+                Account holder name: Devika Asok<br>
+                IFSC code: CNRB0005114<br>
+                Account number: 110191178480<br>
+                Gpay / PhonePe / Paytm: 7012310891<br>
+                UPI id: deepzdevika@oksbi
+              </p>
+
+              <a id='register-now' class='theme-btn gradient mt-3'
+                style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
+                href='https://chat.whatsapp.com/I0fBcT1aoHI0ZdHRylrfGA' target="_blank">Join Our Whatsapp Group</a>
+              <br>
+              </div>
+                    `;
+      document.getElementById("istecall").innerHTML = paymentDetails;
+
+
+
+
+
+
+
+
+
   </script>
 
   <!-- youtube  -->

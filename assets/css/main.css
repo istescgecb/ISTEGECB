@@ -191,6 +191,9 @@ a {
     display: none;
   }
 }
+
+
+
 .rnav {
   margin-top: 40px;
 }
@@ -606,10 +609,11 @@ a {
   backdrop-filter: blur(6px);
   width: 300px;
 }
+
 .event-card-old {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  
   align-items: center;
   border-radius: 27px;
   background: var(--secondary-color);
@@ -1197,7 +1201,11 @@ input:not(:focus):not(:empty):not(:valid) {
 }
 .membership-form-card {
   width: 75%;
+  background: #5449a447;
+  backdrop-filter: blur(6px);
 }
+
+
 .featured-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -1390,14 +1398,14 @@ input:not(:focus):not(:empty):not(:valid) {
     margin-top: 8rem;
     margin-bottom: 1.5rem;
   }
-  .job-profile-1{
- color: white;
-  font-weight: 300;
-  margin: 5rem auto 3rem auto;
-  width: 95%;
-  padding: 31px 31px 18px 32px;
-  border:1px solid white;
-}
+    .job-profile-1 {
+      color: white;
+      font-weight: 300;
+      margin: 5rem auto 3rem auto;
+      width: 95%;
+      padding: 31px 31px 18px 32px;
+      border: 1px solid white;
+    }
   .landing-icons .bartonoidz-icon {
     width: 226px;
     cursor: pointer;
@@ -1586,6 +1594,22 @@ input:not(:focus):not(:empty):not(:valid) {
     width: 90%;
     margin-top: 0;
   }
+
+  .membership-form-card{
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 100%;
+    padding-bottom: 2rem;
+  }
+
+  #payment-completed{
+    padding: 1rem 1rem;
+    
+  }
+
+
 }
 
 
@@ -1767,4 +1791,29 @@ input:not(:focus):not(:empty):not(:valid) {
 
 .membership-options {
   border: 1.2px solid #f2f2fe;
+}
+
+
+
+
+.file-label {
+  display: inline-block;
+      align-items: center;
+  padding: 1vh 2vh;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0.5vh;
+  cursor: pointer;
+  font-size: 1rem;
+  overflow: hidden;
+  width:100%;
+
+}
+
+.file-label i {
+  margin-right: 0.75vh;
+}
+
+.file-label:hover {
+  background-color: #0056b3;
 }
