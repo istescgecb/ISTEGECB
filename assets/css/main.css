@@ -1825,3 +1825,102 @@ input:not(:focus):not(:empty):not(:valid) {
 #payment-completed {
     padding: 1rem 1rem;
 }
+
+/* ================================================================================================================= */
+/* ================================================================================================================= */
+/* ==========================================            ABOUT US PAGE            ================================== */
+/* ================================================================================================================= */
+/* ================================================================================================================= */
+
+     .linktree-container {
+       height: 100vh;
+       position: relative;
+       display: flex;
+       flex-direction: column;
+  
+     }
+  
+     .linktree-heading {
+       font-family: 'Saira', sans-serif;
+       font-weight: 600;
+       text-transform: uppercase;
+       color: white;
+       font-size: 1.5rem;
+       padding-top: 1rem;
+       padding-bottom: 1rem;
+       text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 50%);
+     }
+  
+     /* .linktree-bg-image {
+       object-fit: cover;
+       position: absolute;
+       top: 0;
+       left: 0;
+       height: 100%;
+       width: 100%;
+     } */
+  
+     .linktree-section {
+       display: grid;
+       place-items: center;
+       position: absolute;
+       inset: 0;
+       overflow-y: scroll;
+     }
+  
+     .linktree-content {
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+       width: 100%;
+       max-width: 600px;
+  
+       margin: 0 auto;
+       padding: 6.25rem 1rem;
+       justify-content: center;
+       align-items: center;
+     }
+/*   
+     .linktree-logo {
+       width: 100px;
+       aspect-ratio: 1;
+       border-radius: 50%;
+       box-shadow: 0 0 8px 1px lightblue;
+     } */
+  
+     .linktree-link {
+       display: flex;
+       width: 100%;
+       align-items: center;
+       justify-content: center;
+       border: 1.5px solid white;
+       padding: 10px;
+       color: white;
+       /* background-color: hsl(242, 91%, 69%, 18%); */
+      backdrop-filter: blur(5px);
+       text-decoration: none;
+       gap: 20px;
+       border-radius: 4px;
+       transition-duration: 200ms;
+     }
+  
+     .linktree-link:hover {
+       background: white;
+       color: #0f172a;
+     }
+  
+     .linktree-icon {
+       font-size: 1.3em;
+       
+     }
+
+  
+  
+  
+     .linktree-link:hover {
+       background-color: #e0e0e0;
+  
+     }
+
+
+/* about-us end */

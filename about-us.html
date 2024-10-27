@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- cache contro  -->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- cache control ends  -->
+    <link rel="icon" href="assets/img/ISTE logo White.png" type="image/icon type" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/stars.css" />
+    <link rel="stylesheet" href="assets/css/loader.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>ISTE GECBH</title>
+
+</head>
+<!-- oncontextmenu="return false" -->
+
+<body>
+    <!-- bg animated dots -->
+    <div style="z-index: 0">
+        <div class="starsec"></div>
+        <div class="starthird"></div>
+        <div class="starfourth"></div>
+        <div class="starfifth"></div>
+    </div>
+    <div class="line1"></div>
+    <!-- desktop view nav  -->
+    <div class="container-fluid d-none d-md-block">
+        <div class="d-flex flex-wrap align-items-center justify-content-between mt-3 mx-5 py-2" style="
+          background: rgba(0, 3, 34, 0);
+          border-radius: 1rem;
+          backdrop-filter: blur(20px);
+        ">
+            <div class="d-flex flex-wrap justify-content-center align-items-center" style="margin-left: 1rem">
+                <img src="assets/img/ISTE logo White.png" style="width: 70px; height: auto" />
+                <a href="" class="headingdropbtn" style="margin-left: 1rem">ISTE GECBH</a>
+            </div>
+            <div id="header" class="d-flex flex-wrap align-items-center justify-content-center header">
+                <a class="nav-item" href="index.html">HOME</a>
+                <a class="nav-item" href="index.html#about">ABOUT</a>
+                <a class="nav-item" href="events.html">EVENTS</a>
+                <!-- <a class="nav-item" href="contact-us.html">CONTACT US</a> -->
+            </div>
+        </div>
+    </div>
+    <!-- mobile nav  -->
+    <div class="mobile-nav container-fluid d-block d-md-none py-3 px-3 backdrop-blur">
+        <div class="d-flex flex-wrap align-items-center justify-content-between">
+            <img src="assets/img/ISTE logo White.png" style="width: 48px; height: auto" />
+            <a href="index.html" class="headingdropbtn">ISTE GECBH</a>
+            <a onclick="openNav()"><img src="assets/svg/menu.svg" alt="iste gecbh" style="width: 33px" /></a>
+        </div>
+    </div>
+    <!-- mobile drawer -->
+    <div class="nav-container backdrop-blur">
+        <p style="
+          position: absolute;
+          top: 15px;
+          left: 32px;
+          font-size: 22px;
+          font-weight: 650;
+          font-family: 'Poppins';
+          margin: 0;
+          padding: 0;
+        ">
+            ISTE GECBH
+        </p>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="assets/svg/close.svg"
+                alt="istegecbh" /></a>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="events.html">
+                    <span class="icon"><i class="fas fa-calendar-week"></i></span>
+                    <span class="title">Events</span>
+                </a>
+            </li>
+            <li>
+                <a href="membership-benefits.html">
+                    <span class="icon"><i class="fas fa-user-shield"></i></span>
+                    <span class="title">Membership</span>
+                </a>
+            </li>
+            <li>
+                <a href="bartonair.html">
+                    <span class="icon"><i class="fas fa-plane"></i></span>
+                    <span class="title">Bartonair</span>
+                </a>
+            </li>
+            <li>
+                <a href="bartonoidz.html">
+                    <span class="icon"><i class="fas fa-robot"></i></span>
+                    <span class="title">Bartonoidz</span>
+                </a>
+            </li>
+            <!-- <li>
+                <a href="contact-us.html">
+                    <span class="icon"><i class="fas fa-comment-alt"></i></span>
+                    <span class="title">Contact</span>
+                </a>
+            </li> -->
+            <li>
+                <a href="developers.html">
+                    <span class="icon"><i class="fas fa-code"></i></span>
+                    <span class="title">Developers info</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="closeNav()">
+                    <span class="icon"><img src="assets/svg/back-right.svg" style="width: 39px"
+                            alt="istegecbh" /></span>
+                    <span class="title">Close</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="swiper mySwiper2" style="margin-bottom: 5rem">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+                    <div class="event-card dep-card" data-aos="fade-up">
+                        <div class="event-card-img" style="height: 106px">
+                            <img style="height: auto" src="assets/img/execom/excom-redirect.jpg" alt="istegecbh" />
+                        </div>
+                        <div class="event-card-body" style="align-items: center; height: auto">
+                            <h5 style="color: #ffffff; text-align: center; font-size: 19px">
+                                Our Team 🖼️
+                            </h5>
+                            <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="execom.html">See more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+                    <div class="event-card dep-card" data-aos="fade-up">
+                        <div class="event-card-img" style="height: 106px">
+                            <img style="height: auto" src="assets/img/oracle-redirect.jpg" alt="istegecbh" />
+                        </div>
+                        <div class="event-card-body" style="align-items: center; height: auto">
+                            <h5>The Oracle 📔</h5>
+                            <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="oracle.html">See more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+                    <div class="event-card dep-card" data-aos="fade-up">
+                        <div class="event-card-img" style="height: 106px">
+                            <img style="height: auto" src="assets/img/nts-redirect.jpg" alt="istegecbh" />
+                        </div>
+                        <div class="event-card-body" style="align-items: center; height: auto">
+                            <h5>Nikola Tesla Scholarship👩‍🎓</h5>
+                            <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="NTS.html">See more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+                    <div class="event-card dep-card" data-aos="fade-up">
+                        <div class="event-card-img" style="height: 106px">
+                            <img style="height: auto" src="assets/img/achievements/achievements-redirect.jpg"
+                                alt="istegecbh" />
+                        </div>
+                        <div class="event-card-body" style="align-items: center; height: auto">
+                            <h5 style="color: #ffffff; text-align: center; font-size: 19px">
+                                Our Achievements 🏆
+                            </h5>
+                            <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="achievements.html">See more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+                    <div class="event-card dep-card" data-aos="fade-up">
+                        <div class="event-card-img" style="height: 106px">
+                            <img style="height: auto" src="assets/img/alumni/alumni-redirect.jpg" alt="istegecbh" />
+                        </div>
+                        <div class="event-card-body" style="align-items: center; height: auto">
+                            <h5 style="color: #ffffff; text-align: center; font-size: 19px">
+                                Alumni ✨
+                            </h5>
+                            <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="alumni.html">See more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================= -->
+    <!-- =============================   NAV        ============================ -->
+    <!-- ======================================================================= -->
+
+
+
+    <div class="linktree-container">
+        <section class="linktree-section">
+            <div class="linktree-content" data-aos="fade-up">
+                <!-- Follow Us Heading -->
+                <h2 class="linktree-heading">Follow Us</h2>
+
+                <!-- Follow Us Cards -->
+                <a class="linktree-link" target ="_blank"href="https://www.linkedin.com/company/iste-student-chapter-gecb">
+                    <i class="linktree-icon fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="https://www.facebook.com/1395265320690497/">
+                    <i class="linktree-icon fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="https://instagram.com/istegecb?utm_medium=copy_link">
+                    <i class="linktree-icon fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="https://www.youtube.com/channel/UCT0jrqcHU-g9uVku1GWE-Uw">
+                    <i class="linktree-icon fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="https://whatsapp.com/channel/0029VamIrg5HrDZXomfgoe3Q">
+                    <i class="linktree-icon fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+
+                <!-- Check Us Out Heading -->
+                <h2 class="linktree-heading">Check Us Out</h2>
+
+                <!-- Existing links -->
+                <a class="linktree-link" target ="_blank"href="events.html">
+                    <i class="linktree-icon fas fa-calendar-week"></i>
+                    <span>Events</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="bartonair.html">
+                    <i class="linktree-icon fas fa-plane"></i>
+                    <span>Bartonair</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="bartonoidz.html">
+                    <i class="linktree-icon fas fa-robot"></i>
+                    <span>Bartonoidz</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="execom.html">
+                    <i class="linktree-icon fas fa-users"></i>
+                    <span>Our Team</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="oracle.html">
+                    <i class="linktree-icon fas fa-book"></i>
+                    <span>The Oracle</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="NTS.html">
+                    <i class="linktree-icon fas fa-graduation-cap"></i>
+                    <span>Nikola Tesla Scholarship</span>
+                </a>
+                <a class="linktree-link" target ="_blank"href="achievements.html">
+                    <i class="linktree-icon fas fa-trophy"></i>
+                    <span>Achievements</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+    <!-- ======================================================================= -->
+    <!-- =============================   SCRIPT     ============================ -->
+    <!-- ======================================================================= -->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+    <!-- youtube  -->
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
