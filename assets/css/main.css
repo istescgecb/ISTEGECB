@@ -1834,7 +1834,6 @@ input:not(:focus):not(:empty):not(:valid) {
 
      .linktree-container {
        height: 100vh;
-       position: relative;
        display: flex;
        flex-direction: column;
   
@@ -1849,6 +1848,9 @@ input:not(:focus):not(:empty):not(:valid) {
        padding-top: 1rem;
        padding-bottom: 1rem;
        text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 50%);
+     }
+     .linktree-heading:first-child {
+      margin-top: 3rem;
      }
   
      /* .linktree-bg-image {
@@ -1865,7 +1867,6 @@ input:not(:focus):not(:empty):not(:valid) {
        place-items: center;
        position: absolute;
        inset: 0;
-       overflow-y: scroll;
      }
   
      .linktree-content {
@@ -1874,19 +1875,12 @@ input:not(:focus):not(:empty):not(:valid) {
        gap: 10px;
        width: 100%;
        max-width: 600px;
-  
        margin: 0 auto;
        padding: 6.25rem 1rem;
        justify-content: center;
        align-items: center;
      }
-/*   
-     .linktree-logo {
-       width: 100px;
-       aspect-ratio: 1;
-       border-radius: 50%;
-       box-shadow: 0 0 8px 1px lightblue;
-     } */
+
   
      .linktree-link {
        display: flex;
