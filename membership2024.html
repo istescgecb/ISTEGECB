@@ -313,7 +313,7 @@
                 <br />
 
                 <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 400; color: rgb(214, 91, 20);">
-                  MEMBERSHIP OPTIONS (EARLY BIRD)
+                  MEMBERSHIP OPTIONS 
                 </label>
                 <br>
                 <div style="font-size: 1.2rem;">
@@ -321,16 +321,18 @@
                 </div>
                 
 <div class="membership-option">
-  <label id="labelBARTONAIR" style="font-size: 1.2rem; color: #888;">
+  <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
     <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
-      style="width: 1.2rem; height: 1.2rem" disabled />
+      style="width: 1.2rem; height: 1.2rem" />
     &nbsp;ISTE + BARTONAIR: <i>₹650/-</i>
   </label>
 </div>
 <div class="membership-option">
-  <label id="labelBARTONOIDZ" style="font-size: 1.2rem; color: #888;">
+  <label id="labelBARTONOIDZ" style="font-size: 1.2rem; "   >
+    <!-- color: #888; -->
+
     <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
-      style="width: 20px; height: 20px" disabled />
+      style="width: 20px; height: 20px" />
     &nbsp;ISTE + BARTONOIDZ: <i>₹650/-</i>
   </label>
 </div>
@@ -338,7 +340,7 @@
   <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
     <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)"
       style="width: 20px; height: 20px" checked />
-    &nbsp;ISTE FULL MEMBERSHIP (Early Bird): <del>₹800/-</del> <i>₹650/-</i>
+    &nbsp;ISTE FULL MEMBERSHIP :  <i>₹800/-</i>
   </label>
 </div>
 
@@ -448,40 +450,37 @@
 
   <script>
     // for membership ttlamount update
+
     function updateTotal(selectedOption) {
+        const ttlamt = document.getElementById("ttlamt");
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+        ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style
 
-      const ttlamt = document.getElementById("ttlamt");
-      ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style haha
+        let total = 0;
+        let membershipText = "";
 
-      let total = 0;
-      let membershipText = "";
+        switch (selectedOption.value) {
+          case "BR":
+            total = 700;
+            membershipText = "ISTE + BARTONAIR";
+            break;
+          case "BZ":
+            total = 700;
+            membershipText = "ISTE + BARTONOIDZ";
+            break;
+          case "FULL":
+            total = 800;
+            membershipText = "ISTE + FULL MEMBERSHIP";
+            break;
+        }
 
-      switch (selectedOption.value) {
-        case "BR":
-          total = 650;
-          membershipText = "ISTE + BARTONAIR";
-          break;
-        case "BZ":
-          total = 650;
-          membershipText = "ISTE + BARTONOIDZ";
-          break;
-        case "FULL":
-          total = 650;
-          membershipText = "ISTE + FULL MEMBERSHIP";
-          break;
-      }
-
-      ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
-      if (isMobile) {
-        ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
-      } else {
-        if (selectedOption.value === "FULL") {
-          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹800/-</del>  <i>₹${total}/-</i>`;
+        ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+        if (isMobile) {
+          ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
         } else {
           ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
         }
       }
-    }
 
     // check size
   function checkFileSize(file) {
@@ -665,7 +664,42 @@ https://script.google.com/macros/s/AKfycbxFUbdl4xfryYan3w--wTu8FS1_jpJT4ymV3FVN9
 
 
 
+      // // offer
+      // function updateTotal(selectedOption) {
 
+      //   const ttlamt = document.getElementById("ttlamt");
+      //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style haha
+
+      //   let total = 0;
+      //   let membershipText = "";
+
+      //   switch (selectedOption.value) {
+      //     case "BR":
+      //       total = 650;
+      //       membershipText = "ISTE + BARTONAIR";
+      //       break;
+      //     case "BZ":
+      //       total = 650;
+      //       membershipText = "ISTE + BARTONOIDZ";
+      //       break;
+      //     case "FULL":
+      //       total = 650;
+      //       membershipText = "ISTE + FULL MEMBERSHIP";
+      //       break;
+      //   }
+
+      //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+      //   if (isMobile) {
+      //     ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+      //   } else {
+      //     if (selectedOption.value === "FULL") {
+      //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹800/-</del>  <i>₹${total}/-</i>`;
+      //     } else {
+      //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+      //     }
+      //   }
+      // }
+    
 
 
 
