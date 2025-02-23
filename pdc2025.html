@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/main.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
-    <link rel="stylesheet" href="assets/css/loader.css" />
+	<link rel="stylesheet" href="assets/css/loader.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<title>ISTE GECBH</title>
@@ -70,7 +70,8 @@
 	</div>
 	<!-- mobile drawer -->
 	<div class="nav-container backdrop-blur">
-		<p style="position: absolute;top: 15px;left: 32px;font-size: 22px;font-weight: 600;font-family: 'Poppins';margin: 0; padding: 0;">
+		<p
+			style="position: absolute;top: 15px;left: 32px;font-size: 22px;font-weight: 600;font-family: 'Poppins';margin: 0; padding: 0;">
 			ISTE GECBH</p>
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="assets/svg/close.svg"
 				alt="istegecbh"></a>
@@ -478,27 +479,28 @@
 										<option value="S2">S2</option>
 										<option value="S4">S4</option>
 									</select>
-                                    <label for="Branch member3" class="mb-2 ml-2">Branch</label>
-                                    <select name="Branch member3" id="branch-member4" autofocus="" required="">
-                                        <option value="" hidden="">Select branch</option>
-                                        <option value="Civil Engineering">Civil Engineering</option>
-                                        <option value="Electrical and Electronics Engineering">Electrical and
-                                            Electronics Engineering</option>
-                                        <option value="Electronics &amp; Communication Engineering">Electronics
-                                            &amp; Communication Engineering</option>
-                                        <option value="Information Technology">Information Technology</option>
-                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
-                                    </select>
-                                    
-                                    
-                                    <label for="Are You Iste3" class="mb-2 ml-2">Are you an ISTE member?</label>
-                                    <select name="Are You Iste3" id="is-iste4" autofocus="" onchange="updateTotal()" required="">
-                                        <option value="" hidden="">Select option</option>
-                                        <option value="Yes">YES</option>
-                                        <option value="No">NO</option>
-                                    </select>
-                                    
-                                    </div>
+									<label for="Branch member3" class="mb-2 ml-2">Branch</label>
+									<select name="Branch member3" id="branch-member4" autofocus="" required="">
+										<option value="" hidden="">Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and
+											Electronics Engineering</option>
+										<option value="Electronics &amp; Communication Engineering">Electronics
+											&amp; Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+
+
+									<label for="Are You Iste3" class="mb-2 ml-2">Are you an ISTE member?</label>
+									<select name="Are You Iste3" id="is-iste4" autofocus="" onchange="updateTotal()"
+										required="">
+										<option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select>
+
+								</div>
 
 
 
@@ -547,9 +549,7 @@
 									</h6>
 
 								</div>
-								<!-- =============================================================================================================================================================
-========================================TOTAL AMOUNT || UPI PAYMENT BUTTON ================================================================================
-================================================================================================================================ ========================================-->
+
 								<div style="font-size: 1.2em;  background: #5a54f37c;max-width: 100%; border-radius: 20px; padding: 10px;"
 									align="center">
 									<div id="ttlamt">
@@ -614,14 +614,15 @@
 	</div>
 
 
-    <!-- loader gif -->
-    <div class="send-div">
-        <img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
-        <div class="loader-text">
-            Submitting form... <br> Please dont panic if stuck!! <br>
-            Please wait a minute the file is being uploaded...
-        </div>
-    </div>
+
+	<!-- loader gif -->
+	<div class="send-div">
+		<img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
+		<div class="loader-text">
+			Submitting form... <br> Please dont panic if stuck!! <br>
+			Please wait a minute the file is being uploaded...
+		</div>
+	</div>
 
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -709,14 +710,14 @@
 				fr.readAsDataURL(file);
 			}
 		});
-	// request
+		// request
 		let url = `
-https://script.google.com/macros/s/AKfycbxZ6Saul50DvD2pv6KX6OXTXnGk9iuJfOQxjCbc95tX1vgnHSuvOsFFkr3nCqnXS2yxlg/exec
 
+		https://script.google.com/macros/s/AKfycbxZ6Saul50DvD2pv6KX6OXTXnGk9iuJfOQxjCbc95tX1vgnHSuvOsFFkr3nCqnXS2yxlg/exec
         `.trim();
 		$("#pdcform").submit((e) => {
 			e.preventDefault();
-            $("send-div").fadeIn();
+			$(".send-div").fadeIn();
 
 
 			var teamName = document.getElementById('teamname').value;
@@ -795,9 +796,9 @@ https://script.google.com/macros/s/AKfycbxZ6Saul50DvD2pv6KX6OXTXnGk9iuJfOQxjCbc9
 					{
 						method: "POST",
 						body: JSON.stringify(obj)
-                    }).then(r => r.text()).then(data => {
-                        if (data == "success") {
-                                        const paymentDetails = `
+					}).then(r => r.text()).then(data => {
+						if (data == "success") {
+							const paymentDetails = `
               <div id = "payment-completed" >
                   <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">Form submitted Successfully!</h4>
 
@@ -818,12 +819,12 @@ https://script.google.com/macros/s/AKfycbxZ6Saul50DvD2pv6KX6OXTXnGk9iuJfOQxjCbc9
                     `;
 
 
-                        document.getElementById("istecall").innerHTML = paymentDetails;
-                        $(".send-div").fadeOut();
+							document.getElementById("pdcform").innerHTML = paymentDetails;
+							$(".send-div").fadeOut();
 
 						} else {
-                            document.getElementById("successtext").innerHTML = "ERORR Submitting Form.Please retry Filling the form.";
-                            $("send-div").fadeOut();
+							document.getElementById("successtext").innerHTML = "ERORR Submitting Form.Please retry Filling the form.";
+							$(".send-div").fadeOut();
 						}
 					})
 			})
@@ -897,12 +898,14 @@ https://script.google.com/macros/s/AKfycbxZ6Saul50DvD2pv6KX6OXTXnGk9iuJfOQxjCbc9
 	<script src="https://apis.google.com/js/platform.js"></script>
 	<script src="./assets/js/main.js"></script>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>		
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
 	<!-- Option 2: Separate Popper and Bootstrap JS -->
 	<!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
+	    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+	    -->
 </body>
 
 </html>
