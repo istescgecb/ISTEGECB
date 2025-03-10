@@ -651,6 +651,12 @@
 
 	<!-- Initialize Swiper -->
 	<script>
+		// registration ended
+		const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
+		membershipFormWrapper.innerHTML = `
+   		<h1 style="color: white;">Project Development Challenge</h1>
+    	<p style="color: white;">The challenge for 2025 has been officially closed.</p>`;
+
 
 		function updateTotal() {
 			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
