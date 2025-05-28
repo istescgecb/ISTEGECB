@@ -751,6 +751,65 @@ a {
   transform: scale(0.9);
 }
 
+/*Guidelines button*/
+.theme-btn.custom-guidelines {
+  box-shadow: 0 0 6px 0 rgba(255, 110, 196, 0.4);
+  border-radius: 15px;
+  border: solid 3px transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(to right, #7169fe, #ff6ec4);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px var(--secondary-color) inset;
+  transition: all 300ms ease;
+  transition: 0.3s;
+}
+
+.theme-btn.custom-guidelines:hover {
+  box-shadow: none;
+  color: white;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ), linear-gradient(to right, #ff6ec4,  #7169fe);
+  transition: all 300ms ease;
+  transition: 0.3s;
+  transform: scale(0.9);
+}
+
+/*submit button*/
+.theme-btn.custom-submit{
+  box-shadow: 0 0 6px 0 rgba(255, 110, 196, 0.4);
+  border-radius: 15px;
+  border: solid 3px transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(to right, #7169fe, #5dfb3a);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px var(--secondary-color) inset;
+  transition: all 300ms ease;
+  transition: 0.3s;
+}
+
+.theme-btn.custom-submit:hover {
+  box-shadow: none;
+  color: white;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ), linear-gradient(to right, #5dfb3a,  #7169fe);
+  transition: all 300ms ease;
+  transition: 0.3s;
+  transform: scale(0.9);
+} 
+
+
 /* mouse scroll down  */
 .mouse_scroll {
   display: block;
