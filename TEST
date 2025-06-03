@@ -1,0 +1,10 @@
+# initial check
+git fetch upstream
+git merge upstream/main
+
+
+
+# new branch
+git checkout -b branchname
+git push -u origin branchname
+git
