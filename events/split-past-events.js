@@ -15,7 +15,7 @@ rawHtml = rawHtml.replace(/<!--[\s\S]*?-->/g, "");
 const dom = new JSDOM(rawHtml);
 const document = dom.window.document;
 
-const allSwipers = Array.from(document.querySelectorAll("div.swiper.mySwiper2"));
+const allSwipers = Array.from(document.querySelector("#past-events").children);
 
 
 const chunks = [];
