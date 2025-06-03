@@ -112,3 +112,19 @@ function showEvent_8_Details() {
   let html = document.getElementById('html');
   html.classList.toggle('active')
 }
+
+
+// Load Past event divs
+$(document).ready(function() {
+  $.get("events/pages/page-count.txt", function(data) {
+    const pageCount = parseInt(data.trim(), 10);
+
+    for(let i=1; i<=pageCount; i++) {
+      $.get(`events/pages/page${i}.html`, function(pastEvent) {
+        
+        $('#past-content').append(pastEvent);
+      })
+    }
+  });
+});
+		
