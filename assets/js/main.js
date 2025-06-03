@@ -115,16 +115,18 @@ function showEvent_8_Details() {
 
 
 // Load Past event divs
-$(document).ready(function() {
-  $.get("events/pages/page-count.txt", function(data) {
-    const pageCount = parseInt(data.trim(), 10);
-
-    for(let i=1; i<=pageCount; i++) {
-      $.get(`events/pages/page${i}.html`, function(pastEvent) {
-        
-        $('#past-content').append(pastEvent);
-      })
+function loadPastEvents(pageNo = 1) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `events/pages/page${pageNo}.html`, true);
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      document.getElementById('past-content').innerHTML = xhr.responseText;
     }
-  });
+  };
+  xhr.send();
+}
+
+// Load page 1 by default when document is ready
+document.addEventListener('DOMContentLoaded', () => {
+  loadPastEvents();
 });
-		
