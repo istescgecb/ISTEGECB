@@ -23,8 +23,10 @@ if error on push:
   ### 2. Before Starting Work
   ```bash
   # Sync with upstream
+  git checkout main
   git fetch upstream
   git merge upstream/main
+  git push main
   ```
 
   ### 3. Creating & Working on New Feature
@@ -40,22 +42,25 @@ if error on push:
   ```bash
   # Stage and commit changes
   git add .
-  git commit -m "descriptive message"
+  git commit -m "message"
   git push
   ```
 
   ### 5. After Pull Request Merge
   ```bash
   # Update local main branch
+  git checkout main
   git fetch upstream
   git merge upstream/main
+  git push main
   ```
 
   ### 6. Cleanup
   ```bash
-  # Remove feature branch
+  # Remove feature branch (OPTIONAL maybe)
   git push origin --delete feature-branch  # Remote cleanup
   git branch -d feature-branch            # Local cleanup
+  git branch -D feature-branch            # force delete...
   ```
 
 
