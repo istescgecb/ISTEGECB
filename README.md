@@ -9,6 +9,10 @@ if error on push:
   git pull origin main 
   git push -u origin main  -->
 
+
+
+  
+
   ## Fork Workflow Guide
 
   ### 1. Initial Setup (One-time only)
@@ -26,7 +30,8 @@ if error on push:
   git checkout main
   git fetch upstream
   git merge upstream/main
-  git push main
+  git push origin main
+
   ```
 
   ### 3. Creating & Working on New Feature
@@ -52,7 +57,7 @@ if error on push:
   git checkout main
   git fetch upstream
   git merge upstream/main
-  git push main
+  git push origin main
   ```
 
   ### 6. Cleanup
