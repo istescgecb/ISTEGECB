@@ -2,26 +2,24 @@
 git remote add upstream https://github.com/Akhiljithk/ISTEGECB.git # orginal repo url
 git remote -v # should see 4 urls
 
-# initial check
+# initial check run everytime before u start working
 git fetch upstream
 git merge upstream/main
-
-
 
 # new branch
 git checkout -b branchname
 git push -u origin branchname
 
 
-# delete
-git push origin --delete branch name #deletes in 
-
 # commits
 git commit -m "message"
 git push
 
-
 # update main after pr
+git fetch upstream
+git merge upstream/main
 
-
+# delete
+git push origin --delete branchname #deletes in remote
+git branch -d branchname #deletes in local
 
