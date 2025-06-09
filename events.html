@@ -222,8 +222,13 @@
 </div>
 
 <div>
-<h2 class="latest-news">PAST EVENTS</h2>
-	<div id="past-content"> </div>
+<h2 class="latest-news" id="past-events-heading">PAST EVENTS</h2>
+	<div id="past-content"></div>
+</div>
+
+<!-- pagination -->
+<div class="pagination-container">
+	<ul id="pagination"></ul>
 </div>
 
 			
@@ -660,7 +665,6 @@
 
 
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script src="./assets/js/event-pagination.js"></script>
 
 	<!-- Initialize Swiper -->
 	<script>
@@ -726,6 +730,8 @@
 		// }
 	</script>
 
+	
+
 	<!-- youtube  -->
 	<script src="https://apis.google.com/js/platform.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -735,7 +741,8 @@
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 		crossorigin="anonymous"></script>
 
-
+	<script src="./assets/js/event-pagination.js"></script>
+	
 	
 
 	<!-- Option 2: Separate Popper and Bootstrap JS -->

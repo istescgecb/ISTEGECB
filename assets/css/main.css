@@ -1389,13 +1389,37 @@ input:not(:focus):not(:empty):not(:valid) {
   border: none;
 }
 
+/* pagination */
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  padding: 20px 0;
+}
 
+#pagination li a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.233);
+  transition: all 0.3s ease;
+}
 
+#pagination li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
 
-
-
-
-
+#pagination li a.active {
+  background-color: #8f82ee;
+  color: white;
+  box-shadow: 0 0 10px #8f82ee, 0 0 20px #7f71eb;
+}
 
 
 
@@ -1550,6 +1574,10 @@ input:not(:focus):not(:empty):not(:valid) {
   .past-event {
     margin-left: 6%;
   }
+
+
+
+
   .team-container {
     width: 95%;
     margin-left: 2%;
