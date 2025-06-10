@@ -27,7 +27,6 @@ if error on push:
   ### 2. Before Starting Work
   ```bash
   # Sync with upstream
-  git checkout main
   git fetch upstream
   git merge upstream/main
   git push origin main
@@ -54,7 +53,6 @@ if error on push:
   ### 5. After Pull Request Merge
   ```bash
   # Update local main branch
-  git checkout main
   git fetch upstream
   git merge upstream/main
   git push origin main
