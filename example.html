@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="assets/img/ISTE logo White.png" type="image/icon type" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/stars.css" />
+    <link rel="stylesheet" href="assets/css/loader.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>ISTE GECBH</title>
+    <style>
+        html, body {
+            overflow-x: hidden; /* Prevent horizontal scroll on body unless explicitly desired */
+            overflow-y: visible;
+        }
+
+        /* Custom CSS to force all items into a single row with horizontal scrolling */
+        .single-row-display {
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: nowrap; /* CRUCIAL: Prevents items from wrapping to the next line */
+            overflow-x: auto; /* Enables horizontal scrolling if content overflows */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            padding-bottom: 15px; /* Add space for the scrollbar */
+            justify-content: flex-start; /* Align items to the start of the container */
+            align-items: flex-start; /* Align items to the top if heights vary */
+        }
+
+        /* Ensure each card has a minimum width to prevent excessive shrinking */
+        .single-row-display .count-box {
+            flex-shrink: 0; /* Prevent items from shrinking below their content/min-width */
+            min-width: 200px; /* Adjust this value as needed for your card size */
+            margin-right: 15px; /* Add some space between cards */
+            margin-left: 0 !important; /* Override potential Bootstrap mx-* classes if necessary */
+        }
+    </style>
+</head>
+<body>
+    <div style="z-index: 0">
+        <div class="starsec"></div>
+        <div class="starthird"></div>
+        <div class="starfourth"></div>
+        <div class="starfifth"></div>
+    </div>
+    <div class="line1"></div>
+    <div class="container-fluid d-none d-md-block">
+        <div class="d-flex flex-wrap align-items-center justify-content-between mt-3 mx-5 py-2" style="
+          background: rgba(0, 3, 34, 0);
+          border-radius: 1rem;
+          backdrop-filter: blur(20px);
+        ">
+            <div class="d-flex flex-wrap justify-content-center align-items-center" style="margin-left: 1rem">
+                <img src="assets/img/ISTE logo White.png" style="width: 70px; height: auto" />
+                <a href="index.html" class="headingdropbtn" style="margin-left: 1rem">ISTE GECBH</a>
+            </div>
+            <div id="header" class="d-flex flex-wrap align-items-center justify-content-center header">
+                <a class="nav-item" href="index.html">HOME</a>
+                <a class="nav-item" href="index.html#about">ABOUT</a>
+                <a class="nav-item" href="events.html">EVENTS</a>
+                </div>
+        </div>
+    </div>
+    <div class="mobile-nav container-fluid d-block d-md-none py-3 px-3 backdrop-blur">
