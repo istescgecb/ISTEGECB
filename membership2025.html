@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
   <link
     href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet" />
@@ -65,7 +67,7 @@
   <!-- mobile nav  -->
   <div class="mobile-nav container-fluid d-block d-md-none py-3 px-3 backdrop-blur">
     <div class="d-flex flex-wrap align-items-center justify-content-between">
-      <img src="assets/img/ISTE logo White.png" style="width: 48px; height: auto" />
+      <a href="index.html" class="headingdropbtn"><img src="assets/img/ISTE logo White.png" style="width: 48px; height: auto" /></a>
       <a href="index.html" class="headingdropbtn">ISTE GECBH</a>
       <a onclick="openNav()"><img src="assets/svg/menu.svg" alt="iste gecbh" style="width: 33px" /></a>
     </div>
@@ -242,121 +244,126 @@
   =================================MEMBERSHIP FORM========================================================
  =========================================================================================================-->
  
-<div class="form-wrapper ">
-  <h1 class="form-title">&nbspISTE MEMBERSHIP DRIVE 2024</h1>
-  <p class="instruction-text">&nbspAll fields are mandatory. Fill the details correctly.</p>
+<div class="form-wrapper glass-card">
+  <h1 class="form-title"><strong>ISTE MEMBERSHIP DRIVE 2025</strong></h1>
+  <p class="instruction-text">All fields are mandatory. Fill the details correctly.</p>
 
   <form id="isteForm">
-    <div class="form-field">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="Name" placeholder="Your name" required />
+    <div class="form-grid">
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="Name" placeholder="Your name" required />
+      </div>
+
+      <div>
+        <label for="DOB">Date of Birth</label>
+        <input type="date" name="DOB" id="DOB" required />
+      </div>
+
+      <div>
+        <label for="Year">Year</label>
+        <select id="Year" name="Year" required>
+          <option value="" hidden>Select Year</option>
+          <option>1st</option><option>2nd</option><option>3rd</option><option>4th</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="Branch">Branch</label>
+        <select id="Branch" name="Branch" required>
+          <option value="" hidden>Select branch</option>
+          <option>Civil Engineering</option>
+          <option>Electrical and Electronics Engineering</option>
+          <option>Electronics & Communication Engineering</option>
+          <option>Information Technology</option>
+          <option>Mechanical Engineering</option>
+        </select>
+      </div>
+
+      <div style="grid-column: 1 / -1;">
+        <label for="Address">Home Address</label>
+        <textarea name="Address" id="Address" placeholder="Address" required></textarea>
+      </div>
+
+      <div>
+        <label for="PhoneNumber">Phone Number</label>
+        <input type="tel" name="PhoneNumber" id="PhoneNumber" pattern="\d{10}" title="Enter exactly 10 digits" required />
+      </div>
+
+      <div>
+        <label for="EmailId">Email</label>
+        <input type="email" name="EmailId" id="EmailId" placeholder="Email address" required />
+      </div>
+
+      <div style="grid-column: 1 / -1;">
+        <label for="referral">Referral Code (Optional)</label>
+        <input type="text" name="Referral" id="referral" placeholder="Referral Code" />
+      </div>
     </div>
 
-    <div class="form-field">
-      <label for="DOB">Date of Birth</label>
-      <input type="date" name="DOB" id="DOB" required />
+
+    <div class="membership-section">
+      <div class="toggle-switch">
+        <h4><b>MEMBERSHIP OPTIONS</b></h4>
+        <label>
+          <input type="radio" name="membershipOption" value="FULL" checked onclick="updateTotal(this)" />
+          <span class="toggle-option">ISTE FULL MEMBERSHIP : ₹800</span>
+        </label>
+        <label>
+          <input type="radio" name="membershipOption" value="BR" onclick="updateTotal(this)" />
+          <span class="toggle-option">ISTE + BARTONAIR : ₹650</span>
+        </label>
+        <label>
+          <input type="radio" name="membershipOption" value="BZ" onclick="updateTotal(this)" />
+          <span class="toggle-option">ISTE + BARTONOIDZ : ₹650</span>
+        </label>
+      </div>
     </div>
 
-    <div class="form-field">
-      <label for="Year">Year</label>
-      <select id="Year" name="Year" required>
-        <option value="" hidden>Select Year</option>
-        <option value="1st">&nbsp1st</option>
-        <option value="2nd">&nbsp2nd</option>
-        <option value="3rd">&nbsp3rd</option>
-        <option value="4th">&nbsp4th</option>
-      </select>
+    <div class="account-details glass-card">
+      <h4 class="payment-title">PAYMENT DETAILS</h4>
+      <div class="payment-grid">
+        <div>Account Holder:</div><div>Krishnapriya R</div>
+        <div>IFSC:</div><div>SBIN0070259</div>
+        <div>Account No:</div><div>44148248108</div>
+        <div>UPI / GPay:</div><div>krishnapriyarmalu-1@okicici</div>
+      </div>
     </div>
 
-    <div class="form-field">
-      <label for="Branch">Branch of Study</label>
-      <select id="Branch" name="Branch" required>
-        <option value="" hidden>&nbspSelect branch</option>
-        <option>&nbspCivil Engineering</option>
-        <option>&nbspElectrical and Electronics Engineering</option>
-        <option>&nbspElectronics & Communication Engineering</option>
-        <option>&nbspInformation Technology</option>
-        <option>&nbspMechanical Engineering</option>
-      </select>
+
+    <div class="total-amount-container">
+      <div id="ttlamt">Total: ₹800</div>
     </div>
 
-    <div class="form-field">
-      <label for="Address">Home Address</label>
-      <textarea name="Address" id="Address" rows="3" placeholder="  Address" required></textarea>
-    </div>
 
-    <div class="form-field">
-      <label for="PhoneNumber">Phone Number (10 digits)</label>
-      <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="  Phone number" pattern="\d{10}" required />
-    </div>
+    <p class="successtext">*Complete payment and upload screenshot before submitting.</p>
 
-    <div class="form-field">
-      <label for="EmailId">Email Address</label>
-      <input type="email" name="EmailId" id="EmailId" placeholder="  Email address" required />
-    </div>
+    <label for="image"><b>Payment Screenshot *</b></label>
+    <label for="image" class="file-label" id="display-file">
+      <i class="fas fa-upload"></i> <span id="file-label-text">Choose an Image or PDF</span>
+      <input name="image" id="image" type="file" accept="image/*,application/pdf" required style="display:none;" />
+    </label>
 
-    <div class="form-field">
-      <label for="referral">Referral Code (Optional)</label>
-      <input type="text" name="Referral" id="referral" placeholder="  Referral Code" />
-    </div>
 
-    <div class="form-field membership-section">
-      <label class="membership-label">MEMBERSHIP OPTIONS</label>
-
-      <label class="membership-choice">
-        <input type="radio" name="membershipOption" value="FULL" checked class="membership-radio" onclick="updateTotal(this)" />
-        &nbsp;ISTE FULL MEMBERSHIP: <i>₹800/-</i>
-      </label>
-
-      <label class="membership-choice">
-        <input type="radio" name="membershipOption" value="BR" class="membership-radio" onclick="updateTotal(this)" />
-        &nbsp;ISTE + BARTONAIR: <i>₹650/-</i>
-      </label>
-
-      <label class="membership-choice">
-        <input type="radio" name="membershipOption" value="BZ" class="membership-radio" onclick="updateTotal(this)" />
-        &nbsp;ISTE + BARTONOIDZ: <i>₹650/-</i>
-      </label>
-    </div>
-
-    <div class="form-field account-details">
-      <h3 class="payment-title">Payment Details</h3>
-      <ul class="payment-list">
-        <li><strong>Account Holder:</strong> &nbspKrishnapriya R</li>
-        <li><strong>IFSC Code:</strong> &nbspSBIN0070259</li>
-        <li><strong>Account No:</strong> &nbsp44148248108</li>
-        <li><strong>GPay / PhonePe / Paytm:</strong> &nbsp7736510828</li>
-        <li><strong>UPI ID:</strong> &nbspkrishnapriyarmalu-1@okicici</li>
-      </ul>
-    </div>
-
-    <div class="form-field total-amount-container">
-      <div id="ttlamt" class="total-amount">Total: ₹800</div>
-    </div>
-
-    <div class="form-field">
-      <h4 class="success-msg">*Please complete payment and upload screenshot before submitting.</h4>
-    </div>
-
-    <div class="form-field">
-      <label for="image"><b>Payment Screenshot *</b></label>
-      <label for="image" class="file-label" id="display-file">
-        <i class="fas fa-upload"></i> <span id="file-label-text">Choose an Image or PDF</span>
-        <input name="image" id="image" type="file" accept="image/*,application/pdf" required style="display:none;" />
-      </label>
-    </div>
-
-    <div class="form-field contact-info">
+    <div class="contact-info">
       <p>If any doubts, contact:</p>
       <a href="https://wa.me/918714317709">📞 Nithin</a>
       <a href="https://wa.me/917907159600">📞 Hridhya</a>
     </div>
 
-    <div class="form-field">
-      <button type="submit" class="custom-submit-btn">Submit</button>
+    <button type="submit" class="custom-submit-btn">Submit</button>
+    <div class="send-div">
+      <img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
+      <div class="loader-text">
+        Submitting form... <br> Please dont panic if stuck!! <br>
+        Please wait a minute the file is being uploaded...
+      </div>
     </div>
+  
   </form>
 </div>
+
+
 
 
   <!-- ============================================================================================================
@@ -364,14 +371,6 @@
    ================================================================================================================-->
  
 
-  <!-- loader gif --> 
-  <!-- <div class="send-div">
-    <img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
-    <div class="loader-text">
-      Submitting form... <br> Please dont panic if stuck!! <br>
-      Please wait a minute the file is being uploaded...
-    </div>
-  </div> -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <script>
@@ -492,12 +491,12 @@
     function a() {
       $(".send-div").show();
     }
-    document.getElementById("istecall").addEventListener("submit", a);
+    document.getElementById("isteForm").addEventListener("submit", a);
 
-    $("#istecall").submit((e) => {
+    $("#isteForm").submit((e) => {
       e.preventDefault();
 
-      const formData = $("#istecall").serializeArray();
+      const formData = $("#isteForm").serializeArray();
       var data = {};
       $(formData).each(function (index, obj) {
         data[obj.name] = obj.value;
@@ -538,7 +537,7 @@ https://script.google.com/macros/s/AKfycbxFUbdl4xfryYan3w--wTu8FS1_jpJT4ymV3FVN9
                   </a>
               </div>
                     `;
-      document.getElementById("istecall").innerHTML = paymentDetails;
+      document.getElementById("isteForm").innerHTML = paymentDetails;
           } else {
             document.getElementById("successtext").style.color = "#da0f3f";
             document.getElementById("successtext").style.fontSize = "1.5rem";
