@@ -2031,3 +2031,61 @@ input:not(:focus):not(:empty):not(:valid) {
 
 
 /* about-us end */
+
+
+
+/* youtube video display start */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Default (mobile-first) */
+.column_video {
+    float: none;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    min-height: 400px;
+    text-align: center;
+}
+
+.row_video {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row_video:after {
+    content: "";
+    display: table;
+    clear: both;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+iframe {
+    width: 90%;
+    height: 315px;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1200px) {
+    .column_video {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .row_video {
+        margin-left: 140px;
+        margin-right: 140px;
+        margin-bottom: 0px;
+    }
+}
+
+/* youtube video display end */
