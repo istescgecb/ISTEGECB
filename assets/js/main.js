@@ -114,19 +114,29 @@ function showEvent_8_Details() {
 }
 
 
-// Load Past event divs
+// Load Past event divs (please dont make further modifications)
 function loadPastEvents(pageNo = 1) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `events/pages/page${pageNo}.html`, true);
   xhr.onload = function () {
     if (xhr.status === 200) {
-      document.getElementById('past-content').innerHTML = xhr.responseText;
+      let container = document.getElementById('past-content');
+
+      if (!container) {
+        container = document.createElement('div');
+        container.id = 'past-content';
+        document.body.appendChild(container); 
+      }
+
+      container.innerHTML = xhr.responseText;
     }
   };
-  xhr.send();
+
+  xhr.send(); 
 }
 
-// Load page 1 by default when document is ready
 document.addEventListener('DOMContentLoaded', () => {
-  loadPastEvents();
+  if (window.location.pathname.includes("pastEvents.html")) {
+    loadPastEvents();
+  }
 });
