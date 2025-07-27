@@ -19,8 +19,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-
   <link
     href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet" />
@@ -28,7 +26,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/membership2025.css">
   <link rel="stylesheet" href="assets/css/stars.css" />
   <link rel="stylesheet" href="assets/css/loader.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -48,7 +45,7 @@
   <!-- desktop view nav  -->
   <div class="container-fluid d-none d-md-block">
     <div class="d-flex flex-wrap align-items-center justify-content-between mt-3 mx-5 py-2" style="
-          background: rgba(10, 13, 65, 0);
+          background: rgba(0, 3, 34, 0);
           border-radius: 1rem;
           backdrop-filter: blur(20px);
         ">
@@ -67,7 +64,7 @@
   <!-- mobile nav  -->
   <div class="mobile-nav container-fluid d-block d-md-none py-3 px-3 backdrop-blur">
     <div class="d-flex flex-wrap align-items-center justify-content-between">
-      <a href="index.html" class="headingdropbtn"><img src="assets/img/ISTE logo White.png" style="width: 48px; height: auto" /></a>
+      <img src="assets/img/ISTE logo White.png" style="width: 48px; height: auto" />
       <a href="index.html" class="headingdropbtn">ISTE GECBH</a>
       <a onclick="openNav()"><img src="assets/svg/menu.svg" alt="iste gecbh" style="width: 33px" /></a>
     </div>
@@ -243,139 +240,212 @@
 <!--======================================================================================================
   =================================MEMBERSHIP FORM========================================================
  =========================================================================================================-->
- 
-<div class="form-wrapper glass-card">
-  <h1 class="form-title"><strong>ISTE MEMBERSHIP DRIVE 2025</strong></h1>
-  <p class="instruction-text">All fields are mandatory. Fill the details correctly.</p>
 
-  <form id="isteForm">
-      <div class="form-grid">
-        <div>
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="Name" placeholder="Your name" required />
-        </div>
+  <div class="d-flex flex-wrap justify-content-center align-items-center">
+    <div class="event-card-on-reg-page on-contact">
+      <div class="event-card event-card-reg mb-5 membership-form-card"
+        style="background: #5449a447; backdrop-filter: blur(6px)">
+        <div class="membership-form-wrapper">
+              <form id="istecall" action="" style="width:100%">
+                <div class="event-card-body event-card-body-reg" style="width: 100%; height: auto;  background: transparent;">
+                  <div style="width: 95%; font-size: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+                    <h1 id="iste-heading" style="color: #19e4f3; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%" align="center">ISTE MEMBERSHIP DRIVE <aaaaa id="year-placeholder">2024</aaaaa></h1><script>(function(){const now=new Date();const currentYear=now.getFullYear();const displayYear=(now.getMonth()+1)<=4?currentYear-1:currentYear;document.getElementById("year-placeholder").textContent=displayYear;})();</script>
+                    <div class="d-flex flex-wrap align-content-center justify-content-center my-4">
+                    </div>
 
-        <div>
-          <label for="DOB">Date of Birth</label>
-          <input type="date" name="DOB" id="DOB" required />
-        </div>
+                    <p style="
+                          font-size: 1.2em;
+                          font-weight: 400;
+                          color: rgb(238, 82, 20);
 
-        <div>
-          <label for="Year">Year</label>
-          <select id="Year" name="Year" required>
-            <option value="" hidden>Select Year</option>
-            <option>1st</option><option>2nd</option><option>3rd</option><option>4th</option>
-          </select>
-        </div>
+                        ">
+                      *All fields are mandatory. Fill the details correctly.
+                    </p>
 
-        <div>
-          <label for="Branch">Branch</label>
-          <select id="Branch" name="Branch" required>
-            <option value="" hidden>Select branch</option>
-            <option>Civil Engineering</option>
-            <option>Electrical and Electronics Engineering</option>
-            <option>Electronics & Communication Engineering</option>
-            <option>Information Technology</option>
-            <option>Mechanical Engineering</option>
-          </select>
-        </div>
+                    <label class="mb-2 ml-2" for="name">Full Name</label><br />
+                    <input type="text" id="name" name="Name" placeholder="Your name" class="ffield" required /><br />
 
-        <div style="grid-column: 1 / -1;">
-          <label for="Address">Home Address</label>
-          <textarea name="Address" id="Address" placeholder="Address" required></textarea>
-        </div>
+                    <label class="mb-2 ml-2" for="DOB">Date of Birth</label><br />
+                    <input type="date" name="DOB" id="DOB" placeholder="DOB" class="ffield" required style="border-radius: 5px;" /><br />
 
-        <div>
-          <label for="PhoneNumber">Phone Number</label>
-          <input type="tel" name="PhoneNumber" id="PhoneNumber" pattern="\d{10}" title="Enter exactly 10 digits" required />
-        </div>
+                    <label class="mb-2 ml-2" for="Year">Year</label><br />
+                    <select id="Year" name="Year" class="ffield" required>
+                      <!-- onclick="updateAmt()" -->
+                      <option value="" hidden>Select Year</option>
+                      <option value="1st">1st</option>
+                      <option value="2nd">2nd</option>
+                      <option value="3rd">3rd</option>
+                      <option value="4th">4th</option>
+                    </select><br />
 
-        <div>
-          <label for="EmailId">Email</label>
-          <input type="email" name="EmailId" id="EmailId" placeholder="Email address" required />
-        </div>
+                    <label class="mb-2 ml-2" for="Branch">Branch of Study</label><br />
+                    <select id="Branch" name="Branch" class="ffield" required>
+                      <option value="" hidden>Select branch</option>
+                      <option value="Civil Engineering">Civil Engineering</option>
+                      <option value="Electrical and Electronics Engineering">
+                        Electrical and Electronics Engineering
+                      </option>
+                      <option value="Electronics & Communication Engineering">
+                        Electronics & Communication Engineering
+                      </option>
+                      <option value="Information Technology">
+                        Information Technology
+                      </option>
+                      <option value="Mechanical Engineering">
+                        Mechanical Engineering
+                      </option>
+                    </select><br />
 
-        <div style="grid-column: 1 / -1;">
-          <label for="referral">Referral Code (Optional)</label>
-          <input type="text" name="Referral" id="referral" placeholder="Referral Code" />
-        </div>
+                    <label class="mb-2 ml-2" for="Address">Home Address</label><br />
+                    <textarea name="Address" id="Address" rows="3" cols="40" placeholder="Address" class="ffield"
+                      required></textarea><br />
+
+                    <label class="mb-2 ml-2" for="PhoneNumber">Phone Number(10 digits)</label><br />
+                    <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}" class="ffield"
+                      required /><br />
+
+                    <label class="mb-2 ml-2" for="EmailId">Email Address</label><br />
+                    <input type="email" name="EmailId" id="EmailId" placeholder="Email address" class="ffield" required /><br /><br>
+
+
+                    <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
+                    <input type="text" name="Referral" id="referral" class="ffield" placeholder="Referral Code" /><br />
+
+                    <br /><br>
+
+                    <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 400; color: rgb(241, 131, 28);">
+                      <strong>MEMBERSHIP OPTIONS</strong>
+                    </label>
+                  <br>
+                  <div style="font-size: 1.2rem;">
+                    
+                  </div>
+                
+                  <div class="membership-option">
+                    <div class="membership-option">
+                      <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
+                        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)"
+                          style="width: 20px; height: 20px" checked />
+                        &nbsp;ISTE FULL MEMBERSHIP : <i>₹800/-</i>
+                      </label>
+                    </div>
+                    <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
+                      <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)" 
+                        style="width: 1.2rem; height: 1.2rem" />
+                      &nbsp;ISTE + BARTONAIR: <i>₹650/-</i>
+                    </label>
+                  </div>
+                  <div class="membership-option">
+                    <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
+                      <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)" 
+                        style="width: 20px; height: 20px" />
+                      &nbsp;ISTE + BARTONOIDZ: <i>₹650/-</i>
+                    </label>
+                  </div>
+
+
+
+                  <br><br>
+
+                  <div class="account-details">
+                    <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
+                      <b>PAYMENT DETAILS</b>
+                    </h2>
+                    <p style="font-size: 1.2em">
+                      Account holder name: Krishnapriya R<br />
+                      IFSC code:
+                      <span style="user-select: all; font: inherit">SBIN0070259</span><br />
+                      Account number:
+                      <span style="user-select: all; font: inherit">44148248108</span><br />
+                      UPI ID:
+                      <span style="
+                            user-select: all;
+                            font: inherit;
+                            padding: inherit;
+                          ">krishnapriyarmalu-1@okicici</span>
+                    </p><br><br>
+                  </div>
+
+
+
+                  <div class="flash-line" style="
+                      font-size: 1.2em;
+                      background: linear-gradient(to right, rgb(123, 33, 241), rgb(20, 53, 243)) ;
+                      max-width: 100%;
+                      border-radius: 20px;
+                      padding: 10px;
+                    ">
+                    <div id="ttlamt" style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px;border-radius: 5px; font-weight: 600; text-align: center;">
+                    </div>
+                    <div id="UPI"></div>
+                  </div>
+                  <br />
+                  <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
+                    Please complete payment and upload screenshot of payment
+                    before submitting.
+                  </h4>
+                  <br />
+
+                  <div class="d-flex justify-content-center">
+                    <div id="process" class="spinner-border" role="status"
+                      style="display: none; width: 3.5rem; height: 3.5rem">
+                      <span class="visually-hidden" style="font-size: 3.5rem; color: rgb(29, 182, 18)">Loading...</span>
+                      <br />
+                    </div>
+                  </div>
+
+                  <div>
+                      <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
+                            style="color: rgb(214, 91, 20)"></span></b></label><br />
+                      <label for="image" class="file-label" id="display-file">
+                        <i class="fas fa-upload"></i> <span id="file-label-text">Choose an Image or PDF</span>
+                        <input name="image" id="image" type="file" accept="image/*,application/pdf" required style="display:none;">
+                      </label>
+                  </div>
+                  <br />
+
+                  <p style="font-size: 1.2em">
+                    If any doubts, contact:
+                    <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;" href="https://wa.me/918330829274">📞Megha
+                      </a>
+                    <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/918078046950">📞 Gopika</a>
+                  </p>
+                  </div>
+                  <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
+                        padding: 12px 0;
+                        color: #ffffff;
+                        width: 100%;
+                        text-align: center;
+                        box-shadow: none;
+                        margin: auto;
+                        margin-bottom: 12px;
+                        border-radius: 14px;
+                      " />
+                  <input type="text" name="base64" id="glob" value="" hidden />
+                  <input type="text" name="type" id="filetype" value="" hidden />
+                  <input type="text" name="filename" id="filename" value="" hidden />
+                </div>
+              </form>
+          </div>
       </div>
+    </div>
+  </div>
 
 
-      <div class="membership-section">
-        <div class="toggle-switch">
-          <h4><b>MEMBERSHIP OPTIONS</b></h4>
-          <label>
-            <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" checked onclick="updateTotal(this)" />
-            <span class="toggle-option">ISTE FULL MEMBERSHIP : ₹800</span>
-          </label>
-          <label>
-            <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)" />
-            <span class="toggle-option">ISTE + BARTONAIR : ₹650</span>
-          </label>
-          <label>
-            <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)" />
-            <span class="toggle-option">ISTE + BARTONOIDZ : ₹650</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="account-details glass-card">
-        <h4 class="payment-title">PAYMENT DETAILS</h4>
-        <div class="payment-grid">
-          <div>Account Holder:</div><div>Krishnapriya R</div>
-          <div>IFSC:</div><div>SBIN0070259</div>
-          <div>Account No:</div><div>44148248108</div>
-          <div>UPI / GPay:</div><div>krishnapriyarmalu-1@okicici</div>
-        </div>
-      </div>
+  <!-- loader gif --> 
+  <div class="send-div">
+    <img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
+    <div class="loader-text">
+      Submitting form... <br> Please dont panic if stuck!! <br>
+      Please wait a minute the file is being uploaded...
+    </div>
+  </div>
 
 
-      <div class="total-amount-container">
-        <div id="ttlamt">Total: ₹800</div>
-      </div>
+<!--======================================================================================================
+  =================================MEMBERSHIP FORM========================================================
+ =========================================================================================================-->
 
-
-      <p class="successtext" id="successtext">*Complete payment and upload screenshot before submitting.</p>
-
-      <label for="image"><b>Payment Screenshot *</b></label>
-      <label for="image" class="file-label" id="display-file">
-        <i class="fas fa-upload"></i> <span id="file-label-text">Choose an Image or PDF</span>
-        <input name="image" id="image" type="file" accept="image/*,application/pdf" required style="display:none;" />
-      </label>
-
-
-      <div class="contact-info">
-        <p>If any doubts, contact:</p>
-        <a href="https://wa.me/918714317709">📞 Nithin</a>
-        <a href="https://wa.me/917907159600">📞 Hridhya</a>
-      </div>
-
-      <input type="hidden" id="type" name="type">
-      <input type="hidden" id="filename" name="filename">
-      <input type="hidden" id="base64" name="base64">
-
-
-      <button type="submit" class="custom-submit-btn">Submit</button>
-      <div class="send-div">
-        <img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
-        <div class="loader-text">
-          Submitting form... <br> Please dont panic if stuck!! <br>
-          Please wait a minute the file is being uploaded...
-        </div>
-      </div>
-      
-    
-  </form>
-</div>
-
-
-
-
-  <!-- ============================================================================================================
-   ========================================== MEMBER SHIP FORM END ================================================
-   ================================================================================================================-->
- 
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -497,26 +567,24 @@
     function a() {
       $(".send-div").show();
     }
+    document.getElementById("istecall").addEventListener("submit", a);
 
-    const form = document.getElementById("isteForm");
-
-    form.addEventListener("submit", a);
-
-    $("#isteForm").submit((e) => {
+    $("#istecall").submit((e) => {
       e.preventDefault();
 
-      const form = document.getElementById("isteForm")
-      const formData = new FormData(form);
-
-      let data = {};
-      for (let [key, value] of formData.entries()) {
-        if (key === "image") continue;
-        data[key] = value;
-      }
-            console.log("Form Data:", data);
+      const formData = $("#istecall").serializeArray();
+      var data = {};
+      $(formData).each(function (index, obj) {
+        data[obj.name] = obj.value;
+      });
+      console.log(data);
 
       $.ajax({
-        url: `https://script.google.com/macros/s/AKfycbxh2edQRTp9DUOjJwPD76ChkItQSqGa9v0ktgqTKWwdvxqkkgpL-zQ2PxMsOeBq_Pr6/exec`.trim(),
+        url: `
+
+        https://script.google.com/macros/s/AKfycbxh2edQRTp9DUOjJwPD76ChkItQSqGa9v0ktgqTKWwdvxqkkgpL-zQ2PxMsOeBq_Pr6/exec
+
+			`.trim(),
 
         data: JSON.stringify(data),
 
@@ -531,12 +599,12 @@
                   <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">Form submitted Successfully!</h4>
 
                   <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
-                  <p style='font-size: 1.2em;color: #07ff1c;'>
-                    Account holder name: Krishnapriya R<br>
-                    IFSC code: SBIN0070259<br>
+                  <p style='font-size: 1.2em;color: green;'>
+                    Account holder name: Devika Asok<br>
+                    IFSC code: CNRB0005114<br>
                     Account number: 110191178480<br>
-                    Gpay / PhonePe / Paytm: 44148248108<br>
-                    UPI id: krishnapriyarmalu-1@okicici
+                    Gpay / PhonePe / Paytm: 7012310891<br>
+                    UPI id: deepzdevika@oksbi
                   </p>
 
                   <a id='register-now' class='theme-btn gradient mt-3'
@@ -545,9 +613,8 @@
                   </a>
               </div>
                     `;
-      document.getElementById("isteForm").innerHTML = paymentDetails;
+      document.getElementById("istecall").innerHTML = paymentDetails;
           } else {
-            console.log(response);
             document.getElementById("successtext").style.color = "#da0f3f";
             document.getElementById("successtext").style.fontSize = "1.5rem";
             document.getElementById("successtext").innerHTML =
@@ -556,7 +623,7 @@
           $(".send-div").fadeOut();
         },
         error: function (err) {
-          console.log("AJAX Error:", err); // Log any AJAX errors
+          // console.log("AJAX Error:", err); // Log any AJAX errors
           document.getElementById("successtext").style.color = "red";
           document.getElementById("successtext").innerHTML =
             "Error Submitting Form. Please retry filling the form.";
@@ -566,9 +633,9 @@
     });
 
     let fileInput = document.getElementById("image");
-    let filetype = document.getElementById("type");
+    let filetype = document.getElementById("filetype");
     let filename = document.getElementById("filename");
-    let fileglob = document.getElementById("base64");
+    let fileglob = document.getElementById("glob");
 
 
     fileInput.addEventListener("change", () => {
@@ -641,7 +708,7 @@
 
   <!-- youtube  -->
   <script src="https://apis.google.com/js/platform.js"></script>
-  <!-- <script src="./assets/js/main.js"></script> -->
+  <script src="./assets/js/main.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
