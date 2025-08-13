@@ -249,14 +249,14 @@
               <form id="istecall" action="" style="width:100%">
                 <div class="event-card-body event-card-body-reg" style="width: 100%; height: auto;  background: transparent;">
                   <div style="width: 95%; font-size: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif">
-                    <h1 id="iste-heading" style="color: #19e4f3; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%" align="center">ISTE MEMBERSHIP DRIVE <aaaaa id="year-placeholder">2024</aaaaa></h1><script>(function(){const now=new Date();const currentYear=now.getFullYear();const displayYear=(now.getMonth()+1)<=4?currentYear-1:currentYear;document.getElementById("year-placeholder").textContent=displayYear;})();</script>
+                    <h1 id="iste-heading" style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%" align="center">ISTE MEMBERSHIP DRIVE <aaaaa id="year-placeholder">2024</aaaaa></h1><script>(function(){const now=new Date();const currentYear=now.getFullYear();const displayYear=(now.getMonth()+1)<=4?currentYear-1:currentYear;document.getElementById("year-placeholder").textContent=displayYear;})();</script>
                     <div class="d-flex flex-wrap align-content-center justify-content-center my-4">
                     </div>
 
                     <p style="
                           font-size: 1.2em;
                           font-weight: 400;
-                          color: rgb(238, 82, 20);
+                          color: rgb(235, 86, 86);
 
                         ">
                       *All fields are mandatory. Fill the details correctly.
@@ -314,7 +314,7 @@
                     <br /><br>
 
                     <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 400; color: rgb(241, 131, 28);">
-                      <strong>MEMBERSHIP OPTIONS</strong>
+                      <strong>MEMBERSHIP OPTIONS (EARLY BIRD)</strong>
                     </label>
                   <br>
                   <div style="font-size: 1.2rem;">
@@ -324,22 +324,22 @@
                   <div class="membership-option">
                     <div class="membership-option">
                       <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
-                        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)"
-                          style="width: 20px; height: 20px" checked />
-                        &nbsp;ISTE FULL MEMBERSHIP : <i>₹800/-</i>
+                        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
+											onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+										&nbsp;ISTE + FULL MEMBERSHIP (Early Bird): <del>₹1200/-</del> <i>₹800/-</i>
                       </label>
                     </div>
                     <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
                       <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)" 
                         style="width: 1.2rem; height: 1.2rem" />
-                      &nbsp;ISTE + BARTONAIR: <i>₹650/-</i>
+                      &nbsp;ISTE + BARTONAIR: <i>₹700/-</i>
                     </label>
                   </div>
                   <div class="membership-option">
                     <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
                       <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)" 
                         style="width: 20px; height: 20px" />
-                      &nbsp;ISTE + BARTONOIDZ: <i>₹650/-</i>
+                      &nbsp;ISTE + BARTONOIDZ: <i>₹700/-</i>
                     </label>
                   </div>
 
@@ -368,17 +368,17 @@
 
 
 
-                  <div class="flash-line" style="
+                  <div style="
                       font-size: 1.2em;
-                      background: linear-gradient(to right, rgb(123, 33, 241), rgb(20, 53, 243)) ;
+                      background: #5a54f37c;
                       max-width: 100%;
                       border-radius: 20px;
                       padding: 10px;
-                    ">
-                    <div id="ttlamt" style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px;border-radius: 5px; font-weight: 600; text-align: center;">
-                    </div>
-                    <div id="UPI"></div>
+                    " align="center">
+                  <div id="ttlamt" style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; font-weight: 600; text-align: center;">
                   </div>
+                  <div id="UPI"></div>
+                </div>
                   <br />
                   <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
                     Please complete payment and upload screenshot of payment
@@ -406,9 +406,9 @@
 
                   <p style="font-size: 1.2em">
                     If any doubts, contact:
-                    <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;" href="https://wa.me/918330829274">📞Megha
+                    <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;" href="https://wa.me/918330829274">📱 Megha
                       </a>
-                    <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/918078046950">📞 Gopika</a>
+                    <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/918078046950">📱 Gopika</a>
                   </p>
                   </div>
                   <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
@@ -462,11 +462,11 @@
 
         switch (selectedOption.value) {
           case "BR":
-            total = 650;
+            total = 700;
             membershipText = "ISTE + BARTONAIR";
             break;
           case "BZ":
-            total = 650;
+            total = 700;
             membershipText = "ISTE + BARTONOIDZ";
             break;
           case "FULL":
@@ -582,7 +582,7 @@
       $.ajax({
         url: `
 
-        https://script.google.com/macros/s/AKfycbxh2edQRTp9DUOjJwPD76ChkItQSqGa9v0ktgqTKWwdvxqkkgpL-zQ2PxMsOeBq_Pr6/exec
+        https://script.google.com/macros/s/AKfycbwNO4D5mhlT96s_jJS7dPVz4Th9WGUlK_eFw147Zvr6VDjCZ5xK1M198v6xVhR8eGZ9/exec
 
 			`.trim(),
 
