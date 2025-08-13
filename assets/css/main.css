@@ -1238,9 +1238,10 @@ input:not(:focus):not(:empty):not(:valid) {
   transition: ease-in-out 0.3s;
 }
 
-
-
-
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(27%) sepia(85%) saturate(500%) hue-rotate(190deg) brightness(95%) contrast(85%);
+  cursor: pointer;
+}
 
 
 .event-card-body-reg {
