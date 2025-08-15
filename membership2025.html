@@ -22,6 +22,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet" />
+    <!-- sweetalert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
 <!-- cdn for file upload -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -448,6 +451,49 @@
 
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    const seatScriptUrl = `https://script.google.com/macros/s/AKfycbxs9LnJUFhvj87-4JklM02dRS5NH1VmTsj1MVfX32WfL7siL5YgL_hwH8yFekl34LTw/exec?action=seats`;
+
+    fetch(seatScriptUrl)
+      .then(response => response.json())
+      .then (data => {
+        const seats = Number(data.seats);
+        if ( seats && seats>0) {
+          Swal.fire({
+          title: 'Hurry up!',
+          text: `Only ${seats} memberships remaining`,
+          icon: 'info', 
+          confirmButtonText: 'Okay',
+          background: '#e6e1fa',
+          timer: 6000, 
+          timerProgressBar: true
+        });
+
+        } else if(seats === 0) {
+            Swal.fire({
+            title: 'Early Bird Membership Over :(',
+            text: `${seats} memberships remaining`,
+            icon: 'info', 
+            confirmButtonText: 'Okay',
+            background: '#e6e1fa',
+            timer: 6000, 
+            timerProgressBar: true
+          });
+        } else {
+          console.log("seats value not found in response");
+        }
+      }).catch(err => {
+        console.error("Error fetching seats")
+      });
+
+
+ 
+
+</script>
+
+
 
   <script>
     // for membership ttlamount update
@@ -582,7 +628,7 @@
       $.ajax({
         url: `
 
-        https://script.google.com/macros/s/AKfycbwNO4D5mhlT96s_jJS7dPVz4Th9WGUlK_eFw147Zvr6VDjCZ5xK1M198v6xVhR8eGZ9/exec
+       https://script.google.com/macros/s/AKfycbxs9LnJUFhvj87-4JklM02dRS5NH1VmTsj1MVfX32WfL7siL5YgL_hwH8yFekl34LTw/exec
 
 			`.trim(),
 
@@ -600,11 +646,10 @@
 
                   <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
                   <p style='font-size: 1.2em;color: green;'>
-                    Account holder name: Devika Asok<br>
-                    IFSC code: CNRB0005114<br>
-                    Account number: 110191178480<br>
-                    Gpay / PhonePe / Paytm: 7012310891<br>
-                    UPI id: deepzdevika@oksbi
+                    Account holder name: Krishnapriya R<br>
+                    IFSC code: SBIN0070259<br>
+                    Account number: 44148248108<br>
+                    UPI id: krishnapriyarmalu-1@okicici
                   </p>
 
                   <a id='register-now' class='theme-btn gradient mt-3'
