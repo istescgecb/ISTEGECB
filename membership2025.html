@@ -462,8 +462,8 @@
         const seats = Number(data.seats);
         if ( seats && seats>0) {
           Swal.fire({
-          title: 'Hurry up!',
-          text: `Only ${seats} memberships remaining`,
+          title: 'Join Now !',
+          text: `Only ${seats} memberships left`,
           icon: 'info', 
           confirmButtonText: 'Okay',
           background: '#e6e1fa',
@@ -473,8 +473,8 @@
 
         } else if(seats === 0) {
             Swal.fire({
-            title: 'Early Bird Membership Over :(',
-            text: `${seats} memberships remaining`,
+            title: '⌛️ Early Bird Membership Over ',
+            text: `Memberships full :( `,
             icon: 'info', 
             confirmButtonText: 'Okay',
             background: '#e6e1fa',
