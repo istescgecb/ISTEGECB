@@ -454,38 +454,47 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
-    const seatScriptUrl = `https://script.google.com/macros/s/AKfycbxs9LnJUFhvj87-4JklM02dRS5NH1VmTsj1MVfX32WfL7siL5YgL_hwH8yFekl34LTw/exec?action=seats`;
+    const startTime = performance.now();
+    const seatScriptUrl = `
+
+https://script.google.com/macros/s/AKfycbz5MNZDyiLa3A6FI6wMyDvyU6uBp4kvurjkiz7Hc0lXQGHVYq1p2B4SH0-gvQE4K4M-bg/exec
+    `.trim() + "?action=seats";
 
     fetch(seatScriptUrl)
       .then(response => response.json())
-      .then (data => {
+      .then(data => {
+        const endTime = performance.now();
+        const timeTaken = endTime - startTime;
+        // console.log(`Fetch took ${timeTaken.toFixed(2)} milliseconds`);
+        
         const seats = Number(data.seats);
-        if ( seats && seats>0) {
+        if (seats && seats>0) {
           Swal.fire({
-          title: 'Join Now !',
-          text: `Only ${seats} memberships left`,
-          icon: 'info', 
-          confirmButtonText: 'Okay',
-          background: '#e6e1fa',
-          timer: 6000, 
-          timerProgressBar: true
-        });
-
+            title: 'Join Now !',
+            text: `Only ${seats} memberships left`,
+            icon: 'info',
+            confirmButtonText: 'Okay', 
+            background: '#e6e1fa',
+            timer: 6000,
+            timerProgressBar: true
+          });
         } else if(seats === 0) {
-            Swal.fire({
+          Swal.fire({
             title: '⌛️ Early Bird Membership Over ',
             text: `Memberships full :( `,
-            icon: 'info', 
+            icon: 'info',
             confirmButtonText: 'Okay',
-            background: '#e6e1fa',
-            timer: 6000, 
+            background: '#e6e1fa', 
+            timer: 6000,
             timerProgressBar: true
           });
         } else {
           console.log("seats value not found in response");
         }
       }).catch(err => {
-        console.error("Error fetching seats")
+        const endTime = performance.now();
+        console.error("Error fetching seats");
+        // console.log(`Failed fetch took ${(endTime-startTime).toFixed(2)} milliseconds`);
       });
 
 
