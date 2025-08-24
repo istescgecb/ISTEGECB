@@ -86,6 +86,30 @@
         ">
       ISTE GECBH
     </p>
+    <!-- Include SweetAlert2 -->
+      <div id="persistent-banner">🚀 Limited offer: 25 Early Bird Seats left !!</div>
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <!-- <script>
+    // Repeat tilt animation every 5 seconds
+    setInterval(() => {
+      let banner = document.getElementById("persistent-banner");
+      banner.style.animation = "none"; // reset
+      void banner.offsetWidth; // reflow hack
+      banner.style.animation = "tilt 0.5s"; // replay animation
+    }, 5000);
+
+    // Example SweetAlert popup that won't affect the banner
+    setTimeout(() => {
+      Swal.fire({
+        icon: 'info',
+        title: 'Heads up!',
+        text: 'This is another alert, but the banner stays.'
+      })
+    }, 3000);
+  </script> -->
+
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="assets/svg/close.svg"
         alt="istegecbh" /></a>
     <ul>
@@ -327,9 +351,20 @@
                   <div class="membership-option">
                     <div class="membership-option">
                       <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
+                         <div class="special-offer blink" style="
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #b71c1c;
+      margin-top: 8px;
+      margin-bottom: 1em;
+      animation: pulse 1.3s infinite;
+    ">
+    🎉 Limited offer: <b>25 Early Bird seats left</b>
+  </div>
                         <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
 											onclick="updateTotal(this)" style="width: 20px; height: 20px" />
-										&nbsp;ISTE + FULL MEMBERSHIP (Early Bird): <del>₹1200/-</del> <i>₹800/-</i>
+										&nbsp;ISTE + FULL MEMBERSHIP : <del>₹1200/-</del> <i>₹800/-</i>               
                       </label>
                     </div>
                     <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
@@ -453,6 +488,8 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+  
   <script>
     const startTime = performance.now();
     const seatScriptUrl = `
