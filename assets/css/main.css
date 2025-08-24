@@ -1244,6 +1244,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
+
+
 .event-card-body-reg {
   padding: 1% 5% 5% 3%;
 }
@@ -1878,6 +1880,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* ================================================================================================================= */
 /* ================================================================================================================= */
 
+
+
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+
 .form-row-square {
   display: flex;
   justify-content: space-between;
@@ -1913,6 +1924,29 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
+/* alert at the beginning */
+ #persistent-banner {
+      position: fixed;
+      top: 60px; 
+      left: 50%;
+      transform: translateX(-50%);
+      background: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      font-weight: bold;
+      z-index: 9999;
+      animation: tilt 0.5s;
+    }
+
+    @keyframes tilt {
+      0%   { transform: translateX(-50%) rotate(0deg); }
+      25%  { transform: translateX(-50%) rotate(3deg); }
+      50%  { transform: translateX(-50%) rotate(-3deg); }
+      75%  { transform: translateX(-50%) rotate(3deg); }
+      100% { transform: translateX(-50%) rotate(0deg); }
+    }
 
 
 .file-label {
