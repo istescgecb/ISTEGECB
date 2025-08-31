@@ -1903,7 +1903,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 12px;
   font-size: 1.2em;
   font-weight: bold;
-  background: #a71ed1;
+  background: #c33cec96;
   color: white;
   border: none;
   border-radius: 8px;
