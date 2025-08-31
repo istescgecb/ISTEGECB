@@ -86,9 +86,9 @@
         ">
       ISTE GECBH
     </p>
-    <!-- Include SweetAlert2 -->
+    <!-- Include SweetAlert2 
       <div id="persistent-banner">🚀 Limited offer: 25 Early Bird Seats left !!</div>
-       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  -->
 
 
   <!-- <script>
@@ -352,16 +352,16 @@
                     <div class="membership-option">
                       <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
                          <div class="special-offer blink" style="
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #ee6728;
-      margin-top: 8px;
-      margin-bottom: 1em;
-      animation: pulse 1.3s infinite;
-    ">
-    🎉 Limited offer: <b>25 Early Bird seats left</b>
-  </div>
+                              border-radius: 8px;
+                              font-size: 1rem;
+                              font-weight: 600;
+                              color: #ee6728;
+                              margin-top: 8px;
+                              margin-bottom: 1em;
+                              animation: pulse 1.3s infinite;
+                            ">
+                            <h6 id="get-limit">🎉 Limited offer: <b><i>25</i> Early Bird seats left</b></h6>
+                          </div>
                         <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
 											onclick="updateTotal(this)" style="width: 20px; height: 20px" />
 										&nbsp;ISTE + FULL MEMBERSHIP : <del>₹1200/-</del> <i>₹800/-</i>               
@@ -402,6 +402,25 @@
                             padding: inherit;
                           ">krishnapriyarmalu-1@okicici</span>
                     </p><br><br>
+
+                    <div class="qr-container">
+                    <button class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
+                    <div class="qr-section" id="qrSection">
+                      <div class="qr-card">
+                      <img src="assets/img/qr-code-for-membership.jpg" alt="payment QR"id="qrImage" class="qr-code">
+                      <div class="qr-actions">
+                        <button class="share-btn" id="shareBtn">
+                          <span></span>
+                          <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px" alt="Share Icon">
+                        </button>
+                        <button class="download-btn" id="downloadBtn">
+                          <span></span>
+                          <img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px" alt="Download Icon">
+                        </button>
+                      </div>
+                      </div>
+                    </div>
+                    </div>
                   </div>
 
 
@@ -490,13 +509,10 @@
 
 
   
-  <script>
-    const startTime = performance.now();
-    const seatScriptUrl = `
-
-https://script.google.com/macros/s/AKfycbz5MNZDyiLa3A6FI6wMyDvyU6uBp4kvurjkiz7Hc0lXQGHVYq1p2B4SH0-gvQE4K4M-bg/exec
+ <!-- <script>
+    const startTime = performance.now(); 
+    const seatScriptUrl = `https://script.google.com/macros/s/AKfycbz5MNZDyiLa3A6FI6wMyDvyU6uBp4kvurjkiz7Hc0lXQGHVYq1p2B4SH0-gvQE4K4M-bg/exec
     `.trim() + "?action=seats";
-
     fetch(seatScriptUrl)
       .then(response => response.json())
       .then(data => {
@@ -535,13 +551,31 @@ https://script.google.com/macros/s/AKfycbz5MNZDyiLa3A6FI6wMyDvyU6uBp4kvurjkiz7Hc
       });
 
 
- 
+ */
 
-</script>
+</script> -->
 
 
 
   <script>
+    
+    const startTime = performance.now();
+    const seatScriptUrl = `https://script.google.com/macros/s/AKfycbz5MNZDyiLa3A6FI6wMyDvyU6uBp4kvurjkiz7Hc0lXQGHVYq1p2B4SH0-gvQE4K4M-bg/exec
+    `.trim() + "?action=seats";
+
+    fetch(seatScriptUrl)
+      .then(response => response.json())
+      .then(data => {
+        const endTime = performance.now();
+        const timeTaken = endTime - startTime;
+      
+        // console.log(`Fetch took ${timeTaken.toFixed(2)} milliseconds`);
+        
+        const seats = Number(data.seats);
+        const get_limit = document.getElementById("get-limit");
+        get_limit.innerHTML = `<h6 class="get-limit">🎉 Limited offer: <b><i>${seats}</i> Early Bird seats left</b></h6>`;
+        console.log("Newly loooooooaded"+seats);
+  })
     // for membership ttlamount update
 
     function updateTotal(selectedOption) {
@@ -700,7 +734,7 @@ https://script.google.com/macros/s/AKfycbz5MNZDyiLa3A6FI6wMyDvyU6uBp4kvurjkiz7Hc
 
                   <a id='register-now' class='theme-btn gradient mt-3'
                     style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
-                    href='https://chat.whatsapp.com/I0fBcT1aoHI0ZdHRylrfGA' target="_blank">Join Our Whatsapp Group
+                    href='https://chat.whatsapp.com/KtBFXA9GhO583tWiO8xVTj' target="_blank">Join Our Whatsapp Group
                   </a>
               </div>
                     `;
@@ -749,7 +783,44 @@ https://script.google.com/macros/s/AKfycbz5MNZDyiLa3A6FI6wMyDvyU6uBp4kvurjkiz7Hc
       fr.readAsDataURL(file);
     });
 
-    
+    //QR code 
+    const qrToggleBtn = document.getElementById("qrToggleBtn");
+    const qrSection = document.getElementById("qrSection");
+    const qrImage = document.getElementById("qrImage");
+    const shareBtn = document.getElementById("shareBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    qrToggleBtn.addEventListener('click', () => {
+      qrSection.classList.toggle("show");
+      qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code":"Show QR Code";
+    });
+
+    shareBtn.addEventListener('click', () => {
+      if(navigator.share) {
+        fetch(qrImage.src)
+          .then(response => response.blob())
+          .then(blob => {
+            const file = new File([blob], "assets/img/qr-code-for-membership.jpg", {type: blob.type});
+            navigator.share({
+              title: "Payment QR",
+              text: "Scan this QR to make payment",
+              files: [file]
+            }).catch(err => console.log("Share failed:", err));
+          })
+          .catch(err => console.log("Error fetching QR:", err));
+      } 
+      else {
+        alert("Sharing is not supported on this browser");
+      }
+    });
+
+
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement("a");
+      link.download = "qrcodeDownload.jpg";
+      link.href = qrImage.src;
+      link.click();
+    });
 
 
 
