@@ -559,23 +559,23 @@
 
   <script>
     
-    const startTime = performance.now();
-    const seatScriptUrl = `https://script.google.com/macros/s/AKfycbyBsfIpAgQ7sjzxbq9K_P-BXaU9s2XOYc1Gt-lYpeRyyzkW9ZG6hCzYaLfCu-0DBm88/exec
-    `.trim() + "?action=seats";
+  //   const startTime = performance.now();
+  //   const seatScriptUrl = `https://script.google.com/macros/s/AKfycbyBsfIpAgQ7sjzxbq9K_P-BXaU9s2XOYc1Gt-lYpeRyyzkW9ZG6hCzYaLfCu-0DBm88/exec
+  //   `.trim() + "?action=seats";
 
-    fetch(seatScriptUrl)
-      .then(response => response.json())
-      .then(data => {
-        const endTime = performance.now();
-        const timeTaken = endTime - startTime;
+  //   fetch(seatScriptUrl)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       const endTime = performance.now();
+  //       const timeTaken = endTime - startTime;
       
-        // console.log(`Fetch took ${timeTaken.toFixed(2)} milliseconds`);
+  //       // console.log(`Fetch took ${timeTaken.toFixed(2)} milliseconds`);
         
-        const seats = Number(data.seats);
-        const get_limit = document.getElementById("get-limit");
-        get_limit.innerHTML = `<h6 class="get-limit">🎉 Limited offer: <b><i>${seats}</i> Early Bird seats left</b></h6>`;
-        console.log("Newly loooooooaded"+seats);
-  })
+  //       const seats = Number(data.seats);
+  //       const get_limit = document.getElementById("get-limit");
+  //       get_limit.innerHTML = `<h6 class="get-limit">🎉 Limited offer: <b><i>${seats}</i> Early Bird seats left</b></h6>`;
+  //       console.log("Newly loooooooaded"+seats);
+  // })
     // for membership ttlamount update
 
     function updateTotal(selectedOption) {
@@ -714,9 +714,10 @@
 
       $.ajax({
         url: `
+https://script.google.com/macros/s/AKfycbyBsfIpAgQ7sjzxbq9K_P-BXaU9s2XOYc1Gt-lYpeRyyzkW9ZG6hCzYaLfCu-0DBm88/exec
 
-       https://script.google.com/macros/s/AKfycbyBsfIpAgQ7sjzxbq9K_P-BXaU9s2XOYc1Gt-lYpeRyyzkW9ZG6hCzYaLfCu-0DBm88/exec
-			`.trim(),
+
+        `.trim(),
 
         data: JSON.stringify(data),
 
