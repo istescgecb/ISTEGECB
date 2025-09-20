@@ -401,7 +401,7 @@
                             font: inherit;
                             padding: inherit;
                           ">krishnapriyarmalu-1@okicici</span>
-                    </p><br><br>
+                    </p>
 
                     <div class="qr-container">
                     <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
@@ -422,6 +422,7 @@
                     </div>
                     </div>
                   </div>
+                  <br>
 
 
 
@@ -451,7 +452,7 @@
                     </div>
                   </div>
 
-                  <div>
+                  <div id ="offset-box">
                       <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
                             style="color: rgb(214, 91, 20)"></span></b></label><br />
                       <label for="image" class="file-label" id="display-file">
@@ -615,11 +616,18 @@
     const msg = document.getElementById('successtext');
     const fileLabelText = document.getElementById("file-label-text");
 
+    // Set max characters based on screen size
+    const maxChars = window.innerWidth < 768 ? 20 : 30; 
+
     const fileName = file.name;
     const fileExtension = fileName.split('.').pop();
     const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
     const additionalText = baseName.slice(-3);
-    const displayName = baseName.length > 30 ? baseName.slice(0, 27) + '...' + additionalText : baseName;
+
+    // Truncate filename if longer than maxChars
+    const displayName = baseName.length > maxChars ? 
+               baseName.slice(0, maxChars) + '...' + additionalText : 
+               baseName;
 
     if (input.files && input.files[0]) {
       const fileSize = input.files[0].size / 1024 / 1024;
@@ -652,7 +660,7 @@
     }
   }
 
-
+  
 
 
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
