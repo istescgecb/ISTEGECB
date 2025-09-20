@@ -355,29 +355,29 @@
                               border-radius: 8px;
                               font-size: 1rem;
                               font-weight: 600;
-                              color: #ee6728;
+                              color: #f1efed;
                               margin-top: 8px;
                               margin-bottom: 1em;
                               animation: pulse 1.3s infinite;
                             ">
-                            <h6 id="get-limit">🎉 Limited offer: <b><i>25</i> Early Bird seats left</b></h6>
+                            <h6 id="get-limit">🎉 Limited offer: <b><i>25</i> Early Bird seats left !</b></h6>
                           </div>
                         <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" checked
-											onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+											onclick="updateTotal(this)" style="width: 20px; height: 20px" required/>
 										&nbsp;ISTE + FULL MEMBERSHIP : <del>₹1400/-</del> <i>₹800/-</i>               
                       </label>
                     </div>
                     <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
                       <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)" 
-                        style="width: 1.2rem; height: 1.2rem" />
-                      &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
+                        style="width: 1.2rem; height: 1.2rem" disabled selected/>
+                      &nbsp;ISTE + BARTONAIR: <del>₹1000/-</del> <i>₹700/-</i>
                     </label>
                   </div>
                   <div class="membership-option">
                     <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
                       <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)" 
-                        style="width: 20px; height: 20px" />
-                      &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
+                        style="width: 20px; height: 20px" disabled selected/>
+                      &nbsp;ISTE + BARTONOIDZ: <del>₹1000/-</del> <i>₹700/-</i>
                     </label>
                   </div>
 
@@ -560,7 +560,7 @@
   <script>
     
     const startTime = performance.now();
-    const seatScriptUrl = `https://script.google.com/macros/s/AKfycbx2bbDWqtLjj5gAsKxSRZvwToWXCugeQUZAyv-WJBXSxW4IKC3bxiLBY5S29hn1KobC/exec
+    const seatScriptUrl = `https://script.google.com/macros/s/AKfycbyBsfIpAgQ7sjzxbq9K_P-BXaU9s2XOYc1Gt-lYpeRyyzkW9ZG6hCzYaLfCu-0DBm88/exec
     `.trim() + "?action=seats";
 
     fetch(seatScriptUrl)
@@ -588,11 +588,11 @@
 
         switch (selectedOption.value) {
           case "BR":
-            total = 1000;
+            total = 700;
             membershipText = "ISTE + BARTONAIR";
             break;
           case "BZ":
-            total = 1000;
+            total = 700;
             membershipText = "ISTE + BARTONOIDZ";
             break;
           case "FULL":
@@ -708,7 +708,7 @@
       $.ajax({
         url: `
 
-       https://script.google.com/macros/s/AKfycbx2bbDWqtLjj5gAsKxSRZvwToWXCugeQUZAyv-WJBXSxW4IKC3bxiLBY5S29hn1KobC/exec
+       https://script.google.com/macros/s/AKfycbyBsfIpAgQ7sjzxbq9K_P-BXaU9s2XOYc1Gt-lYpeRyyzkW9ZG6hCzYaLfCu-0DBm88/exec
 			`.trim(),
 
         data: JSON.stringify(data),
