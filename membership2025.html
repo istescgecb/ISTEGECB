@@ -370,14 +370,14 @@
                     <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
                       <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)" 
                         style="width: 1.2rem; height: 1.2rem" disabled selected/>
-                      &nbsp;ISTE + BARTONAIR: <del>₹1000/-</del> <i>₹700/-</i>
+                      &nbsp;ISTE + BARTONAIR: ₹1000/-
                     </label>
                   </div>
                   <div class="membership-option">
                     <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
                       <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)" 
                         style="width: 20px; height: 20px" disabled selected/>
-                      &nbsp;ISTE + BARTONOIDZ: <del>₹1000/-</del> <i>₹700/-</i>
+                      &nbsp;ISTE + BARTONOIDZ: ₹1000/-
                     </label>
                   </div>
 
@@ -404,16 +404,16 @@
                     </p><br><br>
 
                     <div class="qr-container">
-                    <button class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
+                    <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
                     <div class="qr-section" id="qrSection">
                       <div class="qr-card">
                       <img src="assets/img/qr-code-for-membership.jpg" alt="payment QR"id="qrImage" class="qr-code">
                       <div class="qr-actions">
-                        <button class="share-btn" id="shareBtn">
+                        <button type="button" class="share-btn" id="shareBtn">
                           <span></span>
                           <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px" alt="Share Icon">
                         </button>
-                        <button class="download-btn" id="downloadBtn">
+                        <button type="button" class="download-btn" id="downloadBtn">
                           <span></span>
                           <img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px" alt="Download Icon">
                         </button>
@@ -588,11 +588,11 @@
 
         switch (selectedOption.value) {
           case "BR":
-            total = 700;
+            total = 1000;
             membershipText = "ISTE + BARTONAIR";
             break;
           case "BZ":
-            total = 700;
+            total = 1000;
             membershipText = "ISTE + BARTONOIDZ";
             break;
           case "FULL":
