@@ -1903,7 +1903,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 12px;
   font-size: 1.2em;
   font-weight: bold;
-  background: #b578fc96;
+  background: #3cc3ec96;
   color: white;
   border: none;
   border-radius: 8px;
@@ -1912,7 +1912,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .qr-toggle-btn:hover {
-  background-color: rgb(157, 24, 209)96;
+  background-color: #0650d8;
 }
 
 .qr-section {
