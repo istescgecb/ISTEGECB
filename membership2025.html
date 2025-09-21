@@ -86,30 +86,6 @@
         ">
       ISTE GECBH
     </p>
-    <!-- Include SweetAlert2 
-      <div id="persistent-banner">🚀 Limited offer: 25 Early Bird Seats left !!</div>
-       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  -->
-
-
-  <!-- <script>
-    // Repeat tilt animation every 5 seconds
-    setInterval(() => {
-      let banner = document.getElementById("persistent-banner");
-      banner.style.animation = "none"; // reset
-      void banner.offsetWidth; // reflow hack
-      banner.style.animation = "tilt 0.5s"; // replay animation
-    }, 5000);
-
-    // Example SweetAlert popup that won't affect the banner
-    setTimeout(() => {
-      Swal.fire({
-        icon: 'info',
-        title: 'Heads up!',
-        text: 'This is another alert, but the banner stays.'
-      })
-    }, 3000);
-  </script> -->
-
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="assets/svg/close.svg"
         alt="istegecbh" /></a>
     <ul>
@@ -336,7 +312,7 @@
 
 
                     <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
-                    <input type="text" name="Referral" id="referral" class="ffield" placeholder="Referral Code" /><br />
+                    <input type="text" name="Referral" id="Referral" class="ffield" style="flex: 1 1 65%;width:80%;"placeholder="Referral Code" /><button id="ref-code-verify" name="verify" class="verify" type="button" style="flex: 1 1 35%;width: 18%; padding: 1.3%; border-radius: 8px;height: 2.8em;margin-left:1%;background-color: rgb(71, 10, 212);color: white;border: none;">Verify</button><br />
 
                     <br /><br>
 
@@ -351,32 +327,22 @@
                   <div class="membership-option">
                     <div class="membership-option">
                       <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
-                         <div class="special-offer blink" style="
-                              border-radius: 8px;
-                              font-size: 1rem;
-                              font-weight: 600;
-                              color: #f1efed;
-                              margin-top: 8px;
-                              margin-bottom: 1em;
-                              animation: pulse 1.3s infinite;
-                            ">
-                          </div>
-                        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" checked
-											onclick="updateTotal(this)" style="width: 20px; height: 20px" required/>
-										&nbsp;ISTE + FULL MEMBERSHIP :  <i>₹1400/-</i>               
+                        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
+											onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+										&nbsp;ISTE + FULL MEMBERSHIP: <i>₹1400/-</i>
                       </label>
                     </div>
                     <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
-                      <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)" 
-                        style="width: 1.2rem; height: 1.2rem" disabled selected/>
-                      &nbsp;ISTE + BARTONAIR: ₹1000/-
+                      <input type="radio" id="BARTONAIR" select disabled name="membershipOption" value="BR" onclick="updateTotal(this)" 
+                        style="width: 1.2rem; height: 1.2rem" />
+                      &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
                     </label>
                   </div>
                   <div class="membership-option">
                     <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
-                      <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)" 
-                        style="width: 20px; height: 20px" disabled selected/>
-                      &nbsp;ISTE + BARTONOIDZ: ₹1000/-
+                      <input type="radio" id="BARTONOIDZ" select disabled name="membershipOption" value="BZ" onclick="updateTotal(this)" 
+                        style="width: 20px; height: 20px" />
+                      &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
                     </label>
                   </div>
 
@@ -400,28 +366,8 @@
                             font: inherit;
                             padding: inherit;
                           ">krishnapriyarmalu-1@okicici</span>
-                    </p>
-
-                    <div class="qr-container">
-                    <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
-                    <div class="qr-section" id="qrSection">
-                      <div class="qr-card">
-                      <img src="assets/img/qr-code-for-membership.jpg" alt="payment QR"id="qrImage" class="qr-code">
-                      <div class="qr-actions">
-                        <button type="button" class="share-btn" id="shareBtn">
-                          <span></span>
-                          <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px" alt="Share Icon">
-                        </button>
-                        <button type="button" class="download-btn" id="downloadBtn">
-                          <span></span>
-                          <img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px" alt="Download Icon">
-                        </button>
-                      </div>
-                      </div>
-                    </div>
-                    </div>
+                    </p><br><br>
                   </div>
-                  <br>
 
 
 
@@ -451,7 +397,7 @@
                     </div>
                   </div>
 
-                  <div id ="offset-box">
+                  <div>
                       <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
                             style="color: rgb(214, 91, 20)"></span></b></label><br />
                       <label for="image" class="file-label" id="display-file">
@@ -507,107 +453,50 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-  
- <!-- <script>
-    const startTime = performance.now(); 
-    const seatScriptUrl = `https://script.google.com/macros/s/AKfycbz5MNZDyiLa3A6FI6wMyDvyU6uBp4kvurjkiz7Hc0lXQGHVYq1p2B4SH0-gvQE4K4M-bg/exec
-    `.trim() + "?action=seats";
-    fetch(seatScriptUrl)
-      .then(response => response.json())
-      .then(data => {
-        const endTime = performance.now();
-        const timeTaken = endTime - startTime;
-        // console.log(`Fetch took ${timeTaken.toFixed(2)} milliseconds`);
-        
-        const seats = Number(data.seats);
-        if (seats && seats>0) {
-          Swal.fire({
-            title: 'Join Now !',
-            text: `Only ${seats} memberships left`,
-            icon: 'info',
-            confirmButtonText: 'Okay', 
-            background: '#e6e1fa',
-            timer: 6000,
-            timerProgressBar: true
-          });
-        } else if(seats === 0) {
-          Swal.fire({
-            title: '⌛️ Early Bird Membership Over ',
-            text: `Memberships full :( `,
-            icon: 'info',
-            confirmButtonText: 'Okay',
-            background: '#e6e1fa', 
-            timer: 6000,
-            timerProgressBar: true
-          });
-        } else {
-          console.log("seats value not found in response");
-        }
-      }).catch(err => {
-        const endTime = performance.now();
-        console.error("Error fetching seats");
-        // console.log(`Failed fetch took ${(endTime-startTime).toFixed(2)} milliseconds`);
-      });
-
-
- */
-
-</script> -->
-
-
+ 
 
   <script>
-    
-  //   const startTime = performance.now();
-  //   const seatScriptUrl = `https://script.google.com/macros/s/AKfycbyBsfIpAgQ7sjzxbq9K_P-BXaU9s2XOYc1Gt-lYpeRyyzkW9ZG6hCzYaLfCu-0DBm88/exec
-  //   `.trim() + "?action=seats";
-
-  //   fetch(seatScriptUrl)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       const endTime = performance.now();
-  //       const timeTaken = endTime - startTime;
-      
-  //       // console.log(`Fetch took ${timeTaken.toFixed(2)} milliseconds`);
-        
-  //       const seats = Number(data.seats);
-  //       const get_limit = document.getElementById("get-limit");
-  //       get_limit.innerHTML = `<h6 class="get-limit">🎉 Limited offer: <b><i>${seats}</i> Early Bird seats left</b></h6>`;
-  //       console.log("Newly loooooooaded"+seats);
-  // })
     // for membership ttlamount update
-
+    let refVerified = false;
     function updateTotal(selectedOption) {
-        const ttlamt = document.getElementById("ttlamt");
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-        ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style
+  const ttlamt = document.getElementById("ttlamt");
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+  ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
 
-        let total = 0;
-        let membershipText = "";
+  let total = 0;
+  let membershipText = "";
+  const fullPrice = 1400; // Original FULL price
 
-        switch (selectedOption.value) {
-          case "BR":
-            total = 1000;
-            membershipText = "ISTE + BARTONAIR";
-            break;
-          case "BZ":
-            total = 1000;
-            membershipText = "ISTE + BARTONOIDZ";
-            break;
-          case "FULL":
-            total = 1400;
-            membershipText = "ISTE + FULL MEMBERSHIP";
-            break;
-        }
+  switch (selectedOption.value) {
+    case "BR":
+      total = 1000;
+      membershipText = "ISTE + BARTONAIR";
+      break;
+    case "BZ":
+      total = 1000;
+      membershipText = "ISTE + BARTONOIDZ";
+      break;
+    case "FULL":
+      total = refVerified ? 1000 : fullPrice; 
+      membershipText = "ISTE + FULL MEMBERSHIP";
+      break;
+  }
 
-        ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
-        if (isMobile) {
-          ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
-        } else {
-          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
-        }
-      }
+  if (isMobile) {
+    if (selectedOption.value === "FULL" && refVerified) {
+      ttlamt.innerHTML = `Total Amount - ₹<s>${fullPrice}</s> ${total}/-`;
+    } else {
+      ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+    }
+  } else {
+    if (selectedOption.value === "FULL" && refVerified) {
+      ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹${fullPrice}</del> ₹${total}/-`;
+    } else {
+      ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+    }
+  }
+}
+
 
     // check size
   function checkFileSize(file) {
@@ -615,18 +504,11 @@
     const msg = document.getElementById('successtext');
     const fileLabelText = document.getElementById("file-label-text");
 
-    // Set max characters based on screen size
-    const maxChars = window.innerWidth < 768 ? 20 : 30; 
-
     const fileName = file.name;
     const fileExtension = fileName.split('.').pop();
     const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
     const additionalText = baseName.slice(-3);
-
-    // Truncate filename if longer than maxChars
-    const displayName = baseName.length > maxChars ? 
-               baseName.slice(0, maxChars) + '...' + additionalText : 
-               baseName;
+    const displayName = baseName.length > 30 ? baseName.slice(0, 27) + '...' + additionalText : baseName;
 
     if (input.files && input.files[0]) {
       const fileSize = input.files[0].size / 1024 / 1024;
@@ -659,7 +541,7 @@
     }
   }
 
-  
+
 
 
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
@@ -697,14 +579,28 @@
       document.getElementById("PhonePeqr2").style.display = "none";
     }
 
-    function a() {
-      $(".send-div").show();
-    }
-    document.getElementById("istecall").addEventListener("submit", a);
+    // function a() {
+    //   $(".send-div").show();
+    // }
+    // document.getElementById("istecall").addEventListener("submit", a);
 
     $("#istecall").submit((e) => {
-      e.preventDefault();
+  e.preventDefault();
 
+  const refCode = referralInput.value.trim();
+
+  if (refCode && !refVerified) {
+  Swal.fire({
+    icon: "warning",
+    title: "Referral Code Not Verified",
+    text: "Please verify your referral code before submitting.",
+    confirmButtonText: "OK"
+  });
+  return;
+}
+// https://script.google.com/macros/s/AKfycby_OqZGfVgb1sugWsI7pz948SvrMX8qgtZdkNboJbZP59uZKWkd20--iJtQoM8pcWd1/exec
+ 
+$(".send-div").show();
       const formData = $("#istecall").serializeArray();
       var data = {};
       $(formData).each(function (index, obj) {
@@ -714,18 +610,17 @@
 
       $.ajax({
         url: `
-https://script.google.com/macros/s/AKfycbxB8kO3nxh_Lj9NEUa3Mg5aQKGDlQ-YuQgSsU4cpVwLI9lKLaW4U0wd4Z5uNVntgkzq/exec
+       https://script.google.com/macros/s/AKfycbxB8kO3nxh_Lj9NEUa3Mg5aQKGDlQ-YuQgSsU4cpVwLI9lKLaW4U0wd4Z5uNVntgkzq/exec
 
-
-        `.trim(),
-
+			`.trim(),
         data: JSON.stringify(data),
 
         method: "POST",
         success: function (response) {
           console.log(Object.keys(data));
-
+          console.log(response);
           if (response.result === "success") {
+            console.log("success");
 
             const paymentDetails = `
               <div id = "payment-completed" >
@@ -741,7 +636,7 @@ https://script.google.com/macros/s/AKfycbxB8kO3nxh_Lj9NEUa3Mg5aQKGDlQ-YuQgSsU4cp
 
                   <a id='register-now' class='theme-btn gradient mt-3'
                     style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
-                    href='https://chat.whatsapp.com/KtBFXA9GhO583tWiO8xVTj' target="_blank">Join Our Whatsapp Group
+                    href='https://chat.whatsapp.com/I0fBcT1aoHI0ZdHRylrfGA' target="_blank">Join Our Whatsapp Group
                   </a>
               </div>
                     `;
@@ -755,6 +650,8 @@ https://script.google.com/macros/s/AKfycbxB8kO3nxh_Lj9NEUa3Mg5aQKGDlQ-YuQgSsU4cp
           $(".send-div").fadeOut();
         },
         error: function (err) {
+            console.error("AJAX Error:", err);
+
           // console.log("AJAX Error:", err); // Log any AJAX errors
           document.getElementById("successtext").style.color = "red";
           document.getElementById("successtext").innerHTML =
@@ -790,46 +687,75 @@ https://script.google.com/macros/s/AKfycbxB8kO3nxh_Lj9NEUa3Mg5aQKGDlQ-YuQgSsU4cp
       fr.readAsDataURL(file);
     });
 
-    //QR code 
-    const qrToggleBtn = document.getElementById("qrToggleBtn");
-    const qrSection = document.getElementById("qrSection");
-    const qrImage = document.getElementById("qrImage");
-    const shareBtn = document.getElementById("shareBtn");
-    const downloadBtn = document.getElementById("downloadBtn");
+    
 
-    qrToggleBtn.addEventListener('click', () => {
-      qrSection.classList.toggle("show");
-      qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code":"Show QR Code";
-    });
+ // ==============================================
+  // Referral code verification
+  // ==============================================
+  const referralInput = document.getElementById("Referral");
+  const verifyButton = document.getElementById("ref-code-verify");
+  refVerified = false;
 
-    shareBtn.addEventListener('click', () => {
-      if(navigator.share) {
-        fetch(qrImage.src)
-          .then(response => response.blob())
-          .then(blob => {
-            const file = new File([blob], "assets/img/qr-code-for-membership.jpg", {type: blob.type});
-            navigator.share({
-              title: "Payment QR",
-              text: "Scan this QR to make payment",
-              files: [file]
-            }).catch(err => console.log("Share failed:", err));
-          })
-          .catch(err => console.log("Error fetching QR:", err));
-      } 
-      else {
-        alert("Sharing is not supported on this browser");
-      }
-    });
+  verifyButton.addEventListener("click", function () {
+    const refCode = referralInput.value.trim();
+    if (!refCode) {
+  Swal.fire({
+    icon: "info",
+    title: "Missing Referral Code",
+    text: "Please enter a referral code",
+    confirmButtonText: "OK"
+  });
+  refVerified = false;
+  return;
+}
+// https://script.google.com/macros/s/AKfycbzK1HlwFKcsJWTSkydyCyuAPmeb8NK5CGxfF4fkbJVFQNfQC_ormkmVJ0l00FI9yPOrEQ/exec
+
+    const verifyUrl = `https://script.google.com/macros/s/AKfycbxzn9NyYMXg5j5iwhvmP31YNh2-skRsxd4YW1asWUCoSAp5Wxl_qenetgAOGdbVj6nW/exec?action=verifyReferral&code=${refCode}`;
+
+    fetch(verifyUrl)
+      .then((res) => res.text())
+      .then((result) => {
+       if (result === "yes") {
+  Swal.fire({
+    icon: "success",
+    title: "Referral Code Verified 🎉",
+    text: "Referral code is valid :)",
+    confirmButtonText: "Great!"
+  });
+  
+  refVerified = true;
+  const selectedOption = document.querySelector('input[name="membershipOption"]:checked');
+  const fullLabel = document.getElementById("labelFULLMEMBERSHIP");
+  fullLabel.innerHTML = `<input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)" style="width: 20px; height: 20px" checked /> &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> 1000/-`;
+
+  if (selectedOption) {
+    updateTotal(selectedOption); 
+  } else {
+    console.log(selectedOption);
+
+  }
+}
 
 
-    downloadBtn.addEventListener('click', () => {
-      const link = document.createElement("a");
-      link.download = "qrcodeDownload.jpg";
-      link.href = qrImage.src;
-      link.click();
-    });
+ else {
+  Swal.fire({
+    icon: "error",
+    title: "Invalid Referral Code ",
+    text: "Please try again",
+    confirmButtonText: "Retry"
+  });
+  
+  refVerified = false;
+}
 
+      })
+      .catch((err) => {
+        alert("Error verifying code. Please try again !!");
+        refVerified = false;
+      });
+  });
 
+    // ============================================== Referral code verification ================================================
 
 
 
@@ -863,7 +789,7 @@ https://script.google.com/macros/s/AKfycbxB8kO3nxh_Lj9NEUa3Mg5aQKGDlQ-YuQgSsU4cp
       //     ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
       //   } else {
       //     if (selectedOption.value === "FULL") {
-      //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹800/-</del>  <i>₹${total}/-</i>`;
+      //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹1000/-</del>  <i>₹${total}/-</i>`;
       //     } else {
       //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
       //     }
