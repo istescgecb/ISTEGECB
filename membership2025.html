@@ -22,11 +22,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet" />
-    <!-- sweetalert -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <!-- sweetalert -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
-<!-- cdn for file upload -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- cdn for file upload -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/stars.css" />
@@ -240,7 +240,7 @@
     </div>
   </div>
 
-<!--======================================================================================================
+  <!--======================================================================================================
   =================================MEMBERSHIP FORM========================================================
  =========================================================================================================-->
 
@@ -249,172 +249,185 @@
       <div class="event-card event-card-reg mb-5 membership-form-card"
         style="background: #5449a447; backdrop-filter: blur(6px)">
         <div class="membership-form-wrapper">
-              <form id="istecall" action="" style="width:100%">
-                <div class="event-card-body event-card-body-reg" style="width: 100%; height: auto;  background: transparent;">
-                  <div style="width: 95%; font-size: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif">
-                    <h1 id="iste-heading" style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%" align="center">ISTE MEMBERSHIP DRIVE <aaaaa id="year-placeholder">2024</aaaaa></h1><script>(function(){const now=new Date();const currentYear=now.getFullYear();const displayYear=(now.getMonth()+1)<=4?currentYear-1:currentYear;document.getElementById("year-placeholder").textContent=displayYear;})();</script>
-                    <div class="d-flex flex-wrap align-content-center justify-content-center my-4">
-                    </div>
+          <form id="istecall" action="" style="width:100%">
+            <div class="event-card-body event-card-body-reg"
+              style="width: 100%; height: auto;  background: transparent;">
+              <div style="width: 95%; font-size: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+                <h1 id="iste-heading"
+                  style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%"
+                  align="center">ISTE MEMBERSHIP DRIVE <aaaaa id="year-placeholder">2024</aaaaa>
+                </h1>
+                <script>(function () { const now = new Date(); const currentYear = now.getFullYear(); const displayYear = (now.getMonth() + 1) <= 4 ? currentYear - 1 : currentYear; document.getElementById("year-placeholder").textContent = displayYear; })();</script>
+                <div class="d-flex flex-wrap align-content-center justify-content-center my-4">
+                </div>
 
-                    <p style="
+                <p style="
                           font-size: 1.2em;
                           font-weight: 400;
                           color: rgb(235, 86, 86);
 
                         ">
-                      *All fields are mandatory. Fill the details correctly.
-                    </p>
+                  *All fields are mandatory. Fill the details correctly.
+                </p>
 
-                    <label class="mb-2 ml-2" for="name">Full Name</label><br />
-                    <input type="text" id="name" name="Name" placeholder="Your name" class="ffield" required /><br />
+                <label class="mb-2 ml-2" for="name">Full Name</label><br />
+                <input type="text" id="name" name="Name" placeholder="Your name" class="ffield" required /><br />
 
-                    <label class="mb-2 ml-2" for="DOB">Date of Birth</label><br />
-                    <input type="date" name="DOB" id="DOB" placeholder="DOB" class="ffield" required style="border-radius: 5px;" /><br />
+                <label class="mb-2 ml-2" for="DOB">Date of Birth</label><br />
+                <input type="date" name="DOB" id="DOB" placeholder="DOB" class="ffield" required
+                  style="border-radius: 5px;" /><br />
 
-                    <label class="mb-2 ml-2" for="Year">Year</label><br />
-                    <select id="Year" name="Year" class="ffield" required>
-                      <!-- onclick="updateAmt()" -->
-                      <option value="" hidden>Select Year</option>
-                      <option value="1st">1st</option>
-                      <option value="2nd">2nd</option>
-                      <option value="3rd">3rd</option>
-                      <option value="4th">4th</option>
-                    </select><br />
+                <label class="mb-2 ml-2" for="Year">Year</label><br />
+                <select id="Year" name="Year" class="ffield" required>
+                  <!-- onclick="updateAmt()" -->
+                  <option value="" hidden>Select Year</option>
+                  <option value="1st">1st</option>
+                  <option value="2nd">2nd</option>
+                  <option value="3rd">3rd</option>
+                  <option value="4th">4th</option>
+                </select><br />
 
-                    <label class="mb-2 ml-2" for="Branch">Branch of Study</label><br />
-                    <select id="Branch" name="Branch" class="ffield" required>
-                      <option value="" hidden>Select branch</option>
-                      <option value="Civil Engineering">Civil Engineering</option>
-                      <option value="Electrical and Electronics Engineering">
-                        Electrical and Electronics Engineering
-                      </option>
-                      <option value="Electronics & Communication Engineering">
-                        Electronics & Communication Engineering
-                      </option>
-                      <option value="Information Technology">
-                        Information Technology
-                      </option>
-                      <option value="Mechanical Engineering">
-                        Mechanical Engineering
-                      </option>
-                    </select><br />
+                <label class="mb-2 ml-2" for="Branch">Branch of Study</label><br />
+                <select id="Branch" name="Branch" class="ffield" required>
+                  <option value="" hidden>Select branch</option>
+                  <option value="Civil Engineering">Civil Engineering</option>
+                  <option value="Electrical and Electronics Engineering">
+                    Electrical and Electronics Engineering
+                  </option>
+                  <option value="Electronics & Communication Engineering">
+                    Electronics & Communication Engineering
+                  </option>
+                  <option value="Information Technology">
+                    Information Technology
+                  </option>
+                  <option value="Mechanical Engineering">
+                    Mechanical Engineering
+                  </option>
+                </select><br />
 
-                    <label class="mb-2 ml-2" for="Address">Home Address</label><br />
-                    <textarea name="Address" id="Address" rows="3" cols="40" placeholder="Address" class="ffield"
-                      required></textarea><br />
+                <label class="mb-2 ml-2" for="Address">Home Address</label><br />
+                <textarea name="Address" id="Address" rows="3" cols="40" placeholder="Address" class="ffield"
+                  required></textarea><br />
 
-                    <label class="mb-2 ml-2" for="PhoneNumber">Phone Number(10 digits)</label><br />
-                    <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}" class="ffield"
-                      required /><br />
+                <label class="mb-2 ml-2" for="PhoneNumber">Phone Number(10 digits)</label><br />
+                <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}"
+                  class="ffield" required /><br />
 
-                    <label class="mb-2 ml-2" for="EmailId">Email Address</label><br />
-                    <input type="email" name="EmailId" id="EmailId" placeholder="Email address" class="ffield" required /><br /><br>
+                <label class="mb-2 ml-2" for="EmailId">Email Address</label><br />
+                <input type="email" name="EmailId" id="EmailId" placeholder="Email address" class="ffield"
+                  required /><br /><br>
 
 
-                    <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
-                    <input type="text" name="Referral" id="Referral" class="ffield" style="flex: 1 1 65%;width:80%;"placeholder="Referral Code" /><button id="ref-code-verify" name="verify" class="verify" type="button" style="flex: 1 1 35%;width: 18%; padding: 1.3%; border-radius: 8px;height: 2.8em;margin-left:1%;background-color: rgb(71, 10, 212);color: white;border: none;">Verify</button><br />
+                <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
+                <input type="text" name="Referral" id="Referral" class="ffield" style="flex: 1 1 65%;width:80%;"
+                  placeholder="Referral Code" /><button id="ref-code-verify" name="verify" class="verify" type="button"
+                  style="flex: 1 1 35%;width: 18%; padding: 1.3%; border-radius: 8px;height: 2.8em;margin-left:1%;background-color: rgb(71, 10, 212);color: white;border: none;">Verify</button><br />
 
-                    <br /><br>
+                <br /><br>
 
-                    <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 400; color: rgb(241, 131, 28);">
-                      <strong>MEMBERSHIP OPTIONS</strong>
-                    </label>
-                  <br>
-                  <div style="font-size: 1.2rem;">
-                    
-                  </div>
-                
+                <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 400; color: rgb(241, 131, 28);">
+                  <strong>MEMBERSHIP OPTIONS</strong>
+                </label>
+                <br>
+                <div style="font-size: 1.2rem;">
+
+                </div>
+
+                <div class="membership-option">
                   <div class="membership-option">
-                    <div class="membership-option">
-                      <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
-                        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
-											onclick="updateTotal(this)" style="width: 20px; height: 20px" />
-										&nbsp;ISTE + FULL MEMBERSHIP: <i>₹1400/-</i>
-                      </label>
-                    </div>
-                    <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
-                      <input type="radio" id="BARTONAIR" select disabled name="membershipOption" value="BR" onclick="updateTotal(this)" 
-                        style="width: 1.2rem; height: 1.2rem" />
-                      &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
+                    <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
+                      <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
+                        onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+                      &nbsp;ISTE + FULL MEMBERSHIP: <i>₹1400/-</i>
                     </label>
                   </div>
-                  <div class="membership-option">
-                    <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
-                      <input type="radio" id="BARTONOIDZ" select disabled name="membershipOption" value="BZ" onclick="updateTotal(this)" 
-                        style="width: 20px; height: 20px" />
-                      &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
-                    </label>
-                  </div>
+                  <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
+                    <input type="radio" id="BARTONAIR" select disabled name="membershipOption" value="BR"
+                      onclick="updateTotal(this)" style="width: 1.2rem; height: 1.2rem" />
+                    &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
+                  </label>
+                </div>
+                <div class="membership-option">
+                  <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
+                    <input type="radio" id="BARTONOIDZ" select disabled name="membershipOption" value="BZ"
+                      onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+                    &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
+                  </label>
+                </div>
 
 
 
-                  <br><br>
+                <br><br>
 
-                  <div class="account-details">
-                    <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
-                      <b>PAYMENT DETAILS</b>
-                    </h2>
-                    <p style="font-size: 1.2em">
-                      Account holder name: Krishnapriya R<br />
-                      IFSC code:
-                      <span style="user-select: all; font: inherit">SBIN0070259</span><br />
-                      Account number:
-                      <span style="user-select: all; font: inherit">44148248108</span><br />
-                      UPI ID:
-                      <span style="
+                <div class="account-details">
+                  <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
+                    <b>PAYMENT DETAILS</b>
+                  </h2>
+                  <p style="font-size: 1.2em">
+                    Account holder name: Krishnapriya R<br />
+                    IFSC code:
+                    <span style="user-select: all; font: inherit">SBIN0070259</span><br />
+                    Account number:
+                    <span style="user-select: all; font: inherit">44148248108</span><br />
+                    UPI ID:
+                    <span style="
                             user-select: all;
                             font: inherit;
                             padding: inherit;
                           ">krishnapriyarmalu-1@okicici</span>
-                    </p><br><br>
-                  </div>
+                  </p><br><br>
+                </div>
 
 
 
-                  <div style="
+                <div style="
                       font-size: 1.2em;
                       background: #5a54f37c;
                       max-width: 100%;
                       border-radius: 20px;
                       padding: 10px;
                     " align="center">
-                  <div id="ttlamt" style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; font-weight: 600; text-align: center;">
+                  <div id="ttlamt"
+                    style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; font-weight: 600; text-align: center;">
                   </div>
                   <div id="UPI"></div>
                 </div>
-                  <br />
-                  <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
-                    Please complete payment and upload screenshot of payment
-                    before submitting.
-                  </h4>
-                  <br />
+                <br />
+                <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
+                  Please complete payment and upload screenshot of payment
+                  before submitting.
+                </h4>
+                <br />
 
-                  <div class="d-flex justify-content-center">
-                    <div id="process" class="spinner-border" role="status"
-                      style="display: none; width: 3.5rem; height: 3.5rem">
-                      <span class="visually-hidden" style="font-size: 3.5rem; color: rgb(29, 182, 18)">Loading...</span>
-                      <br />
-                    </div>
+                <div class="d-flex justify-content-center">
+                  <div id="process" class="spinner-border" role="status"
+                    style="display: none; width: 3.5rem; height: 3.5rem">
+                    <span class="visually-hidden" style="font-size: 3.5rem; color: rgb(29, 182, 18)">Loading...</span>
+                    <br />
                   </div>
+                </div>
 
-                  <div>
-                      <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
-                            style="color: rgb(214, 91, 20)"></span></b></label><br />
-                      <label for="image" class="file-label" id="display-file">
-                        <i class="fas fa-upload"></i> <span id="file-label-text">Choose an Image or PDF</span>
-                        <input name="image" id="image" type="file" accept="image/*,application/pdf" required style="display:none;">
-                      </label>
-                  </div>
-                  <br />
+                <div>
+                  <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
+                        style="color: rgb(214, 91, 20)"></span></b></label><br />
+                  <label for="image" class="file-label" id="display-file">
+                    <i class="fas fa-upload"></i> <span id="file-label-text">Choose an Image or PDF</span>
+                    <input name="image" id="image" type="file" accept="image/*,application/pdf" required
+                      style="display:none;">
+                  </label>
+                </div>
+                <br />
 
-                  <p style="font-size: 1.2em">
-                    If any doubts, contact:
-                    <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;" href="https://wa.me/918330829274">📱 Megha
-                      </a>
-                    <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/918078046950">📱 Gopika</a>
-                  </p>
-                  </div>
-                  <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
+                <p style="font-size: 1.2em">
+                  If any doubts, contact:
+                  <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
+                    href="https://wa.me/918330829274">📱 Megha
+                  </a>
+                  <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/918078046950">📱
+                    Gopika</a>
+                </p>
+              </div>
+              <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
                         padding: 12px 0;
                         color: #ffffff;
                         width: 100%;
@@ -424,18 +437,18 @@
                         margin-bottom: 12px;
                         border-radius: 14px;
                       " />
-                  <input type="text" name="base64" id="glob" value="" hidden />
-                  <input type="text" name="type" id="filetype" value="" hidden />
-                  <input type="text" name="filename" id="filename" value="" hidden />
-                </div>
-              </form>
-          </div>
+              <input type="text" name="base64" id="glob" value="" hidden />
+              <input type="text" name="type" id="filetype" value="" hidden />
+              <input type="text" name="filename" id="filename" value="" hidden />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 
 
-  <!-- loader gif --> 
+  <!-- loader gif -->
   <div class="send-div">
     <img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
     <div class="loader-text">
@@ -443,9 +456,16 @@
       Please wait a minute the file is being uploaded...
     </div>
   </div>
+  <!-- fetch gif -->
+  <div class="loader-div">
+    <img class="loader-img" src="assets/img/gif/tuzuki-usagi.gif" style="height: 150px; width: auto" />
+    <div class="loader-text">
+      Verifying... <br> I want to quit!! <br>
+    </div>
+  </div>
 
 
-<!--======================================================================================================
+  <!--======================================================================================================
   =================================MEMBERSHIP FORM========================================================
  =========================================================================================================-->
 
@@ -453,93 +473,93 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
- 
+
 
   <script>
     // for membership ttlamount update
     let refVerified = false;
     function updateTotal(selectedOption) {
-  const ttlamt = document.getElementById("ttlamt");
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-  ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+      const ttlamt = document.getElementById("ttlamt");
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+      ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
 
-  let total = 0;
-  let membershipText = "";
-  const fullPrice = 1400; // Original FULL price
+      let total = 0;
+      let membershipText = "";
+      const fullPrice = 1400; // Original FULL price
 
-  switch (selectedOption.value) {
-    case "BR":
-      total = 1000;
-      membershipText = "ISTE + BARTONAIR";
-      break;
-    case "BZ":
-      total = 1000;
-      membershipText = "ISTE + BARTONOIDZ";
-      break;
-    case "FULL":
-      total = refVerified ? 1000 : fullPrice; 
-      membershipText = "ISTE + FULL MEMBERSHIP";
-      break;
-  }
+      switch (selectedOption.value) {
+        case "BR":
+          total = 1000;
+          membershipText = "ISTE + BARTONAIR";
+          break;
+        case "BZ":
+          total = 1000;
+          membershipText = "ISTE + BARTONOIDZ";
+          break;
+        case "FULL":
+          total = refVerified ? 1000 : fullPrice;
+          membershipText = "ISTE + FULL MEMBERSHIP";
+          break;
+      }
 
-  if (isMobile) {
-    if (selectedOption.value === "FULL" && refVerified) {
-      ttlamt.innerHTML = `Total Amount - ₹<s>${fullPrice}</s> ${total}/-`;
-    } else {
-      ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+      if (isMobile) {
+        if (selectedOption.value === "FULL" && refVerified) {
+          ttlamt.innerHTML = `Total Amount - ₹<s>${fullPrice}</s> ${total}/-`;
+        } else {
+          ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+        }
+      } else {
+        if (selectedOption.value === "FULL" && refVerified) {
+          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹${fullPrice}</del> ₹${total}/-`;
+        } else {
+          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+        }
+      }
     }
-  } else {
-    if (selectedOption.value === "FULL" && refVerified) {
-      ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹${fullPrice}</del> ₹${total}/-`;
-    } else {
-      ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
-    }
-  }
-}
 
 
     // check size
-  function checkFileSize(file) {
-    const input = document.getElementById("image");
-    const msg = document.getElementById('successtext');
-    const fileLabelText = document.getElementById("file-label-text");
+    function checkFileSize(file) {
+      const input = document.getElementById("image");
+      const msg = document.getElementById('successtext');
+      const fileLabelText = document.getElementById("file-label-text");
 
-    const fileName = file.name;
-    const fileExtension = fileName.split('.').pop();
-    const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
-    const additionalText = baseName.slice(-3);
-    const displayName = baseName.length > 30 ? baseName.slice(0, 27) + '...' + additionalText : baseName;
+      const fileName = file.name;
+      const fileExtension = fileName.split('.').pop();
+      const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
+      const additionalText = baseName.slice(-3);
+      const displayName = baseName.length > 30 ? baseName.slice(0, 27) + '...' + additionalText : baseName;
 
-    if (input.files && input.files[0]) {
-      const fileSize = input.files[0].size / 1024 / 1024;
-      const fileType = input.files[0].type;
+      if (input.files && input.files[0]) {
+        const fileSize = input.files[0].size / 1024 / 1024;
+        const fileType = input.files[0].type;
 
-      // Check if the file is a PDF or an image
-      const isImage = fileType.startsWith('image/');
-      const isPDF = fileType === 'application/pdf';
+        // Check if the file is a PDF or an image
+        const isImage = fileType.startsWith('image/');
+        const isPDF = fileType === 'application/pdf';
 
-      if (!isImage && !isPDF) {
-        msg.textContent = 'Invalid file type. Please choose an image or PDF.';
-        msg.style.color = 'red';
-        fileLabelText.textContent = "Choose an Image or PDF";
-        return;
-      }
+        if (!isImage && !isPDF) {
+          msg.textContent = 'Invalid file type. Please choose an image or PDF.';
+          msg.style.color = 'red';
+          fileLabelText.textContent = "Choose an Image or PDF";
+          return;
+        }
 
-      if (fileSize > 4) {
-        msg.textContent = 'File size exceeds 4MB limit. Please choose a smaller file.';
-        msg.style.color = 'red';
-        fileLabelText.textContent = "Choose an Image or PDF";
+        if (fileSize > 4) {
+          msg.textContent = 'File size exceeds 4MB limit. Please choose a smaller file.';
+          msg.style.color = 'red';
+          fileLabelText.textContent = "Choose an Image or PDF";
+        } else {
+          msg.textContent = 'File uploaded successfully. Please proceed with submission.';
+          msg.style.color = 'rgb(29, 182, 18)';
+          fileLabelText.textContent = `${displayName}.${fileExtension}`;
+        }
       } else {
-        msg.textContent = 'File uploaded successfully. Please proceed with submission.';
+        msg.textContent = 'Please complete payment and upload screenshot of payment before submitting.';
         msg.style.color = 'rgb(29, 182, 18)';
-        fileLabelText.textContent = `${displayName}.${fileExtension}`;
+        fileLabelText.textContent = "Choose an Image or PDF";
       }
-    } else {
-      msg.textContent = 'Please complete payment and upload screenshot of payment before submitting.';
-      msg.style.color = 'rgb(29, 182, 18)';
-      fileLabelText.textContent = "Choose an Image or PDF";
     }
-  }
 
 
 
@@ -585,22 +605,25 @@
     // document.getElementById("istecall").addEventListener("submit", a);
 
     $("#istecall").submit((e) => {
-  e.preventDefault();
 
-  const refCode = referralInput.value.trim();
+      e.preventDefault();
 
-  if (refCode && !refVerified) {
-  Swal.fire({
-    icon: "warning",
-    title: "Referral Code Not Verified",
-    text: "Please verify your referral code before submitting.",
-    confirmButtonText: "OK"
-  });
-  return;
-}
-// https://script.google.com/macros/s/AKfycby_OqZGfVgb1sugWsI7pz948SvrMX8qgtZdkNboJbZP59uZKWkd20--iJtQoM8pcWd1/exec
- 
-$(".send-div").show();
+      const refCode = referralInput.value.trim();
+
+
+
+      if (refCode && !refVerified) {
+        Swal.fire({
+          icon: "warning",
+          title: "Referral Code Not Verified",
+          text: "Please verify your referral code before submitting.",
+          confirmButtonText: "OK"
+        });
+        return;
+      }
+      // https://script.google.com/macros/s/AKfycby_OqZGfVgb1sugWsI7pz948SvrMX8qgtZdkNboJbZP59uZKWkd20--iJtQoM8pcWd1/exec
+
+      $(".send-div").show();
       const formData = $("#istecall").serializeArray();
       var data = {};
       $(formData).each(function (index, obj) {
@@ -640,7 +663,7 @@ $(".send-div").show();
                   </a>
               </div>
                     `;
-      document.getElementById("istecall").innerHTML = paymentDetails;
+            document.getElementById("istecall").innerHTML = paymentDetails;
           } else {
             document.getElementById("successtext").style.color = "#da0f3f";
             document.getElementById("successtext").style.fontSize = "1.5rem";
@@ -650,7 +673,7 @@ $(".send-div").show();
           $(".send-div").fadeOut();
         },
         error: function (err) {
-            console.error("AJAX Error:", err);
+          console.error("AJAX Error:", err);
 
           // console.log("AJAX Error:", err); // Log any AJAX errors
           document.getElementById("successtext").style.color = "red";
@@ -687,115 +710,122 @@ $(".send-div").show();
       fr.readAsDataURL(file);
     });
 
-    
-
- // ==============================================
-  // Referral code verification
-  // ==============================================
-  const referralInput = document.getElementById("Referral");
-  const verifyButton = document.getElementById("ref-code-verify");
-  refVerified = false;
-
-  verifyButton.addEventListener("click", function () {
-    const refCode = referralInput.value.trim();
-    if (!refCode) {
-  Swal.fire({
-    icon: "info",
-    title: "Missing Referral Code",
-    text: "Please enter a referral code",
-    confirmButtonText: "OK"
-  });
-  refVerified = false;
-  return;
-}
-// https://script.google.com/macros/s/AKfycbzK1HlwFKcsJWTSkydyCyuAPmeb8NK5CGxfF4fkbJVFQNfQC_ormkmVJ0l00FI9yPOrEQ/exec
-
-    const verifyUrl = `https://script.google.com/macros/s/AKfycbxzn9NyYMXg5j5iwhvmP31YNh2-skRsxd4YW1asWUCoSAp5Wxl_qenetgAOGdbVj6nW/exec?action=verifyReferral&code=${refCode}`;
-
-    fetch(verifyUrl)
-      .then((res) => res.text())
-      .then((result) => {
-       if (result === "yes") {
-  Swal.fire({
-    icon: "success",
-    title: "Referral Code Verified 🎉",
-    text: "Referral code is valid :)",
-    confirmButtonText: "Great!"
-  });
-  
-  refVerified = true;
-  const selectedOption = document.querySelector('input[name="membershipOption"]:checked');
-  const fullLabel = document.getElementById("labelFULLMEMBERSHIP");
-  fullLabel.innerHTML = `<input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)" style="width: 20px; height: 20px" checked /> &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> 1000/-`;
-
-  if (selectedOption) {
-    updateTotal(selectedOption); 
-  } else {
-    console.log(selectedOption);
-
-  }
-}
 
 
- else {
-  Swal.fire({
-    icon: "error",
-    title: "Invalid Referral Code ",
-    text: "Please try again",
-    confirmButtonText: "Retry"
-  });
-  
-  refVerified = false;
-}
+    // ==============================================
+    // Referral code verification
+    // ==============================================
+    const referralInput = document.getElementById("Referral");
+    const verifyButton = document.getElementById("ref-code-verify");
+    refVerified = false;
 
-      })
-      .catch((err) => {
-        alert("Error verifying code. Please try again !!");
+    verifyButton.addEventListener("click", function () {
+      const refCode = referralInput.value.trim();
+      if (!refCode) {
+        Swal.fire({
+          icon: "info",
+          title: "Missing Referral Code",
+          text: "Please enter a referral code",
+          confirmButtonText: "OK"
+        });
         refVerified = false;
-      });
-  });
+        return;
+      }
+      // https://script.google.com/macros/s/AKfycbzK1HlwFKcsJWTSkydyCyuAPmeb8NK5CGxfF4fkbJVFQNfQC_ormkmVJ0l00FI9yPOrEQ/exec
+
+      const verifyUrl = `https://script.google.com/macros/s/AKfycbxzn9NyYMXg5j5iwhvmP31YNh2-skRsxd4YW1asWUCoSAp5Wxl_qenetgAOGdbVj6nW/exec?action=verifyReferral&code=${refCode}`;
+      $(".loader-div").show();
+
+      fetch(verifyUrl)
+        .then((res) => res.text())
+        .then((result) => {
+          if (result === "yes") {
+            $(".loader-div").fadeOut();
+            Swal.fire({
+              icon: "success",
+              title: "Referral Code Verified 🎉",
+              text: "Referral code is valid :)",
+              confirmButtonText: "Great!"
+            });
+
+            refVerified = true;
+            const selectedOption = document.querySelector('input[name="membershipOption"]:checked');
+            const fullLabel = document.getElementById("labelFULLMEMBERSHIP");
+            fullLabel.innerHTML = `<input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)" style="width: 20px; height: 20px" checked /> &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> 1000/-`;
+
+            if (selectedOption) {
+              updateTotal(selectedOption);
+            } else {
+              console.log(selectedOption);
+
+            }
+          }
+
+
+          else {
+            $(".loader-div").fadeOut();
+
+            Swal.fire({
+              icon: "error",
+              title: "Invalid Referral Code ",
+              text: "Please try again",
+              confirmButtonText: "Retry"
+            });
+
+            refVerified = false;
+          }
+
+        })
+        .catch((err) => {
+          $(".loader-div").fadeOut();
+
+          alert("Error verifying code. Please try again !!");
+          refVerified = false;
+        });
+
+    });
 
     // ============================================== Referral code verification ================================================
 
 
 
 
-      // // offer
-      // function updateTotal(selectedOption) {
+    // // offer
+    // function updateTotal(selectedOption) {
 
-      //   const ttlamt = document.getElementById("ttlamt");
-      //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style haha
+    //   const ttlamt = document.getElementById("ttlamt");
+    //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style haha
 
-      //   let total = 0;
-      //   let membershipText = "";
+    //   let total = 0;
+    //   let membershipText = "";
 
-      //   switch (selectedOption.value) {
-      //     case "BR":
-      //       total = 650;
-      //       membershipText = "ISTE + BARTONAIR";
-      //       break;
-      //     case "BZ":
-      //       total = 650;
-      //       membershipText = "ISTE + BARTONOIDZ";
-      //       break;
-      //     case "FULL":
-      //       total = 650;
-      //       membershipText = "ISTE + FULL MEMBERSHIP";
-      //       break;
-      //   }
+    //   switch (selectedOption.value) {
+    //     case "BR":
+    //       total = 650;
+    //       membershipText = "ISTE + BARTONAIR";
+    //       break;
+    //     case "BZ":
+    //       total = 650;
+    //       membershipText = "ISTE + BARTONOIDZ";
+    //       break;
+    //     case "FULL":
+    //       total = 650;
+    //       membershipText = "ISTE + FULL MEMBERSHIP";
+    //       break;
+    //   }
 
-      //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
-      //   if (isMobile) {
-      //     ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
-      //   } else {
-      //     if (selectedOption.value === "FULL") {
-      //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹1000/-</del>  <i>₹${total}/-</i>`;
-      //     } else {
-      //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
-      //     }
-      //   }
-      // }
-    
+    //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+    //   if (isMobile) {
+    //     ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+    //   } else {
+    //     if (selectedOption.value === "FULL") {
+    //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹1000/-</del>  <i>₹${total}/-</i>`;
+    //     } else {
+    //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+    //     }
+    //   }
+    // }
+
 
 
 
