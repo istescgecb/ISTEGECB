@@ -146,7 +146,7 @@
     <img class="leaderboard-head" src="assets/img/The-final-face-off/leaderboeard.png" alt="istegecbh">
   </div>
   <div class="row justify-content-center align-items-center">
-    <div class="col-12 col-md-6" id="leaderboard-container"
+    <div class="col-12 col-lg-8" id="leaderboard-container"
       data-aos="fade-up">
     </div>
   </div>
@@ -193,11 +193,11 @@
 
 			const row = document.createElement("div");
 			row.className = "d-flex justify-content-evenly align-items-center p-2";
-
+            console.log(entry);
 			row.innerHTML = `
-			<h4 class="col-2 text-start">${entry.Rank}</h4>
-			<h4 class="col-4 text-center">${entry.Name}</h4>
-			<h4 class="col-3 text-center">${entry.Semester}</h4>
+			<h4 class="col-1 text-start">${entry.Rank}</h4>
+			<h4 class="col-8 text-center">${entry.Name} (${entry.Semester} ${entry.Branch})</h4>
+			<h4 class="col-1 text-center">${entry.Count}</h4>
 
 			`;
 
