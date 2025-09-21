@@ -328,6 +328,9 @@
                 <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 400; color: rgb(241, 131, 28);">
                   <strong>MEMBERSHIP OPTIONS</strong>
                 </label>
+                <label>
+                  <p style="font-size: 16px;color: rgb(184, 180, 180)"><i>Apply a Campus Ambassador Code to get 400 Rs OFF!</i></p>
+                </label>
                 <br>
                 <div style="font-size: 1.2rem;">
 
@@ -342,14 +345,14 @@
                     </label>
                   </div>
                   <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
-                    <input type="radio" id="BARTONAIR" select disabled name="membershipOption" value="BR"
+                    <input type="radio" id="BARTONAIR" name="membershipOption" value="BR"
                       onclick="updateTotal(this)" style="width: 1.2rem; height: 1.2rem" />
                     &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
                   </label>
                 </div>
                 <div class="membership-option">
                   <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
-                    <input type="radio" id="BARTONOIDZ" select disabled name="membershipOption" value="BZ"
+                    <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ"
                       onclick="updateTotal(this)" style="width: 20px; height: 20px" />
                     &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
                   </label>
@@ -748,10 +751,22 @@
               confirmButtonText: "Great!"
             });
 
+            
             refVerified = true;
-            const selectedOption = document.querySelector('input[name="membershipOption"]:checked');
             const fullLabel = document.getElementById("labelFULLMEMBERSHIP");
-            fullLabel.innerHTML = `<input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)" style="width: 20px; height: 20px" checked /> &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> 1000/-`;
+            const BRLabel = document.getElementById("labelBARTONAIR");
+            const BZLabel = document.getElementById("labelBARTONOIDZ");
+
+
+            fullLabel.innerHTML = `<input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)" style="width: 20px; height: 20px" checked  /> &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> 1000/-`;
+            const selectedOption = document.querySelector('input[name="membershipOption"]:checked');
+
+            BRLabel.innerHTML = `<input type="radio" id="BARTONAIR" name="membershipOption" select disabled value="BR"
+                      onclick="updateTotal(this)" style="width: 1.2rem; height: 1.2rem" />
+                    &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>`;
+            BZLabel.innerHTML = `<input type="radio" id="BARTONOIDZ" select disabled name="membershipOption" value="BZ"
+                      onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+                    &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>`;
 
             if (selectedOption) {
               updateTotal(selectedOption);
