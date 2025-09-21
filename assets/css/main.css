@@ -1232,7 +1232,7 @@ select:invalid:focus{
 
 
 
-/* addition by nithin  its shit ps*/ 
+/* addition by nithin */
 input:not(:focus):not(:empty):not(:valid) {
   border-color: #fc4b59;
   transition: ease-in-out 0.3s;
@@ -1242,8 +1242,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(27%) sepia(85%) saturate(500%) hue-rotate(190deg) brightness(300%) contrast(85%);
   cursor: pointer;
 }
-
-
 
 
 .event-card-body-reg {
@@ -1882,143 +1880,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 
-/* 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0; }
-} */
-
-
-
-/* QR code */
-
-.qr-container {
-  max-width: 600px;
-  margin: 20px auto;
-  text-align: center;
-}
-
-.qr-toggle-btn {
-  width: 100%;
-  padding: 12px;
-  font-size: 1.2em;
-  font-weight: bold;
-  background: #3cc3ec96;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.4s ease;
-}
-
-.qr-toggle-btn:hover {
-  background-color: #0650d8;
-}
-
-.qr-section {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.3s ease;
-}
-
-.qr-section.show {
-  max-height: 600px;
-  padding-top: 5px;   
-  display: flex;
-  justify-content: center;
-}
-
-.qr-card {
-  background: rgba(255, 255, 255, 0);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  padding: 20px;
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.qr-code {
-  /* margin: 0 auto; */
-  width: 220px;
-  height: auto;
-  border: 2px solid #ddd;
-  border-radius: 12px;
-  margin-bottom: 12px;
-}
-
-.qr-actions {
-  display: flex;
-  justify-content: space-between;
-  width: 13rem;
-  gap: 10px;
-}
-
-.qr-actions button {
-  flex: 1;
-  padding: 10px;
-  font-size: 1em;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-#shareBtn {
-  background: rgba(193, 202, 250, 0.253);
-  color: white;
-  width: 10%;
-}
-#shareBtn:hover {
-  background: #3780e0c2;
-}
-
-#downloadBtn {
-  background: rgba(182, 190, 236, 0.253);
-  color: white;
-}
-#downloadBtn:hover {
-  background: #3eeb6985;
-}
-
-@media (max-width: 300px) {
-  .qr-actions button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0; 
-    
-  }
-  .qr-actions button img {
-  width: 15px;
-  height: 15px;
-}
-.qr-card {
-  background: none;
-  backdrop-filter: none;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  padding: 20px;
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-}
-
-
-/* QR code end */
-
 .form-row-square {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: wrap; 
+  flex-wrap: wrap; /* allows stacking on small screens */
   gap: 20px;
   margin-top: 20px;
 }
@@ -2031,7 +1897,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   box-shadow: 0 0 8px rgba(0,0,0,0.3);
 }
 
-/* QR end */
+
+/* verify referral */
+@media (max-width: 500px) {
+  .referral-container .ffield,
+  .referral-container .verify {
+    flex: 1 1 100%;
+  }
+}
 
 
 #ttlamt {
@@ -2049,29 +1922,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
-/* alert at the beginning */
- #persistent-banner {
-      position: fixed;
-      top: 60px; 
-      left: 50%;
-      transform: translateX(-50%);
-      background: #4caf50;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      font-weight: bold;
-      z-index: 9999;
-      animation: tilt 0.5s;
-    }
-
-    @keyframes tilt {
-      0%   { transform: translateX(-50%) rotate(0deg); }
-      25%  { transform: translateX(-50%) rotate(3deg); }
-      50%  { transform: translateX(-50%) rotate(-3deg); }
-      75%  { transform: translateX(-50%) rotate(3deg); }
-      100% { transform: translateX(-50%) rotate(0deg); }
-    }
 
 
 .file-label {
@@ -2111,7 +1961,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* ==========================================     ABOUT US PAGE/CHECK US OUT      ================================== */
 /* ================================================================================================================= */
 /* ================================================================================================================= */
-
 
 .linktree-container {
   min-height: 100vh;
@@ -2240,6 +2089,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 1rem;
   }
 }
+
+
+
+
+
 /* ================================================================================================================= */
 /* ================================================================================================================= */
 /* ==========================================            YOUTUBE VIDEO            ================================== */
@@ -2313,30 +2167,21 @@ iframe {
 /* ================================================================================================================= */
 
 .register-btn {
-  display: inline-block;
-  margin-left: 4rem;
-  margin-bottom: 3px;
-  margin-top: 3px;
-  padding: 5px 20px;
-  border-radius: 18px;
-  border: solid 3px transparent;
-  font-size: 12px; 
-  font-weight: 400; 
-  text-decoration: none;
-  text-align: center;
-  color: #fff;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
-    linear-gradient(to right, #7169fe, #41e3e4);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  box-shadow: 2px 1000px 1px var(--secondary-color) inset;
-  transition: all 0.3s ease;
+    display: inline-block;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .register-btn:hover {
-  box-shadow: none;
-  color: white;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
-    linear-gradient(to right, #41e3e4, #7169fe);
-  transform: scale(0.9);
+    background: linear-gradient(135deg, #ff92c2, #ff7a96);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.25);
 }
