@@ -363,46 +363,24 @@
                 <br><br>
 
                 <div class="account-details">
-                  <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
-                    <b>PAYMENT DETAILS</b>
-                  </h2>
-                  <p style="font-size: 1.2em">
-                    Account holder name: Krishnapriya R<br />
-                    IFSC code:
-                    <span style="user-select: all; font: inherit">SBIN0070259</span><br />
-                    Account number:
-                    <span style="user-select: all; font: inherit">44148248108</span><br />
-                    UPI ID:
-                    <span style="
+                    <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
+                      <b>PAYMENT DETAILS</b>
+                    </h2>
+                    <p style="font-size: 1.2em">
+                      Account holder name: Krishnapriya R<br />
+                      IFSC code:
+                      <span style="user-select: all; font: inherit">SBIN0070259</span><br />
+                      Account number:
+                      <span style="user-select: all; font: inherit">44148248108</span><br />
+                      UPI ID:
+                      <span style="
                             user-select: all;
                             font: inherit;
                             padding: inherit;
                           ">krishnapriyarmalu-1@okicici</span>
-                  </p><br><br>
-                </div>
+                    </p>
 
-
-
-                <div style="
-                      font-size: 1.2em;
-                      background: #5a54f37c;
-                      max-width: 100%;
-                      border-radius: 20px;
-                      padding: 10px;
-                    " align="center">
-                  <div id="ttlamt"
-                    style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; font-weight: 600; text-align: center;">
-                  </div>
-                  <div id="UPI"></div>
-                </div>
-                <br />
-                <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
-                  Please complete payment and upload screenshot of payment
-                  before submitting.
-                </h4>
-                <br />
-
-                <div class="qr-container">
+                    <div class="qr-container">
                     <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
                     <div class="qr-section" id="qrSection">
                       <div class="qr-card">
@@ -420,6 +398,31 @@
                       </div>
                     </div>
                     </div>
+                  </div>
+                  <br>
+
+
+
+
+                  <div style="
+                      font-size: 1.2em;
+                      background: #5a54f37c;
+                      max-width: 100%;
+                      border-radius: 20px;
+                      padding: 10px;
+                    " align="center">
+                  <div id="ttlamt" style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; font-weight: 600; text-align: center;">
+                  </div>
+                  <div id="UPI"></div>
+                </div>
+                  <br />
+                  <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
+                    Please complete payment and upload screenshot of payment
+                    before submitting.
+                  </h4>
+                  <br />
+
+                
              
 
                 <div class="d-flex justify-content-center">
@@ -733,7 +736,19 @@
       fr.readAsDataURL(file);
     });
 
-                    
+    
+    //QR code 
+    const qrToggleBtn = document.getElementById("qrToggleBtn");
+    const qrSection = document.getElementById("qrSection");
+    const qrImage = document.getElementById("qrImage");
+    const shareBtn = document.getElementById("shareBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    qrToggleBtn.addEventListener('click', () => {
+      qrSection.classList.toggle("show");
+      qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code":"Show QR Code";
+    });
+
     shareBtn.addEventListener('click', () => {
       if(navigator.share) {
         fetch(qrImage.src)
@@ -752,6 +767,18 @@
         alert("Sharing is not supported on this browser");
       }
     });
+
+
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement("a");
+      link.download = "qrcodeDownload.jpg";
+      link.href = qrImage.src;
+      link.click();
+    });
+
+
+
+
 
 
 
