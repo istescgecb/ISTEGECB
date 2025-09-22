@@ -43,6 +43,7 @@
 				box-shadow: -1px 4px 8px 0px #0000004b;
 			} */
 	
+
 		.send-div {
 			display: none;
 			position: fixed;
@@ -183,15 +184,14 @@
 
 
 	<div class="container mb-5">
-  <div class="row justify-content-center align-items-center mb-4" data-aos="zoom-in">
-    <img class="leaderboard-head" src="assets/img/The-final-face-off/leaderboeard.png" alt="istegecbh">
-  </div>
-  <div class="row justify-content-center align-items-center">
-    <div class="col-12 col-lg-8" id="leaderboard-container"
-      data-aos="fade-up">
-    </div>
-  </div>
-</div>
+		<div class="row justify-content-center align-items-center mb-4" data-aos="zoom-in">
+			<img class="leaderboard-head" src="assets/img/The-final-face-off/leaderboeard.png" alt="istegecbh">
+		</div>
+		<div class="row justify-content-center align-items-center">
+			<div class="col-12 col-lg-8" id="leaderboard-container" data-aos="fade-up">
+			</div>
+		</div>
+	</div>
 
 <!-- loader gif -->
 <div class="send-div">
@@ -234,18 +234,18 @@
 		function renderLeaderboard(data) {
 			container.innerHTML = "";
 
-			const header = document.createElement("div");
-			header.className = "d-flex justify-content-evenly align-items-center p-2 fw-bold";
-			header.innerHTML = `
-			<h4 class="col-2 text-start" style="color: white">Rank</h4>
-			<h4 class="col-7 text-center" style="color: white">Name</h4>
-			<h4 class="col-2 text-end" style="color: white">Count</h4>
+		const header = document.createElement("div");
+		header.className = "d-flex justify-content-evenly align-items-center p-2 fw-bold";
+		header.innerHTML = `
+			<h4 class="col-1 text-start" style="color: white">Rank</h4>
+			<h4 class="col-8 text-center" style="color: white">Name</h4>
+			<h4 class="col-1 text-end" style="color: white">Count</h4>
 		`;
-			container.appendChild(header);
+		container.appendChild(header);
 
-			data.forEach(entry => {
-				const card = document.createElement("div");
-				card.className = "col-12 leaderboard-row m-2 align-items-center";
+		data.forEach(entry => {
+			const card = document.createElement("div");
+			card.className = "col-12 leaderboard-row m-2 align-items-center";
 
 				const row = document.createElement("div");
 				row.className = "d-flex justify-content-evenly align-items-center p-2";
