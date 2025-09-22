@@ -26,6 +26,29 @@
 	<link rel="stylesheet" href="assets/css/final-face-off.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
 	<title>ISTE GECBH</title>
+
+	<style>
+		/* body{
+			background-image: url("assets/img/banner-bg1.png");
+									background-color: #15202B;
+
+		}
+		.leaderboard-row {
+			background: rgb(147, 84, 197);
+
+			background: linear-gradient(180deg, rgba(116,84,197,1) 0%, rgba(81,61,145,1) 100%);
+			color: #ffffff;
+			border-radius: 14px;
+			border: 3px solid #2b2878;
+			box-shadow: -1px 4px 8px 0px #0000004b;
+		} */
+
+			@media (max-width: 768px) {
+				.container {
+					margin-top: 7.5rem !important;
+				}
+			}
+	</style>
 </head>
 <!-- oncontextmenu="return false" -->
 <body>
@@ -142,15 +165,14 @@
 
 
 	<div class="container mb-5">
-  <div class="row justify-content-center align-items-center mb-4" data-aos="zoom-in">
-    <img class="leaderboard-head" src="assets/img/The-final-face-off/leaderboeard.png" alt="istegecbh">
-  </div>
-  <div class="row justify-content-center align-items-center">
-    <div class="col-12 col-lg-8" id="leaderboard-container"
-      data-aos="fade-up">
-    </div>
-  </div>
-</div>
+		<div class="row justify-content-center align-items-center mb-4" data-aos="zoom-in">
+			<img class="leaderboard-head" src="assets/img/The-final-face-off/leaderboeard.png" alt="istegecbh">
+		</div>
+		<div class="row justify-content-center align-items-center">
+			<div class="col-12 col-lg-8" id="leaderboard-container" data-aos="fade-up">
+			</div>
+		</div>
+	</div>
 
 <script>
 	const container = document.getElementById('leaderboard-container');
@@ -179,17 +201,16 @@
 
 		const header = document.createElement("div");
 		header.className = "d-flex justify-content-evenly align-items-center p-2 fw-bold";
-		// header.innerHTML = `
-		// 	<h4 class="col-2 text-start">Rank</h4>
-		// 	<h4 class="col-4 text-center">Name</h4>
-		// 	<h4 class="col-3 text-center">Semester</h4>
-		// 	<h4 class="col-3 text-center">Branch</h4>
-		// `;
-		// container.appendChild(header);
+		header.innerHTML = `
+			<h4 class="col-1 text-start" style="color: white">Rank</h4>
+			<h4 class="col-7 text-center" style="color: white">Name</h4>
+			<h4 class="col-2 text-end" style="color: white">Count</h4>
+		`;
+		container.appendChild(header);
 
 		data.forEach(entry => {
 			const card = document.createElement("div");
-			card.className = "col-12 leaderboard-row mb-2";
+			card.className = "col-12 leaderboard-row m-2 align-items-center";
 
 			const row = document.createElement("div");
 			row.className = "d-flex justify-content-evenly align-items-center p-2";
@@ -337,66 +358,7 @@ leaderboardData.forEach((entry, index) => {
 
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-	<!-- Initialize Swiper -->
-	<script>
-		// latest news 
-		var swiper = new Swiper(".mySwiper", {
-			slidesPerView: 'auto',
-			spaceBetween: 0,
-			centeredSlides: false,
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true
-			},
-		});
-		// past events
-		var swiper2 = new Swiper(".mySwiper2", {
-			slidesPerView: 'auto',
-			spaceBetween: 0,
-			centeredSlides: false,
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true
-			},
-		});
-		// teams swiper
-		var swiper3 = new Swiper(".mySwiper3", {
-			slidesPerView: 'auto',
-			loop: false,
-			spaceBetween: 0,
-			centeredSlides: false,
-			autoplay: {
-			delay: 2000,
-			disableOnInteraction: false,
-			},
-			pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-			},
-			navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-			},
-		});
 
-		// document.onkeydown = function(e) {
-		// if(event.keyCode == 123) {
-		// 	return false;
-		// }
-		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-		// 	return false;
-		// }
-		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-		// 	return false;
-		// }
-		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-		// 	return false;
-		// }
-		// if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-		// 	return false;
-		// }
-		// }
-	</script>
 	<script>
 		AOS.init({
 			duration: 1000
