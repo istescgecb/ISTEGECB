@@ -24,6 +24,7 @@
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/final-face-off.css">
+	<link rel="stylesheet" href="assets/css/loader.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
 	<title>Ambassdor Leaderboard | ISTE GECBH</title>
 	<style>
@@ -41,6 +42,23 @@
 				border: 3px solid #2b2878;
 				box-shadow: -1px 4px 8px 0px #0000004b;
 			} */
+	
+		.send-div {
+			display: none;
+			position: fixed;
+			width: 270px;
+			height: 270px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: #fff;
+			z-index: 30001;
+			opacity: 0.8;
+			border-radius: 10px;
+			text-align: center;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
 	
 		@media (max-width: 768px) {
 			.container {
@@ -175,11 +193,22 @@
   </div>
 </div>
 
+<!-- loader gif -->
+<div class="send-div">
+	<img class="loader-img" src="assets/img/gif/haa.gif" style="height: 150px; width: auto" />
+	<div class="loader-text">
+		<br>Fetching pls wait...
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
 	const container = document.getElementById('leaderboard-container');
 	const url = "https://script.google.com/macros/s/AKfycbxUY387D-ehDeWPkSPDShJUvQKLJL79WEH5i-bAWvPmszoMuqgOZ4YVtEskIhRKYQXeEQ/exec?action=getLeaderboard";
 	
 	function fetchLeaderboard() {
+		
+		$(".send-div").show();
 		fetch(url)
 			.then(response => {
 				if(!response.ok) {
@@ -188,13 +217,18 @@
 				return response.json();
 			})
 			.then(leaderboardData => {
+				$(".send-div").fadeOut();
+
 				renderLeaderboard(leaderboardData);
 			})
 			.catch(err => {
+				$(".send-div").fadeOut();
+
 				console.error("Error:", err);
 				container.innerHTML = "<p>Failed to load leaderboard.</p>";
 		
 			});
+
 	}
 
 		function renderLeaderboard(data) {
@@ -203,7 +237,7 @@
 			const header = document.createElement("div");
 			header.className = "d-flex justify-content-evenly align-items-center p-2 fw-bold";
 			header.innerHTML = `
-			<h4 class="col-1 text-start" style="color: white">Rank</h4>
+			<h4 class="col-2 text-start" style="color: white">Rank</h4>
 			<h4 class="col-7 text-center" style="color: white">Name</h4>
 			<h4 class="col-2 text-end" style="color: white">Count</h4>
 		`;
@@ -360,66 +394,7 @@ leaderboardData.forEach((entry, index) => {
 
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-	<!-- Initialize Swiper -->
-	<script>
-		// latest news 
-		var swiper = new Swiper(".mySwiper", {
-			slidesPerView: 'auto',
-			spaceBetween: 0,
-			centeredSlides: false,
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true
-			},
-		});
-		// past events
-		var swiper2 = new Swiper(".mySwiper2", {
-			slidesPerView: 'auto',
-			spaceBetween: 0,
-			centeredSlides: false,
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true
-			},
-		});
-		// teams swiper
-		var swiper3 = new Swiper(".mySwiper3", {
-			slidesPerView: 'auto',
-			loop: false,
-			spaceBetween: 0,
-			centeredSlides: false,
-			autoplay: {
-			delay: 2000,
-			disableOnInteraction: false,
-			},
-			pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-			},
-			navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-			},
-		});
 
-		// document.onkeydown = function(e) {
-		// if(event.keyCode == 123) {
-		// 	return false;
-		// }
-		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-		// 	return false;
-		// }
-		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-		// 	return false;
-		// }
-		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-		// 	return false;
-		// }
-		// if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-		// 	return false;
-		// }
-		// }
-	</script>
 	<script>
 		AOS.init({
 			duration: 1000
