@@ -28,22 +28,32 @@
 	<link rel="stylesheet" href="assets/css/stars.css">
 	<title>Ambassdor Leaderboard | ISTE GECBH</title>
 	<style>
-		/* body{
-				background-image: url("assets/img/banner-bg1.png");
-										background-color: #15202B;
+		body {
+			background-image: url("assets/img/banner-bg1.png");
+			background-color: #15202B;
 	
-			}
-			.leaderboard-row {
-				background: rgb(147, 84, 197);
+		}
 	
-				background: linear-gradient(180deg, rgba(116,84,197,1) 0%, rgba(81,61,145,1) 100%);
-				color: #ffffff;
-				border-radius: 14px;
-				border: 3px solid #2b2878;
-				box-shadow: -1px 4px 8px 0px #0000004b;
-			} */
+		.leaderboard-row {
+			background: rgb(147, 84, 197);
 	
-
+			background: linear-gradient(180deg, rgba(116, 84, 197, 1) 0%, rgba(81, 61, 145, 1) 100%);
+			color: #e5e2eb;
+			border-radius: 14px;
+			border: 3px solid rgb(33, 21, 63);
+			;
+			box-shadow:
+				-1px 4px 8px 0px #0000004b,
+				inset 0 1px 0 rgba(255, 255, 255, 0.1);
+		}
+	
+		.leaderboard-row:hover {
+			transform: translateY(-2px);
+			box-shadow: -1px 6px 12px 0px #0000006b;
+			transition: all 0.2s ease;
+		}
+	
+	
 		.send-div {
 			display: none;
 			position: fixed;
@@ -58,7 +68,7 @@
 			opacity: 0.8;
 			border-radius: 10px;
 			text-align: center;
-			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 		}
 	
 		@media (max-width: 768px) {
@@ -185,7 +195,7 @@
 
 	<div class="container mb-5">
 		<div class="row justify-content-center align-items-center mb-4" data-aos="zoom-in">
-			<img class="leaderboard-head" src="assets/img/The-final-face-off/leaderboeard.png" alt="istegecbh">
+			<img class="leaderboard-head" src="assets/img/The-final-face-off/leaderboeard_blue.png" alt="istegecbh">
 		</div>
 		<div class="row justify-content-center align-items-center">
 			<div class="col-12 col-lg-8" id="leaderboard-container" data-aos="fade-up">
