@@ -24,6 +24,7 @@
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/final-face-off.css">
+	<link rel="stylesheet" href="assets/css/loader.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
 	<title>Ambassdor Leaderboard | ISTE GECBH</title>
 	<style>
@@ -41,6 +42,24 @@
 				border: 3px solid #2b2878;
 				box-shadow: -1px 4px 8px 0px #0000004b;
 			} */
+	
+
+		.send-div {
+			display: none;
+			position: fixed;
+			width: 270px;
+			height: 270px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: #fff;
+			z-index: 30001;
+			opacity: 0.8;
+			border-radius: 10px;
+			text-align: center;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
 	
 		@media (max-width: 768px) {
 			.container {
@@ -174,11 +193,22 @@
 		</div>
 	</div>
 
+<!-- loader gif -->
+<div class="send-div">
+	<img class="loader-img" src="assets/img/gif/haa.gif" style="height: 150px; width: auto" />
+	<div class="loader-text">
+		<br>Fetching pls wait...
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
 	const container = document.getElementById('leaderboard-container');
 	const url = "https://script.google.com/macros/s/AKfycbxUY387D-ehDeWPkSPDShJUvQKLJL79WEH5i-bAWvPmszoMuqgOZ4YVtEskIhRKYQXeEQ/exec?action=getLeaderboard";
 	
 	function fetchLeaderboard() {
+		
+		$(".send-div").show();
 		fetch(url)
 			.then(response => {
 				if(!response.ok) {
@@ -187,13 +217,18 @@
 				return response.json();
 			})
 			.then(leaderboardData => {
+				$(".send-div").fadeOut();
+
 				renderLeaderboard(leaderboardData);
 			})
 			.catch(err => {
+				$(".send-div").fadeOut();
+
 				console.error("Error:", err);
 				container.innerHTML = "<p>Failed to load leaderboard.</p>";
 		
 			});
+
 	}
 
 		function renderLeaderboard(data) {
