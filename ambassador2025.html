@@ -75,6 +75,9 @@
 			.container {
 				margin-top: 7.5rem !important;
 			}
+	
+
+
 		}
 	</style>
 
@@ -249,12 +252,14 @@
 			container.innerHTML = "";
 
 		const header = document.createElement("div");
-		header.className = "d-flex justify-content-evenly align-items-center p-2 fw-bold";
+		header.className = "col-12 d-flex justify-content-evenly align-items-center p-2 fw-bold";
+
 		header.innerHTML = `
-			<h4 class="col-1 text-start" style="color: white">Rank</h4>
-			<h4 class="col-8 text-center" style="color: white">Name</h4>
-			<h4 class="col-1 text-end" style="color: white">Count</h4>
+			<h4 class="col-3 text-start leaderboard-header" style="color: white">Rank</h4>
+			<h4 class="col-6 text-center leaderboard-header" style="color: white">Name</h4>
+			<h4 class="col-3 text-end leaderboard-header" style="color: white">Count</h4>
 		`;
+	
 		container.appendChild(header);
 
 		data.forEach(entry => {
