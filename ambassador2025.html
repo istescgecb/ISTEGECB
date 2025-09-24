@@ -45,8 +45,6 @@
 			box-shadow:
 				-1px 4px 8px 0px #0000004b,
 				inset 0 1px 0 rgba(255, 255, 255, 0.1);
-			user-select: none;
-
 		}
 	
 		.leaderboard-row:hover {
@@ -85,24 +83,40 @@
 
 
 	.slots-notification {
-		position: fixed;
-		top: 8%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		background: #280e79;
-		color: white;
-		padding: 15px 25px;
-		border-radius: 7px;
-		font-size: 18px;
-		font-weight: 600;
-		z-index: 1000;
-		cursor: pointer;
-		user-select: none;
-		white-space: nowrap;
-		backdrop-filter: blur(5px);
-		transition: all 0.3s ease;
-	}
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background: linear-gradient(90deg, #633b9b 60%, #6c37d0 100%);
+    color: #fff;
+    padding: 18px 32px;
+    border-radius: 12px;
+    font-size: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 8px 32px 0 rgba(40,14,121,0.25), 0 2px 8px 0 rgba(0,0,0,0.10);
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(40,14,121,0.25);
+    transition: all 0.3s cubic-bezier(.4,2,.3,1), transform 0.2s;
+    pointer-events: auto;
+    animation: pop-in 0.4s cubic-bezier(.4,2,.3,1);
+}
 
+@keyframes pop-in {
+    0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .slots-notification {
+        font-size: 15px;
+        padding: 10px 16px;
+        border-radius: 8px;
+    }
+}
  
 	</style>
 
@@ -221,7 +235,7 @@
 	</div> -->
 
 
-	<div class="container mb-5" unselectable="on">
+	<div class="container mb-5">
 		<div class="row justify-content-center align-items-center mb-4" data-aos="zoom-in">
 			<img class="leaderboard-head" src="assets/img/The-final-face-off/leaderboeard_blue.png" alt="istegecbh">
 		</div>
@@ -247,7 +261,7 @@
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
 	const container = document.getElementById('leaderboard-container');
-	const seats = 150;
+	const seats = 120;
 	let count = 0;
 	const url = `
 	
@@ -305,10 +319,10 @@
 				row.className = "d-flex justify-content-evenly align-items-center p-2";
 				console.log(entry);
 				row.innerHTML = `
-					<h4 class="col-1 text-start">${entry.Rank}</h4>
-					<h4 class="col-8 text-center">${entry.Name} (${entry.Semester} ${entry.Branch})</h4>
-					<h4 class="col-1 text-center">${entry.Count}</h4>
-				`;
+			<h4 class="col-1 text-start">${entry.Rank}</h4>
+			<h4 class="col-8 text-center">${entry.Name} (${entry.Semester} ${entry.Branch})</h4>
+			<h4 class="col-1 text-center">${entry.Count}</h4>
+			`;
 				count+= entry.Count;
 
 				card.appendChild(row);
@@ -318,12 +332,7 @@
 
 			let left = seats - count;
 			$("#slotsLeft").text(left);
-			$("#slotsNotification").fadeIn();
-			setTimeout(function() {
-				$("#slotsNotification").fadeOut();
-			}, 10000);
-
-
+			$("#slotsNotification").show().delay(10000).fadeOut();
 		}
 
 
