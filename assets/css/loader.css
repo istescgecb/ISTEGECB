@@ -32,6 +32,7 @@ Underemployed 23-07-2024
     background-color: #fff;
     z-index: 30001;
     opacity: 0.8;
+    user-select: none;
 }
 
 .send-div {
@@ -46,7 +47,8 @@ Underemployed 23-07-2024
     background-color: #fff;
     z-index: 30001;
     opacity: 0.8;
-}
+    user-select: none;
+}   
 
 .loader-img {
     user-select: none;

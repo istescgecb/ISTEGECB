@@ -45,6 +45,8 @@
 			box-shadow:
 				-1px 4px 8px 0px #0000004b,
 				inset 0 1px 0 rgba(255, 255, 255, 0.1);
+			user-select: none;
+
 		}
 	
 		.leaderboard-row:hover {
@@ -94,7 +96,7 @@
 		font-size: 18px;
 		font-weight: 600;
 		z-index: 1000;
-		cursor: move;
+		cursor: pointer;
 		user-select: none;
 		white-space: nowrap;
 		backdrop-filter: blur(5px);
@@ -219,7 +221,7 @@
 	</div> -->
 
 
-	<div class="container mb-5">
+	<div class="container mb-5" unselectable="on">
 		<div class="row justify-content-center align-items-center mb-4" data-aos="zoom-in">
 			<img class="leaderboard-head" src="assets/img/The-final-face-off/leaderboeard_blue.png" alt="istegecbh">
 		</div>
@@ -303,10 +305,10 @@
 				row.className = "d-flex justify-content-evenly align-items-center p-2";
 				console.log(entry);
 				row.innerHTML = `
-			<h4 class="col-1 text-start">${entry.Rank}</h4>
-			<h4 class="col-8 text-center">${entry.Name} (${entry.Semester} ${entry.Branch})</h4>
-			<h4 class="col-1 text-center">${entry.Count}</h4>
-			`;
+					<h4 class="col-1 text-start">${entry.Rank}</h4>
+					<h4 class="col-8 text-center">${entry.Name} (${entry.Semester} ${entry.Branch})</h4>
+					<h4 class="col-1 text-center">${entry.Count}</h4>
+				`;
 				count+= entry.Count;
 
 				card.appendChild(row);
@@ -316,7 +318,12 @@
 
 			let left = seats - count;
 			$("#slotsLeft").text(left);
-			$("#slotsNotification").show().delay(10000).fadeOut();
+			$("#slotsNotification").fadeIn();
+			setTimeout(function() {
+				$("#slotsNotification").fadeOut();
+			}, 10000);
+
+
 		}
 
 
