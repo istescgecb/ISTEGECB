@@ -20,8 +20,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/final-face-off.css">
 	<link rel="stylesheet" href="assets/css/loader.css">
@@ -31,12 +31,12 @@
 		body {
 			background-image: url("assets/img/banner-bg1.png");
 			background-color: #15202B;
-	
+
 		}
-	
+
 		.leaderboard-row {
 			background: rgb(147, 84, 197);
-	
+
 			background: linear-gradient(180deg, rgba(116, 84, 197, 1) 0%, rgba(81, 61, 145, 1) 100%);
 			color: #e5e2eb;
 			border-radius: 14px;
@@ -45,17 +45,15 @@
 			box-shadow:
 				-1px 4px 8px 0px #0000004b,
 				inset 0 1px 0 rgba(255, 255, 255, 0.1);
-			user-select: none;
-
 		}
-	
+
 		.leaderboard-row:hover {
 			transform: translateY(-2px);
 			box-shadow: -1px 6px 12px 0px #0000006b;
 			transition: all 0.2s ease;
 		}
-	
-	
+
+
 		.send-div {
 			display: none;
 			position: fixed;
@@ -72,42 +70,65 @@
 			text-align: center;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 		}
-	
+
 		@media (max-width: 768px) {
 			.container {
 				margin-top: 7.5rem !important;
 			}
-	
+
 
 
 		}
 
 
 
-	.slots-notification {
-		position: fixed;
-		top: 8%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		background: #280e79;
-		color: white;
-		padding: 15px 25px;
-		border-radius: 7px;
-		font-size: 18px;
-		font-weight: 600;
-		z-index: 1000;
-		cursor: pointer;
-		user-select: none;
-		white-space: nowrap;
-		backdrop-filter: blur(5px);
-		transition: all 0.3s ease;
-	}
+		.slots-notification {
+			position: fixed;
+			top: 8%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(1);
+			background: linear-gradient(90deg, #633b9b 60%, #6c37d0 100%);
+			color: #fff;
+			padding: 18px 32px;
+			border-radius: 12px;
+			font-size: 20px;
+			z-index: 1000;
+			cursor: pointer;
+			user-select: none;
+			white-space: nowrap;
+			backdrop-filter: blur(7px);
+			box-shadow: 0 8px 32px 0 rgba(40, 14, 121, 0.25), 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+			letter-spacing: 1px;
+			text-shadow: 0 2px 8px rgba(40, 14, 121, 0.25);
+			transition: all 0.3s cubic-bezier(.4, 2, .3, 1), transform 0.2s;
+			pointer-events: auto;
+			animation: pop-in 0.4s cubic-bezier(.4, 2, .3, 1);
+		}
 
- 
+		@keyframes pop-in {
+			0% {
+				transform: translate(-50%, -50%) scale(0.85);
+				opacity: 0;
+			}
+
+			100% {
+				transform: translate(-50%, -50%) scale(1);
+				opacity: 1;
+			}
+		}
+
+		@media (max-width: 600px) {
+			.slots-notification {
+				font-size: 15px;
+				padding: 10px 16px;
+				border-radius: 8px;
+			}
+		}
 	</style>
 
 </head>
 <!-- oncontextmenu="return false" -->
+
 <body>
 	<!-- bg animated dots -->
 	<div style="z-index: 0;">
@@ -199,8 +220,8 @@
 		<p class="final-face-off-p">
 			The Final Face Off is a three month long mega championship, consisting of five competitions for a grand cash prize of 5K! After a neck and neck competition in all domains of the Project Development Challenge, the same teams will again fiercely battle in the remaining four competitions of the Final Face Off. The ultimate champion will be determined by the final status of the leaderboard that will be updated after every event in this grand competition series.
        </p> -->
-        <!-- <br class="final-face-off-p"> -->
-        <!-- <hr style="color: #4c1201;"> -->
+	<!-- <br class="final-face-off-p"> -->
+	<!-- <hr style="color: #4c1201;"> -->
 	<!-- </div> -->
 
 	<!-- <div data-aos="fade-up">
@@ -231,75 +252,75 @@
 		</div>
 	</div>
 
-<!-- loader gif -->
-<div class="send-div">
-	<img class="loader-img" src="assets/img/gif/haa.gif" style="height: 150px; width: auto" />
-	<div class="loader-text">
-		<br>Fetching pls wait...
+	<!-- loader gif -->
+	<div class="send-div">
+		<img class="loader-img" src="assets/img/gif/haa.gif" style="height: 150px; width: auto" />
+		<div class="loader-text">
+			<br>Fetching pls wait...
+		</div>
 	</div>
-</div>
 
-<!-- pop up count -->
-<div class="slots-notification" id="slotsNotification" style="display: none;">
-	Only <span  id="slotsLeft">50</span> slots left!
-</div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script>
-	const container = document.getElementById('leaderboard-container');
-	const seats = 150;
-	let count = 0;
-	const url = `
+	<!-- pop up count -->
+	<div class="slots-notification" id="slotsNotification" style="display: none;">
+		Only <span id="slotsLeft">50</span> slots left!
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		const container = document.getElementById('leaderboard-container');
+		const seats = 120;
+		let count = 0;
+		const url = `
 	
 	https://script.google.com/macros/s/AKfycbxUY387D-ehDeWPkSPDShJUvQKLJL79WEH5i-bAWvPmszoMuqgOZ4YVtEskIhRKYQXeEQ/exec
 
 	`.trim() + "?action=getLeaderboard";
-	
-	function fetchLeaderboard() {
-		
-		$(".send-div").show();
-		fetch(url)
-			.then(response => {
-				if(!response.ok) {
-					throw new Error("Failed to fetch leaderboard");
-				}
-				return response.json();
-			})
-			.then(leaderboardData => {
-				$(".send-div").fadeOut();
 
-				renderLeaderboard(leaderboardData);
-			
+		function fetchLeaderboard() {
 
-			})
-			.catch(err => {
-				$(".send-div").fadeOut();
+			$(".send-div").show();
+			fetch(url)
+				.then(response => {
+					if (!response.ok) {
+						throw new Error("Failed to fetch leaderboard");
+					}
+					return response.json();
+				})
+				.then(leaderboardData => {
+					$(".send-div").fadeOut();
 
-				console.error("Error:", err);
-				container.innerHTML = "<p>Failed to load leaderboard.</p>";
-		
-			});
+					renderLeaderboard(leaderboardData);
 
-	}
 
-	function renderLeaderboard(data) {
-		container.innerHTML = "";	
+				})
+				.catch(err => {
+					$(".send-div").fadeOut();
 
-		const header = document.createElement("div");
-		header.className = "col-12 d-flex justify-content-evenly align-items-center p-2 fw-bold";
+					console.error("Error:", err);
+					container.innerHTML = "<p>Failed to load leaderboard.</p>";
 
-		header.innerHTML = `
+				});
+
+		}
+
+		function renderLeaderboard(data) {
+			container.innerHTML = "";
+
+			const header = document.createElement("div");
+			header.className = "col-12 d-flex justify-content-evenly align-items-center p-2 fw-bold";
+
+			header.innerHTML = `
 			<h4 class="col-3 text-start leaderboard-header" style="color: white">Rank</h4>
 			<h4 class="col-6 text-center leaderboard-header" style="color: white">Name</h4>
 			<h4 class="col-3 text-end leaderboard-header" style="color: white">Count</h4>
 		`;
-	
-		container.appendChild(header);
+
+			container.appendChild(header);
 
 
-		data.forEach(entry => {
-			const card = document.createElement("div");
-			card.className = "col-12 leaderboard-row m-2 align-items-center";
+			data.forEach(entry => {
+				const card = document.createElement("div");
+				card.className = "col-12 leaderboard-row m-2 align-items-center";
 
 				const row = document.createElement("div");
 				row.className = "d-flex justify-content-evenly align-items-center p-2";
@@ -309,7 +330,7 @@
 					<h4 class="col-8 text-center">${entry.Name} (${entry.Semester} ${entry.Branch})</h4>
 					<h4 class="col-1 text-center">${entry.Count}</h4>
 				`;
-				count+= entry.Count;
+				count += entry.Count;
 
 				card.appendChild(row);
 				container.appendChild(card);
@@ -318,8 +339,8 @@
 
 			let left = seats - count;
 			$("#slotsLeft").text(left);
-			$("#slotsNotification").fadeIn();
-			setTimeout(function() {
+			// $("#slotsNotification").fadeIn();
+			setTimeout(function () {
 				$("#slotsNotification").fadeOut();
 			}, 10000);
 
@@ -333,11 +354,11 @@
 			});
 		});
 
-		
-	
-	fetchLeaderboard();
-</script>
-<!-- <script>
+
+
+		fetchLeaderboard();
+	</script>
+	<!-- <script>
 const leaderboardData = [
   { team: "AGNI", score: 305, img: "assets/img/The-final-face-off/1.png" },
   { team: "Quaternity", score: 229, img: "assets/img/The-final-face-off/2.png" },
@@ -395,7 +416,7 @@ leaderboardData.forEach((entry, index) => {
 });
 </script> -->
 
-<!-- 
+	<!-- 
 	<div data-aos="fade-up">
 		<h1 class="latest-news">CHALLENGE WINNERS</h1>
 	</div>
@@ -430,7 +451,7 @@ leaderboardData.forEach((entry, index) => {
 		</div>
 	</div> -->
 
-    <!-- <div class="swiper mySwiper mt-3">
+	<!-- <div class="swiper mySwiper mt-3">
 		<div class="swiper-wrapper">
 
 			<div class="swiper-slide first-card latest-event">
