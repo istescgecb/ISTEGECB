@@ -23,3 +23,6 @@ git merge upstream/main
 git push origin --delete branchname #deletes in remote
 git branch -d branchname #deletes in local
 
+
+# make branch at a commit
+git checkout -b new-branch-name commit-hash

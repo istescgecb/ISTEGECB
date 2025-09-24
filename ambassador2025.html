@@ -79,6 +79,29 @@
 
 
 		}
+
+
+
+	.slots-notification {
+		position: fixed;
+		top: 8%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #280e79;
+		color: white;
+		padding: 15px 25px;
+		border-radius: 7px;
+		font-size: 18px;
+		font-weight: 600;
+		z-index: 1000;
+		cursor: move;
+		user-select: none;
+		white-space: nowrap;
+		backdrop-filter: blur(5px);
+		transition: all 0.3s ease;
+	}
+
+ 
 	</style>
 
 </head>
@@ -213,10 +236,17 @@
 		<br>Fetching pls wait...
 	</div>
 </div>
+
+<!-- pop up count -->
+<div class="slots-notification" id="slotsNotification" style="display: none;">
+	Only <span  id="slotsLeft">50</span> slots left!
+</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
 	const container = document.getElementById('leaderboard-container');
+	const seats = 150;
+	let count = 0;
 	const url = `
 	
 	https://script.google.com/macros/s/AKfycbxUY387D-ehDeWPkSPDShJUvQKLJL79WEH5i-bAWvPmszoMuqgOZ4YVtEskIhRKYQXeEQ/exec
@@ -237,6 +267,8 @@
 				$(".send-div").fadeOut();
 
 				renderLeaderboard(leaderboardData);
+			
+
 			})
 			.catch(err => {
 				$(".send-div").fadeOut();
@@ -248,8 +280,8 @@
 
 	}
 
-		function renderLeaderboard(data) {
-			container.innerHTML = "";
+	function renderLeaderboard(data) {
+		container.innerHTML = "";	
 
 		const header = document.createElement("div");
 		header.className = "col-12 d-flex justify-content-evenly align-items-center p-2 fw-bold";
@@ -262,6 +294,7 @@
 	
 		container.appendChild(header);
 
+
 		data.forEach(entry => {
 			const card = document.createElement("div");
 			card.className = "col-12 leaderboard-row m-2 align-items-center";
@@ -273,13 +306,27 @@
 			<h4 class="col-1 text-start">${entry.Rank}</h4>
 			<h4 class="col-8 text-center">${entry.Name} (${entry.Semester} ${entry.Branch})</h4>
 			<h4 class="col-1 text-center">${entry.Count}</h4>
-
 			`;
+				count+= entry.Count;
 
 				card.appendChild(row);
 				container.appendChild(card);
 			});
+
+
+			let left = seats - count;
+			$("#slotsLeft").text(left);
+			$("#slotsNotification").show().delay(10000).fadeOut();
 		}
+
+
+		$(document).ready(function () {
+			$("#slotsNotification").click(function () {
+				$("#slotsNotification").fadeOut();
+			});
+		});
+
+		
 	
 	fetchLeaderboard();
 </script>
