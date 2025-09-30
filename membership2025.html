@@ -338,15 +338,15 @@
                     </label>
                   </div>
                   <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
-                    <input type="radio" id="BARTONAIR" name="membershipOption" value="BR"
-                      onclick="updateTotal(this)" style="width: 1.2rem; height: 1.2rem" />
+                    <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
+                      style="width: 1.2rem; height: 1.2rem" />
                     &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
                   </label>
                 </div>
                 <div class="membership-option">
                   <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
-                    <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ"
-                      onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+                    <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
+                      style="width: 20px; height: 20px" />
                     &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
                   </label>
                 </div>
@@ -356,67 +356,71 @@
                 <br><br>
 
                 <div class="account-details">
-                    <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
-                      <b>PAYMENT DETAILS</b>
-                    </h2>
-                    <p style="font-size: 1.2em">
-                      Account holder name: Krishnapriya R<br />
-                      IFSC code:
-                      <span style="user-select: all; font: inherit">SBIN0070259</span><br />
-                      Account number:
-                      <span style="user-select: all; font: inherit">44148248108</span><br />
-                      UPI ID:
-                      <span style="
-                            user-select: all;
-                            font: inherit;
-                            padding: inherit;
-                          ">krishnapriyarmalu-1@okicici</span>
-                    </p>
+                  <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
+                    <b>PAYMENT DETAILS</b>
+                  </h2>
+                  <p style="font-size: 1.2em">
+                    Account holder name:
+                    <span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Krishnapriya 
+                      R</span><br />
+                    IFSC code:
+                    <span onclick="copyText(this)"
+                      style="cursor: pointer; user-select: all; font: inherit">SBIN0070259</span><br />
+                    Account number:
+                    <span onclick="copyText(this)"
+                      style="cursor: pointer; user-select: all; font: inherit">44148248108</span><br />
+                    UPI ID:
+                    <span onclick="copyText(this)"
+                      style="cursor: pointer; user-select: all; font: inherit">krishnapriyarmalu-1@okicici</span>
+                  </p>
 
-                    <div class="qr-container">
+                  <div class="qr-container">
                     <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
                     <div class="qr-section" id="qrSection">
                       <div class="qr-card">
-                      <img src="assets/img/qr-code-for-membership.jpg" alt="payment QR"id="qrImage" class="qr-code">
-                      <div class="qr-actions">
-                        <button type="button" class="share-btn" id="shareBtn">
-                          <span></span>
-                          <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px" alt="Share Icon">
-                        </button>
-                        <button type="button" class="download-btn" id="downloadBtn">
-                          <span></span>
-                          <img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px" alt="Download Icon">
-                        </button>
+                        <img src="assets/img/qr-code-for-membership.jpg" alt="payment QR" id="qrImage" class="qr-code">
+                        <div class="qr-actions">
+                          <button type="button" class="share-btn" id="shareBtn">
+                            <span></span>
+                            <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px"
+                              alt="Share Icon">
+                          </button>
+                          <button type="button" class="download-btn" id="downloadBtn">
+                            <span></span>
+                            <img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px"
+                              alt="Download Icon">
+                          </button>
+                        </div>
                       </div>
-                      </div>
-                    </div>
                     </div>
                   </div>
-                  <br>
+                </div>
+                <br>
 
 
 
 
-                  <div style="
+                <div style="
                       font-size: 1.2em;
                       background: #5a54f37c;
                       max-width: 100%;
                       border-radius: 20px;
                       padding: 10px;
                     " align="center">
-                  <div id="ttlamt" style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; font-weight: 600; text-align: center;">
+                  <div id="ttlamt"
+                    style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; font-weight: 600; text-align: center;">
                   </div>
                   <div id="UPI"></div>
                 </div>
-                  <br />
-                  <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
-                    Please complete payment and upload screenshot of payment
-                    before submitting.
-                  </h4>
-                  <br />
+                <br />
+                <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
+                  Please complete payment and upload screenshot of payment
+                  before submitting.
+                </h4>
+                <br />
 
-                
-             
+
+
 
                 <div class="d-flex justify-content-center">
                   <div id="process" class="spinner-border" role="status"
@@ -648,7 +652,7 @@
       $(formData).each(function (index, obj) {
         data[obj.name] = obj.value;
       });
-      console.log(data);
+      // console.log(data);
 
       $.ajax({
         url: `
@@ -659,8 +663,8 @@
 
         method: "POST",
         success: function (response) {
-          console.log(Object.keys(data));
-          console.log(response);
+          // console.log(Object.keys(data));
+          // console.log(response);
           if (response.result === "success") {
             console.log("success");
 
@@ -729,7 +733,7 @@
       fr.readAsDataURL(file);
     });
 
-    
+
     //QR code 
     const qrToggleBtn = document.getElementById("qrToggleBtn");
     const qrSection = document.getElementById("qrSection");
@@ -739,15 +743,15 @@
 
     qrToggleBtn.addEventListener('click', () => {
       qrSection.classList.toggle("show");
-      qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code":"Show QR Code";
+      qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code" : "Show QR Code";
     });
 
     shareBtn.addEventListener('click', () => {
-      if(navigator.share) {
+      if (navigator.share) {
         fetch(qrImage.src)
           .then(response => response.blob())
           .then(blob => {
-            const file = new File([blob], "assets/img/qr-code-for-membership.jpg", {type: blob.type});
+            const file = new File([blob], "assets/img/qr-code-for-membership.jpg", { type: blob.type });
             navigator.share({
               title: "Payment QR",
               text: "Scan this QR to make payment",
@@ -755,7 +759,7 @@
             }).catch(err => console.log("Share failed:", err));
           })
           .catch(err => console.log("Error fetching QR:", err));
-      } 
+      }
       else {
         alert("Sharing is not supported on this browser");
       }
@@ -813,7 +817,7 @@
               confirmButtonText: "Great!"
             });
 
-            
+
             refVerified = true;
             const fullLabel = document.getElementById("labelFULLMEMBERSHIP");
             const BRLabel = document.getElementById("labelBARTONAIR");
@@ -862,9 +866,36 @@
 
     });
 
-    // ============================================== Referral code verification ================================================
+    // ============================================== Copy Account data ================================================
 
+    function copyText(element) {
+      let text = element.textContent.trim();
+      text = text.split(/\s+/).join(" ");
+      const originalText = element.textContent;
+      if (text === "Copied to Clipboard") return;
 
+      //  hidden box
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      document.body.appendChild(textarea);
+
+      // copy
+      textarea.select();
+      textarea.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+
+      // feedback
+      element.textContent = "Copied to Clipboard";
+      element.style.fontWeight = "400";
+
+      // revert back
+      setTimeout(() => {
+        element.textContent = originalText;
+        element.style.backgroundColor = "";
+        element.style.fontWeight = "";
+      }, 350);
+    }
 
 
     // // offer
