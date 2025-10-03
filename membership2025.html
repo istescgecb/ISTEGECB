@@ -315,10 +315,18 @@
                   required /><br /><br>
 
                 <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
-                <input type="text" name="Referral" id="Referral" class="ffield" style="flex: 1 1 65%;width:80%;"
-                  placeholder="Referral Code" /><button id="ref-code-verify" name="verify" class="verify" type="button"
-                  style="flex: 1 1 35%;width: 18%; padding: 1.3%; border-radius: 8px;height: 2.8em;margin-left:1%;background-color: rgb(71, 10, 212);color: white;border: none;">Verify</button><br />
+                <input type="text" name="Referral" id="Referral" class="ffield" style="flex: 1 1 65%;width:100%;"
+                  placeholder="Referral Code" />
 
+<!---------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+-------------------------------------VERIFY BUTTON---------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------->    
+                <!-- AMBASADOR START -->
+                  <!-- <button id="ref-code-verify" name="verify" class="verify" type="button"
+                  style="flex: 1 1 35%;width: 18%; padding: 1.3%; border-radius: 8px;height: 2.8em;margin-left:1%;background-color: rgb(71, 10, 212);color: white;border: none;">Verify</button><br /> -->
+                <!-- AMBASSADOR END -->
                 <br /><br>
 
                 <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 400; color: rgb(241, 131, 28);">
@@ -499,8 +507,11 @@
 
 
   <script>
+
+  // AMBASSADOR START
     // for membership ttlamount update
-    let refVerified = false;
+    //let refVerified = false;
+  // AMBASSADOR END
     function updateTotal(selectedOption) {
       const ttlamt = document.getElementById("ttlamt");
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
@@ -520,20 +531,33 @@
           membershipText = "ISTE + BARTONOIDZ";
           break;
         case "FULL":
-          total = refVerified ? 1000 : fullPrice;
+          //total = refVerified ? 1000 : fullPrice;
+          total = 1400
           membershipText = "ISTE + FULL MEMBERSHIP";
           break;
       }
 
-      if (isMobile) {
-        if (selectedOption.value === "FULL" && refVerified) {
-          ttlamt.innerHTML = `Total Amount - ₹<s>${fullPrice}</s> ${total}/-`;
-        } else {
-          ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
-        }
-      } else {
-        if (selectedOption.value === "FULL" && refVerified) {
-          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹${fullPrice}</del> ₹${total}/-`;
+    // AMBASSADOR START
+
+      // if (isMobile) {
+      //   if (selectedOption.value === "FULL" && refVerified) {
+      //     ttlamt.innerHTML = `Total Amount - ₹<s>${fullPrice}</s> ${total}/-`;
+      //   } else {
+      //     ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+      //   }
+      // } else {
+      //   if (selectedOption.value === "FULL" && refVerified) {
+      //     ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹${fullPrice}</del> ₹${total}/-`;
+      //   } else {
+      //     ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+      //   }
+      // }
+
+    // AMBASSADOR END
+
+       if (isMobile) {
+        if (selectedOption.value === "FULL") {
+          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
         } else {
           ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
         }
@@ -622,29 +646,32 @@
       document.getElementById("PhonePeqr2").style.display = "none";
     }
 
-    // function a() {
-    //   $(".send-div").show();
-    // }
-    // document.getElementById("istecall").addEventListener("submit", a);
+    function a() {
+      $(".send-div").show();
+    }
+    document.getElementById("istecall").addEventListener("submit", a);
 
     $("#istecall").submit((e) => {
 
       e.preventDefault();
 
-      const refCode = referralInput.value.trim();
 
+  // AMBASSADOR START
 
-
-      if (refCode && !refVerified) {
-        Swal.fire({
-          icon: "warning",
-          title: "Referral Code Not Verified",
-          text: "Please verify your referral code before submitting.",
-          confirmButtonText: "OK"
-        });
-        return;
-      }
+      //const refCode = referralInput.value.trim();
+      // if (refCode && !refVerified) {
+      //   Swal.fire({
+      //     icon: "warning",
+      //     title: "Referral Code Not Verified",
+      //     text: "Please verify your referral code before submitting.",
+      //     confirmButtonText: "OK"
+      //   });
+      //   return;
+      // }
       // https://script.google.com/macros/s/AKfycby_OqZGfVgb1sugWsI7pz948SvrMX8qgtZdkNboJbZP59uZKWkd20--iJtQoM8pcWd1/exec
+
+  // AMBASSADOR END
+
 
       $(".send-div").show();
       const formData = $("#istecall").serializeArray();
@@ -779,93 +806,93 @@
 
 
 
+    // AMBASSADOR START
+    // ==========================================================================================================================================
+    //  =============================================Referral code verification==================================================================
+    // ==========================================================================================================================================
+    // const referralInput = document.getElementById("Referral");
+    // const verifyButton = document.getElementById("ref-code-verify");
+    // refVerified = false;
 
-
-    // ==============================================
-    // Referral code verification
-    // ==============================================
-    const referralInput = document.getElementById("Referral");
-    const verifyButton = document.getElementById("ref-code-verify");
-    refVerified = false;
-
-    verifyButton.addEventListener("click", function () {
-      const refCode = referralInput.value.trim();
-      if (!refCode) {
-        Swal.fire({
-          icon: "info",
-          title: "Missing Referral Code",
-          text: "Please enter a referral code",
-          confirmButtonText: "OK"
-        });
-        refVerified = false;
-        return;
-      }
+    // verifyButton.addEventListener("click", function () {
+    //   const refCode = referralInput.value.trim();
+    //   if (!refCode) {
+    //     Swal.fire({
+    //       icon: "info",
+    //       title: "Missing Referral Code",
+    //       text: "Please enter a referral code",
+    //       confirmButtonText: "OK"
+    //     });
+    //     refVerified = false;
+    //     return;
+    //   }
       // https://script.google.com/macros/s/AKfycbzK1HlwFKcsJWTSkydyCyuAPmeb8NK5CGxfF4fkbJVFQNfQC_ormkmVJ0l00FI9yPOrEQ/exec
 
-      const verifyUrl = `https://script.google.com/macros/s/AKfycbxUY387D-ehDeWPkSPDShJUvQKLJL79WEH5i-bAWvPmszoMuqgOZ4YVtEskIhRKYQXeEQ/exec?action=verifyReferral&code=${refCode}`;
-      $(".loader-div").show();
+    //   const verifyUrl = `https://script.google.com/macros/s/AKfycbxUY387D-ehDeWPkSPDShJUvQKLJL79WEH5i-bAWvPmszoMuqgOZ4YVtEskIhRKYQXeEQ/exec?action=verifyReferral&code=${refCode}`;
+    //   $(".loader-div").show();
 
-      fetch(verifyUrl)
-        .then((res) => res.text())
-        .then((result) => {
-          if (result === "yes") {
-            $(".loader-div").fadeOut();
-            Swal.fire({
-              icon: "success",
-              title: "Referral Code Verified 🎉",
-              text: "Referral code is valid :)",
-              confirmButtonText: "Great!"
-            });
-
-
-            refVerified = true;
-            const fullLabel = document.getElementById("labelFULLMEMBERSHIP");
-            const BRLabel = document.getElementById("labelBARTONAIR");
-            const BZLabel = document.getElementById("labelBARTONOIDZ");
+    //   fetch(verifyUrl)
+    //     .then((res) => res.text())
+    //     .then((result) => {
+    //       if (result === "yes") {
+    //         $(".loader-div").fadeOut();
+    //         Swal.fire({
+    //           icon: "success",
+    //           title: "Referral Code Verified 🎉",
+    //           text: "Referral code is valid :)",
+    //           confirmButtonText: "Great!"
+    //         });
 
 
-            fullLabel.innerHTML = `<input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)" style="width: 20px; height: 20px" checked  /> &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> 1000/-`;
-            const selectedOption = document.querySelector('input[name="membershipOption"]:checked');
-
-            BRLabel.innerHTML = `<input type="radio" id="BARTONAIR" name="membershipOption" select disabled value="BR"
-                      onclick="updateTotal(this)" style="width: 1.2rem; height: 1.2rem" />
-                    &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>`;
-            BZLabel.innerHTML = `<input type="radio" id="BARTONOIDZ" select disabled name="membershipOption" value="BZ"
-                      onclick="updateTotal(this)" style="width: 20px; height: 20px" />
-                    &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>`;
-
-            if (selectedOption) {
-              updateTotal(selectedOption);
-            } else {
-              console.log(selectedOption);
-
-            }
-          }
+    //         refVerified = true;
+    //         const fullLabel = document.getElementById("labelFULLMEMBERSHIP");
+    //         const BRLabel = document.getElementById("labelBARTONAIR");
+    //         const BZLabel = document.getElementById("labelBARTONOIDZ");
 
 
-          else {
-            $(".loader-div").fadeOut();
+    //         fullLabel.innerHTML = `<input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)" style="width: 20px; height: 20px" checked  /> &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> 1000/-`;
+    //         const selectedOption = document.querySelector('input[name="membershipOption"]:checked');
 
-            Swal.fire({
-              icon: "error",
-              title: "Invalid Referral Code ",
-              text: "Please try again",
-              confirmButtonText: "Retry"
-            });
+    //         BRLabel.innerHTML = `<input type="radio" id="BARTONAIR" name="membershipOption" select disabled value="BR"
+    //                   onclick="updateTotal(this)" style="width: 1.2rem; height: 1.2rem" />
+    //                 &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>`;
+    //         BZLabel.innerHTML = `<input type="radio" id="BARTONOIDZ" select disabled name="membershipOption" value="BZ"
+    //                   onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+    //                 &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>`;
 
-            refVerified = false;
-          }
+    //         if (selectedOption) {
+    //           updateTotal(selectedOption);
+    //         } else {
+    //           console.log(selectedOption);
 
-        })
-        .catch((err) => {
-          $(".loader-div").fadeOut();
+    //         }
+    //       }
 
-          alert("Error verifying code. Please try again !!");
-          refVerified = false;
-        });
 
-    });
+    //       else {
+    //         $(".loader-div").fadeOut();
 
+    //         Swal.fire({
+    //           icon: "error",
+    //           title: "Invalid Referral Code ",
+    //           text: "Please try again",
+    //           confirmButtonText: "Retry"
+    //         });
+
+    //         refVerified = false;
+    //       }
+
+    //     })
+    //     .catch((err) => {
+    //       $(".loader-div").fadeOut();
+
+    //       alert("Error verifying code. Please try again !!");
+    //       refVerified = false;
+    //     });
+
+    // });
+
+  // AMBASSADOR END
     // ============================================== Copy Account data ================================================
 
     function copyText(element) {
