@@ -314,20 +314,29 @@
                 <input type="email" name="EmailId" id="EmailId" placeholder="Email address" class="ffield"
                   required /><br /><br>
 
-                <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
-                <input type="text" name="Referral" id="Referral" class="ffield" style="flex: 1 1 65%;width:100%;"
-                  placeholder="Referral Code" />
+               
 
 <!---------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
--------------------------------------VERIFY BUTTON---------------------------------------------------------------
+-------------------------------------FOR AMBASSADOR---------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------->    
-                <!-- AMBASADOR START -->
+                
+
+
+
+<!-- AMBASADOR START -->
+
+                <!-- <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br /> -->
+                <input type="hidden" name="Referral" id="Referral" class="ffield"
+                  placeholder="Referral Code" />
+                  <!-- <input type="hidden" name="Referral" id="Referral" class="ffield" style="flex: 1 1 65%;width:100%;"
+                  placeholder="Referral Code" /> -->
                   <!-- <button id="ref-code-verify" name="verify" class="verify" type="button"
                   style="flex: 1 1 35%;width: 18%; padding: 1.3%; border-radius: 8px;height: 2.8em;margin-left:1%;background-color: rgb(71, 10, 212);color: white;border: none;">Verify</button><br /> -->
-                <!-- AMBASSADOR END -->
-                <br /><br>
+<!-- AMBASSADOR END -->
+
+                <br />
 
                 <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 400; color: rgb(241, 131, 28);">
                   <strong>MEMBERSHIP OPTIONS</strong>
@@ -341,7 +350,7 @@
                   <div class="membership-option">
                     <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
                       <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
-                        onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+                        onclick="updateTotal(this)" checked style="width: 20px; height: 20px" />
                       &nbsp;ISTE + FULL MEMBERSHIP: <i>₹1400/-</i>
                     </label>
                   </div>
@@ -555,14 +564,23 @@
 
     // AMBASSADOR END
 
-       if (isMobile) {
-        if (selectedOption.value === "FULL") {
-          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+
+
+    ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+        if (isMobile) {
+          ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
         } else {
           ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
         }
       }
-    }
+      //  if (isMobile) {
+      //   if (selectedOption.value === "FULL") {
+      //     ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${fullPrice}/-`;
+      //   } else {
+      //     ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+      //   }
+      // }
+    
 
 
     // check size
@@ -679,7 +697,8 @@
       $(formData).each(function (index, obj) {
         data[obj.name] = obj.value;
       });
-      // console.log(data);
+      // data["Referral"] = "NA"; 
+      console.log(data);
 
       $.ajax({
         url: `
