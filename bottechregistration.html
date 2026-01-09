@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- cache contro  -->
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <!-- cache control ends  -->
+  <link rel="icon" href="assets/img/ISTE logo White.png" type="image/icon type" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet" />
+  <!-- sweetalert -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+  <!-- cdn for file upload -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/stars.css" />
+  <link rel="stylesheet" href="assets/css/loader.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>ISTE GECBH</title>
+  <style>
+    /* Tighten spacing for upload message and remove focus ring on QR toggle */
+    #successtext { margin-top: 0 !important; padding-top: 0; }
+    .qr-toggle-btn:focus { outline: none; box-shadow: none; }
+  </style>
+</head>
+<!-- oncontextmenu="return false" -->
+
+<body>
+  <!-- bg animated dots -->
+  <div style="z-index: 0">
+    <div class="starsec"></div>
+    <div class="starthird"></div>
+    <div class="starfourth"></div>
+    <div class="starfifth"></div>
+  </div>
+  <div class="line1"></div>
+  <!-- desktop view nav  -->
+  <div class="container-fluid d-none d-md-block">
+    <div class="d-flex flex-wrap align-items-center justify-content-between mt-3 mx-5 py-2" style="
+          background: rgba(0, 3, 34, 0);
+          border-radius: 1rem;
+          backdrop-filter: blur(20px);
+        ">
+      <div class="d-flex flex-wrap justify-content-center align-items-center" style="margin-left: 1rem">
+        <img src="assets/img/ISTE logo White.png" style="width: 70px; height: auto" />
+        <a href="" class="headingdropbtn" style="margin-left: 1rem">ISTE GECBH</a>
+      </div>
+      <div id="header" class="d-flex flex-wrap align-items-center justify-content-center header">
+        <a class="nav-item" href="index.html">HOME</a>
+        <a class="nav-item" href="index.html#about">ABOUT</a>
+        <a class="nav-item" href="events.html">EVENTS</a>
+        <a class="nav-item" href="contact-us.html">CONTACT US</a>
+      </div>
+    </div>
+  </div>
+  <!-- mobile nav  -->
+  <div class="mobile-nav container-fluid d-block d-md-none py-3 px-3 backdrop-blur">
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <img src="assets/img/ISTE logo White.png" style="width: 48px; height: auto" />
+      <a href="index.html" class="headingdropbtn">ISTE GECBH</a>
+      <a onclick="openNav()"><img src="assets/svg/menu.svg" alt="iste gecbh" style="width: 33px" /></a>
+    </div>
+  </div>
+  <!-- mobile drawer -->
+  <div class="nav-container backdrop-blur">
+    <p style="
+          position: absolute;
+          top: 15px;
+          left: 32px;
+          font-size: 22px;
+          font-weight: 650;
+          font-family: 'Poppins';
+          margin: 0;
+          padding: 0;
+        ">
+      ISTE GECBH
+    </p>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="assets/svg/close.svg"
+        alt="istegecbh" /></a>
+    <ul>
+      <li>
+        <a href="index.html">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span class="title">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="events.html">
+          <span class="icon"><i class="fas fa-calendar-week"></i></span>
+          <span class="title">Events</span>
+        </a>
+      </li>
+      <li>
+        <a href="membership-benefits.html">
+          <span class="icon"><i class="fas fa-user-shield"></i></span>
+          <span class="title">Membership</span>
+        </a>
+      </li>
+      <li>
+        <a href="bartonair.html">
+          <span class="icon"><i class="fas fa-plane"></i></span>
+          <span class="title">Bartonair</span>
+        </a>
+      </li>
+      <li>
+        <a href="bartonoidz.html">
+          <span class="icon"><i class="fas fa-robot"></i></span>
+          <span class="title">Bartonoidz</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact-us.html">
+          <span class="icon"><i class="fas fa-comment-alt"></i></span>
+          <span class="title">Contact</span>
+        </a>
+      </li>
+      <li>
+        <a href="developers.html">
+          <span class="icon"><i class="fas fa-code"></i></span>
+          <span class="title">Developers info</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" onclick="closeNav()">
+          <span class="icon"><img src="assets/svg/back-right.svg" style="width: 39px" alt="istegecbh" /></span>
+          <span class="title">Close</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="swiper mySwiper2" style="margin-bottom: 5rem">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+          <div class="event-card dep-card" data-aos="fade-up">
+            <div class="event-card-img" style="height: 106px">
+              <img style="height: auto" src="assets/img/execom/excom-redirect.jpg" alt="istegecbh" />
+            </div>
+            <div class="event-card-body" style="align-items: center; height: auto">
+              <h5 style="color: #ffffff; text-align: center; font-size: 19px">
+                Our Team 🖼️
+              </h5>
+              <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="execom.html">See more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+          <div class="event-card dep-card" data-aos="fade-up">
+            <div class="event-card-img" style="height: 106px">
+              <img style="height: auto" src="assets/img/oracle-redirect.jpg" alt="istegecbh" />
+            </div>
+            <div class="event-card-body" style="align-items: center; height: auto">
+              <h5>The Oracle 📔</h5>
+              <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="oracle.html">See more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+          <div class="event-card dep-card" data-aos="fade-up">
+            <div class="event-card-img" style="height: 106px">
+              <img style="height: auto" src="assets/img/nts-redirect.jpg" alt="istegecbh" />
+            </div>
+            <div class="event-card-body" style="align-items: center; height: auto">
+              <h5>Nikola Tesla Scholarship👩‍🎓</h5>
+              <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="NTS.html">See more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+          <div class="event-card dep-card" data-aos="fade-up">
+            <div class="event-card-img" style="height: 106px">
+              <img style="height: auto" src="assets/img/achievements/achievements-redirect.jpg" alt="istegecbh" />
+            </div>
+            <div class="event-card-body" style="align-items: center; height: auto">
+              <h5 style="color: #ffffff; text-align: center; font-size: 19px">
+                Our Achievements 🏆
+              </h5>
+              <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="achievements.html">See more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide past-event first-card" style="margin-left: 2%">
+          <div class="event-card dep-card" data-aos="fade-up">
+            <div class="event-card-img" style="height: 106px">
+              <img style="height: auto" src="assets/img/alumni/alumni-redirect.jpg" alt="istegecbh" />
+            </div>
+            <div class="event-card-body" style="align-items: center; height: auto">
+              <h5 style="color: #ffffff; text-align: center; font-size: 19px">
+                Alumni ✨
+              </h5>
+              <a class="theme-btn gradient mt-3" style="
+                    box-shadow: none;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 16px;
+                    padding-top: 5px;
+                  " href="alumni.html">See more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--======================================================================================================
+  =================================MEMBERSHIP FORM========================================================
+ =========================================================================================================-->
+
+  <div class="d-flex flex-wrap justify-content-center align-items-center">
+    <div class="event-card-on-reg-page on-contact">
+      <div class="event-card event-card-reg mb-5 membership-form-card"
+        style="background: #5449a447; backdrop-filter: blur(6px)">
+        <div class="membership-form-wrapper">
+          <form id="istecall" action="" style="width:100%">
+            <div class="event-card-body event-card-body-reg"
+              style="width: 100%; height: auto;  background: transparent;">
+              <div style="width: 95%; font-size: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+                <h1 id="iste-heading"
+                  style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%"
+                  align="center">BOT TECH <aaaaa id="year-placeholder">2026</aaaaa>
+                </h1>
+                <script>(function () { const now = new Date(); const currentYear = now.getFullYear(); const displayYear = (now.getMonth() + 1) <= 4 ? currentYear - 1 : currentYear; document.getElementById("year-placeholder").textContent = displayYear; })();</script>
+                <div class="d-flex flex-wrap align-content-center justify-content-center my-4">
+                </div>
+
+                <p style="
+                          font-size: 1.2em;
+                          font-weight: 400;
+                          color: rgb(235, 86, 86);
+
+                        ">
+                  *All fields are mandatory. Fill the details correctly.
+                </p>
+
+                <label class="mb-2 ml-2" for="name">Full Name</label><br />
+                <input type="text" id="name" name="Name" placeholder="Your name" class="ffield" required /><br />
+
+                <!-- Email removed intentionally - not required for BOTTECH registration -->
+
+                <label class="mb-2 ml-2" for="Year">Year</label><br />
+                <select id="Year" name="Year" class="ffield" required>
+                  <!-- onclick="updateAmt()" -->
+                  <option value="" hidden>Select Year</option>
+                  <option value="1st">1st</option>
+                  <option value="2nd">2nd</option>
+                  <option value="3rd">3rd</option>
+                  <option value="4th">4th</option>
+                </select><br />
+
+                <label class="mb-2 ml-2" for="Branch">Branch of Study</label><br />
+                <select id="Branch" name="Branch" class="ffield" required>
+                  <option value="" hidden>Select branch</option>
+                  <option value="Civil Engineering">Civil Engineering</option>
+                  <option value="Electrical and Electronics Engineering">
+                    Electrical and Electronics Engineering
+                  </option>
+                  <option value="Electronics & Communication Engineering">
+                    Electronics & Communication Engineering
+                  </option>
+                  <option value="Information Technology">
+                    Information Technology
+                  </option>
+                  <option value="Mechanical Engineering">
+                    Mechanical Engineering
+                  </option>
+                </select><br />
+
+
+                <label class="mb-2 ml-2" for="PhoneNumber">Phone Number(10 digits)</label><br />
+                <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}"
+                  class="ffield" required /><br />
+
+                <fieldset class="mb-3">
+                  <label class="mb-2 ml-2" >Are you an ISTE member?</label><br />
+                  <div class="btn-group" role="group" aria-label="Are you an ISTE member?" style="margin-bottom:0.5rem;">
+                    <input type="radio" class="btn-check" name="IsISTE" id="isIsteYes" value="Yes" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="isIsteYes" style="color:#ffffff;">Yes</label> 
+                    <input type="radio" class="btn-check" name="IsISTE" id="isIsteNo" value="No" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="isIsteNo" style="color:#ffffff;">No</label>
+                  </div>
+                </fieldset>
+
+                <div id="iste-id-container" style="display:none; margin-top:0.5rem;">
+                  <label class="mb-2 ml-2" for="isteId">ISTE ID</label><br />
+                  <input type="text" id="isteId" name="ISTEId" placeholder="Enter ISTE membership ID" class="ffield" />
+                </div><br />
+                 <h2 style="font-size: 1.5em; color: rgb(182, 181, 181)">
+                    <b>REGISTRATION FEES</b>
+                  </h2>
+                 <p style="font-size: 1.2em">   
+                ▫️FREE for ISTE Members<br />
+                ▫️Rs 200 for Non ISTE Members
+                  </p><br /><br />
+                <div id="payment-details-section">
+                  <h2 style="font-size: 1.5em; color: rgb(182, 181, 181)">
+                    <b>PAYMENT DETAILS</b>
+                  </h2>
+                  <p style="font-size: 1.2em">
+                    Account holder name:
+                    <span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Krishnapriya 
+                      R</span><br />
+                    IFSC code:
+                    <span onclick="copyText(this)"
+                      style="cursor: pointer; user-select: all; font: inherit">SBIN0070259</span><br />
+                    Account number:
+                    <span onclick="copyText(this)"
+                      style="cursor: pointer; user-select: all; font: inherit">44148248108</span><br />
+                    UPI ID:
+                    <span onclick="copyText(this)"
+                      style="cursor: pointer; user-select: all; font: inherit">krishnapriyarmalu-1@okicici</span>
+                  </p>
+
+                  <div class="qr-container">
+                    <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
+                    <div class="qr-section" id="qrSection">
+                      <div class="qr-card">
+                        <img src="assets/img/qr-code-for-membership.jpg" alt="BOTTECH QR" id="qrImage" class="qr-code" loading="lazy">
+                        <div class="qr-actions">
+                          <button type="button" class="share-btn" id="shareBtn">
+                            <span></span>
+                            <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px"
+                              alt="Share Icon">
+                          </button>
+                          <button type="button" class="download-btn" id="downloadBtn">
+                            <span></span>
+                            <img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px"
+                              alt="Download Icon">
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+                </div>
+                <br>
+
+
+
+
+              
+                <!-- Reduced spacing above upload message -->
+                <h4 id="successtext" style="font-size: 1.3em; color: rgb(167, 169, 167); margin-top: 0; padding-top: 0;">
+                  Upload screenshot of payment (max 4 MB).
+                </h4>
+
+
+
+
+
+               <label
+  for="image"
+  class="file-label"
+  id="display-file"
+  style="display:inline-block; min-width:260px; text-align:center;"
+>
+  <i class="fas fa-upload"></i>
+  <span id="file-label-text">Choose an Image or PDF</span>
+  <input
+    name="image"
+    id="image"
+    type="file"
+    accept="image/*,application/pdf"
+    style="display:none;"
+  >
+</label>
+
+                <br />
+
+                <p style="font-size: 1.2em">
+                  If any doubts, contact:
+                  <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
+                    href="https://wa.me/918330829274">📱 Megha
+                  </a>
+                  <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/918078046950">📱
+                    Gopika</a>
+                </p>
+              </div>
+              <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
+                        padding: 12px 0;
+                        color: #ffffff;
+                        width: 100%;
+                        text-align: center;
+                        box-shadow: none;
+                        margin: auto;
+                        margin-bottom: 12px;
+                        border-radius: 14px;
+                      " />
+              <input type="hidden" id="paymentRequired" name="PaymentRequired" value="Yes" />
+              <input type="text" name="base64" id="glob" value="" hidden />
+              <input type="text" name="type" id="filetype" value="" hidden />
+              <input type="text" name="filename" id="filename" value="" hidden />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- loader gif -->
+  <div class="send-div">
+    <img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
+    <div class="loader-text">
+      Submitting form... <br> Please dont panic if stuck!! <br>
+    </div>
+  </div>
+  <!-- fetch gif -->
+  <div class="loader-div">
+    <img class="loader-img" src="assets/img/gif/tuzuki-usagi.gif" style="height: 150px; width: auto" />
+    <div class="loader-text">
+      Verifying... <br> 
+    </div>
+  </div>
+
+
+ 
+
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+  <script>
+
+  // AMBASSADOR START
+    // for membership ttlamount update
+    //let refVerified = false;
+  // AMBASSADOR END
+    function updateTotal(selectedOption) {
+      const ttlamt = document.getElementById("ttlamt");
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+      ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+
+      let total = 0;
+      let membershipText = "";
+      const fullPrice = 1400; // Original FULL price
+
+      switch (selectedOption.value) {
+        case "BR":
+          total = 1000;
+          membershipText = "ISTE + BARTONAIR";
+          break;
+        case "BZ":
+          total = 1000;
+          membershipText = "ISTE + BARTONOIDZ";
+          break;
+        case "FULL":
+          //total = refVerified ? 1000 : fullPrice;
+          total = 1400
+          membershipText = "ISTE + FULL MEMBERSHIP";
+          break;
+      }
+
+    
+
+
+    ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+        if (isMobile) {
+          ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+        } else {
+          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+        }
+      }
+      
+  
+
+    // check size
+    function checkFileSize(file) {
+      const input = document.getElementById("image");
+      const msg = document.getElementById('successtext');
+      const fileLabelText = document.getElementById("file-label-text");
+
+      const fileName = file.name;
+      const fileExtension = fileName.split('.').pop();
+      const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
+      const additionalText = baseName.slice(-3);
+      const displayName = baseName.length > 30 ? baseName.slice(0, 27) + '...' + additionalText : baseName;
+
+      if (input.files && input.files[0]) {
+        const fileSize = input.files[0].size / 1024 / 1024;
+        const fileType = input.files[0].type;
+
+        // Check if the file is a PDF or an image
+        const isImage = fileType.startsWith('image/');
+        const isPDF = fileType === 'application/pdf';
+
+        if (!isImage && !isPDF) {
+          msg.textContent = 'Invalid file type. Please choose an image or PDF.';
+          msg.style.color = 'red';
+          fileLabelText.textContent = "Choose an Image or PDF";
+          return;
+        }
+
+        if (fileSize > 4) {
+          msg.textContent = 'File size exceeds 4MB limit. Please choose a smaller file.';
+          msg.style.color = 'red';
+          fileLabelText.textContent = "Choose an Image or PDF";
+        } else {
+          msg.textContent = 'File uploaded successfully. Please proceed with submission.';
+          msg.style.color = 'rgb(29, 182, 18)';
+          fileLabelText.textContent = `${displayName}.${fileExtension}`;
+        }
+      } else {
+        msg.textContent = 'No screenshot uploaded (optional). You may proceed without uploading.';
+        msg.style.color = 'rgb(29, 182, 18)';
+        fileLabelText.textContent = "Choose an Image or PDF";
+      }
+    }
+
+
+
+
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
+      navigator.userAgent
+    );
+
+    window.onload = function() {
+      try {
+        const el = document.getElementById("FULLMEMBERSHIP");
+        if (el && typeof updateTotal === "function") updateTotal(el);
+      } catch (e) {
+        console.error("Initialization error:", e);
+      }
+    };
+
+    function openQR1() {
+      document
+        .getElementById("PhonePebtn1")
+        .setAttribute("onclick", "closeQR1()");
+      document.getElementById("PhonePebtn1").innerHTML = "X Close";
+      document.getElementById("PhonePeqr1").style.display = "block";
+    }
+    function closeQR1() {
+      document
+        .getElementById("PhonePebtn1")
+        .setAttribute("onclick", "openQR1()");
+      document.getElementById("PhonePebtn1").innerHTML = "PhonePe QR";
+      document.getElementById("PhonePeqr1").style.display = "none";
+    }
+    function openQR2() {
+      document
+        .getElementById("PhonePebtn2")
+        .setAttribute("onclick", "closeQR2()");
+      document.getElementById("PhonePebtn2").innerHTML = "X Close";
+      document.getElementById("PhonePeqr2").style.display = "block";
+    }
+    function closeQR2() {
+      document
+        .getElementById("PhonePebtn2")
+        .setAttribute("onclick", "openQR2()");
+      document.getElementById("PhonePebtn2").innerHTML = "Gpay QR";
+      document.getElementById("PhonePeqr2").style.display = "none";
+    }
+
+    function a() {
+      $(".send-div").show();
+    }
+    document.getElementById("istecall").addEventListener("submit", a);
+
+    $("#istecall").submit((e) => {
+
+      e.preventDefault();
+
+
+
+      $(".send-div").show();
+      const formData = $("#istecall").serializeArray();
+      var data = {};
+      $(formData).each(function (index, obj) {
+        data[obj.name] = obj.value;
+      });
+
+      // Force critical fields (do NOT rely on serialize timing)
+const isteRadio = document.querySelector('input[name="IsISTE"]:checked');
+data.IsISTE = isteRadio ? isteRadio.value : "No";
+
+// Payment rule (matches backend)
+data.PaymentRequired = data.IsISTE === "Yes" ? "No" : "Yes";
+
+// Explicitly attach file data
+data.base64 = document.getElementById("glob").value || "";
+data.type = document.getElementById("filetype").value || "";
+data.filename = document.getElementById("filename").value || "";
+
+      // data["Referral"] = "NA"; 
+      console.log(data);
+
+      $.ajax({
+        url: `
+   https://script.google.com/macros/s/AKfycbz3WSkhJEpTpep9OAiCGaPgs1yro5KSjDIXY2L4if-mncwnNV_sO7zntrT0JSgH4d0BGA/exec
+			`.trim(),
+        method: "POST",
+        processData: false,
+        data: JSON.stringify(data),
+        contentType: "text/plain;charset=utf-8",
+        dataType: "json",
+        timeout: 20000, // 20s
+        beforeSend: function() {
+          // disable submit and show loader
+          $("#istecall input[type='submit']").prop('disabled', true).css('opacity',0.7);
+          $(".send-div").show();
+        },
+        success: function (response) {
+          // Response may be plain text or JSON; try to normalize
+          var res = response;
+          try { if (typeof res === 'string') res = JSON.parse(res); } catch (e) { /* response is plain text */ }
+
+          console.log('AJAX response (raw):', response, 'normalized:', res);
+
+          var ok = false;
+          if (typeof response === 'string') {
+            var r = response.trim().toLowerCase();
+            ok = (r === 'success' || r === 'yes' || r === 'ok');
+          }
+          if (!ok && res && (res.result === "success" || res.status === "success" || res.success === true)) ok = true;
+
+          if (ok) {
+            console.log("success");
+
+            const successHtml = `
+              <div id="registration-completed" style="text-align:center;">
+                <h4 id="successtextfinal" style="color:white;font-size:2rem;margin:1.5rem 0;">Thank you for registering for BOTTECH!</h4>
+                <p style="font-size:1.05rem;color:#f0f0f0;">We've received your registration. We'll contact you with event details and any further instructions.</p>
+                <div style="margin-top:1rem; display:flex; gap:0.6rem; justify-content:center; flex-wrap:wrap;">
+                   <a class="theme-btn gradient mt-3" id="join-group" href="https://chat.whatsapp.com/KtBFXA9GhO583tWiO8xVTj" target="_blank" style="display:inline-block;padding:12px 20px;border-radius:12px;color:#fff;">Join Event Group</a>
+                  <a class="theme-btn gradient mt-3" href="events.html" style="display:inline-block;padding:12px 20px;border-radius:12px;color:#fff;">View Other Events</a> 
+                </div>
+                <p style="font-size:0.95rem;color:#bfc6d0;margin-top:12px;"></p>
+              </div>
+            `;
+            document.getElementById("istecall").innerHTML = successHtml;
+          } else {
+            var errMsg = "Error submitting form. Please retry.";
+            if (res && (res.message || res.msg || res.error)) errMsg = (res.message || res.msg || res.error);
+            else if (typeof response === 'string') errMsg = response;
+
+            document.getElementById("successtext").style.color = "#da0f3f";
+            document.getElementById("successtext").style.fontSize = "1.1rem";
+            document.getElementById("successtext").innerHTML = errMsg;
+          }
+        },
+        error: function (xhr, status, err) {
+          console.error("AJAX Error:", status, err, xhr, xhr && xhr.responseText);
+          var message = "Error Submitting Form. Please check your connection and try again.";
+          if (status === 'timeout') message = "Request timed out. Please try again.";
+          if (xhr && xhr.responseText) {
+            try {
+              var parsed = JSON.parse(xhr.responseText);
+              message = parsed.message || parsed.error || xhr.responseText;
+            } catch (e) {
+              message = xhr.responseText;
+            }
+          } else if (status === 'error' && xhr && xhr.status === 0) {
+            message = "Request blocked (possible CORS issue) or network failure. Check console & Network tab.";
+          }
+          document.getElementById("successtext").style.color = "red";
+          document.getElementById("successtext").innerHTML = message + "<br><small style='color:#ffcccc;'>Check console (F12) & Network tab for details.</small>";
+        },
+        complete: function() {
+          $(".send-div").fadeOut();
+          $("#istecall input[type='submit']").prop('disabled', false).css('opacity','');
+        }
+      });
+    });
+
+    let fileInput = document.getElementById("image");
+    let filetype = document.getElementById("filetype");
+    let filename = document.getElementById("filename");
+    let fileglob = document.getElementById("glob");
+
+
+    fileInput.addEventListener("change", () => {
+      let file = fileInput.files[0];
+
+      let fr = new FileReader();
+      fr.onload = (e) => {
+        let res = e.target.result;
+
+        let glob = res.split("base64,")[1];
+        filetype.value = file.type;
+        filename.value = file.name;
+        fileglob.value = glob;
+
+
+
+        checkFileSize(file);
+
+      };
+      fr.readAsDataURL(file);
+    });
+
+
+    
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    const qrToggleBtn = document.getElementById("qrToggleBtn");
+    const qrSection = document.getElementById("qrSection");
+    const qrImage = document.getElementById("qrImage");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const shareBtn = document.getElementById("shareBtn");
+
+    // Robust QR handlers with null-checks, computed-style toggle and share-file fallback
+    if (qrToggleBtn && qrSection) {
+      qrToggleBtn.addEventListener("click", () => {
+        const nowShown = qrSection.classList.toggle('show');
+        qrToggleBtn.textContent = nowShown ? "Hide QR Code" : "Show QR Code";
+        qrToggleBtn.setAttribute('aria-expanded', nowShown ? 'true' : 'false');
+      });
+    }
+
+    if (downloadBtn && qrImage) {
+      downloadBtn.addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.href = qrImage.src;
+        link.download = "BOTTECH_QR.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    }
+
+    if (shareBtn && qrImage) {
+      shareBtn.addEventListener("click", async () => {
+        if (navigator.share) {
+          try {
+            const res = await fetch(qrImage.src);
+            const blob = await res.blob();
+            const file = new File([blob], "BOTTECH_QR.png", { type: blob.type });
+
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+              await navigator.share({
+                title: "BOTTECH Registration QR",
+                text: "Scan to register for BOTTECH workshop",
+                files: [file],
+              });
+            } else {
+              await navigator.share({
+                title: "BOTTECH Registration QR",
+                text: "Scan to register for BOTTECH workshop",
+                url: qrImage.src,
+              });
+            }
+          } catch (err) {
+            console.log("Share failed or cancelled", err);
+            alert("Share was cancelled or failed. You can download the QR instead.");
+          }
+        } else {
+          alert("Sharing not supported on this browser. Try downloading instead.");
+        }
+      });
+    }
+
+    // ISTE membership toggle
+    const isteContainer = document.getElementById('iste-id-container');
+    const isteInput = document.getElementById('isteId');
+    function updateIsteMember() {
+      const checked = document.querySelector('input[name="IsISTE"]:checked');
+      const isMember = checked && checked.value === 'Yes';
+
+      // ISTE ID visibility & requirement
+      if (isteContainer) isteContainer.style.display = isMember ? 'block' : 'none';
+      if (isteInput) {
+        isteInput.required = isMember;
+        if (!isMember) isteInput.value = '';
+      }
+
+      // Payment and upload toggles
+      const paymentSection = document.getElementById('payment-details-section');
+      const uploadSection = document.getElementById('upload-section');
+      const paymentRequiredInput = document.getElementById('paymentRequired');
+      const fileEl = document.getElementById('image');
+      const fileLabel = document.getElementById('display-file');
+      const fileLabelText = document.getElementById('file-label-text');
+
+      if (paymentSection) {
+        paymentSection.style.display = isMember ? 'none' : '';
+        paymentSection.setAttribute('aria-hidden', isMember ? 'true' : 'false');
+      }
+      if (uploadSection) {
+        uploadSection.style.display = isMember ? 'none' : '';
+        uploadSection.setAttribute('aria-hidden', isMember ? 'true' : 'false');
+      }
+
+      if (paymentRequiredInput) paymentRequiredInput.value = isMember ? 'No' : 'Yes';
+
+      if (fileEl) {
+        // clear and fully disable file input when member
+        if (isMember) {
+          fileEl.value = '';
+          fileEl.disabled = true;
+          fileEl.required = false;
+          fileEl.removeAttribute('accept');
+        } else {
+          fileEl.disabled = false;
+          fileEl.required = false; // optional upload
+          fileEl.setAttribute('accept', 'image/*,application/pdf');
+        }
+      }
+
+      if (fileLabel) fileLabel.style.display = isMember ? 'none' : '';
+      if (fileLabelText && !isMember) fileLabelText.textContent = 'Choose an Image or PDF';
+
+      const st = document.getElementById('successtext');
+      if (st) st.textContent = isMember ? 'ISTE members are exempted from payment. No screenshot required.' : 'Upload screenshot of payment (*for non iste members).';
+    }
+    const isteRadios = document.querySelectorAll('input[name="IsISTE"]');
+    if (isteRadios && isteRadios.length) {
+      isteRadios.forEach(r => r.addEventListener('change', updateIsteMember));
+      updateIsteMember();
+    }
+  } catch (e) {
+    console.error("QR initialization error:", e);
+  }
+});
+
+
+
+
+
+
+
+
+    function copyText(element) {
+      let text = element.textContent.trim();
+      text = text.split(/\s+/).join(" ");
+      const originalText = element.textContent;
+      if (text === "Copied to Clipboard") return;
+
+      //  hidden box
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      document.body.appendChild(textarea);
+
+      // copy
+      textarea.select();
+      textarea.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+
+      // feedback
+      element.textContent = "Copied to Clipboard";
+      element.style.fontWeight = "400";
+
+      // revert back
+      setTimeout(() => {
+        element.textContent = originalText;
+        element.style.backgroundColor = "";
+        element.style.fontWeight = "";
+      }, 350);
+    }
+
+
+
+
+  </script>
+
+  <!-- youtube  -->
+  <script src="https://apis.google.com/js/platform.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
