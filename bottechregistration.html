@@ -246,7 +246,7 @@
   </div>
 
   <!--======================================================================================================
-  =================================MEMBERSHIP FORM========================================================
+  =================================Registration FORM========================================================
  =========================================================================================================-->
 
   <div class="d-flex flex-wrap justify-content-center align-items-center">
@@ -262,7 +262,7 @@
                   style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%"
                   align="center">BOT TECH <aaaaa id="year-placeholder">2026</aaaaa>
                 </h1>
-                <script>(function () { const now = new Date(); const currentYear = now.getFullYear(); const displayYear = (now.getMonth() + 1) <= 4 ? currentYear - 1 : currentYear; document.getElementById("year-placeholder").textContent = displayYear; })();</script>
+                
                 <div class="d-flex flex-wrap align-content-center justify-content-center my-4">
                 </div>
 
@@ -383,7 +383,7 @@
               
                 <!-- Reduced spacing above upload message -->
                 <h4 id="successtext" style="font-size: 1.3em; color: rgb(167, 169, 167); margin-top: 0; padding-top: 0;">
-                  Upload screenshot of payment (max 4 MB).
+                  Upload screenshot of payment.
                 </h4>
 
 
@@ -412,10 +412,10 @@
                 <p style="font-size: 1.2em">
                   If any doubts, contact:
                   <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
-                    href="https://wa.me/918330829274">📱 Megha
+                    href="https://wa.me/917902712937">📱 Kailasnath R
                   </a>
-                  <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/918078046950">📱
-                    Gopika</a>
+                  <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/919446117956">
+                    📱 Nihala Fathima N </a>
                 </p>
               </div>
               <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
@@ -664,10 +664,19 @@ data.filename = document.getElementById("filename").value || "";
             const successHtml = `
               <div id="registration-completed" style="text-align:center;">
                 <h4 id="successtextfinal" style="color:white;font-size:2rem;margin:1.5rem 0;">Thank you for registering for BOTTECH!</h4>
-                <p style="font-size:1.05rem;color:#f0f0f0;">We've received your registration. We'll contact you with event details and any further instructions.</p>
+                <p style="font-size:1.05rem;color:#f0f0f0;">Your response has been recorded. We are excited to have you join us.
+We have created a WhatsApp group for discussing further details. Follow this link to join our group:</p>
                 <div style="margin-top:1rem; display:flex; gap:0.6rem; justify-content:center; flex-wrap:wrap;">
-                   <a class="theme-btn gradient mt-3" id="join-group" href="https://chat.whatsapp.com/KtBFXA9GhO583tWiO8xVTj" target="_blank" style="display:inline-block;padding:12px 20px;border-radius:12px;color:#fff;">Join Event Group</a>
-                  <a class="theme-btn gradient mt-3" href="events.html" style="display:inline-block;padding:12px 20px;border-radius:12px;color:#fff;">View Other Events</a> 
+                   <div style="text-align: center; margin-top: 1rem;">
+  <a class="theme-btn gradient"
+     id="join-group"
+     href="https://chat.whatsapp.com/KtBFXA9GhO583tWiO8xVTj"
+     target="_blank"
+     style="display:inline-block;padding:12px 20px;border-radius:12px;color:#fff;">
+     Join Event Group
+  </a>
+</div>
+
                 </div>
                 <p style="font-size:0.95rem;color:#bfc6d0;margin-top:12px;"></p>
               </div>
@@ -845,7 +854,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (fileLabelText && !isMember) fileLabelText.textContent = 'Choose an Image or PDF';
 
       const st = document.getElementById('successtext');
-      if (st) st.textContent = isMember ? 'ISTE members are exempted from payment. No screenshot required.' : 'Upload screenshot of payment (*for non iste members).';
+      if (st) st.textContent = isMember ? 'ISTE members are exempted from payment. No screenshot required.' : 'Upload screenshot of payment.';
     }
     const isteRadios = document.querySelectorAll('input[name="IsISTE"]');
     if (isteRadios && isteRadios.length) {
