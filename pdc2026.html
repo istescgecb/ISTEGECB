@@ -440,22 +440,22 @@
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Third Team Member </h2>
 									<label for="team member2" class="mb-2 ml-2">Team Member 3</label>
 									<input placeholder="Enter  Name" name="team member2" type="text" id="team-member3"
-										autofocus="" required="">
+										autofocus="">
 									<label for="mobile member2" class="mb-2 ml-2">Mobile Number</label><br>
 									<input placeholder="Enter Mobile number" name="mobile member2" type="tel"
-										pattern="[0-9]*" id="mobile-member3" autofocus="" required="">
+										pattern="[0-9]*" id="mobile-member3" autofocus="" >
 									<label for="email member2" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="email member2" type="email"
-										id="email-member3" autofocus="" required="">
+										id="email-member3" autofocus="">
 									<label for="Sem member2" class="mb-2 ml-2">Semester</label>
-									<select name="Sem member2" id="sem-member3" autofocus="" required="">
+									<select name="Sem member2" id="sem-member3" autofocus="" >
 										<option value="" hidden="">Select semester</option>
 
 										<option value="S2">S2</option>
 										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member2" class="mb-2 ml-2">Branch</label>
-									<select name="Branch member2" id="branch-member3" autofocus="" required="">
+									<select name="Branch member2" id="branch-member3" autofocus="" >
 										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
@@ -469,7 +469,7 @@
 
 									<label for="Are You Iste2" class="mb-2 ml-2">Are you an ISTE member ?</label>
 									<select name="Are You Iste2" id="is-iste3" autofocus="" onchange="updateTotal()"
-										required="">
+										>
 										<option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
@@ -482,23 +482,23 @@
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fourth Team Member </h2>
 									<label for="team member3" class="mb-2 ml-2">Team Member 4</label>
 									<input placeholder="Enter  Name" name="team member3" type="text" id="team-member4"
-										autofocus="" required="">
+										autofocus="" >
 									<label for="mobile member3" class="mb-2 ml-2">Mobile Number</label>
 									<input placeholder="Enter Mobile number" name="mobile member3" type="tel"
-										pattern="[0-9]*" id="mobile-member4" autofocus="" required="">
+										pattern="[0-9]*" id="mobile-member4" autofocus="" >
 
 									<label for="Email member3" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="Email member3" type="email"
-										id="email-member4" autofocus="" required="">
+										id="email-member4" autofocus="">
 									<label for="Sem member3" class="mb-2 ml-2">Semester</label>
-									<select name="Sem member3" id="sem-member4" autofocus="" required="">
+									<select name="Sem member3" id="sem-member4" autofocus="" >
 										<option value="" hidden="">Select semester</option>
 
 										<option value="S2">S2</option>
 										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member3" class="mb-2 ml-2">Branch</label>
-									<select name="Branch member3" id="branch-member4" autofocus="" required="">
+									<select name="Branch member3" id="branch-member4" autofocus="" >
 										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
@@ -511,8 +511,7 @@
 
 
 									<label for="Are You Iste3" class="mb-2 ml-2">Are you an ISTE member?</label>
-									<select name="Are You Iste3" id="is-iste4" autofocus="" onchange="updateTotal()"
-										required="">
+									<select name="Are You Iste3" id="is-iste4" autofocus="" onchange="updateTotal()">
 										<option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
@@ -662,8 +661,18 @@
 		function updateTotal() {
 			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
 
+			// Get only filled values (ignore empty / null fields)
+			const filledValues = elements
+				.map(id => document.getElementById(id))
+				.filter(el => el && el.value.trim() !== "")
+				.map(el => el.value.toLowerCase());
+
+			// If no members are filled then default to 150
+			const allYes = filledValues.length > 0 && filledValues.every(v => v === "yes");
+
+
 			// Check if all elements have the value "yes"
-			const allYes = elements.every(id => document.getElementById(id).value.toLowerCase() === "yes");
+			//const allYes = elements.every(id => document.getElementById(id).value.toLowerCase() === "yes");
 			// Set total based on whether all elements have the value "yes"
 			const total = allYes ? 50 : 150;
 			// Update ttlamt styles and content
