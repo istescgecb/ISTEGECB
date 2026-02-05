@@ -278,7 +278,8 @@
                 <label class="mb-2 ml-2" for="name">Full Name</label><br />
                 <input type="text" id="name" name="Name" placeholder="Your name" class="ffield" required /><br />
 
-                <!-- Email removed intentionally - not required for BOTTECH registration -->
+                <label class="mb-2 ml-2" for="email">Email</label><br />
+                <input type="email" id="email" name="Email" placeholder="Your email" class="ffield" required /><br />
 
                 <label class="mb-2 ml-2" for="Year">Year</label><br />
                 <select id="Year" name="Year" class="ffield" required>
@@ -326,13 +327,16 @@
                 <div id="iste-id-container" style="display:none; margin-top:0.5rem;">
                   <label class="mb-2 ml-2" for="isteId">ISTE ID</label><br />
                   <input type="text" id="isteId" name="ISTEId" placeholder="Enter ISTE membership ID" class="ffield" />
+                  <button type="button" id="verifyIsteBtn" class="theme-btn gradient" style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow: none; margin-top: 0.5rem;">Verify</button>
+                  <small id="verificationStatus" style="color: #fdfbfb; margin-top: 0.25rem; display: block;"></small>
+                  <input type="hidden" id="isteVerified" name="ISTEVerified" value="false" />
                 </div><br />
                  <h2 style="font-size: 1.5em; color: rgb(182, 181, 181)">
                     <b>REGISTRATION FEES</b>
                   </h2>
                  <p style="font-size: 1.2em">   
-                ▫️FREE for ISTE Members<br />
-                ▫️Rs 200 for Non ISTE Members
+                ▫️Rs 50 for ISTE Members (will be refunded after attendance)<br />
+                ▫️Rs 400 for Non ISTE Members
                   </p><br /><br />
                 <div id="payment-details-section">
                   <h2 style="font-size: 1.5em; color: rgb(182, 181, 181)">
@@ -605,7 +609,36 @@
 
       e.preventDefault();
 
+      // Validate ISTE ID verification if ISTE member
+      const isteRadio = document.querySelector('input[name="IsISTE"]:checked');
+      const isIsteMember = isteRadio && isteRadio.value === 'Yes';
+      
+      if (isIsteMember) {
+        const isteVerified = document.getElementById('isteVerified').value === 'true';
+        if (!isteVerified) {
+          $(".send-div").fadeOut(); // Hide the loading screen
+          Swal.fire({
+            title: 'Verification Required',
+            text: 'Please verify your ISTE ID with your email before submitting.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+          });
+          return false;
+        }
+      }
 
+      // Check if file is uploaded for payment proof
+      const fileUpload = document.getElementById('image');
+      if (!fileUpload.value) {
+        $(".send-div").fadeOut(); // Hide the loading screen
+        Swal.fire({
+          title: 'Payment Proof Required',
+          text: 'Please upload payment proof screenshot before submitting.',
+          icon: 'warning',
+          confirmButtonText: 'OK'
+        });
+        return false;
+      }
 
       $(".send-div").show();
       const formData = $("#istecall").serializeArray();
@@ -615,11 +648,11 @@
       });
 
       // Force critical fields (do NOT rely on serialize timing)
-const isteRadio = document.querySelector('input[name="IsISTE"]:checked');
-data.IsISTE = isteRadio ? isteRadio.value : "No";
+const isteRadio2 = document.querySelector('input[name="IsISTE"]:checked');
+data.IsISTE = isteRadio2 ? isteRadio2.value : "No";
 
-// Payment rule (matches backend)
-data.PaymentRequired = data.IsISTE === "Yes" ? "No" : "Yes";
+// Payment rule - EVERYONE pays (no exemptions)
+data.PaymentRequired = "Yes";
 
 // Explicitly attach file data
 data.base64 = document.getElementById("glob").value || "";
@@ -631,7 +664,7 @@ data.filename = document.getElementById("filename").value || "";
 
       $.ajax({
         url: `
-   https://script.google.com/macros/s/AKfycbz3WSkhJEpTpep9OAiCGaPgs1yro5KSjDIXY2L4if-mncwnNV_sO7zntrT0JSgH4d0BGA/exec
+   https://script.google.com/macros/s/AKfycbxlLtHgL9GdggdCnmIXbUh5AwxYw2_lWwuHOe9DmgxqLxVlc-fyfiIcJT-qFc_G61Xlng/exec
 			`.trim(),
         method: "POST",
         processData: false,
@@ -670,7 +703,7 @@ We have created a WhatsApp group for discussing further details. Follow this lin
                    <div style="text-align: center; margin-top: 1rem;">
   <a class="theme-btn gradient"
      id="join-group"
-     href="https://chat.whatsapp.com/KtBFXA9GhO583tWiO8xVTj"
+     href=" https://chat.whatsapp.com/CqfwIABgoe851lUZzR6LIW?mode=gi_t"
      target="_blank"
      style="display:inline-block;padding:12px 20px;border-radius:12px;color:#fff;">
      Join Event Group
@@ -803,6 +836,75 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
+    // ISTE ID Email Verification
+    const verifyIsteBtn = document.getElementById('verifyIsteBtn');
+    const isteIdInput = document.getElementById('isteId');
+    const emailInput = document.getElementById('email');
+    const verificationStatus = document.getElementById('verificationStatus');
+    const isteVerifiedInput = document.getElementById('isteVerified');
+
+    if (verifyIsteBtn) {
+      verifyIsteBtn.addEventListener('click', async function() {
+        const isteId = isteIdInput.value.trim();
+        const email = emailInput.value.trim();
+
+        if (!isteId) {
+          verificationStatus.textContent = '❌ Please enter ISTE ID';
+          verificationStatus.style.color = '#da0f3f';
+          isteVerifiedInput.value = 'false';
+          return;
+        }
+
+        if (!email) {
+          verificationStatus.textContent = '❌ Please enter email';
+          verificationStatus.style.color = '#da0f3f';
+          isteVerifiedInput.value = 'false';
+          return;
+        }
+
+        // Show loading state
+        verifyIsteBtn.disabled = true;
+        verifyIsteBtn.textContent = 'Verifying...';
+        verificationStatus.textContent = '⏳ Verifying...';
+        verificationStatus.style.color = '#ffa500';
+
+        try {
+          // Call verification API - use same endpoint as registration
+          const response = await fetch('https://script.google.com/macros/s/AKfycbzgSTAKHxowcn8MYLdfODjtpH2K_OygC-UFZRt5MA5USocpDJMVgcGLbuzhPAinL-GrNQ/exec', {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              action: 'verifyISTE',
+              isteId: isteId,
+              email: email
+            })
+          });
+
+          console.log('Response status:', response.status);
+          const result = await response.json();
+          console.log('Verification result:', result);
+
+          if (result.verified) {
+            verificationStatus.textContent = '✅ ISTE ID verified successfully!';
+            verificationStatus.style.color = '#1db212';
+            isteVerifiedInput.value = 'true';
+          } else {
+            verificationStatus.textContent = `❌ ${result.message || 'ISTE ID does not match with email. Please check and try again.'}`;
+            verificationStatus.style.color = '#da0f3f';
+            isteVerifiedInput.value = 'false';
+          }
+        } catch (error) {
+          console.error('Verification error:', error);
+          verificationStatus.textContent = `⚠️ Network error: ${error.message}. Please check console (F12) for details.`;
+          verificationStatus.style.color = '#da0f3f';
+          isteVerifiedInput.value = 'false';
+        } finally {
+          verifyIsteBtn.disabled = false;
+          verifyIsteBtn.textContent = 'Verify';
+        }
+      });
+    }
+
     // ISTE membership toggle
     const isteContainer = document.getElementById('iste-id-container');
     const isteInput = document.getElementById('isteId');
@@ -817,7 +919,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isMember) isteInput.value = '';
       }
 
-      // Payment and upload toggles
+      // Payment and upload sections - ALWAYS SHOW (no exemption)
       const paymentSection = document.getElementById('payment-details-section');
       const uploadSection = document.getElementById('upload-section');
       const paymentRequiredInput = document.getElementById('paymentRequired');
@@ -826,35 +928,29 @@ document.addEventListener('DOMContentLoaded', function() {
       const fileLabelText = document.getElementById('file-label-text');
 
       if (paymentSection) {
-        paymentSection.style.display = isMember ? 'none' : '';
-        paymentSection.setAttribute('aria-hidden', isMember ? 'true' : 'false');
+        paymentSection.style.display = ''; // Always show
+        paymentSection.setAttribute('aria-hidden', 'false');
       }
       if (uploadSection) {
-        uploadSection.style.display = isMember ? 'none' : '';
-        uploadSection.setAttribute('aria-hidden', isMember ? 'true' : 'false');
+        uploadSection.style.display = ''; // Always show
+        uploadSection.setAttribute('aria-hidden', 'false');
       }
 
-      if (paymentRequiredInput) paymentRequiredInput.value = isMember ? 'No' : 'Yes';
+      if (paymentRequiredInput) paymentRequiredInput.value = 'Yes'; // Always require payment
 
       if (fileEl) {
-        // clear and fully disable file input when member
-        if (isMember) {
-          fileEl.value = '';
-          fileEl.disabled = true;
-          fileEl.required = false;
-          fileEl.removeAttribute('accept');
-        } else {
-          fileEl.disabled = false;
-          fileEl.required = false; // optional upload
-          fileEl.setAttribute('accept', 'image/*,application/pdf');
-        }
+        // File upload always required for everyone
+        fileEl.disabled = false;
+        fileEl.required = false; // optional upload
+        fileEl.setAttribute('accept', 'image/*,application/pdf');
       }
 
-      if (fileLabel) fileLabel.style.display = isMember ? 'none' : '';
-      if (fileLabelText && !isMember) fileLabelText.textContent = 'Choose an Image or PDF';
+      if (fileLabel) fileLabel.style.display = '';
+      if (fileLabelText) fileLabelText.textContent = 'Choose an Image or PDF';
 
       const st = document.getElementById('successtext');
-      if (st) st.textContent = isMember ? 'ISTE members are exempted from payment. No screenshot required.' : 'Upload screenshot of payment.';
+      if (st) st.textContent = 'Upload screenshot of payment.';
+
     }
     const isteRadios = document.querySelectorAll('input[name="IsISTE"]');
     if (isteRadios && isteRadios.length) {
