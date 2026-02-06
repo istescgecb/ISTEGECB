@@ -281,6 +281,9 @@
                 <label class="mb-2 ml-2" for="email">Email</label><br />
                 <input type="email" id="email" name="Email" placeholder="Your email" class="ffield" required /><br />
 
+                <label class="mb-2 ml-2" for="college">College Name</label><br />
+                <input type="text" id="college" name="College" placeholder="Your college name" class="ffield" required /><br />
+
                 <label class="mb-2 ml-2" for="Year">Year</label><br />
                 <select id="Year" name="Year" class="ffield" required>
                   <!-- onclick="updateAmt()" -->
@@ -669,7 +672,7 @@ data.filename = document.getElementById("filename").value || "";
 
       $.ajax({
         url: `
-   https://script.google.com/macros/s/AKfycbxlLtHgL9GdggdCnmIXbUh5AwxYw2_lWwuHOe9DmgxqLxVlc-fyfiIcJT-qFc_G61Xlng/exec
+  https://script.google.com/macros/s/AKfycbw803V-xmcIaYHwl0pEBoTybjTpFP7rAgtcHzunoLfj78BCJTsm5outSddOZNt8n0zywA/exec
 			`.trim(),
         method: "POST",
         processData: false,
