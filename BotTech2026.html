@@ -389,8 +389,8 @@
 
               
                 <!-- Reduced spacing above upload message -->
-                <h4 id="successtext" style="font-size: 1.3em; color: rgb(167, 169, 167); margin-top: 0; padding-top: 0;">
-                  Upload screenshot of payment.
+                <h4 id="successtext" style="font-size: 1.3em; color: rgb(250, 251, 250); margin-top: 0; padding-top: 0;">
+                  SCREENSHOT OF PAYMENT* (File size less than 4 MB)
                 </h4>
 
 
@@ -444,13 +444,13 @@
               <input type="text" name="base64" id="glob" value="" hidden />
               <input type="text" name="type" id="filetype" value="" hidden />
               <input type="text" name="filename" id="filename" value="" hidden />
+              <br><br><br>
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-
 
   <!-- loader gif -->
   <div class="send-div">
@@ -703,23 +703,17 @@ data.filename = document.getElementById("filename").value || "";
             console.log("success");
 
             const successHtml = `
-              <div id="registration-completed" style="text-align:center;">
-                <h4 id="successtextfinal" style="color:white;font-size:2rem;margin:1.5rem 0;">Thank you for registering for BOTTECH!</h4>
-                <p style="font-size:1.05rem;color:#f0f0f0;">Your response has been recorded. We are excited to have you join us.
-We have created a WhatsApp group for discussing further details. Follow this link to join our group:</p>
-                <div style="margin-top:1rem; display:flex; gap:0.6rem; justify-content:center; flex-wrap:wrap;">
-                   <div style="text-align: center; margin-top: 1rem;">
-  <a class="theme-btn gradient"
-     id="join-group"
-     href=" https://chat.whatsapp.com/CqfwIABgoe851lUZzR6LIW?mode=gi_t"
-     target="_blank"
-     style="display:inline-block;padding:12px 20px;border-radius:12px;color:#fff;">
-     Join Event Group
-  </a>
-</div>
+              <div id = "payment-completed" >
+                  <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">Registration completed successfully</h4>
 
-                </div>
-                <p style="font-size:0.95rem;color:#bfc6d0;margin-top:12px;"></p>
+                  <p style='font-size: 1.2em;color: #f0f0f0;margin:1.5rem 0;'>
+                    Please join our WhatsApp group for further updates and information.
+                  </p>
+
+                  <a id='register-now' class='theme-btn gradient mt-3'
+                    style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
+                    href='https://chat.whatsapp.com/CqfwIABgoe851lUZzR6LIW?mode=gi_t' target="_blank">Join Event Group
+                  </a>
               </div>
             `;
             document.getElementById("istecall").innerHTML = successHtml;
@@ -957,7 +951,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (fileLabelText) fileLabelText.textContent = 'Choose an Image or PDF';
 
       const st = document.getElementById('successtext');
-      if (st) st.textContent = 'Upload screenshot of payment.';
+      if (st) st.textContent = 'SCREENSHOT OF PAYMENT* (File size less than 4 MB)';
 
     }
     const isteRadios = document.querySelectorAll('input[name="IsISTE"]');
