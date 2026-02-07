@@ -158,7 +158,7 @@ function verifyISTEID(isteId, email) {
 }
 
 function validateData(obj) {
-  const required = ["Name", "Email", "College", "Year", "Branch", "PhoneNumber", "IsISTE", "PaymentRequired"];
+  const required = ["Name", "Email", "College", "Year", "Branch", "PhoneNumber", "IsISTE", "HasLaptop", "PaymentRequired"];
 
   required.forEach(f => {
     if (!obj[f] || obj[f].toString().trim() === "") {
@@ -173,6 +173,7 @@ function validateData(obj) {
   obj.Branch = obj.Branch.trim();
   obj.PhoneNumber = obj.PhoneNumber.trim();
   obj.IsISTE = obj.IsISTE === "Yes" ? "Yes" : "No";
+  obj.HasLaptop = obj.HasLaptop === "Yes" ? "Yes" : "No";
   obj.PaymentRequired = obj.PaymentRequired === "No" ? "No" : "Yes";
 
   // Email validation
@@ -239,6 +240,7 @@ function appendRegistration(sheet, obj, fileUrl) {
   if (sheet.getLastRow() === 0) {
     sheet.appendRow([
       "Timestamp",
+      "Payment Proof",
       "Name",
       "Email",
       "College",
@@ -247,13 +249,14 @@ function appendRegistration(sheet, obj, fileUrl) {
       "Phone Number",
       "ISTE Member",
       "ISTE ID",
-      "Payment Required",
-      "Payment Proof"
+      "Has Laptop",
+      "Payment Required"
     ]);
   }
 
   sheet.appendRow([
     new Date().toLocaleString(),
+    fileUrl,
     obj.Name,
     obj.Email,
     obj.College,
@@ -262,8 +265,8 @@ function appendRegistration(sheet, obj, fileUrl) {
     obj.PhoneNumber,
     obj.IsISTE,
     obj.ISTEId,
-    obj.PaymentRequired,
-    fileUrl
+    obj.HasLaptop,
+    obj.PaymentRequired
   ]);
 }
 
