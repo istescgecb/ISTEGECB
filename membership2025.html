@@ -698,11 +698,12 @@
         data[obj.name] = obj.value;
       });
       // data["Referral"] = "NA"; 
-      console.log(data);
+      // console.log(data);
 
       $.ajax({
         url: `
-       https://script.google.com/macros/s/AKfycbxB8kO3nxh_Lj9NEUa3Mg5aQKGDlQ-YuQgSsU4cpVwLI9lKLaW4U0wd4Z5uNVntgkzq/exec
+
+https://script.google.com/macros/s/AKfycbxB8kO3nxh_Lj9NEUa3Mg5aQKGDlQ-YuQgSsU4cpVwLI9lKLaW4U0wd4Z5uNVntgkzq/exec
 
 			`.trim(),
         data: JSON.stringify(data),
