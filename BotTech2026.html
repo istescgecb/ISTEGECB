@@ -315,7 +315,17 @@
 
                 <label class="mb-2 ml-2" for="PhoneNumber">Phone Number(10 digits)</label><br />
                 <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}"
-                  class="ffield" required /><br />
+                  class="ffield" required />
+
+                  <fieldset class="mb-3">
+                  <label class="mb-2 ml-2" >Do you have a laptop?</label><br />
+                  <div class="btn-group" role="group" aria-label="Do you have a laptop?" style="margin-bottom:0.5rem;">
+                    <input type="radio" class="btn-check" name="HasLaptop" id="hasLaptopYes" value="Yes" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="hasLaptopYes" style="color:#ffffff;">Yes</label> 
+                    <input type="radio" class="btn-check" name="HasLaptop" id="hasLaptopNo" value="No" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="hasLaptopNo" style="color:#ffffff;">No</label>
+                  </div>
+                </fieldset>
 
                 <fieldset class="mb-3">
                   <label class="mb-2 ml-2" >Are you an ISTE member?</label><br />
@@ -333,7 +343,10 @@
                   <button type="button" id="verifyIsteBtn" class="theme-btn gradient" style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow: none; margin-top: 0.5rem;">Verify</button>
                   <small id="verificationStatus" style="color: #fdfbfb; margin-top: 0.25rem; display: block;"></small>
                   <input type="hidden" id="isteVerified" name="ISTEVerified" value="false" />
-                </div><br />
+                </div>
+
+                
+
                  <h2 style="font-size: 1.5em; color: rgb(182, 181, 181)">
                     <b>REGISTRATION FEES</b>
                   </h2>
@@ -673,7 +686,7 @@ data.filename = document.getElementById("filename").value || "";
 
       $.ajax({
         url: `
-  https://script.google.com/macros/s/AKfycbw803V-xmcIaYHwl0pEBoTybjTpFP7rAgtcHzunoLfj78BCJTsm5outSddOZNt8n0zywA/exec
+  https://script.google.com/macros/s/AKfycbyvNHiFDUBZ2xucRixBrT3_I-OahMCKLLfz_Fwd9Fwy3kfnbmhhmFXRJRxCw6KLx4nk/exec
 			`.trim(),
         method: "POST",
         processData: false,
