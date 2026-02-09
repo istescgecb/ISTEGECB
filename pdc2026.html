@@ -30,6 +30,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<title>ISTE GECBH</title>
+	<style>
+		#mem3,
+		#mem4,
+		#mem5{
+			display: none;
+		}
+
+	</style>
 
 
 </head>
@@ -211,12 +219,11 @@
 				<div class="membership-form-wrapper">
 
 
-					<form id="pdcform" action="" style="width:100%">
+					<form id="pdcform" action="" style="width:100%;font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif">
 						<div class="event-card-body event-card-body-reg"
 							style="width: 100%; height: auto;  background: transparent;">
 							<div style="width: 100%;">
-								<h1 style="color: #32b0d4; font-weight: 800; margin-bottom: 14px; text-transform: uppercase;margin-top: 4%;margin-bottom: 2%"
-									align="center">Project Development Challenge</h1>
+								<h1 style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%; text-align:center; ">Project Development Challenge</h1>
 								<div class="d-flex flex-wrap align-content-center justify-content-center my-4">
 									<!-- <div class="membership-info-card my-3">
 										💫 ISTE SC GECB is here with an exciting opportunity to help you explore your
@@ -253,9 +260,10 @@
 												: 83308 29274</i></a>
 									</div> -->
 								</div>
-								<p style="font-size: 1.3em">All field are Mandatory</p>
-								<p style="font-size: 1.5em; ">LOOK INTO INSTRUCTIONS TO FILL THE FORM<br>
-									<br>Fill details and Upload Screenshot using upload button after clicking the submit
+								<p style="font-size: 1.2em;font-weight: 400;color: rgb(235, 86, 86);">
+                  				*All fields are mandatory. Fill the details correctly.
+                				</p>
+								<p style="font-size: 1.4em; ">Fill details and Upload Screenshot using upload button after clicking the submit
 									button.
 								</p>
 
@@ -350,9 +358,15 @@
 										System Website</option>
 								</select>
 
+								<label class="mb-2 ml-2">Number of Team Members</label>
+								<input type="number" id="teamCount" min="2" max="5"
+								placeholder="Enter team size (2-5)"
+								oninput="handleTeamCount()"  required>
 
 
-								<div class="team-leadteam-lead">
+
+
+								<div class="team-leadteam-lead" id="mem1">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Team Leader </h2>
 									<label for="teamlead" class="mb-2 ml-2">Team Leader</label>
 									<input placeholder="Enter your Name" name="teamlead" type="text" id="teamlead"
@@ -393,7 +407,7 @@
 								</div>
 
 
-								<div class="team-mem-1">
+								<div class="team-mem-1" id="mem2">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Second Team Member </h2>
 									<label for="team member1" class="mb-2 ml-2">Team Member 2</label>
 									<input placeholder="Enter  Name" name="team member1" type="text" id="team-member2"
@@ -436,7 +450,7 @@
 								</div>
 
 
-								<div class="team-mem-1">
+								<div class="team-mem-1" id="mem3">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Third Team Member </h2>
 									<label for="team member2" class="mb-2 ml-2">Team Member 3</label>
 									<input placeholder="Enter  Name" name="team member2" type="text" id="team-member3"
@@ -478,7 +492,7 @@
 
 								</div>
 
-								<div class="team-mem-1">
+								<div class="team-mem-1" id="mem4">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fourth Team Member </h2>
 									<label for="team member3" class="mb-2 ml-2">Team Member 4</label>
 									<input placeholder="Enter  Name" name="team member3" type="text" id="team-member4"
@@ -520,6 +534,48 @@
 								</div>
 
 
+								<div class="team-mem-1" id="mem5">
+									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fifth Team Member </h2>
+									<label for="team member4" class="mb-2 ml-2">Team Member 5</label>
+									<input placeholder="Enter  Name" name="team member4" type="text" id="team-member5"
+										autofocus="" >
+									<label for="mobile member4" class="mb-2 ml-2">Mobile Number</label>
+									<input placeholder="Enter Mobile number" name="mobile member4" type="tel"
+										pattern="[0-9]*" id="mobile-member5" autofocus="" >
+
+									<label for="Email member4" class="mb-2 ml-2">Email ID</label>
+									<input placeholder="Enter your Email ID" name="Email member4" type="email"
+										id="email-member5" autofocus="">
+									<label for="Sem member4" class="mb-2 ml-2">Semester</label>
+									<select name="Sem member4" id="sem-member5" autofocus="" >
+										<option value="" hidden="">Select semester</option>
+
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
+									</select>
+									<label for="Branch member4" class="mb-2 ml-2">Branch</label>
+									<select name="Branch member4" id="branch-member5" autofocus="" >
+										<option value="" hidden="">Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and
+											Electronics Engineering</option>
+										<option value="Electronics &amp; Communication Engineering">Electronics
+											&amp; Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+
+
+									<label for="Are You Iste4" class="mb-2 ml-2">Are you an ISTE member?</label>
+									<select name="Are You Iste4" id="is-iste5" autofocus="" onchange="updateTotal()">
+										<option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select>
+
+								</div>
+
+
 
 
 								<br>
@@ -530,20 +586,39 @@
 										PAYMENT DETAILS
 									</h6>
 									<p style="font-size: 1.2em">
-										Account holder name: Devika Asok<br />
+										Account holder name: Krishnapriya R<br />
 										IFSC code:
-										<span style="user-select: all; font: inherit">CNRB0005114</span><br />
+										<span style="user-select: all; font: inherit">SBIN0070259</span><br />
 										Account number:
-										<span style="user-select: all; font: inherit">110191178480</span><br />
-										Gpay/PhonePe/Paytm:
-										<span style="user-select: all; font: inherit">7012310891</span><br />
-										UPI ID:
+										<span style="user-select: all; font: inherit">44148248108</span><br />
+										UPI ID:(Gpay/PhonePe/Paytm)
 										<span style="
 										user-select: all;
 										font: inherit;
 										padding: inherit;
-										">deepzdevika@oksbi</span>
+										">krishnapriyarmalu-1@okicici</span>
 									</p>
+								</div>
+
+								<div class="qr-container">
+									<button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
+									<div class="qr-section" id="qrSection">
+									<div class="qr-card">
+										<img src="assets/img/qr-code-for-membership.jpg" alt="payment QR" id="qrImage" class="qr-code">
+										<div class="qr-actions">
+										<button type="button" class="share-btn" id="shareBtn">
+											<span></span>
+											<img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px"
+											alt="Share Icon">
+										</button>
+										<button type="button" class="download-btn" id="downloadBtn">
+											<span></span>
+											<img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px"
+											alt="Download Icon">
+										</button>
+										</div>
+									</div>
+									</div>
 								</div>
 
 
@@ -555,8 +630,8 @@
 
 
 								<div class="register-detail">
-									<h6 style="font-size: 1.5em;color: rgb(214, 91, 20);">REGISTRATION DETIAILS</h6>
-									<p style="font-size: 1.2em">
+									<h6 style="font-size: 1.4em;color: rgb(214, 91, 20);">REGISTRATION DETIAILS</h6>
+									<p style="font-size: 1.1em">
 										▪️<b>For teams</b>
 										with <b>all ISTE Members</b> members <b>₹50 per team</b> <br>
 										▪️<b>For teams</b>
@@ -619,11 +694,11 @@
 								If any doubts ,,,,
 								<br><a style="font-size: 1.2rem;font-weight: lighter;"
 									href="https://wa.me/+917736510828" target="_blank"
-									style="font: inherit;">📲Krishnapriya
-									: 7736510828</a>
+									style="font: inherit;">📲Sabin
+									: 9207829429</a>
 								<br><a style="font-size: 1.2rem;font-weight: lighter;"
-									href="https://wa.me/+918330829274" target="_blank" style="font: inherit;">📲Megha
-									: 8330829274</a>
+									href="https://wa.me/+918330829274" target="_blank" style="font: inherit;">📲Tijin
+									: 9446861555</a>
 							</p>
 							<input type="submit" value="Submit" class="theme-btn gradient mt-3"
 								style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;">
@@ -658,8 +733,31 @@
     	// <p style="color: white;">The challenge for 2026 has been officially closed.</p>`;
 
 
+
+
+		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
+		function handleTeamCount() {
+		const count = parseInt(document.getElementById("teamCount").value);
+
+		for (let i = 3; i <= 5; i++) {
+			const section = document.getElementById(`mem${i}`);
+			const fields = section.querySelectorAll("input, select");
+
+			if (count >= i) {
+				section.style.display = "block";
+				fields.forEach(f => f.setAttribute("required", "required"));
+			} 
+			else {
+				section.style.display = "none";
+				fields.forEach(f => f.removeAttribute("required"));
+			}
+		}
+		}
+
+
+
 		function updateTotal() {
-			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
+			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
 
 			// Get only filled values (ignore empty / null fields)
 			const filledValues = elements
@@ -691,7 +789,7 @@
 			return total;
 		}
 		// event listeners
-		const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4'];
+		const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
 
 		elements.forEach(function (id) {
 			document.getElementById(id).addEventListener('change', () => { updateTotal() });
@@ -795,6 +893,48 @@
 			fr.readAsDataURL(file);
 		});
 
+		//QR code 
+		const qrToggleBtn = document.getElementById("qrToggleBtn");
+		const qrSection = document.getElementById("qrSection");
+		const qrImage = document.getElementById("qrImage");
+		const shareBtn = document.getElementById("shareBtn");
+		const downloadBtn = document.getElementById("downloadBtn");
+
+		qrToggleBtn.addEventListener('click', () => {
+		qrSection.classList.toggle("show");
+		qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code" : "Show QR Code";
+		});
+
+		shareBtn.addEventListener('click', () => {
+		if (navigator.share) {
+			fetch(qrImage.src)
+			.then(response => response.blob())
+			.then(blob => {
+				const file = new File([blob], "assets/img/qr-code-for-membership.jpg", { type: blob.type });
+				navigator.share({
+				title: "Payment QR",
+				text: "Scan this QR to make payment",
+				files: [file]
+				}).catch(err => console.log("Share failed:", err));
+			})
+			.catch(err => console.log("Error fetching QR:", err));
+		}
+		else {
+			alert("Sharing is not supported on this browser");
+		}
+		});
+
+
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement("a");
+      link.download = "qrcodeDownload.jpg";
+      link.href = qrImage.src;
+      link.click();
+    });
+
+
+
+
 
 
 		// request
@@ -819,6 +959,7 @@
 			var isIste3 = document.getElementById("is-iste3").value;
 			var isIste4 = document.getElementById("is-iste4").value;
 			var isIste2 = document.getElementById("is-iste2").value;
+			var isIste5 = document.getElementById("is-iste5").value;
 			var teamMember2 = document.getElementById("team-member2").value;
 			var mobileMember2 = document.getElementById("mobile-member2").value;
 			var emailMember2 = document.getElementById("email-member2").value;
@@ -834,6 +975,12 @@
 			var emailMember4 = document.getElementById("email-member4").value;
 			var semMember4 = document.getElementById("sem-member4").value;
 			var branchMember4 = document.getElementById("branch-member4").value;
+
+			var teamMember5 = document.getElementById("team-member5").value;
+			var mobileMember5 = document.getElementById("mobile-member5").value;
+			var emailMember5 = document.getElementById("email-member5").value;
+			var semMember5 = document.getElementById("sem-member5").value;
+			var branchMember5 = document.getElementById("branch-member5").value;
 			let file = document.getElementById("image");
 
 			// let img= document.getElementById("drive");
@@ -874,7 +1021,13 @@
 					emailMember4: emailMember4,
 					semMember4: semMember4,
 					branchMember4: branchMember4,
-					isIste4: isIste4
+					isIste4: isIste4,
+					teamMember5: teamMember5,
+					mobileMember5: mobileMember4,
+					emailMember5: emailMember5,
+					semMember5: semMember5,
+					branchMember5: branchMember5,
+					isIste5: isIste5
 				};
 
 				fetch(
