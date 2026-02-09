@@ -35,8 +35,15 @@
   <title>ISTE GECBH</title>
   <style>
     /* Tighten spacing for upload message and remove focus ring on QR toggle */
-    #successtext { margin-top: 0 !important; padding-top: 0; }
-    .qr-toggle-btn:focus { outline: none; box-shadow: none; }
+    #successtext {
+      margin-top: 0 !important;
+      padding-top: 0;
+    }
+
+    .qr-toggle-btn:focus {
+      outline: none;
+      box-shadow: none;
+    }
   </style>
 </head>
 <!-- oncontextmenu="return false" -->
@@ -262,12 +269,12 @@
                   style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%"
                   align="center">BOT TECH <aaaaa id="year-placeholder">2026</aaaaa>
                 </h1>
-                
+
                 <div class="d-flex flex-wrap align-content-center justify-content-center my-4">
                 </div>
 
                 <p style="
-                          font-size: 1.2em;
+                              font-size: 1.2em;
                           font-weight: 400;
                           color: rgb(235, 86, 86);
 
@@ -282,7 +289,8 @@
                 <input type="email" id="email" name="Email" placeholder="Your email" class="ffield" required /><br />
 
                 <label class="mb-2 ml-2" for="college">College Name</label><br />
-                <input type="text" id="college" name="College" placeholder="Your College Name.ex:GECBH" class="ffield" required /><br />
+                <input type="text" id="college" name="College" placeholder="Your College Name.ex:GECBH" class="ffield"
+                  required /><br />
 
                 <label class="mb-2 ml-2" for="Year">Year</label><br />
                 <select id="Year" name="Year" class="ffield" required>
@@ -320,21 +328,24 @@
                 <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}"
                   class="ffield" required />
 
-                  <fieldset class="mb-3">
-                  <label class="mb-2 ml-2" >Do you have a laptop?</label><br />
+                <fieldset class="mb-3">
+                  <label class="mb-2 ml-2">Do you have a laptop?</label><br />
                   <div class="btn-group" role="group" aria-label="Do you have a laptop?" style="margin-bottom:0.5rem;">
-                    <input type="radio" class="btn-check" name="HasLaptop" id="hasLaptopYes" value="Yes" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="hasLaptopYes" style="color:#ffffff;">Yes</label> 
-                    <input type="radio" class="btn-check" name="HasLaptop" id="hasLaptopNo" value="No" autocomplete="off">
+                    <input type="radio" class="btn-check" name="HasLaptop" id="hasLaptopYes" value="Yes"
+                      autocomplete="off">
+                    <label class="btn btn-outline-primary" for="hasLaptopYes" style="color:#ffffff;">Yes</label>
+                    <input type="radio" class="btn-check" name="HasLaptop" id="hasLaptopNo" value="No"
+                      autocomplete="off">
                     <label class="btn btn-outline-primary" for="hasLaptopNo" style="color:#ffffff;">No</label>
                   </div>
                 </fieldset>
 
                 <fieldset class="mb-3">
-                  <label class="mb-2 ml-2" >Are you an ISTE GECBH member?</label><br />
-                  <div class="btn-group" role="group" aria-label="Are you an ISTE member?" style="margin-bottom:0.5rem;">
+                  <label class="mb-2 ml-2">Are you an ISTE GECBH member?</label><br />
+                  <div class="btn-group" role="group" aria-label="Are you an ISTE member?"
+                    style="margin-bottom:0.5rem;">
                     <input type="radio" class="btn-check" name="IsISTE" id="isIsteYes" value="Yes" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="isIsteYes" style="color:#ffffff;">Yes</label> 
+                    <label class="btn btn-outline-primary" for="isIsteYes" style="color:#ffffff;">Yes</label>
                     <input type="radio" class="btn-check" name="IsISTE" id="isIsteNo" value="No" autocomplete="off">
                     <label class="btn btn-outline-primary" for="isIsteNo" style="color:#ffffff;">No</label>
                   </div>
@@ -343,28 +354,33 @@
                 <div id="iste-id-container" style="display:none; margin-top:0.5rem;">
                   <label class="mb-2 ml-2" for="isteId">ISTE ID</label><br />
                   <input type="text" id="isteId" name="ISTEId" placeholder="Enter ISTE membership ID" class="ffield" />
-                  <button type="button" id="verifyIsteBtn" class="theme-btn gradient" style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow: none; margin-top: 0.5rem;">Verify</button>
+                  <button type="button" id="verifyIsteBtn" class="theme-btn gradient"
+                    style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow: none; margin-top: 0.5rem;">Verify</button>
                   <small id="verificationStatus" style="color: #fdfbfb; margin-top: 0.25rem; display: block;"></small>
                   <input type="hidden" id="isteVerified" name="ISTEVerified" value="false" />
                 </div>
 
-                
 
-                 <h2 style="font-size: 1.5em; color: rgb(182, 181, 181)">
-                    <b>REGISTRATION FEES</b>
-                  </h2>
-                 <p style="font-size: 1.2em">   
-                ▫️Rs 50 for ISTE GECBH Members (will be refunded after attendance)<br />
-                ▫️Rs 400 for Non-ISTE GECBH Members<br />
-                ▫️Rs 450 for Non-GECBH Students
-                  </p><br /><br />
+
+                <h2 style="font-size: 1.5em; color: rgb(182, 181, 181);margin-bottom: 0;">
+                  <b>REGISTRATION FEES</b>
+                </h2>
+                <p style="font-size: 1rem;display: none;margin-bottom: 10 px;margin-top: 0;" id="slotsLeft">Only 30
+                  seats left!!</p>
+
+                <p style="font-size: 1.2em">
+
+                  ▫️Rs 50 for ISTE GECBH Members (will be refunded after attendance)<br />
+                  ▫️Rs 400 for Non-ISTE GECBH Members<br />
+                  ▫️Rs 450 for Non-GECBH Students
+                </p><br /><br />
                 <div id="payment-details-section">
                   <h2 style="font-size: 1.5em; color: rgb(182, 181, 181)">
                     <b>PAYMENT DETAILS</b>
                   </h2>
                   <p style="font-size: 1.2em">
                     Account holder name:
-                    <span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Krishnapriya 
+                    <span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Krishnapriya
                       R</span><br />
                     IFSC code:
                     <span onclick="copyText(this)"
@@ -378,10 +394,13 @@
                   </p>
 
                   <div class="qr-container">
-                    <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
+                    <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code
+                    </button>
                     <div class="qr-section" id="qrSection">
                       <div class="qr-card">
-                        <a href="upi://pay?pa=krishnapriyarmalu-1@okicici&pn=ISTE&cu=INR&tn=EventFee"><img src="assets/img/qr-code-for-membership.jpg" alt="BOTTECH QR" id="qrImage" class="qr-code" loading="lazy"></a>
+                        <a href="upi://pay?pa=krishnapriyarmalu-1@okicici&pn=ISTE&cu=INR&tn=EventFee"><img
+                            src="assets/img/qr-code-for-membership.jpg" alt="BOTTECH QR" id="qrImage" class="qr-code"
+                            loading="lazy"></a>
                         <div class="qr-actions">
                           <button type="button" class="share-btn" id="shareBtn">
                             <span></span>
@@ -397,58 +416,50 @@
                       </div>
                     </div>
                   </div>
-                </div>    
                 </div>
-                <br>
-
-
-
-
-              
-                <!-- Reduced spacing above upload message -->
-                <h4 id="successtext" style="font-size: 1.3em; color: rgb(250, 251, 250); margin-top: 0; padding-top: 0;">
-                  SCREENSHOT OF PAYMENT* (File size less than 4 MB)
-                </h4>
+              </div>
+              <br>
 
 
 
 
 
-               <label
-  for="image"
-  class="file-label"
-  id="display-file"
-  style="display:inline-block; min-width:260px; text-align:center;"
->
-  <i class="fas fa-upload"></i>
-  <span id="file-label-text">Choose an Image or PDF</span>
-  <input
-    name="image"
-    id="image"
-    type="file"
-    accept="image/*,application/pdf"
-    style="display:none;"
-  >
-</label>
+              <!-- Reduced spacing above upload message -->
+              <h4 id="successtext" style="font-size: 1.3em; color: rgb(250, 251, 250); margin-top: 0; padding-top: 0;">
+                SCREENSHOT OF PAYMENT* (File size less than 4 MB)
+              </h4>
 
-                <br />
 
-               <div style="display: flex; gap: 3rem; flex-wrap: wrap; font-size: 1.2em;">
 
-  <!-- Doubts Section -->
-    <p style="font-size: 1.2em">
+
+
+              <label for="image" class="file-label" id="display-file"
+                style="display:inline-block; min-width:260px; text-align:center;">
+                <i class="fas fa-upload"></i>
+                <span id="file-label-text">Choose an Image or PDF</span>
+                <input name="image" id="image" type="file" accept="image/*,application/pdf" style="display:none;">
+              </label>
+
+              <br />
+
+              <div style="display: flex; gap: 3rem; flex-wrap: wrap; font-size: 1.2em;">
+
+                <!-- Doubts Section -->
+                <p style="font-size: 1.2em">
                   If any doubts, contact:
-             
-                  <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/+919497768487?text=Hi,%20I%20am%20facing%20some%20Technical%20challenges%20during%20BotTech%20registration.">
+
+                  <br /><a style="font-size: 1.2rem; font-weight: lighter"
+                    href="https://wa.me/+919497768487?text=Hi,%20I%20am%20facing%20some%20Technical%20challenges%20during%20BotTech%20registration.">
                     📱 Trinita T D </a>
-                        <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
-                          href="https://wa.me/+917902712937?text=Hi,%20I%20have%20some%20queries%20regarding%20BotTech.">📱 Kailasnath R
-                        </a>
+                  <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
+                    href="https://wa.me/+917902712937?text=Hi,%20I%20have%20some%20queries%20regarding%20BotTech.">📱
+                    Kailasnath R
+                  </a>
                 </p>
               </div>
 
-              </div>
-              <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
+            </div>
+            <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
                         padding: 12px 0;
                         color: #ffffff;
                         width: 100%;
@@ -458,16 +469,16 @@
                         margin-bottom: 12px;
                         border-radius: 14px;
                       " />
-              <input type="hidden" id="paymentRequired" name="PaymentRequired" value="Yes" />
-              <input type="text" name="base64" id="glob" value="" hidden />
-              <input type="text" name="type" id="filetype" value="" hidden />
-              <input type="text" name="filename" id="filename" value="" hidden />
-              <br><br><br>
-            </div>
-          </form>
+            <input type="hidden" id="paymentRequired" name="PaymentRequired" value="Yes" />
+            <input type="text" name="base64" id="glob" value="" hidden />
+            <input type="text" name="type" id="filetype" value="" hidden />
+            <input type="text" name="filename" id="filename" value="" hidden />
+            <br><br><br>
         </div>
+        </form>
       </div>
     </div>
+  </div>
   </div>
 
   <!-- loader gif -->
@@ -481,12 +492,12 @@
   <div class="loader-div">
     <img class="loader-img" src="assets/img/gif/tuzuki-usagi.gif" style="height: 150px; width: auto" />
     <div class="loader-text">
-      Verifying... <br> 
+      Verifying... <br>
     </div>
   </div>
 
 
- 
+
 
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -496,10 +507,10 @@
 
   <script>
 
-  // AMBASSADOR START
+    // AMBASSADOR START
     // for membership ttlamount update
     //let refVerified = false;
-  // AMBASSADOR END
+    // AMBASSADOR END
     function updateTotal(selectedOption) {
       const ttlamt = document.getElementById("ttlamt");
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
@@ -525,18 +536,18 @@
           break;
       }
 
-    
 
 
-    ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
-        if (isMobile) {
-          ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
-        } else {
-          ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
-        }
+
+      ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+      if (isMobile) {
+        ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+      } else {
+        ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
       }
-      
-  
+    }
+
+
 
     // check size
     function checkFileSize(file) {
@@ -581,16 +592,58 @@
       }
     }
 
+    async function getCount() {
+      try {
+        // REGISTRATION COUNT!! API
+        const response = await fetch(`
+                
+https://script.google.com/macros/s/AKfycbz0qwTS_2KNjxC3tqvl44XNRbB8RLY3Rz95Htc507KL3kAVGozP3KwAEqfbHQKVZCXldg/exec
 
+                `.trim(), {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'getCount'
+          })
+        });
+        console.log('Response status:', response.status);
+        const result = await response.json();
 
+        if (result.count <= 0) {
+          const successHtml = `
+                 <div id="payment-completed">
+                        <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">Sorry all slots have been filled.</h4>
 
+                        <p style='font-size: 1.2em;color: #f0f0f0;margin:1.5rem 0;'>
+                            Thank you for showing interest in ISTE GECB's events. For more such amazing evenings
+                        </p>
+
+                        <a id='register-now' class='theme-btn gradient mt-3'
+                            style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
+                            href='https://whatsapp.com/channel/0029VamIrg5HrDZXomfgoe3Q' target="_blank">Follow Channel For the Latest Events
+                        </a>
+                    </div>
+            `;
+          document.getElementById("istecall").innerHTML = successHtml;
+        } else {
+          $("#slotsLeft")
+            .text(`Only ${result.count} slots left`)
+            .fadeIn(1000);
+        }
+
+      } catch (e) {
+        console.log(e);
+      }
+
+    }
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
       navigator.userAgent
     );
 
-    window.onload = function() {
+    window.onload = function () {
       try {
         const el = document.getElementById("FULLMEMBERSHIP");
+        getCount();
         if (el && typeof updateTotal === "function") updateTotal(el);
       } catch (e) {
         console.error("Initialization error:", e);
@@ -638,7 +691,7 @@
       // Validate ISTE ID verification if ISTE member
       const isteRadio = document.querySelector('input[name="IsISTE"]:checked');
       const isIsteMember = isteRadio && isteRadio.value === 'Yes';
-      
+
       if (isIsteMember) {
         const isteVerified = document.getElementById('isteVerified').value === 'true';
         if (!isteVerified) {
@@ -674,33 +727,36 @@
       });
 
       // Force critical fields (do NOT rely on serialize timing)
-const isteRadio2 = document.querySelector('input[name="IsISTE"]:checked');
-data.IsISTE = isteRadio2 ? isteRadio2.value : "No";
+      const isteRadio2 = document.querySelector('input[name="IsISTE"]:checked');
+      data.IsISTE = isteRadio2 ? isteRadio2.value : "No";
 
-// Payment rule - EVERYONE pays (no exemptions)
-data.PaymentRequired = "Yes";
+      // Payment rule - EVERYONE pays (no exemptions)
+      data.PaymentRequired = "Yes";
 
-// Explicitly attach file data
-data.base64 = document.getElementById("glob").value || "";
-data.type = document.getElementById("filetype").value || "";
-data.filename = document.getElementById("filename").value || "";
+      // Explicitly attach file data
+      data.base64 = document.getElementById("glob").value || "";
+      data.type = document.getElementById("filetype").value || "";
+      data.filename = document.getElementById("filename").value || "";
 
       // data["Referral"] = "NA"; 
       console.log(data);
 
       $.ajax({
         url: `
-  https://script.google.com/macros/s/AKfycbyvNHiFDUBZ2xucRixBrT3_I-OahMCKLLfz_Fwd9Fwy3kfnbmhhmFXRJRxCw6KLx4nk/exec
-			`.trim(),
+
+https://script.google.com/macros/s/AKfycbz0qwTS_2KNjxC3tqvl44XNRbB8RLY3Rz95Htc507KL3kAVGozP3KwAEqfbHQKVZCXldg/exec
+
+
+                `.trim(),
         method: "POST",
         processData: false,
         data: JSON.stringify(data),
         contentType: "text/plain;charset=utf-8",
         dataType: "json",
         timeout: 20000, // 20s
-        beforeSend: function() {
+        beforeSend: function () {
           // disable submit and show loader
-          $("#istecall input[type='submit']").prop('disabled', true).css('opacity',0.7);
+          $("#istecall input[type='submit']").prop('disabled', true).css('opacity', 0.7);
           $(".send-div").show();
         },
         success: function (response) {
@@ -762,9 +818,9 @@ data.filename = document.getElementById("filename").value || "";
           document.getElementById("successtext").style.color = "red";
           document.getElementById("successtext").innerHTML = message + "<br><small style='color:#ffcccc;'>Check console (F12) & Network tab for details.</small>";
         },
-        complete: function() {
+        complete: function () {
           $(".send-div").fadeOut();
-          $("#istecall input[type='submit']").prop('disabled', false).css('opacity','');
+          $("#istecall input[type='submit']").prop('disabled', false).css('opacity', '');
         }
       });
     });
@@ -796,192 +852,198 @@ data.filename = document.getElementById("filename").value || "";
     });
 
 
-    
-document.addEventListener('DOMContentLoaded', function() {
-  try {
-    const qrToggleBtn = document.getElementById("qrToggleBtn");
-    const qrSection = document.getElementById("qrSection");
-    const qrImage = document.getElementById("qrImage");
-    const downloadBtn = document.getElementById("downloadBtn");
-    const shareBtn = document.getElementById("shareBtn");
 
-    // Robust QR handlers with null-checks, computed-style toggle and share-file fallback
-    if (qrToggleBtn && qrSection) {
-      qrToggleBtn.addEventListener("click", () => {
-        const nowShown = qrSection.classList.toggle('show');
-        qrToggleBtn.textContent = nowShown ? "Hide QR Code" : "Show QR Code";
-        qrToggleBtn.setAttribute('aria-expanded', nowShown ? 'true' : 'false');
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        getCount();
 
-    if (downloadBtn && qrImage) {
-      downloadBtn.addEventListener("click", () => {
-        const link = document.createElement("a");
-        link.href = qrImage.src;
-        link.download = "BOTTECH_QR.png";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      });
-    }
+        const qrToggleBtn = document.getElementById("qrToggleBtn");
+        const qrSection = document.getElementById("qrSection");
+        const qrImage = document.getElementById("qrImage");
+        const downloadBtn = document.getElementById("downloadBtn");
+        const shareBtn = document.getElementById("shareBtn");
 
-    if (shareBtn && qrImage) {
-      shareBtn.addEventListener("click", async () => {
-        if (navigator.share) {
-          try {
-            const res = await fetch(qrImage.src);
-            const blob = await res.blob();
-            const file = new File([blob], "BOTTECH_QR.png", { type: blob.type });
-
-            if (navigator.canShare && navigator.canShare({ files: [file] })) {
-              await navigator.share({
-                title: "BOTTECH Registration QR",
-                text: "Scan to register for BOTTECH workshop",
-                files: [file],
-              });
-            } else {
-              await navigator.share({
-                title: "BOTTECH Registration QR",
-                text: "Scan to register for BOTTECH workshop",
-                url: qrImage.src,
-              });
-            }
-          } catch (err) {
-            console.log("Share failed or cancelled", err);
-            alert("Share was cancelled or failed. You can download the QR instead.");
-          }
-        } else {
-          alert("Sharing not supported on this browser. Try downloading instead.");
-        }
-      });
-    }
-
-    // ISTE ID Email Verification
-    const verifyIsteBtn = document.getElementById('verifyIsteBtn');
-    const isteIdInput = document.getElementById('isteId');
-    const emailInput = document.getElementById('email');
-    const verificationStatus = document.getElementById('verificationStatus');
-    const isteVerifiedInput = document.getElementById('isteVerified');
-
-    if (verifyIsteBtn) {
-      verifyIsteBtn.addEventListener('click', async function() {
-        const isteId = isteIdInput.value.trim();
-        const email = emailInput.value.trim();
-
-        if (!isteId) {
-          verificationStatus.textContent = '❌ Please enter ISTE ID';
-          verificationStatus.style.color = '#da0f3f';
-          isteVerifiedInput.value = 'false';
-          return;
-        }
-
-        if (!email) {
-          verificationStatus.textContent = '❌ Please enter email';
-          verificationStatus.style.color = '#da0f3f';
-          isteVerifiedInput.value = 'false';
-          return;
-        }
-
-        // Show loading state
-        verifyIsteBtn.disabled = true;
-        verifyIsteBtn.textContent = 'Verifying...';
-        verificationStatus.textContent = '⏳ Verifying...';
-        verificationStatus.style.color = '#ffa500';
-
-        try {
-          // Call verification API - use same endpoint as registration
-          const response = await fetch('https://script.google.com/macros/s/AKfycbzgSTAKHxowcn8MYLdfODjtpH2K_OygC-UFZRt5MA5USocpDJMVgcGLbuzhPAinL-GrNQ/exec', {
-            method: 'POST',
-            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-            body: JSON.stringify({
-              action: 'verifyISTE',
-              isteId: isteId,
-              email: email
-            })
+        // Robust QR handlers with null-checks, computed-style toggle and share-file fallback
+        if (qrToggleBtn && qrSection) {
+          qrToggleBtn.addEventListener("click", () => {
+            const nowShown = qrSection.classList.toggle('show');
+            qrToggleBtn.textContent = nowShown ? "Hide QR Code" : "Show QR Code";
+            qrToggleBtn.setAttribute('aria-expanded', nowShown ? 'true' : 'false');
           });
-
-          console.log('Response status:', response.status);
-          const result = await response.json();
-          console.log('Verification result:', result);
-
-          if (result.verified) {
-            verificationStatus.textContent = '✅ ISTE ID verified successfully!';
-            verificationStatus.style.color = '#1db212';
-            isteVerifiedInput.value = 'true';
-          } else {
-            verificationStatus.textContent = `❌ ${result.message || 'ISTE ID does not match with email. Please check and try again.'}`;
-            verificationStatus.style.color = '#da0f3f';
-            isteVerifiedInput.value = 'false';
-          }
-        } catch (error) {
-          console.error('Verification error:', error);
-          verificationStatus.textContent = `⚠️ Network error: ${error.message}. Please check console (F12) for details.`;
-          verificationStatus.style.color = '#da0f3f';
-          isteVerifiedInput.value = 'false';
-        } finally {
-          verifyIsteBtn.disabled = false;
-          verifyIsteBtn.textContent = 'Verify';
         }
-      });
-    }
 
-    // ISTE membership toggle
-    const isteContainer = document.getElementById('iste-id-container');
-    const isteInput = document.getElementById('isteId');
-    function updateIsteMember() {
-      const checked = document.querySelector('input[name="IsISTE"]:checked');
-      const isMember = checked && checked.value === 'Yes';
+        if (downloadBtn && qrImage) {
+          downloadBtn.addEventListener("click", () => {
+            const link = document.createElement("a");
+            link.href = qrImage.src;
+            link.download = "BOTTECH_QR.png";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+        }
 
-      // ISTE ID visibility & requirement
-      if (isteContainer) isteContainer.style.display = isMember ? 'block' : 'none';
-      if (isteInput) {
-        isteInput.required = isMember;
-        if (!isMember) isteInput.value = '';
+        if (shareBtn && qrImage) {
+          shareBtn.addEventListener("click", async () => {
+            if (navigator.share) {
+              try {
+                const res = await fetch(qrImage.src);
+                const blob = await res.blob();
+                const file = new File([blob], "BOTTECH_QR.png", { type: blob.type });
+
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                  await navigator.share({
+                    title: "BOTTECH Registration QR",
+                    text: "Scan to register for BOTTECH workshop",
+                    files: [file],
+                  });
+                } else {
+                  await navigator.share({
+                    title: "BOTTECH Registration QR",
+                    text: "Scan to register for BOTTECH workshop",
+                    url: qrImage.src,
+                  });
+                }
+              } catch (err) {
+                console.log("Share failed or cancelled", err);
+                alert("Share was cancelled or failed. You can download the QR instead.");
+              }
+            } else {
+              alert("Sharing not supported on this browser. Try downloading instead.");
+            }
+          });
+        }
+
+        // ISTE ID Email Verification
+        const verifyIsteBtn = document.getElementById('verifyIsteBtn');
+        const isteIdInput = document.getElementById('isteId');
+        const emailInput = document.getElementById('email');
+        const verificationStatus = document.getElementById('verificationStatus');
+        const isteVerifiedInput = document.getElementById('isteVerified');
+
+        if (verifyIsteBtn) {
+          verifyIsteBtn.addEventListener('click', async function () {
+            const isteId = isteIdInput.value.trim();
+            const email = emailInput.value.trim();
+
+            if (!isteId) {
+              verificationStatus.textContent = '❌ Please enter ISTE ID';
+              verificationStatus.style.color = '#da0f3f';
+              isteVerifiedInput.value = 'false';
+              return;
+            }
+
+            if (!email) {
+              verificationStatus.textContent = '❌ Please enter email';
+              verificationStatus.style.color = '#da0f3f';
+              isteVerifiedInput.value = 'false';
+              return;
+            }
+
+            // Show loading state
+            verifyIsteBtn.disabled = true;
+            verifyIsteBtn.textContent = 'Verifying...';
+            verificationStatus.textContent = '⏳ Verifying...';
+            verificationStatus.style.color = '#ffa500';
+
+            try {
+              // Call verification API - use same endpoint as registration
+              const response = await fetch(
+                `
+                https://script.google.com/macros/s/AKfycbz0qwTS_2KNjxC3tqvl44XNRbB8RLY3Rz95Htc507KL3kAVGozP3KwAEqfbHQKVZCXldg/exec
+                
+                `.trim()
+                , {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                  body: JSON.stringify({
+                    action: 'verifyISTE',
+                    isteId: isteId,
+                    email: email
+                  })
+                });
+
+              console.log('Response status:', response.status);
+              const result = await response.json();
+              console.log('Verification result:', result);
+
+              if (result.verified) {
+                verificationStatus.textContent = '✅ ISTE ID verified successfully!';
+                verificationStatus.style.color = '#1db212';
+                isteVerifiedInput.value = 'true';
+              } else {
+                verificationStatus.textContent = `❌ ${result.message || 'ISTE ID does not match with email. Please check and try again.'}`;
+                verificationStatus.style.color = '#da0f3f';
+                isteVerifiedInput.value = 'false';
+              }
+            } catch (error) {
+              console.error('Verification error:', error);
+              verificationStatus.textContent = `⚠️ Network error: ${error.message}. Please check console (F12) for details.`;
+              verificationStatus.style.color = '#da0f3f';
+              isteVerifiedInput.value = 'false';
+            } finally {
+              verifyIsteBtn.disabled = false;
+              verifyIsteBtn.textContent = 'Verify';
+            }
+          });
+        }
+
+        // ISTE membership toggle
+        const isteContainer = document.getElementById('iste-id-container');
+        const isteInput = document.getElementById('isteId');
+        function updateIsteMember() {
+          const checked = document.querySelector('input[name="IsISTE"]:checked');
+          const isMember = checked && checked.value === 'Yes';
+
+          // ISTE ID visibility & requirement
+          if (isteContainer) isteContainer.style.display = isMember ? 'block' : 'none';
+          if (isteInput) {
+            isteInput.required = isMember;
+            if (!isMember) isteInput.value = '';
+          }
+
+          // Payment and upload sections - ALWAYS SHOW (no exemption)
+          const paymentSection = document.getElementById('payment-details-section');
+          const uploadSection = document.getElementById('upload-section');
+          const paymentRequiredInput = document.getElementById('paymentRequired');
+          const fileEl = document.getElementById('image');
+          const fileLabel = document.getElementById('display-file');
+          const fileLabelText = document.getElementById('file-label-text');
+
+          if (paymentSection) {
+            paymentSection.style.display = ''; // Always show
+            paymentSection.setAttribute('aria-hidden', 'false');
+          }
+          if (uploadSection) {
+            uploadSection.style.display = ''; // Always show
+            uploadSection.setAttribute('aria-hidden', 'false');
+          }
+
+          if (paymentRequiredInput) paymentRequiredInput.value = 'Yes'; // Always require payment
+
+          if (fileEl) {
+            // File upload always required for everyone
+            fileEl.disabled = false;
+            fileEl.required = false; // optional upload
+            fileEl.setAttribute('accept', 'image/*,application/pdf');
+          }
+
+          if (fileLabel) fileLabel.style.display = '';
+          if (fileLabelText) fileLabelText.textContent = 'Choose an Image or PDF';
+
+          const st = document.getElementById('successtext');
+          if (st) st.textContent = 'SCREENSHOT OF PAYMENT* (File size less than 4 MB)';
+
+        }
+        const isteRadios = document.querySelectorAll('input[name="IsISTE"]');
+        if (isteRadios && isteRadios.length) {
+          isteRadios.forEach(r => r.addEventListener('change', updateIsteMember));
+          updateIsteMember();
+        }
+      } catch (e) {
+        console.error("QR initialization error:", e);
       }
-
-      // Payment and upload sections - ALWAYS SHOW (no exemption)
-      const paymentSection = document.getElementById('payment-details-section');
-      const uploadSection = document.getElementById('upload-section');
-      const paymentRequiredInput = document.getElementById('paymentRequired');
-      const fileEl = document.getElementById('image');
-      const fileLabel = document.getElementById('display-file');
-      const fileLabelText = document.getElementById('file-label-text');
-
-      if (paymentSection) {
-        paymentSection.style.display = ''; // Always show
-        paymentSection.setAttribute('aria-hidden', 'false');
-      }
-      if (uploadSection) {
-        uploadSection.style.display = ''; // Always show
-        uploadSection.setAttribute('aria-hidden', 'false');
-      }
-
-      if (paymentRequiredInput) paymentRequiredInput.value = 'Yes'; // Always require payment
-
-      if (fileEl) {
-        // File upload always required for everyone
-        fileEl.disabled = false;
-        fileEl.required = false; // optional upload
-        fileEl.setAttribute('accept', 'image/*,application/pdf');
-      }
-
-      if (fileLabel) fileLabel.style.display = '';
-      if (fileLabelText) fileLabelText.textContent = 'Choose an Image or PDF';
-
-      const st = document.getElementById('successtext');
-      if (st) st.textContent = 'SCREENSHOT OF PAYMENT* (File size less than 4 MB)';
-
-    }
-    const isteRadios = document.querySelectorAll('input[name="IsISTE"]');
-    if (isteRadios && isteRadios.length) {
-      isteRadios.forEach(r => r.addEventListener('change', updateIsteMember));
-      updateIsteMember();
-    }
-  } catch (e) {
-    console.error("QR initialization error:", e);
-  }
-});
-
+    });
 
 
 
