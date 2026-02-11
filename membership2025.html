@@ -351,7 +351,7 @@
                     <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
                       <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
                         onclick="updateTotal(this)" checked style="width: 20px; height: 20px" />
-                      &nbsp;ISTE + FULL MEMBERSHIP: <i>₹1400/-</i>
+                      &nbsp;ISTE + FULL MEMBERSHIP: <i>₹1150/-</i>
                     </label>
                   </div>
                   <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
@@ -528,7 +528,7 @@
 
       let total = 0;
       let membershipText = "";
-      const fullPrice = 1400; // Original FULL price
+      const fullPrice = 1150; // Original FULL price
 
       switch (selectedOption.value) {
         case "BR":
@@ -541,7 +541,7 @@
           break;
         case "FULL":
           //total = refVerified ? 1000 : fullPrice;
-          total = 1400
+          total = 1150
           membershipText = "ISTE + FULL MEMBERSHIP";
           break;
       }
