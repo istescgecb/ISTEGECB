@@ -275,6 +275,16 @@
 								<input placeholder="Your Team Name" name="teamname" id="teamname" type="text"
 									onchange="" tabindex="1" autofocus="" required="">
 
+											<label class="mb-2 ml-2">Number of Team Members</label>
+											<select id="teamCount" onchange="handleTeamCount()" required>
+												<option value="" disabled selected>Select team size</option>
+												<!-- <option value="2">2</option> -->
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+
+
 								<label for="firstproject" class="mb-2 ml-2">Project First Preference</label>
 								<select id="firstproject" name="firstproject" autofocus="" required="">
 									<option value="" hidden>Select Project</option>
@@ -357,14 +367,6 @@
 									<option value="Online Library Management System Website">Online Library Management
 										System Website</option>
 								</select>
-
-								<label class="mb-2 ml-2">Number of Team Members</label>
-								<input type="number" id="teamCount" min="2" max="5"
-								placeholder="Enter team size (2-5)"
-								oninput="handleTeamCount()"  required>
-
-
-
 
 								<div class="team-leadteam-lead" id="mem1">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Team Leader </h2>
