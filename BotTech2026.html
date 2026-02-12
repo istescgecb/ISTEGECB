@@ -353,14 +353,13 @@
 
                 <div id="iste-id-container" style="display:none; margin-top:0.5rem;">
                   <label class="mb-2 ml-2" for="isteId">ISTE ID</label><br />
-                  <input type="text" id="isteId" name="ISTEId" placeholder="Enter ISTE membership ID" class="ffield" />
+                  <input type="text" id="isteId" name="ISTEId" placeholder="Enter ISTE membership ID" class="ffield mb-0" />
+                  <small id="verificationStatus" style="color: #fdfbfb; margin-top: 0rem;margin-bottom: 0.5rem; display: block;"></small>
+
                   <button type="button" id="verifyIsteBtn" class="theme-btn gradient"
-                    style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow: none; margin-top: 0.5rem;">Verify</button>
-                  <small id="verificationStatus" style="color: #fdfbfb; margin-top: 0.25rem; display: block;"></small>
+                    style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow: none;margin-bottom: 0.75rem ;">Verify</button>
                   <input type="hidden" id="isteVerified" name="ISTEVerified" value="false" />
                 </div>
-
-
 
                 <h2 style="font-size: 1.5em; color: rgb(182, 181, 181);">
                   <b>REGISTRATION FEES</b>
@@ -552,6 +551,9 @@
 
 
 
+      /* ======================================================================================================
+      ======================== checkSize: check size to make sure its smmall than 4mb  ========================
+      ========================================================================================================= */
     // check size
     function checkFileSize(file) {
       const input = document.getElementById("image");
@@ -594,6 +596,11 @@
         fileLabelText.textContent = "Choose an Image or PDF";
       }
     }
+
+    
+      /* ======================================================================================================
+      ================================= getcount: GET SLOTS LEFT COUNT  ========================================
+     ========================================================================================================= */
 
     async function getCount() {
       try {
@@ -686,6 +693,11 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
     function a() {
       $(".send-div").show();
     }
+       /* ======================================================================================================
+       ================================= REGISTRATION FORM  ====================================================
+      ========================================================================================================= */
+
+
     document.getElementById("istecall").addEventListener("submit", a);
 
     $("#istecall").submit((e) => {
@@ -748,8 +760,8 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
       $.ajax({
         url: `
 
-https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2JNqsf7p-sRPiHQCGAOPZhzYr3NrAMA/exec
 
+https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2JNqsf7p-sRPiHQCGAOPZhzYr3NrAMA/exec
 
 
                 `.trim(),
@@ -857,10 +869,14 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
     });
 
 
+    /* ======================================================================================================
+    ================================= verifyCountLogic: verifies membership  ================================
+    ========================================================================================================= */
 
     document.addEventListener('DOMContentLoaded', function () {
       try {
         getCount();
+
 
         const qrToggleBtn = document.getElementById("qrToggleBtn");
         const qrSection = document.getElementById("qrSection");
@@ -925,74 +941,105 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
         const emailInput = document.getElementById('email');
         const verificationStatus = document.getElementById('verificationStatus');
         const isteVerifiedInput = document.getElementById('isteVerified');
+        let isteId = isteIdInput.value.toUpperCase().trim();
+        let email = emailInput.value.toLowerCase().trim();
+        let len = isteIdInput.value.trim().length;
 
-        if (verifyIsteBtn) {
-          verifyIsteBtn.addEventListener('click', async function () {
-            const isteId = isteIdInput.value.trim();
-            const email = emailInput.value.trim();
+        async function verifyISTE() {
+          $(verifyIsteBtn).fadeIn();
 
-            if (!isteId) {
-              verificationStatus.textContent = '❌ Please enter ISTE ID';
-              verificationStatus.style.color = '#da0f3f';
-              isteVerifiedInput.value = 'false';
-              return;
-            }
+          isteId = isteIdInput.value.toUpperCase().trim();
+          email = emailInput.value.toLowerCase().trim();
+          len = isteIdInput.value.trim().length;
 
-            if (!email) {
-              verificationStatus.textContent = '❌ Please enter email';
-              verificationStatus.style.color = '#da0f3f';
-              isteVerifiedInput.value = 'false';
-              return;
-            }
 
-            // Show loading state
-            verifyIsteBtn.disabled = true;
-            verifyIsteBtn.textContent = 'Verifying...';
-            verificationStatus.textContent = '⏳ Verifying...';
+          if (!isteId) {
+            verificationStatus.textContent = '❌ Please enter ISTE ID';
+            verificationStatus.style.color = '#da0f3f';
+            isteVerifiedInput.value = 'false';
+            return;
+          }
+          
+          if (len !== 9) {
+            verificationStatus.textContent = `❌ ISTE ID must be 9 characters. You entered ${len}.`;
             verificationStatus.style.color = '#ffa500';
+            isteVerifiedInput.value = 'false';
+            return;
+          }
 
-            try {
-              // Call verification API - use same endpoint as registration
-              const response = await fetch(
-                `
-                https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2JNqsf7p-sRPiHQCGAOPZhzYr3NrAMA/exec
-                
-                
-                `.trim()
-                , {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                  body: JSON.stringify({
-                    action: 'verifyISTE',
-                    isteId: isteId,
-                    email: email
-                  })
-                });
+          if (!email) {
+            verificationStatus.textContent = '❌ Please enter email';
+            verificationStatus.style.color = '#da0f3f';
+            isteVerifiedInput.value = 'false';
+            return;
+          }
 
-              console.log('Response status:', response.status);
-              const result = await response.json();
-              console.log('Verification result:', result);
+          verifyIsteBtn.disabled = true;
+          verifyIsteBtn.textContent = 'Verifying...';
+          verificationStatus.textContent = '⏳ Verifying...';
+          verificationStatus.style.color = '#ffa500';
 
-              if (result.verified) {
-                verificationStatus.textContent = '✅ ISTE ID verified successfully!';
-                verificationStatus.style.color = '#1db212';
-                isteVerifiedInput.value = 'true';
-              } else {
-                verificationStatus.textContent = `❌ ${result.message || 'ISTE ID does not match with email. Please check and try again.'}`;
-                verificationStatus.style.color = '#da0f3f';
-                isteVerifiedInput.value = 'false';
+          try {
+            const response = await fetch(
+              "https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2JNqsf7p-sRPiHQCGAOPZhzYr3NrAMA/exec",
+              {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({
+                  action: 'verifyISTE',
+                  isteId,
+                  email
+                })
               }
-            } catch (error) {
-              console.error('Verification error:', error);
-              verificationStatus.textContent = `⚠️ Network error: ${error.message}. Please check console (F12) for details.`;
+            );
+
+            const result = await response.json();
+
+            if (result.verified) {
+              verificationStatus.textContent = '✅ ISTE ID verified successfully!';
+              verificationStatus.style.color = '#1db212';
+              isteVerifiedInput.value = 'true';
+              verificationStatus.style.marginBottom = '20px';
+
+              $('#isteId').val(isteId).prop('disabled', true).css('color', 'rgb(182, 181, 181)');
+              $('#email').val(email).prop('disabled', true).css('color', 'rgb(182, 181, 181)');
+              $('#verifyIsteBtn').prop('disabled', true).text('Verified');
+
+              $(verifyIsteBtn).fadeOut(2500);
+
+            } else {
+              verificationStatus.textContent =
+                `❌ ${result.message || 'ISTE ID does not match with email.'}`;
               verificationStatus.style.color = '#da0f3f';
               isteVerifiedInput.value = 'false';
-            } finally {
-              verifyIsteBtn.disabled = false;
-              verifyIsteBtn.textContent = 'Verify';
+              $(verifyIsteBtn).fadeIn();
+
             }
-          });
+
+          } catch (err) {
+            verificationStatus.textContent = '⚠️ Network error. Check console.';
+            verificationStatus.style.color = '#da0f3f';
+            isteVerifiedInput.value = 'false';
+            $(verifyIsteBtn).fadeIn();
+            console.error(err);
+          } finally {
+            verifyIsteBtn.disabled = false;
+            verifyIsteBtn.textContent = 'Verify';
+          }
         }
+
+        /* ========= TRIGGERS ========= */
+
+        // Button click
+        verifyIsteBtn.addEventListener('click', verifyISTE);
+
+        //  Auto verify when ISTE ID hits 9 chars
+        isteIdInput.addEventListener('input', () => {
+          if (isteIdInput.value.trim().length === 9) {
+            verifyISTE();
+          }
+        });
+
 
         // ISTE membership toggle
         const isteContainer = document.getElementById('iste-id-container');
