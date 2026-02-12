@@ -362,18 +362,19 @@
 
 
 
-                <h2 style="font-size: 1.5em; color: rgb(182, 181, 181);margin-bottom: 0;">
+                <h2 style="font-size: 1.5em; color: rgb(182, 181, 181);">
                   <b>REGISTRATION FEES</b>
                 </h2>
-                <p style="font-size: 1rem;display: none;margin-bottom: 10 px;margin-top: 0;" id="slotsLeft">Only 30
-                  seats left!!</p>
-
-                <p style="font-size: 1.2em">
-
+                <h2 style="font-weight: 400;font-size: 17px;color: rgb(235, 208, 200); margin-bottom: 0;"  id="slotsLeft">
+                  <i>Only 30 seats left!!</i>
+                </h2>
+                <p style="font-size: 1.2em;">
                   ▫️Rs 50 for ISTE GECBH Members (will be refunded after attendance)<br />
                   ▫️Rs 400 for Non-ISTE GECBH Members<br />
-                  ▫️Rs 450 for Non-GECBH Students
-                </p><br /><br />
+                  ▫️Rs 450 for Non-GECBH Students  
+                </p>  
+               
+                </p>
                 <div id="payment-details-section">
                   <h2 style="font-size: 1.5em; color: rgb(182, 181, 181)">
                     <b>PAYMENT DETAILS</b>
@@ -628,7 +629,7 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
           document.getElementById("istecall").innerHTML = successHtml;
         } else {
           $("#slotsLeft")
-            .text(`Only ${result.count} slots left`)
+            .html(`<i>Only ${result.count} slots left!!<i>`)
             .fadeIn(1000);
         }
 
