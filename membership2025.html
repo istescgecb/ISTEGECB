@@ -338,10 +338,12 @@
 
                 <br />
 
-                <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 400; color: rgb(241, 131, 28);">
-                  <strong>MEMBERSHIP OPTIONS</strong>
-                </label>
-                <br>
+                <!-- <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 500; color: rgb(241, 131, 28);">
+                  MEMBERSHIP OPTIONS(BotTech Offer Active)
+                </label> -->
+                <h2 style="font-size: 1.5em; color: rgb(245, 98, 12);margin-bottom: 0.5rem;">
+                  <b>MEMBERSHIP OPTIONS - OFFER ACTIVE</b>
+                </h2>
                 <div style="font-size: 1.2rem;">
 
                 </div>
@@ -351,7 +353,7 @@
                     <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
                       <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
                         onclick="updateTotal(this)" checked style="width: 20px; height: 20px" />
-                      &nbsp;ISTE + FULL MEMBERSHIP: <i>₹1150/-</i>
+                      &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400</s> <i> ₹1150/-</i>
                     </label>
                   </div>
                   <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
@@ -697,7 +699,7 @@
       $(formData).each(function (index, obj) {
         data[obj.name] = obj.value;
       });
-      // data["Referral"] = "NA"; 
+      data["Referral"] = "1150 - Bottech Offer Active"; 
       // console.log(data);
 
       $.ajax({
