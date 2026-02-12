@@ -1442,7 +1442,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 
+@media screen  and (max-width:768px){
 
+        .on-contact {
+          margin-top: 12%;
+        }
+        .event-card-on-reg-page{
+          width: 100%;
+        }
+        .membership-form-card{
+          width: 90%;
+        }
+}
 
 
 
