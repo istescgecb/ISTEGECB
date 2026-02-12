@@ -1001,9 +1001,9 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
               isteVerifiedInput.value = 'true';
               verificationStatus.style.marginBottom = '20px';
 
-              $('#isteId').val(isteId).prop('disabled', true).css('color', 'rgb(182, 181, 181)');
-              $('#email').val(email).prop('disabled', true).css('color', 'rgb(182, 181, 181)');
-              $('#verifyIsteBtn').prop('disabled', true).text('Verified');
+              $('#isteId').val(isteId).prop('readonly', true).css('color', 'rgb(182, 181, 181)');
+              $('#email').val(email).prop('readonly', true).css('color', 'rgb(182, 181, 181)');
+              $('#verifyIsteBtn').prop('readonly', true).text('Verified');
 
               $(verifyIsteBtn).fadeOut(2500);
 
