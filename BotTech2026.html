@@ -654,7 +654,8 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
     window.onload = function () {
       try {
         const el = document.getElementById("FULLMEMBERSHIP");
-        getCount();
+        // initialize getCount
+        // getCount();
         if (el && typeof updateTotal === "function") updateTotal(el);
       } catch (e) {
         console.error("Initialization error:", e);
@@ -869,13 +870,12 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
     });
 
 
-    /* ======================================================================================================
-    ================================= verifyCountLogic: verifies membership  ================================
-    ========================================================================================================= */
 
     document.addEventListener('DOMContentLoaded', function () {
       try {
-        getCount();
+
+        // initialize count
+        // getCount();
 
 
         const qrToggleBtn = document.getElementById("qrToggleBtn");
@@ -934,6 +934,12 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
             }
           });
         }
+
+
+        
+        /* ======================================================================================================
+        ================================= verifyCountLogic: verifies membership  ================================
+        ========================================================================================================= */
 
         // ISTE ID Email Verification
         const verifyIsteBtn = document.getElementById('verifyIsteBtn');
@@ -1005,7 +1011,7 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
               $('#email').val(email).prop('readonly', true).css('color', 'rgb(182, 181, 181)');
               $('#verifyIsteBtn').prop('readonly', true).text('Verified');
 
-              $(verifyIsteBtn).fadeOut(2500);
+              $(verifyIsteBtn).fadeOut(500);
 
             } else {
               verificationStatus.textContent =
