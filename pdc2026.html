@@ -422,17 +422,17 @@
 										<option value="Mechanical Engineering">Mechanical Engineering</option>
 									</select>
 
-									<label for="Are You Iste" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select id="isIste" name="Are You ISTE" onclick="updateTotal()" autofocus=""
-										required="">
-										<option value="" hidden="">Select option</option>
+									<label for="Are You Iste" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="isIste" oninput="updateTotal()" required="">
+
+										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
-									</select>
+									</select> -->
 
 								</div>
 
-								<br><br>
+								<br><hr style="color:grey; height: 5px;"><br>
 
 								<div class="team-mem-1" id="mem2">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Second Team Member </h2>
@@ -466,15 +466,15 @@
 
 
 
-									<label for="Are You Iste1" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select name="Are You Iste1" id="is-iste2" onclick="updateTotal()" autofocus=""
-										required="">
-										<option value="" hidden="">Select option</option>
+									<label for="Are You Iste1" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste2" oninput="updateTotal()" required="">
+
+										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
-									</select>
+									</select> -->
 
-								</div> <br><br>
+								</div> <br><hr style="color:grey; height: 5px;"><br>
 
 
 								<div class="team-mem-1" id="mem3">
@@ -507,16 +507,16 @@
 										<option value="Mechanical Engineering">Mechanical Engineering</option>
 									</select>
 
-									<label for="Are You Iste2" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select name="Are You Iste2" id="is-iste3" autofocus="" required="" onchange="updateTotal()"
-										>
-										<option value="" hidden="">Select option</option>
+									<label for="Are You Iste2" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste3" oninput="updateTotal()" required="">
+
+										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
-									</select>
+									</select> -->
 
 
-								</div><br><br>
+								</div><br><hr style="color:grey; height: 5px;"><br>
 
 								<div class="team-mem-1" id="mem4">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fourth Team Member </h2>
@@ -550,13 +550,14 @@
 									</select>
 
 
-									<label for="Are You Iste3" class="mb-2 ml-2">Are you an ISTE member?</label>
-									<select name="Are You Iste3" id="is-iste4" autofocus="" onchange="updateTotal()">
-										<option value="" hidden="">Select option</option>
+									<label for="Are You Iste3" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste4" oninput="updateTotal()">
+
+										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
-									</select>
-
+									</select> -->
+									<hr style="color:grey; height: 5px;">
 								</div> <br><br>
 
 
@@ -592,37 +593,38 @@
 									</select>
 
 
-									<label for="Are You Iste4" class="mb-2 ml-2">Are you an ISTE member?</label>
-									<select name="Are You Iste4" id="is-iste5" autofocus="" onchange="updateTotal()">
-										<option value="" hidden="">Select option</option>
+									<label for="Are You Iste4" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste5" oninput="updateTotal()" >
+										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
-									</select><br><br>
+									</select><br><br> -->
+									<hr style="color:grey; height: 5px;">
 
 								</div>
 
 
 
 
-							
-
+						
                                 <!-- Account details -->
 								<div class="account-details">
-									<h6 style="font-size: 1.5em; color: rgb(214, 91, 20)">
-										PAYMENT DETAILS
-									</h6>
+									<h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
+										<b>PAYMENT DETAILS</b>
+									</h2>
 									<p style="font-size: 1.2em">
-										Account holder name: Krishnapriya R<br />
+										Account holder name:
+										<span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Krishnapriya
+										R</span><br />
 										IFSC code:
-										<span style="user-select: all; font: inherit">SBIN0070259</span><br />
+										<span onclick="copyText(this)"
+										style="cursor: pointer; user-select: all; font: inherit">SBIN0070259</span><br />
 										Account number:
-										<span style="user-select: all; font: inherit">44148248108</span><br />
-										UPI ID:(Gpay/PhonePe/Paytm)
-										<span style="
-										user-select: all;
-										font: inherit;
-										padding: inherit;
-										">krishnapriyarmalu-1@okicici</span>
+										<span onclick="copyText(this)"
+										style="cursor: pointer; user-select: all; font: inherit">44148248108</span><br />
+										UPI ID:
+										<span onclick="copyText(this)"
+										style="cursor: pointer; user-select: all; font: inherit">krishnapriyarmalu-1@okicici</span>
 									</p>
 								</div>
 
@@ -787,6 +789,34 @@
 		}
 
 
+		function copyText(element) {
+			let text = element.textContent.trim();
+			text = text.split(/\s+/).join(" ");
+			const originalText = element.textContent;
+			if (text === "Copied to Clipboard") return;
+
+			//  hidden box
+			const textarea = document.createElement("textarea");
+			textarea.value = text;
+			document.body.appendChild(textarea);
+
+			// copy
+			textarea.select();
+			textarea.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+			document.body.removeChild(textarea);
+
+			// feedback
+			element.textContent = "Copied to Clipboard";
+			element.style.fontWeight = "400";
+
+			// revert back
+			setTimeout(() => {
+				element.textContent = originalText;
+				element.style.backgroundColor = "";
+				element.style.fontWeight = "";
+			}, 350);
+			}
 
 		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
 		function handleTeamCount() {
@@ -806,23 +836,7 @@
 				}
 			}
 		}
-function handleTeamCount() {
-			const count = parseInt(document.getElementById("teamCount").value);
 
-			for (let i = 3; i <= 5; i++) {
-				const section = document.getElementById(`mem${i}`);
-				const fields = section.querySelectorAll("input, select");
-
-				if (count >= i) {
-					section.style.display = "block";
-					fields.forEach(f => f.setAttribute("required", "required"));
-				} 
-				else {
-					section.style.display = "none";
-					fields.forEach(f => f.removeAttribute("required"));
-				}
-			}
-		}
 
 
 
@@ -833,16 +847,25 @@ function handleTeamCount() {
 			const filledValues = elements
 				.map(id => document.getElementById(id))
 				.filter(el => el && el.value.trim() !== "")
-				.map(el => el.value.toLowerCase());
+				
+			const allIsteMembers =
+				filledValues.length > 0 &&
+				filledValues.every(el => el.value.trim() !== "0");
+			const total = allIsteMembers ? 50 : 150;
+
+			
+
+
+			
 
 			// If no members are filled then default to 150
-			const allYes = filledValues.length > 0 && filledValues.every(v => v === "yes");
+			//const allYes = filledValues.length > 0 && filledValues.every(v => v === "yes");
 
 
 			// Check if all elements have the value "yes"
 			//const allYes = elements.every(id => document.getElementById(id).value.toLowerCase() === "yes");
 			// Set total based on whether all elements have the value "yes"
-			const total = allYes ? 50 : 150;
+			// const total = allYes ? 50 : 150;
 			// Update ttlamt styles and content
 			const ttlamt = document.getElementById('ttlamt');
 			Object.assign(ttlamt.style, {
@@ -1115,16 +1138,16 @@ function handleTeamCount() {
 
 									<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
 									<p style='font-size: 1.2em;color: green;'>
-										Account holder name: Devika Asok<br>
-										IFSC code: CNRB0005114<br>
-										Account number: 110191178480<br>
+										Account holder name: Krishnapriya R<br>
+										IFSC code: SBIN0070259<br>
+										Account number: 44148248108<br>
 										Gpay / PhonePe / Paytm: 7012310891<br>
-										UPI id: deepzdevika@oksbi
+										UPI id: krishnapriyarmalu-1@okicici
 									</p>
 
 									<a id='register-now' class='theme-btn gradient mt-3'
 										style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
-										href='https://chat.whatsapp.com/B7VMXGFrobB6jZZs1ZkYNd' target="_blank">Join Our Whatsapp Group
+										href='https://chat.whatsapp.com/DYtDWVqoErE0sI5YDV5aen?mode=gi_t' target="_blank">Join Our Whatsapp Group
 									</a>
 								</div>`;
 
