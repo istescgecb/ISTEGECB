@@ -31,9 +31,12 @@
 
 	<title>ISTE GECBH</title>
 	<style>
-		#mem3,
 		#mem4,
 		#mem5{
+			display: none;
+		}
+
+		#input-custom-project{
 			display: none;
 		}
 
@@ -286,7 +289,7 @@
 
 
 								<label for="firstproject" class="mb-2 ml-2">Project Preference</label>
-								<select id="firstproject" name="firstproject" autofocus="" required="">
+								<select id="firstproject" name="firstproject" autofocus="" required="" onchange="handleCustomProject()">
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -317,7 +320,76 @@
 									<option value="Custom Project">Custom Project</option>
 
 								</select>
-								<br><br>
+
+							<div id="input-custom-project">
+								<label for="custom-project" class="mb-2 ml-2">Input your Custom Project</label>
+								<input placeholder="Project Name" name="projectName" type="text" id="projectName"
+										autofocus="">
+							</div>
+							
+
+							<div id = "show-project-preference">
+								<label for="secondproject" class="mb-2 ml-2">Project Second Preference</label>
+								<select id="secondproject" name="secondproject" autofocus="" required="">
+									<option value="" hidden>Select Project</option>
+									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
+									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
+									<option value="Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions">Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions
+									</option>
+									<option value="Fire Extinguisher">Fire Extinguisher</option>
+									<option value="Autonomous Luggage/Cart Follower">Autonomous Luggage/Cart Follower</option>
+									<option value="Anti-Theft \'Smart\' Courier Box">Anti-Theft "Smart" Courier Box</option>
+									<option value="Smart Bin with Fill-Level Prediction">Smart Bin with Fill-Level Prediction</option>
+									<option value="Water Level Indicator">Water Level Indicator</option>
+									<option value="Obstacle Avoiding car">Obstacle Avoiding car</option>
+									<option value="Automatic room light control">Automatic room light control</option>
+									<option value="Room automation using hand gestures">Room automation using hand gestures</option>
+									<option value="Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism">Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism</option>
+									<option value="Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles">Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles</option>
+									<option value="Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools">Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools</option>
+									<option value="Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing">Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing
+									</option>
+									<option value="Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow">Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow</option>
+									<option value="Weather Dashboard">Weather Dashboard</option>
+									<option value="Online Quiz App">Online Quiz App</option>
+									<option value="Attendance Management System">Attendance Management System</option>
+									<option value="To-Do App with Priority Logic">To-Do App with Priority Logic</option>
+									<option value="Railway Ticket Booking System">Railway Ticket Booking System</option>
+									<option value="Single Bank Account Simulator">Single Bank Account Simulator</option>
+									<option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
+								</select>
+
+								<label for="thirdproject" class="mb-2 ml-2">Project Third Preference</label>
+								<select id="thirdproject" name="thirdproject" autofocus="" required="">
+									<option value="" hidden>Select Project</option>
+									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
+									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
+									<option value="Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions">Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions
+									</option>
+									<option value="Fire Extinguisher">Fire Extinguisher</option>
+									<option value="Autonomous Luggage/Cart Follower">Autonomous Luggage/Cart Follower</option>
+									<option value="Anti-Theft \'Smart\' Courier Box">Anti-Theft "Smart" Courier Box</option>
+									<option value="Smart Bin with Fill-Level Prediction">Smart Bin with Fill-Level Prediction</option>
+									<option value="Water Level Indicator">Water Level Indicator</option>
+									<option value="Obstacle Avoiding car">Obstacle Avoiding car</option>
+									<option value="Automatic room light control">Automatic room light control</option>
+									<option value="Room automation using hand gestures">Room automation using hand gestures</option>
+									<option value="Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism">Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism</option>
+									<option value="Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles">Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles</option>
+									<option value="Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools">Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools</option>
+									<option value="Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing">Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing
+									</option>
+									<option value="Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow">Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow</option>
+									<option value="Weather Dashboard">Weather Dashboard</option>
+									<option value="Online Quiz App">Online Quiz App</option>
+									<option value="Attendance Management System">Attendance Management System</option>
+									<option value="To-Do App with Priority Logic">To-Do App with Priority Logic</option>
+									<option value="Railway Ticket Booking System">Railway Ticket Booking System</option>
+									<option value="Single Bank Account Simulator">Single Bank Account Simulator</option>
+									<option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
+								</select>
+
+							</div><br><br>
 								
 
 								<div class="team-leadteam-lead" id="mem1">
@@ -409,22 +481,22 @@
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Third Team Member </h2>
 									<label for="team member2" class="mb-2 ml-2">Team Member 3</label>
 									<input placeholder="Enter  Name" name="team member2" type="text" id="team-member3"
-										autofocus="">
+										autofocus="" required="">
 									<label for="mobile member2" class="mb-2 ml-2">Mobile Number</label><br>
 									<input placeholder="Enter Mobile number" name="mobile member2" type="tel"
-										pattern="[0-9]*" id="mobile-member3" autofocus="" >
+										pattern="[0-9]*" id="mobile-member3" autofocus="" required="">
 									<label for="email member2" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="email member2" type="email"
-										id="email-member3" autofocus="">
+										id="email-member3" autofocus="" required="">
 									<label for="Sem member2" class="mb-2 ml-2">Semester</label>
-									<select name="Sem member2" id="sem-member3" autofocus="" >
+									<select name="Sem member2" id="sem-member3" autofocus="" required="">
 										<option value="" hidden="">Select semester</option>
 
 										<option value="S2">S2</option>
 										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member2" class="mb-2 ml-2">Branch</label>
-									<select name="Branch member2" id="branch-member3" autofocus="" >
+									<select name="Branch member2" id="branch-member3" autofocus="" required="">
 										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
@@ -436,7 +508,7 @@
 									</select>
 
 									<label for="Are You Iste2" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select name="Are You Iste2" id="is-iste3" autofocus="" onchange="updateTotal()"
+									<select name="Are You Iste2" id="is-iste3" autofocus="" required="" onchange="updateTotal()"
 										>
 										<option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
@@ -532,7 +604,7 @@
 
 
 
-								<br><br>
+							
 
                                 <!-- Account details -->
 								<div class="account-details">
@@ -686,26 +758,70 @@
    		// <h1 style="color: white;">Project Development Challenge</h1>
     	// <p style="color: white;">The challenge for 2026 has been officially closed.</p>`;
 
+		/* HANDLE CUSTOM PROJECT - updated on 16th Feb 2026 */
+		function handleCustomProject() {
+			const custom_proj = document.getElementById("firstproject").value;
+			const section = document.getElementById("show-project-preference");
+
+			const second = document.getElementById("secondproject");
+			const third  = document.getElementById("thirdproject");
+
+			const custom_project_input = document.getElementById("input-custom-project");
+			const input_project_name = document.getElementById("projectName");
+
+
+			if (custom_proj === "Custom Project") {
+				section.style.display = "none";
+				second.removeAttribute("required");
+				third.removeAttribute("required");
+				custom_project_input.style.display = "block";
+				input_project_name.setAttribute("required", "required");
+
+			} else {
+				section.style.display = "block";
+
+				second.setAttribute("required", "required");
+				third.setAttribute("required", "required");
+				custom_project_input.style.display = "none";
+			}
+		}
 
 
 
 		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
 		function handleTeamCount() {
-		const count = parseInt(document.getElementById("teamCount").value);
+			const count = parseInt(document.getElementById("teamCount").value);
 
-		for (let i = 3; i <= 5; i++) {
-			const section = document.getElementById(`mem${i}`);
-			const fields = section.querySelectorAll("input, select");
+			for (let i = 3; i <= 5; i++) {
+				const section = document.getElementById(`mem${i}`);
+				const fields = section.querySelectorAll("input, select");
 
-			if (count >= i) {
-				section.style.display = "block";
-				fields.forEach(f => f.setAttribute("required", "required"));
-			} 
-			else {
-				section.style.display = "none";
-				fields.forEach(f => f.removeAttribute("required"));
+				if (count >= i) {
+					section.style.display = "block";
+					fields.forEach(f => f.setAttribute("required", "required"));
+				} 
+				else {
+					section.style.display = "none";
+					fields.forEach(f => f.removeAttribute("required"));
+				}
 			}
 		}
+function handleTeamCount() {
+			const count = parseInt(document.getElementById("teamCount").value);
+
+			for (let i = 3; i <= 5; i++) {
+				const section = document.getElementById(`mem${i}`);
+				const fields = section.querySelectorAll("input, select");
+
+				if (count >= i) {
+					section.style.display = "block";
+					fields.forEach(f => f.setAttribute("required", "required"));
+				} 
+				else {
+					section.style.display = "none";
+					fields.forEach(f => f.removeAttribute("required"));
+				}
+			}
 		}
 
 
@@ -902,6 +1018,9 @@
 
 			var teamName = document.getElementById('teamname').value;
 			var firstProject = document.getElementById('firstproject').value;
+			var secondProject = document.getElementById('secondproject').value;
+			var thirdProject = document.getElementById('thirdproject').value;
+			var projectName = document.getElementById('projectName').value;
 			var teamLead = document.getElementById('teamlead').value;
 			var mobileNumber = document.getElementById('mobilenumber').value;
 			var email = document.getElementById('Email1').value;
@@ -948,6 +1067,9 @@
 					name: file.files[0].name,
 					teamName: teamName,
 					firstProject: firstProject,
+					secondProject: secondProject,
+					thirdProject: thirdProject,
+					projectName: projectName,
 					TeamLead: teamLead,
 					mobileMember1: mobileNumber,
 					emailMember1: email,
