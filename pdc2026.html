@@ -481,22 +481,22 @@
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Third Team Member </h2>
 									<label for="team member2" class="mb-2 ml-2">Team Member 3</label>
 									<input placeholder="Enter  Name" name="team member2" type="text" id="team-member3"
-										autofocus="" required="">
+										autofocus="">
 									<label for="mobile member2" class="mb-2 ml-2">Mobile Number</label><br>
 									<input placeholder="Enter Mobile number" name="mobile member2" type="tel"
-										pattern="[0-9]*" id="mobile-member3" autofocus="" required="">
+										pattern="[0-9]*" id="mobile-member3" autofocus="" >
 									<label for="email member2" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="email member2" type="email"
-										id="email-member3" autofocus="" required="">
+										id="email-member3" autofocus="">
 									<label for="Sem member2" class="mb-2 ml-2">Semester</label>
-									<select name="Sem member2" id="sem-member3" autofocus="" required="">
+									<select name="Sem member2" id="sem-member3" autofocus="" >
 										<option value="" hidden="">Select semester</option>
 
 										<option value="S2">S2</option>
 										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member2" class="mb-2 ml-2">Branch</label>
-									<select name="Branch member2" id="branch-member3" autofocus="" required="">
+									<select name="Branch member2" id="branch-member3" autofocus="">
 										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
@@ -508,7 +508,7 @@
 									</select>
 
 									<label for="Are You Iste2" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste3" oninput="updateTotal()" required="">
+									<input type="text" id="is-iste3" oninput="updateTotal()">
 
 										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
@@ -851,7 +851,7 @@
 		function handleTeamCount() {
 			const count = parseInt(document.getElementById("teamCount").value);
 
-			for (let i = 3; i <= 5; i++) {
+			for (let i = 4; i <= 5; i++) {
 				const section = document.getElementById(`mem${i}`);
 				const fields = section.querySelectorAll("input, select");
 
