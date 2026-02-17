@@ -31,10 +31,10 @@
 
 	<title>ISTE GECBH</title>
 	<style>
-		/* #mem4,
+		#mem4,
 		#mem5{
 			display: none;
-		} */
+		}
 
 		#input-custom-project{
 			display: none;
@@ -279,13 +279,9 @@
 									onchange="" tabindex="1" autofocus="" required="">
 
 											<label class="mb-2 ml-2">Number of Team Members</label>
-											<select id="teamCount" onchange="handleTeamCount()" required>
-												<option value="" disabled selected>Select team size</option>
-												<!-- <option value="2">2</option> -->
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5">5</option>
-											</select>
+											<input type="number" id="teamCount" min="3" max="5"
+											placeholder="Enter team size (3-5)"
+											oninput="handleTeamCount()"  required>
 
 
 								<label for="firstproject" class="mb-2 ml-2">Project Preference</label>
@@ -518,7 +514,7 @@
 
 								</div><br><hr style="color:grey; height: 5px;"><br>
 
-								<div class="team-mem-1" id="mem4" hidden>
+								<div class="team-mem-1" id="mem4">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fourth Team Member </h2>
 									<label for="team member3" class="mb-2 ml-2">Team Member 4</label>
 									<input placeholder="Enter  Name" name="team member3" type="text" id="team-member4"
@@ -561,7 +557,7 @@
 								</div> <br><br>
 
 
-								<div class="team-mem-1" id="mem5" hidden>
+								<div class="team-mem-1" id="mem5">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fifth Team Member </h2>
 									<label for="team member4" class="mb-2 ml-2">Team Member 5</label>
 									<input placeholder="Enter  Name" name="team member4" type="text" id="team-member5"
@@ -848,29 +844,48 @@
 			}
 
 		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
+		// function handleTeamCount() {
+		// 	const count = Number(document.getElementById("teamCount").value || 3);
+
+		// 	for (let i = 1; i <= 3; i++) {
+		// 		const sec = document.getElementById(`mem${i}`);
+		// 		sec.hidden = false;
+		// 		sec.querySelectorAll("input, select").forEach(el => {
+		// 			el.required = true;
+		// 		});
+		// 	}
+
+		// 	for (let i = 4; i <= 5; i++) {
+		// 		const sec = document.getElementById(`mem${i}`);
+		// 		const fields = sec.querySelectorAll("input, select");
+
+		// 		if (count >= i) {
+		// 			sec.hidden = false;
+		// 			fields.forEach(el => el.required = true);
+		// 		} else {
+		// 			sec.hidden = true;
+		// 			fields.forEach(el => el.required = false);
+		// 		}
+		// 	}
+		// }
+
+
 		function handleTeamCount() {
-			const count = Number(document.getElementById("teamCount").value || 3);
+		const count = parseInt(document.getElementById("teamCount").value);
 
-			for (let i = 1; i <= 3; i++) {
-				const sec = document.getElementById(`mem${i}`);
-				sec.hidden = false;
-				sec.querySelectorAll("input, select").forEach(el => {
-					el.required = true;
-				});
+		for (let i = 3; i <= 5; i++) {
+			const section = document.getElementById(`mem${i}`);
+			const fields = section.querySelectorAll("input, select");
+
+			if (count >= i) {
+				section.style.display = "block";
+				fields.forEach(f => f.setAttribute("required", "required"));
+			} 
+			else {
+				section.style.display = "none";
+				fields.forEach(f => f.removeAttribute("required"));
 			}
-
-			for (let i = 4; i <= 5; i++) {
-				const sec = document.getElementById(`mem${i}`);
-				const fields = sec.querySelectorAll("input, select");
-
-				if (count >= i) {
-					sec.hidden = false;
-					fields.forEach(el => el.required = true);
-				} else {
-					sec.hidden = true;
-					fields.forEach(el => el.required = false);
-				}
-			}
+		}
 		}
 
 
