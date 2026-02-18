@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/main.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
 	<link rel="stylesheet" href="assets/css/loader.css" />
@@ -31,7 +31,6 @@
 
 	<title>ISTE GECBH</title>
 	<style>
-		#mem3,
 		#mem4,
 		#mem5{
 			display: none;
@@ -275,92 +274,112 @@
 								<input placeholder="Your Team Name" name="teamname" id="teamname" type="text"
 									onchange="" tabindex="1" autofocus="" required="">
 
-								<label for="firstproject" class="mb-2 ml-2">Project First Preference</label>
-								<select id="firstproject" name="firstproject" autofocus="" required="">
+								<label for="firstproject" class="mb-2 ml-2">Project Preference</label>
+								<select id="firstproject" name="firstproject" autofocus="" required="" onchange="handleCustomProject(); projPreference()">
 									<option value="" hidden>Select Project</option>
-									<option value="Obstacle Avoider">Obstacle Avoider</option>
-									<option value="Line Follower">Line Follower</option>
-									<option value="Wall solving Robot / Micromouse">Wall solving Robot / Micromouse
+									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
+									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
+									<option value="Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions">Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions
 									</option>
-									<option value="Smart Cane">Smart Cane</option>
-									<option value="Temperature Controlled Fan">Temperature Controlled Fan</option>
-									<option value="Bluetooth controlled Car">Bluetooth controlled Car</option>
-									<option value="Mini Games">Mini Games</option>
-									<option value="ML/CV Model">ML/CV Model</option>
-									<option value="Static Webpage Designing">Static Webpage Designing</option>
-									<option value="Ahmed Body Simulation">Ahmed Body Simulation</option>
-									<option value="4 Cylinder Engine">4 Cylinder Engine</option>
-									<option value="Suspension Bridge">Suspension Bridge</option>
-									<option value="E-Commerce Web App">E-Commerce Web App</option>
-									<option value="Self Balancing Bot">Self Balancing Bot</option>
-									<option value="Arduino RFID Attendance System">Arduino RFID Attendance System
+									<option value="Fire Extinguisher">Fire Extinguisher</option>
+									<option value="Autonomous Luggage/Cart Follower">Autonomous Luggage/Cart Follower</option>
+									<option value="Anti-Theft \'Smart\' Courier Box">Anti-Theft "Smart" Courier Box</option>
+									<option value="Smart Bin with Fill-Level Prediction">Smart Bin with Fill-Level Prediction</option>
+									<option value="Water Level Indicator">Water Level Indicator</option>
+									<option value="Obstacle Avoiding car">Obstacle Avoiding car</option>
+									<option value="Automatic room light control">Automatic room light control</option>
+									<option value="Room automation using hand gestures">Room automation using hand gestures</option>
+									<option value="Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism">Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism</option>
+									<option value="Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles">Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles</option>
+									<option value="Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools">Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools</option>
+									<option value="Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing">Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing
 									</option>
-									<option value="Attendance Management App">Attendance Management App</option>
-									<option value="Automatic plant watering system using arduino">Automatic plant
-										watering system using arduino</option>
-									<option value="Online Library Management System Website">Online Library Management
-										System Website</option>
+									<option value="Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow">Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow</option>
+									<option value="Weather Dashboard">Weather Dashboard</option>
+									<option value="Online Quiz App">Online Quiz App</option>
+									<option value="Attendance Management System">Attendance Management System</option>
+									<option value="To-Do App with Priority Logic">To-Do App with Priority Logic</option>
+									<option value="Railway Ticket Booking System">Railway Ticket Booking System</option>
+									<option value="Single Bank Account Simulator">Single Bank Account Simulator</option>
+									<option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
+
 									<option value="Custom Project">Custom Project</option>
 
 								</select>
 
+							<div id="input-custom-project" style="display: none;">
+								<label for="custom-project" class="mb-2 ml-2">Input your Custom Project</label>
+								<input placeholder="Project Name" name="projectName" type="text" id="projectName"
+										autofocus="">
+							</div>
+							
+
+							<div id = "show-project-preference">
 								<label for="secondproject" class="mb-2 ml-2">Project Second Preference</label>
-								<select id="secondproject" name="secondproject" autofocus="" required="">
+								<select id="secondproject" name="secondproject" autofocus="" required="" onchange="projPreference()">
 									<option value="" hidden>Select Project</option>
-									<option value="Obstacle Avoider">Obstacle Avoider</option>
-									<option value="Line Follower">Line Follower</option>
-									<option value="Wall solving Robot / Micromouse">Wall solving Robot / Micromouse
+									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
+									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
+									<option value="Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions">Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions
 									</option>
-									<option value="Smart Cane">Smart Cane</option>
-									<option value="Temperature Controlled Fan">Temperature Controlled Fan</option>
-									<option value="Bluetooth controlled Car">Bluetooth controlled Car</option>
-									<option value="Mini Games">Mini Games</option>
-									<option value="ML/CV Model">ML/CV Model</option>
-									<option value="Static Webpage Designing">Static Webpage Designing</option>
-									<option value="Ahmed Body Simulation">Ahmed Body Simulation</option>
-									<option value="4 Cylinder Engine">4 Cylinder Engine</option>
-									<option value="Suspension Bridge">Suspension Bridge</option>
-									<option value="E-Commerce Web App">E-Commerce Web App</option>
-									<option value="Self Balancing Bot">Self Balancing Bot</option>
-									<option value="Arduino RFID Attendance System">Arduino RFID Attendance System
+									<option value="Fire Extinguisher">Fire Extinguisher</option>
+									<option value="Autonomous Luggage/Cart Follower">Autonomous Luggage/Cart Follower</option>
+									<option value="Anti-Theft \'Smart\' Courier Box">Anti-Theft "Smart" Courier Box</option>
+									<option value="Smart Bin with Fill-Level Prediction">Smart Bin with Fill-Level Prediction</option>
+									<option value="Water Level Indicator">Water Level Indicator</option>
+									<option value="Obstacle Avoiding car">Obstacle Avoiding car</option>
+									<option value="Automatic room light control">Automatic room light control</option>
+									<option value="Room automation using hand gestures">Room automation using hand gestures</option>
+									<option value="Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism">Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism</option>
+									<option value="Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles">Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles</option>
+									<option value="Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools">Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools</option>
+									<option value="Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing">Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing
 									</option>
-									<option value="Attendance App">Attendance App</option>
-									<option value="Automatic plant watering system using arduino">Automatic plant
-										watering system using arduino</option>
-									<option value="Online Library Management System Website">Online Library Management
-										System Website</option>
+									<option value="Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow">Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow</option>
+									<option value="Weather Dashboard">Weather Dashboard</option>
+									<option value="Online Quiz App">Online Quiz App</option>
+									<option value="Attendance Management System">Attendance Management System</option>
+									<option value="To-Do App with Priority Logic">To-Do App with Priority Logic</option>
+									<option value="Railway Ticket Booking System">Railway Ticket Booking System</option>
+									<option value="Single Bank Account Simulator">Single Bank Account Simulator</option>
+									<option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
 								</select>
 
 								<label for="thirdproject" class="mb-2 ml-2">Project Third Preference</label>
-								<select id="thirdproject" name="thirdproject" autofocus="" required="">
+								<select id="thirdproject" name="thirdproject" autofocus="" required="" onchange="projPreference()">
 									<option value="" hidden>Select Project</option>
-									<option value="Obstacle Avoider">Obstacle Avoider</option>
-									<option value="Line Follower">Line Follower</option>
-									<option value="Wall solving Robot / Micromouse">Wall solving Robot / Micromouse
+									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
+									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
+									<option value="Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions">Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions
 									</option>
-									<option value="Smart Cane">Smart Cane</option>
-									<option value="Temperature Controlled Fan">Temperature Controlled Fan</option>
-									<option value="Bluetooth controlled Car">Bluetooth controlled Car</option>
-									<option value="Mini Games">Mini Games</option>
-									<option value="ML/CV Model">ML/CV Model</option>
-									<option value="Static Webpage Designing">Static Webpage Designing</option>
-									<option value="Ahmed Body Simulation">Ahmed Body Simulation</option>
-									<option value="4 Cylinder Engine">4 Cylinder Engine</option>
-									<option value="Suspension Bridge">Suspension Bridge</option>
-									<option value="E-Commerce Web App">E-Commerce Web App</option>
-									<option value="Self Balancing Bot">Self Balancing Bot</option>
-									<option value="Arduino RFID Attendance System">Arduino RFID Attendance System
+									<option value="Fire Extinguisher">Fire Extinguisher</option>
+									<option value="Autonomous Luggage/Cart Follower">Autonomous Luggage/Cart Follower</option>
+									<option value="Anti-Theft \'Smart\' Courier Box">Anti-Theft "Smart" Courier Box</option>
+									<option value="Smart Bin with Fill-Level Prediction">Smart Bin with Fill-Level Prediction</option>
+									<option value="Water Level Indicator">Water Level Indicator</option>
+									<option value="Obstacle Avoiding car">Obstacle Avoiding car</option>
+									<option value="Automatic room light control">Automatic room light control</option>
+									<option value="Room automation using hand gestures">Room automation using hand gestures</option>
+									<option value="Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism">Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism</option>
+									<option value="Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles">Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles</option>
+									<option value="Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools">Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools</option>
+									<option value="Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing">Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing
 									</option>
-									<option value="Attendance App">Attendance App</option>
-									<option value="Automatic plant watering system using arduino">Automatic plant
-										watering system using arduino</option>
-									<option value="Online Library Management System Website">Online Library Management
-										System Website</option>
+									<option value="Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow">Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow</option>
+									<option value="Weather Dashboard">Weather Dashboard</option>
+									<option value="Online Quiz App">Online Quiz App</option>
+									<option value="Attendance Management System">Attendance Management System</option>
+									<option value="To-Do App with Priority Logic">To-Do App with Priority Logic</option>
+									<option value="Railway Ticket Booking System">Railway Ticket Booking System</option>
+									<option value="Single Bank Account Simulator">Single Bank Account Simulator</option>
+									<option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
 								</select>
+
+							</div><br>
 
 								<label class="mb-2 ml-2">Number of Team Members</label>
 								<input type="number" id="teamCount" min="2" max="5"
-								placeholder="Enter team size (2-5)"
+								placeholder="Enter team size (3-5)"
 								oninput="handleTeamCount()"  required>
 
 
@@ -733,8 +752,64 @@
     	// <p style="color: white;">The challenge for 2026 has been officially closed.</p>`;
 
 
+		/* HANDLE CUSTOM PROJECT - updated on 16th Feb 2026 */
+		function handleCustomProject() {
+			const custom_proj = document.getElementById("firstproject").value;
+			const section = document.getElementById("show-project-preference");
+
+			const second = document.getElementById("secondproject");
+			const third  = document.getElementById("thirdproject");
+
+			const custom_project_input = document.getElementById("input-custom-project");
+			const input_project_name = document.getElementById("projectName");
 
 
+			if (custom_proj === "Custom Project") {
+				section.style.display = "none";
+				second.removeAttribute("required");
+				third.removeAttribute("required");
+				custom_project_input.style.display = "block";
+				input_project_name.setAttribute("required", "required");
+
+			} else {
+				section.style.display = "block";
+
+				second.setAttribute("required", "required");
+				third.setAttribute("required", "required");
+				custom_project_input.style.display = "none";
+			}
+		}
+
+
+
+		/*HANDLE PROJECT PREFERENCE - updated on 17th Feb 2026*/
+		function projPreference() {
+			const selectOpns = [
+				document.getElementById("firstproject"),
+				document.getElementById("secondproject"),
+				document.getElementById("thirdproject")
+			];
+
+			const selectedValues = selectOpns.map(sel => sel.value)
+				.filter(val => val && val !== "Custom Project");
+
+			selectOpns.forEach(select => {
+				Array.from(select.options).forEach(option => {
+					option.disabled = false;
+				});
+			});
+
+			selectOpns.forEach(select => {
+				Array.from(select.options).forEach(option => {
+					if (selectedValues.includes(option.value) && option.value !== select.value) {
+						option.disabled = true;
+					}
+				})
+			})
+		}
+
+
+		
 		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
 		function handleTeamCount() {
 		const count = parseInt(document.getElementById("teamCount").value);
@@ -893,35 +968,35 @@
 		});
 
 		//QR code 
-		const qrToggleBtn = document.getElementById("qrToggleBtn");
-		const qrSection = document.getElementById("qrSection");
-		const qrImage = document.getElementById("qrImage");
-		const shareBtn = document.getElementById("shareBtn");
-		const downloadBtn = document.getElementById("downloadBtn");
+    const qrToggleBtn = document.getElementById("qrToggleBtn");
+    const qrSection = document.getElementById("qrSection");
+    const qrImage = document.getElementById("qrImage");
+    const shareBtn = document.getElementById("shareBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
 
-		qrToggleBtn.addEventListener('click', () => {
-		qrSection.classList.toggle("show");
-		qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code" : "Show QR Code";
-		});
+    qrToggleBtn.addEventListener('click', () => {
+      qrSection.classList.toggle("show");
+      qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code" : "Show QR Code";
+    });
 
-		shareBtn.addEventListener('click', () => {
-		if (navigator.share) {
-			fetch(qrImage.src)
-			.then(response => response.blob())
-			.then(blob => {
-				const file = new File([blob], "assets/img/qr-code-for-membership.jpg", { type: blob.type });
-				navigator.share({
-				title: "Payment QR",
-				text: "Scan this QR to make payment",
-				files: [file]
-				}).catch(err => console.log("Share failed:", err));
-			})
-			.catch(err => console.log("Error fetching QR:", err));
-		}
-		else {
-			alert("Sharing is not supported on this browser");
-		}
-		});
+    shareBtn.addEventListener('click', () => {
+      if (navigator.share) {
+        fetch(qrImage.src)
+          .then(response => response.blob())
+          .then(blob => {
+            const file = new File([blob], "assets/img/qr-code-for-membership.jpg", { type: blob.type });
+            navigator.share({
+              title: "Payment QR",
+              text: "Scan this QR to make payment",
+              files: [file]
+            }).catch(err => console.log("Share failed:", err));
+          })
+          .catch(err => console.log("Error fetching QR:", err));
+      }
+      else {
+        alert("Sharing is not supported on this browser");
+      }
+    });
 
 
     downloadBtn.addEventListener('click', () => {
@@ -930,7 +1005,6 @@
       link.href = qrImage.src;
       link.click();
     });
-
 
 
 
@@ -949,6 +1023,7 @@
 			var firstProject = document.getElementById('firstproject').value;
 			var secondProject = document.getElementById('secondproject').value;
 			var thirdProject = document.getElementById('thirdproject').value;
+			var projectName = document.getElementById('projectName').value;
 			var teamLead = document.getElementById('teamlead').value;
 			var mobileNumber = document.getElementById('mobilenumber').value;
 			var email = document.getElementById('Email1').value;
@@ -997,6 +1072,7 @@
 					firstProject: firstProject,
 					secondProject: secondProject,
 					thirdProject: thirdProject,
+					projectName: projectName,
 					TeamLead: teamLead,
 					mobileMember1: mobileNumber,
 					emailMember1: email,
@@ -1042,16 +1118,16 @@
 
 									<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
 									<p style='font-size: 1.2em;color: green;'>
-										Account holder name: Devika Asok<br>
-										IFSC code: CNRB0005114<br>
-										Account number: 110191178480<br>
+										Account holder name: Krishnapriya R<br>
+										IFSC code: SBIN0070259<br>
+										Account number: 44148248108<br>
 										Gpay / PhonePe / Paytm: 7012310891<br>
-										UPI id: deepzdevika@oksbi
+										UPI id: krishnapriyarmalu-1@okicici
 									</p>
 
 									<a id='register-now' class='theme-btn gradient mt-3'
 										style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
-										href='https://chat.whatsapp.com/B7VMXGFrobB6jZZs1ZkYNd' target="_blank">Join Our Whatsapp Group
+										href='https://chat.whatsapp.com/DYtDWVqoErE0sI5YDV5aen?mode=gi_t' target="_blank">Join Our Whatsapp Group
 									</a>
 								</div>`;
 
