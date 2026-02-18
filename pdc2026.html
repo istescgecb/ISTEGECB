@@ -381,7 +381,7 @@
 									<option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
 								</select>
 
-							</div><br><br>
+							</div><br>
 								
 
 							<label class="mb-2 ml-2">Number of Team Members</label>
@@ -757,6 +757,18 @@
 		// <p style="color: white;">The challenge for 2026 has been officially closed.</p>`;
 
 
+		//  backup
+		// const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
+		// membershipFormWrapper.innerHTML = `
+		// <h1 style="color: white; padding-top: 15px;">Facing Issues on this page ?</h1><br>
+		// <p style="color: white;">Due to compatibility issues on some mobile devices, this page may not function as expected.<br><br>Please click Continue to proceed to next page and complete your registration without any interruption
+		// 	<a id='register-now' class='theme-btn gradient mt-3'
+		// 	style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
+		// 	href='https://istegecb.in/pdc-backup.html' target="_blank">Continue
+		// 				</a></p>`;
+
+
+
 		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
 		document.addEventListener("DOMContentLoaded", function() {
 			const teamCountInput = document.getElementById("teamCount");
@@ -878,35 +890,7 @@
 		}
 
 
-		function copyText(element) {
-			let text = element.textContent.trim();
-			text = text.split(/\s+/).join(" ");
-			const originalText = element.textContent;
-			if (text === "Copied to Clipboard") return;
-
-			//  hidden box
-			const textarea = document.createElement("textarea");
-			textarea.value = text;
-			document.body.appendChild(textarea);
-
-			// copy
-			textarea.select();
-			textarea.setSelectionRange(0, 99999);
-			document.execCommand("copy");
-			document.body.removeChild(textarea);
-
-			// feedback
-			element.textContent = "Copied to Clipboard";
-			element.style.fontWeight = "400";
-
-			// revert back
-			setTimeout(() => {
-				element.textContent = originalText;
-				element.style.backgroundColor = "";
-				element.style.fontWeight = "";
-			}, 350);
-			}
-
+		
 		
 
 		// window.addEventListener("DOMContentLoaded", () => {
