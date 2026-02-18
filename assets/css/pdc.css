@@ -1361,14 +1361,19 @@ textarea:focus {
   }
   
   /* start  */
-  body {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;
+ body {
+  -webkit-touch-callout: none;
+  user-select: none;
   }
+
+  /* ALLOW inputs */
+  input,
+  textarea,
+  select {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+  }
+
   .landing-section {
     color: white;
     text-transform: uppercase;
