@@ -31,10 +31,6 @@
 
 	<title>ISTE GECBH</title>
 	<style>
-		#mem4,
-		#mem5{
-			display: none;
-		}
 
 	</style>
 
@@ -275,7 +271,7 @@
 									onchange="" tabindex="1" autofocus="" required="">
 
 								<label for="firstproject" class="mb-2 ml-2">Project Preference</label>
-								<select id="firstproject" name="firstproject" autofocus="" required="" onchange="handleCustomProject(); projPreference()">
+								<select id="firstproject" name="firstproject" autofocus="" required="">
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -307,16 +303,16 @@
 
 								</select>
 
-							<div id="input-custom-project" style="display: none;">
+							<!-- <div id="input-custom-project" style="display: none;">
 								<label for="custom-project" class="mb-2 ml-2">Input your Custom Project</label>
 								<input placeholder="Project Name" name="projectName" type="text" id="projectName"
 										autofocus="">
-							</div>
+							</div> -->
 							
 
 							<div id = "show-project-preference">
 								<label for="secondproject" class="mb-2 ml-2">Project Second Preference</label>
-								<select id="secondproject" name="secondproject" autofocus="" required="" onchange="projPreference()">
+								<select id="secondproject" name="secondproject" autofocus="" required="">
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -346,7 +342,7 @@
 								</select>
 
 								<label for="thirdproject" class="mb-2 ml-2">Project Third Preference</label>
-								<select id="thirdproject" name="thirdproject" autofocus="" required="" onchange="projPreference()">
+								<select id="thirdproject" name="thirdproject" autofocus="" required="" >
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -376,11 +372,6 @@
 								</select>
 
 							</div><br>
-
-								<label class="mb-2 ml-2">Number of Team Members</label>
-								<input type="number" id="teamCount" min="2" max="5"
-								placeholder="Enter team size (3-5)"
-								oninput="handleTeamCount()"  required>
 
 
 
@@ -415,8 +406,14 @@
 										<option value="Mechanical Engineering">Mechanical Engineering</option>
 									</select>
 
-									<label for="Are You Iste" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="isIste" required="">
+									<label for="Are You Iste" class="mb-2 ml-2">Are you an ISTE member ?</label>
+									<select id="isIste" name="Are You ISTE" onclick="updateTotal()" autofocus=""
+										required="">
+										<option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select>
+
 								</div>
 
 
@@ -452,9 +449,13 @@
 
 
 
-									<label for="Are You Iste1" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste2" required="">
-
+									<label for="Are You Iste1" class="mb-2 ml-2">Are you an ISTE member ?</label>
+									<select name="Are You Iste1" id="is-iste2" onclick="updateTotal()" autofocus=""
+										required="">
+										<option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select>
 
 								</div>
 
@@ -463,22 +464,22 @@
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Third Team Member </h2>
 									<label for="team member2" class="mb-2 ml-2">Team Member 3</label>
 									<input placeholder="Enter  Name" name="team member2" type="text" id="team-member3"
-										autofocus="">
+										autofocus="" required="">
 									<label for="mobile member2" class="mb-2 ml-2">Mobile Number</label><br>
 									<input placeholder="Enter Mobile number" name="mobile member2" type="tel"
-										pattern="[0-9]*" id="mobile-member3" autofocus="" >
+										pattern="[0-9]*" id="mobile-member3" autofocus="" required="">
 									<label for="email member2" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="email member2" type="email"
-										id="email-member3" autofocus="">
+										id="email-member3" autofocus="" required="">
 									<label for="Sem member2" class="mb-2 ml-2">Semester</label>
 									<select name="Sem member2" id="sem-member3" autofocus="" >
-										<option value="" hidden="">Select semester</option>
+										<option value="" hidden="">Select semester</option required="">
 
 										<option value="S2">S2</option>
 										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member2" class="mb-2 ml-2">Branch</label>
-									<select name="Branch member2" id="branch-member3" autofocus="" >
+									<select name="Branch member2" id="branch-member3" autofocus="" required="">
 										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
@@ -490,9 +491,13 @@
 									</select>
 
 
-									<label for="Are You Iste2" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste3" required>
-
+									<label for="Are You Iste2" class="mb-2 ml-2">Are you an ISTE member ?</label>
+									<select name="Are You Iste2" id="is-iste3" autofocus="" onchange="updateTotal()" required=""
+										>
+										<option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select>
 
 
 								</div>
@@ -529,8 +534,12 @@
 									</select>
 
 
-									<label for="Are You Iste3" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste4" >
+									<label for="Are You Iste3" class="mb-2 ml-2">Are you an ISTE member?</label>
+									<select name="Are You Iste3" id="is-iste4" autofocus="" onchange="updateTotal()">
+										<option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select>
 
 								</div>
 
@@ -567,8 +576,12 @@
 									</select>
 
 
-									<label for="Are You Iste4" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste5">
+									<label for="Are You Iste4" class="mb-2 ml-2">Are you an ISTE member?</label>
+									<select name="Are You Iste4" id="is-iste5" autofocus="" onchange="updateTotal()">
+										<option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select>
 
 								</div>
 
@@ -579,22 +592,21 @@
 
                                 <!-- Account details -->
 								<div class="account-details">
-									<h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
-										<b>PAYMENT DETAILS</b>
-									</h2>
+									<h6 style="font-size: 1.5em; color: rgb(214, 91, 20)">
+										PAYMENT DETAILS
+									</h6>
 									<p style="font-size: 1.2em">
-										Account holder name:
-										<span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Krishnapriya
-										R</span><br />
+										Account holder name: Krishnapriya R<br />
 										IFSC code:
-										<span onclick="copyText(this)"
-										style="cursor: pointer; user-select: all; font: inherit">SBIN0070259</span><br />
+										<span style="user-select: all; font: inherit">SBIN0070259</span><br />
 										Account number:
-										<span onclick="copyText(this)"
-										style="cursor: pointer; user-select: all; font: inherit">44148248108</span><br />
-										UPI ID:
-										<span onclick="copyText(this)"
-										style="cursor: pointer; user-select: all; font: inherit">krishnapriyarmalu-1@okicici</span>
+										<span style="user-select: all; font: inherit">44148248108</span><br />
+										UPI ID:(Gpay/PhonePe/Paytm)
+										<span style="
+										user-select: all;
+										font: inherit;
+										padding: inherit;
+										">krishnapriyarmalu-1@okicici</span>
 									</p>
 								</div>
 
@@ -691,11 +703,11 @@
 							<p style="font-size: 1.2rem;">
 								If any doubts ,,,,
 								<br><a style="font-size: 1.2rem;font-weight: lighter;"
-									href="https://wa.me/+917736510828" target="_blank"
+									href="https://wa.me/+9207829429" target="_blank"
 									style="font: inherit;">📲Sabin
 									: 9207829429</a>
 								<br><a style="font-size: 1.2rem;font-weight: lighter;"
-									href="https://wa.me/+918330829274" target="_blank" style="font: inherit;">📲Tijin
+									href="https://wa.me/+9446861555" target="_blank" style="font: inherit;">📲Tijin
 									: 9446861555</a>
 							</p>
 							<input type="submit" value="Submit" class="theme-btn gradient mt-3"
@@ -732,111 +744,124 @@
 
 
 		/* HANDLE CUSTOM PROJECT - updated on 16th Feb 2026 */
-		function handleCustomProject() {
-			const custom_proj = document.getElementById("firstproject").value;
-			const section = document.getElementById("show-project-preference");
+		// function handleCustomProject() {
+		// 	const custom_proj = document.getElementById("firstproject").value;
+		// 	const section = document.getElementById("show-project-preference");
 
-			const second = document.getElementById("secondproject");
-			const third  = document.getElementById("thirdproject");
+		// 	const second = document.getElementById("secondproject");
+		// 	const third  = document.getElementById("thirdproject");
 
-			const custom_project_input = document.getElementById("input-custom-project");
-			const input_project_name = document.getElementById("projectName");
+		// 	const custom_project_input = document.getElementById("input-custom-project");
+		// 	const input_project_name = document.getElementById("projectName");
 
 
-			if (custom_proj === "Custom Project") {
-				section.style.display = "none";
-				second.removeAttribute("required");
-				third.removeAttribute("required");
-				custom_project_input.style.display = "block";
-				input_project_name.setAttribute("required", "required");
+		// 	if (custom_proj === "Custom Project") {
+		// 		section.style.display = "none";
+		// 		second.removeAttribute("required");
+		// 		third.removeAttribute("required");
+		// 		custom_project_input.style.display = "block";
+		// 		input_project_name.setAttribute("required", "required");
 
-			} else {
-				section.style.display = "block";
+		// 	} else {
+		// 		section.style.display = "block";
 
-				second.setAttribute("required", "required");
-				third.setAttribute("required", "required");
-				custom_project_input.style.display = "none";
-			}
-		}
+		// 		second.setAttribute("required", "required");
+		// 		third.setAttribute("required", "required");
+		// 		custom_project_input.style.display = "none";
+		// 	}
+		// }
 
 
 
 		/*HANDLE PROJECT PREFERENCE - updated on 17th Feb 2026*/
-		function projPreference() {
-			const selectOpns = [
-				document.getElementById("firstproject"),
-				document.getElementById("secondproject"),
-				document.getElementById("thirdproject")
-			];
+		// function projPreference() {
+		// 	const selectOpns = [
+		// 		document.getElementById("firstproject"),
+		// 		document.getElementById("secondproject"),
+		// 		document.getElementById("thirdproject")
+		// 	];
 
-			const selectedValues = selectOpns.map(sel => sel.value)
-				.filter(val => val && val !== "Custom Project");
+		// 	const selectedValues = selectOpns.map(sel => sel.value)
+		// 		.filter(val => val && val !== "Custom Project");
 
-			selectOpns.forEach(select => {
-				Array.from(select.options).forEach(option => {
-					option.disabled = false;
-				});
-			});
+		// 	selectOpns.forEach(select => {
+		// 		Array.from(select.options).forEach(option => {
+		// 			option.disabled = false;
+		// 		});
+		// 	});
 
-			selectOpns.forEach(select => {
-				Array.from(select.options).forEach(option => {
-					if (selectedValues.includes(option.value) && option.value !== select.value) {
-						option.disabled = true;
-					}
-				})
-			})
-		}
+		// 	selectOpns.forEach(select => {
+		// 		Array.from(select.options).forEach(option => {
+		// 			if (selectedValues.includes(option.value) && option.value !== select.value) {
+		// 				option.disabled = true;
+		// 			}
+		// 		})
+		// 	})
+		// }
 
 
 		
 		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
-		function handleTeamCount() {
-		const count = parseInt(document.getElementById("teamCount").value);
+		// function handleTeamCount() {
+		// const count = parseInt(document.getElementById("teamCount").value);
 
-		for (let i = 3; i <= 5; i++) {
-			const section = document.getElementById(`mem${i}`);
-			const fields = section.querySelectorAll("input, select");
+		// for (let i = 3; i <= 5; i++) {
+		// 	const section = document.getElementById(`mem${i}`);
+		// 	const fields = section.querySelectorAll("input, select");
 
-			if (count >= i) {
-				section.style.display = "block";
-				fields.forEach(f => f.setAttribute("required", "required"));
-			} 
-			else {
-				section.style.display = "none";
-				fields.forEach(f => f.removeAttribute("required"));
-			}
-		}
-		}
+		// 	if (count >= i) {
+		// 		section.style.display = "block";
+		// 		fields.forEach(f => f.setAttribute("required", "required"));
+		// 	} 
+		// 	else {
+		// 		section.style.display = "none";
+		// 		fields.forEach(f => f.removeAttribute("required"));
+		// 	}
+		// }
+		// }
 
 
 
 		function updateTotal() {
-			const ids = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
+			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
 
-			const filled = ids
+			// Get only filled values (ignore empty / null fields)
+			const filledValues = elements
 				.map(id => document.getElementById(id))
-				.filter(el => el && !el.disabled && el.value.trim() !== "");
+				.filter(el => el && el.value.trim() !== "")
+				.map(el => el.value.toLowerCase());
 
-			const allIsteMembers =
-				filled.length > 0 &&
-				filled.every(el => el.value.trim() !== "0");
+			// If no members are filled then default to 150
+			const allYes = filledValues.length > 0 && filledValues.every(v => v === "yes");
 
-			const total = allIsteMembers ? 50 : 150;
 
+			// Check if all elements have the value "yes"
+			//const allYes = elements.every(id => document.getElementById(id).value.toLowerCase() === "yes");
+			// Set total based on whether all elements have the value "yes"
+			const total = allYes ? 50 : 150;
+			// Update ttlamt styles and content
 			const ttlamt = document.getElementById('ttlamt');
+			Object.assign(ttlamt.style, {
+				fontSize: '1.5rem',
+				color: 'rgb(255, 255, 255)',
+				textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+				padding: '10px',
+				borderRadius: '5px',
+				fontWeight: '600',
+				textAlign: 'center'
+			});
 			ttlamt.innerHTML = 'Total Amount - ₹' + total + '/-';
 
 			return total;
 		}
-		['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'].forEach(id => {
-				document.getElementById(id)?.addEventListener('input', updateTotal);
-			});
+		// event listeners
+		const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
 
-		window.addEventListener("DOMContentLoaded", updateTotal);
+		elements.forEach(function (id) {
+			document.getElementById(id).addEventListener('change', () => { updateTotal() });
+		});
+		window.onload = updateTotal();
 
-
-
-		
 		function openQR1() {
 			document.getElementById("PhonePebtn1").setAttribute("onclick", "closeQR1()");
 			document.getElementById("PhonePebtn1").innerHTML = "X Close";
@@ -865,34 +890,6 @@
 		document.getElementById("pdcform").addEventListener('submit', a);
 
 
-		function copyText(element) {
-			let text = element.textContent.trim();
-			text = text.split(/\s+/).join(" ");
-			const originalText = element.textContent;
-			if (text === "Copied to Clipboard") return;
-
-			//  hidden box
-			const textarea = document.createElement("textarea");
-			textarea.value = text;
-			document.body.appendChild(textarea);
-
-			// copy
-			textarea.select();
-			textarea.setSelectionRange(0, 99999);
-			document.execCommand("copy");
-			document.body.removeChild(textarea);
-
-			// feedback
-			element.textContent = "Copied to Clipboard";
-			element.style.fontWeight = "400";
-
-			// revert back
-			setTimeout(() => {
-				element.textContent = originalText;
-				element.style.backgroundColor = "";
-				element.style.fontWeight = "";
-			}, 350);
-			}
 
 
 
@@ -1017,7 +1014,6 @@
 			var firstProject = document.getElementById('firstproject').value;
 			var secondProject = document.getElementById('secondproject').value;
 			var thirdProject = document.getElementById('thirdproject').value;
-			var projectName = document.getElementById('projectName').value;
 			var teamLead = document.getElementById('teamlead').value;
 			var mobileNumber = document.getElementById('mobilenumber').value;
 			var email = document.getElementById('Email1').value;
@@ -1066,7 +1062,6 @@
 					firstProject: firstProject,
 					secondProject: secondProject,
 					thirdProject: thirdProject,
-					projectName: projectName,
 					TeamLead: teamLead,
 					mobileMember1: mobileNumber,
 					emailMember1: email,
