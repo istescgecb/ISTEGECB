@@ -518,27 +518,27 @@
 
 								</div><br><hr style="color:grey; height: 5px;"><br>
 
-								<div class="team-mem-1" id="mem4" hidden aria-hidden="true">
+								<div class="team-mem-1" id="mem4" hidden>
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fourth Team Member </h2>
 									<label for="team member3" class="mb-2 ml-2">Team Member 4</label>
 									<input placeholder="Enter  Name" name="team member3" type="text" id="team-member4"
-										autofocus="" disabled>
+										autofocus="" >
 									<label for="mobile member3" class="mb-2 ml-2">Mobile Number</label>
 									<input placeholder="Enter Mobile number" name="mobile member3" type="tel"
-										pattern="[0-9]*" id="mobile-member4" autofocus="" disabled>
+										pattern="[0-9]*" id="mobile-member4" autofocus="" >
 
 									<label for="Email member3" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="Email member3" type="email"
-										id="email-member4" autofocus="" disabled>
+										id="email-member4" autofocus="" >
 									<label for="Sem member3" class="mb-2 ml-2">Semester</label>
-									<select name="Sem member3" id="sem-member4" autofocus="" disabled>
+									<select name="Sem member3" id="sem-member4" autofocus="" >
 										<option value="" hidden="">Select semester</option>
 
 										<option value="S2">S2</option>
 										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member3" class="mb-2 ml-2">Branch</label>
-									<select name="Branch member3" id="branch-member4" autofocus="" disabled>
+									<select name="Branch member3" id="branch-member4" autofocus="" >
 										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
@@ -551,7 +551,7 @@
 
 
 									<label for="Are You Iste3" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste4" disabled>
+									<input type="text" id="is-iste4" >
 
 										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
@@ -561,27 +561,27 @@
 								</div> <br><br>
 
 
-								<div class="team-mem-1" id="mem5" hidden aria-hidden="true" >
+								<div class="team-mem-1" id="mem5" hidden >
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fifth Team Member </h2>
 									<label for="team member4" class="mb-2 ml-2">Team Member 5</label>
 									<input placeholder="Enter  Name" name="team member4" type="text" id="team-member5"
-										autofocus="" disabled>
+										autofocus="" >
 									<label for="mobile member4" class="mb-2 ml-2">Mobile Number</label>
 									<input placeholder="Enter Mobile number" name="mobile member4" type="tel"
-										pattern="[0-9]*" id="mobile-member5" autofocus="" disabled>
+										pattern="[0-9]*" id="mobile-member5" autofocus="" >
 
 									<label for="Email member4" class="mb-2 ml-2">Email ID</label>
 									<input placeholder="Enter your Email ID" name="Email member4" type="email"
-										id="email-member5" autofocus="" disabled>
+										id="email-member5" autofocus="" >
 									<label for="Sem member4" class="mb-2 ml-2">Semester</label>
-									<select name="Sem member4" id="sem-member5" autofocus="" disabled>
+									<select name="Sem member4" id="sem-member5" autofocus="" >
 										<option value="" hidden="">Select semester</option>
 
 										<option value="S2">S2</option>
 										<option value="S4">S4</option>
 									</select>
 									<label for="Branch member4" class="mb-2 ml-2">Branch</label>
-									<select name="Branch member4" id="branch-member5" autofocus="" disabled>
+									<select name="Branch member4" id="branch-member5" autofocus="" >
 										<option value="" hidden="">Select branch</option>
 										<option value="Civil Engineering">Civil Engineering</option>
 										<option value="Electrical and Electronics Engineering">Electrical and
@@ -594,7 +594,7 @@
 
 
 									<label for="Are You Iste4" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste5" disabled>
+									<input type="text" id="is-iste5">
 										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
@@ -910,7 +910,6 @@
 		}
 
 		window.addEventListener("DOMContentLoaded", () => {
-			    handleTeamCount();
 				["mem4", "mem5"].forEach(id => {
 					document.querySelectorAll(`#${id} input, #${id} select`)
 						.forEach(el => {
