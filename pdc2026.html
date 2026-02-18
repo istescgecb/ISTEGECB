@@ -778,10 +778,11 @@
 
 			return total;
 		}
-		elements.forEach(function (id) {
-			document.getElementById(id).addEventListener('change', () => { updateTotal() });
-		});
-		window.onload = updateTotal();
+		['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'].forEach(id => {
+				document.getElementById(id)?.addEventListener('input', updateTotal);
+			});
+
+		window.addEventListener("DOMContentLoaded", updateTotal);
 
 		/*HANDLE PROJECT PREFERENCE - updated on 17th Feb 2026*/
 		function projPreference() {
