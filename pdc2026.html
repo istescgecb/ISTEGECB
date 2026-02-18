@@ -278,10 +278,7 @@
 								<input placeholder="Your Team Name" name="teamname" id="teamname" type="text"
 									onchange="" tabindex="1" autofocus="" required="">
 
-								<label class="mb-2 ml-2">Number of Team Members</label>
-								<input type="number" id="teamCount" min="3" max="5"
-								placeholder="Enter team size (3-5)"
-								oninput="handleTeamCount()"  required="">
+								
 
 								<label for="firstproject" class="mb-2 ml-2">Project Preference</label>
 								<select id="firstproject" name="firstproject" autofocus="" required="" onchange="handleCustomProject(); projPreference()">
@@ -386,6 +383,11 @@
 
 							</div><br><br>
 								
+
+							<label class="mb-2 ml-2">Number of Team Members</label>
+								<input type="number" id="teamCount" min="3" max="5"
+								placeholder="Enter team size (3-5)"
+								oninput="handleTeamCount()"  required="">
 
 								<div class="team-leadteam-lead" id="mem1">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Team Leader </h2>
@@ -755,6 +757,25 @@
 		// <p style="color: white;">The challenge for 2026 has been officially closed.</p>`;
 
 
+		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
+		function handleTeamCount() {
+			const count = parseInt(document.getElementById("teamCount").value);
+
+			for (let i = 4; i <= 5; i++) {
+				const section = document.getElementById(`mem${i}`);
+				const fields = section.querySelectorAll("input, select");
+
+				if (count >= i) {
+					section.style.display = "block";
+					fields.forEach(f => f.setAttribute("required", "required"));
+				} 
+				else {
+					section.style.display = "none";
+					fields.forEach(f => f.removeAttribute("required"));
+				}
+			}
+		}
+		
 		function updateTotal() {
 			const ids = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
 
@@ -864,24 +885,7 @@
 			}, 350);
 			}
 
-		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
-		function handleTeamCount() {
-			const count = parseInt(document.getElementById("teamCount").value);
-
-			for (let i = 4; i <= 5; i++) {
-				const section = document.getElementById(`mem${i}`);
-				const fields = section.querySelectorAll("input, select");
-
-				if (count >= i) {
-					section.style.display = "block";
-					fields.forEach(f => f.setAttribute("required", "required"));
-				} 
-				else {
-					section.style.display = "none";
-					fields.forEach(f => f.removeAttribute("required"));
-				}
-			}
-		}
+		
 
 		// window.addEventListener("DOMContentLoaded", () => {
 		// 		["mem4", "mem5"].forEach(id => {
