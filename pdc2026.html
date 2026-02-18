@@ -423,7 +423,7 @@
 									</select>
 
 									<label for="Are You Iste" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="isIste" oninput="updateTotal()" required="">
+									<input type="text" id="isIste" required="">
 
 										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
@@ -467,7 +467,7 @@
 
 
 									<label for="Are You Iste1" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste2" oninput="updateTotal()" required="">
+									<input type="text" id="is-iste2" required="">
 
 										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
@@ -508,7 +508,7 @@
 									</select>
 
 									<label for="Are You Iste2" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste3" oninput="updateTotal()" required>
+									<input type="text" id="is-iste3" required>
 
 										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
@@ -551,7 +551,7 @@
 
 
 									<label for="Are You Iste3" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste4" oninput="updateTotal()">
+									<input type="text" id="is-iste4">
 
 										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
@@ -594,7 +594,7 @@
 
 
 									<label for="Are You Iste4" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
-									<input type="text" id="is-iste5" oninput="updateTotal()" >
+									<input type="text" id="is-iste5" >
 										<!-- <option value="" hidden="">Select option</option>
 										<option value="Yes">YES</option>
 										<option value="No">NO</option>
@@ -748,18 +748,40 @@
 			Please wait a minute the file is being uploaded...
 		</div>
 	</div>
-
+	
 	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-
+	
 	<!-- Initialize Swiper -->
 	<script>
 		// registration ended
 		// const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
 		// membershipFormWrapper.innerHTML = `
-   		// <h1 style="color: white;">Project Development Challenge</h1>
-    	// <p style="color: white;">The challenge for 2026 has been officially closed.</p>`;
+		// <h1 style="color: white;">Project Development Challenge</h1>
+		// <p style="color: white;">The challenge for 2026 has been officially closed.</p>`;
 
 
+		function updateTotal() {
+			const ids = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
+
+			const filled = ids
+				.map(id => document.getElementById(id))
+				.filter(el => el && !el.disabled && el.value.trim() !== "");
+
+			const allIsteMembers =
+				filled.length > 0 &&
+				filled.every(el => el.value.trim() !== "0");
+
+			const total = allIsteMembers ? 50 : 150;
+
+			const ttlamt = document.getElementById('ttlamt');
+			ttlamt.innerHTML = 'Total Amount - ₹' + total + '/-';
+
+			return total;
+		}
+		elements.forEach(function (id) {
+			document.getElementById(id).addEventListener('change', () => { updateTotal() });
+		});
+		window.onload = updateTotal();
 
 		/*HANDLE PROJECT PREFERENCE - updated on 17th Feb 2026*/
 		function projPreference() {
@@ -770,7 +792,7 @@
 			];
 
 			const selectedValues = selectOpns.map(sel => sel.value)
-			.filter(val => val && val !== "Custom Project");
+				.filter(val => val && val !== "Custom Project");
 
 			selectOpns.forEach(select => {
 				Array.from(select.options).forEach(option => {
@@ -780,7 +802,7 @@
 
 			selectOpns.forEach(select => {
 				Array.from(select.options).forEach(option => {
-					if(selectedValues.includes(option.value) && option.value !== select.value) {
+					if (selectedValues.includes(option.value) && option.value !== select.value) {
 						option.disabled = true;
 					}
 				})
@@ -921,54 +943,7 @@
 
 
 
-		function updateTotal() {
-			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
-
-			// Get only filled values (ignore empty / null fields)
-			const filledValues = elements
-				.map(id => document.getElementById(id))
-				.filter(el => el && el.value.trim() !== "")
-				
-			const allIsteMembers =
-				filledValues.length > 0 &&
-				filledValues.every(el => el.value.trim() !== "0");
-			const total = allIsteMembers ? 50 : 150;
-
-			
-
-
-			
-
-			// If no members are filled then default to 150
-			//const allYes = filledValues.length > 0 && filledValues.every(v => v === "yes");
-
-
-			// Check if all elements have the value "yes"
-			//const allYes = elements.every(id => document.getElementById(id).value.toLowerCase() === "yes");
-			// Set total based on whether all elements have the value "yes"
-			// const total = allYes ? 50 : 150;
-			// Update ttlamt styles and content
-			const ttlamt = document.getElementById('ttlamt');
-			Object.assign(ttlamt.style, {
-				fontSize: '1.5rem',
-				color: 'rgb(255, 255, 255)',
-				textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-				padding: '10px',
-				borderRadius: '5px',
-				fontWeight: '600',
-				textAlign: 'center'
-			});
-			ttlamt.innerHTML = 'Total Amount - ₹' + total + '/-';
-
-			return total;
-		}
-		// event listeners
-		const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
-
-		elements.forEach(function (id) {
-			document.getElementById(id).addEventListener('change', () => { updateTotal() });
-		});
-		window.onload = updateTotal();
+	
 
 		function openQR1() {
 			document.getElementById("PhonePebtn1").setAttribute("onclick", "closeQR1()");
