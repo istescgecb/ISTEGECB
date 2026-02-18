@@ -281,8 +281,7 @@
 								
 
 								<label for="firstproject" class="mb-2 ml-2">Project Preference</label>
-								<!-- <select id="firstproject" name="firstproject" autofocus="" required="" onchange="handleCustomProject(); projPreference()"> -->
-								<select id="firstproject" name="firstproject" autofocus="" required="" >
+								<select id="firstproject" name="firstproject" autofocus="" required="" onchange="handleCustomProject(); projPreference()">
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -323,9 +322,7 @@
 
 							<div id = "show-project-preference">
 								<label for="secondproject" class="mb-2 ml-2">Project Second Preference</label>
-								<!-- <select id="secondproject" name="secondproject" autofocus="" required="" onchange="projPreference()"> -->
-								<select id="secondproject" name="secondproject" autofocus="" required="">
-
+								<select id="secondproject" name="secondproject" autofocus="" required="" onchange="projPreference()">
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -355,9 +352,7 @@
 								</select>
 
 								<label for="thirdproject" class="mb-2 ml-2">Project Third Preference</label>
-								<!-- <select id="thirdproject" name="thirdproject" autofocus="" required="" onchange="projPreference()"> -->
-								<select id="thirdproject" name="thirdproject" autofocus="" required="">
-
+								<select id="thirdproject" name="thirdproject" autofocus="" required="" onchange="projPreference()">
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -390,9 +385,9 @@
 								
 
 							<label class="mb-2 ml-2">Number of Team Members</label>
-								<input type="number" id="teamCount" min="3" max="5"
-								placeholder="Enter team size (3-5)"
-								oninput="handleTeamCount()"  required="">
+							<input type="number" id="teamCount" min="3" max="5"
+							placeholder="Enter team size (3-5)"
+							  required="">
 
 								<div class="team-leadteam-lead" id="mem1">
 									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Team Leader </h2>
@@ -763,8 +758,26 @@
 
 
 		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
+		document.addEventListener("DOMContentLoaded", function() {
+			const teamCountInput = document.getElementById("teamCount");
+			if (teamCountInput) {
+				teamCountInput.addEventListener('input', function() {
+					handleTeamCount(); 
+					if (typeof updateTotal === "function") updateTotal();
+				});
+			}
+		});
+
 		function handleTeamCount() {
-			const count = parseInt(document.getElementById("teamCount").value);
+			const val = document.getElementById("teamCount").value;
+			
+			if (val === "" || isNaN(val)) {
+				document.getElementById("mem4").style.display = "none";
+				document.getElementById("mem5").style.display = "none";
+				return;
+			}
+
+			const count = parseInt(val);
 
 			for (let i = 4; i <= 5; i++) {
 				const section = document.getElementById(`mem${i}`);
@@ -772,15 +785,16 @@
 
 				if (count >= i) {
 					section.style.display = "block";
-					fields.forEach(f => f.setAttribute("required", "required"));
-				} 
-				else {
+					fields.forEach(f => f.required = true);
+				} else {
 					section.style.display = "none";
-					fields.forEach(f => f.removeAttribute("required"));
+					fields.forEach(f => {
+						f.required = false;
+						f.value = ""; 
+					});
 				}
 			}
 		}
-
 		function updateTotal() {
 			const ids = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
 
