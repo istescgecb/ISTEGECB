@@ -849,7 +849,7 @@
 		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
 		function handleTeamCount() {
 			const count = Number(document.getElementById("teamCount").value || 3);
-
+			if (!count) alert("no count?" + count.toString());
 			for (let i = 1; i <= 3; i++) {
 				const sec = document.getElementById(`mem${i}`);
 				sec.hidden = false;
@@ -886,6 +886,16 @@
 			updateTotal(); 
 		}
 
+		window.addEventListener("DOMContentLoaded", () => {
+				["mem4", "mem5"].forEach(id => {
+					document.querySelectorAll(`#${id} input, #${id} select`)
+						.forEach(el => {
+							el.disabled = true;
+							el.required = false;
+						});
+				});
+		});
+
 
 		
 		// function handleTeamCount() {
@@ -905,6 +915,8 @@
 		// 		}
 		// 	}
 		// }
+
+
 
 
 
