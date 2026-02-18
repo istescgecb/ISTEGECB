@@ -281,7 +281,8 @@
 								
 
 								<label for="firstproject" class="mb-2 ml-2">Project Preference</label>
-								<select id="firstproject" name="firstproject" autofocus="" required="" onchange="handleCustomProject(); projPreference()">
+								<!-- <select id="firstproject" name="firstproject" autofocus="" required="" onchange="handleCustomProject(); projPreference()"> -->
+								<select id="firstproject" name="firstproject" autofocus="" required="" >
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -322,7 +323,9 @@
 
 							<div id = "show-project-preference">
 								<label for="secondproject" class="mb-2 ml-2">Project Second Preference</label>
-								<select id="secondproject" name="secondproject" autofocus="" required="" onchange="projPreference()">
+								<!-- <select id="secondproject" name="secondproject" autofocus="" required="" onchange="projPreference()"> -->
+								<select id="secondproject" name="secondproject" autofocus="" required="">
+
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -352,7 +355,9 @@
 								</select>
 
 								<label for="thirdproject" class="mb-2 ml-2">Project Third Preference</label>
-								<select id="thirdproject" name="thirdproject" autofocus="" required="" onchange="projPreference()">
+								<!-- <select id="thirdproject" name="thirdproject" autofocus="" required="" onchange="projPreference()"> -->
+								<select id="thirdproject" name="thirdproject" autofocus="" required="">
+
 									<option value="" hidden>Select Project</option>
 									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
 									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
@@ -775,7 +780,7 @@
 				}
 			}
 		}
-		
+
 		function updateTotal() {
 			const ids = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
 
