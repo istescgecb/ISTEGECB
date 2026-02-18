@@ -415,14 +415,8 @@
 										<option value="Mechanical Engineering">Mechanical Engineering</option>
 									</select>
 
-									<label for="Are You Iste" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select id="isIste" name="Are You ISTE" onclick="updateTotal()" autofocus=""
-										required="">
-										<option value="" hidden="">Select option</option>
-										<option value="Yes">YES</option>
-										<option value="No">NO</option>
-									</select>
-
+									<label for="Are You Iste" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="isIste" required="">
 								</div>
 
 
@@ -458,13 +452,9 @@
 
 
 
-									<label for="Are You Iste1" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select name="Are You Iste1" id="is-iste2" onclick="updateTotal()" autofocus=""
-										required="">
-										<option value="" hidden="">Select option</option>
-										<option value="Yes">YES</option>
-										<option value="No">NO</option>
-									</select>
+									<label for="Are You Iste1" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste2" required="">
+
 
 								</div>
 
@@ -500,13 +490,9 @@
 									</select>
 
 
-									<label for="Are You Iste2" class="mb-2 ml-2">Are you an ISTE member ?</label>
-									<select name="Are You Iste2" id="is-iste3" autofocus="" onchange="updateTotal()"
-										>
-										<option value="" hidden="">Select option</option>
-										<option value="Yes">YES</option>
-										<option value="No">NO</option>
-									</select>
+									<label for="Are You Iste2" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste3" required>
+
 
 
 								</div>
@@ -543,12 +529,8 @@
 									</select>
 
 
-									<label for="Are You Iste3" class="mb-2 ml-2">Are you an ISTE member?</label>
-									<select name="Are You Iste3" id="is-iste4" autofocus="" onchange="updateTotal()">
-										<option value="" hidden="">Select option</option>
-										<option value="Yes">YES</option>
-										<option value="No">NO</option>
-									</select>
+									<label for="Are You Iste3" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste4" >
 
 								</div>
 
@@ -585,12 +567,8 @@
 									</select>
 
 
-									<label for="Are You Iste4" class="mb-2 ml-2">Are you an ISTE member?</label>
-									<select name="Are You Iste4" id="is-iste5" autofocus="" onchange="updateTotal()">
-										<option value="" hidden="">Select option</option>
-										<option value="Yes">YES</option>
-										<option value="No">NO</option>
-									</select>
+									<label for="Are You Iste4" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste5">
 
 								</div>
 
@@ -832,45 +810,32 @@
 
 
 		function updateTotal() {
-			const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
+			const ids = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
 
-			// Get only filled values (ignore empty / null fields)
-			const filledValues = elements
+			const filled = ids
 				.map(id => document.getElementById(id))
-				.filter(el => el && el.value.trim() !== "")
-				.map(el => el.value.toLowerCase());
+				.filter(el => el && !el.disabled && el.value.trim() !== "");
 
-			// If no members are filled then default to 150
-			const allYes = filledValues.length > 0 && filledValues.every(v => v === "yes");
+			const allIsteMembers =
+				filled.length > 0 &&
+				filled.every(el => el.value.trim() !== "0");
 
+			const total = allIsteMembers ? 50 : 150;
 
-			// Check if all elements have the value "yes"
-			//const allYes = elements.every(id => document.getElementById(id).value.toLowerCase() === "yes");
-			// Set total based on whether all elements have the value "yes"
-			const total = allYes ? 50 : 150;
-			// Update ttlamt styles and content
 			const ttlamt = document.getElementById('ttlamt');
-			Object.assign(ttlamt.style, {
-				fontSize: '1.5rem',
-				color: 'rgb(255, 255, 255)',
-				textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-				padding: '10px',
-				borderRadius: '5px',
-				fontWeight: '600',
-				textAlign: 'center'
-			});
 			ttlamt.innerHTML = 'Total Amount - ₹' + total + '/-';
 
 			return total;
 		}
-		// event listeners
-		const elements = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
+		['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'].forEach(id => {
+				document.getElementById(id)?.addEventListener('input', updateTotal);
+			});
 
-		elements.forEach(function (id) {
-			document.getElementById(id).addEventListener('change', () => { updateTotal() });
-		});
-		window.onload = updateTotal();
+		window.addEventListener("DOMContentLoaded", updateTotal);
 
+
+
+		
 		function openQR1() {
 			document.getElementById("PhonePebtn1").setAttribute("onclick", "closeQR1()");
 			document.getElementById("PhonePebtn1").innerHTML = "X Close";
