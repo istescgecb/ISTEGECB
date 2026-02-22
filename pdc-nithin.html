@@ -1192,6 +1192,9 @@
     $("#istecall").submit((e) => {
 
         e.preventDefault();
+        // Disable submit button
+        const submitBtn = $("#istecall input[type='submit']");
+        submitBtn.prop("disabled", true).val("Submitting...");
 
 
 
@@ -1247,8 +1250,10 @@ https://script.google.com/macros/s/AKfycbx4f0mzSPxOtqlNgPb4Oa--AKxJ1qbFIPKVVZfBk
                     document.getElementById("successtext").style.fontSize = "1.5rem";
                     document.getElementById("successtext").innerHTML =
                         "Error Submitting Form. Please retry filling the form.";
+                    submitBtn.prop("disabled", false).val("Submit");
                 }
                 $(".send-div").fadeOut();
+
             },
             error: function (err) {
                 console.error("AJAX Error:", err);
@@ -1257,6 +1262,7 @@ https://script.google.com/macros/s/AKfycbx4f0mzSPxOtqlNgPb4Oa--AKxJ1qbFIPKVVZfBk
                 document.getElementById("successtext").style.color = "red";
                 document.getElementById("successtext").innerHTML =
                     "Error Submitting Form. Please retry filling the form.";
+                submitBtn.prop("disabled", false).val("Submit");
                 $(".send-div").fadeOut();
             },
         });
