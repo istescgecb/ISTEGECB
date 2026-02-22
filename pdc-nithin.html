@@ -805,7 +805,7 @@
                                         <i class="fas fa-upload"></i>
                                         <span id="file-label-text">Choose an Image or PDF</span>
                                         <input name="image" id="image" type="file" accept="image/*,application/pdf"
-                                            required style="display:none;">
+                                            style="display:none;">
                                     </label>
                                 </div>
 
@@ -1168,6 +1168,15 @@
         const submitBtn = $("#istecall input[type='submit']");
         submitBtn.prop("disabled", true).val("Submitting...");
 
+        // Manual file check
+        const fileInput = document.getElementById("image");
+        if (!fileInput.files || fileInput.files.length === 0) {
+            document.getElementById("successtext").style.color = "red";
+            document.getElementById("successtext").textContent = "Please upload screenshot of payment before submitting.";
+            submitBtn.prop("disabled", false).val("Submit");
+            $(".send-div").fadeOut();
+            return;
+        }
 
 
 
