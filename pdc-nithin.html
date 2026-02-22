@@ -345,14 +345,14 @@
 
                                 <div id="input-custom-project">
                                     <label for="custom-project" class="mb-2 ml-2">Input your Custom Project</label>
-                                    <input placeholder="Project Name" name="projectName" type="text" id="projectName"
+                                    <input placeholder="Project Name" name="custom-project" type="text" id="projectName"
                                         autofocus="">
                                 </div>
 
 
                                 <div id="show-project-preference">
-                                    <label for="secondproject" class="mb-2 ml-2">Project Second Preference</label>
-                                    <select id="secondproject" name="secondproject" autofocus="" required=""
+                                    <label for="secondProject" class="mb-2 ml-2">Project Second Preference</label>
+                                    <select id="secondproject" name="secondProject" autofocus="" required=""
                                         onchange="projPreference()">
                                         <option value="" hidden>Select Project</option>
                                         <option
@@ -415,8 +415,8 @@
                                         <option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
                                     </select>
 
-                                    <label for="thirdproject" class="mb-2 ml-2">Project Third Preference</label>
-                                    <select id="thirdproject" name="thirdproject" autofocus="" required=""
+                                    <label for="thirdProject" class="mb-2 ml-2">Project Third Preference</label>
+                                    <select id="thirdproject" name="thirdProject" autofocus="" required=""
                                         onchange="projPreference()">
                                         <option value="" hidden>Select Project</option>
                                         <option
@@ -531,17 +531,17 @@
 
                                 <div class="team-mem-1" id="mem2">
                                     <h2 style="color: rgb(214, 91, 20);">Enter the Details of Second Team Member </h2>
-                                    <label for="team member1" class="mb-2 ml-2">Team Member 2</label>
-                                    <input placeholder="Enter  Name" name="team member1" type="text" 
+                                    <label for="teamMember1" class="mb-2 ml-2">Team Member 2</label>
+                                    <input placeholder="Enter  Name" name="teamMember1" type="text" 
                                         autofocus="" required="">
-                                    <label for="mobile member1" class="mb-2 ml-2">Mobile Number</label>
-                                    <input placeholder="Enter Mobile number" name="mobile member1" type="tel"
+                                    <label for="mobileMember1" class="mb-2 ml-2">Mobile Number</label>
+                                    <input placeholder="Enter Mobile number" name="mobileMember1" type="tel"
                                         pattern="[0-9]*"  autofocus="" required="">
-                                    <label for="Email member1" class="mb-2 ml-2">Email ID</label>
-                                    <input placeholder="Enter your Email ID" name="Email member1" type="email"
+                                    <label for="EmailMember1" class="mb-2 ml-2">Email ID</label>
+                                    <input placeholder="Enter your Email ID" name="EmailMember1" type="email"
                                          autofocus="" required="">
-                                    <label for="Sem member1" class="mb-2 ml-2">Semester</label>
-                                    <select name="Sem member1" autofocus="" required="">
+                                    <label for="SemMember1" class="mb-2 ml-2">Semester</label>
+                                    <select name="SemMember1" autofocus="" required="">
                                         <option value="" hidden="">Select semester</option>
 
                                         <option value="S2">S2</option>
@@ -879,6 +879,13 @@
             const teamCountInput = document.getElementById("teamCount");
             if (teamCountInput) {
                 teamCountInput.addEventListener('input', function () {
+                    let val = parseInt(this.value);
+
+                    if (!isNaN(val)) {
+                        if (val < 3) this.value = 3;
+                        else if (val > 5) this.value = 5;
+                    }
+
                     handleTeamCount();
                     if (typeof updateTotal === "function") updateTotal();
                 });
