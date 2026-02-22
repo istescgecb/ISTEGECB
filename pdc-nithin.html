@@ -883,39 +883,36 @@
         });
 
         function handleTeamCount() {
-            const val = document.getElementById("teamCount").value;
-            console.log("Team Count called, val", val);
+                const count = parseInt(document.getElementById("teamCount").value);
 
-            const mem4 = document.getElementById("mem4");
-            const mem5 = document.getElementById("mem5");
+                const mem4 = document.getElementById("mem4");
+                const mem5 = document.getElementById("mem5");
 
-            if (val === "" || isNaN(val)) {
-                hideSection(mem4);
-                hideSection(mem5);
-                return;
+                if (count >= 4) showSection(mem4);
+                else hideSection(mem4);
+
+                if (count >= 5) showSection(mem5);
+                else hideSection(mem5);
+
+                updateTotal();
             }
 
-            const count = parseInt(val);
-
-            count >= 4 ? showSection(mem4) : hideSection(mem4);
-            count >= 5 ? showSection(mem5) : hideSection(mem5);
-        }
-
-
         function showSection(section) {
-            $(section).fadeIn(300);
-            $(section).find("input, select").prop("required", true);
-        }
-
-
-        
-        function hideSection(section) {
-            $(section).fadeOut(300, function () {
-                $(section).find("input, select").prop("required", false).val("");
+            section.style.display = "block";
+            section.querySelectorAll("input, select").forEach(el => {
+                el.disabled = false;
+                el.required = true;
             });
         }
 
-
+        function hideSection(section) {
+            section.style.display = "none";
+            section.querySelectorAll("input, select").forEach(el => {
+                el.required = false;
+                el.disabled = true;
+                el.value = "";
+            });
+        }
 
         function updateTotal() {
             const ids = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
