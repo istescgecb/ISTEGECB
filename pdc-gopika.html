@@ -1,0 +1,1285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<!--  meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- cache contro  -->
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- cache control ends  -->
+	<link rel="icon" href="assets/img/ISTE logo White.png" type="image/icon type">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/stars.css">
+	<link rel="stylesheet" href="assets/css/loader.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<title>ISTE GECBH</title>
+	<style>
+		#mem4,
+		#mem5{
+			display: none;
+		}
+
+		#input-custom-project{
+			display: none;
+		}
+
+	</style>
+
+
+</head>
+<!-- oncontextmenu="return false" -->
+
+<body>
+	<!-- bg animated dots -->
+	<div style="z-index: 0;">
+		<div class="starsec"></div>
+		<div class="starthird"></div>
+		<div class="starfourth"></div>
+		<div class="starfifth"></div>
+	</div>
+	<div class="line1"></div>
+	<!-- desktop view nav  -->
+	<div class="container-fluid d-none d-md-block">
+		<div class="d-flex flex-wrap align-items-center justify-content-between mt-3 mx-5 py-2"
+			style="background: rgba(0, 3, 34, 0); border-radius: 1rem; backdrop-filter: blur(20px);">
+			<div class="d-flex flex-wrap justify-content-center align-items-center" style="margin-left: 1rem;">
+				<img src="assets/img/ISTE logo White.png" style="width: 70px; height: auto;">
+				<a href="" class="headingdropbtn" style="margin-left: 1rem;">ISTE GECBH</a>
+			</div>
+			<div id="header" class="d-flex flex-wrap align-items-center justify-content-center header">
+				<a class="nav-item" href="index.html">HOME</a>
+				<a class="nav-item" href="index.html#about">ABOUT</a>
+				<a class="nav-item" href="events.html">EVENTS</a>
+				<a class="nav-item" href="contact-us.html">CONTACT US</a>
+			</div>
+		</div>
+	</div>
+	<!-- mobile nav  -->
+	<div class="mobile-nav container-fluid d-block d-md-none py-3 px-3 backdrop-blur">
+		<div class="d-flex flex-wrap align-items-center justify-content-between">
+			<img src="assets/img/ISTE logo White.png" style="width: 48px; height: auto;">
+			<a href="index.html" class="headingdropbtn">ISTE GECBH</a>
+			<a onclick="openNav()"><img src="assets/svg/menu.svg" alt="iste gecbh" style="width: 33px;"></a>
+		</div>
+	</div>
+	<!-- mobile drawer -->
+	<div class="nav-container backdrop-blur">
+		<p
+			style="position: absolute;top: 15px;left: 32px;font-size: 22px;font-weight: 600;font-family: 'Poppins';margin: 0; padding: 0;">
+			ISTE GECBH</p>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="assets/svg/close.svg"
+				alt="istegecbh"></a>
+		<ul>
+			<li>
+				<a href="index.html">
+					<span class="icon"><i class="fas fa-home"></i></span>
+					<span class="title">Home</span>
+				</a>
+			</li>
+			<li>
+				<a href="events.html">
+					<span class="icon"><i class="fas fa-calendar-week"></i></span>
+					<span class="title">Events</span>
+				</a>
+			</li>
+			<li>
+				<a href="membership-benefits.html">
+					<span class="icon"><i class="fas fa-user-shield"></i></span>
+					<span class="title">Membership</span>
+				</a>
+			</li>
+			<li>
+				<a href="bartonair.html">
+					<span class="icon"><i class="fas fa-plane"></i></span>
+					<span class="title">Bartonair</span>
+				</a>
+			</li>
+			<li>
+				<a href="bartonoidz.html">
+					<span class="icon"><i class="fas fa-robot"></i></span>
+					<span class="title">Bartonoidz</span>
+				</a>
+			</li>
+			<li>
+				<a href="contact-us.html">
+					<span class="icon"><i class="fas fa-comment-alt"></i></span>
+					<span class="title">Contact</span>
+				</a>
+			</li>
+			<li>
+				<a href="developers.html">
+					<span class="icon"><i class="fas fa-code"></i></span>
+					<span class="title">Developers info</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)" onclick="closeNav()">
+					<span class="icon"><img src="assets/svg/back-right.svg" style="width: 39px;" alt="istegecbh"></span>
+					<span class="title">Close</span>
+				</a>
+			</li>
+		</ul>
+
+		<div class="swiper mySwiper2" style="margin-bottom: 5rem;">
+			<div class="swiper-wrapper">
+
+
+				<div class="swiper-slide past-event first-card" style="margin-left: 2%;">
+					<div class="event-card dep-card" data-aos="fade-up">
+						<div class="event-card-img" style="height: 106px;">
+							<img style="height: auto;" src="assets/img/execom/excom-redirect.jpg" alt="istegecbh">
+						</div>
+						<div class="event-card-body" style="align-items: center; height: auto;">
+							<h5 style="color: #ffffff; text-align: center; font-size: 19px;">Our Team 🖼️</h5>
+							<a class="theme-btn gradient mt-3"
+								style="box-shadow: none; width: 100%; text-align: center; font-size: 16px; padding-top: 5px;"
+								href="execom.html">See more</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide past-event first-card" style="margin-left: 2%;">
+					<div class="event-card dep-card" data-aos="fade-up">
+						<div class="event-card-img" style="height: 106px;">
+							<img style="height: auto;" src="assets/img/oracle-redirect.jpg" alt="istegecbh">
+						</div>
+						<div class="event-card-body" style="align-items: center; height: auto;">
+							<h5>The Oracle 📔</h5>
+							<a class="theme-btn gradient mt-3"
+								style="box-shadow: none; width: 100%; text-align: center; font-size: 16px; padding-top: 5px;"
+								href="oracle.html">See more</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide past-event first-card" style="margin-left: 2%;">
+					<div class="event-card dep-card" data-aos="fade-up">
+						<div class="event-card-img" style="height: 106px;">
+							<img style="height: auto;" src="assets/img/nts-redirect.jpg" alt="istegecbh">
+						</div>
+						<div class="event-card-body" style="align-items: center; height: auto;">
+							<h5>Nikola Tesla Scholarship👩‍🎓 </h5>
+							<a class="theme-btn gradient mt-3"
+								style="box-shadow: none; width: 100%; text-align: center; font-size: 16px; padding-top: 5px;"
+								href="NTS.html">See more</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide past-event first-card" style="margin-left: 2%;">
+					<div class="event-card dep-card" data-aos="fade-up">
+						<div class="event-card-img" style="height: 106px;">
+							<img style="height: auto;" src="assets/img/achievements/achievements-redirect.jpg"
+								alt="istegecbh">
+						</div>
+						<div class="event-card-body" style="align-items: center; height: auto;">
+							<h5 style="color: #ffffff; text-align: center; font-size: 19px;">Our Achievements 🏆</h5>
+							<a class="theme-btn gradient mt-3"
+								style="box-shadow: none; width: 100%; text-align: center; font-size: 16px; padding-top: 5px;"
+								href="achievements.html">See more</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide past-event first-card" style="margin-left: 2%;">
+					<div class="event-card dep-card" data-aos="fade-up">
+						<div class="event-card-img" style="height: 106px;">
+							<img style="height: auto;" src="assets/img/alumni/alumni-redirect.jpg" alt="istegecbh">
+						</div>
+						<div class="event-card-body" style="align-items: center; height: auto;">
+							<h5 style="color: #ffffff; text-align: center; font-size: 19px;">Alumni ✨</h5>
+							<a class="theme-btn gradient mt-3"
+								style="box-shadow: none; width: 100%; text-align: center; font-size: 16px; padding-top: 5px;"
+								href="alumni.html">See more</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="d-flex flex-wrap justify-content-center align-items-center">
+		<div class="event-card-on-reg-page on-contact">
+			<div class="event-card event-card-reg mb-5 membership-form-card"
+				style="background: #5449a447; backdrop-filter: blur(6px);">
+				<div class="membership-form-wrapper">
+
+
+					<form id="pdcform" action="" style="width:100%;font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+						<div class="event-card-body event-card-body-reg"
+							style="width: 100%; height: auto;  background: transparent;">
+							<div style="width: 100%;">
+								<h1 style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%; text-align:center; ">Project Development Challenge</h1>
+								<div class="d-flex flex-wrap align-content-center justify-content-center my-4">
+									<!-- <div class="membership-info-card my-3">
+										💫 ISTE SC GECB is here with an exciting opportunity to help you explore your
+										craftsmanship in engineering👨🏻‍🔧and to quench your thirst for building things
+										using your own hands. We present to you our flagship event Project Development
+										Challenge(PDC)💫
+										<br><br>
+										👩‍🏫All you have to do is register as a team of 4 and we will guide you in
+										every step and provide you with components, software and much more!! In one
+										month you will have the experience of completing a project!! 🥳🥳
+										<br><br>
+										🏆Prizes worth ₹2000 await the team who will present the best project🤩
+										<br><br>
+										💰Registration fees: <br>
+										▪️For <i>ISTE</i> members <i>₹50 per team</i> <br>
+										▪️For teams with at least 1 <i>Non-ISTE</i> member <i>₹150 per team</i>
+
+
+
+
+										<br><br>
+										🥳🥳Hurry up!! seize this golden opportunity to widen your exposure and develop
+										your skills⚙️. You will also earn certificates and activity points✨. Why wait?
+										<br><br>
+
+
+										For more details contact:
+										<br><a href="https://wa.me/+917736510828" target="_blank"
+											style="text-decoration: none;font: inherit;padding: inherit;">
+											📲<i>Krishnapriya
+												: 77365 10828</i></a><br>
+										<a href="https://wa.me/+918330829274" target="_blank"
+											style="text-decoration: none;font: inherit;padding: inherit;"> 📲<i>Megha
+												: 83308 29274</i></a>
+									</div> -->
+								</div>
+								<p style="font-size: 1.2em;font-weight: 400;color: rgb(235, 86, 86);">
+                  				*All fields are mandatory. Fill the details correctly.
+                				</p>
+								<p style="font-size: 1.4em; ">Fill details and Upload Screenshot using upload button after clicking the submit
+									button.
+								</p>
+
+
+
+
+
+								<label for="teamname" class="mb-2 ml-2">Team Name</label>
+								<input placeholder="Your Team Name" name="teamname" id="teamname" type="text"
+									onchange="" tabindex="1" autofocus="" required="">
+
+								
+
+								<label for="firstproject" class="mb-2 ml-2">Project Preference</label>
+								<select id="firstproject" name="firstproject" autofocus="" required="" onchange="handleCustomProject(); projPreference()">
+									<option value="" hidden>Select Project</option>
+									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
+									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
+									<option value="Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions">Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions
+									</option>
+									<option value="Fire Extinguisher">Fire Extinguisher</option>
+									<option value="Autonomous Luggage/Cart Follower">Autonomous Luggage/Cart Follower</option>
+									<option value="Anti-Theft \'Smart\' Courier Box">Anti-Theft "Smart" Courier Box</option>
+									<option value="Smart Bin with Fill-Level Prediction">Smart Bin with Fill-Level Prediction</option>
+									<option value="Water Level Indicator">Water Level Indicator</option>
+									<option value="Obstacle Avoiding car">Obstacle Avoiding car</option>
+									<option value="Automatic room light control">Automatic room light control</option>
+									<option value="Room automation using hand gestures">Room automation using hand gestures</option>
+									<option value="Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism">Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism</option>
+									<option value="Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles">Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles</option>
+									<option value="Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools">Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools</option>
+									<option value="Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing">Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing
+									</option>
+									<option value="Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow">Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow</option>
+									<option value="Weather Dashboard">Weather Dashboard</option>
+									<option value="Online Quiz App">Online Quiz App</option>
+									<option value="Attendance Management System">Attendance Management System</option>
+									<option value="To-Do App with Priority Logic">To-Do App with Priority Logic</option>
+									<option value="Railway Ticket Booking System">Railway Ticket Booking System</option>
+									<option value="Single Bank Account Simulator">Single Bank Account Simulator</option>
+									<option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
+
+									<option value="Custom Project">Custom Project</option>
+
+								</select>
+
+							<div id="input-custom-project">
+								<label for="custom-project" class="mb-2 ml-2">Input your Custom Project</label>
+								<input placeholder="Project Name" name="projectName" type="text" id="projectName"
+										autofocus="">
+							</div>
+							
+
+							<div id = "show-project-preference">
+								<label for="secondproject" class="mb-2 ml-2">Project Second Preference</label>
+								<select id="secondproject" name="secondproject" autofocus="" required="" onchange="projPreference()">
+									<option value="" hidden>Select Project</option>
+									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
+									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
+									<option value="Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions">Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions
+									</option>
+									<option value="Fire Extinguisher">Fire Extinguisher</option>
+									<option value="Autonomous Luggage/Cart Follower">Autonomous Luggage/Cart Follower</option>
+									<option value="Anti-Theft \'Smart\' Courier Box">Anti-Theft "Smart" Courier Box</option>
+									<option value="Smart Bin with Fill-Level Prediction">Smart Bin with Fill-Level Prediction</option>
+									<option value="Water Level Indicator">Water Level Indicator</option>
+									<option value="Obstacle Avoiding car">Obstacle Avoiding car</option>
+									<option value="Automatic room light control">Automatic room light control</option>
+									<option value="Room automation using hand gestures">Room automation using hand gestures</option>
+									<option value="Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism">Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism</option>
+									<option value="Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles">Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles</option>
+									<option value="Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools">Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools</option>
+									<option value="Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing">Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing
+									</option>
+									<option value="Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow">Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow</option>
+									<option value="Weather Dashboard">Weather Dashboard</option>
+									<option value="Online Quiz App">Online Quiz App</option>
+									<option value="Attendance Management System">Attendance Management System</option>
+									<option value="To-Do App with Priority Logic">To-Do App with Priority Logic</option>
+									<option value="Railway Ticket Booking System">Railway Ticket Booking System</option>
+									<option value="Single Bank Account Simulator">Single Bank Account Simulator</option>
+									<option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
+								</select>
+
+								<label for="thirdproject" class="mb-2 ml-2">Project Third Preference</label>
+								<select id="thirdproject" name="thirdproject" autofocus="" required="" onchange="projPreference()">
+									<option value="" hidden>Select Project</option>
+									<option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based Disaster-Resilient Residential Building</option>
+									<option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City</option>
+									<option value="Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions">Study of Structural Problems in Suspension Bridges and Development of Innovative Solutions
+									</option>
+									<option value="Fire Extinguisher">Fire Extinguisher</option>
+									<option value="Autonomous Luggage/Cart Follower">Autonomous Luggage/Cart Follower</option>
+									<option value="Anti-Theft \'Smart\' Courier Box">Anti-Theft "Smart" Courier Box</option>
+									<option value="Smart Bin with Fill-Level Prediction">Smart Bin with Fill-Level Prediction</option>
+									<option value="Water Level Indicator">Water Level Indicator</option>
+									<option value="Obstacle Avoiding car">Obstacle Avoiding car</option>
+									<option value="Automatic room light control">Automatic room light control</option>
+									<option value="Room automation using hand gestures">Room automation using hand gestures</option>
+									<option value="Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism">Synchronized intermeshing Rotary mechanism with multi-shaft Torque and Phase mechanism</option>
+									<option value="Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles">Integrated Variable-Ratio and Multi-Axle Steering Architecture for Vehicles</option>
+									<option value="Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools">Adaptive Alignment and Structural Stiffness Architecture for Precision Machine Tools</option>
+									<option value="Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing">Force-Redistributing Multi-Actuator Lifting Mechanism with Coordinated Load Sharing
+									</option>
+									<option value="Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow">Load-Responsive Gear-Clutch Transmission Architecture with Adaptive Torque Flow</option>
+									<option value="Weather Dashboard">Weather Dashboard</option>
+									<option value="Online Quiz App">Online Quiz App</option>
+									<option value="Attendance Management System">Attendance Management System</option>
+									<option value="To-Do App with Priority Logic">To-Do App with Priority Logic</option>
+									<option value="Railway Ticket Booking System">Railway Ticket Booking System</option>
+									<option value="Single Bank Account Simulator">Single Bank Account Simulator</option>
+									<option value="Digital Clock with Alarms">Digital Clock with Alarms</option>
+								</select>
+
+							</div><br>
+								
+
+							<label class="mb-2 ml-2">Number of Team Members</label>
+							<input type="number" id="teamCount" min="3" max="5"
+							placeholder="Enter team size (3-5)"
+							  required="">
+
+								<div class="team-leadteam-lead" id="mem1">
+									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Team Leader </h2>
+									<label for="teamlead" class="mb-2 ml-2">Team Leader</label>
+									<input placeholder="Enter your Name" name="teamlead" type="text" id="teamlead"
+										autofocus="" required="">
+									<label for="mobilenumber" class="mb-2 ml-2">Mobile Number</label>
+									<input placeholder="Enter Mobile number" name="mobilenumber" type="tel"
+										pattern="[0-9]*" id="mobilenumber" autofocus="" required="">
+									<label for="Email" class="mb-2 ml-2">Email ID</label>
+									<input placeholder="Enter your Email ID" name="Email" type="email" id="Email1"
+										autofocus="" required="">
+									<label for="Semester" class="mb-2 ml-2">Semester</label>
+									<select id="Semester" name="Semester" autofocus="" required="">
+										<option value="" hidden="">Select semester</option>
+
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
+									</select>
+									<label for="Branch" class="mb-2 ml-2">Branch</label>
+									<select id="Branch" name="Branch" autofocus="" required="">
+										<option value="" hidden="">Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and
+											Electronics Engineering</option>
+										<option value="Electronics &amp; Communication Engineering">Electronics &amp;
+											Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+
+									<label for="Are You Iste" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="isIste" required="">
+
+										<!-- <option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select> -->
+
+								</div>
+
+								<br><hr style="color:grey; height: 5px;"><br>
+
+								<div class="team-mem-1" id="mem2">
+									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Second Team Member </h2>
+									<label for="team member1" class="mb-2 ml-2">Team Member 2</label>
+									<input placeholder="Enter  Name" name="team member1" type="text" id="team-member2"
+										autofocus="" required="">
+									<label for="mobile member1" class="mb-2 ml-2">Mobile Number</label>
+									<input placeholder="Enter Mobile number" name="mobile member1" type="tel"
+										pattern="[0-9]*" id="mobile-member2" autofocus="" required="">
+									<label for="Email member1" class="mb-2 ml-2">Email ID</label>
+									<input placeholder="Enter your Email ID" name="Email member1" type="email"
+										id="email-member2" autofocus="" required="">
+									<label for="Sem member1" class="mb-2 ml-2">Semester</label>
+									<select name="Sem member1" id="sem-member2" autofocus="" required="">
+										<option value="" hidden="">Select semester</option>
+
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
+									</select>
+									<label for="Branch member1" class="mb-2 ml-2">Branch</label>
+									<select name="Branch member1" id="branch-member2" autofocus="" required="">
+										<option value="" hidden="">Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and
+											Electronics Engineering</option>
+										<option value="Electronics &amp; Communication Engineering">Electronics &amp;
+											Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select> 
+
+
+
+									<label for="Are You Iste1" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste2" required="">
+
+										<!-- <option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select> -->
+
+								</div> <br><hr style="color:grey; height: 5px;"><br>
+
+
+								<div class="team-mem-1" id="mem3">
+									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Third Team Member </h2>
+									<label for="team member2" class="mb-2 ml-2">Team Member 3</label>
+									<input placeholder="Enter  Name" name="team member2" type="text" id="team-member3"
+										autofocus="" required="">
+									<label for="mobile member2" class="mb-2 ml-2">Mobile Number</label><br>
+									<input placeholder="Enter Mobile number" name="mobile member2" type="tel"
+										pattern="[0-9]*" id="mobile-member3" autofocus="" required="">
+									<label for="email member2" class="mb-2 ml-2">Email ID</label>
+									<input placeholder="Enter your Email ID" name="email member2" type="email"
+										id="email-member3" autofocus="" required="">
+									<label for="Sem member2" class="mb-2 ml-2">Semester</label>
+									<select name="Sem member2" id="sem-member3" autofocus="" required="">
+										<option value="" hidden="">Select semester</option>
+
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
+									</select>
+									<label for="Branch member2" class="mb-2 ml-2">Branch</label>
+									<select name="Branch member2" id="branch-member3" autofocus="" required="">
+										<option value="" hidden="">Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and
+											Electronics Engineering</option>
+										<option value="Electronics &amp; Communication Engineering">Electronics &amp;
+											Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+
+									<label for="Are You Iste2" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste3" required>
+
+										<!-- <option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select> -->
+
+
+								</div><br><hr style="color:grey; height: 5px;"><br>
+
+								<div class="team-mem-1" id="mem4">
+									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fourth Team Member </h2>
+									<label for="team member3" class="mb-2 ml-2">Team Member 4</label>
+									<input placeholder="Enter  Name" name="team member3" type="text" id="team-member4"
+										autofocus="" >
+									<label for="mobile member3" class="mb-2 ml-2">Mobile Number</label>
+									<input placeholder="Enter Mobile number" name="mobile member3" type="tel"
+										pattern="[0-9]*" id="mobile-member4" autofocus="" >
+
+									<label for="Email member3" class="mb-2 ml-2">Email ID</label>
+									<input placeholder="Enter your Email ID" name="Email member3" type="email"
+										id="email-member4" autofocus="" >
+									<label for="Sem member3" class="mb-2 ml-2">Semester</label>
+									<select name="Sem member3" id="sem-member4" autofocus="" >
+										<option value="" hidden="">Select semester</option>
+
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
+									</select>
+									<label for="Branch member3" class="mb-2 ml-2">Branch</label>
+									<select name="Branch member3" id="branch-member4" autofocus="" >
+										<option value="" hidden="">Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and
+											Electronics Engineering</option>
+										<option value="Electronics &amp; Communication Engineering">Electronics
+											&amp; Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+
+
+									<label for="Are You Iste3" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste4" >
+
+										<!-- <option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select> -->
+									<hr style="color:grey; height: 5px;">
+								</div> <br><br>
+
+
+								<div class="team-mem-1" id="mem5" >
+									<h2 style="color: rgb(214, 91, 20);">Enter the Details of Fifth Team Member </h2>
+									<label for="team member4" class="mb-2 ml-2">Team Member 5</label>
+									<input placeholder="Enter  Name" name="team member4" type="text" id="team-member5"
+										autofocus="" >
+									<label for="mobile member4" class="mb-2 ml-2">Mobile Number</label>
+									<input placeholder="Enter Mobile number" name="mobile member4" type="tel"
+										pattern="[0-9]*" id="mobile-member5" autofocus="" >
+
+									<label for="Email member4" class="mb-2 ml-2">Email ID</label>
+									<input placeholder="Enter your Email ID" name="Email member4" type="email"
+										id="email-member5" autofocus="" >
+									<label for="Sem member4" class="mb-2 ml-2">Semester</label>
+									<select name="Sem member4" id="sem-member5" autofocus="" >
+										<option value="" hidden="">Select semester</option>
+
+										<option value="S2">S2</option>
+										<option value="S4">S4</option>
+									</select>
+									<label for="Branch member4" class="mb-2 ml-2">Branch</label>
+									<select name="Branch member4" id="branch-member5" autofocus="" >
+										<option value="" hidden="">Select branch</option>
+										<option value="Civil Engineering">Civil Engineering</option>
+										<option value="Electrical and Electronics Engineering">Electrical and
+											Electronics Engineering</option>
+										<option value="Electronics &amp; Communication Engineering">Electronics
+											&amp; Communication Engineering</option>
+										<option value="Information Technology">Information Technology</option>
+										<option value="Mechanical Engineering">Mechanical Engineering</option>
+									</select>
+
+
+									<label for="Are You Iste4" class="mb-2 ml-2">ISTE Membership ID (Put '0' if you are not an ISTE Member)</label>
+									<input type="text" id="is-iste5">
+										<!-- <option value="" hidden="">Select option</option>
+										<option value="Yes">YES</option>
+										<option value="No">NO</option>
+									</select><br><br> -->
+									<hr style="color:grey; height: 5px;">
+
+								</div>
+
+
+
+
+						
+                                <!-- Account details -->
+								<div class="account-details">
+									<h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
+										<b>PAYMENT DETAILS</b>
+									</h2>
+									<p style="font-size: 1.2em">
+										Account holder name:
+										<span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Krishnapriya
+										R</span><br />
+										IFSC code:
+										<span onclick="copyText(this)"
+										style="cursor: pointer; user-select: all; font: inherit">SBIN0070259</span><br />
+										Account number:
+										<span onclick="copyText(this)"
+										style="cursor: pointer; user-select: all; font: inherit">44148248108</span><br />
+										UPI ID:
+										<span onclick="copyText(this)"
+										style="cursor: pointer; user-select: all; font: inherit">krishnapriyarmalu-1@okicici</span>
+									</p>
+								</div>
+
+								<div class="qr-container">
+									<button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
+									<div class="qr-section" id="qrSection">
+									<div class="qr-card">
+										<img src="assets/img/qr-code-for-membership.jpg" alt="payment QR" id="qrImage" class="qr-code">
+										<div class="qr-actions">
+										<button type="button" class="share-btn" id="shareBtn">
+											<span></span>
+											<img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px"
+											alt="Share Icon">
+										</button>
+										<button type="button" class="download-btn" id="downloadBtn">
+											<span></span>
+											<img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px"
+											alt="Download Icon">
+										</button>
+										</div>
+									</div>
+									</div>
+								</div>
+
+
+
+								<br>
+
+
+								<!-- <h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Upload Files after submit</h4>  -->
+
+
+								<div class="register-detail">
+									<h6 style="font-size: 1.4em;color: rgb(214, 91, 20);">REGISTRATION DETIAILS</h6>
+									<p style="font-size: 1.1em">
+										▪️<b>For teams</b>
+										with <b>all ISTE </b> Members <b>₹50 per team</b> <br>
+										▪️<b>For teams</b>
+										with <b>atleast 1 </b><b>Non-ISTE</b> member <b>₹150 per team</b>
+									</p>
+
+									</h6>
+
+								</div>
+
+								<div style="font-size: 1.2em;  background: #5a54f37c;max-width: 100%; border-radius: 20px; padding: 10px;"
+									align="center">
+									<div id="ttlamt">
+										Total Amount - ₹150/-
+									</div>
+									<div id="UPI">
+
+
+									</div>
+
+								</div>
+
+								<br>
+
+								<div class="d-flex justify-content-center">
+									<div id="process" class="spinner-border" role="status"
+										style="display: none;width: 3.5rem;height: 3.5rem;">
+										<span class="visually-hidden"
+											style="font-size: 3.5rem;color: rgb(29, 182, 18);">Loading...</span>
+									</div>
+								</div>
+								<br>
+
+								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">
+									Please Upload Screen Shot of Payment before submit
+								</h4>
+
+								<div>
+									<label class="mb-2 ml-2" for="image">
+										<b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
+												style="color: rgb(214, 91, 20)"></span></b>
+									</label>
+									<br />
+									<label for="image" class="file-label" id="display-file">
+										<i class="fas fa-upload"></i>
+										<span id="file-label-text">Choose an Image or PDF</span>
+										<input name="image" id="image" type="file" accept="image/*,application/pdf"
+											required style="display:none;">
+									</label>
+								</div>
+
+								<br>
+
+							</div>
+
+
+
+
+							<p style="font-size: 1.2rem;">
+								If any doubts ,,,,
+								<br><a style="font-size: 1.2rem;font-weight: lighter;"
+									href="https://wa.me/+918714317709" target="_blank"
+									style="font: inherit;">📲Nithin
+									: 8714317709</a>
+								<br><a style="font-size: 1.2rem;font-weight: lighter;"
+									href="https://wa.me/+918330829274" target="_blank" style="font: inherit;">📲Megha
+									: 8330829274</a>
+							</p>
+							<input type="submit" value="Submit" class="theme-btn gradient mt-3"
+								style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;">
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- loader gif -->
+	<div class="send-div">
+		<img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
+		<div class="loader-text">
+			Submitting form... <br> Please dont panic if stuck!! <br>
+			Please wait a minute the file is being uploaded...
+		</div>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+	
+	<!-- Initialize Swiper -->
+	<script>
+		// registration ended
+		// const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
+		// membershipFormWrapper.innerHTML = `
+		// <h1 style="color: white;">Project Development Challenge</h1>
+		// <p style="color: white;">The challenge for 2026 has been officially closed.</p>`;
+
+
+		//  backup
+		// const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
+		// membershipFormWrapper.innerHTML = `
+		// <h1 style="color: white; padding-top: 15px;">Facing Issues on this page ?</h1><br>
+		// <p style="color: white;">Due to compatibility issues on some mobile devices, this page may not function as expected.<br><br>Please click Continue to proceed to next page and complete your registration without any interruption
+		// 	<a id='register-now' class='theme-btn gradient mt-3'
+		// 	style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
+		// 	href='https://istegecb.in/pdc-backup.html' target="_blank">Continue
+		// 				</a></p>`;
+
+
+
+		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
+		document.addEventListener("DOMContentLoaded", function() {
+			const teamCountInput = document.getElementById("teamCount");
+			if (teamCountInput) {
+				teamCountInput.addEventListener('input', function() {
+					handleTeamCount(); 
+					if (typeof updateTotal === "function") updateTotal();
+				});
+			}
+		});
+
+		function handleTeamCount() {
+			const val = document.getElementById("teamCount").value;
+			const mem4 = document.getElementById("mem4");
+			const mem5 = document.getElementById("mem5");
+
+			if (val === "" || isNaN(val)) {
+				hideSection(mem4);
+				hideSection(mem5);
+				return;
+			}
+
+			const count = parseInt(val);
+
+			count >= 4 ? showSection(mem4) : hideSection(mem4);
+			count >= 5 ? showSection(mem5) : hideSection(mem5);
+			}
+
+			function showSection(section) {
+			section.style.display = "block";
+			section.querySelectorAll("input, select").forEach(f => f.required = true);
+			}
+
+			function hideSection(section) {
+			section.style.display = "none";
+			section.querySelectorAll("input, select").forEach(f => {
+				f.required = false;
+				f.value = "";
+			});
+		}
+
+		function updateTotal() {
+			const ids = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
+
+			const filled = ids
+				.map(id => document.getElementById(id))
+				.filter(el => el && !el.disabled && el.value.trim() !== "");
+
+			const allIsteMembers =
+				filled.length > 0 &&
+				filled.every(el => el.value.trim() !== "0");
+
+			const total = allIsteMembers ? 50 : 150;
+
+			const ttlamt = document.getElementById('ttlamt');
+			ttlamt.innerHTML = 'Total Amount - ₹' + total + '/-';
+
+			return total;
+		}
+		['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'].forEach(id => {
+				document.getElementById(id)?.addEventListener('input', updateTotal);
+			});
+
+		window.addEventListener("DOMContentLoaded", updateTotal);
+
+		/*HANDLE PROJECT PREFERENCE - updated on 17th Feb 2026*/
+		function projPreference() {
+			const selectOpns = [
+				document.getElementById("firstproject"),
+				document.getElementById("secondproject"),
+				document.getElementById("thirdproject")
+			];
+
+			const selectedValues = selectOpns.map(sel => sel.value)
+				.filter(val => val && val !== "Custom Project");
+
+			selectOpns.forEach(select => {
+				Array.from(select.options).forEach(option => {
+					option.disabled = false;
+				});
+			});
+
+			selectOpns.forEach(select => {
+				Array.from(select.options).forEach(option => {
+					if (selectedValues.includes(option.value) && option.value !== select.value) {
+						option.disabled = true;
+					}
+				})
+			})
+		}
+
+
+		/* HANDLE CUSTOM PROJECT - updated on 16th Feb 2026 */
+		function handleCustomProject() {
+			const custom_proj = document.getElementById("firstproject").value;
+			const section = document.getElementById("show-project-preference");
+
+			const second = document.getElementById("secondproject");
+			const third  = document.getElementById("thirdproject");
+
+			const custom_project_input = document.getElementById("input-custom-project");
+			const input_project_name = document.getElementById("projectName");
+
+
+			if (custom_proj === "Custom Project") {
+				section.style.display = "none";
+				second.removeAttribute("required");
+				third.removeAttribute("required");
+				custom_project_input.style.display = "block";
+				input_project_name.setAttribute("required", "required");
+
+			} else {
+				section.style.display = "block";
+
+				second.setAttribute("required", "required");
+				third.setAttribute("required", "required");
+				custom_project_input.style.display = "none";
+			}
+		}
+
+
+		
+		
+
+		// window.addEventListener("DOMContentLoaded", () => {
+		// 		["mem4", "mem5"].forEach(id => {
+		// 			document.querySelectorAll(`#${id} input, #${id} select`)
+		// 				.forEach(el => {
+		// 					el.disabled = true;
+		// 					el.required = false;
+		// 				});
+		// 		});
+		// });
+
+
+		
+		// function handleTeamCount() {
+		// 	const count = parseInt(document.getElementById("teamCount").value);
+
+		// 	for (let i = 4; i <= 5; i++) {
+		// 		const section = document.getElementById(`mem${i}`);
+		// 		const fields = section.querySelectorAll("input, select");
+
+		// 		if (count >= i) {
+		// 			section.style.display = "block";
+		// 			fields.forEach(f => f.setAttribute("required", "required"));
+		// 		} 
+		// 		else {
+		// 			section.style.display = "none";
+		// 			fields.forEach(f => f.removeAttribute("required"));
+		// 		}
+		// 	}
+		// }
+
+
+
+
+
+
+	
+
+		function openQR1() {
+			document.getElementById("PhonePebtn1").setAttribute("onclick", "closeQR1()");
+			document.getElementById("PhonePebtn1").innerHTML = "X Close";
+			document.getElementById("PhonePeqr1").style.display = "block";
+		}
+		function closeQR1() {
+			document.getElementById("PhonePebtn1").setAttribute("onclick", "openQR1()");
+			document.getElementById("PhonePebtn1").innerHTML = "PhonePe QR";
+			document.getElementById("PhonePeqr1").style.display = "none";
+
+		}
+		function openQR2() {
+			document.getElementById("PhonePebtn2").setAttribute("onclick", "closeQR2()");
+			document.getElementById("PhonePebtn2").innerHTML = "X Close";
+			document.getElementById("PhonePeqr2").style.display = "block";
+		}
+		function closeQR2() {
+			document.getElementById("PhonePebtn2").setAttribute("onclick", "openQR2()");
+			document.getElementById("PhonePebtn2").innerHTML = "Gpay QR";
+			document.getElementById("PhonePeqr2").style.display = "none";
+		}
+		function a() {
+			document.getElementById("process").style.display = "block";
+			document.getElementById("successtext").innerHTML = "Submitting form...Please dont panic if stuck!!";
+		}
+		document.getElementById("pdcform").addEventListener('submit', a);
+
+
+
+
+
+		// check size
+		function checkFileSize(file) {
+			const input = document.getElementById("image");
+			const msg = document.getElementById('successtext');
+			const fileLabelText = document.getElementById("file-label-text"); 
+
+			const fileName = file.name;
+			const fileExtension = fileName.split('.').pop();
+			const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
+			const additionalText = baseName.slice(-3);
+			const displayName = baseName.length > 30 ? baseName.slice(0, 27) + '...' + additionalText : baseName;
+
+			if (input.files && input.files[0]) {
+				const fileSize = input.files[0].size / 1024 / 1024;
+				const fileType = input.files[0].type;
+
+				// Check if the file is a PDF or an image
+				const isImage = fileType.startsWith('image/');
+				const isPDF = fileType === 'application/pdf';
+
+				if (!isImage && !isPDF) {
+					msg.textContent = 'Invalid file type. Please choose an image or PDF.';
+					msg.style.color = 'red';
+					fileLabelText.textContent = "Choose an Image or PDF";
+					return;
+				}
+
+				if (fileSize > 4) {
+					msg.textContent = 'File size exceeds 4MB limit. Please choose a smaller file.';
+					msg.style.color = 'red';
+					fileLabelText.textContent = "Choose an Image or PDF";
+				} else {
+					msg.textContent = 'File uploaded successfully. Please proceed with submission.';
+					msg.style.color = 'rgb(29, 182, 18)';
+					fileLabelText.textContent = `${displayName}.${fileExtension}`;
+				}
+			} else {
+				msg.textContent = 'Please complete payment and upload screenshot of payment before submitting.';
+				msg.style.color = 'rgb(29, 182, 18)';
+				fileLabelText.textContent = "Choose an Image or PDF";
+			}
+		}
+
+
+		let fileInput = document.getElementById("image");
+
+
+
+		fileInput.addEventListener("change", () => {
+			let file = fileInput.files[0];
+
+			let fr = new FileReader();
+			fr.onload = (e) => {
+				let res = e.target.result;
+
+				let glob = res.split("base64,")[1];
+
+
+
+
+				checkFileSize(file);
+
+			};
+			fr.readAsDataURL(file);
+		});
+
+		//QR code 
+		const qrToggleBtn = document.getElementById("qrToggleBtn");
+		const qrSection = document.getElementById("qrSection");
+		const qrImage = document.getElementById("qrImage");
+		const shareBtn = document.getElementById("shareBtn");
+		const downloadBtn = document.getElementById("downloadBtn");
+
+		qrToggleBtn.addEventListener('click', () => {
+		qrSection.classList.toggle("show");
+		qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code" : "Show QR Code";
+		});
+
+		shareBtn.addEventListener('click', () => {
+		if (navigator.share) {
+			fetch(qrImage.src)
+			.then(response => response.blob())
+			.then(blob => {
+				const file = new File([blob], "assets/img/qr-code-for-membership.jpg", { type: blob.type });
+				navigator.share({
+				title: "Payment QR",
+				text: "Scan this QR to make payment",
+				files: [file]
+				}).catch(err => console.log("Share failed:", err));
+			})
+			.catch(err => console.log("Error fetching QR:", err));
+		}
+		else {
+			alert("Sharing is not supported on this browser");
+		}
+		});
+
+
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement("a");
+      link.download = "qrcodeDownload.jpg";
+      link.href = qrImage.src;
+      link.click();
+    });
+
+
+
+
+
+
+		// request
+		let url = `
+		https://script.google.com/macros/s/AKfycbyR-uRSmQWzZ8XW1PMuCeY3YzquwNU7RJRLSi5m9JrtjS_n9_o_21u7Yer7HDWuaB0W/exec
+        `.trim();
+		$("#pdcform").submit((e) => {
+			e.preventDefault();
+			$(".send-div").fadeIn();
+
+
+			var teamName = document.getElementById('teamname').value;
+			var firstProject = document.getElementById('firstproject').value;
+			var secondProject = document.getElementById('secondproject').value;
+			var thirdProject = document.getElementById('thirdproject').value;
+			var projectName = document.getElementById('projectName').value;
+			var teamLead = document.getElementById('teamlead').value;
+			var mobileNumber = document.getElementById('mobilenumber').value;
+			var email = document.getElementById('Email1').value;
+			var semester = document.getElementById('Semester').value;
+			var branch = document.getElementById('Branch').value;
+			var isIste = document.getElementById('isIste').value;
+			var isIste3 = document.getElementById("is-iste3").value;
+			var isIste4 = document.getElementById("is-iste4").value;
+			var isIste2 = document.getElementById("is-iste2").value;
+			var isIste5 = document.getElementById("is-iste5").value;
+			var teamMember2 = document.getElementById("team-member2").value;
+			var mobileMember2 = document.getElementById("mobile-member2").value;
+			var emailMember2 = document.getElementById("email-member2").value;
+			var semMember2 = document.getElementById("sem-member2").value;
+			var branchMember2 = document.getElementById("branch-member2").value;
+			var teamMember3 = document.getElementById("team-member3").value;
+			var mobileMember3 = document.getElementById("mobile-member3").value;
+			var emailMember3 = document.getElementById("email-member3").value;
+			var semMember3 = document.getElementById("sem-member3").value;
+			var branchMember3 = document.getElementById("branch-member3").value;
+			var teamMember4 = document.getElementById("team-member4").value;
+			var mobileMember4 = document.getElementById("mobile-member4").value;
+			var emailMember4 = document.getElementById("email-member4").value;
+			var semMember4 = document.getElementById("sem-member4").value;
+			var branchMember4 = document.getElementById("branch-member4").value;
+
+			var teamMember5 = document.getElementById("team-member5").value;
+			var mobileMember5 = document.getElementById("mobile-member5").value;
+			var emailMember5 = document.getElementById("email-member5").value;
+			var semMember5 = document.getElementById("sem-member5").value;
+			var branchMember5 = document.getElementById("branch-member5").value;
+			let file = document.getElementById("image");
+
+			// let img= document.getElementById("drive");
+			let fr = new FileReader();
+			fr.readAsDataURL(file.files[0]);
+			fr.addEventListener('loadend', () => {
+				let res = fr.result;
+				// img.src=res;
+				let glob = res.split("base64,")[1];
+				let obj = {
+					base64: glob,
+					type: file.files[0].type,
+					name: file.files[0].name,
+					teamName: teamName,
+					firstProject: firstProject,
+					secondProject: secondProject,
+					thirdProject: thirdProject,
+					projectName: projectName,
+					TeamLead: teamLead,
+					mobileMember1: mobileNumber,
+					emailMember1: email,
+					semMember1: semester,
+					branchMember1: branch,
+					isIste1: isIste,
+					teamMember2: teamMember2,
+					mobileMember2: mobileMember2,
+					emailMember2: emailMember2,
+					semMember2: semMember2,
+					branchMember2: branchMember2,
+					isIste2: isIste2,
+					teamMember3: teamMember3,
+					mobileMember3: mobileMember3,
+					emailMember3: emailMember3,
+					semMember3: semMember3,
+					branchMember3: branchMember3,
+					isIste3: isIste3,
+					teamMember4: teamMember4,
+					mobileMember4: mobileMember4,
+					emailMember4: emailMember4,
+					semMember4: semMember4,
+					branchMember4: branchMember4,
+					isIste4: isIste4,
+					teamMember5: teamMember5,
+					mobileMember5: mobileMember4,
+					emailMember5: emailMember5,
+					semMember5: semMember5,
+					branchMember5: branchMember5,
+					isIste5: isIste5
+				};
+
+				fetch(
+					url,
+					{
+						method: "POST",
+						body: JSON.stringify(obj)
+					}).then(r => r.text()).then(data => {
+						if (data == "success") {
+							const paymentDetails = `
+								<div id = "payment-completed" >
+									<h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">Form submitted Successfully!</h4>
+
+									<h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
+									<p style='font-size: 1.2em;color: green;'>
+										Account holder name: Krishnapriya R<br>
+										IFSC code: SBIN0070259<br>
+										Account number: 44148248108<br>
+										Gpay / PhonePe / Paytm: 7012310891<br>
+										UPI id: krishnapriyarmalu-1@okicici
+									</p>
+
+									<a id='register-now' class='theme-btn gradient mt-3'
+										style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
+										href='https://chat.whatsapp.com/DYtDWVqoErE0sI5YDV5aen?mode=gi_t' target="_blank">Join Our Whatsapp Group
+									</a>
+								</div>`;
+
+
+							document.getElementById("pdcform").innerHTML = paymentDetails;
+							$(".send-div").fadeOut();
+
+						} else {
+							document.getElementById("successtext").innerHTML = "ERORR Submitting Form.Please retry Filling the form.";
+							$(".send-div").fadeOut();
+						}
+					})
+			})
+		})
+
+
+
+		var swiper = new Swiper(".mySwiper", {
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			centeredSlides: false,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true
+			},
+		});
+		// past events
+		var swiper2 = new Swiper(".mySwiper2", {
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			centeredSlides: false,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true
+			},
+		});
+		// teams swiper
+		var swiper3 = new Swiper(".mySwiper3", {
+			slidesPerView: 'auto',
+			loop: false,
+			spaceBetween: 0,
+			centeredSlides: false,
+			autoplay: {
+				delay: 2000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+
+
+
+		// document.onkeydown = function(e) {
+		// if(event.keyCode == 123) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+		// 	return false;
+		// }
+		// }
+
+
+	</script>
+
+	<!-- youtube  -->
+	<script src="https://apis.google.com/js/platform.js"></script>
+	<script src="./assets/js/main.js"></script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	<!--
+	    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+	    -->
+</body>
+
+</html>
