@@ -223,7 +223,7 @@
 
 
                     <form id="istecall" 
-                        style="width:100%;font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+                        style="width:100%;">
                         <div class="event-card-body event-card-body-reg"
                             style="width: 100%; height: auto;  background: transparent;">
                             <div style="width: 100%;">
@@ -692,14 +692,16 @@
 
 
                                 <div class="register-detail">
-                                    <h6 style="font-size: 1.4em;color: rgb(214, 91, 20);">REGISTRATION DETAILS</h6>
+                                    <h6 style="font-size: 1.4em;color: rgb(214, 91, 20); margin-bottom: 0;">REGISTRATION DETAILS</h6>
+                                        <h2 style="font-weight: 400;font-size: 17px;color: rgb(235, 208, 200); margin-bottom: 0;" id="slotsLeft">
+                                            <i>Only 10 spots left!!</i>
+                                        </h2>
                                     <p style="font-size: 1.1em">
                                         ▪️<b>For teams</b>
                                         with <b>all ISTE </b> Members <b>₹50 per team</b> <br>
                                         ▪️<b>For teams</b>
                                         with <b>atleast 1 </b><b>Non-ISTE</b> member <b>₹150 per team</b>
                                     </p>
-
 
                                 </div>
 
@@ -799,9 +801,17 @@
         
 
 
+
+
+
+
+
         /* HANDLE TEAM COUNT - updated on 22nd Feb 2026 underemployed*/
         document.addEventListener("DOMContentLoaded", function () {
             // handleTeamCount(); 
+
+            // close form
+            getCount();
 
             const teamCountInput = document.getElementById("teamCount");
             if (teamCountInput) {
@@ -1019,7 +1029,6 @@
         });
 
 
-
         //QR code 
         const qrToggleBtn = document.getElementById("qrToggleBtn");
         const qrSection = document.getElementById("qrSection");
@@ -1061,6 +1070,9 @@
 
 
 
+
+
+
         // copy account data
         
             function copyText(element) {
@@ -1091,10 +1103,60 @@
                     element.style.fontWeight = "";
                 }, 350);
             }
-        
+    // // ================================================================================================================ 
+    // // ====================================  close form script ====================================================== 
+    // // ================================================================================================================ 
+
+    async function getCount() {
+        try {
+            const response = await fetch(`
+            
+https://script.google.com/macros/s/AKfycbz6_Lfa3KwpjFbSmpGfQm7DnzotCk7gasIkGbcTU2dB6FRlRD4L6t0u0sGxkVBIY2Cr/exec
 
 
 
+            `.trim(), {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ action: 'closeReg' })
+            });
+
+            const result = await response.json();
+            console.log(result);
+
+
+            if (result.isClosed) {
+                document.getElementById("istecall").innerHTML = `
+                <div id="payment-completed">
+                    <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">REGISTRATION HAS BEEN CLOSED</h4>
+                    <p style='font-size: 1.2em;color: #f0f0f0;margin:1.5rem 0;'>
+                        Sorry all slots have been filled. Thank you for showing interest in ISTE GECB's events. 
+                        Follow our channel for more such amazing events.
+                    </p>
+                    <a id='register-now' class='theme-btn gradient mt-3'
+                        style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
+                        href='https://whatsapp.com/channel/0029VamIrg5HrDZXomfgoe3Q' target="_blank">
+                        Follow Channel For the Latest Events
+                    </a>
+                </div>
+            `;
+            } else {
+                $("#slotsLeft")
+                    .html(`<i>Only ${result.regsLeft} spots left!!</i>`)  // fixed closing tag too, was <i> not </i>
+                    .fadeIn(1000);
+            }
+
+        } catch (e) {
+            console.log(e);
+        }
+    }
+      
+
+
+
+    // // ================================================================================================================ 
+    // // ====================================  REGISTRATION script ====================================================== 
+    // // ================================================================================================================ */
 
 
     $("#istecall").submit((e) => {
@@ -1119,6 +1181,7 @@
         $(".send-div").show();
         const formData = $("#istecall").serializeArray();
         var data = {};
+        data["action"] = "reg";
         $(formData).each(function (index, obj) {
             data[obj.name] = obj.value.trim() === "" ? null : obj.value;
         });
@@ -1129,7 +1192,7 @@
             url: `
 
         
-https://script.google.com/macros/s/AKfycbx4f0mzSPxOtqlNgPb4Oa--AKxJ1qbFIPKVVZfBkRghbn72GH6hYXdF0B7aPPoTuLQc/exec
+https://script.google.com/macros/s/AKfycbz6_Lfa3KwpjFbSmpGfQm7DnzotCk7gasIkGbcTU2dB6FRlRD4L6t0u0sGxkVBIY2Cr/exec
 
 
 
