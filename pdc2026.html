@@ -288,7 +288,7 @@
                                 <label for="firstproject" class="mb-2 ml-2">Project Preference</label>
                                 <select id="firstproject" name="firstproject"  required=""
                                     onchange="handleCustomProject(); projPreference()">
-                                    <option value="nil" hidden>Select Project</option>
+                                    <option value="" hidden>Select Project</option>
                                     <option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based
                                         Disaster-Resilient Residential Building</option>
                                     <option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and
@@ -333,7 +333,7 @@
                                     <label for="secondProject" class="mb-2 ml-2">Project Second Preference</label>
                                     <select id="secondproject" name="secondProject"  required=""
                                         onchange="projPreference()">
-                                        <option value="nil" hidden>Select Project</option>
+                                        <option value="" hidden>Select Project</option>
                                         <option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based
                                             Disaster-Resilient Residential Building</option>
                                         <option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and
@@ -374,7 +374,7 @@
                                     <label for="thirdProject" class="mb-2 ml-2">Project Third Preference</label>
                                     <select id="thirdproject" name="thirdProject"  required=""
                                         onchange="projPreference()">
-                                        <option value="nil" hidden>Select Project</option>
+                                        <option value="" hidden>Select Project</option>
                                         <option value="Design of a Biomimicry-Based Disaster-Resilient Residential Building">Design of a Biomimicry-Based
                                             Disaster-Resilient Residential Building</option>
                                         <option value="AutoCAD-Based Urban Planning and Analysis of Thiruvananthapuram City">AutoCAD-Based Urban Planning and
@@ -1138,11 +1138,11 @@ https://script.google.com/macros/s/AKfycbx4f0mzSPxOtqlNgPb4Oa--AKxJ1qbFIPKVVZfBk
 
             method: "POST",
             success: function (response) {
-                // console.log(Object.keys(data));
-                // console.log(Object.values(data));
-                // console.log(response);
+                console.log(Object.keys(data));
+                console.log(Object.values(data));
+                console.log(response);
                 if (response.result === "success") {
-                    // console.log("success");
+                    console.log("success");
 
                     const paymentDetails = `
               <div id = "payment-completed" >
