@@ -1183,7 +1183,7 @@ https://script.google.com/macros/s/AKfycbz6_Lfa3KwpjFbSmpGfQm7DnzotCk7gasIkGbcTU
         var data = {};
         data["action"] = "reg";
         $(formData).each(function (index, obj) {
-            data[obj.name] = obj.value.trim() === "" ? null : obj.value;
+            data[obj.name] = obj.value.trim() === "" ? "nil" : obj.value;
         });
         data["NewForm"] = "Yes";
         // console.log(data);
