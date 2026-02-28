@@ -428,7 +428,7 @@
                                          required="">
                                     <label for="mobilenumber" class="mb-2 ml-2">Mobile Number</label>
                                     <input placeholder="Enter Mobile number" name="mobilenumber" type="tel"
-                                        pattern="[0-9]*"   required="">
+                                        pattern="[\d+\-\s()]*"   required="">
                                     <label for="Email" class="mb-2 ml-2">Email ID</label>
                                     <input placeholder="Enter your Email ID" name="Email" type="email" 
                                          required="">
@@ -471,7 +471,7 @@
                                          required="">
                                     <label for="mobileMember1" class="mb-2 ml-2">Mobile Number</label>
                                     <input placeholder="Enter Mobile number" name="mobileMember1" type="tel"
-                                        pattern="[0-9]*"   required="">
+                                        pattern="[\d+\-\s()]*"   required="">
                                     <label for="EmailMember1" class="mb-2 ml-2">Email ID</label>
                                     <input placeholder="Enter your Email ID" name="EmailMember1" type="email"
                                           required="">
@@ -516,7 +516,7 @@
                                          required="">
                                     <label for="mobileMember2" class="mb-2 ml-2">Mobile Number</label><br>
                                     <input placeholder="Enter Mobile number" name="mobileMember2" type="tel"
-                                        pattern="[0-9]*"   required="">
+                                        pattern="[\d+\-\s()]*"   required="">
                                     <label for="emailMember2" class="mb-2 ml-2">Email ID</label>
                                     <input placeholder="Enter your Email ID" name="emailMember2" type="email"
                                           required="">
@@ -559,7 +559,7 @@
                                         >
                                     <label for="mobileMember3" class="mb-2 ml-2">Mobile Number</label>
                                     <input placeholder="Enter Mobile number" name="mobileMember3" type="tel"
-                                        pattern="[0-9]*"  >
+                                        pattern="[\d+\-\s()]*"  >
 
                                     <label for="EmailMember3" class="mb-2 ml-2">Email ID</label>
                                     <input placeholder="Enter your Email ID" name="EmailMember3" type="email"
@@ -603,7 +603,7 @@
                                         >
                                     <label for="mobileMember4" class="mb-2 ml-2">Mobile Number</label>
                                     <input placeholder="Enter Mobile number" name="mobileMember4" type="tel"
-                                        pattern="[0-9]*" >
+                                        pattern="[\d+\-\s()]*" >
 
                                     <label for="EmailMember4" class="mb-2 ml-2">Email ID</label>
                                     <input placeholder="Enter your Email ID" name="EmailMember4" type="email"
@@ -855,7 +855,6 @@
             section.classList.add("hidden");
             section.querySelectorAll("input, select").forEach(el => {
                 el.required = false;
-                el.value = "";
             });
         }
 
