@@ -11,6 +11,92 @@ if error on push:
 
 
 
+## Commit Guidelines
+
+Keep commits simple, clear, and structured.
+
+### Format
+
+```bash
+git add .
+git commit -m "type(scope): short summary"
+git push
+```
+
+Structure:
+
+```
+type(scope): short summary
+
+(optional explanation if needed)
+```
+
+---
+
+##  Allowed Types
+
+* feat → new feature
+* fix → bug fix
+* ui → styling/layout
+* refactor → code cleanup
+* chore → content/config update
+* docs → documentation
+* perf → performance improvement
+* revert → rollback
+
+---
+
+## 📍 Scope
+
+Scope = module or file being changed.
+pdc2026.html -> pdc2026 
+We know now this file was updated.. 
+
+Examples:
+
+```
+pdc2026
+bottech
+membership
+oracle
+events
+index
+main.css
+```
+
+---
+
+## Examples
+
+Add feature:
+
+```
+feat(pdc2026): add registration limit logic
+```
+
+Fix bug:
+
+```
+fix(membership): correct UPI ID validation
+```
+
+UI change:
+
+```
+ui(bottech): improve seats left styling
+```
+
+Close form:
+
+```
+chore(bottech): close registration form
+```
+
+Rollback:
+
+```
+revert(pdc2026): rollback submission logic
+```
   
 
   ## Fork Workflow Guide
