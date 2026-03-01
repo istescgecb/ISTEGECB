@@ -644,6 +644,323 @@
 
 
                                 <!-- Account details -->
+								<div class="account-details">
+									<h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
+										<b>PAYMENT DETAILS</b>
+									</h2>
+									<p style="font-size: 1.2em">
+										Account holder name:
+										<span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Krishnapriya
+										R</span><br />
+										IFSC code:
+										<span onclick="copyText(this)"
+										style="cursor: pointer; user-select: all; font: inherit">SBIN0070259</span><br />
+										Account number:
+										<span onclick="copyText(this)"
+										style="cursor: pointer; user-select: all; font: inherit">44148248108</span><br />
+										UPI ID:
+										<span onclick="copyText(this)"
+										style="cursor: pointer; user-select: all; font: inherit">krishnapriyarmalu-1@okicici</span>
+									</p>
+								</div>
+
+								<div class="qr-container">
+									<button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
+									<div class="qr-section" id="qrSection">
+									<div class="qr-card">
+										<img src="assets/img/qr-code-for-membership.jpg" alt="payment QR" id="qrImage" class="qr-code">
+										<div class="qr-actions">
+										<button type="button" class="share-btn" id="shareBtn">
+											<span></span>
+											<img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px"
+											alt="Share Icon">
+										</button>
+										<button type="button" class="download-btn" id="downloadBtn">
+											<span></span>
+											<img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px"
+											alt="Download Icon">
+										</button>
+										</div>
+									</div>
+									</div>
+								</div>
+
+
+
+								<br>
+
+
+								<!-- <h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">Please Upload Files after submit</h4>  -->
+
+
+								<div class="register-detail">
+									<h6 style="font-size: 1.4em;color: rgb(214, 91, 20);">REGISTRATION DETIAILS</h6>
+									<p style="font-size: 1.1em">
+										▪️<b>For teams</b>
+										with <b>all ISTE </b> Members <b>₹50 per team</b> <br>
+										▪️<b>For teams</b>
+										with <b>atleast 1 </b><b>Non-ISTE</b> member <b>₹150 per team</b>
+									</p>
+
+									</h6>
+
+								</div>
+
+								<div style="font-size: 1.2em;  background: #5a54f37c;max-width: 100%; border-radius: 20px; padding: 10px;"
+									align="center">
+									<div id="ttlamt">
+										Total Amount - ₹150/-
+									</div>
+									<div id="UPI">
+
+
+									</div>
+
+								</div>
+
+								<br>
+
+								<div class="d-flex justify-content-center">
+									<div id="process" class="spinner-border" role="status"
+										style="display: none;width: 3.5rem;height: 3.5rem;">
+										<span class="visually-hidden"
+											style="font-size: 3.5rem;color: rgb(29, 182, 18);">Loading...</span>
+									</div>
+								</div>
+								<br>
+
+								<h4 id="successtext" style="font-size: 1.3em;color: rgb(29, 182, 18);">
+									Please Upload Screen Shot of Payment before submit
+								</h4>
+
+								<div>
+									<label class="mb-2 ml-2" for="image">
+										<b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
+												style="color: rgb(214, 91, 20)"></span></b>
+									</label>
+									<br />
+									<label for="image" class="file-label" id="display-file">
+										<i class="fas fa-upload"></i>
+										<span id="file-label-text">Choose an Image or PDF</span>
+										<input name="image" id="image" type="file" accept="image/*,application/pdf"
+											required style="display:none;">
+									</label>
+								</div>
+
+								<br>
+
+							</div>
+
+
+
+
+							<p style="font-size: 1.2rem;">
+								If any doubts ,,,,
+								<br><a style="font-size: 1.2rem;font-weight: lighter;"
+									href="https://wa.me/+918714317709" target="_blank"
+									style="font: inherit;">📲Nithin
+									: 8714317709</a>
+								<br><a style="font-size: 1.2rem;font-weight: lighter;"
+									href="https://wa.me/+918330829274" target="_blank" style="font: inherit;">📲Megha
+									: 8330829274</a>
+							</p>
+							<input type="submit" value="Submit" class="theme-btn gradient mt-3"
+								style="padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px;">
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- loader gif -->
+	<div class="send-div">
+		<img class="loader-img" src="assets/img/gif/send.gif" style="height: 150px; width: auto" />
+		<div class="loader-text">
+			Submitting form... <br> Please dont panic if stuck!! <br>
+			Please wait a minute the file is being uploaded...
+		</div>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+	
+	<!-- Initialize Swiper -->
+	<script>
+		// registration ended
+		 const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
+		 membershipFormWrapper.innerHTML = `
+		 <h1 style="color: white;">Project Development Challenge</h1>
+		 <p style="color: white;">The challenge for 2026 has been officially closed.</p>`;
+
+
+		//  backup
+		// const membershipFormWrapper = document.querySelector('.membership-form-wrapper');
+		// membershipFormWrapper.innerHTML = `
+		// <h1 style="color: white; padding-top: 15px;">Facing Issues on this page ?</h1><br>
+		// <p style="color: white;">Due to compatibility issues on some mobile devices, this page may not function as expected.<br><br>Please click Continue to proceed to next page and complete your registration without any interruption
+		// 	<a id='register-now' class='theme-btn gradient mt-3'
+		// 	style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
+		// 	href='https://istegecb.in/pdc-backup.html' target="_blank">Continue
+		// 				</a></p>`;
+
+
+
+		/* HANDLE TEAM COUNT - updated on 9th Feb 2026*/
+		document.addEventListener("DOMContentLoaded", function() {
+			const teamCountInput = document.getElementById("teamCount");
+			if (teamCountInput) {
+				teamCountInput.addEventListener('input', function() {
+					handleTeamCount(); 
+					if (typeof updateTotal === "function") updateTotal();
+				});
+			}
+		});
+
+		function handleTeamCount() {
+			const val = document.getElementById("teamCount").value;
+			const mem4 = document.getElementById("mem4");
+			const mem5 = document.getElementById("mem5");
+
+			if (val === "" || isNaN(val)) {
+				hideSection(mem4);
+				hideSection(mem5);
+				return;
+			}
+
+			const count = parseInt(val);
+
+			count >= 4 ? showSection(mem4) : hideSection(mem4);
+			count >= 5 ? showSection(mem5) : hideSection(mem5);
+			}
+
+			function showSection(section) {
+			section.style.display = "block";
+			section.querySelectorAll("input, select").forEach(f => f.required = true);
+			}
+
+			function hideSection(section) {
+			section.style.display = "none";
+			section.querySelectorAll("input, select").forEach(f => {
+				f.required = false;
+				f.value = "";
+			});
+		}
+
+		function updateTotal() {
+			const ids = ['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'];
+
+			const filled = ids
+				.map(id => document.getElementById(id))
+				.filter(el => el && !el.disabled && el.value.trim() !== "");
+
+			const allIsteMembers =
+				filled.length > 0 &&
+				filled.every(el => el.value.trim() !== "0");
+
+			const total = allIsteMembers ? 50 : 150;
+
+			const ttlamt = document.getElementById('ttlamt');
+			ttlamt.innerHTML = 'Total Amount - ₹' + total + '/-';
+
+			return total;
+		}
+		['isIste', 'is-iste2', 'is-iste3', 'is-iste4', 'is-iste5'].forEach(id => {
+				document.getElementById(id)?.addEventListener('input', updateTotal);
+			});
+
+		window.addEventListener("DOMContentLoaded", updateTotal);
+
+		/*HANDLE PROJECT PREFERENCE - updated on 17th Feb 2026*/
+		function projPreference() {
+			const selectOpns = [
+				document.getElementById("firstproject"),
+				document.getElementById("secondproject"),
+				document.getElementById("thirdproject")
+			];
+
+			const selectedValues = selectOpns.map(sel => sel.value)
+				.filter(val => val && val !== "Custom Project");
+
+			selectOpns.forEach(select => {
+				Array.from(select.options).forEach(option => {
+					option.disabled = false;
+				});
+			});
+
+			selectOpns.forEach(select => {
+				Array.from(select.options).forEach(option => {
+					if (selectedValues.includes(option.value) && option.value !== select.value) {
+						option.disabled = true;
+					}
+				})
+			})
+		}
+
+
+		/* HANDLE CUSTOM PROJECT - updated on 16th Feb 2026 */
+		function handleCustomProject() {
+			const custom_proj = document.getElementById("firstproject").value;
+			const section = document.getElementById("show-project-preference");
+
+			const second = document.getElementById("secondproject");
+			const third  = document.getElementById("thirdproject");
+
+			const custom_project_input = document.getElementById("input-custom-project");
+			const input_project_name = document.getElementById("projectName");
+
+
+			if (custom_proj === "Custom Project") {
+				section.style.display = "none";
+				second.removeAttribute("required");
+				third.removeAttribute("required");
+				custom_project_input.style.display = "block";
+				input_project_name.setAttribute("required", "required");
+
+			} else {
+				section.style.display = "block";
+
+				second.setAttribute("required", "required");
+				third.setAttribute("required", "required");
+				custom_project_input.style.display = "none";
+			}
+		}
+
+
+		
+		
+
+		// window.addEventListener("DOMContentLoaded", () => {
+		// 		["mem4", "mem5"].forEach(id => {
+		// 			document.querySelectorAll(`#${id} input, #${id} select`)
+		// 				.forEach(el => {
+		// 					el.disabled = true;
+		// 					el.required = false;
+		// 				});
+		// 		});
+		// });
+
+
+		
+		// function handleTeamCount() {
+		// 	const count = parseInt(document.getElementById("teamCount").value);
+
+		// 	for (let i = 4; i <= 5; i++) {
+		// 		const section = document.getElementById(`mem${i}`);
+		// 		const fields = section.querySelectorAll("input, select");
+
+		// 		if (count >= i) {
+		// 			section.style.display = "block";
+		// 			fields.forEach(f => f.setAttribute("required", "required"));
+		// 		} 
+		// 		else {
+		// 			section.style.display = "none";
+		// 			fields.forEach(f => f.removeAttribute("required"));
+		// 		}
+		// 	}
+		// }
                                 <div class="account-details">
                                     <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
                                         <b>PAYMENT DETAILS</b>
