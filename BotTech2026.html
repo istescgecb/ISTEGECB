@@ -636,7 +636,7 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
         if (result.count <= 0) {
           const successHtml = `
                  <div id="payment-completed">
-                        <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">BOT TECH REGISTRATION HAS BEEN CLOSED 2025</h4>
+                        <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">REGISTRATION HAS BEEN CLOSED</h4>
 
                         <p style='font-size: 1.2em;color: #f0f0f0;margin:1.5rem 0;'>
                             Sorry all slots have been filled. Thank you for showing interest in ISTE GECB's events. Follow our channel for more such amazing events.
@@ -660,6 +660,9 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
       }
 
     }
+
+
+    
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
       navigator.userAgent
     );
@@ -668,7 +671,7 @@ https://script.google.com/macros/s/AKfycby-xyXZQh_MUNAmrOMWQjOTtnfuSIKHd7shiid2J
       try {
         const el = document.getElementById("FULLMEMBERSHIP");
         // initialize getCount
-        // getCount();
+        getCount();
         if (el && typeof updateTotal === "function") updateTotal(el);
       } catch (e) {
         console.error("Initialization error:", e);
