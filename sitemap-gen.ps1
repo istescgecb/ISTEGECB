@@ -4,7 +4,11 @@ $exclude = @(
   "test.html",
   "sample.html",
   "backup",
-  "eventGenSrc"
+  "eventGenSrc",
+  "pages",
+  "pastEvents.html",
+  "testpage.html",
+  "test.html"
 )
 
 $files = Get-ChildItem -Recurse -Filter *.html -File |
