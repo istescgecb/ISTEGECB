@@ -699,8 +699,10 @@
       $(formData).each(function (index, obj) {
         data[obj.name] = obj.value;
       });
-      data["Referral"] = "1150 - Bottech Offer Active";
+      // for knowing when membership was taken
+      data["Referral"] = "Execom maybe 22nd jan";
       // console.log(data);
+      
 
       $.ajax({
         url: `
