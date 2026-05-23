@@ -278,6 +278,14 @@
                 <input type="date" name="DOB" id="DOB" placeholder="DOB" autocomplete="bday" class="ffield" required
                   style="border-radius: 5px;" /><br />
 
+                <label class="mb-2 ml-2" for="Gender">Gender</label><br />
+                <select id="Gender" name="Gender" class="ffield" required>
+                  <option value="" hidden>Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select><br />
+
                 <label class="mb-2 ml-2" for="Year">Year</label><br />
                 <select id="Year" name="Year" class="ffield" required>
                   <!-- onclick="updateAmt()" -->
@@ -353,7 +361,7 @@
                     <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
                       <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
                         onclick="updateTotal(this)" checked style="width: 20px; height: 20px" />
-                      &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400</s> <i> ₹1150/-</i>
+                      &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400</s> <i> ₹1000/-</i>
                     </label>
                   </div>
                   <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
@@ -461,12 +469,15 @@
                 <br />
 
                 <p style="font-size: 1.2em">
+
                   If any doubts, contact:
+                    <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/919497768487" alt="webmaster of iste">📱
+                    Trinita</a>
+
                   <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
                     href="https://wa.me/918330829274">📱 Megha
                   </a>
-                  <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/918078046950">📱
-                    Gopika</a>
+           
                 </p>
               </div>
               <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
@@ -530,7 +541,7 @@
 
       let total = 0;
       let membershipText = "";
-      const fullPrice = 1150; // Original FULL price
+      const fullPrice = 1000; // Original FULL price
 
       switch (selectedOption.value) {
         case "BR":
@@ -543,7 +554,7 @@
           break;
         case "FULL":
           //total = refVerified ? 1000 : fullPrice;
-          total = 1150
+          total = 1000
           membershipText = "ISTE + FULL MEMBERSHIP";
           break;
       }
@@ -700,7 +711,7 @@
         data[obj.name] = obj.value;
       });
       // for knowing when membership was taken
-      data["Referral"] = "Execom maybe 22nd jan";
+      data["Referral"] = "new Execom - 1000 jan 22nd";
       // console.log(data);
       
 
@@ -735,7 +746,7 @@ https://script.google.com/macros/s/AKfycbzSdp43A8dV-NEgjt7WkTlPQH_BItqYms5-z7cFP
 
                   <a id='register-now' class='theme-btn gradient mt-3'
                     style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
-                    href='https://chat.whatsapp.com/KtBFXA9GhO583tWiO8xVTj' target="_blank">Join Our Whatsapp Group
+                    href='https://chat.whatsapp.com/F3BleJC50AsGgljyhiMNNU' target="_blank">Join Our Whatsapp Group
                   </a>
               </div>
                     `;
