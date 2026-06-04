@@ -379,13 +379,15 @@ a {
   font-weight: 500;
 }
 
+/* nithin -> wierd bug icon display flex */
 .nav-container ul li a .icon {
   position: relative;
-  display: block;
   min-width: 80px;
   height: 60px;
-  line-height: 60px;
-  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-container ul li a .icon .fa {
