@@ -2442,3 +2442,137 @@ iframe {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.25);
 }
+
+
+/* ================================================================================================================= */
+/* ================================================================================================================= */
+/* ==========================================          POlICY            ================================== */
+/* ================================================================================================================= */
+/* ================================================================================================================= */
+/* --- POLICY CARD CONTAINER --- */
+.glass-policy-card {
+  background: rgba(20, 15, 50, 0.4);
+  /* Darker, richer tint */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: white;
+  width: 85%;
+  max-width: 900px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-family: 'Saira', sans-serif;
+}
+
+.policy-main-heading {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.policy-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+/* --- POLICY GRID & ITEMS --- */
+.policy-content-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /*spacing between policies */
+}
+
+.policy-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid #0077b5;
+  padding: 1.5rem 2rem;
+  border-radius: 0 10px 10px 0;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.policy-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  /* transform: translateX(5px); */
+}
+
+.policy-item h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #e0e0e0;
+}
+
+.policy-item h2 i {
+  color: #0077b5;
+  /* Icon matches the border accent */
+}
+
+.policy-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.75rem;
+}
+
+.policy-item p:last-of-type {
+  margin-bottom: 0;
+}
+
+.policy-item strong {
+  color: white;
+  font-weight: 600;
+}
+
+/* --- LINKS --- */
+.policy-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #00aaff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.policy-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .policy-wrapper {
+      margin-top: 6rem;
+   
+  }
+  .glass-policy-card {
+    width: 100%;
+    border-radius: 0; 
+    padding: 2rem 1.5rem;
+  }
+
+  .policy-item {
+    padding: 1.25rem 1rem;
+  }
+
+  .policy-main-heading {
+    font-size: 2rem;
+  }
+}
+
+
+/* ================================================================================================================= */
+/* ================================================================================================================= */
+/* ==========================================         hiii             ========================================== */
+/* ================================================================================================================= */
+/* =================================================================================================================
