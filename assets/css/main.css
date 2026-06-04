@@ -2222,12 +2222,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* YouTube - Red */
 .social-card:has(.fa-youtube):hover {
-  color: #f52c2c;
+  color: #ff4c4c;
   border-color: rgba(255, 0, 0, 0.4);
-}
-
-.social-card:has(.fa-youtube):hover .social-icon {
-  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.6));
 }
 
 /* Facebook - Blue */
