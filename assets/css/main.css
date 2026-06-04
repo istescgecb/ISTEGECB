@@ -1279,6 +1279,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   max-width: 70%;
   box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
 }
+
+/* ================================================================================================================= */
+/* ==========================================    Footer     ================================== */
+/* ================================================================================================================= */
+
+
 .footer {
   position: relative;
   left: 0;
@@ -1309,6 +1315,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #24262b;
   background-color: #ffffff;
 }
+
+
+/* ================================================= Footer end =================================== */
+
+
+
+
 .execom-poster-wrapper {
   width: 100%;
   max-width: 500px;
@@ -2092,143 +2105,250 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 5px;
 }
 
-
 /* ================================================================================================================= */
-/* ================================================================================================================= */
-/* ==========================================     ABOUT US PAGE/CHECK US OUT      ================================== */
-/* ================================================================================================================= */
+/* ==========================================    ABOUT US PAGE / CHECK US OUT     ================================== */
 /* ================================================================================================================= */
 
-.linktree-container {
+/* --- 1. CONTAINER & LAYOUT --- */
+.connect-container {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  font-family: 'Saira', sans-serif;
 }
 
-.linktree-heading {
-  font-family: 'Saira', sans-serif;
+.layout-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  /* Socials get remaining space, Sidebar is fixed width */
+  gap: 4rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* --- 2. TYPOGRAPHY --- */
+.section-heading {
   font-weight: 600;
   text-transform: uppercase;
   color: white;
-  font-size: 1.5rem;
-  /* padding-top: 1rem; */
-  /* padding-bottom: 1rem; */
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-   margin-top: 3rem;
 }
 
-.linktree-heading:first-child {
-  margin-top: 1rem;
+.section-subtext {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  font-size: 1rem;
 }
 
-.linktree-section {
-  display: grid;
-  place-items: center;
-  position: relative;
-  inset: 0;
-}
-
-.linktree-content {
+/* --- 3. MAIN SOCIALS --- */
+.social-links-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  width: 100%;
-  max-width: 560px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center; 
+  gap: 1rem;
 }
 
-.linktree-icon {
-  font-size: 2.5em;
-  transition: transform 0.3s ease;
-}
-
-.count-box {
-  background-color: rgba(255, 255, 255, 0.062);
-  border-radius: 10px;
-  padding: 1.5rem 1rem; 
-  transition: all 0.3s ease;
+.social-card {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem 2rem;
   color: white;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-  max-width: 250px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-card .social-icon {
+  font-size: 1.8rem;
+  margin-right: 1.5rem;
+  width: 30px;
   text-align: center;
 }
- 
-.count-box h2 {
-  font-size: 18px;
-  margin-top: 0.5rem;
+
+/* Add a smooth color transition to the text, icons, and card */
+.social-card,
+.social-card .social-icon,
+.social-card span {
+  transition: all 0.3s ease;
 }
 
-.count-box a {
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
+/* Base hover animation */
+.social-card:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(10px);
+  /* Slides slightly to the right on hover */
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- 4. SOCIAL BRAND COLORS ON HOVER --- */
+/* LinkedIn - Blue */
+.social-card:has(.fa-linkedin):hover {
+  color: #0077b5;
+  border-color: rgba(0, 119, 181, 0.4);
+}
+
+.social-card:has(.fa-linkedin):hover .social-icon {
+  filter: drop-shadow(0 0 8px rgba(0, 119, 181, 0.6));
+}
+
+/* Instagram - Pink/Magenta */
+.social-card:has(.fa-instagram):hover {
+  color: #E1306C;
+  border-color: rgba(225, 48, 108, 0.4);
+}
+
+.social-card:has(.fa-instagram):hover .social-icon {
+  filter: drop-shadow(0 0 8px rgba(225, 48, 108, 0.6));
+}
+
+/* WhatsApp - Green */
+.social-card:has(.fa-whatsapp):hover {
+  color: #25D366;
+  border-color: rgba(37, 211, 102, 0.4);
+}
+
+.social-card:has(.fa-whatsapp):hover .social-icon {
+  filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.6));
+}
+
+/* YouTube - Red */
+.social-card:has(.fa-youtube):hover {
+  color: #f52c2c;
+  border-color: rgba(255, 0, 0, 0.4);
+}
+
+.social-card:has(.fa-youtube):hover .social-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.6));
+}
+
+/* Facebook - Blue */
+.social-card:has(.fa-facebook-f):hover {
+  color: #1877F2;
+  border-color: rgba(24, 119, 242, 0.4);
+}
+
+.social-card:has(.fa-facebook-f):hover .social-icon {
+  filter: drop-shadow(0 0 8px rgba(24, 119, 242, 0.6));
+}
+
+/* --- 5. SIDEBAR EXPLORE GRID --- */
+.explore-sidebar {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: fit-content;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.mini-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1.2rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
-.count-box:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.mini-card i {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mini-card span {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.mini-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-3px);
+  color: #f2f2fe;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.count-box:hover .linktree-icon {
-  transform: scale(1.2);
-} 
-
-@media (max-width: 768px) {
-  .row.justify-content-center {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* --- 6. RESPONSIVE DESIGN --- */
+@media (max-width: 850px) {
+  .layout-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
-  .count-box {
-    flex: 0 0 calc(50% - 20px);
-    margin: 10px;
-    padding: 1rem;
-    max-width: 160px;
-    min-width: 130px;
+  .explore-sidebar {
+    padding: 1.5rem 1rem;
   }
 
-  .count-box h2 {
-    font-size: 12px; /* smaller text */
-    margin-top: 6px;
+  .explore-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    width: 100%;
   }
 
-  .linktree-icon {
-    font-size: 1.6em;
-  }
-
-  .linktree-heading {
-    font-size: 1.2rem;
+  .social-card:hover {
+    transform: translateY(-3px);
+    /* Change hover animation for mobile */
   }
 }
 
-
-@media (max-width: 460px) {
-  .count-box {
-    flex: 0 0 calc(50% - 15px);
+@media (max-width: 480px) {
+  .connect-container {
+    padding: 6rem 0 3rem 0;
   }
 
-  .linktree-icon {
-    font-size: 1.4em;
+  .socials-main {
+    padding: 0.5rem;
   }
 
-  .count-box h2 {
-    font-size: 11px;
+  .explore-sidebar {
+    padding: 1rem 0.5rem;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
   }
 
-  .linktree-heading {
-    font-size: 1rem;
+  .explore-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .social-card {
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+  }
+
+  .social-card .social-icon {
+    margin-right: 1rem;
   }
 }
 
-
-
+@media (max-width: 400px) {
+  .explore-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 
 /* ================================================================================================================= */
@@ -2237,7 +2357,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* ================================================================================================================= */
 /* ================================================================================================================= */
 
-
+a
 
 
 /* youtube video display start */
