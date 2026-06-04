@@ -2319,11 +2319,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .explore-sidebar {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.6rem;
     width: 100%;
     border: none;
     border-radius: 0;
-    background-color: transparent;
+
+    /* background-color: transparent; */
   }
 
   .explore-grid {
