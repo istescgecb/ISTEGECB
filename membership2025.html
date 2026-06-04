@@ -534,12 +534,15 @@
     // for membership ttlamount update
     //let refVerified = false;
     // AMBASSADOR END
+
+    // Global total for sending with req
+    let total = 0;
+
     function updateTotal(selectedOption) {
       const ttlamt = document.getElementById("ttlamt");
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
       ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
 
-      let total = 0;
       let membershipText = "";
       const fullPrice = 1000; // Original FULL price
 
@@ -710,15 +713,15 @@
       $(formData).each(function (index, obj) {
         data[obj.name] = obj.value;
       });
-      // for knowing when membership was taken
-      data["Referral"] = "new Execom - 1000 jan 22nd";
+      // for knowing membership amount
+      data["Amount"] = "Rs." + total;
       // console.log(data);
       
 
       $.ajax({
         url: `
 
-https://script.google.com/macros/s/AKfycbw_GSWiKjOVk1fwMamyd9e2RQy5kNqs_7vXIuFek-kBRTTqI6otn2_28zSTHvgOwgPU/exec
+https://script.google.com/macros/s/AKfycbz4JxgIQJyoqEN5JLdzrBymHDM8aAcHgF2v8tkO-gZ4wmvxkyJ3mN5cMFVLoz3trdM5/exec
 
 
 			`.trim(),
