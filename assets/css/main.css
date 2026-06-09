@@ -2198,18 +2198,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-color: rgba(0, 119, 181, 0.4);
 }
 
-.social-card:has(.fa-linkedin):hover .social-icon {
-  filter: drop-shadow(0 0 8px rgba(0, 119, 181, 0.6));
-}
-
 /* Instagram - Pink/Magenta */
 .social-card:has(.fa-instagram):hover {
-  color: #E1306C;
+  color: #fd5b91;
   border-color: rgba(225, 48, 108, 0.4);
-}
-
-.social-card:has(.fa-instagram):hover .social-icon {
-  filter: drop-shadow(0 0 8px rgba(225, 48, 108, 0.6));
 }
 
 /* WhatsApp - Green */
@@ -2234,9 +2226,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-color: rgba(24, 119, 242, 0.4);
 }
 
-.social-card:has(.fa-facebook-f):hover .social-icon {
-  filter: drop-shadow(0 0 8px rgba(24, 119, 242, 0.6));
-}
 
 /* --- 5. SIDEBAR EXPLORE GRID --- */
 .explore-sidebar {
