@@ -40,8 +40,8 @@
 <body>
   <!-- bg animated dots -->
   <div style="z-index: 0">
-    <div class="starsec"></div>
-    <div class="starthird"></div>
+    <!-- <div class="starsec"></div> -->
+    <!-- <div class="starthird"></div> -->
     <div class="starfourth"></div>
     <div class="starfifth"></div>
   </div>
@@ -388,39 +388,43 @@
                   </h2>
                   <p style="font-size: 1.2em">
                     Account holder name:
-                    <span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Krishnapriya
-                      R</span><br />
+                    <span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Haripriya R</span><br />
                     IFSC code:
                     <span onclick="copyText(this)"
-                      style="cursor: pointer; user-select: all; font: inherit">SBIN0070259</span><br />
+                      style="cursor: pointer; user-select: all; font: inherit">SBIN0070547</span><br />
                     Account number:
                     <span onclick="copyText(this)"
-                      style="cursor: pointer; user-select: all; font: inherit">44148248108</span><br />
+                      style="cursor: pointer; user-select: all; font: inherit">40588254527</span><br />
                     UPI ID:
                     <span onclick="copyText(this)"
-                      style="cursor: pointer; user-select: all; font: inherit">krishnapriyarmalu-1@okicici</span>
+                      style="cursor: pointer; user-select: all; font: inherit">haripriya.r1605@oksbi</span>
                   </p>
 
                   <div class="qr-container">
-                    <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code </button>
+                    <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code</button>
+                  
                     <div class="qr-section" id="qrSection">
                       <div class="qr-card">
-                        <img src="assets/img/qr-code-for-membership.jpg" alt="payment QR" id="qrImage" class="qr-code">
+                  
+                        <!-- Added a wrapper to keep the QR code background white for easy scanning -->
+                        <div class="qr-code-wrapper">
+                          <img src="assets/img/qr-code-for-membership.jpg" alt="Payment QR" id="qrImage" class="qr-code">
+                        </div>
+                  
                         <div class="qr-actions">
-                          <button type="button" class="share-btn" id="shareBtn">
-                            <span></span>
-                            <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" width="24px" height="24px"
-                              alt="Share Icon">
+                          <button type="button" class="action-btn share-btn" id="shareBtn" title="Share QR">
+                            <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" alt="Share Icon">
                           </button>
-                          <button type="button" class="download-btn" id="downloadBtn">
-                            <span></span>
-                            <img src="https://cdn-icons-png.flaticon.com/64/724/724933.png" width="24px" height="24px"
-                              alt="Download Icon">
+                          <button type="button" class="action-btn download-btn" id="downloadBtn" title="Download QR">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3185/3185874.png " alt="Download Icon">
                           </button>
                         </div>
+                  
                       </div>
                     </div>
                   </div>
+
+
                 </div>
                 <br>
 
@@ -623,8 +627,9 @@
 
         if (!isImage && !isPDF) {
           msg.textContent = 'Invalid file type. Please choose an image or PDF.';
-          msg.style.color = 'red';
+          msg.style.color = '#ff4c4c';
           fileLabelText.textContent = "Choose an Image or PDF";
+          alert("Invalid file type. Please choose an image or PDF");
           return;
         }
 
@@ -632,6 +637,7 @@
           msg.textContent = 'File size exceeds 4MB limit. Please choose a smaller file.';
           msg.style.color = 'red';
           fileLabelText.textContent = "Choose an Image or PDF";
+          alert("File size exceeds 4MB limit. Please choose a file smaller than 4MB.");
         } else {
           msg.textContent = 'File uploaded successfully. Please proceed with submission.';
           msg.style.color = 'rgb(29, 182, 18)';
@@ -803,44 +809,52 @@ https://script.google.com/macros/s/AKfycbz4JxgIQJyoqEN5JLdzrBymHDM8aAcHgF2v8tkO-
 
 
     //QR code 
-    const qrToggleBtn = document.getElementById("qrToggleBtn");
-    const qrSection = document.getElementById("qrSection");
-    const qrImage = document.getElementById("qrImage");
-    const shareBtn = document.getElementById("shareBtn");
-    const downloadBtn = document.getElementById("downloadBtn");
+    document.addEventListener("DOMContentLoaded", () => {
+        const qrToggleBtn = document.getElementById("qrToggleBtn");
+        const qrSection = document.getElementById("qrSection");
+        const qrImage = document.getElementById("qrImage");
+        const shareBtn = document.getElementById("shareBtn");
+        const downloadBtn = document.getElementById("downloadBtn");
 
-    qrToggleBtn.addEventListener('click', () => {
-      qrSection.classList.toggle("show");
-      qrToggleBtn.textContent = qrSection.classList.contains("show") ? "Hide QR Code" : "Show QR Code";
-    });
+        // Toggle QR visibility
+        qrToggleBtn.addEventListener("click", () => {
+          qrSection.classList.toggle("show");
+          qrToggleBtn.textContent = qrSection.classList.contains("show")
+            ? "Hide QR Code"
+            : "Show QR Code";
+        });
 
-    shareBtn.addEventListener('click', () => {
-      if (navigator.share) {
-        fetch(qrImage.src)
-          .then(response => response.blob())
-          .then(blob => {
-            const file = new File([blob], "assets/img/qr-code-for-membership.jpg", { type: blob.type });
-            navigator.share({
-              title: "Payment QR",
-              text: "Scan this QR to make payment",
-              files: [file]
-            }).catch(err => console.log("Share failed:", err));
-          })
-          .catch(err => console.log("Error fetching QR:", err));
-      }
-      else {
-        alert("Sharing is not supported on this browser");
-      }
-    });
+        // Native Web Share API
+        shareBtn.addEventListener("click", async () => {
+          if (navigator.share) {
+            try {
+              const response = await fetch(qrImage.src);
+              const blob = await response.blob();
+              const file = new File([blob], "payment-qr-code.jpg", { type: blob.type });
 
+              await navigator.share({
+                title: "Payment QR",
+                text: "Scan this QR code to make your payment.",
+                files: [file]
+              });
+            } catch (err) {
+              console.log("Error sharing/fetching QR:", err);
+            }
+          } else {
+            alert("Sharing is not supported on this browser.");
+          }
+        });
 
-    downloadBtn.addEventListener('click', () => {
-      const link = document.createElement("a");
-      link.download = "qrcodeDownload.jpg";
-      link.href = qrImage.src;
-      link.click();
-    });
-
+        // Download functionality
+        downloadBtn.addEventListener("click", () => {
+          const link = document.createElement("a");
+          link.download = "Payment_QR_Code.jpg";
+          link.href = qrImage.src;
+          document.body.appendChild(link); 
+          link.click();
+          document.body.removeChild(link);
+        });
+      });
 
 
 
