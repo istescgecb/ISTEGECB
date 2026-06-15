@@ -24,6 +24,7 @@ body {
   font-family: Poppins, sans serif;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover; /*Background fails to span full width on ultra-wide displays.*/
 }
 
 /*
@@ -1045,15 +1046,15 @@ a {
   align-items: center;
   border-radius: 27px;
   background: var(--secondary-color);
-  width: 180px;
+  width: 220px;
 }
 .team-event-card {
-  width: 161px;
-  height: 161px;
+  width: 200px;
+  height: 200px;
   margin-top: 9px;
 }
 .team-card-body {
-  width: 180px;
+  width: 220px;
   height: auto;
   border-radius: 27px;
   background: var(--secondary-color);
