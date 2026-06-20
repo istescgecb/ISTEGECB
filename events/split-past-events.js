@@ -47,3 +47,8 @@ console.log(`pages count: ${countPages}`)
 
 
 
+const totalEvents = document.querySelectorAll(
+    "#past-events .swiper-slide.past-event"
+).length;
+
+console.log(`Total events: ${totalEvents}`);
