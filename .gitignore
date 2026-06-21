@@ -6,6 +6,3 @@ env
 eventGenSrc
 .env
 .vscode 
-package.json
-package-lock.json
-optmize.js

@@ -25,7 +25,6 @@ body{
   font-family: Poppins,sans serif;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover; /*Background fails to span full width on ultra-wide displays.*/
 
 }
 
@@ -950,14 +949,12 @@ a {
   width: 20px;
 }
 .team-container{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  /* margin-left: 3%; */
+  width: 97%;
+  margin-left: 3%;
   background: #ffffff00;
   border-radius: 24px;
   padding: 20px 0 20px 0px;
-  /* margin-bottom: 33px; */
+  margin-bottom: 33px;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
@@ -1284,9 +1281,6 @@ input[type=text]:focus,textarea:focus{
   }
   .main-logo{
     margin-top: 0;
-   }
-   .team-container{
-    padding-left: 9%;
    }
 }
 
