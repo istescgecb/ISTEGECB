@@ -44,6 +44,7 @@
     "assets/img/gif/**",
     "assets/img/paymentqr/**",
     "assets/img/thumbnail/**",
-    "assets/img/readme/**"
+    "assets/img/readme/**",
+    "assets/img/bptech/**"
   ]
 }
