@@ -321,11 +321,11 @@
 
                 <label class="mb-2 ml-2" for="EmailId">Email Address</label><br />
                 <input type="email" name="EmailId" id="EmailId" placeholder="Email address" class="ffield"
-                  required /><br /><br>
+                  required /><br />
 
 
 
-                <!---------------------------------------------------------------------------------------------------------------
+<!---------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 -------------------------------------FOR AMBASSADOR---------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
@@ -336,8 +336,9 @@
 
                 <!-- AMBASADOR START -->
 
-                <!-- <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br /> -->
-                <input type="hidden" name="Referral" id="Referral" class="ffield" placeholder="Referral Code" />
+                <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
+                <input type="text" name="Referral" id="Referral" class="ffield" placeholder="Referral Code (Optional)" />
+                <br>
                 <!-- <input type="hidden" name="Referral" id="Referral" class="ffield" style="flex: 1 1 65%;width:100%;"
                   placeholder="Referral Code" /> -->
                 <!-- <button id="ref-code-verify" name="verify" class="verify" type="button"
@@ -728,8 +729,10 @@
 
       $.ajax({
         url: `
-        
-https://script.google.com/macros/s/AKfycbwJJB8D6kxTCU0HFQT0mYfRLs9It2psvRLlIHveYgj8qIfwycBz5nWYKaa5pNoqz90/exec
+
+
+https://script.google.com/macros/s/AKfycbwiW9iYGrnitLt_8UZj8XPzg-dHdQ5dt9FxQmlm3RDx7qEcEC8dHhTYWXWogjPyeBuL/exec
+
 
 			`.trim(),
         data: JSON.stringify(data),
