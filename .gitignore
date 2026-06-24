@@ -9,3 +9,4 @@ eventGenSrc
 package.json
 package-lock.json
 optmize.js
+resize.js

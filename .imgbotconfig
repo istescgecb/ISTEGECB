@@ -1,5 +1,6 @@
 {
-  "minKBReduced": 500,
+  "prTitle": "[ImgBot] Optimize images",
+  "minKBReduced": 50,
   "aggressiveCompression": false,
   "ignoredFiles": [
     "assets/img/a.jpg",
