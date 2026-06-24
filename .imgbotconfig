@@ -1,5 +1,6 @@
 {
-  "minKBReduced": 500,
+  "prTitle": "[ImgBot] Optimize images",
+  "minKBReduced": 50,
   "aggressiveCompression": false,
   "ignoredFiles": [
     "assets/img/a.jpg",
@@ -43,6 +44,7 @@
     "assets/img/gif/**",
     "assets/img/paymentqr/**",
     "assets/img/thumbnail/**",
-    "assets/img/readme/**"
+    "assets/img/readme/**",
+    "assets/img/bptech/**"
   ]
 }
