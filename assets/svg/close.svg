@@ -1,4 +1,1 @@
-<svg id="Group_23" data-name="Group 23" xmlns="http://www.w3.org/2000/svg" width="45.219" height="45.219" viewBox="0 0 45.219 45.219">
-  <path id="Path_21" data-name="Path 21" d="M0,0H45.219V45.219H0Z" fill="none"/>
-  <path id="Path_22" data-name="Path 22" d="M17.626,14.962l9.326-9.326L29.617,8.3l-9.326,9.326,9.326,9.326-2.664,2.664-9.326-9.326L8.3,29.617,5.636,26.953l9.326-9.326L5.636,8.3,8.3,5.636Z" transform="translate(4.983 4.983)" fill="#fff"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" id="Group_23" width="45.219" height="45.219" data-name="Group 23" viewBox="0 0 45.219 45.219"><path id="Path_21" fill="none" d="M0,0H45.219V45.219H0Z" data-name="Path 21"/><path id="Path_22" fill="#fff" d="M17.626,14.962l9.326-9.326L29.617,8.3l-9.326,9.326,9.326,9.326-2.664,2.664-9.326-9.326L8.3,29.617,5.636,26.953l9.326-9.326L5.636,8.3,8.3,5.636Z" data-name="Path 22" transform="translate(4.983 4.983)"/></svg>
