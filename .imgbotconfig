@@ -1,4 +1,5 @@
 {
+  "schedule": "monthly",
   "prTitle": "[ImgBot] Optimize images",
   "minKBReduced": 50,
   "aggressiveCompression": false,
