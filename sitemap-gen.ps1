@@ -1,14 +1,35 @@
 $baseUrl = "https://istegecb.in"
 
 $exclude = @(
-  "test.html",
-  "sample.html",
+  # System & Backup folders
   "backup",
   "eventGenSrc",
   "pages",
-  "pastEvents.html",
+
+  # Testing & Utility pages
+  "test.html",
   "testpage.html",
-  "test.html"
+  "sample.html",
+  "example.html",
+  "help.html",
+  "components.html",
+  "backupform.html",
+  "event-page.html",
+  "pastEvents.html",
+
+  # Old Membership Archives
+  "membership2022.html",
+  "membership2023.html",
+  "membership2024.html",
+
+  # Old PDC Archives
+  "pdc2022.html",
+  "pdc2023.html",
+  "pdc2024.html",
+  "pdc2025.html",
+  "pdc-2026.html",
+  "pdc-gopika.html",
+  "pdc-backup.html"
 )
 
 $files = Get-ChildItem -Recurse -Filter *.html -File |
@@ -20,7 +41,7 @@ $files = Get-ChildItem -Recurse -Filter *.html -File |
 $sitemap = @()
 $sitemap += '<?xml version="1.0" encoding="UTF-8"?>'
 $sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-$sitemap += '<url><loc>https://istegecb.in/</loc></url>'
+$sitemap += '<url><loc>https://istegecb.in</loc></url>'
 
 foreach ($file in $files) {
   $relative = $file.FullName.Replace((Get-Location).Path, "").Replace("\", "/")
