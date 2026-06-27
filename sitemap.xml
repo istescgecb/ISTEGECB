@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://istegecb.in/alumni.html</loc></url>
+<url><loc>https://istegecb.in</loc></url>
   <url>
     <loc>https://istegecb.in/achievements.html</loc>
   </url>
@@ -29,9 +29,6 @@
     <loc>https://istegecb.in/check-us-out.html</loc>
   </url>
   <url>
-    <loc>https://istegecb.in/components.html</loc>
-  </url>
-  <url>
     <loc>https://istegecb.in/contact-us.html</loc>
   </url>
   <url>
@@ -41,13 +38,7 @@
     <loc>https://istegecb.in/developers.html</loc>
   </url>
   <url>
-    <loc>https://istegecb.in/event-page.html</loc>
-  </url>
-  <url>
     <loc>https://istegecb.in/events.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/example.html</loc>
   </url>
   <url>
     <loc>https://istegecb.in/execom.html</loc>
@@ -65,18 +56,6 @@
     <loc>https://istegecb.in/membership-benefits.html</loc>
   </url>
   <url>
-    <loc>https://istegecb.in/membership.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/membership2022.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/membership2023.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/membership2024.html</loc>
-  </url>
-  <url>
     <loc>https://istegecb.in/membership2025.html</loc>
   </url>
   <url>
@@ -89,22 +68,7 @@
     <loc>https://istegecb.in/our-student-chapter-members.html</loc>
   </url>
   <url>
-    <loc>https://istegecb.in/pdc-2026.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/pdc-gopika.html</loc>
-  </url>
-  <url>
     <loc>https://istegecb.in/pdc.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/pdc2022.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/pdc2024.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/pdc2025.html</loc>
   </url>
   <url>
     <loc>https://istegecb.in/pdc2026.html</loc>
@@ -146,7 +110,10 @@
     <loc>https://istegecb.in/career-details/ME.html</loc>
   </url>
   <url>
-    <loc>https://istegecb.in/oracles/oracleedition.html</loc>
+    <loc>https://istegecb.in/node_modules/tslib/tslib.es6.html</loc>
+  </url>
+  <url>
+    <loc>https://istegecb.in/node_modules/tslib/tslib.html</loc>
   </url>
   <url>
     <loc>https://istegecb.in/oracles/oracle_1.html</loc>
@@ -176,6 +143,9 @@
     <loc>https://istegecb.in/oracles/oracle_17.html</loc>
   </url>
   <url>
+    <loc>https://istegecb.in/oracles/oracle_18.html</loc>
+  </url>
+  <url>
     <loc>https://istegecb.in/oracles/oracle_19.html</loc>
   </url>
   <url>
@@ -189,6 +159,9 @@
   </url>
   <url>
     <loc>https://istegecb.in/oracles/oracle_22.html</loc>
+  </url>
+  <url>
+    <loc>https://istegecb.in/oracles/oracle_23.html</loc>
   </url>
   <url>
     <loc>https://istegecb.in/oracles/oracle_24.html</loc>
@@ -231,12 +204,6 @@
   </url>
   <url>
     <loc>https://istegecb.in/oracles/oracle_9.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/oracles/orcale_18.html</loc>
-  </url>
-  <url>
-    <loc>https://istegecb.in/oracles/orcale_23.html</loc>
   </url>
   <url>
     <loc>https://istegecb.in/specta-events/expos.html</loc>

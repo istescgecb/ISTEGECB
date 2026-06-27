@@ -605,6 +605,25 @@
     // }
 
 
+    function saveFormToCookie() {
+        const formData = $("#istecall").serializeArray();
+
+        let data = {};
+        $(formData).each(function (index, obj) {
+          data[obj.name] = obj.value;
+        });
+
+        // Save for 7 days
+        document.cookie =
+          "istecall_data=" +
+          encodeURIComponent(JSON.stringify(data)) +
+          "; max-age=" + (7 * 24 * 60 * 60) +
+          "; path=/";
+      }
+
+      // Save every 10 seconds
+      setInterval(saveFormToCookie, 10000);
+
 
     // check size
     function checkFileSize(file) {
@@ -630,6 +649,7 @@
           msg.textContent = 'Invalid file type. Please choose an image or PDF.';
           msg.style.color = '#ff4c4c';
           fileLabelText.textContent = "Choose an Image or PDF";
+          input.value = null;
           alert("Invalid file type. Please choose an image or PDF");
           return;
         }
@@ -638,6 +658,7 @@
           msg.textContent = 'File size exceeds 4MB limit. Please choose a smaller file.';
           msg.style.color = 'red';
           fileLabelText.textContent = "Choose an Image or PDF";
+          input.value = null;
           alert("File size exceeds 4MB limit. Please choose a file smaller than 4MB.");
         } else {
           msg.textContent = 'File uploaded successfully. Please proceed with submission.';
@@ -808,6 +829,46 @@ https://script.google.com/macros/s/AKfycbwiW9iYGrnitLt_8UZj8XPzg-dHdQ5dt9FxQmlm3
       };
       fr.readAsDataURL(file);
     });
+
+    // ============================================================  
+    // ========================== COOKIE ========================== 
+    // ============================================================ 
+    
+    function saveForm() {
+        const data = {};
+
+        $("#istecall")
+          .find(":input")
+          .not("#image, #filetype, #filename, #glob")
+          .each(function () {
+            if (this.name) {
+              data[this.name] = $(this).val();
+            }
+          });
+
+        localStorage.setItem("istecall_form", JSON.stringify(data));
+      }
+
+      function loadForm() {
+        const saved = localStorage.getItem("istecall_form");
+        if (!saved) return;
+
+        const data = JSON.parse(saved);
+
+        Object.keys(data).forEach(key => {
+          $(`[name="${key}"]`).val(data[key]);
+        });
+      }
+
+      // Load on page open
+      $(document).ready(loadForm);
+
+      // Save every 10 seconds
+      setInterval(saveForm, 10000);
+
+    // ============================================================  
+    // ====================== COOKIE END ========================== 
+    // ============================================================  
 
 
     //QR code 

@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Block shitty files
+Disallow: /eventGenSrc/
+Disallow: /help.html
+Disallow: /components.html
+Disallow: /example.html
+Disallow: /test.html
+Disallow: /testpage.html
+Disallow: /backupform.html
+Disallow: /sample.html
+Disallow: /sameple.html
+Disallow: /events/pages/
+
+# membership 
+Disallow: /membership2022.html
+Disallow: /membership2023.html
+Disallow: /membership2024.html
+
+# pdc 
+Disallow: /pdc2022.html
+Disallow: /pdc2023.html
+Disallow: /pdc2024.html
+Disallow: /pdc2025.html
+Disallow: /pdc-gopika.html
+Disallow: /pdc-backup.html
+Disallow: /pdc-2026.html
+
+Disallow: /event-page.html
+
+# Sitemap
+Sitemap: https://istegecb.in/sitemap.xml
