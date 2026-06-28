@@ -702,10 +702,13 @@ a {
 }
 .theme-btn.gradient {
   box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
-  border: solid 3px transparent;
+  /* border: solid 3px transparent;
   background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(to right, #ffffff, #ffffff);
   background-origin: border-box;
-  background-clip: content-box, border-box;
+  background-clip: content-box, border-box; */
+  border:3px solid white;
+  background:transparent;
+  color:white;
   box-shadow: 2px 1000px 1px var(--secondary-color) inset;
 }
 
