@@ -1279,7 +1279,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .count-box {
   padding: 21px 0 21px 0;
   border-radius: 23px;
-  max-width: 70%;
+  min-width: 230px !important;
+  max-width: 70% !important; 
   box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
 }
 
