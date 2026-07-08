@@ -1458,22 +1458,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 
-@media screen  and (max-width:768px){
+@media screen and (max-width:768px) {
 
-        .on-contact {
-          margin-top: 12%;
-        }
-        .event-card-on-reg-page{
-          width: 100%;
-        }
-        .membership-form-card{
-          width: 90%;
-        }
+  .on-contact {
+    margin-top: 12%;
+  }
+
+  .event-card-on-reg-page {
+    width: 100%;
+  }
+
+  .membership-form-card {
+    width: 90%;
+  }
+
+  .past-event-heading a {
+    margin: 0 42px 0 0;
+  }
+  .past-event-heading h1{
+      margin: 0rem 0 0 2rem;
+  }
 }
 
+/* ==================================================================================== */
+/* ======================================= Mobile screen 600px ====================================== */
+/* ==================================================================================== */
 
-
-/* Mobile screen */
 @media screen and (max-width: 600px) {
   body {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -2400,7 +2410,7 @@ a
     .row_video {
         margin: 40px auto;
     }
-  }
+}
 /* youtube video display end */
 
 
