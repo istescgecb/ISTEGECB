@@ -12,6 +12,7 @@
   --extraDark: #0b0a1b;
   --secondary-color: #121214;
   --primary-color: #0d0b25;
+  --button-background-image: black;
 }
 body {
   background-image: url("../img/nts-bg-desktop.jpg");
@@ -132,8 +133,7 @@ body {
 }
 
 .nav-container ul li:hover {
-  background: var(--primary-color);
-  background-image: linear-gradient(to right, #7169fe, #a951f3);
+  background-color: rgba(19, 19, 19, 0.473);
 }
 
 .nav-container ul li a {
@@ -298,6 +298,7 @@ body {
 
 .theme-btn.gradient:hover {
   box-shadow: none;
+  background-color:white;
   color: rgb(0, 0, 0);
 }
 

@@ -355,7 +355,7 @@ a {
 
 .nav-container ul li:hover {
   background: var(--primary-color);
-  background-image: linear-gradient(to right, #7169FE, #A951F3);
+  background-color:  rgba(218, 73, 152, 0.479);
 }
 
 .nav-container ul li a {
