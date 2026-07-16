@@ -355,7 +355,7 @@ a {
 
 .nav-container ul li:hover {
   background: var(--primary-color);
-  background-image: linear-gradient(to right, #7169FE, #A951F3);
+  background-color: rgba(19, 19, 19, 0.473);
 }
 
 .nav-container ul li a {
@@ -715,8 +715,10 @@ a {
 
 .theme-btn.gradient:hover {
   box-shadow: none;
+  background-color:white;
   color: rgb(0, 0, 0);
 }
+
 
 /* mouse scroll down  */
 .mouse_scroll {
