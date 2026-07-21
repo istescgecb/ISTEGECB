@@ -278,321 +278,499 @@
     <!-- ============================= NAV  END  ============================ -->
     <!-- ======================================================================= -->
 
-    <style>
-        /* ================================================================================================================= */
-/* ==========================================    ABOUT US PAGE / CHECK US OUT     ================================== */
-/* ================================================================================================================= */
+<style>
+    /* ================================================================================================================= */
+    /* ==========================================    ABOUT US PAGE / CHECK US OUT     ================================== */
+    /* ================================================================================================================= */
 
-/* --- 1. CONTAINER & LAYOUT --- */
-.connect-container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 2rem;
-    font-family: 'Saira', sans-serif;
-}
-
-.layout-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 350px;
-    /* Socials get remaining space, Sidebar is fixed width */
-    gap: 4rem;
-    width: 100%;
-    max-width: 1000px;
-}
-
-/* --- 2. TYPOGRAPHY --- */
-.section-heading {
-    font-weight: 600;
-    text-transform: uppercase;
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.section-subtext {
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 2rem;
-    font-size: 1rem;
-}
-
-/* --- 3. MAIN SOCIALS --- */
-.social-links-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.social-card {
-    display: flex;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 1.25rem 2rem;
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.social-card .social-icon {
-    font-size: 1.8rem;
-    margin-right: 1.5rem;
-    width: 30px;
-    text-align: center;
-}
-
-/* Add a smooth color transition to the text, icons, and card */
-.social-card,
-.social-card .social-icon,
-.social-card span {
-    transition: all 0.3s ease;
-}
-
-/* Base hover animation */
-.social-card:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    transform: translateX(10px);
-    /* Slides slightly to the right on hover */
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-/* --- 4. SOCIAL BRAND COLORS ON HOVER --- */
-/* LinkedIn - Blue */
-.social-card:has(.fa-linkedin):hover {
-    color: #0077b5;
-    border-color: rgba(0, 119, 181, 0.4);
-}
-
-/* Instagram - Pink/Magenta */
-.social-card:has(.fa-instagram):hover {
-    color: #fd5b91;
-    border-color: rgba(225, 48, 108, 0.4);
-}
-
-/* WhatsApp - Green */
-.social-card:has(.fa-whatsapp):hover {
-    color: #25D366;
-    border-color: rgba(37, 211, 102, 0.4);
-}
-
-.social-card:has(.fa-whatsapp):hover .social-icon {
-    filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.6));
-}
-
-/* YouTube - Red */
-.social-card:has(.fa-youtube):hover {
-    color: #ff4c4c;
-    border-color: rgba(255, 0, 0, 0.4);
-}
-
-/* Facebook - Blue */
-.social-card:has(.fa-facebook-f):hover {
-    color: #1877F2;
-    border-color: rgba(24, 119, 242, 0.4);
-}
-
-
-/* --- 5. SIDEBAR EXPLORE GRID --- */
-.explore-sidebar {
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    height: fit-content;
-}
-
-.explore-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.mini-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 1.2rem 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.mini-card i {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.mini-card span {
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-.mini-card:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-3px);
-    color: #f2f2fe;
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* --- 6. RESPONSIVE DESIGN --- */
-@media (max-width: 850px) {
-    .layout-wrapper {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    .explore-sidebar {
-        padding: 1.5rem 1rem;
-    }
-
-    .explore-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.75rem;
-        width: 100%;
-    }
-
-    .social-card:hover {
-        transform: translateY(-3px);
-        /* Change hover animation for mobile */
-    }
-}
-
-@media (max-width: 480px) {
+    /* --- 1. CONTAINER & LAYOUT --- */
     .connect-container {
-        padding: 6rem 0 3rem 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4rem 2rem;
+        font-family: 'Saira', sans-serif;
     }
 
-    .socials-main {
-        padding: 0.5rem;
-    }
-
-    .explore-sidebar {
-        padding: 1rem 0.6rem;
+    .layout-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 4rem;
         width: 100%;
-        border: none;
-        border-radius: 0;
-
-        /* background-color: transparent; */
+        max-width: 1100px;
     }
 
-    .explore-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.75rem;
-        width: 100%;
+    /* --- 2. TYPOGRAPHY --- */
+    .section-heading {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .section-heading span {
+        color: #a8a8ff;
+        /* Soft purple highlight from design */
+    }
+
+    .section-subtext {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 90%;
+    }
+
+    /* --- 3. MAIN SOCIALS --- */
+    .social-links-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
     }
 
     .social-card {
-        padding: 1rem 1.25rem;
-        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(10, 10, 25, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-card-left {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .social-card-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .social-card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.2rem;
+    }
+
+    .social-card-subtext {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 400;
     }
 
     .social-card .social-icon {
-        margin-right: 1rem;
+        font-size: 1.8rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        transition: all 0.3s ease;
     }
-}
 
-@media (max-width: 400px) {
+    .chevron-icon {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    /* Base hover animation */
+    .social-card:hover {
+        transform: translateX(10px);
+        background-color: rgba(20, 20, 40, 0.8);
+    }
+
+    .social-card:hover .chevron-icon {
+        color: white;
+        transform: translateX(3px);
+    }
+
+    /* --- 4. SOCIAL BRAND COLORS --- */
+    /* LinkedIn - Blue */
+    .social-linkedin {
+        border: 1px solid rgba(0, 119, 181, 0.6);
+        box-shadow: inset 0 0 15px rgba(0, 119, 181, 0.1), 0 0 15px rgba(0, 119, 181, 0.2);
+    }
+
+    .social-linkedin .social-icon {
+        background-color: #0077b5;
+        color: white;
+    }
+
+    .social-linkedin:hover {
+        border-color: rgba(0, 119, 181, 1);
+        box-shadow: inset 0 0 20px rgba(0, 119, 181, 0.2), 0 0 25px rgba(0, 119, 181, 0.4);
+    }
+
+    /* Instagram - Pink/Magenta */
+    .social-instagram {
+        border: 1px solid rgba(225, 48, 108, 0.6);
+        box-shadow: inset 0 0 15px rgba(225, 48, 108, 0.1), 0 0 15px rgba(225, 48, 108, 0.2);
+    }
+
+    .social-instagram .social-icon {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        color: white;
+    }
+
+    .social-instagram:hover {
+        border-color: rgba(225, 48, 108, 1);
+        box-shadow: inset 0 0 20px rgba(225, 48, 108, 0.2), 0 0 25px rgba(225, 48, 108, 0.4);
+    }
+
+    /* WhatsApp - Green */
+    .social-whatsapp {
+        border: 1px solid rgba(37, 211, 102, 0.6);
+        box-shadow: inset 0 0 15px rgba(37, 211, 102, 0.1), 0 0 15px rgba(37, 211, 102, 0.2);
+    }
+
+    .social-whatsapp .social-icon {
+        background-color: #25D366;
+        color: white;
+    }
+
+    .social-whatsapp:hover {
+        border-color: rgba(37, 211, 102, 1);
+        box-shadow: inset 0 0 20px rgba(37, 211, 102, 0.2), 0 0 25px rgba(37, 211, 102, 0.4);
+    }
+
+    /* YouTube - Red */
+    .social-youtube {
+        border: 1px solid rgba(255, 0, 0, 0.6);
+        box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.1), 0 0 15px rgba(255, 0, 0, 0.2);
+    }
+
+    .social-youtube .social-icon {
+        background-color: #FF0000;
+        color: white;
+    }
+
+    .social-youtube:hover {
+        border-color: rgba(255, 0, 0, 1);
+        box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.2), 0 0 25px rgba(255, 0, 0, 0.4);
+    }
+
+    /* Facebook - Blue */
+    .social-facebook {
+        border: 1px solid rgba(24, 119, 242, 0.6);
+        box-shadow: inset 0 0 15px rgba(24, 119, 242, 0.1), 0 0 15px rgba(24, 119, 242, 0.2);
+    }
+
+    .social-facebook .social-icon {
+        background-color: #1877F2;
+        color: white;
+    }
+
+    .social-facebook:hover {
+        border-color: rgba(24, 119, 242, 1);
+        box-shadow: inset 0 0 20px rgba(24, 119, 242, 0.2), 0 0 25px rgba(24, 119, 242, 0.4);
+    }
+
+
+    /* --- 5. SIDEBAR EXPLORE GRID --- */
+    .explore-sidebar {
+        background-color: rgba(15, 10, 30, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 1px solid rgba(150, 100, 255, 0.2);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        height: fit-content;
+    }
+
+    .explore-heading {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+
+    .explore-subtext {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 1.5rem;
+    }
+
     .explore-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
-}
-    </style>
 
-    <div class="connect-container">
-        <div class="layout-wrapper" data-aos="fade-up">
+    .mini-card {
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
+        padding: 1.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-            <!-- MAIN SECTION: SOCIALS -->
-            <main class="socials-main">
-                <h1 class="section-heading">Connect With Us</h1>
-                <p class="section-subtext">Join our community across all platforms.</p>
+    .mini-card i {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+        color: #a8a8ff;
+    }
 
-                <div class="social-links-list">
+    .mini-card-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+    }
 
-                    <a href="https://www.linkedin.com/company/iste-student-chapter-gecb?utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
-                        target="_blank" class="social-card">
-                        <i class="fab fa-linkedin social-icon"></i>
-                        <span>LinkedIn</span>
-                    </a>
+    .mini-card-subtext {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
 
-                    <a href="https://instagram.com/istegecb?utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
-                        target="_blank" class="social-card">
+    .mini-card:hover {
+        background-color: rgba(150, 100, 255, 0.1);
+        transform: translateY(-3px);
+        border-color: rgba(150, 100, 255, 0.4);
+        box-shadow: 0 5px 15px rgba(150, 100, 255, 0.15);
+    }
+
+    .mini-card:hover i {
+        color: #c9c9ff;
+    }
+
+    /* Make Achievements span full width and layout horizontally if needed */
+    .mini-card.achievements {
+        grid-column: span 2;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .mini-card.achievements i {
+        margin-bottom: 0;
+        font-size: 2.2rem;
+    }
+
+    .mini-card.achievements .mini-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* --- 6. RESPONSIVE DESIGN --- */
+    @media (max-width: 950px) {
+        .layout-wrapper {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .explore-sidebar {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .connect-container {
+            padding: 6rem 1rem 3rem 1rem;
+        }
+
+        .section-heading {
+            font-size: 2.25rem;
+        }
+
+        .section-subtext {
+            font-size: 0.95rem;
+            max-width: 100%;
+        }
+
+        .social-card {
+            padding: 1rem 1.25rem;
+        }
+
+        .social-card-left {
+            gap: 1rem;
+        }
+
+        .social-card-title {
+            font-size: 1.1rem;
+        }
+
+        .social-card .social-icon {
+            font-size: 1.5rem;
+            width: 35px;
+            height: 35px;
+        }
+
+        .explore-sidebar {
+            padding: 1.5rem 1rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .explore-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .mini-card {
+            padding: 1rem 0.5rem;
+        }
+
+        .mini-card.achievements {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mini-card.achievements .mini-text-container {
+            align-items: center;
+        }
+
+        .mini-card.achievements i {
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
+
+<div class="connect-container">
+    <div class="layout-wrapper" data-aos="fade-up">
+
+        <!-- MAIN SECTION: SOCIALS -->
+        <main class="socials-main">
+            <h1 class="section-heading">Connect<br><span>With Us</span></h1>
+            <p class="section-subtext">Join our growing community across multiple platforms.<br>Stay updated with
+                events, workshops, technical articles, robotics, announcements and much more.</p>
+
+            <div class="social-links-list">
+
+                <a href="https://www.linkedin.com/company/iste-student-chapter-gecb?utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
+                    target="_blank" class="social-card social-linkedin">
+                    <div class="social-card-left">
+                        <i class="fab fa-linkedin-in social-icon"></i>
+                        <div class="social-card-text">
+                            <span class="social-card-title">LinkedIn</span>
+                            <span class="social-card-subtext">Connect with us professionally</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right chevron-icon"></i>
+                </a>
+
+                <a href="https://instagram.com/istegecb?utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
+                    target="_blank" class="social-card social-instagram">
+                    <div class="social-card-left">
                         <i class="fab fa-instagram social-icon"></i>
-                        <span>Instagram</span>
-                    </a>
+                        <div class="social-card-text">
+                            <span class="social-card-title">Instagram</span>
+                            <span class="social-card-subtext">Photos, reels, stories & updates</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right chevron-icon"></i>
+                </a>
 
-                    <a href="https://whatsapp.com/channel/0029VamIrg5HrDZXomfgoe3Q?utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
-                        target="_blank" class="social-card">
+                <a href="https://whatsapp.com/channel/0029VamIrg5HrDZXomfgoe3Q?utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
+                    target="_blank" class="social-card social-whatsapp">
+                    <div class="social-card-left">
                         <i class="fab fa-whatsapp social-icon"></i>
-                        <span>WhatsApp</span>
-                    </a>
+                        <div class="social-card-text">
+                            <span class="social-card-title">WhatsApp</span>
+                            <span class="social-card-subtext">Get announcements instantly</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right chevron-icon"></i>
+                </a>
 
-                    <a href="https://www.youtube.com/channel/UCT0jrqcHU-g9uVku1GWE-Uw?sub_confirmation=1&utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
-                        target="_blank" class="social-card">
+                <a href="https://www.youtube.com/channel/UCT0jrqcHU-g9uVku1GWE-Uw?sub_confirmation=1&utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
+                    target="_blank" class="social-card social-youtube">
+                    <div class="social-card-left">
                         <i class="fab fa-youtube social-icon"></i>
-                        <span>YouTube</span>
-                    </a>
+                        <div class="social-card-text">
+                            <span class="social-card-title">YouTube</span>
+                            <span class="social-card-subtext">Workshops, tutorials & highlights</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right chevron-icon"></i>
+                </a>
 
-                    <a href="https://www.facebook.com/istegecb/?utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
-                        target="_blank" class="social-card">
+                <a href="https://www.facebook.com/istegecb/?utm_source=istegecb.in&utm_medium=social&utm_campaign=social_links"
+                    target="_blank" class="social-card social-facebook">
+                    <div class="social-card-left">
                         <i class="fab fa-facebook-f social-icon"></i>
-                        <span>Facebook</span>
-                    </a>
+                        <div class="social-card-text">
+                            <span class="social-card-title">Facebook</span>
+                            <span class="social-card-subtext">Stay connected with our community</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right chevron-icon"></i>
+                </a>
 
-                </div>
-            </main>
+            </div>
+        </main>
 
-            <!-- SIDEBAR SECTION: INTERNAL LINKS -->
-            <aside class="explore-sidebar">
-                <h2 class="section-heading" style="font-size: 1.25rem;">Explore More</h2>
+        <!-- SIDEBAR SECTION: INTERNAL LINKS -->
+        <aside class="explore-sidebar">
+            <h2 class="explore-heading">Explore More</h2>
+            <p class="explore-subtext">Discover everything ISTE GECBH has to offer.</p>
 
-                <div class="explore-grid">
-                    <a href="events.html" target="_blank" class="mini-card">
-                        <i class="fas fa-calendar-week"></i>
-                        <span>Events</span>
-                    </a>
-                    <a href="bartonair.html" target="_blank" class="mini-card">
-                        <i class="fas fa-plane"></i>
-                        <span>Bartonair</span>
-                    </a>
-                    <a href="bartonoidz.html" target="_blank" class="mini-card">
-                        <i class="fas fa-robot"></i>
-                        <span>Bartonoidz</span>
-                    </a>
-                    <a href="execom.html" target="_blank" class="mini-card">
-                        <i class="fas fa-users"></i>
-                        <span>Our Team</span>
-                    </a>
-                    <a href="oracle.html" target="_blank" class="mini-card">
-                        <i class="fas fa-book"></i>
-                        <span>The Oracle</span>
-                    </a>
-                    <a href="NTS.html" target="_blank" class="mini-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>NTS</span>
-                    </a>
-                    <a href="achievements.html" target="_blank" class="mini-card">
-                        <i class="fas fa-trophy"></i>
-                        <span>Achievements</span>
-                    </a>
-                </div>
-            </aside>
+            <div class="explore-grid">
+                <a href="events.html" target="_blank" class="mini-card">
+                    <i class="fas fa-calendar-week"></i>
+                    <span class="mini-card-title">Events</span>
+                    <span class="mini-card-subtext">Upcoming & Past</span>
+                </a>
+                <a href="bartonair.html" target="_blank" class="mini-card">
+                    <i class="fas fa-plane"></i>
+                    <span class="mini-card-title">Bartonair</span>
+                    <span class="mini-card-subtext">Magazine</span>
+                </a>
+                <a href="bartonoidz.html" target="_blank" class="mini-card">
+                    <i class="fas fa-robot"></i>
+                    <span class="mini-card-title">Bartonoidz</span>
+                    <span class="mini-card-subtext">Robotics Club</span>
+                </a>
+                <a href="execom.html" target="_blank" class="mini-card">
+                    <i class="fas fa-users"></i>
+                    <span class="mini-card-title">Our Team</span>
+                    <span class="mini-card-subtext">Meet the Members</span>
+                </a>
+                <a href="oracle.html" target="_blank" class="mini-card">
+                    <i class="fas fa-book-open"></i>
+                    <span class="mini-card-title">The Oracle</span>
+                    <span class="mini-card-subtext">Publications</span>
+                </a>
+                <a href="NTS.html" target="_blank" class="mini-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="mini-card-title">NTS</span>
+                    <span class="mini-card-subtext">Technical Series</span>
+                </a>
+                <a href="achievements.html" target="_blank" class="mini-card achievements">
+                    <i class="fas fa-trophy"></i>
+                    <div class="mini-text-container">
+                        <span class="mini-card-title">Achievements</span>
+                        <span class="mini-card-subtext">Hall of Fame</span>
+                    </div>
+                </a>
+            </div>
+        </aside>
 
-        </div>
     </div>
-
+</div>
 
 
     <!-- ======================================================================= -->
