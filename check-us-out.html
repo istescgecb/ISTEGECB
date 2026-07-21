@@ -289,16 +289,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 4rem 2rem;
+        padding: 6rem 2rem 4rem 2rem;
         font-family: 'Saira', sans-serif;
     }
 
     .layout-wrapper {
         display: grid;
         grid-template-columns: 1fr 350px;
-        gap: 4rem;
+        gap: 3rem;
         width: 100%;
         max-width: 1100px;
+        align-items: start;
+        /* Fixes desktop socials and explore not being on the same level */
     }
 
     /* --- 2. TYPOGRAPHY --- */
@@ -314,7 +316,6 @@
 
     .section-heading span {
         color: #a8a8ff;
-        /* Soft purple highlight from design */
     }
 
     .section-subtext {
@@ -329,21 +330,23 @@
     .social-links-list {
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
     .social-card {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgba(10, 10, 25, 0.6);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.05);
+        /* Lighter, better glassy effect */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         border-radius: 12px;
-        padding: 1.25rem 1.5rem;
+        padding: 0.85rem 1.25rem;
+        /* Reduced padding for sleeker look */
         color: white;
         text-decoration: none;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         transition: all 0.3s ease;
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -351,48 +354,53 @@
     .social-card-left {
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
+        /* Reduced gap so it doesn't feel too wide */
     }
 
     .social-card-text {
         display: flex;
         flex-direction: column;
+        justify-content: center;
     }
 
     .social-card-title {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         font-weight: 600;
         color: white;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.1rem;
     }
 
     .social-card-subtext {
-        font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.65);
         font-weight: 400;
     }
 
     .social-card .social-icon {
-        font-size: 1.8rem;
-        width: 40px;
-        height: 40px;
+        font-size: 1.4rem;
+        width: 42px;
+        /* Matched perfectly to text + desc height */
+        height: 42px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 8px;
+        border-radius: 10px;
+        flex-shrink: 0;
         transition: all 0.3s ease;
     }
 
     .chevron-icon {
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.4);
         transition: all 0.3s ease;
     }
 
+     
     /* Base hover animation */
     .social-card:hover {
-        transform: translateX(10px);
-        background-color: rgba(20, 20, 40, 0.8);
+        transform: translateX(8px);
+        background-color: rgba(255, 255, 255, 0.08);
     }
 
     .social-card:hover .chevron-icon {
@@ -401,10 +409,9 @@
     }
 
     /* --- 4. SOCIAL BRAND COLORS --- */
-    /* LinkedIn - Blue */
+    /* LinkedIn */
     .social-linkedin {
-        border: 1px solid rgba(0, 119, 181, 0.6);
-        box-shadow: inset 0 0 15px rgba(0, 119, 181, 0.1), 0 0 15px rgba(0, 119, 181, 0.2);
+        border: 1px solid rgba(0, 119, 181, 0.3);
     }
 
     .social-linkedin .social-icon {
@@ -413,14 +420,13 @@
     }
 
     .social-linkedin:hover {
-        border-color: rgba(0, 119, 181, 1);
-        box-shadow: inset 0 0 20px rgba(0, 119, 181, 0.2), 0 0 25px rgba(0, 119, 181, 0.4);
+        border-color: rgba(0, 119, 181, 0.8);
+        box-shadow: 0 0 15px rgba(0, 119, 181, 0.2);
     }
 
-    /* Instagram - Pink/Magenta */
+    /* Instagram */
     .social-instagram {
-        border: 1px solid rgba(225, 48, 108, 0.6);
-        box-shadow: inset 0 0 15px rgba(225, 48, 108, 0.1), 0 0 15px rgba(225, 48, 108, 0.2);
+        border: 1px solid rgba(225, 48, 108, 0.3);
     }
 
     .social-instagram .social-icon {
@@ -429,14 +435,13 @@
     }
 
     .social-instagram:hover {
-        border-color: rgba(225, 48, 108, 1);
-        box-shadow: inset 0 0 20px rgba(225, 48, 108, 0.2), 0 0 25px rgba(225, 48, 108, 0.4);
+        border-color: rgba(225, 48, 108, 0.8);
+        box-shadow: 0 0 15px rgba(225, 48, 108, 0.2);
     }
 
-    /* WhatsApp - Green */
+    /* WhatsApp */
     .social-whatsapp {
-        border: 1px solid rgba(37, 211, 102, 0.6);
-        box-shadow: inset 0 0 15px rgba(37, 211, 102, 0.1), 0 0 15px rgba(37, 211, 102, 0.2);
+        border: 1px solid rgba(37, 211, 102, 0.3);
     }
 
     .social-whatsapp .social-icon {
@@ -445,30 +450,29 @@
     }
 
     .social-whatsapp:hover {
-        border-color: rgba(37, 211, 102, 1);
-        box-shadow: inset 0 0 20px rgba(37, 211, 102, 0.2), 0 0 25px rgba(37, 211, 102, 0.4);
+        border-color: rgba(37, 211, 102, 0.8);
+        box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
     }
 
-    /* YouTube - Red */
+    /* YouTube (Softer Red) */
     .social-youtube {
-        border: 1px solid rgba(255, 0, 0, 0.6);
-        box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.1), 0 0 15px rgba(255, 0, 0, 0.2);
+        border: 1px solid rgba(230, 33, 23, 0.3);
     }
 
     .social-youtube .social-icon {
-        background-color: #FF0000;
+        background-color: #E62117;
+        /* Alternative softer red */
         color: white;
     }
 
     .social-youtube:hover {
-        border-color: rgba(255, 0, 0, 1);
-        box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.2), 0 0 25px rgba(255, 0, 0, 0.4);
+        border-color: rgba(230, 33, 23, 0.8);
+        box-shadow: 0 0 15px rgba(230, 33, 23, 0.2);
     }
 
-    /* Facebook - Blue */
+    /* Facebook */
     .social-facebook {
-        border: 1px solid rgba(24, 119, 242, 0.6);
-        box-shadow: inset 0 0 15px rgba(24, 119, 242, 0.1), 0 0 15px rgba(24, 119, 242, 0.2);
+        border: 1px solid rgba(24, 119, 242, 0.3);
     }
 
     .social-facebook .social-icon {
@@ -477,46 +481,47 @@
     }
 
     .social-facebook:hover {
-        border-color: rgba(24, 119, 242, 1);
-        box-shadow: inset 0 0 20px rgba(24, 119, 242, 0.2), 0 0 25px rgba(24, 119, 242, 0.4);
+        border-color: rgba(24, 119, 242, 0.8);
+        box-shadow: 0 0 15px rgba(24, 119, 242, 0.2);
     }
 
 
     /* --- 5. SIDEBAR EXPLORE GRID --- */
     .explore-sidebar {
-        background-color: rgba(15, 10, 30, 0.6);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.04);
+        /* Lighter glass effect */
+        backdrop-filter: blur(12px);
+        padding: 1.75rem;
         border-radius: 15px;
-        border: 1px solid rgba(150, 100, 255, 0.2);
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
         height: fit-content;
     }
 
     .explore-heading {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 600;
         color: white;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
         text-transform: uppercase;
     }
 
     .explore-subtext {
-        font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.7);
-        margin-bottom: 1.5rem;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 1.25rem;
     }
 
     .explore-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 0.85rem;
     }
 
     .mini-card {
         background-color: rgba(255, 255, 255, 0.03);
         border-radius: 10px;
-        padding: 1.5rem 1rem;
+        padding: 1.25rem 0.75rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -528,45 +533,45 @@
     }
 
     .mini-card i {
-        font-size: 2rem;
-        margin-bottom: 0.75rem;
+        font-size: 1.75rem;
+        margin-bottom: 0.6rem;
         color: #a8a8ff;
     }
 
     .mini-card-title {
-        font-size: 1rem;
+        font-size: 0.95rem;
         font-weight: 600;
         margin-bottom: 0.2rem;
     }
 
     .mini-card-subtext {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         color: rgba(255, 255, 255, 0.5);
     }
 
     .mini-card:hover {
-        background-color: rgba(150, 100, 255, 0.1);
+        background-color: rgba(150, 100, 255, 0.08);
         transform: translateY(-3px);
-        border-color: rgba(150, 100, 255, 0.4);
-        box-shadow: 0 5px 15px rgba(150, 100, 255, 0.15);
+        border-color: rgba(150, 100, 255, 0.3);
+        box-shadow: 0 5px 15px rgba(150, 100, 255, 0.1);
     }
 
     .mini-card:hover i {
         color: #c9c9ff;
     }
 
-    /* Make Achievements span full width and layout horizontally if needed */
+    /* Make Achievements span full width and layout horizontally */
     .mini-card.achievements {
         grid-column: span 2;
         flex-direction: row;
         justify-content: center;
         gap: 1rem;
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
 
     .mini-card.achievements i {
         margin-bottom: 0;
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .mini-card.achievements .mini-text-container {
@@ -579,17 +584,18 @@
     @media (max-width: 950px) {
         .layout-wrapper {
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2.5rem;
         }
 
         .explore-sidebar {
-            padding: 2rem;
+            padding: 1.5rem;
         }
     }
 
     @media (max-width: 600px) {
         .connect-container {
-            padding: 6rem 1rem 3rem 1rem;
+            padding: 8.5rem 1rem 3rem 1rem;
+            /* Added significantly more top margin for mobile */
         }
 
         .section-heading {
@@ -602,25 +608,25 @@
         }
 
         .social-card {
-            padding: 1rem 1.25rem;
+            padding: 0.8rem 1rem;
         }
 
         .social-card-left {
-            gap: 1rem;
+            gap: 0.85rem;
         }
 
         .social-card-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .social-card .social-icon {
-            font-size: 1.5rem;
-            width: 35px;
-            height: 35px;
+            font-size: 1.3rem;
+            width: 38px;
+            height: 38px;
         }
 
         .explore-sidebar {
-            padding: 1.5rem 1rem;
+            padding: 1.25rem 1rem;
         }
     }
 
