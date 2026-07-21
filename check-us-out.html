@@ -50,10 +50,10 @@
 
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="stylesheet" href="assets/css/main.css" />
-<link rel="stylesheet" href="assets/css/checkout.css" />
 <link rel="stylesheet" href="assets/css/stars.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>Wanna know more about ISTE ?</title>
+
 
 
 
@@ -61,6 +61,442 @@
     html,
     body {
         overflow: visible;
+    }
+
+    /* ================================================================================================================= */
+    /* ==========================================    ABOUT US PAGE / CHECK US OUT     ================================== */
+    /* ================================================================================================================= */
+
+    .connect-container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 2rem 4rem 2rem;
+        font-family: 'Saira', sans-serif;
+    }
+
+    .layout-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 3rem;
+        width: 100%;
+        max-width: 1100px;
+        align-items: start;
+    }
+
+    .section-heading {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .section-heading span {
+        color: #a8a8ff;
+    }
+
+    .section-subtext {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 90%;
+    }
+
+    .social-links-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .social-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 12px;
+        padding: 0.85rem 1.25rem;
+        /* Reduced padding for sleeker look */
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-card-left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .social-card-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .social-card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.1rem;
+    }
+
+    .social-card-subtext {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.65);
+        font-weight: 400;
+    }
+
+    .social-card .social-icon {
+        font-size: 1.4rem;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+    }
+
+    .chevron-icon {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.4);
+        transition: all 0.3s ease;
+    }
+
+
+    .social-card:hover {
+        transform: translateY(-4px);
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .social-card:hover .chevron-icon {
+        color: white;
+        transform: translateX(2px);
+        transition: all ease 300ms;
+    }
+
+    .social-linkedin {
+        border: 1px solid rgba(0, 119, 181, 0.3);
+    }
+
+    .social-linkedin .social-icon {
+        background-color: #0077b5;
+        color: white;
+    }
+
+    .social-linkedin:hover {
+        border-color: rgba(0, 119, 181, 0.8);
+        box-shadow: 0 0 15px rgba(0, 119, 181, 0.2);
+    }
+
+    /* Instagram */
+    .social-instagram {
+        border: 1px solid rgba(225, 48, 108, 0.3);
+    }
+
+    .social-instagram .social-icon {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        color: white;
+    }
+
+    .social-instagram:hover {
+        border-color: rgba(225, 48, 108, 0.8);
+        box-shadow: 0 0 15px rgba(225, 48, 108, 0.2);
+    }
+
+    .social-whatsapp {
+        border: 1px solid rgba(37, 211, 102, 0.3);
+    }
+
+    .social-whatsapp .social-icon {
+        background-color: #25D366;
+        color: white;
+    }
+
+    .social-whatsapp:hover {
+        border-color: rgba(37, 211, 102, 0.8);
+        box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
+    }
+
+    .social-youtube {
+        border: 1px solid rgba(230, 33, 23, 0.3);
+    }
+
+    .social-youtube .social-icon {
+        background-color: white;
+        color: #fb3329e3;
+
+
+    }
+
+    .social-youtube:hover {
+        border-color: rgba(230, 33, 23, 0.8);
+        box-shadow: 0 0 15px rgba(230, 33, 23, 0.2);
+    }
+
+    .social-facebook {
+        border: 1px solid rgba(24, 119, 242, 0.3);
+    }
+
+    .social-facebook .social-icon {
+        background-color: #1877F2;
+        color: white;
+    }
+
+    .social-facebook:hover {
+        border-color: rgba(24, 119, 242, 0.8);
+        box-shadow: 0 0 15px rgba(24, 119, 242, 0.2);
+    }
+
+    .social-instagram .social-icon {
+        font-size: 2.1rem;
+    }
+
+    .social-linkedin .social-icon {
+        font-size: 1.6rem;
+    }
+
+    .social-whatsapp .social-icon {
+        font-size: 1.95rem;
+    }
+
+    .social-youtube .social-icon {
+        font-size: 1.85rem;
+    }
+
+    .chevron-icon {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.4);
+        transition: color 0.3s ease;
+    }
+
+
+    .explore-sidebar {
+        background-color: rgba(0, 0, 0, 0.3);
+        /* backdrop-filter: blur(3px); */
+        padding: 1.75rem;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+        height: fit-content;
+    }
+
+
+
+    .explore-heading {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1.25rem;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 0.35rem;
+    }
+
+    .explore-heading::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background-color: #7c3aed;
+        border-radius: 2px;
+    }
+
+    .explore-subtext {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 1.25rem;
+    }
+
+    .explore-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.85rem;
+    }
+
+    .mini-card {
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
+        padding: 1.25rem 0.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        min-height: 122pxs;
+        width: 100%;
+    }
+
+    .mini-card i {
+        font-size: 1.75rem;
+        margin-bottom: 0.6rem;
+        color: #a8a8ff;
+    }
+
+    .mini-card-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+    }
+
+    .mini-card-subtext {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .mini-card:hover {
+        background-color: rgba(150, 100, 255, 0.08);
+        transform: translateY(-3px);
+        border-color: rgba(150, 100, 255, 0.3);
+        box-shadow: 0 5px 15px rgba(150, 100, 255, 0.1);
+    }
+
+
+    .mini-card:hover,
+    .mini-card:hover i,
+    .mini-card:hover .mini-card-subtext {
+        color: #f0f0f9;
+        transition: all ease 300ms;
+    }
+
+
+    .mini-card.achievements {
+        grid-column: span 2;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+
+    .mini-card.achievements i {
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+
+    .mini-card.achievements .mini-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @media (max-width: 800px) {
+
+        .layout-wrapper {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .explore-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .mini-card.achievements {
+            grid-column: span 3;
+        }
+    }
+
+    @media (max-width:500px) {
+        .explore-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+
+        .mini-card.achievements {
+            grid-column: span 2;
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        .social-card {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .connect-container {
+            padding: 9rem 1rem 3rem 1rem;
+        }
+
+        .section-heading {
+            font-size: 2.25rem;
+        }
+
+        .section-subtext {
+            font-size: 0.95rem;
+            max-width: 100%;
+        }
+
+        .social-card {
+            padding: 0.8rem 1rem;
+        }
+
+        .social-card-left {
+            gap: 0.85rem;
+        }
+
+        .social-card-title {
+            font-size: 1rem;
+        }
+
+    }
+
+    @media (max-width: 400px) {
+        .connect-container {
+            padding: 9rem 0 3rem 0;
+        }
+
+        .social-links-list {
+            width: 95%;
+            padding-left: 0.5rem;
+        }
+
+        .section-heading {
+            padding-left: 0.5rem;
+        }
+
+        .section-subtext {
+            padding-left: 0.5rem;
+        }
+
+
+        .explore-sidebar {
+            width: 100%;
+            padding: none !important;
+            border-radius: 0;
+        }
+
+
+        .mini-card {
+            padding: 1rem 0.5rem;
+        }
+
+        .mini-card.achievements {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mini-card.achievements .mini-text-container {
+            align-items: center;
+        }
+
+        .mini-card.achievements i {
+            margin-bottom: 0.5rem;
+        }
     }
 </style>
 </head>
