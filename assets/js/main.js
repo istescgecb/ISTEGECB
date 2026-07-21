@@ -1,13 +1,42 @@
 // desktop nav bar link selection
 var header = document.getElementById("header");
 var nav_items = header.getElementsByClassName("nav-item");
-for (var i = 0; i < nav_items.length; i++) {
-    nav_items[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("prsnt");
-        current[0].className = current[0].className.replace(" prsnt", "");
-        this.className += " prsnt";
+document.addEventListener("DOMContentLoaded", () => {
+    const page = window.location.pathname
+        .split("/")
+        .pop()
+        .replace(".html", "")
+        .toUpperCase();
+
+    const pages = {
+        "": "INDEX",
+        "INDEX": "INDEX",
+        "EVENTS": "EVENTS",
+        "CONTACT-US": "CONTACT-US",
+        "MEMBERSHIP-BENEFITS": "MEMBERSHIP-BENEFITS",
+        "BARTONAIR": "BARTONAIR",
+        "BARTONOIDZ": "BARTONOIDZ",
+        "DEVELOPERS": "DEVELOPERS",
+        "EXECOM": "EXECOM",
+        "ORACLE": "ORACLE",
+        "NTS": "NTS",
+        "ACHIEVEMENTS": "ACHIEVEMENTS",
+        "ALUMNI": "ALUMNI"
+    };
+
+    const current = pages[page];
+
+    document.querySelectorAll("a[href]").forEach(item => {
+        const href = item.getAttribute("href")
+            .replace(".html", "")
+            .toUpperCase();
+
+        if (href === current) {
+            item.classList.add("prsnt");
+        }
     });
-}
+});
+
 
 // mobile nav bar slider
 // const navigation = document.querySelector('.navigation');
@@ -134,6 +163,8 @@ function loadPastEvents(pageNo = 1) {
 
     xhr.send();
 }
+
+// page based loading 
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes("pastEvents.html")) {
