@@ -346,8 +346,9 @@ a {
   margin-left: 50px;
 }
 .nav-container.active {
-  width: 80%;
+width: clamp(368px, 80%, 385px);
 }
+
 .nav-container ul {
   /* position: absolute;
   top: 0;
