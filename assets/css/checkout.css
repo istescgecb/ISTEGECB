@@ -116,7 +116,8 @@
 
 .social-card:hover .chevron-icon {
     color: white;
-    transform: translateX(3px);
+    transform: translateX(2px);
+    transition: all ease 300ms;
 }
 
 .social-linkedin {
@@ -216,7 +217,7 @@
 
 
 .explore-sidebar {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     /* backdrop-filter: blur(3px); */
     padding: 1.75rem;
     border-radius: 15px;
@@ -303,10 +304,11 @@
 
 .mini-card:hover,
 .mini-card:hover i,
-.mini-card .mini-card-title:hover,
 .mini-card:hover .mini-card-subtext {
-    color: #ddddf9;
+    color: #f0f0f9;
+    transition: all ease 300ms;
 }
+
 
 .mini-card.achievements {
     grid-column: span 2;
@@ -355,6 +357,10 @@
 }
 
 @media (max-width: 600px) {
+    .social-card {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
     .connect-container {
         padding: 9rem 1rem 3rem 1rem;
     }
