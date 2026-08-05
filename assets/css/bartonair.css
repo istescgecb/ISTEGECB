@@ -239,6 +239,9 @@ a {
 .headingdropbtn:hover{
   color: white;
 }
+.headingdropbtn.prsnt{
+  background-color: unset; /* Override the active (.prsnt --added by js) background for heading dropdown buttons*/
+}
 
 .headingdropdown {
   position: relative;
