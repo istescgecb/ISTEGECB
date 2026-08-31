@@ -122,9 +122,9 @@
         -webkit-backdrop-filter: blur(12px);
         border-radius: 12px;
         padding: 0.85rem 1.25rem;
-        /* Reduced padding for sleeker look */
         color: white;
         text-decoration: none;
+        transform: translateY(0px);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         transition: all 0.3s ease;
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -176,17 +176,17 @@
 
     .social-card:hover {
         transform: translateY(-4px);
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0, 0, 0, 0.5);
     }
     .social-card:hover  .social-card-subtext {
-        color: rgba(255, 255, 255, 0.814);
+        color: #f2f2fe;
        
     }
 
 
     .social-card:hover .chevron-icon {
-        color: white;
-        transform: translateX(2px);
+        color: #f2f2fe;
+        /* transform: translateX(2px); */
         transition: all ease 300ms;
     }
 
@@ -427,10 +427,10 @@
     }
 
     @media (max-width: 600px) {
-
+/* 
         .social-card {
             background-color: rgba(0, 0, 0, 0.4);
-        }
+        } */
 
         .connect-container {
             padding: 9rem 1rem 3rem 1rem;
