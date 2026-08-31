@@ -52,7 +52,7 @@
        display: flex;
        align-items: center;
        justify-content: space-between;
-       background-color: rgba(0, 0, 0, 0.3);
+       background-color: rgba(255, 255, 255, 0.02);;
        backdrop-filter: blur(8px);
        -webkit-backdrop-filter: blur(12px);
        border-radius: 12px;
@@ -111,7 +111,7 @@
 
    .social-card:hover {
        transform: translateY(-4px);
-       background-color: rgba(0, 0, 0, 0.05);
+       background-color: rgba(0, 0, 0, 0.01);
    }
 
    .social-card:hover .social-card-subtext {
@@ -122,13 +122,11 @@
 
    .social-card:hover .chevron-icon {
        color: white;
-       transform: translateX(2px);
+       /* transform: translateX(2px); */
        transition: all ease 300ms;
    }
 
-   .social-linkedin {
-       border: 1px solid rgba(0, 119, 181, 0.3);
-   }
+ 
 
    .social-linkedin .social-icon {
        background-color: #0077b5;
@@ -140,10 +138,6 @@
        box-shadow: 0 0 15px rgba(0, 119, 181, 0.2);
    }
 
-   /* Instagram */
-   .social-instagram {
-       border: 1px solid rgba(225, 48, 108, 0.3);
-   }
 
    .social-instagram .social-icon {
        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -155,9 +149,7 @@
        box-shadow: 0 0 15px rgba(225, 48, 108, 0.2);
    }
 
-   .social-whatsapp {
-       border: 1px solid rgba(37, 211, 102, 0.3);
-   }
+   
 
    .social-whatsapp .social-icon {
        background-color: #25D366;
@@ -169,10 +161,7 @@
        box-shadow: 0 0 15px rgba(37, 211, 102, 0.2);
    }
 
-   .social-youtube {
-       border: 1px solid rgba(230, 33, 23, 0.3);
-   }
-
+   
    .social-youtube .social-icon {
        background-color: white;
        color: #fb3329e3;
@@ -185,10 +174,7 @@
        box-shadow: 0 0 15px rgba(230, 33, 23, 0.2);
    }
 
-   .social-facebook {
-       border: 1px solid rgba(24, 119, 242, 0.3);
-   }
-
+   
    .social-facebook .social-icon {
        background-color: #1877F2;
        color: white;
@@ -365,7 +351,7 @@
    @media (max-width: 600px) {
 
        .social-card {
-           background-color: rgba(0, 0, 0, 0.4);
+           background-color: rgba(255, 255, 255, 0.02);
        }
 
        .connect-container {
