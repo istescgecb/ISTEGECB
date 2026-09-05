@@ -525,7 +525,7 @@
 
  <script>
    const membershipStartTime = performance.now();
-   const membershipSeatScriptUrl = `https://script.google.com/macros/s/AKfycbyEeb-qr9OoH5XmLgtgjQmYVBOxua_XW7okcMikp9pyKOmOU809Wb18iCEFXg2_8bND/exec
+   const membershipSeatScriptUrl = `https://script.google.com/macros/s/AKfycbxti6Mu1t6z65AEYNiFiFo5D-qxvyfXGLqC5_aTTYvZtbw33Glse7a-i-R5DUQUOW2M/exec
    `.trim() + "?action=seats";
    fetch(membershipSeatScriptUrl)
      .then(response => response.json())
@@ -601,11 +601,16 @@
            <div id="payment-completed" style="padding: 2rem 1.25rem; text-align: center;">
              <h4 id="successtextfinal" style="color: white; font-size: 2rem; margin: 1rem 0;">Early Bird Membership Closed</h4>
              <p style="font-size: 1.2em; color: #f0f0f0; margin: 1.5rem 0;">
-               Sorry, all early-bird seats have been filled. Thank you for your interest in ISTE GECBH membership.
+              Sorry, all Early-Bird membership seats have been filled.<br>
+
+Thank you for your interest in ISTE GECBH membership! ❤️<br>
+
+You can still register for the Regular Membership option using the link given below.<br>
+
              </p>
              <a id='register-now' class='theme-btn gradient mt-3'
                style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
-               href='index.html' target="_blank">Back to Home
+               href='membership2025.html' target="_blank">Register for Regular Membership
              </a>
            </div>
          `;
@@ -754,7 +759,7 @@ console.log(data);
 
      $.ajax({
        url: `
-https://script.google.com/macros/s/AKfycbyEeb-qr9OoH5XmLgtgjQmYVBOxua_XW7okcMikp9pyKOmOU809Wb18iCEFXg2_8bND/exec
+https://script.google.com/macros/s/AKfycbxti6Mu1t6z65AEYNiFiFo5D-qxvyfXGLqC5_aTTYvZtbw33Glse7a-i-R5DUQUOW2M/exec
        `.trim(),
 
        data: JSON.stringify(data),
