@@ -352,7 +352,8 @@
 
 			let left = seats - count;
 			$("#slotsLeft").text(left);
-			// $("#slotsNotification").fadeIn();
+			$("#slotsNotification").fadeIn();
+			console.log("Seats left",left)
 			setTimeout(function () {
 				$("#slotsNotification").fadeOut();
 			}, 10000);

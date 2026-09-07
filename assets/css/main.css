@@ -2215,3 +2215,60 @@ a
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.25);
 }
+
+
+
+/* ====================================================================================================== */
+/* ============================ notification pop up: ambassador start==================================== */
+/* ====================================================================================================== */
+/* slots left popup */
+.slots-notification {
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: linear-gradient(90deg, #33379c, 60%,#2d319d 100%);
+  color: #fff;
+  padding: 18px 32px;
+  border-radius: 12px;
+  font-size: 20px;
+  z-index: 1000;
+  width: 90%;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  backdrop-filter: blur(7px);
+  box-shadow: 0 8px 32px 0 rgba(40, 14, 121, 0.25), 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(40, 14, 121, 0.25);
+  transition: all 0.3s cubic-bezier(.4, 2, .3, 1), transform 0.2s;
+  pointer-events: auto;
+  animation: pop-in 0.4s cubic-bezier(.4, 2, .3, 1);
+}
+
+@keyframes pop-in {
+  0% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .slots-notification {
+    /* font-size: 15px; */
+    width: 95%;
+    padding: 15px 16px;
+    border-radius: 8px;
+  }
+}
+
+/* ===================================================================================================== */
+/* ============================ notification pop up: ambassador end ==================================== */
+/* ===================================================================================================== */
+
+
