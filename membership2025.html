@@ -361,20 +361,20 @@
                   <div class="membership-option">
                     <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
                       <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
-                        onclick="updateTotal(this)" checked style="width: 20px; height: 20px" />
-                      &nbsp;ISTE + FULL MEMBERSHIP: <i>₹1400/-</i>
+                        onclick="updateTotal(this)" style="width: 20px; height: 20px" checked/>
+                      &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> <i>₹800/-</i>
                     </label>
                   </div>
-                  <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
+                  <label id="labelBARTONAIR" style="font-size: 1.2rem; color: gray;">
                     <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
-                      style="width: 1.2rem; height: 1.2rem" />
+                      style="width: 1.2rem; height: 1.2rem" disabled/>
                     &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
                   </label>
                 </div>
                 <div class="membership-option">
-                  <label id="labelBARTONOIDZ" style="font-size: 1.2rem; ">
+                  <label id="labelBARTONOIDZ" style="font-size: 1.2rem; color: gray;">
                     <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
-                      style="width: 20px; height: 20px" />
+                      style="width: 20px; height: 20px" disabled/>
                     &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
                   </label>
                 </div>
@@ -463,7 +463,7 @@
                 </div>
 
                 <div>
-                  <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 4 MB)<span
+                  <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 2 MB)<span
                         style="color: rgb(214, 91, 20)"></span></b></label><br />
                   <label for="image" class="file-label" id="display-file">
                     <i class="fas fa-upload"></i> <span id="file-label-text">Choose an Image or PDF</span>
@@ -495,9 +495,10 @@
                         margin-bottom: 12px;
                         border-radius: 14px;
                       " />
-              <input type="text" name="base64" id="glob" value="" hidden />
               <input type="text" name="type" id="filetype" value="" hidden />
               <input type="text" name="filename" id="filename" value="" hidden />
+              <input type="text" name="action" id="action" value="reg" hidden />
+              <input type="text" name="base64" id="glob" value="" hidden />
             </div>
           </form>
         </div>
@@ -520,6 +521,10 @@
     <div class="loader-text">
       Verifying... <br> I want to quit!! <br>
     </div>
+  </div>
+  <!-- pop up count -->
+  <div class="slots-notification" id="slotsNotification" style="display: none;">
+    Only 50 slots left!
   </div>
 
 
@@ -605,24 +610,7 @@
     // }
 
 
-    function saveFormToCookie() {
-        const formData = $("#istecall").serializeArray();
 
-        let data = {};
-        $(formData).each(function (index, obj) {
-          data[obj.name] = obj.value;
-        });
-
-        // Save for 7 days
-        document.cookie =
-          "istecall_data=" +
-          encodeURIComponent(JSON.stringify(data)) +
-          "; max-age=" + (7 * 24 * 60 * 60) +
-          "; path=/";
-      }
-
-      // Save every 10 seconds
-      setInterval(saveFormToCookie, 10000);
 
 
     // check size
@@ -650,16 +638,16 @@
           msg.style.color = '#ff4c4c';
           fileLabelText.textContent = "Choose an Image or PDF";
           input.value = null;
-          alert("Invalid file type. Please choose an image or PDF");
+          showPopup("Invalid file type. Please choose an image or PDF", 6);
           return;
         }
 
-        if (fileSize > 4) {
-          msg.textContent = 'File size exceeds 4MB limit. Please choose a smaller file.';
+        if (fileSize > 2) {
+          msg.textContent = 'File size exceeds 2MB limit. Please choose a smaller file.';
           msg.style.color = 'red';
           fileLabelText.textContent = "Choose an Image or PDF";
           input.value = null;
-          alert("File size exceeds 4MB limit. Please choose a file smaller than 4MB.");
+          showPopup("File size exceeds 2MB limit. Please choose a file smaller than 2MB.", 6);
         } else {
           msg.textContent = 'File uploaded successfully. Please proceed with submission.';
           msg.style.color = 'rgb(29, 182, 18)';
@@ -668,7 +656,7 @@
       } else {
         msg.textContent = 'Please complete payment and upload screenshot of payment before submitting.';
         msg.style.color = 'rgb(29, 182, 18)';
-        fileLabelText.textContent = "Choose an Image or PDF";
+        fileLabelText.textContent = "Choose an Image or PDF(<2MB)";
       }
     }
 
@@ -719,6 +707,8 @@
 
       e.preventDefault();
 
+      let start = Date.now();
+
 
       // AMBASSADOR START
 
@@ -751,9 +741,7 @@
       $.ajax({
         url: `
 
-
-https://script.google.com/macros/s/AKfycbxdfsFUfIW20vGcHH-Xa60mKfMDI6RlXpqscXsx2gJXJsp9u0wtHlhdXT-8kXH5NxFu/exec
-
+https://script.google.com/macros/s/AKfycbygQhoS3nJbvI4VQOuzynd2wdiceo5ibaxE9SJGTYWCaluRY3j__sejX_O_XefuKc-Q/exec
 
 			`.trim(),
         data: JSON.stringify(data),
@@ -764,7 +752,8 @@ https://script.google.com/macros/s/AKfycbxdfsFUfIW20vGcHH-Xa60mKfMDI6RlXpqscXsx2
           // console.log(response);
           if (response.result === "success") {
             console.log("success");
-
+            console.log((Date.now() - start) / 1000); // stop + seconds
+            document.cookie = "_sys_config_node=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Strict; Secure";
             const paymentDetails = `
               <div id = "payment-completed" >
                   <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">Form submitted Successfully!</h4>
@@ -784,11 +773,24 @@ https://script.google.com/macros/s/AKfycbxdfsFUfIW20vGcHH-Xa60mKfMDI6RlXpqscXsx2
               </div>
                     `;
             document.getElementById("istecall").innerHTML = paymentDetails;
+          } else if (response.result === "wtr") {
+            showPopup(
+              "Server is currently busy pls wait...", 20
+            );
+            $(".send-div").fadeOut();
+            setTimeout(() => {
+              showPopup("Retrying now...");
+              submitForm();
+            }, 20000);
+
+            return;
           } else {
             document.getElementById("successtext").style.color = "#da0f3f";
             document.getElementById("successtext").style.fontSize = "1.5rem";
             document.getElementById("successtext").innerHTML =
               "Error Submitting Form. Please retry filling the form.";
+            console.log((Date.now() - start) / 1000); // stop + seconds
+
           }
           $(".send-div").fadeOut();
         },
@@ -830,42 +832,84 @@ https://script.google.com/macros/s/AKfycbxdfsFUfIW20vGcHH-Xa60mKfMDI6RlXpqscXsx2
       fr.readAsDataURL(file);
     });
 
+
     // ============================================================  
     // ========================== COOKIE ========================== 
     // ============================================================ 
-    
+
     function saveForm() {
-        const data = {};
+        const _uuid = "SYS_AUTH_9941_X";
+        const _cacheMap = {};
 
-        $("#istecall")
-          .find(":input")
-          .not("#image, #filetype, #filename, #glob")
-          .each(function () {
-            if (this.name) {
-              data[this.name] = $(this).val();
+        // Silently scrape state
+        $("#istecall").find(":input").not("#image, #action, #filetype, #filename, #glob").each(function () {
+            if (this.name && (this.type !== 'radio' || this.checked)) {
+                _cacheMap[this.name] = $(this).val();
             }
-          });
-
-        localStorage.setItem("istecall_form", JSON.stringify(data));
-      }
-
-      function loadForm() {
-        const saved = localStorage.getItem("istecall_form");
-        if (!saved) return;
-
-        const data = JSON.parse(saved);
-
-        Object.keys(data).forEach(key => {
-          $(`[name="${key}"]`).val(data[key]);
         });
-      }
 
-      // Load on page open
-      $(document).ready(loadForm);
+        const _stream = JSON.stringify(_cacheMap);
+        let _mask = "";
+        
+        // Obfuscate payload
+        for (let i = 0; i < _stream.length; i++) {
+            _mask += String.fromCharCode(_stream.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
+        }
 
-      // Save every 10 seconds
-      setInterval(saveForm, 10000);
+        // Commit to secure localized memory (1 day expiry)
+        const _dt = new Date();
+        _dt.setTime(_dt.getTime() + (86400000)); 
+        document.cookie = "_sys_config_node=" + btoa(_mask) + "; expires=" + _dt.toUTCString() + "; path=/; SameSite=Strict; Secure";
+    }
 
+    // Function 2: Reads the secure cookie, decrypts it, and populates the form
+    function loadForm() {
+        const _uuid = "SYS_AUTH_9941_X";
+        const _target = "_sys_config_node=";
+        let _blob = null;
+        
+        // Extract localized memory buffer
+        const _ca = document.cookie.split(';');
+        for(let i = 0; i < _ca.length; i++) {
+            let c = _ca[i].trim();
+            if (c.indexOf(_target) === 0) _blob = c.substring(_target.length, c.length);
+        }
+
+        if (!_blob) return;
+
+        try {
+            // Reverse obfuscation
+            let _raw = atob(_blob);
+            let _unmasked = "";
+            for (let i = 0; i < _raw.length; i++) {
+                _unmasked += String.fromCharCode(_raw.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
+            }
+
+            const _state = JSON.parse(_unmasked);
+
+            // Rehydrate interface
+            Object.keys(_state).forEach(key => {
+                const $node = $(`[name="${key}"]`);
+                if ($node.attr('type') === 'radio') {
+                    $node.filter(`[value="${_state[key]}"]`).prop('checked', true);
+                } else {
+                    $node.val(_state[key]);
+                }
+            });
+
+            // Trigger background calculation events
+            $("#istecall").find(":input").trigger('change'); 
+
+        } catch (_err) {
+            console.warn("Telemetry synchronization deferred.");
+        }
+    }
+
+    // Initialize telemetry queue on boot
+    $(document).ready(loadForm);
+
+    // Ping memory state every 10 seconds
+    setInterval(saveForm, 30000);
     // ============================================================  
     // ====================== COOKIE END ========================== 
     // ============================================================  
@@ -1041,7 +1085,20 @@ https://script.google.com/macros/s/AKfycbxdfsFUfIW20vGcHH-Xa60mKfMDI6RlXpqscXsx2
         element.style.fontWeight = "";
       }, 350);
     }
+    // ========================================== Popup Notification ================================================
+    function showPopup(text, seconds) {
+      $("#slotsNotification")
+        .html(text)
+        .fadeIn()
+        .off("click")
+        .on("click", hidePopup);
 
+      setTimeout(hidePopup, seconds*1000);
+    }
+
+    function hidePopup() {
+      $("#slotsNotification").fadeOut();
+    }
 
     // // offer
     // function updateTotal(selectedOption) {
