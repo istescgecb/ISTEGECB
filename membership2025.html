@@ -33,6 +33,32 @@
   <link rel="stylesheet" href="assets/css/stars.css" />
   <link rel="stylesheet" href="assets/css/loader.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <style>
+    .file-label {
+      display: flex; 
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 10px; 
+      padding: 1.5vh 2vh; 
+      background-color: #007bff;
+      color: #f2f2fe;
+      cursor: pointer;
+      font-size: 1rem;
+      overflow: hidden;
+      width: 99.99%; 
+      box-sizing: border-box; 
+      transition: background-color 0.2s ease;
+      border-left: 3px solid #f2f2fe;
+    }
+
+    .file-label:hover {
+      background-color: #0056b3;
+    }
+    .file-label i {
+      margin-right: 0.75vh;
+    }
+  </style>
   <title>ISTE GECBH - Become an ISTE member ?</title>
 </head>
 <!-- oncontextmenu="return false" -->
@@ -357,29 +383,48 @@
 
                 </div>
 
-                <div class="membership-option">
-                  <div class="membership-option">
-                    <label id="labelFULLMEMBERSHIP" style="font-size: 1.2rem;">
-                      <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
-                        onclick="updateTotal(this)" style="width: 20px; height: 20px" checked/>
-                      &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> <i>₹800/-</i>
-                    </label>
-                  </div>
-                  <label id="labelBARTONAIR" style="font-size: 1.2rem; color: gray;">
-                    <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
-                      style="width: 1.2rem; height: 1.2rem" disabled/>
-                    &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
-                  </label>
-                </div>
-                <div class="membership-option">
-                  <label id="labelBARTONOIDZ" style="font-size: 1.2rem; color: gray;">
-                    <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
-                      style="width: 20px; height: 20px" disabled/>
-                    &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
-                  </label>
-                </div>
+<table style="border-collapse: collapse;">
+  <tbody>
+    <!-- FULL MEMBERSHIP ROW -->
+    <tr>
+      <td style="vertical-align: top; padding: 0; text-align: center;">
+        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)"
+          style="width: 20px; height: 20px; margin-top: 4px;" checked />
+      </td>
+      <td style="vertical-align: top; padding: 0;">
+        <label for="FULLMEMBERSHIP" id="labelFULLMEMBERSHIP" style="font-size: 1.2rem; cursor: pointer;">
+          &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> <i>₹800/-</i>
+        </label>
+      </td>
+    </tr>
 
+    <!-- BARTONAIR ROW -->
+    <tr>
+      <td style="vertical-align: top; padding: 0; text-align: center;">
+        <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
+          style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" disabled />
+      </td>
+      <td style="vertical-align: top; padding: 0;">
+        <label for="BARTONAIR" id="labelBARTONAIR" style="font-size: 1.2rem; color: gray; cursor: pointer;">
+          &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
+        </label>
+      </td>
+    </tr>
 
+    <!-- BARTONOIDZ ROW -->
+    <tr>
+      <td style="vertical-align: top; padding: 0; text-align: center;">
+        <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
+          style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" disabled />
+      </td>
+      <td style="vertical-align: top; padding: 0;">
+        <label for="BARTONOIDZ" id="labelBARTONOIDZ" style="font-size: 1.2rem; color: gray; cursor: pointer;">
+          &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
+        </label>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
                 <br><br>
 
@@ -432,16 +477,8 @@
 
 
 
-                <div style="
-                      font-size: 1.2em;
-                      background: #5a54f37c;
-                      max-width: 100%;
-                      border-radius: 20px;
-                      padding: 10px;
-                    " align="center">
-                  <div id="ttlamt"
-                    style="font-size: 1.35rem; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; font-weight: 600; text-align: center;">
-                  </div>
+                <div class="total-box">
+                  <div id="ttlamt"></div>
                   <div id="UPI"></div>
                 </div>
                 <br />
@@ -463,21 +500,24 @@
                 </div>
 
                 <div>
-                  <label class="mb-2 ml-2" for="image"><b>SCREENSHOT OF PAYMENT* (File size less than 2 MB)<span
+                  <label class="mb-2 ml-2" id = "imagelabel" for="image"><b>SCREENSHOT OF PAYMENT* <br>(File size must be less than 2 MB)<span
                         style="color: rgb(214, 91, 20)"></span></b></label><br />
-                  <label for="image" class="file-label" id="display-file">
-                    <i class="fas fa-upload"></i> <span id="file-label-text">Choose an Image or PDF</span>
-                    <input name="image" id="image" type="file" accept="image/*,application/pdf" required
-                      style="display:none;">
-                  </label>
+                 
+                          <label for="image" class="file-label" id="display-file">
+                            <i class="fas fa-upload"></i>
+                            <span id="file-label-text">Choose an Image or PDF</span>
+                            <input name="image" id="image" type="file" accept="image/*,application/pdf" style="display:none;">
+                          </label>
+              
                 </div>
                 <br />
 
                 <p style="font-size: 1.2em">
 
                   If any doubts, contact:
-                    <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/919497768487" alt="webmaster of iste">📱
-                    Trinita</a>
+                    <br /><a style="font-size: 1.2rem; font-weight: lighter" 
+                    href="https://wa.me/919497768487" alt="webmaster of iste"> 📱Trinita
+                  </a>
 
                   <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
                     href="https://wa.me/918330829274">📱 Megha
@@ -547,11 +587,12 @@
 
     // Global total for sending with req
     let total = 0;
+    let safe;
 
     function updateTotal(selectedOption) {
       const ttlamt = document.getElementById("ttlamt");
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-      ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+      
 
       let membershipText = "";
       const fullPrice = 1400; // Original FULL price
@@ -569,12 +610,12 @@
           //total = refVerified ? 1000 : fullPrice;
 
           // =================== UPDATE ON OFFERS =======================
-          total = 1000 
+          total = 800;
           membershipText = "ISTE + FULL MEMBERSHIP";
           break;
       }
 
-      // AMBASSADOR START
+      // ========================= AMBASSADOR START =========================
 
       // if (isMobile) {
       //   if (selectedOption.value === "FULL" && refVerified) {
@@ -590,25 +631,18 @@
       //   }
       // }
 
-      // AMBASSADOR END
+      // ========================= AMBASSADOR END =========================
 
 
 
-      ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
       if (isMobile) {
-        ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+        ttlamt.innerHTML = `Total Amount: ₹${total}/-`;
       } else {
-        ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+        ttlamt.innerHTML = `Total Amount <br> ${membershipText}: ₹${total}/-`;
       }
     }
-    //  if (isMobile) {
-    //   if (selectedOption.value === "FULL") {
-    //     ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${fullPrice}/-`;
-    //   } else {
-    //     ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
-    //   }
-    // }
 
+  
 
 
 
@@ -639,6 +673,7 @@
           fileLabelText.textContent = "Choose an Image or PDF";
           input.value = null;
           showPopup("Invalid file type. Please choose an image or PDF", 6);
+          $("#imagelabel").focus();
           return;
         }
 
@@ -648,6 +683,7 @@
           fileLabelText.textContent = "Choose an Image or PDF";
           input.value = null;
           showPopup("File size exceeds 2MB limit. Please choose a file smaller than 2MB.", 6);
+          $("#imagelabel").focus();
         } else {
           msg.textContent = 'File uploaded successfully. Please proceed with submission.';
           msg.style.color = 'rgb(29, 182, 18)';
@@ -698,14 +734,13 @@
       document.getElementById("PhonePeqr2").style.display = "none";
     }
 
-    function a() {
-      $(".send-div").show();
-    }
-    document.getElementById("istecall").addEventListener("submit", a);
 
     $("#istecall").submit((e) => {
-
       e.preventDefault();
+      if (!$("#image")[0].files[0]) { $("#image").focus(); showPopup("Please upload the payment screenshot", 10);  return; }
+      $(".send-div").show();
+
+
 
       let start = Date.now();
 
@@ -725,8 +760,7 @@
       // https://script.google.com/macros/s/AKfycby_OqZGfVgb1sugWsI7pz948SvrMX8qgtZdkNboJbZP59uZKWkd20--iJtQoM8pcWd1/exec
 
       // AMBASSADOR END
-
-
+     
       $(".send-div").show();
       const formData = $("#istecall").serializeArray();
       var data = {};
@@ -741,7 +775,8 @@
       $.ajax({
         url: `
 
-https://script.google.com/macros/s/AKfycbygQhoS3nJbvI4VQOuzynd2wdiceo5ibaxE9SJGTYWCaluRY3j__sejX_O_XefuKc-Q/exec
+https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOzxMikuJh9B7o9A9zc6AVscqF6Eq4/exec
+
 
 			`.trim(),
         data: JSON.stringify(data),
@@ -775,22 +810,22 @@ https://script.google.com/macros/s/AKfycbygQhoS3nJbvI4VQOuzynd2wdiceo5ibaxE9SJGT
             document.getElementById("istecall").innerHTML = paymentDetails;
           } else if (response.result === "wtr") {
             showPopup(
-              "Server is currently busy pls wait...", 20
+              "Server is currently busy pls wait...",10
             );
-            $(".send-div").fadeOut();
+            console.log("waiting");
             setTimeout(() => {
               showPopup("Retrying now...");
-              submitForm();
-            }, 20000);
+              console.log("retrying");
+              $("#istecall").submit();
+            }, 10000);
 
             return;
           } else {
             document.getElementById("successtext").style.color = "#da0f3f";
             document.getElementById("successtext").style.fontSize = "1.5rem";
             document.getElementById("successtext").innerHTML =
-              "Error Submitting Form. Please retry filling the form.";
+              "Error Submitting Form. Please retry submitting the form."; safe = false;
             console.log((Date.now() - start) / 1000); // stop + seconds
-
           }
           $(".send-div").fadeOut();
         },
@@ -824,10 +859,7 @@ https://script.google.com/macros/s/AKfycbygQhoS3nJbvI4VQOuzynd2wdiceo5ibaxE9SJGT
         filename.value = file.name;
         fileglob.value = glob;
 
-
-
         checkFileSize(file);
-
       };
       fr.readAsDataURL(file);
     });
@@ -836,8 +868,9 @@ https://script.google.com/macros/s/AKfycbygQhoS3nJbvI4VQOuzynd2wdiceo5ibaxE9SJGT
     // ============================================================  
     // ========================== COOKIE ========================== 
     // ============================================================ 
-
+    safe = true;
     function saveForm() {
+      
         const _uuid = "SYS_AUTH_9941_X";
         const _cacheMap = {};
 
@@ -859,7 +892,7 @@ https://script.google.com/macros/s/AKfycbygQhoS3nJbvI4VQOuzynd2wdiceo5ibaxE9SJGT
         // Commit to secure localized memory (1 day expiry)
         const _dt = new Date();
         _dt.setTime(_dt.getTime() + (86400000)); 
-        document.cookie = "_sys_config_node=" + btoa(_mask) + "; expires=" + _dt.toUTCString() + "; path=/; SameSite=Strict; Secure";
+        if (safe) document.cookie = "_sys_config_node=" + btoa(_mask) + "; expires=" + _dt.toUTCString() + "; path=/; SameSite=Strict; Secure";
     }
 
     // Function 2: Reads the secure cookie, decrypts it, and populates the form
@@ -909,7 +942,7 @@ https://script.google.com/macros/s/AKfycbygQhoS3nJbvI4VQOuzynd2wdiceo5ibaxE9SJGT
     $(document).ready(loadForm);
 
     // Ping memory state every 10 seconds
-    setInterval(saveForm, 30000);
+    setInterval(saveForm, 45000);
     // ============================================================  
     // ====================== COOKIE END ========================== 
     // ============================================================  
@@ -1086,7 +1119,7 @@ https://script.google.com/macros/s/AKfycbygQhoS3nJbvI4VQOuzynd2wdiceo5ibaxE9SJGT
       }, 350);
     }
     // ========================================== Popup Notification ================================================
-    function showPopup(text, seconds) {
+    function showPopup(text, seconds = 10) {
       $("#slotsNotification")
         .html(text)
         .fadeIn()
