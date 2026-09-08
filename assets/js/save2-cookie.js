@@ -83,8 +83,8 @@ function clearData() {
     // Ping memory state every 10 seconds
 setInterval(saveForm, 45000);
 
-// function clearData() {
-//     localStorage.removeItem("_sys_config_node");
+ //function clearData() {
+   // localStorage.removeItem("_sys_config_node");
 // }
     // ============================================================  
     // ====================== COOKIE END ========================== 
