@@ -362,14 +362,20 @@
 
                 <!-- AMBASADOR START -->
 
-                <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
-                <input type="text" name="Referral" id="Referral" class="ffield" placeholder="Referral Code (Optional)" />
-                <br>
-                <!-- <input type="hidden" name="Referral" id="Referral" class="ffield" style="flex: 1 1 65%;width:100%;"
-                  placeholder="Referral Code" /> -->
-                <!-- <button id="ref-code-verify" name="verify" class="verify" type="button"
-                  style="flex: 1 1 35%;width: 18%; padding: 1.3%; border-radius: 8px;height: 2.8em;margin-left:1%;background-color: rgb(71, 10, 212);color: white;border: none;">Verify</button><br /> -->
-                <!-- AMBASSADOR END -->
+<label class="mb-1 ml-2" for="Referral" style="font-weight:bold;">Coupon Code (Optional)</label><br />
+
+<div style="display:flex;align-items:flex-start;width:100%;gap:0;">
+  <div style="flex:1 1 75%;display:flex;flex-direction:column;">
+    <input type="text" name="Referral" id="Referral" class="ffield" placeholder="Enter Coupon Code"
+      style="width:100%;height:2.2em;padding-left:10px;box-sizing:border-box;border-radius:6px 0 0 6px; margin-bottom:1px;" />
+    <small id="couponMessage" style="color:gainsborol;margin-bottom:0;line-height:1.2;font-size: 1em;"></small>
+  </div>
+  <button id="ref-code-verify" name="verify" class="verify" type="button"
+    style="flex:1 1 25%;margin-left:0;padding:0 10px;border-radius:0 6px 6px 0;height:2.2em;background-color:rgb(71, 10, 212);color:white;border:none;cursor:pointer;box-sizing:border-box;">Verify</button>
+</div>
+                <!-- AMBASADOR END -->
+
+              <!-- Message container for coupon validation feedback -->
 
                 <br />
 
@@ -377,54 +383,54 @@
                   MEMBERSHIP OPTIONS(BotTech Offer Active)
                 </label> -->
                 <h2 style="font-size: 1.5em; color: rgb(245, 98, 12);margin-bottom: 0.5rem;">
-                  <b>MEMBERSHIP OPTIONS - OFFER ACTIVE</b>
+                  <b id="paymentDetailsTitle">MEMBERSHIP OPTIONS - OFFER ACTIVE</b>
                 </h2>
-                <div style="font-size: 1.2rem;" id="seatsLeft">
+                <div style="font-size: 1.2rem; transition: all ease 300ms;" id="seatsLeft">
 
                 </div>
 
-<table style="border-collapse: collapse;">
-  <tbody>
-    <!-- FULL MEMBERSHIP ROW -->
-    <tr>
-      <td style="vertical-align: top; padding: 0; text-align: center;">
-        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)"
-          style="width: 20px; height: 20px; margin-top: 4px;" checked />
-      </td>
-      <td style="vertical-align: top; padding: 0;">
-        <label for="FULLMEMBERSHIP" id="labelFULLMEMBERSHIP" style="font-size: 1.2rem; cursor: pointer;">
-          &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> <i>₹800/-</i>
-        </label>
-      </td>
-    </tr>
+                <table style="border-collapse: collapse;">
+                  <tbody>
+                    <!-- FULL MEMBERSHIP ROW -->
+                    <tr>
+                      <td style="vertical-align: top; padding: 0; text-align: center;">
+                        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)"
+                          style="width: 20px; height: 20px; margin-top: 4px;" checked />
+                      </td>
+                      <td style="vertical-align: top; padding: 0;">
+                        <label for="FULLMEMBERSHIP" id="labelFULLMEMBERSHIP" style="font-size: 1.2rem; cursor: pointer;">
+                          &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> <i>₹800/-</i>
+                        </label>
+                      </td>
+                    </tr>
 
-    <!-- BARTONAIR ROW -->
-    <tr>
-      <td style="vertical-align: top; padding: 0; text-align: center;">
-        <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
-          style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" disabled />
-      </td>
-      <td style="vertical-align: top; padding: 0;">
-        <label for="BARTONAIR" id="labelBARTONAIR" style="font-size: 1.2rem; color: gray; cursor: pointer;">
-          &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
-        </label>
-      </td>
-    </tr>
+                    <!-- BARTONAIR ROW -->
+                    <tr>
+                      <td style="vertical-align: top; padding: 0; text-align: center;">
+                        <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
+                          style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" disabled />
+                      </td>
+                      <td style="vertical-align: top; padding: 0;">
+                        <label for="BARTONAIR" id="labelBARTONAIR" style="font-size: 1.2rem; color: gray; cursor: pointer;">
+                          &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
+                        </label>
+                      </td>
+                    </tr>
 
-    <!-- BARTONOIDZ ROW -->
-    <tr>
-      <td style="vertical-align: top; padding: 0; text-align: center;">
-        <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
-          style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" disabled />
-      </td>
-      <td style="vertical-align: top; padding: 0;">
-        <label for="BARTONOIDZ" id="labelBARTONOIDZ" style="font-size: 1.2rem; color: gray; cursor: pointer;">
-          &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
-        </label>
-      </td>
-    </tr>
-  </tbody>
-</table>
+                    <!-- BARTONOIDZ ROW -->
+                    <tr>
+                      <td style="vertical-align: top; padding: 0; text-align: center;">
+                        <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
+                          style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" disabled />
+                      </td>
+                      <td style="vertical-align: top; padding: 0;">
+                        <label for="BARTONOIDZ" id="labelBARTONOIDZ" style="font-size: 1.2rem; color: gray; cursor: pointer;">
+                          &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
                 <br><br>
 
@@ -578,75 +584,190 @@
 
 
   <script>
+  // Global variables
+  let currentMode = "REGULAR";
+  let basePrice = 1400;
+  let fullPrice = 1400; 
+  let seatsLeftInMode = 0;
+  let  finalTotal = 1400;
 
-    // AMBASSADOR START
-    // for membership ttlamount update
-    //let refVerified = false;
-    // AMBASSADOR END
-
-    // Global total for sending with req
-    let total = 0;
-    let safe;
-
-    function updateTotal(selectedOption) {
-      const ttlamt = document.getElementById("ttlamt");
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-      
-
-      let membershipText = "";
-      const fullPrice = 1400; // Original FULL price
-
-      switch (selectedOption.value) {
-        case "BR":
-          total = 1000;
-          membershipText = "ISTE + BARTONAIR";
-          break;
-        case "BZ":
-          total = 1000;
-          membershipText = "ISTE + BARTONOIDZ";
-          break;
-        case "FULL":
-          //total = refVerified ? 1000 : fullPrice;
-
-          // =================== UPDATE ON OFFERS =======================
-          total = 800;
-          membershipText = "ISTE + FULL MEMBERSHIP";
-          break;
-      }
-
-      // ========================= AMBASSADOR START =========================
-
-      // if (isMobile) {
-      //   if (selectedOption.value === "FULL" && refVerified) {
-      //     ttlamt.innerHTML = `Total Amount - ₹<s>${fullPrice}</s> ${total}/-`;
-      //   } else {
-      //     ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
-      //   }
-      // } else {
-      //   if (selectedOption.value === "FULL" && refVerified) {
-      //     ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹${fullPrice}</del> ₹${total}/-`;
-      //   } else {
-      //     ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
-      //   }
-      // }
-
-      // ========================= AMBASSADOR END =========================
+  let refVerified = false;
+  let verifiedOfferPrice = null; 
 
 
+  const titleElem = document.getElementById("paymentDetailsTitle");
+  const seatsLeftDiv = document.getElementById("seatsLeft");
+  const fullRadio = document.getElementById("FULLMEMBERSHIP");
+  const brRadio = document.getElementById("BARTONAIR");
+  const bzRadio = document.getElementById("BARTONOIDZ");
+  const labelFull = document.getElementById("labelFULLMEMBERSHIP");
+  const labelBr = document.getElementById("labelBARTONAIR");
+  const labelBz = document.getElementById("labelBARTONOIDZ");
+  const ttlamt = document.getElementById("ttlamt");
 
-      if (isMobile) {
-        ttlamt.innerHTML = `Total Amount: ₹${total}/-`;
-      } else {
-        ttlamt.innerHTML = `Total Amount <br> ${membershipText}: ₹${total}/-`;
-      }
+  //  ============================================= UI updater  ==================================================================
+  function renderPricingUI() {
+    const couponMsgDiv = document.getElementById("couponMessage");
+
+    // Determine the active price
+    let activePrice = fullPrice; // Default 1400
+    if (refVerified) {
+      activePrice = verifiedOfferPrice;
+    } else if (currentMode === "EARLY_BIRD") {
+      activePrice = basePrice;
     }
 
+    // Determine if we should show the "Second Design"
+    const isOfferActive = refVerified || currentMode === "EARLY_BIRD";
+
+    if (isOfferActive) {
+      // --- SECOND DESIGN (Discount UI) ---
+      titleElem.innerHTML = "MEMBERSHIP OPTIONS - OFFER ACTIVE";
+
+      if (currentMode === "EARLY_BIRD" && !refVerified) {
+        seatsLeftDiv.innerHTML = `Only ${seatsLeftInMode} Early Bird seats left!`;
+      } else if (refVerified) {
+        seatsLeftDiv.innerHTML = ``; // Clear early bird text if coupon applied
+      }
+
+      // Lock to FULL membership
+      fullRadio.disabled = false;
+      brRadio.disabled = true;
+      bzRadio.disabled = true;
+      fullRadio.checked = true;
+
+      labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <s>₹${fullPrice}/-</s> <i>₹${activePrice}/-</i>`;
+      labelBr.style.color = "gray";
+      labelBz.style.color = "gray";
+
+    } else {
+      // --- FIRST DESIGN (Regular UI) ---
+      titleElem.innerHTML = "MEMBERSHIP OPTIONS";
+      seatsLeftDiv.innerHTML = "";
+
+      // Unlock all options
+      fullRadio.disabled = false;
+      brRadio.disabled = false;
+      bzRadio.disabled = false;
+
+      if (!fullRadio.checked && !brRadio.checked && !bzRadio.checked) {
+        fullRadio.checked = true;
+      }
+
+      labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <i>₹${fullPrice}/-</i>`;
+      labelBr.style.color = "white";
+      labelBz.style.color = "white";
+      labelFull.style.color = "white";
+    }
+
+    updateTotal(document.querySelector('input[name="membershipOption"]:checked'));
+  }
   
+    //  ============================================= Verify button  ==================================================================
+  // Add event listener to the Verify button
+  document.getElementById("ref-code-verify").addEventListener("click", function () {
+    const codeInput = document.getElementById("Referral").value.trim();
+    const couponMsgDiv = document.getElementById("couponMessage");
+    const verifyBtn = document.getElementById("ref-code-verify");
+
+    if (codeInput === "") {
+      couponMsgDiv.innerHTML = "<span style='color:red;'>Please enter a code first.</span>";
+      return;
+    }
+
+    // Show loading state
+    verifyBtn.innerText = "Checking...";
+    verifyBtn.disabled = true;
+    couponMsgDiv.innerHTML = "";
+
+    // Make AJAX call to backend
+    $.ajax({
+      url: `
+      
+      
+      
+https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4GGQLOh6eGgbBdmHLab3RyzzhQbA/exec
+
+      
+      
+      `.trim(),
+      method: "POST",
+      data: JSON.stringify({ action: "verifyRef", Referral: codeInput }),
+      success: function (response) {
+        verifyBtn.innerText = "Verify";
+        verifyBtn.disabled = false;
+
+        if (response.result === "success" && response.isValid) {
+          // Verification successful
+          refVerified = true;
+          verifiedOfferPrice = response.offerPrice;
+
+          couponMsgDiv.innerHTML = "<span style='color:green;font-size:x-small;'>✅ Coupon applied successfully!</span>";
+
+          // Trigger the UI change
+          renderPricingUI();
+        } else {
+          // Verification failed
+          refVerified = false;
+          verifiedOfferPrice = null;
+
+          couponMsgDiv.innerHTML = "<span style='color:red;font-size:x-small;'>❌ Invalid or expired code.</span>";
+
+          // Revert to normal UI
+          renderPricingUI();
+        }
+      },
+      error: function (err) {
+        verifyBtn.innerText = "Verify";
+        verifyBtn.disabled = false;
+        couponMsgDiv.innerHTML = "<span style='color:red;'>Error checking code. Try again.</span>";
+      }
+    });
+  });
+  //  ============================================= Update total  ==================================================================
+
+  function updateTotal(selectedOption) {
+    if (!selectedOption) return;
+    const ttlamt = document.getElementById("ttlamt");
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+
+    let membershipText = "";
+
+    switch (selectedOption.value) {
+      case "BR":
+        membershipText = "ISTE + BARTONAIR";
+        finalTotal = 1000;
+        break;
+      case "BZ":
+        membershipText = "ISTE + BARTONOIDZ";
+        finalTotal = 1000;
+        break;
+      case "FULL":
+        membershipText = "ISTE + FULL MEMBERSHIP";
+        finalTotal = refVerified ? verifiedOfferPrice : basePrice;
+        break;
+    }
+
+    const showDiscount = (selectedOption.value === "FULL" && (currentMode !== "REGULAR" || refVerified));
+
+    if (isMobile) {
+      ttlamt.innerHTML = showDiscount
+        ? `Total Amount: ₹<s>${fullPrice}</s> ₹${finalTotal}/-`
+        : `Total Amount: ₹${finalTotal}/-`;
+    } else {
+      ttlamt.innerHTML = showDiscount
+        ? `Total Amount <br> ${membershipText}: <s>₹${fullPrice}</s> ₹${finalTotal}/-`
+        : `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`;
+    }
+  }
 
 
 
 
-    // check size
+
+
+    //  ============================================= check size  ==================================================================
+  
     function checkFileSize(file) {
       const input = document.getElementById("image");
       const msg = document.getElementById('successtext');
@@ -695,7 +816,11 @@
       }
     }
 
-
+    // Force the total to update based on the currently selected UI state
+    const selectedRadio = document.querySelector('input[name="membershipOption"]:checked');
+      if (selectedRadio) {
+        updateTotal(selectedRadio);
+    }
 
 
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
@@ -732,6 +857,61 @@
       document.getElementById("PhonePebtn2").innerHTML = "Gpay QR";
       document.getElementById("PhonePeqr2").style.display = "none";
     }
+
+    
+      //  ============================================= Seat Fetching  ==================================================================
+      $(document).ready(function () {
+        checkSeatsLeft();
+      });
+
+      function checkSeatsLeft() {
+        $.ajax({
+          url: `
+      
+      
+      
+https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4GGQLOh6eGgbBdmHLab3RyzzhQbA/exec
+
+      
+      
+      `.trim(),
+          method: "POST",
+          data: JSON.stringify({ action: "seatsLeft" }),
+          success: function (response) {
+            if (response.result === "success") {
+              currentMode = response.mode;
+              basePrice = response.basePrice;
+              fullPrice = response.fullPrice;
+              seatsLeftInMode = response.seatsLeft;
+              renderPricingUI(); // also calls update total.
+            }
+          }
+        });
+      }
+
+      //  ============================================= Verify Referral  ==================================================================
+
+      function verifyReferral(code) {
+        $.ajax({
+          url: `
+      
+      
+     
+https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4GGQLOh6eGgbBdmHLab3RyzzhQbA/exec
+      
+      
+      `.trim(),
+          method: "POST",
+          data: JSON.stringify({ action: "verifyRef", Referral: code }),
+          success: function (response) {
+            if (response.result === "success" && response.isValid) {
+              refVerified = true;
+              verifiedOfferPrice = response.offerPrice;
+              renderPricingUI();
+            }
+          }
+        });
+      }
 
 
     $("#istecall").submit((e) => {
@@ -774,9 +954,7 @@
       $.ajax({
         url: `
 
-https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOzxMikuJh9B7o9A9zc6AVscqF6Eq4/exec
-
-
+https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4GGQLOh6eGgbBdmHLab3RyzzhQbA/exec
 			`.trim(),
         data: JSON.stringify(data),
 
@@ -1146,34 +1324,7 @@ https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOz
     // }
 
 
-    //  ============================================= Seat Fetching start ==================================================================
-    $(document).ready(function () {
-        checkSeatsLeft();
-      });
-
-      function checkSeatsLeft() {
-        $.ajax({
-          url: scriptURL,
-          method: "POST",
-          data: JSON.stringify({ action: "seatsLeft" }),
-          success: function (response) {
-            if (response.result === "success") {
-              console.log("Seats remaining:", response.seats);
-
-              // If registration is closed, disable the form
-              if (response.closeReg === true) {
-                showPopup("Registration is currently closed (0 seats left).", 10);
-              }
-            }
-          },
-          error: function (err) {
-            console.error("Error fetching seats:", err);
-          }
-        });
-      }
-    //  ============================================= Seat Fetching end ==================================================================
-
-
+ 
 
   </script>
 
