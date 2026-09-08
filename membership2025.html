@@ -379,7 +379,7 @@
                 <h2 style="font-size: 1.5em; color: rgb(245, 98, 12);margin-bottom: 0.5rem;">
                   <b>MEMBERSHIP OPTIONS - OFFER ACTIVE</b>
                 </h2>
-                <div style="font-size: 1.2rem;">
+                <div style="font-size: 1.2rem;" id="seatsLeft">
 
                 </div>
 
@@ -479,7 +479,6 @@
 
                 <div class="total-box">
                   <div id="ttlamt"></div>
-                  <div id="UPI"></div>
                 </div>
                 <br />
                 <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
@@ -808,9 +807,7 @@ https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOz
                     `;
             document.getElementById("istecall").innerHTML = paymentDetails;
           } else if (response.result === "wtr") {
-            showPopup(
-              "Server is currently busy pls wait...",
-            );
+            showPopup("Server is currently busy pls wait...",);
             console.log("waiting");
             setTimeout(() => {
               showPopup("Retrying now...");
@@ -915,16 +912,14 @@ https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOz
             console.warn("Telemetry synchronization deferred.");
         }
     }
-    
-    function clearData() {
-        localStorage.removeItem("_sys_config_node");
-    }
+
 
     // Initialize telemetry queue on boot
     $(document).ready(loadForm);
     
     // Ping memory state every 45 seconds
     setInterval(saveForm, 45000);
+
     // ============================================================= 
     // ======================== SAVE END ===========================
     // =============================================================
@@ -1150,6 +1145,33 @@ https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOz
     //   }
     // }
 
+
+    //  ============================================= Seat Fetching start ==================================================================
+    $(document).ready(function () {
+        checkSeatsLeft();
+      });
+
+      function checkSeatsLeft() {
+        $.ajax({
+          url: scriptURL,
+          method: "POST",
+          data: JSON.stringify({ action: "seatsLeft" }),
+          success: function (response) {
+            if (response.result === "success") {
+              console.log("Seats remaining:", response.seats);
+
+              // If registration is closed, disable the form
+              if (response.closeReg === true) {
+                showPopup("Registration is currently closed (0 seats left).", 10);
+              }
+            }
+          },
+          error: function (err) {
+            console.error("Error fetching seats:", err);
+          }
+        });
+      }
+    //  ============================================= Seat Fetching end ==================================================================
 
 
 
