@@ -788,7 +788,6 @@ https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOz
           if (response.result === "success") {
             console.log("success");
             console.log((Date.now() - start) / 1000); // stop + seconds
-            document.cookie = "_sys_config_node=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Strict; Secure";
             const paymentDetails = `
               <div id = "payment-completed" >
                   <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">Form submitted Successfully!</h4>
@@ -864,10 +863,9 @@ https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOz
       fr.readAsDataURL(file);
     });
 
-
-    // ============================================================  
-    // ========================== COOKIE ========================== 
-    // ============================================================ 
+    // =============================================================  
+    // ========================= SAVE START ========================
+    // =============================================================
     safe = true;
     function saveForm() {
       
@@ -888,39 +886,22 @@ https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOz
         for (let i = 0; i < _stream.length; i++) {
             _mask += String.fromCharCode(_stream.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
         }
-
-        // Commit to secure localized memory (1 day expiry)
-        const _dt = new Date();
-        _dt.setTime(_dt.getTime() + (86400000)); 
-        if (safe) document.cookie = "_sys_config_node=" + btoa(_mask) + "; expires=" + _dt.toUTCString() + "; path=/; SameSite=Strict; Secure";
+        if (safe) {
+            localStorage.setItem("_sys_config_node", btoa(_mask));
+        }
     }
 
-    // Function 2: Reads the secure cookie, decrypts it, and populates the form
     function loadForm() {
         const _uuid = "SYS_AUTH_9941_X";
-        const _target = "_sys_config_node=";
-        let _blob = null;
-        
-        // Extract localized memory buffer
-        const _ca = document.cookie.split(';');
-        for(let i = 0; i < _ca.length; i++) {
-            let c = _ca[i].trim();
-            if (c.indexOf(_target) === 0) _blob = c.substring(_target.length, c.length);
-        }
-
+        const _blob = localStorage.getItem("_sys_config_node");
         if (!_blob) return;
-
         try {
-            // Reverse obfuscation
             let _raw = atob(_blob);
             let _unmasked = "";
             for (let i = 0; i < _raw.length; i++) {
                 _unmasked += String.fromCharCode(_raw.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
             }
-
             const _state = JSON.parse(_unmasked);
-
-            // Rehydrate interface
             Object.keys(_state).forEach(key => {
                 const $node = $(`[name="${key}"]`);
                 if ($node.attr('type') === 'radio') {
@@ -929,24 +910,24 @@ https://script.google.com/macros/s/AKfycbwnqm2GkkH3oj9wdnh_x8SEhMb4bPYkSBvHIVUOz
                     $node.val(_state[key]);
                 }
             });
-
-            // Trigger background calculation events
             $("#istecall").find(":input").trigger('change'); 
-
         } catch (_err) {
             console.warn("Telemetry synchronization deferred.");
         }
     }
+    
+    function clearData() {
+        localStorage.removeItem("_sys_config_node");
+    }
 
     // Initialize telemetry queue on boot
     $(document).ready(loadForm);
-
-    // Ping memory state every 10 seconds
+    
+    // Ping memory state every 45 seconds
     setInterval(saveForm, 45000);
-    // ============================================================  
-    // ====================== COOKIE END ========================== 
-    // ============================================================  
-
+    // ============================================================= 
+    // ======================== SAVE END ===========================
+    // =============================================================
 
     //QR code 
     document.addEventListener("DOMContentLoaded", () => {
