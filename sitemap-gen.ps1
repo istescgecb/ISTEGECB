@@ -7,6 +7,8 @@ $exclude = @(
   "pages",
 
   # Testing & Utility pages
+  "node_modules",
+  "test",
   "test.html",
   "testpage.html",
   "sample.html",
@@ -16,11 +18,14 @@ $exclude = @(
   "backupform.html",
   "event-page.html",
   "pastEvents.html",
+  "linktree-old.html",
+  "linktree.html",
 
   # Old Membership Archives
   "membership2022.html",
   "membership2023.html",
   "membership2024.html",
+  "membership2025.html",
 
   # Old PDC Archives
   "pdc2022.html",
