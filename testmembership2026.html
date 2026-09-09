@@ -340,10 +340,10 @@
                    <input type="email" name="EmailId" id="EmailId" placeholder="Email address" class="ffield" required /><br /><br>
 
 
-                   <label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
-                   <input type="text" name="Referral" id="referral" class="ffield" placeholder="Referral Code" /><br />
+                   <!--<label class="mb-2 ml-2" for="referral">Referral Code(Optional)</label><br />
+                   <input type="text" name="Referral" id="referral" class="ffield" placeholder="Referral Code" /><br /> 
 
-                   <br />
+                   <br />-->
                     <div id="get-limit" style="margin: 0 0 1rem; font-size: 1rem; color: #ffd68d; font-weight: 600;">
                      Checking seats left...
                   
@@ -371,7 +371,7 @@
                          </div>
                        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" checked
                                            onclick="updateTotal(this)" style="width: 20px; height: 20px" required/>
-                                       &nbsp;ISTE + FULL MEMBERSHIP :  <i>₹800/-</i>              
+                                       &nbsp;ISTE FULL MEMBERSHIP : <i> <s>₹1400/-</s> ₹800/-</i>              
                      </label>
                   <!-- </div>
                    <label id="labelBARTONAIR" style="font-size: 1.2rem; ">
@@ -745,93 +745,136 @@ You can still register for the Regular Membership option using the link given be
    }
    document.getElementById("istecall").addEventListener("submit", a);
 
-   $("#istecall").submit((e) => {
-     e.preventDefault();
+$("#istecall").submit(async (e) => {
+  e.preventDefault();
 
-    const formData = $("#istecall").serializeArray();
+  // 🔴 CHECK EARLY BIRD SEATS AGAIN BEFORE SUBMITTING
+  try {
+    const response = await fetch(membershipSeatScriptUrl);
+    const seatData = await response.json();
+    const seats = Number(seatData.seats);
+
+    console.log("Seats available at submission:", seats);
+
+    // If no seats are left, stop submission
+    if (seats <= 0) {
+      $(".send-div").fadeOut();
+
+      Swal.fire({
+        title: "⌛ Early Bird Membership Over",
+        text: "Sorry, all Early Bird membership seats have been filled.",
+        icon: "info",
+        confirmButtonText: "Okay",
+        background: "#e6e1fa"
+      });
+
+      return; // 🚨 STOP HERE — don't submit
+    }
+
+  } catch (err) {
+    console.error("Could not verify seats:", err);
+
+    $(".send-div").fadeOut();
+
+    Swal.fire({
+      title: "Unable to verify seats",
+      text: "Please try again in a moment.",
+      icon: "error",
+      confirmButtonText: "Okay",
+      background: "#e6e1fa"
+    });
+
+    return; // 🚨 STOP HERE
+  }
+
+
+  // 🟢 SEATS ARE AVAILABLE — CONTINUE NORMAL SUBMISSION
+
+  const formData = $("#istecall").serializeArray();
+
   var data = {};
-$(formData).each(function (index, obj) {
-  data[obj.name] = obj.value;
-}); 
-data["Amount"] = "Rs." + total;
 
-console.log(data);
+  $(formData).each(function (index, obj) {
+    data[obj.name] = obj.value;
+  });
 
-     $.ajax({
-       url: `
-https://script.google.com/macros/s/AKfycbxti6Mu1t6z65AEYNiFiFo5D-qxvyfXGLqC5_aTTYvZtbw33Glse7a-i-R5DUQUOW2M/exec
-       `.trim(),
+  data["Amount"] = "Rs." + total;
 
-       data: JSON.stringify(data),
-
-       method: "POST",
-       success: function (response) {
-         console.log(Object.keys(data));
-
-         if (response.result === "success") {
-
-           const paymentDetails = `
-             <div id = "payment-completed" >
-                  <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">Form submitted Successfully!</h4>
-
-                  <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
-                  <p style='font-size: 1.2em;color: green;'>
-                    Account holder name: Haripriya R<br>
-                    IFSC code: SBIN0070547<br>
-                    Account number: 45270120187<br>
-                    UPI id: haripriya.r1605-1@oksbi
-                  </p>
-
-                  <a id='register-now' class='theme-btn gradient mt-3'
-                    style='padding: 12px 0; color: #ffffff; width: 100%; text-align: center; box-shadow:none; margin: auto; margin-bottom: 12px;border-radius: 14px; display: inline-block;'
-                    href='https://chat.whatsapp.com/HA74CukC8vmJfCGlCUBs82' target="_blank">Join Our Whatsapp Group
-                  </a>
-              </div>
-                   `;
-     document.getElementById("istecall").innerHTML = paymentDetails;
-         } else {
-           document.getElementById("successtext").style.color = "#da0f3f";
-           document.getElementById("successtext").style.fontSize = "1.5rem";
-           document.getElementById("successtext").innerHTML =
-             "Error Submitting Form. Please retry filling the form.";
-         }
-         $(".send-div").fadeOut();
-       },
-       error: function (err) {
-         // console.log("AJAX Error:", err); // Log any AJAX errors
-         document.getElementById("successtext").style.color = "red";
-         document.getElementById("successtext").innerHTML =
-           "Error Submitting Form. Please retry filling the form.";
-         $(".send-div").fadeOut();
-       },
-     });
-   });
-
-   let fileInput = document.getElementById("image");
-   let filetype = document.getElementById("filetype");
-   let filename = document.getElementById("filename");
-   let fileglob = document.getElementById("glob");
+  console.log(data);
 
 
-   fileInput.addEventListener("change", () => {
-     let file = fileInput.files[0];
+  $.ajax({
+    url: `
+      https://script.google.com/macros/s/AKfycbxti6Mu1t6z65AEYNiFiFo5D-qxvyfXGLqC5_aTTYvZtbw33Glse7a-i-R5DUQUOW2M/exec
+    `.trim(),
 
-     let fr = new FileReader();
-     fr.onload = (e) => {
-       let res = e.target.result;
+    data: JSON.stringify(data),
 
-       let glob = res.split("base64,")[1];
-       filetype.value = file.type;
-       filename.value = file.name;
-       fileglob.value = glob;
+    method: "POST",
 
+    success: function (response) {
 
+      console.log(Object.keys(data));
 
-       checkFileSize(file);
+      if (response.result === "success") {
 
-     };
-     fr.readAsDataURL(file);
-   });
+        const paymentDetails = `
+          <div id="payment-completed">
+            <h4 id="successtextfinal"
+                style="color:white;size:3rem;margin:2rem 0;">
+              Form submitted Successfully!
+            </h4>
+
+            <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>
+              PAYMENT DETAILS
+            </h6>
+
+            <p style='font-size: 1.2em;color: green;'>
+              Account holder name: Haripriya R<br>
+              IFSC code: SBIN0070547<br>
+              Account number: 45270120187<br>
+              UPI id: haripriya.r1605-1@oksbi
+            </p>
+
+            <a id='register-now'
+               class='theme-btn gradient mt-3'
+               style='padding: 12px 0; color: #ffffff; width: 100%;
+                      text-align: center; box-shadow:none; margin: auto;
+                      margin-bottom: 12px;border-radius: 14px;
+                      display: inline-block;'
+               href='https://chat.whatsapp.com/HA74CukC8vmJfCGlCUBs82'
+               target="_blank">
+              Join Our Whatsapp Group
+            </a>
+          </div>
+        `;
+
+        document.getElementById("istecall").innerHTML = paymentDetails;
+
+      } else {
+
+        document.getElementById("successtext").style.color = "#da0f3f";
+        document.getElementById("successtext").style.fontSize = "1.5rem";
+
+        document.getElementById("successtext").innerHTML =
+          "Error Submitting Form. Please retry filling the form.";
+      }
+
+      $(".send-div").fadeOut();
+    },
+
+    error: function (err) {
+
+      document.getElementById("successtext").style.color = "red";
+
+      document.getElementById("successtext").innerHTML =
+        "Error Submitting Form. Please retry filling the form.";
+
+      $(".send-div").fadeOut();
+    }
+  });
+
+});
 
    //QR code
    const qrToggleBtn = document.getElementById("qrToggleBtn");
