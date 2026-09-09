@@ -81,7 +81,11 @@ function clearData() {
     $(document).ready(loadForm);
     
     // Ping memory state every 10 seconds
-    setInterval(saveForm, 45000);
+setInterval(saveForm, 45000);
+
+ //function clearData() {
+   // localStorage.removeItem("_sys_config_node");
+// }
     // ============================================================  
     // ====================== COOKIE END ========================== 
     // ============================================================  
