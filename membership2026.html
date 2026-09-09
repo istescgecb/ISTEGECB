@@ -32,9 +32,76 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/stars.css" />
   <link rel="stylesheet" href="assets/css/loader.css" />
+  <style>
+    .verify {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      height: 36px;
+      min-height: 36px;
+    }
+
+    .coupon-input {
+      height: 36px !important;
+      margin-bottom: 12px !important;
+      padding: 8px 8px 8px 14px !important;
+    }
+
+    .verify:hover {
+      filter: brightness(1.15);
+      box-shadow: 0 4px 10px rgba(71, 10, 212, 0.3);
+    }
+
+    .verify:active {
+      transform: scale(0.95);
+    }
+
+    .verify.is-loading {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .verify.is-loading .btn-text {
+      display: none;
+    }
+
+    .verify.is-loading .loader {
+      display: inline-block;
+    }
+
+    .verify.is-verified {
+      box-shadow: 0 4px 10px rgba(71, 10, 212, 0.3);
+    }
+
+    .verify.is-failed {
+      box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+    }
+
+    .verify .loader {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #fff;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      animation: verify-spin 1s linear infinite;
+    }
+
+    .verify .btn-text {
+      white-space: nowrap;
+    }
+
+    @keyframes verify-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
- 
   <title>ISTE GECBH - Become an ISTE member ?</title>
 </head>
 <!-- oncontextmenu="return false" -->
@@ -338,17 +405,22 @@
 
                 <!-- AMBASADOR START -->
 
-<label class="mb-1 ml-2" for="Referral" style="font-weight:bold;">Coupon Code (Optional)</label><br />
+<label class="mb-2 ml-2" for="Referral" style="font-weight:bold;">Coupon Code (Optional)</label><br />
 
 <div style="display:flex;align-items:flex-start;width:100%;gap:0;">
   <div style="flex:1 1 75%;display:flex;flex-direction:column;">
-    <input type="text" name="Referral" id="Referral" class="ffield" placeholder="Enter Coupon Code"
-      style="width:100%;height:2.2em;padding-left:10px;box-sizing:border-box;border-radius:6px 0 0 6px; margin-bottom:1px;" />
-    <small id="couponMessage" style="color:gainsborol;margin-bottom:0;line-height:1.2;font-size: 1em;"></small>
+    <input type="text" name="Referral" id="Referral" class="ffield coupon-input" placeholder="Enter Coupon Code"
+      style="width:100%;box-sizing:border-box;border-radius:6px 0 0 6px;" />
+    <small id="couponMessage" style="margin-bottom:0;line-height:1.2;font-size: 1em;"></small>
   </div>
   <button id="ref-code-verify" name="verify" class="verify" type="button"
-    style="flex:1 1 25%;margin-left:0;padding:0 10px;border-radius:0 6px 6px 0;height:2.2em;background-color:rgb(71, 10, 212);color:white;border:none;cursor:pointer;box-sizing:border-box;">Verify</button>
+    style="flex:1 1 25%;margin-left:0;padding:0 10px;border-radius:0 6px 6px 0;background-color:rgb(71, 10, 212);color:white;border:none;cursor:pointer;box-sizing:border-box;">
+    <span class="btn-text">Verify</span>
+    <span class="loader" aria-hidden="true"></span>
+  </button>
 </div>
+
+
                 <!-- AMBASADOR END -->
 
               <!-- Message container for coupon validation feedback -->
@@ -641,64 +713,76 @@
   }
   
     //  ============================================= Verify button  ==================================================================
-  // Add event listener to the Verify button
+ 
   document.getElementById("ref-code-verify").addEventListener("click", function () {
     const codeInput = document.getElementById("Referral").value.trim();
     const couponMsgDiv = document.getElementById("couponMessage");
     const verifyBtn = document.getElementById("ref-code-verify");
+    const btnText = verifyBtn.querySelector(".btn-text");
 
     if (codeInput === "") {
       couponMsgDiv.innerHTML = "<span style='color:red;'>Please enter a code first.</span>";
       return;
     }
 
-    // Show loading state
-    verifyBtn.innerText = "Checking...";
+    verifyBtn.classList.add("is-loading");
+    verifyBtn.classList.remove("is-verified", "is-failed");
     verifyBtn.disabled = true;
     couponMsgDiv.innerHTML = "";
 
-    // Make AJAX call to backend
     $.ajax({
       url: `
       
       
       
-https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4GGQLOh6eGgbBdmHLab3RyzzhQbA/exec
+https://script.google.com/macros/s/AKfycbycapr1goUcwsDptV3yrTpNQaWn6yc3Q7xVEtVY9sWsc8tRri1herAbW22P334-Ocp2/exec
       
       
       `.trim(),
       method: "POST",
       data: JSON.stringify({ action: "verifyRef", Referral: codeInput }),
       success: function (response) {
-        verifyBtn.innerText = "Verify";
+        verifyBtn.classList.remove("is-loading");
         verifyBtn.disabled = false;
 
         if (response.result === "success" && response.isValid) {
-          // Verification successful
           refVerified = true;
           verifiedOfferPrice = response.offerPrice;
+          verifyBtn.classList.add("is-verified");
+          btnText.textContent = "Verified ✓";
 
-          couponMsgDiv.innerHTML = "<span style='color:green;font-size:x-small;'>✅ Coupon applied successfully!</span>";
+          couponMsgDiv.innerHTML = "<span style='color:#90EE90;font-size:small;'>✅ Coupon applied successfully</span>";
 
-          // Trigger the UI change
+      
           renderPricingUI();
         } else {
-          // Verification failed
           refVerified = false;
           verifiedOfferPrice = null;
+          verifyBtn.classList.add("is-failed");
+          btnText.textContent = "Failed ✗";
 
-          couponMsgDiv.innerHTML = "<span style='color:red;font-size:x-small;'>❌ Invalid or expired code.</span>";
-
-          // Revert to normal UI
+          couponMsgDiv.innerHTML = "<span style='color:#FF9999;font-size:small;'>❌ Invalid or expired code.</span>";
           renderPricingUI();
         }
       },
       error: function (err) {
-        verifyBtn.innerText = "Verify";
+        verifyBtn.classList.remove("is-loading");
+        verifyBtn.classList.add("is-failed");
+        btnText.textContent = "Failed ✗";
         verifyBtn.disabled = false;
         couponMsgDiv.innerHTML = "<span style='color:red;'>Error checking code. Try again.</span>";
       }
     });
+  });
+
+  document.getElementById("Referral").addEventListener("input", function () {
+    const verifyBtn = document.getElementById("ref-code-verify");
+    const btnText = verifyBtn.querySelector(".btn-text");
+
+    if (verifyBtn.classList.contains("is-verified") || verifyBtn.classList.contains("is-failed")) {
+      verifyBtn.classList.remove("is-verified", "is-failed");
+      btnText.textContent = "Verify";
+    }
   });
   //  ============================================= Update total  ==================================================================
 
@@ -846,7 +930,7 @@ https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4
       
       
       
-https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4GGQLOh6eGgbBdmHLab3RyzzhQbA/exec
+https://script.google.com/macros/s/AKfycbycapr1goUcwsDptV3yrTpNQaWn6yc3Q7xVEtVY9sWsc8tRri1herAbW22P334-Ocp2/exec
 
       
       
@@ -874,7 +958,7 @@ https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4
       
       
      
-https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4GGQLOh6eGgbBdmHLab3RyzzhQbA/exec
+https://script.google.com/macros/s/AKfycbycapr1goUcwsDptV3yrTpNQaWn6yc3Q7xVEtVY9sWsc8tRri1herAbW22P334-Ocp2/exec
       
       
       `.trim(),
@@ -924,14 +1008,14 @@ https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4
         data[obj.name] = obj.value;
       });
       // for knowing membership amount
-      data["Amount"] = "Rs." + total;
+      data["Amount"] = "Rs." + finalTotal;
       // console.log(data);
       
 
       $.ajax({
         url: `
 
-https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4GGQLOh6eGgbBdmHLab3RyzzhQbA/exec
+https://script.google.com/macros/s/AKfycbycapr1goUcwsDptV3yrTpNQaWn6yc3Q7xVEtVY9sWsc8tRri1herAbW22P334-Ocp2/exec
 			`.trim(),
         data: JSON.stringify(data),
 
@@ -945,14 +1029,14 @@ https://script.google.com/macros/s/AKfycbzY7__T8Djbu0NfAlQBv9VUNi--2OUUPAs1GEaS4
             clearData();
             const paymentDetails = `
               <div id = "payment-completed" >
-                  <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">Form submitted Successfully!</h4>
+                  <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">WELCOME TO ISTE 💙</h4>
+                  <p style='font-size: 1.2em;color: white;'>
+                   Your response has been submitted successfully.<br><br>
 
-                  <h6 style='font-size: 1.5em;color: rgb(214, 91, 20);'>PAYMENT DETAILS</h6>
-                  <p style='font-size: 1.2em;color: green;'>
-                    Account holder name: Haripriya R<br>
-                    IFSC code: SBIN0070547<br>
-                    Account number: 45270120187<br>
-                    UPI id: haripriya.r1605-1@oksbi
+                   Thank you for your interest in becoming a part of ISTE GECBH.<br>
+                  Please join the WhatsApp group to stay updated on our latest events and workshops.<br><br>
+
+                    Your ISTE Membership ID has been sent to your registered email address. Please check your email for the details.
                   </p>
 
                   <a id='register-now' class='theme-btn gradient mt-3'
