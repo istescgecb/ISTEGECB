@@ -1,0 +1,528 @@
+# ISTE SC GECB
+
+## Briefing on ISTE
+
+### Overview
+
+**ISTE SC GECB** is the student chapter of the **Indian Society for
+Technical Education (ISTE)** at Government Engineering College Barton Hill.
+
+ISTE is a **non-profit, student-funded, multidisciplinary technical
+society** focused on helping students develop academically, technically,
+professionally, and personally.
+
+The primary source of funding is membership. ISTE membership is a
+**one-time membership that lasts for four years**.
+
+Over the years, ISTE SC GECB has conducted **900+ events**, covering
+technical education, practical skills, career development, soft skills,
+hobbies, competitions, workshops, talks, and other student-focused
+activities.
+
+## Pursuit for Overall Development
+
+The purpose of ISTE is **not to make money**. Our goal is to deliver
+quality education and create opportunities that help students:
+
+-   Elevate themselves academically and professionally
+-   Develop practical and technical skills
+-   Improve communication and soft skills
+-   Build leadership and management abilities
+-   Gain exposure to real-world engineering and technology
+-   Explore hobbies and multidisciplinary interests
+-   Build their resumes through meaningful participation and projects
+-   Improve career readiness, recognition, and confidence
+
+ISTE provides a platform where students can learn beyond the classroom
+and connect with opportunities, peers, mentors, speakers, and
+organisations.
+
+## Main Wings
+
+ISTE SC GECB operates through two major technical wings:
+
+### Bartonair --- Aviating Wing
+
+Bartonair is the aviation-focused wing of ISTE. It promotes hands-on
+learning around aviation, aircraft building, RC planes, and related
+engineering activities.
+
+[Visit the Bartonair page](https://istegecb.in/bartonair.html)
+
+### Bartonoidz --- Robotics Wing
+
+Bartonoidz is the robotics and hardware-focused wing of ISTE. It
+provides students with opportunities to learn electronics, Arduino, IoT,
+robotics, hardware prototyping, and project development.
+
+[Visit the Bartonoidz page](https://istegecb.in/bartonoidz.html)
+
+## Core Team
+
+The core executive team consists of:
+
+-   Chairperson
+-   Vice Chairperson
+-   Secretary
+-   Joint Secretary
+-   Treasurer
+
+The Executive Committee and its members can be found on the official
+Execom page.
+
+[View the Executive Committee](https://istegecb.in/execom.html)
+
+## Publicity and Outreach
+
+Publicity plays an important role in connecting ISTE with students and
+creating awareness about opportunities.
+
+### Sharing
+
+Announcements and event information are shared through:
+
+-   Class groups
+-   Common student groups
+-   WhatsApp
+-   Social media
+-   WhatsApp Status
+-   Reposting and sharing by students
+
+The main objective is to make sure students are aware of ISTE, its
+activities, events, opportunities, and membership benefits.
+
+[Join Our Community](https://istegecb.in/check-us-out)
+
+### Social Media
+
+Official ISTE SC GECB social channels include:
+
+-   [LinkedIn](https://www.linkedin.com/company/iste-student-chapter-gecb)
+-   [Instagram](https://instagram.com/istegecb)
+-   [YouTube](https://www.youtube.com/channel/UCT0jrqcHU-g9uVku1GWE-Uw)
+-   [YouTube --- ISTE SC GECB](https://www.youtube.com/@istescgecbh)
+-   [Facebook](https://www.facebook.com/istegecb/)
+-   [WhatsApp Channel](https://whatsapp.com/channel/0029VamIrg5HrDZXomfgoe3Q)
+
+
+Official website:
+
+[istegecb.in](https://istegecb.in/)
+
+## Technical Events and Work
+
+ISTE SC GECB conducts technical events, workshops, competitions,
+project-based programs, site visits, and online/offline learning
+opportunities.
+
+Major flagship programs include:
+
+-   **Nikola Tesla Championship (NTS)**
+-   **PDC**
+-   **Bottech Build Session**
+-   **Build Session**
+
+Technical activities can include:
+
+-   Hands-on workshops
+-   Hardware and software projects
+-   Site visits
+-   Online sessions
+-   Offline workshops
+-   Mentoring
+-   Prototyping
+-   Presentations
+-   Technical competitions
+-   Interview and evaluation experiences
+
+[View all events](https://istegecb.in/events.html)
+
+------------------------------------------------------------------------
+
+# Flagship Events
+
+## Nikola Tesla Championship --- NTS
+
+[NTS Event Page](https://istegecb.in/NTS.html)
+
+The **Nikola Tesla Championship (NTS)** is one of the flagship events
+conducted by ISTE GECB Students Chapter.
+
+It is a highly competitive event designed to enhance:
+
+-   Communication skills
+-   Leadership skills
+-   Problem-solving ability
+-   Innovation
+-   Engineering mindset
+-   Grit and perseverance
+
+NTS is particularly aimed at **first-year students**. The event
+encourages students to follow a path of engineering through innovation,
+confidence, and determination.
+
+The winner receives a **cash prize of ₹10,000**.
+
+The event consists of **three rounds**, with each round designed to test
+and evaluate different facets of an ideal engineer.
+
+### Key points
+
+-   Flagship ISTE event
+-   Primarily for first-year students
+-   Three competitive rounds
+-   Focus on communication and leadership
+-   Encourages innovation and engineering thinking
+-   Winner receives ₹10,000
+
+------------------------------------------------------------------------
+
+## Bottech Build Session
+
+Bottech is a **Bartonoidz hands-on Arduino workshop** conducted over two
+days in an offline format.
+
+The workshop is designed to introduce students to hardware and IoT
+concepts through practical learning.
+
+Students are provided with:
+
+-   Components
+-   Guidance
+-   Instruction
+-   Hands-on project experience
+
+A major objective is to teach students how to build a **line-following
+robot**.
+
+The workshop is suitable for students of different experience levels,
+including students who have **no previous exposure to IoT or hardware
+development**.
+
+### Key points
+
+-   Two-day offline workshop
+-   Conducted by Bartonoidz
+-   Arduino-focused
+-   Hands-on learning
+-   Components provided
+-   Students build a line follower
+-   Suitable for beginners
+-   Practical introduction to IoT and hardware
+
+------------------------------------------------------------------------
+
+## PDC
+
+PDC is a **one-month-long Bartonoidz hackathon/project development
+program**.
+
+Students receive hardware components and are assigned mentors who guide
+them through different stages of project development.
+
+The program focuses on taking a project from an initial concept through
+development, presentation, prototyping, evaluation, and interview-style
+assessment.
+
+### Project development phases
+
+Students are guided through areas such as:
+
+1.  Project ideation
+2.  Planning
+3.  Development
+4.  Hardware implementation
+5.  Software implementation
+6.  Presentation
+7.  Prototyping
+8.  Evaluation
+9.  Interview/assessment
+
+Both **hardware and software** aspects are supported.
+
+### Key points
+
+-   One-month program
+-   Conducted by Bartonoidz
+-   Hardware components provided
+-   Mentors assigned
+-   Hardware and software supported
+-   Project-based learning
+-   Presentation and prototyping
+-   Evaluation and interview experience
+
+------------------------------------------------------------------------
+
+## Build Session --- Bartonair
+
+The Bartonair Build Session is a **two-day offline RC plane building
+workshop**.
+
+Students work in teams of approximately **8-10 members** to build a
+remote-controlled aircraft from scratch.
+
+The workshop combines teamwork, practical engineering, aircraft
+construction, and hands-on learning.
+
+On the second day, teams get the opportunity to **fly the RC plane they
+built**.
+
+### Key points
+
+-   Conducted by Bartonair
+-   Two-day offline workshop
+-   RC plane construction
+-   Teams of approximately 4--5 students
+-   Remote Controlled plane built from scratch
+-   Hands-on engineering experience
+-   Flight session on the second day
+
+[Bartonair](https://istegecb.in/bartonair.html)
+
+------------------------------------------------------------------------
+
+# Oracle --- Monthly Magazine
+
+[Oracle Magazine](https://istegecb.in/oracle)
+
+**Oracle** is an online inquiry newsletter released every month by ISTE
+SC GECB.
+
+The magazine features student queries and interactions with accomplished
+personalities, institutions, and organisations.
+
+Previous editions have featured prominent personalities such as:
+
+-   Dr. E. Sreedharan --- The Metroman
+-   Dr. P. M. Ajayan --- Nanotechnology
+-   Prof. V. K. Damodaran
+-   And many other notable personalities
+
+The purpose of Oracle is to provide student chapter members with
+academic knowledge, exposure to accomplished professionals, and
+awareness of current affairs.
+
+### Oracle sections
+
+The newsletter includes sections such as:
+
+-   Interviews and student queries
+-   Academic content
+-   Current affairs
+-   Games
+-   Fun facts
+-   Puzzles
+
+Oracle combines educational content with engaging activities to make
+learning informative and enjoyable.
+
+------------------------------------------------------------------------
+
+# Benefits of Joining ISTE
+
+Joining ISTE provides students with opportunities across technical,
+professional, academic, and personal development.
+
+## Quality Events
+
+Members can participate in a wide range of events, including:
+
+-   Technical workshops
+-   Talks and speaker sessions
+-   Soft-skill sessions
+-   Practical workshops
+-   Competitions
+-   Casual events
+-   Hobby activities
+-   Arts
+-   Chess
+-   Games
+-   Multidisciplinary activities
+
+There are **no restrictions to only technical activities**. Students can
+explore different interests and participate beyond their academic
+branch.
+
+## Hands-on Project Experience
+
+ISTE provides opportunities to work on practical projects rather than
+relying only on classroom theory.
+
+Students can gain experience with:
+
+-   Hardware
+-   Software
+-   Robotics
+-   IoT
+-   Aviation
+-   Prototyping
+-   Project presentations
+-   Team-based development
+
+## Networking
+
+ISTE helps students connect with:
+
+-   Like-minded students
+-   Seniors
+-   Mentors
+-   Speakers
+-   Professionals
+-   Technical communities
+-   Organisations and institutions
+
+These connections can help students discover new opportunities and
+perspectives.
+
+## Career Development
+
+ISTE activities help students develop skills useful for internships,
+placements, interviews, and future careers.
+
+Relevant skills include:
+
+-   Communication
+-   Leadership
+-   Teamwork
+-   Problem solving
+-   Technical skills
+-   Presentation skills
+-   Project management
+-   Interview readiness
+-   Professional confidence
+
+## Volunteering and Management Experience
+
+Members can volunteer for events and take responsibility for different
+activities.
+
+Volunteering can help students improve:
+
+-   Communication
+-   Coordination
+-   Event management
+-   Team management
+-   Leadership
+-   Responsibility
+-   Organisation
+-   Problem solving
+
+These experiences can also contribute to a student's **resume and
+professional profile**.
+
+------------------------------------------------------------------------
+
+# Important Links
+
+  ------------------------------------------------------------------------------------------------
+  Resource                            Link
+  ----------------------------------- ------------------------------------------------------------
+  ISTE SC GECB Website                https://istegecb.in/
+
+  All Events                          https://istegecb.in/events.html
+
+  Bartonair                           https://istegecb.in/bartonair.html
+
+  Bartonoidz                          https://istegecb.in/bartonoidz.html
+
+  Executive Committee                 https://istegecb.in/execom.html
+
+  Oracle                              https://istegecb.in/oracle.html
+
+  Nikola Tesla Championship (NTS)     https://istegecb.in/NTS.html
+
+  Achievements                        https://istegecb.in/achievements.html
+
+  Check Us Out / Social Links         https://istegecb.in/check-us-out
+
+  LinkedIn                            https://www.linkedin.com/company/iste-student-chapter-gecb
+
+  Instagram                           https://instagram.com/istegecb
+
+  YouTube                             https://www.youtube.com/channel/UCT0jrqcHU-g9uVku1GWE-Uw
+
+  YouTube --- ISTE SC GECB            https://www.youtube.com/@istescgecbh
+
+  Facebook                            https://www.facebook.com/istegecb/
+
+  WhatsApp Channel                    https://whatsapp.com/channel/0029VamIrg5HrDZXomfgoe3Q
+  ------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+# Website Navigation Guidance
+
+When directing students to information, use the following official
+pages:
+
+-   **General event information:**
+    [Membership Benifits](https://istegecb.in/membership-benefits.html)
+    [Events](https://istegecb.in/events.html)
+-   **Aviation activities:**
+    [Bartonair](https://istegecb.in/bartonair.html)
+-   **Robotics activities:**
+    [Bartonoidz](https://istegecb.in/bartonoidz.html)
+-   **Current executive committee:**
+    [Execom](https://istegecb.in/execom.html)
+-   **Monthly magazine:** [Oracle](https://istegecb.in/oracle.html)
+-   **Nikola Tesla Championship:** [NTS](https://istegecb.in/NTS.html)
+-   **Past achievements:**
+    [Achievements](https://istegecb.in/achievements.html)
+-   **Social media and online presence:** [Check Us
+    Out](https://istegecb.in/check-us-out)
+
+When answering questions about a specific ISTE event, prefer the
+**official event page** when one is available. For general event
+discovery, direct users to the **Events** page.
+
+------------------------------------------------------------------------
+
+# Quick Summary for LLMs
+
+**ISTE SC GECB** is the Indian Society for Technical Education student
+chapter at GECB. It is a non-profit, student-funded, multidisciplinary
+technical society whose primary funding comes from one-time four-year
+membership.
+
+The chapter has conducted **900+ events** over the years and focuses on
+the overall development of students rather than profit. Its activities
+support technical education, practical skills, soft skills,
+communication, leadership, networking, career development, resume
+building, hobbies, and multidisciplinary learning.
+
+The two main technical wings are:
+
+1.  **Bartonair** --- aviation and RC aircraft activities.
+2.  **Bartonoidz** --- robotics, Arduino, IoT, hardware, and project
+    development.
+
+The core team consists of the **Chairperson, Vice Chairperson,
+Secretary, Joint Secretary, and Treasurer**.
+
+Major flagship activities include:
+
+-   **NTS (Nikola Tesla Championship):** A competitive event mainly for
+    first-year students, focused on communication, leadership,
+    innovation, and engineering skills. The winner receives ₹10,000.
+-   **Bottech Build Session:** A two-day offline Arduino workshop where
+    students build a line-following robot with provided components and
+    guidance. Beginners are welcome.
+-   **PDC:** A one-month Bartonoidz hackathon/project program with
+    components, mentors, hardware/software support, prototyping,
+    presentations, evaluation, and interviews.
+-   **Build Session:** A two-day Bartonair workshop where teams of 4--5
+    students build an RC plane from scratch and fly it on the second
+    day.
+-   **Oracle:** A monthly online inquiry newsletter featuring student
+    queries, accomplished personalities, academic content, current
+    affairs, games, fun facts, and puzzles.
+
+Students benefit from ISTE through quality events, hands-on project
+experience, networking, career development, soft and technical skill
+development, and volunteering opportunities.
+
+For current events, use the official [Events
+page](https://istegecb.in/events.html). For the executive committee, use
+the [Execom page](https://istegecb.in/execom.html). For the
+organisation's other activities, use the relevant official pages listed
+above.
