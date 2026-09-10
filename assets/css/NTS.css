@@ -57,7 +57,18 @@ body {
 .prsnt {
   background: #c3c4c5;
   background-image: #c3c4c5;
-  color: #0a0c40 !important;
+  color: black !important;
+}
+
+.theme-btn.gradient.prsnt{
+    color: rgb(22, 20, 20) !important;
+    background: white;
+    background-color: white;
+}
+.theme-btn.gradient.prsnt :hover{
+    color: white;
+    background: transparent;
+    background-color: transparent;
 }
 
 .headingdropbtn {
