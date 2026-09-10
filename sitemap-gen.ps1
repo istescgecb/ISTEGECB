@@ -1,5 +1,12 @@
 $baseUrl = "https://istegecb.in"
 
+# Add the specific pages here that you want without the .html extension
+$stripHTMLExtensionList = @(
+  "developers.html"
+  # "about.html", 
+  # "contact.html"
+)
+
 $exclude = @(
   # System & Backup folders
   "backup",
@@ -48,17 +55,30 @@ $sitemap += '<?xml version="1.0" encoding="UTF-8"?>'
 $sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 $sitemap += '<url><loc>https://istegecb.in</loc></url>'
 
+$urlCount = 1
+
 foreach ($file in $files) {
   $relative = $file.FullName.Replace((Get-Location).Path, "").Replace("\", "/")
+  
+  # Skip index.html to prevent duplicating the root URL
+  if ($relative.ToLower() -eq "/index.html") { continue }
+  
+  # Check if the current file is in our list to convert
+  if ($stripHTMLExtensionList -contains $file.Name) {
+    $relative = $relative -replace '\.html$', ''
+  }
+  
   $url = "$baseUrl$relative"
 
   $sitemap += "  <url>"
   $sitemap += "    <loc>$url</loc>"
   $sitemap += "  </url>"
+  
+  $urlCount++
 }
 
 $sitemap += '</urlset>'
 
 $sitemap | Set-Content sitemap.xml -Encoding UTF8
 
-Write-Host "sitemap.xml generated with $($files.Count) URLs"
+Write-Host "sitemap.xml generated with $urlCount URLs"
