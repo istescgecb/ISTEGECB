@@ -227,7 +227,16 @@ a {
 .prsnt{
   background: var(--primary-color);
   background-image: white;
-  color: black !important;
+  /* color: black !important; */
+  background: var(--primary-color);
+  background-color: rgba(189, 39, 122, 0.479);
+}
+.prsnt:hover{
+  background: var(--primary-color);
+  background-image: white;
+  /* color: black !important; */
+  background: var(--primary-color);
+  background-color: rgba(205, 16, 120, 0.479);
 }
 
 .headingdropbtn {
