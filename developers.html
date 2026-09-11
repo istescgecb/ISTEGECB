@@ -125,6 +125,13 @@
 			margin-left: -1px;
 		}
 
+		.dev-chat-bubble ul {
+			margin: 0;
+			padding-left: 18px;
+			line-height: 1.5;
+			font-weight: 300;
+		}
+
 		.dev-info-btn {
 			background: transparent;
 			border: 1px solid #888;
@@ -174,11 +181,36 @@
 		.dev-chat-bubble::after {
 			content: "";
 			position: absolute;
-			bottom: 100%;
-			right: 2px;
-			border-width: 6px;
+			bottom: 98%;
+			right: 4px;
+			border-width: 7px;
 			border-style: solid;
 			border-color: transparent transparent #333 transparent;
+		}
+
+		@media (max-width: 317px) {
+			.dev-chat-bubble {
+				right: none;
+
+				left: 50%;
+				transform: translateX(-50%);
+
+				width: 210px;
+				max-width: 210px;
+			}
+
+			.dev-chat-bubble::after {
+				display: none;
+			}
+
+			.dev-chat-bubble ul {
+				margin: 0;
+				padding-right: 0;
+				line-height: 1.5;
+				font-weight: 300;
+				padding-left: 10px;
+				font-size: 12px;
+			}
 		}
 
 		.dev-info-container:hover .dev-chat-bubble,
@@ -355,69 +387,69 @@
 		</div>
 	</div>
 
+	<main>
+		<!-- Main Header -->
+		<div class="oracle-h1" style="margin-top: 7em; text-align: center;">
+			<h1 class="oraclehead" style="font-family: 'Poppins'; font-weight: 800; margin-bottom: 5px;">Developers</h1>
+		</div>
 
-	<!-- Main Header -->
-	<div class="oracle-h1" style="margin-top: 7em; text-align: center;">
-		<h1 class="oraclehead" style="font-family: 'Poppins'; font-weight: 800; margin-bottom: 5px;">Developers</h1>
-	</div>
+		<!-- Centered Subtitle & Icon Wrapper -->
+		<div class="dev-header-wrapper">
+			Meet the team behind the project.
+			<div class="dev-info-container">
+				<button class="dev-info-btn" tabindex="0">i</button>
 
-	<!-- Centered Subtitle & Icon Wrapper -->
-	<div class="dev-header-wrapper">
-		Meet the team behind the project.
-		<div class="dev-info-container">
-			<button class="dev-info-btn" tabindex="0">i</button>
-
-			<div class="dev-chat-bubble">
-				<ul style="margin: 0; padding-left: 18px; line-height: 1.5; font-weight: 300;">
-					<li><strong>Name:</strong> Personal website</li>
-					<li><strong>LinkedIn:</strong> Professional profile</li>
-					<li><strong>Year:</strong> Project contributions</li>
-				</ul>
+				<div class="dev-chat-bubble">
+					<ul>
+						<li><strong>Name:</strong> Personal website</li>
+						<li><strong>LinkedIn:</strong> Professional profile</li>
+						<li><strong>Year:</strong> Project contributions</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
 
 
-	<div class="container">
-		<div class="row justify-content-between align-items-center mb-5">
+		<div class="container">
+			<div class="row justify-content-between align-items-center mb-5">
 
-			<!-- Gopika -->
-			<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
-				style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
+				<!-- Gopika -->
+				<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
+					style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
 
-				<div style="display:flex;align-items:center;gap:8px;">
+					<div style="display:flex;align-items:center;gap:8px;">
+						<a href="https://www.linkedin.com/in/gopiverse/" target="_blank"
+							style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
+							Gopika G S
+						</a>
+
+						<small>
+							<a data-bs-toggle="collapse" href="#gopikaContribution"
+								style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
+								2025-26
+							</a>
+						</small>
+					</div>
+
 					<a href="https://www.linkedin.com/in/gopiverse/" target="_blank"
-						style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
-						Gopika G S
+						style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
+						<i class="fab fa-linkedin-in"></i>
 					</a>
 
-					<small>
-						<a data-bs-toggle="collapse" href="#gopikaContribution"
-							style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
-							2025-26
-						</a>
-					</small>
-				</div>
-
-				<a href="https://www.linkedin.com/in/gopiverse/" target="_blank"
-					style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
-					<i class="fab fa-linkedin-in"></i>
-				</a>
-
-				<div class="collapse w-100 mt-3" id="gopikaContribution">
-					<div style="font-size:.95rem;line-height:1.8;">
-						• Website maintenance, forms, training and documentation.<br>
-						• Treasure Hunt answer validation on database instead of static values.<br>
-						• Ambassdor Coupon Verification System.<br>
-						• Pagination of event page.<br>
+					<div class="collapse w-100 mt-3" id="gopikaContribution">
+						<div style="font-size:.95rem;line-height:1.8;">
+							• Website maintenance, forms, training and documentation.<br>
+							• Treasure Hunt answer validation on database instead of static values.<br>
+							• Ambassdor Coupon Verification System.<br>
+							• Pagination of event page.<br>
+						</div>
 					</div>
 				</div>
-			</div>
 
 
-			<!-- Trinita  hid because people might stalk github
+				<!-- Trinita  hid because people might stalk github
 			 for stuff-->
-			<!-- <div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
+				<!-- <div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
 			style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
 
 			<div style="display:flex;align-items:center;gap:8px;">
@@ -449,175 +481,176 @@
 		</div> -->
 
 
-			<!-- Nithin -->
-			<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
-				style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
+				<!-- Nithin -->
+				<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
+					style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
 
-				<div style="display:flex;align-items:center;gap:8px;">
-					<a href="https://underemployed.github.io/" target="_blank"
-						style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
-						Nithin A
-					</a>
-
-					<small>
-						<a data-bs-toggle="collapse" href="#nithinContribution"
-							style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
-							2023-26
+					<div style="display:flex;align-items:center;gap:8px;">
+						<a href="https://underemployed.github.io/" target="_blank"
+							style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
+							Nithin A
 						</a>
-					</small>
-				</div>
 
-				<a href="https://www.linkedin.com/in/nithin-a-06b946256/" target="_blank"
-					style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
-					<i class="fab fa-linkedin-in"></i>
-				</a>
-
-				<div class="collapse w-100 mt-3" id="nithinContribution">
-					<div style="font-size:.95rem;line-height:1.8;">
-						<b>Webmaster & Secretary (May 2023 - June 2026)</b><br>
-						• Website maintenance, forms, documentation, training new webmaster and automating repetitive
-						work.<br>
-						• SEO and search indexing improvements<br>
-						• Python & Google Apps Script automation for backend<br>
-						• Membership ID and Ambassador systems<br>
-						• Implemented dynamic change for membership for easier management<br>
-						• Certificate automation workflows<br>
-						• SEO Performance and image optimization<br>
-						• Made check us out page(linktree)<br>
-						• Added documentation for webmasters and other core roles<br>
-						• Created URL Shortner for ISTE<br>
-						• Revived the Treasure Hunt website developed by Akhiljith<br>
-
+						<small>
+							<a data-bs-toggle="collapse" href="#nithinContribution"
+								style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
+								2023-26
+							</a>
+						</small>
 					</div>
-				</div>
-			</div>
 
-
-			<!-- Ullas -->
-			<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
-				style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
-				<div style="display:flex;align-items:center;gap:8px;">
-					<a href="https://www.linkedin.com/in/ullas-chandran-/"
-						style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
-						Ullas Chandran
+					<a href="https://www.linkedin.com/in/nithin-a-06b946256/" target="_blank"
+						style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
+						<i class="fab fa-linkedin-in"></i>
 					</a>
-					<small>
-						<a data-bs-toggle="collapse" href="#ullasContribution"
-							style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
-							2021-22
-						</a>
-					</small>
-					<div class="collapse w-100 mt-3" id="ullasContribution">
+
+					<div class="collapse w-100 mt-3" id="nithinContribution">
 						<div style="font-size:.95rem;line-height:1.8;">
-							• Developed the spectra page
+							<b>Webmaster & Secretary (May 2023 - June 2026)</b><br>
+							• Website maintenance, forms, documentation, training new webmaster and automating
+							repetitive
+							work.<br>
+							• SEO and search indexing improvements<br>
+							• Python & Google Apps Script automation for backend<br>
+							• Membership ID and Ambassador systems<br>
+							• Implemented dynamic change for membership for easier management<br>
+							• Certificate automation workflows<br>
+							• SEO Performance and image optimization<br>
+							• Made check us out page(linktree)<br>
+							• Added documentation for webmasters and other core roles<br>
+							• Created URL Shortner for ISTE<br>
+							• Revived the Treasure Hunt website developed by Akhiljith<br>
+
 						</div>
 					</div>
 				</div>
 
-				<a href="https://www.linkedin.com/in/ullas-chandran-/"
-					style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
-					<i class="fab fa-linkedin-in"></i>
-				</a>
-			</div>
+
+				<!-- Ullas -->
+				<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
+					style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
+					<div style="display:flex;align-items:center;gap:8px;">
+						<a href="https://www.linkedin.com/in/ullas-chandran-/"
+							style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
+							Ullas Chandran
+						</a>
+						<small>
+							<a data-bs-toggle="collapse" href="#ullasContribution"
+								style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
+								2021-22
+							</a>
+						</small>
+						<div class="collapse w-100 mt-3" id="ullasContribution">
+							<div style="font-size:.95rem;line-height:1.8;">
+								• Developed the spectra page
+							</div>
+						</div>
+					</div>
+
+					<a href="https://www.linkedin.com/in/ullas-chandran-/"
+						style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+				</div>
 
 
-			<!-- Amrita -->
-			<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
-				style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
-				<div style="display:flex;align-items:center;gap:8px;">
+				<!-- Amrita -->
+				<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
+					style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
+					<div style="display:flex;align-items:center;gap:8px;">
+						<a href="https://www.linkedin.com/in/amrita-jiju/"
+							style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
+							Amrita Jiju
+						</a>
+						<small>
+							<a data-bs-toggle="collapse" href="#amritaContribution"
+								style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
+								2021-22
+							</a>
+						</small>
+					</div>
+
 					<a href="https://www.linkedin.com/in/amrita-jiju/"
-						style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
-						Amrita Jiju
+						style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
+						<i class="fab fa-linkedin-in"></i>
 					</a>
-					<small>
-						<a data-bs-toggle="collapse" href="#amritaContribution"
-							style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
-							2021-22
-						</a>
-					</small>
-				</div>
 
-				<a href="https://www.linkedin.com/in/amrita-jiju/"
-					style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
-					<i class="fab fa-linkedin-in"></i>
-				</a>
-
-				<div class="collapse w-100 mt-3" id="amritaContribution">
-					<div style="font-size:.95rem;line-height:1.8;">
-						• Developed the Project Development Challenge (PDC) page
+					<div class="collapse w-100 mt-3" id="amritaContribution">
+						<div style="font-size:.95rem;line-height:1.8;">
+							• Developed the Project Development Challenge (PDC) page
+						</div>
 					</div>
 				</div>
-			</div>
 
 
-			<!-- Mani -->
-			<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
-				style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
-				<div style="display:flex;align-items:center;gap:8px;">
+				<!-- Mani -->
+				<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
+					style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
+					<div style="display:flex;align-items:center;gap:8px;">
+						<a href="https://www.linkedin.com/in/mani-jose-a092541a9/"
+							style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
+							Mani Jose
+						</a>
+						<small>
+							<a data-bs-toggle="collapse" href="#maniContribution"
+								style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
+								2020-22 • OG
+							</a>
+						</small>
+					</div>
+
 					<a href="https://www.linkedin.com/in/mani-jose-a092541a9/"
-						style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
-						Mani Jose
+						style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
+						<i class="fab fa-linkedin-in"></i>
 					</a>
-					<small>
-						<a data-bs-toggle="collapse" href="#maniContribution"
-							style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
-							2020-22 • OG
-						</a>
-					</small>
-				</div>
 
-				<a href="https://www.linkedin.com/in/mani-jose-a092541a9/"
-					style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
-					<i class="fab fa-linkedin-in"></i>
-				</a>
-
-				<div class="collapse w-100 mt-3" id="maniContribution">
-					<div style="font-size:.95rem;line-height:1.8;">
-						• Original website creator<br>
-						• One of the developers behind `istegecb.com`.
+					<div class="collapse w-100 mt-3" id="maniContribution">
+						<div style="font-size:.95rem;line-height:1.8;">
+							• Original website creator<br>
+							• One of the developers behind `istegecb.com`.
+						</div>
 					</div>
 				</div>
-			</div>
 
 
-			<!-- Akhiljith -->
-			<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
-				style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
-				<div style="display:flex;align-items:center;gap:8px;">
-					<a href="https://akhiljithk.me/"
-						style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
-						Akhiljith K
-					</a>
-					<small>
-						<a data-bs-toggle="collapse" href="#akhiljithContribution"
-							style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
-							2020-22 • OG
+				<!-- Akhiljith -->
+				<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
+					style="margin:0 auto;width:90%;max-width:600px;padding:18px 25px;background:#fff;color:#171526;">
+					<div style="display:flex;align-items:center;gap:8px;">
+						<a href="https://akhiljithk.me/"
+							style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
+							Akhiljith K
 						</a>
-					</small>
-				</div>
+						<small>
+							<a data-bs-toggle="collapse" href="#akhiljithContribution"
+								style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
+								2020-22 • OG
+							</a>
+						</small>
+					</div>
 
-				<a href="https://www.linkedin.com/in/akhiljith-k/"
-					style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
-					<i class="fab fa-linkedin-in"></i>
-				</a>
+					<a href="https://www.linkedin.com/in/akhiljith-k/"
+						style="color:#fff;background:#171526;border-radius:3px;padding:6px 10px;">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
 
-				<div class="collapse w-100 mt-3" id="akhiljithContribution">
-					<div style="font-size:.95rem;line-height:1.8;">
-						• Original website creator<br>
-						• One of the developers behind `istegecb.com`.
+					<div class="collapse w-100 mt-3" id="akhiljithContribution">
+						<div style="font-size:.95rem;line-height:1.8;">
+							• Original website creator<br>
+							• One of the developers behind `istegecb.com`.
+						</div>
 					</div>
 				</div>
-			</div>
 
+			</div>
 		</div>
-	</div>
+
+	</main>
 
 
 
 
 
-
-	</div>
 
 
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
