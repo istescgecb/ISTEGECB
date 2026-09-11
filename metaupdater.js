@@ -82,7 +82,7 @@ function updateHtmlFile(filePath, urlPath) {
     $('a[href]').each(function () {
         let href = $(this).attr('href');
 
-        if (href) {
+        if (href) { 
             // Only process internal links (skips http://external-site.com or mailto:)
             const isInternal = !href.startsWith('http') || href.startsWith(BASE_DOMAIN);
 
