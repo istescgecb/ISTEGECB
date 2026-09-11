@@ -1,12 +1,5 @@
 $baseUrl = "https://istegecb.in"
 
-# Add the specific pages here that you want without the .html extension
-$stripHTMLExtensionList = @(
-  "developers.html"
-  # "about.html", 
-  # "contact.html"
-)
-
 $exclude = @(
   # System & Backup folders
   "backup",
@@ -60,12 +53,15 @@ $urlCount = 1
 foreach ($file in $files) {
   $relative = $file.FullName.Replace((Get-Location).Path, "").Replace("\", "/")
   
-  # Skip index.html to prevent duplicating the root URL
+  # Skip root index.html to prevent duplicating the root URL
   if ($relative.ToLower() -eq "/index.html") { continue }
   
-  # Check if the current file is in our list to convert
-  if ($stripHTMLExtensionList -contains $file.Name) {
-    $relative = $relative -replace '\.html$', ''
+  # Clean up sub-directory indexes (e.g., /team/index.html -> /team/)
+  if ($relative.ToLower().EndsWith("/index.html")) {
+      $relative = $relative -replace '(?i)/index\.html$', ''
+  } else {
+      # Strip .html from everything else to match your Cloudflare rules
+      $relative = $relative -replace '(?i)\.html$', ''
   }
   
   $url = "$baseUrl$relative"
