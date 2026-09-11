@@ -95,6 +95,21 @@
       white-space: nowrap;
     }
 
+.membership-title {
+    font-size: 1.5em;
+    color: rgb(245, 98, 12);
+    margin-bottom: 0.5rem;
+}
+
+.membership-title b:nth-child(2) {
+    font-size: 0.83em;
+}
+
+@media screen and (max-width: 1032px) {
+    .membership-title b:nth-child(2) {
+        display: block;
+    }
+}
     @keyframes verify-spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -430,9 +445,10 @@
                 <!-- <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 500; color: rgb(241, 131, 28);">
                   MEMBERSHIP OPTIONS(BotTech Offer Active)
                 </label> -->
-                <h2 style="font-size: 1.5em; color: rgb(245, 98, 12);margin-bottom: 0.5rem;">
-                  <b id="paymentDetailsTitle">MEMBERSHIP OPTIONS - OFFER ACTIVE</b>
-                </h2>
+               <div class="membership-title">
+                    <b id="paymentDetailsTitle">MEMBERSHIP OPTIONS - OFFER ACTIVE</b>
+                    <b>(for all 4 years)</b>
+              </div>
                 <div style="font-weight: 400;font-size: 17px;color: rgb(235, 208, 200); margin-bottom: 2px; font-style: italic;" id="seatsLeft">
 
                 </div>
