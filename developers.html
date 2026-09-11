@@ -4,16 +4,15 @@
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- cache contro  -->
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="-1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- cache control ends  -->
 
 	<!-- SEO start -->
-	<title>Meet the Developers behind | ISTE GECBH</title>
+	<title>Meet the Developers behind ISTE GECBH</title>
 
 	<meta name="description"
 		content="Meet the current and former developers who have contributed to the ISTE GECBH website. Explore the students, webmasters, designers, and contributors who helped build and maintain the digital presence of ISTE Student Chapter GEC Barton Hill.">
@@ -27,9 +26,9 @@
 	<link rel="canonical" href="https://istegecb.in/developers">
 
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Developers | ISTE GECBH">
+	<meta property="og:title" content="Meet the Developers behind ISTE GECBH">
 
-	<meta name="twitter:title" content="Developers | ISTE GECBH">
+	<meta name="twitter:title" content="Meet the Developers behind ISTE GECBH">
 	<!-- SEO END -->
 
 	<link rel="icon" href="assets/img/ISTE logo White.png" type="image/icon type">
@@ -42,7 +41,6 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/main.css">
-	<link rel="stylesheet" href="assets/css/stars.css">
 	<style>
 		.developer-card {
 			width: 90%;
@@ -114,15 +112,17 @@
 		.dev-header-wrapper {
 			font-family: 'Poppins', sans-serif;
 			margin-bottom: 2em;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 8px;
+			text-align: center;
+			font-size: 1.1em;
+			color: #888;
 		}
 
 		.dev-info-container {
 			position: relative;
 			display: inline-flex;
+			align-items: center;
+			vertical-align: middle;
+			margin-left: -1px;
 		}
 
 		.dev-info-btn {
@@ -141,9 +141,12 @@
 			padding: 0;
 			transition: all 0.2s;
 			line-height: 1;
+			transform: translateY(-1px);
+
 		}
 
-		.dev-info-btn:hover {
+		.dev-info-btn:hover,
+		.dev-info-container:hover .dev-info-btn {
 			background-color: #888;
 			color: #222;
 		}
@@ -360,12 +363,8 @@
 
 	<!-- Centered Subtitle & Icon Wrapper -->
 	<div class="dev-header-wrapper">
-		<p style="font-size: 1.1em; color: #888; margin: 0;">
-			Meet the team behind the project.
-		</p>
-
+		Meet the team behind the project.
 		<div class="dev-info-container">
-			<!-- tabindex="0" makes it tappable on mobile -->
 			<button class="dev-info-btn" tabindex="0">i</button>
 
 			<div class="dev-chat-bubble">
@@ -380,7 +379,7 @@
 
 
 	<div class="container">
-		<div class="row justify-content-between align-items-center">
+		<div class="row justify-content-between align-items-center mb-5">
 
 			<!-- Gopika -->
 			<div class="col-12 d-flex flex-wrap justify-content-between align-items-center my-2"
@@ -476,7 +475,8 @@
 				<div class="collapse w-100 mt-3" id="nithinContribution">
 					<div style="font-size:.95rem;line-height:1.8;">
 						<b>Webmaster & Secretary (May 2023 - June 2026)</b><br>
-						• Website maintenance, forms, documentation, training new webmaster and automating repetitive work.<br>
+						• Website maintenance, forms, documentation, training new webmaster and automating repetitive
+						work.<br>
 						• SEO and search indexing improvements<br>
 						• Python & Google Apps Script automation for backend<br>
 						• Membership ID and Ambassador systems<br>
@@ -501,17 +501,17 @@
 						style="color:#171526;font-weight:bolder;font-size:1.6em;text-decoration:underline;">
 						Ullas Chandran
 					</a>
-						<small>
-							<a data-bs-toggle="collapse" href="#amritaContribution"
-								style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
-								2021-22
-							</a>
-						</small>
-						<div class="collapse w-100 mt-3" id="ullasContribution">
-							<div style="font-size:.95rem;line-height:1.8;">
-								• Developed the spectra page
-							</div>
+					<small>
+						<a data-bs-toggle="collapse" href="#ullasContribution"
+							style="color:#171526;opacity:.7;text-decoration:none;font-size:1rem;">
+							2021-22
+						</a>
+					</small>
+					<div class="collapse w-100 mt-3" id="ullasContribution">
+						<div style="font-size:.95rem;line-height:1.8;">
+							• Developed the spectra page
 						</div>
+					</div>
 				</div>
 
 				<a href="https://www.linkedin.com/in/ullas-chandran-/"
