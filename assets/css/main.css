@@ -1143,6 +1143,24 @@ width: clamp(368px, 80%, 385px);
 .latest-event {
   margin-left: 1%;
 }
+.latest-news-heading{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem 0 2rem 0;
+}
+.latest-news-heading a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 84px 0 0;
+  color: white;
+}
+.latest-news-heading h1 {
+  margin: 0rem 0 0 9rem;
+}
 .past-event {
   margin-left: 1%;
 }
@@ -1606,6 +1624,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   .past-event-heading h1 {
     margin: 0 0 0 2rem;
+  }
+  .latest-news-heading h1 {
+    margin: 0 0 0 2rem;
+  }
+  .latest-news-heading a {
+    margin: 5px 12px 0 2rem;
   }
   .past-event-heading a {
     margin: 5px 12px 0 2rem;
