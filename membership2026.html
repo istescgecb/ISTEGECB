@@ -962,6 +962,10 @@ https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3
               basePrice = response.basePrice;
               fullPrice = response.fullPrice;
               seatsLeftInMode = response.seatsLeft;
+
+              if (currentMode === "AMBASSADOR") {
+                showPopup("Early Bird offer is over!");
+              }
               
               renderPricingUI(); // also calls update total.
             }
