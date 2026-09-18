@@ -1,0 +1,57 @@
+  name: Deploy Minified HTML/CSS/JS Site to Pages
+
+  on:
+    push:
+      branches: ["main"]
+    workflow_dispatch:
+
+  permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+  concurrency:
+    group: "pages"
+    cancel-in-progress: false
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Code
+          uses: actions/checkout@main
+        
+        - name: Install tdewolff/minify (Lightning Fast)
+          run: |
+            wget -qO minify.tar.gz https://github.com/tdewolff/minify/releases/latest/download/minify_linux_amd64.tar.gz
+            tar -xzf minify.tar.gz minify
+            sudo mv minify /usr/local/bin/
+        
+        - name: Prepare and Minify
+          run: |
+            mkdir _site
+            rsync -a --exclude='_site' --exclude='.git' --exclude='.github' ./ _site/
+            
+            # 1. Removed 'cd _site' and the failing regex
+            # 2. Added '-v' so it prints exactly what it compresses
+            # 3. Explicitly target the _site folder for input and output
+            minify -v -r -o _site/ _site/
+            
+        - name: Setup GitHub Pages
+          uses: actions/configure-pages@main
+
+        - name: Upload Artifact
+          uses: actions/upload-pages-artifact@main
+          with:
+            path: './_site'
+
+    deploy:
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      runs-on: ubuntu-latest
+      needs: build
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@main
