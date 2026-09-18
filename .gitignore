@@ -8,7 +8,6 @@ eventGenSrc
 .vscode 
 package.json
 package-lock.json
-optmize.js
 resize.js
 *appscript*
 *.gs
