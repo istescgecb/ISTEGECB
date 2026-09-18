@@ -3,9 +3,9 @@ const fs = require("fs");
 const path = require("path");
 
 /* ================================= CONFIG VARIABLES ================================== */
-const TARGET_DIR = "assets/img/Team"; // path
-const TARGET_WIDTH = 400; // dimensions
-const TARGET_HEIGHT = 400;
+const TARGET_DIR = "assets/img/Past events"; // path
+const TARGET_WIDTH = 600; // dimensions
+const TARGET_HEIGHT = 600;
 
 // files to be processs
 const IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp", ".heic"];
@@ -28,7 +28,6 @@ async function processImage(inputPath, outputPath) {
         const origDims = `${metadata.width}x${metadata.height}`;
 
         // 2. Ignore/Copy if already at or below target dimensions (TARGET_WIDTHpx)
-        // We still process .heic files because they must be converted to .jpg
         if (metadata.width <= TARGET_WIDTH && metadata.height <= TARGET_HEIGHT && ext !== ".heic") {
             fs.copyFileSync(inputPath, outputPath);
             totalOptimizedBytes += stat.size;
@@ -49,7 +48,8 @@ async function processImage(inputPath, outputPath) {
         } else if (ext === ".png") {
             pipeline = pipeline.png({ quality: 90, compressionLevel: 9 });
         } else if (ext === ".webp") {
-            pipeline = pipeline.webp({ quality: 90 });
+            // Quality lowered slightly to help offset the file size bloat
+            pipeline = pipeline.webp({ quality: 80 });
         } else if (ext === ".heic") {
             outputPath = outputPath.replace(/\.heic$/i, ".jpg");
             pipeline = pipeline.jpeg({ quality: 90, mozjpeg: true });
@@ -61,19 +61,16 @@ async function processImage(inputPath, outputPath) {
 
         // Check the newly created file size
         const outStat = fs.statSync(outputPath);
-
-        // If the new file is LARGER or the same size, revert to the original
-        if (outStat.size >= stat.size && ext !== ".heic") {
-            fs.copyFileSync(inputPath, outputPath); // Overwrite the bloated file with original
-            totalOptimizedBytes += stat.size;
-            console.log(`KEPT ORIG ${inputPath} => ${origMB} mb | ${origDims}`);
-            return;
-        }
-
-        // If it was successfully reduced:
         totalOptimizedBytes += outStat.size;
+
         const optMB = (outStat.size / (1024 * 1024)).toFixed(3);
-        console.log(`OK   ${inputPath} => ${origMB} mb -> ${optMB} mb | ${origDims} -> ${newDims}`);
+
+        // Let you know if it gained weight, but KEEP it anyway
+        if (outStat.size > stat.size) {
+            console.log(`OK (LARGER) ${inputPath} => ${origMB} mb -> ${optMB} mb | ${origDims} -> ${newDims}`);
+        } else {
+            console.log(`OK          ${inputPath} => ${origMB} mb -> ${optMB} mb | ${origDims} -> ${newDims}`);
+        }
 
     } catch (err) {
         console.error(`ERR  ${inputPath}`, err.message);
@@ -91,19 +88,15 @@ async function walk(dir) {
             continue;
         }
 
-        // Calculate where this file should go in the new target directory
         const relativePath = path.relative(ORG_DIR, fullPath);
         const outputPath = path.join(TARGET_DIR, relativePath);
 
-        // Ensure the sub-directory exists in the new target folder
         fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-
         const ext = path.extname(entry.name).toLowerCase();
 
         if (IMAGE_EXTENSIONS.includes(ext)) {
             await processImage(fullPath, outputPath);
         } else {
-            // Handle non-image files (just copy them over)
             const stat = fs.statSync(fullPath);
             totalOriginalBytes += stat.size;
             totalOptimizedBytes += stat.size;
@@ -115,7 +108,6 @@ async function walk(dir) {
 }
 
 (async () => {
-    // 1. Handle folder renaming safely
     if (fs.existsSync(TARGET_DIR) && !fs.existsSync(ORG_DIR)) {
         console.log(`Renaming folder '${TARGET_DIR}' to '${ORG_DIR}'...`);
         fs.renameSync(TARGET_DIR, ORG_DIR);
@@ -126,19 +118,16 @@ async function walk(dir) {
         console.log(`'${ORG_DIR}' already exists. Resuming process...`);
     }
 
-    // 2. Recreate the original folder to hold the optimized files
     fs.mkdirSync(TARGET_DIR, { recursive: true });
 
     console.log(`\nProcessing files from '${ORG_DIR}' into '${TARGET_DIR}'...\n`);
     await walk(ORG_DIR);
 
-    // Calculate overall MB and Percentages
     const origMB = totalOriginalBytes / (1024 * 1024);
     const optMB = totalOptimizedBytes / (1024 * 1024);
     const savedMB = origMB - optMB;
     const reducedPercent = origMB > 0 ? (savedMB / origMB) * 100 : 0;
 
-    // Print final summary
     console.log(`\nDone. Recreated and populated ${TARGET_DIR}`);
     console.log(`----------------------------------------`);
     console.log(`Reduced   : ${reducedPercent.toFixed(2)} %`);
