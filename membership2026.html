@@ -446,7 +446,7 @@
                   MEMBERSHIP OPTIONS(BotTech Offer Active)
                 </label> -->
                <div class="membership-title">
-                    <b id="paymentDetailsTitle">MEMBERSHIP OPTIONS - OFFER ACTIVE</b>
+                    <b id="paymentDetailsTitle">MEMBERSHIP OPTIONS</b>
                     <b>(for all 4 years)</b>
               </div>
                 <div style="font-weight: 400;font-size: 17px;color: rgb(235, 208, 200); margin-bottom: 2px; font-style: italic;" id="seatsLeft">
@@ -466,7 +466,7 @@
                           &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> <i>₹800/-</i>
                         </label>-->
                         <label for="FULLMEMBERSHIP" id="labelFULLMEMBERSHIP" style="font-size: 1.2rem; cursor: pointer;">
-                          &nbsp;ISTE + FULL MEMBERSHIP:<i>₹1400/-</i>
+                          &nbsp;ISTE + FULL MEMBERSHIP: <i>₹1400/-</i>
                         </label>
                       </td>
                     </tr>
@@ -478,7 +478,7 @@
                           style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" />
                       </td>
                       <td style="vertical-align: top; padding: 0;">
-                        <label for="BARTONAIR" id="labelBARTONAIR" style="font-size: 1.2rem; color: gray; cursor: pointer;">
+                        <label for="BARTONAIR" id="labelBARTONAIR" style="font-size: 1.2rem; color: white; cursor: pointer;">
                           &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
                         </label>
                       </td>
@@ -491,7 +491,7 @@
                           style="width: 1.18rem; height: 1.18rem; margin-top: 4px;"/>
                       </td>
                       <td style="vertical-align: top; padding: 0;">
-                        <label for="BARTONOIDZ" id="labelBARTONOIDZ" style="font-size: 1.2rem; color: gray; cursor: pointer;">
+                        <label for="BARTONOIDZ" id="labelBARTONOIDZ" style="font-size: 1.2rem; color: white; cursor: pointer;">
                           &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
                         </label>
                       </td>
@@ -717,6 +717,7 @@
       fullRadio.disabled = false;
       brRadio.disabled = false;
       bzRadio.disabled = false;
+      fullRadio.checked = true;
 
       if (!fullRadio.checked && !brRadio.checked && !bzRadio.checked) {
         fullRadio.checked = true;
@@ -754,7 +755,7 @@
       
       
       
-https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3hII0jf1irX4eEKUGTNu7E5BQsdc/exec
+https://script.google.com/macros/s/AKfycbw1nVcEjLBUBwjWddHxKpZyutLmlQxA2gccCLKRWT4rZOjz8dDqpNSrEFp5Aal9rShi/exec
       
       
       `.trim(),
@@ -826,8 +827,8 @@ https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3
         finalTotal = refVerified ? verifiedOfferPrice : basePrice;
         break;
     }
-
-    const showDiscount = (selectedOption.value === "FULL" && (currentMode !== "REGULAR" || refVerified));
+// Determine if we should show the discount , fix later
+    const showDiscount = (selectedOption.value === "FULL" && (currentMode !== "AMBASSADOR" || refVerified));
 
     if (isMobile) {
       ttlamt.innerHTML = showDiscount
@@ -835,7 +836,8 @@ https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3
         : `Total Amount: ₹${finalTotal}/-`;
     } else {
       ttlamt.innerHTML = showDiscount
-        ? `Total Amount <br> ${membershipText}: <s>₹${fullPrice}</s> ₹${finalTotal}/-`
+        //? `Total Amount <br> ${membershipText}: <s>₹${fullPrice}</s> ₹${finalTotal}/-`
+        ? `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`
         : `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`;
     }
   }
@@ -949,7 +951,7 @@ https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3
       
       
       
-https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3hII0jf1irX4eEKUGTNu7E5BQsdc/exec
+https://script.google.com/macros/s/AKfycbw1nVcEjLBUBwjWddHxKpZyutLmlQxA2gccCLKRWT4rZOjz8dDqpNSrEFp5Aal9rShi/exec
 
       
       
@@ -963,9 +965,9 @@ https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3
               fullPrice = response.fullPrice;
               seatsLeftInMode = response.seatsLeft;
 
-              if (currentMode === "AMBASSADOR") {
+              /*if (currentMode === "AMBASSADOR") {
                 showPopup("Early Bird offer is over!");
-              }
+              }*/
               
               renderPricingUI(); // also calls update total.
             }
@@ -980,7 +982,7 @@ https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3
           url: `
       
       
-     https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3hII0jf1irX4eEKUGTNu7E5BQsdc/exec
+     https://script.google.com/macros/s/AKfycbw1nVcEjLBUBwjWddHxKpZyutLmlQxA2gccCLKRWT4rZOjz8dDqpNSrEFp5Aal9rShi/exec
 
       
       
@@ -1038,7 +1040,7 @@ https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3
       $.ajax({
         url: `
 
-https://script.google.com/macros/s/AKfycbyNLhSQ1zhk-yMCVY1GK7Ha3DPP1DLXxxuC6OHL3hII0jf1irX4eEKUGTNu7E5BQsdc/exec
+https://script.google.com/macros/s/AKfycbw1nVcEjLBUBwjWddHxKpZyutLmlQxA2gccCLKRWT4rZOjz8dDqpNSrEFp5Aal9rShi/exec
 			`.trim(),
         data: JSON.stringify(data),
 
