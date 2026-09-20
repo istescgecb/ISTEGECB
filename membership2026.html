@@ -560,17 +560,6 @@
                 </h4>
                 <br />
 
-
-
-
-                <div class="d-flex justify-content-center">
-                  <div id="process" class="spinner-border" role="status"
-                    style="display: none; width: 3.5rem; height: 3.5rem">
-                    <span class="visually-hidden" style="font-size: 3.5rem; color: rgb(29, 182, 18)">Loading...</span>
-                    <br />
-                  </div>
-                </div>
-
                 <div>
                   <label class="mb-2 ml-2" id = "imagelabel" for="image"><b>SCREENSHOT OF PAYMENT* <br>(File size must be less than 2 MB)<span
                         style="color: rgb(214, 91, 20)"></span></b></label><br />
@@ -583,6 +572,60 @@
               
                 </div>
                 <br />
+
+                <style>
+                  .upi-hover-trigger:hover .upi-hover-image,
+                  .upi-hover-trigger:focus .upi-hover-image,
+                  .upi-hover-trigger:focus-within .upi-hover-image {
+                    display: block !important;
+                  }
+                
+                  /* Creates the small downward-pointing arrow for the tooltip */
+                  .upi-hover-image::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-width: 6px;
+                    border-style: solid;
+                    border-color: white transparent transparent transparent;
+                  }
+                </style>
+                
+                <div style="position: relative; margin-bottom: 1rem;">
+                
+                  <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;" class="ml-2">
+                    <label for="UpiTxnId" style="margin: 0; white-space: nowrap;">UPI Transaction ID</label>
+                
+                    <div class="upi-hover-trigger" tabindex="0"
+                      style="position: relative; cursor: help; outline: none; display: inline-flex;">
+                
+                      <!-- The [?] Icon -->
+                      <span
+                        style="background: #e5e7eb; color: #4b5563; border-radius: 50%; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold;">?</span>
+                
+                      <!-- The Hidden Image (Restored centering and added bottom gap for the arrow) -->
+                      <div class="upi-hover-image"
+                        style="display: none; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); width: 250px; background: white; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); padding: 4px; z-index: 999;">
+                        <img src="assets/img/UPI Transcation Example.jpeg" alt="Where to find UPI ID"
+                          style="width: 100%; height: auto; border-radius: 4px;" />
+                        <p style="font-size: 11px; text-align: center; margin: 4px 0 0 0; color: #6b7280;">Look for the 12-digit number
+                          here</p>
+                      </div>
+                
+                    </div>
+                
+                    <small class="text-gray-400" style="font-size: x-small; margin: 0;">
+                      (Enter the 12-digit number found on your payment receipt)
+                    </small>
+                  </div>
+                
+                  <input type="text" name="UpiTxnId" id="UpiTxnId" placeholder="e.g., 324512345678" class="ffield" inputmode="numeric"
+                    pattern="\d{12}" title="Please enter a valid 12-digit UPI Transaction ID"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 12);" required />
+                </div>
+           
 
                 <p style="font-size: 1.2em">
 
