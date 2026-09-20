@@ -284,7 +284,7 @@
 		let count = 0;
 		const url = `
 	
-https://script.google.com/macros/s/AKfycbwWLPXIGrfW3cMPOIl0KHHaYCvZV2zTb0aqn911uBY9SgsfJph086WPW_d2lyvZ3cDn/exec
+https://script.google.com/macros/s/AKfycbzUhc-afmaWKvJd1nkufNJwvtCcs7TXSZ972wn9TIq75T1jWUwRMxBES_zUwgvDTRtg/exec
 
 	`.trim() + "?action=getLeaderboard";
 
@@ -358,11 +358,7 @@ https://script.google.com/macros/s/AKfycbwWLPXIGrfW3cMPOIl0KHHaYCvZV2zTb0aqn911u
 				row.innerHTML = `
 					<h4 class="col-1 text-start">${entry.Rank}</h4>
 					<h4 class="col-8 text-center">${entry.Name} (${entry.Semester} ${entry.Branch})</h4>
-					<h4 class="col-1 text-center">${
-						typeof entry.Percentile === "string" && entry.Percentile.includes("%")
-							? entry.Percentile
-							: `${(Number(entry.Percentile) * 100).toFixed(0)}%`
-					}</h4>
+					<h4 class="col-1 text-center">${(Number(entry.Count) * 100).toFixed(0)}%</h4>
 				`;
 				count += entry.Count;
 
