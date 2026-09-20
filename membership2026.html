@@ -114,6 +114,35 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+
+
+    /*upi txn*/
+                      .upi-hover-trigger .upi-hover-image {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(10px);
+                    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+                  }
+                
+                  .upi-hover-trigger:hover .upi-hover-image,
+                  .upi-hover-trigger:focus-within .upi-hover-image {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                  }
+                
+                  .upi-hover-image::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 24px;
+                    border-width: 6px;
+                    border-style: solid;
+                    border-color: white transparent transparent transparent;
+                  }
+
+    /*upi txn*/
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -400,7 +429,7 @@
 
 
                 <label class="mb-2 ml-2" for="PhoneNumber">Phone Number(10 digits)</label><br />
-                <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}"
+                <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}" title="10 digit Mobile Number"
                   class="ffield" required /><br />
 
                 <label class="mb-2 ml-2" for="EmailId">Email Address</label><br />
@@ -561,8 +590,9 @@
                 <br />
 
                 <div>
-                  <label class="mb-2 ml-2" id = "imagelabel" for="image"><b>SCREENSHOT OF PAYMENT* <br>(File size must be less than 2 MB)<span
-                        style="color: rgb(214, 91, 20)"></span></b></label><br />
+                  <label class="mb-2 ml-2" id = "imagelabel" for="image"><b>SCREENSHOT OF PAYMENT* <br><span
+                        class="text-gray-400"
+                        style="font-size: small;margin-left: 0; margin-top: 2px; display: block; font-weight: normal; cursor: help;">(File size must be less than 1MB)</span></b></label><br />
                  
                           <label for="image" class="file-label" id="display-file">
                             <i class="fas fa-upload"></i>
@@ -573,57 +603,36 @@
                 </div>
                 <br />
 
-                <style>
-                  .upi-hover-trigger:hover .upi-hover-image,
-                  .upi-hover-trigger:focus .upi-hover-image,
-                  .upi-hover-trigger:focus-within .upi-hover-image {
-                    display: block !important;
-                  }
-                
-                  /* Creates the small downward-pointing arrow for the tooltip */
-                  .upi-hover-image::after {
-                    content: "";
-                    position: absolute;
-                    top: 100%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    border-width: 6px;
-                    border-style: solid;
-                    border-color: white transparent transparent transparent;
-                  }
-                </style>
+            
                 
                 <div style="position: relative; margin-bottom: 1rem;">
                 
-                  <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;" class="ml-2">
-                    <label for="UpiTxnId" style="margin: 0; white-space: nowrap;">UPI Transaction ID</label>
+                  <!-- The entire container (Label + Small Text) is now the hover trigger -->
+                  <div class="upi-hover-trigger ml-2" tabindex="0"
+                    style="position: relative; display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; cursor: help; outline: none;">
+                                    
+                    <label for="TxnID" style="margin: 0; cursor: help; display: block;">
+                      Transaction ID
+                      <small class="text-gray-400"
+                        style="font-size: small; margin-top: 2px; display: block; font-weight: normal; cursor: help;">
+                        (Enter transaction ID found on payment receipt)
+                      </small>
+                    </label>
+       
+                    <!-- The Hidden Image Tooltip -->
+                    <div class="upi-hover-image"
+                      style="position: absolute; bottom: calc(100% + 8px); left: 0; width: 250px; background: white; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); padding: 4px; z-index: 999;">
+                      <img src="assets/img/UPI Transcation Example.jpeg" alt="Where to find UPI ID"
+                        style="width: 100%; height: auto; border-radius: 4px;" />
                 
-                    <div class="upi-hover-trigger" tabindex="0"
-                      style="position: relative; cursor: help; outline: none; display: inline-flex;">
-                
-                      <!-- The [?] Icon -->
-                      <span
-                        style="background: #e5e7eb; color: #4b5563; border-radius: 50%; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold;">?</span>
-                
-                      <!-- The Hidden Image (Restored centering and added bottom gap for the arrow) -->
-                      <div class="upi-hover-image"
-                        style="display: none; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); width: 250px; background: white; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); padding: 4px; z-index: 999;">
-                        <img src="assets/img/UPI Transcation Example.jpeg" alt="Where to find UPI ID"
-                          style="width: 100%; height: auto; border-radius: 4px;" />
-                        <p style="font-size: 11px; text-align: center; margin: 4px 0 0 0; color: #6b7280;">Look for the 12-digit number
-                          here</p>
-                      </div>
-                
+                      <!-- Text alignment removed -->
+                      <p style="font-size: 11px; margin: 4px 0 0 4px; color: #6b7280;">Look for the 12-digit number here</p>
                     </div>
                 
-                    <small class="text-gray-400" style="font-size: x-small; margin: 0;">
-                      (Enter the 12-digit number found on your payment receipt)
-                    </small>
                   </div>
                 
-                  <input type="text" name="UpiTxnId" id="UpiTxnId" placeholder="e.g., 324512345678" class="ffield" inputmode="numeric"
-                    pattern="\d{12}" title="Please enter a valid 12-digit UPI Transaction ID"
-                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 12);" required />
+                  <input type="text" name="TxnID" id="TxnID" placeholder="e.g., 324512345678 or SBIN123..." class="ffield"
+                    title="Please enter a valid Transaction ID" oninput="this.value = this.value.replace(/\s+/g, '');" required />
                 </div>
            
 
@@ -635,7 +644,7 @@
                   </a>
 
                   <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
-                    href="https://wa.me/918330829274">📱 Megha
+                    href="https://wa.me/918330829274">📱Megha
                   </a>
            
                 </p>
@@ -653,7 +662,9 @@
               <input type="text" name="type" id="filetype" value="" hidden />
               <input type="text" name="filename" id="filename" value="" hidden />
               <input type="text" name="action" id="action" value="reg" hidden />
+
               <input type="text" name="base64" id="glob" value="" hidden />
+
             </div>
           </form>
         </div>
@@ -797,10 +808,8 @@
       url: `
       
       
-      
-https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s3Nj7cSiq0tFe-iU7xCzagovbGI/exec
-      
-      
+https://script.google.com/macros/s/AKfycbyF8jPZaYqvetyU5kX6p9TVocRHSQVWa0PulN_KlryjQxLmMzgy8U8z7xwZQk-GY1Y/exec
+
       `.trim(),
       method: "POST",
       data: JSON.stringify({ action: "verifyRef", Referral: codeInput }),
@@ -921,12 +930,12 @@ https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s
           return;
         }
 
-        if (fileSize > 2) {
-          msg.textContent = 'File size exceeds 2MB limit. Please choose a smaller file.';
+        if (fileSize > 1) {
+          msg.textContent = 'File size exceeds 1MB limit. Please choose a smaller file.';
           msg.style.color = 'red';
           fileLabelText.textContent = "Choose an Image or PDF";
           input.value = null;
-          showPopup("File size exceeds 2MB limit. Please choose a file smaller than 2MB.", 6);
+          showPopup("File size exceeds 1MB limit. Please choose a file smaller than 1MB.", 6);
           $("#imagelabel").focus();
         } else {
           msg.textContent = 'File uploaded successfully. Please proceed with submission.';
@@ -936,7 +945,7 @@ https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s
       } else {
         msg.textContent = 'Please complete payment and upload screenshot of payment before submitting.';
         msg.style.color = 'rgb(29, 182, 18)';
-        fileLabelText.textContent = "Choose an Image or PDF(<2MB)";
+        fileLabelText.textContent = "Choose an Image or PDF(<1MB)";
       }
     }
 
@@ -985,7 +994,7 @@ https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s
     
       //  ============================================= Seat Fetching  ==================================================================
       $(document).ready(function () {
-        checkSeatsLeft();
+        checkSeatsLeft(); 
       });
 
       function checkSeatsLeft() {
@@ -993,9 +1002,9 @@ https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s
           url: `
       
       
-https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s3Nj7cSiq0tFe-iU7xCzagovbGI/exec
+https://script.google.com/macros/s/AKfycbzfT8_mfe_PP593XVIfd3sOtk0jZi5xJFnFrICIn9ZriweX8_fKCIqdi4hdZK-rqiLB/exec
 
-      
+
       
       `.trim(),
           method: "POST",
@@ -1024,9 +1033,8 @@ https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s
           url: `
       
       
-    https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s3Nj7cSiq0tFe-iU7xCzagovbGI/exec
-      
-      
+https://script.google.com/macros/s/AKfycbw2lzYj1aKg34FZj2Cvsn3xf76BgtqVPZo4I1llC5l6wT1F3IbPIYyt8msEb6MSQXNA/exec
+
       `.trim(),
           method: "POST",
           data: JSON.stringify({ action: "verifyRef", Referral: code }),
@@ -1081,8 +1089,9 @@ https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s
       $.ajax({
         url: `
 
-https://script.google.com/macros/s/AKfycbzOeb3nszj4XmrbZBci5Yrx7e-XKlTvJ_YKfqW9s3Nj7cSiq0tFe-iU7xCzagovbGI/exec
-			`.trim(),
+https://script.google.com/macros/s/AKfycbw2lzYj1aKg34FZj2Cvsn3xf76BgtqVPZo4I1llC5l6wT1F3IbPIYyt8msEb6MSQXNA/exec
+
+        `.trim(),
         data: JSON.stringify(data),
 
         method: "POST",
