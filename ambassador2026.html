@@ -25,19 +25,13 @@
 	<link rel="stylesheet" href="assets/css/final-face-off.css">
 	<link rel="stylesheet" href="assets/css/loader.css">
 	<link rel="stylesheet" href="assets/css/stars.css">
+
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<title>Ambassador Leaderboard | ISTE GECBH</title>
 	<style>
-		body {
-			background-image: url("assets/img/banner-bg1.png");
-			background-color: #15202B;
-
-		}
-
-		/* nav hover*/
 		.header a:hover {
 			color: white;
 			text-decoration: none;
@@ -51,24 +45,82 @@
 			transition: none;
 		}
 
-		/* leaderboard*/
+
 		.leaderboard-row {
 			background: rgb(147, 84, 197);
-
 			background: linear-gradient(180deg, rgba(116, 84, 197, 1) 0%, rgba(81, 61, 145, 1) 100%);
 			color: #e5e2eb;
 			border-radius: 14px;
+			transform: scale(1);
 			border: 3px solid rgb(33, 21, 63);
-			;
-			box-shadow:
-				-1px 4px 8px 0px #0000004b,
-				inset 0 1px 0 rgba(255, 255, 255, 0.1);
+			transition: all 0.3s ease;
+			box-shadow: -1px 4px 8px 0px #0000004b, inset 0 1px 0 rgba(255, 255, 255, 0.1);
 		}
 
 		.leaderboard-row:hover {
-			transform: translateY(-2px);
+			transform: scale(1.05);
 			box-shadow: -1px 6px 12px 0px #0000006b;
-			transition: all 0.2s ease;
+			transition: all 0.3s ease;
+		}
+
+
+		.leaderboard-text {
+			font-size: 1.5rem;
+
+			margin: 0;
+		}
+
+		.name-details {
+			font-size: 0.8em;
+			font-weight: normal;
+			opacity: 0.9;
+		}
+
+		@media (max-width: 480px) {
+			.leaderboard-text {
+				font-size: 1.2rem;
+
+			}
+
+			.leaderboard-row {
+				margin: 0.25rem 0 !important;
+
+			}
+		}
+
+
+
+
+		.mobile-tooltip {
+			position: absolute;
+			top: -35px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: max-content;
+
+			max-width: 90vw;
+
+			background-color: #21153f;
+			color: #ffffff;
+			padding: 6px 12px;
+			border-radius: 6px;
+			font-size: 0.85rem;
+			white-space: nowrap;
+			z-index: 100;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.2s ease-in-out;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+			border: 1px solid #7454c5;
+			pointer-events: none;
+		}
+
+
+		.leaderboard-row.show-tooltip .mobile-tooltip {
+			opacity: 1;
+			visibility: visible;
+			top: -42px;
+
 		}
 
 		/* sender box style */
@@ -154,7 +206,7 @@
 		<div class="starfifth"></div>
 	</div>
 	<!-- desktop view nav  -->
-		<!-- desktop view nav  -->
+	<!-- desktop view nav  -->
 	<div class="container-fluid d-none d-md-block">
 		<!-- style="background: rgba(0, 3, 34, 0); border-radius: 1rem; backdrop-filter: blur(20px);" -->
 		<div class="d-flex flex-wrap align-items-center justify-content-between mt-3 mx-5 py-2">
@@ -165,7 +217,7 @@
 			<div id="header" class="d-flex flex-wrap align-items-center justify-content-center header">
 				<a class="nav-item prsnt " href="index.html" alt="Home | ISTE GECBH">HOME</a>
 				<a class="nav-item" href="events.html" alt="Our Events | ISTE GECBH">EVENTS</a>
-				<a class="nav-item" href="contact-us.html" alt ="Contact Us | ISTE GECBH">CONTACT US</a>
+				<a class="nav-item" href="contact-us.html" alt="Contact Us | ISTE GECBH">CONTACT US</a>
 			</div>
 		</div>
 	</div>
@@ -174,7 +226,8 @@
 		<div class="d-flex flex-wrap align-items-center justify-content-between">
 			<img src="assets/img/ISTE logo White.png" alt="ISTE GECBH Logo" style="width: 48px; height: auto;">
 			<a href="" class="headingdropbtn">ISTE GECBH</a>
-			<a onclick="openNav()" alt="Open Menu(Mobile) | ISTE GECBH"><img src="assets/svg/menu.svg" style="width: 33px;"></a>
+			<a onclick="openNav()" alt="Open Menu(Mobile) | ISTE GECBH"><img src="assets/svg/menu.svg"
+					style="width: 33px;"></a>
 		</div>
 	</div>
 	<!-- mobile drawer -->
@@ -182,8 +235,8 @@
 		<p
 			style="position: absolute;top: 15px;left: 32px;font-size: 22px;font-weight: 600;font-family: 'Poppins';margin: 0; padding: 0;">
 			ISTE GECBH</p>
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()" alt="Navbar Open/Close | ISTE GEC Barton Hill"><img src="assets/svg/close.svg"
-				alt="istegecbh"></a>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+			alt="Navbar Open/Close | ISTE GEC Barton Hill"><img src="assets/svg/close.svg" alt="istegecbh"></a>
 		<ul>
 			<li>
 				<a href="index.html" alt="Home | ISTE GECBH">
@@ -229,7 +282,8 @@
 			</li>
 			<li>
 				<a href="javascript:void(0)" onclick="closeNav()">
-					<span class="icon"><img src="assets/svg/back-right.svg" alt style="width: 39px;" alt="Close Navbar | ISTE GECBH"></span>
+					<span class="icon"><img src="assets/svg/back-right.svg" alt style="width: 39px;"
+							alt="Close Navbar | ISTE GECBH"></span>
 					<span class="title">Close</span>
 				</a>
 			</li>
@@ -284,8 +338,8 @@
 				<div class="swiper-slide past-event first-card" style="margin-left: 2%;">
 					<div class="event-card dep-card" data-aos="fade-up">
 						<div class="event-card-img" style="height: 106px;">
-							<img style="height: auto;" src="assets/img/achievements/achievements-redirect.jpg" loading="lazy" 
-								alt="istegecbh">
+							<img style="height: auto;" src="assets/img/achievements/achievements-redirect.jpg"
+								loading="lazy" alt="istegecbh">
 						</div>
 						<div class="event-card-body" style="align-items: center; height: auto;">
 							<h5 style="color: #ffffff; text-align: center; font-size: 19px;">Our Achievements 🏆</h5>
@@ -299,7 +353,8 @@
 				<div class="swiper-slide past-event first-card" style="margin-left: 2%;">
 					<div class="event-card dep-card" data-aos="fade-up">
 						<div class="event-card-img" style="height: 106px;">
-							<img style="height: auto;" src="assets/img/alumni/alumni-redirect.jpg" loading="lazy" alt="istegecbh">
+							<img style="height: auto;" src="assets/img/alumni/alumni-redirect.jpg" loading="lazy"
+								alt="istegecbh">
 						</div>
 						<div class="event-card-body" style="align-items: center; height: auto;">
 							<h5 style="color: #ffffff; text-align: center; font-size: 19px;">Alumni ✨</h5>
@@ -404,72 +459,122 @@ https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imG
 
 		}
 		function formatPercentile(value) {
-    if (value === null || value === undefined || value === "") {
-        return "-";
-    }
+			if (value === null || value === undefined || value === "") {
+				return "-";
+			}
 
-    if (typeof value === "string" && value.includes("%")) {
-        return value;
-    }
+			if (typeof value === "string" && value.includes("%")) {
+				return value;
+			}
 
-    const number = Number(value);
+			const number = Number(value);
 
-    if (!Number.isFinite(number)) {
-        return "-";
-    }
+			if (!Number.isFinite(number)) {
+				return "-";
+			}
 
-    return `${(number * 100).toFixed(0)}%`;
-}
+			return `${(number * 100).toFixed(0)}%`;
+		}
 
 		function renderLeaderboard(data) {
 			container.innerHTML = "";
 
 			const header = document.createElement("div");
-			header.className = "col-12 d-flex justify-content-evenly align-items-center p-2 fw-bold";
+			header.className = "row w-100 align-items-center py-2 mx-0";
 
 			header.innerHTML = `
-			<h4 class="col-3 text-start leaderboard-header" style="color: white">Rank</h4>
-			<h4 class="col-6 text-center leaderboard-header" style="color: white">Name</h4>
-			<h4 class="col-3 text-end leaderboard-header" style="color: white">Percentile</h4>
-
-		`;
+        <div class="col-3 text-center leaderboard-header leaderboard-text" style="color: white; padding: 0;">Rank</div>
+        <div class="col-6 text-center leaderboard-header leaderboard-text" style="color: white; padding: 0;">Name</div>
+        <div class="col-3 text-center leaderboard-header leaderboard-text" style="color: white; padding: 0;">Percentile</div>
+    `;
 
 			container.appendChild(header);
 
-
 			data.forEach(entry => {
 				const card = document.createElement("div");
-				card.className = "col-12 leaderboard-row m-2 align-items-center";
+				card.className = "leaderboard-row mb-2 mx-1";
+				card.style.cursor = "pointer";
 
 				const row = document.createElement("div");
-				row.className = "d-flex justify-content-evenly align-items-center p-2";
-				console.log(entry);
+				row.className = "row w-100 align-items-center py-2 mx-0";
+
+				const fullText = `${entry.Name} (${entry.Semester} ${entry.Branch})`;
+
 				row.innerHTML = `
-					<h4 class="col-1 text-start">${entry.Rank}</h4>
-					<h4 class="col-8 text-center">${entry.Name} (${entry.Semester} ${entry.Branch})</h4>
-					<h4 class="col-1 text-center">${
-						typeof entry.Percentile === "string" && entry.Percentile.includes("%")
-							? entry.Percentile
-							: `${(Number(entry.Percentile)).toFixed(0)}%`
-					}</h4>
-				`;
-				
+            <div class="col-3 text-center leaderboard-text" style="padding: 0;">${entry.Rank}</div>
+            
+            <!-- Added leaderboard-text to the parent container so both name and semester inherit normal font styling -->
+            <div class="col-6 d-flex justify-content-center align-items-center position-relative leaderboard-text" style="min-width: 0; padding: 0;">
+                <div class="mobile-tooltip">${fullText}</div>
+                
+                <!-- Name Container -->
+                <div class="text-truncate name-container" style="min-width: 0;">
+                    ${entry.Name}
+                </div>
+                
+                <!-- Semester Container (removed the 'name-details' class completely) -->
+                <div class="ms-1 flex-shrink-0 text-nowrap">
+                    (${entry.Semester} ${entry.Branch})
+                </div>
+            </div>
+            
+            <div class="col-3 text-center leaderboard-text" style="padding: 0;">${typeof entry.Percentile === "string" && entry.Percentile.includes("%")
+						? entry.Percentile
+						: `${(Number(entry.Percentile)).toFixed(0)}%`
+					}</div>
+        `;
 
 				card.appendChild(row);
 				container.appendChild(card);
+
+				// Track if user is on mobile to prevent hover/click double-tap conflicts
+				let isTouchDevice = false;
+				card.addEventListener('touchstart', () => { isTouchDevice = true; }, { passive: true });
+
+				// Logic to check truncation before showing tooltip
+				const checkTruncationAndShow = (e) => {
+					const nameDiv = card.querySelector('.name-container');
+
+					// Check if the Name part is actually cut off
+					if (nameDiv && nameDiv.scrollWidth > nameDiv.clientWidth) {
+						if (e.type === 'click') {
+							// Mobile Tap: Toggle it on/off and close others
+							const isShowing = card.classList.contains('show-tooltip');
+							document.querySelectorAll('.leaderboard-row').forEach(c => c.classList.remove('show-tooltip'));
+							if (!isShowing) card.classList.add('show-tooltip');
+							e.stopPropagation();
+						} else if (e.type === 'mouseenter' && !isTouchDevice) {
+							// Desktop Hover: Show it ONLY if it's not a touch device
+							card.classList.add('show-tooltip');
+						}
+					}
+				};
+
+				// Attach the listeners
+				card.addEventListener('mouseenter', checkTruncationAndShow);
+				card.addEventListener('click', checkTruncationAndShow);
+
+				card.addEventListener('mouseleave', () => {
+					card.classList.remove('show-tooltip');
+				});
 			});
 
+			// Close tooltip if tapping anywhere outside the cards
+			document.addEventListener('click', () => {
+				document.querySelectorAll('.leaderboard-row').forEach(c => {
+					c.classList.remove('show-tooltip');
+				});
+			});
 
 			let left = seats - count;
 			$("#slotsLeft").text(left);
 			$("#slotsNotification").fadeIn();
-			console.log("Seats left",left)
+			console.log("Seats left", left);
 			setTimeout(function () {
 				$("#slotsNotification").fadeOut();
 			}, 10000);
-
-
 		}
+
 
 
 		$(document).ready(function () {
@@ -481,7 +586,7 @@ https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imG
 
 		fetchLeaderboard();
 
-		
+
 	</script>
 	<!-- <script>
 const leaderboardData = [
