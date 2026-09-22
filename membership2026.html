@@ -733,10 +733,11 @@
   <script>
     // Global variables
     let currentMode = "REGULAR";
-    let basePrice = 1400;
+    let basePrice = 1400; // OFFERPRICE
     let fullPrice = 1400;
     let seatsLeftInMode = 0;
     let finalTotal = 1400; // ttlamt
+    let activePrice = fullPrice; // Default 1400
 
     let refVerified = false;
     let verifiedOfferPrice = null;
@@ -753,64 +754,69 @@
     const ttlamt = document.getElementById("ttlamt");
 
     //  ============================================= UI updater  ==================================================================
-    function renderPricingUI() {
-      const couponMsgDiv = document.getElementById("couponMessage");
+        function renderPricingUI() {
+          // 1. Determine the active price and if an offer is currently valid
+          let activePrice = fullPrice;
+          let isOfferActive = false;
 
-      // Determine the active price
-      let activePrice = fullPrice; // Default 1400
-      if (refVerified) {
-        activePrice = verifiedOfferPrice;
-      } else if (currentMode === "EARLY_BIRD") {
-        showPopup(`Only ${seatsLeftInMode} seats left!`);
-        activePrice = basePrice;
-      }
+          if (refVerified) {
+            activePrice = verifiedOfferPrice;
+            isOfferActive = true;
+          } else if (currentMode === "EARLY_BIRD") {
+            activePrice = basePrice;
+            isOfferActive = true;
+          }
 
-      // Determine if we should show the "Second Design"
-      const isOfferActive = refVerified || currentMode === "EARLY_BIRD";
+          // 2. Update Headers & Banners
+          if (currentMode === "EARLY_BIRD" && !refVerified) {
+            titleElem.innerHTML = "MEMBERSHIP OPTIONS - EARLY BIRD ACTIVE";
+            seatsLeftDiv.innerHTML = `Only ${seatsLeftInMode} Early Bird seats left!`;
+          } else if (refVerified) {
+            titleElem.innerHTML = "MEMBERSHIP OPTIONS - OFFER ACTIVE";
+            seatsLeftDiv.innerHTML = ``; // Clear early bird text if a custom coupon is applied
+          } else {
+            titleElem.innerHTML = "MEMBERSHIP OPTIONS";
+            seatsLeftDiv.innerHTML = "";
+          }
 
-      if (isOfferActive) {
-        // --- SECOND DESIGN (Discount UI) ---
-        titleElem.innerHTML = "MEMBERSHIP OPTIONS - OFFER ACTIVE";
+          // 3. Disable other options ONLY if the offer price is less than their 1000/- price tag
+          if (isOfferActive && activePrice < 1000) {
+            fullRadio.disabled = false;
+            brRadio.disabled = true;
+            bzRadio.disabled = true;
 
-        if (currentMode === "EARLY_BIRD" && !refVerified) {
-          seatsLeftDiv.innerHTML = `Only ${seatsLeftInMode} Early Bird seats left!`;
-        } else if (refVerified) {
-          seatsLeftDiv.innerHTML = ``; // Clear early bird text if coupon applied
+            fullRadio.checked = true; // Lock selection to FULL
+
+            labelBr.style.color = "gray";
+            labelBz.style.color = "gray";
+          } else {
+            // Unlock all options if no offer OR if offer is >= 1000
+            fullRadio.disabled = false;
+            brRadio.disabled = false;
+            bzRadio.disabled = false;
+
+            labelBr.style.color = "white";
+            labelBz.style.color = "white";
+
+            // Ensure at least one is checked
+            if (!fullRadio.checked && !brRadio.checked && !bzRadio.checked) {
+              fullRadio.checked = true;
+            }
+          }
+
+          // 4. Update the FULL Membership Label
+          labelFull.style.color = "white";
+          if (isOfferActive && activePrice < fullPrice) {
+            // Show discount strikethrough
+            labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <s>₹${fullPrice}/-</s> <i>₹${activePrice}/-</i>`;
+          } else {
+            // Show regular price
+            labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <i>₹${fullPrice}/-</i>`;
+          }
+
+          // 5. Apply to total
+          updateTotal(document.querySelector('input[name="membershipOption"]:checked'));
         }
-
-        // Lock to FULL membership
-        fullRadio.disabled = false;
-        brRadio.disabled = true;
-        bzRadio.disabled = true;
-        fullRadio.checked = true;
-
-        labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <s>₹${fullPrice}/-</s> <i>₹${activePrice}/-</i>`;
-        labelBr.style.color = "gray";
-        labelBz.style.color = "gray";
-
-      } else {
-        // --- FIRST DESIGN (Regular UI) ---
-        titleElem.innerHTML = "MEMBERSHIP OPTIONS";
-        seatsLeftDiv.innerHTML = "";
-
-        // Unlock all options
-        fullRadio.disabled = false;
-        brRadio.disabled = false;
-        bzRadio.disabled = false;
-        fullRadio.checked = true;
-
-        if (!fullRadio.checked && !brRadio.checked && !bzRadio.checked) {
-          fullRadio.checked = true;
-        }
-
-        labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <i>₹${fullPrice}/-</i>`;
-        labelBr.style.color = "white";
-        labelBz.style.color = "white";
-        labelFull.style.color = "white";
-      }
-
-      updateTotal(document.querySelector('input[name="membershipOption"]:checked'));
-    }
 
     //  ============================================= Verify button  ==================================================================
 
@@ -834,9 +840,7 @@
         url: `
       
       
-https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfxFQ7WIxuuISRZ2a1SKpZGoljis3S/exec
-
-
+https://script.google.com/macros/s/AKfycbz0VuzkwWpS_rqVBTcuIeJBVrgA-5iqxkNcxwlAEUNIjXZ8Z1KBzGlMFnlNBODhrRdi/exec
 
         `.trim(),
         method: "POST",
@@ -886,46 +890,53 @@ https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfx
     });
     //  ============================================= Update total  ==================================================================
 
-    function updateTotal(selectedOption) {
-      if (!selectedOption) return;
-      const ttlamt = document.getElementById("ttlamt");
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+      function updateTotal(selectedOption) {
+        if (!selectedOption) return;
+        const ttlamt = document.getElementById("ttlamt");
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 
-      let membershipText = "";
+        let membershipText = "";
 
-      switch (selectedOption.value) {
-        case "BR":
-          membershipText = "ISTE + BARTONAIR";
-          finalTotal = 1000;
-          break;
-        case "BZ":
-          membershipText = "ISTE + BARTONOIDZ";
-          finalTotal = 1000;
-          break;
-        case "FULL":
-          membershipText = "ISTE + FULL MEMBERSHIP";
-          finalTotal = refVerified ? verifiedOfferPrice : basePrice;
-          break;
+        // Calculate final FULL price for total
+        let activeFullPrice = fullPrice;
+        let isOfferActive = false;
+
+        if (refVerified) {
+          activeFullPrice = verifiedOfferPrice;
+          isOfferActive = true;
+        } else if (currentMode === "EARLY_BIRD") {
+          activeFullPrice = basePrice;
+          isOfferActive = true;
+        }
+
+        switch (selectedOption.value) {
+          case "BR":
+            membershipText = "ISTE + BARTONAIR";
+            finalTotal = 1000;
+            break;
+          case "BZ":
+            membershipText = "ISTE + BARTONOIDZ";
+            finalTotal = 1000;
+            break;
+          case "FULL":
+            membershipText = "ISTE + FULL MEMBERSHIP";
+            finalTotal = activeFullPrice;
+            break;
+        }
+
+        // Only show strikethrough in the total if they selected FULL and an offer is active
+        let showDiscount = (selectedOption.value === "FULL" && isOfferActive && activeFullPrice < fullPrice);
+
+        if (isMobile) {
+          ttlamt.innerHTML = showDiscount
+            ? `Total Amount: ₹<s>${fullPrice}</s> ₹${finalTotal}/-`
+            : `Total Amount: ₹${finalTotal}/-`;
+        } else {
+          ttlamt.innerHTML = showDiscount
+            ? `Total Amount <br> ${membershipText}: <s>₹${fullPrice}</s> ₹${finalTotal}/-`
+            : `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`;
+        }
       }
-      // Determine if we should show the discount , fix later
-      const showDiscount = (selectedOption.value === "FULL" && (currentMode !== "REGULAR" || refVerified));
-
-      if (isMobile) {
-        ttlamt.innerHTML = showDiscount
-          ? `Total Amount: ₹<s>${fullPrice}</s> ₹${finalTotal}/-`
-          : `Total Amount: ₹${finalTotal}/-`;
-      } else {
-        ttlamt.innerHTML = showDiscount
-          //? `Total Amount <br> ${membershipText}: <s>₹${fullPrice}</s> ₹${finalTotal}/-`
-          ? `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`
-          : `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`;
-      }
-    }
-
-
-
-
-
 
     //  ============================================= check size  ==================================================================
 
@@ -1030,9 +1041,7 @@ https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfx
         url: `
       
       
-https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfxFQ7WIxuuISRZ2a1SKpZGoljis3S/exec
-        
-
+https://script.google.com/macros/s/AKfycbz0VuzkwWpS_rqVBTcuIeJBVrgA-5iqxkNcxwlAEUNIjXZ8Z1KBzGlMFnlNBODhrRdi/exec
 
 
       
@@ -1042,18 +1051,21 @@ https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfx
         success: function (response) {
           if (response.result === "success") {
 
-
-            /*if (currentMode === "AMBASSADOR") {
-              showPopup("Early Bird offer is over!");
-            }*/
+            currentMode = response.mode;
+            basePrice = response.basePrice;
+            fullPrice = response.fullPrice;
+            seatsLeftInMode = response.seatsLeft;
             if (currentMode === "EARLY_BIRD") {
+              seatsLeftInMode = response.seatsLeft;
+              renderPricingUI();  
+            }
+            if(currentMode === "AMBASSADOR"){
               currentMode = response.mode;
               basePrice = response.basePrice;
               fullPrice = response.fullPrice;
-              seatsLeftInMode = response.seatsLeft;
-
-              renderPricingUI();  
+              renderPricingUI();
             }
+         
           }
         }
       });
@@ -1066,9 +1078,7 @@ https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfx
         url: `
       
       
-https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfxFQ7WIxuuISRZ2a1SKpZGoljis3S/exec
-
-
+https://script.google.com/macros/s/AKfycbz0VuzkwWpS_rqVBTcuIeJBVrgA-5iqxkNcxwlAEUNIjXZ8Z1KBzGlMFnlNBODhrRdi/exec
 
         `.trim(),
         method: "POST",
@@ -1124,9 +1134,7 @@ https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfx
       $.ajax({
         url: `
 
-https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfxFQ7WIxuuISRZ2a1SKpZGoljis3S/exec
-
-
+https://script.google.com/macros/s/AKfycbz0VuzkwWpS_rqVBTcuIeJBVrgA-5iqxkNcxwlAEUNIjXZ8Z1KBzGlMFnlNBODhrRdi/exec
 
         `.trim(),
         data: JSON.stringify(data),
