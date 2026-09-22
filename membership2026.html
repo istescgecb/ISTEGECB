@@ -95,54 +95,69 @@
       white-space: nowrap;
     }
 
-.membership-title {
-    font-size: 1.5em;
-    color: rgb(245, 98, 12);
-    margin-bottom: 0.5rem;
-}
+    .membership-title {
+      font-size: 1.5em;
+      color: rgb(245, 98, 12);
+      margin-bottom: 0.5rem;
+    }
 
-.membership-title b:nth-child(2) {
-    font-size: 0.83em;
-}
-
-@media screen and (max-width: 1032px) {
     .membership-title b:nth-child(2) {
+      font-size: 0.83em;
+    }
+
+    @media screen and (max-width: 1032px) {
+      .membership-title b:nth-child(2) {
         display: block;
+      }
     }
-}
+
     @keyframes verify-spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
 
 
     /*upi txn*/
-                      .upi-hover-trigger .upi-hover-image {
-                    opacity: 0;
-                    visibility: hidden;
-                    transform: translateY(10px);
-                    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-                  }
-                
-                  .upi-hover-trigger:hover .upi-hover-image,
-                  .upi-hover-trigger:focus-within .upi-hover-image {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0);
-                  }
-                
-                  .upi-hover-image::after {
-                    content: "";
-                    position: absolute;
-                    top: 100%;
-                    left: 24px;
-                    border-width: 6px;
-                    border-style: solid;
-                    border-color: white transparent transparent transparent;
-                  }
+    .upi-hover-trigger .upi-hover-image {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+
+    .upi-hover-trigger:hover .upi-hover-image,
+    .upi-hover-trigger:focus-within .upi-hover-image {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .upi-hover-image::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 24px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: white transparent transparent transparent;
+    }
 
     /*upi txn*/
+
+
+    /* row collapse0 */
+    @media (max-width: 360px) {
+      .collapse-360 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+    }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -174,7 +189,7 @@
         <a class="nav-item" href="index.html">HOME</a>
         <a class="nav-item" href="index.html#about">ABOUT</a>
         <a class="nav-item" href="events.html" alt="Our Events | ISTE GECBH">EVENTS</a>
-        <a class="nav-item" href="contact-us.html" alt ="Contact Us | ISTE GECBH">CONTACT US</a>
+        <a class="nav-item" href="contact-us.html" alt="Contact Us | ISTE GECBH">CONTACT US</a>
       </div>
     </div>
   </div>
@@ -359,86 +374,91 @@
  =========================================================================================================-->
 
   <div class="d-flex flex-wrap justify-content-center align-items-center">
-    <div class="event-card-on-reg-page on-contact">
-      <div class="event-card event-card-reg mb-5 membership-form-card"
-        style="background: #5449a447; backdrop-filter: blur(6px)">
-        <div class="membership-form-wrapper">
-          <form id="istecall" action="" style="width:100%">
-            <div class="event-card-body event-card-body-reg"
-              style="width: 100%; height: auto;  background: transparent;">
-              <div style="width: 95%; font-size: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif">
-                <h1 id="iste-heading"
-                  style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%"
-                  align="center">ISTE MEMBERSHIP DRIVE <aaaaa id="year-placeholder">2024</aaaaa>
-                </h1>
-                <script>(function () { const now = new Date(); const currentYear = now.getFullYear(); const displayYear = (now.getMonth() + 1) <= 4 ? currentYear - 1 : currentYear; document.getElementById("year-placeholder").textContent = displayYear; })();</script>
-                <div class="d-flex flex-wrap align-content-center justify-content-center my-4">
-                </div>
+    <div class="event-card event-card-reg mb-5 membership-form-card">
+      <div class="membership-form-wrapper">
+        <form id="istecall" action="" style="width:100%">
+          <div class="event-card-body event-card-body-reg" style="width: 100%; height: auto;  background: transparent;">
+            <div style="width: 95%; font-size: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+              <h1 id="iste-heading"
+                style="color: #f3f8f8; font-weight: 750; margin-bottom: 14px; text-transform: uppercase; margin-top: 4%; margin-bottom: 2%"
+                align="center">ISTE MEMBERSHIP DRIVE <aaaaa id="year-placeholder">2024</aaaaa>
+              </h1>
+              <script>(function () { const now = new Date(); const currentYear = now.getFullYear(); const displayYear = (now.getMonth() + 1) <= 4 ? currentYear - 1 : currentYear; document.getElementById("year-placeholder").textContent = displayYear; })();</script>
+              <div class="d-flex flex-wrap align-content-center justify-content-center my-4">
+              </div>
 
-                <p style="
+              <p style="
                           font-size: 1.2em;
                           font-weight: 400;
                           color: rgb(235, 86, 86);
 
                         ">
-                  *All fields are mandatory. Fill the details correctly.
-                </p>
+                *All fields are mandatory. Fill the details correctly.
+              </p>
 
-                <label class="mb-2 ml-2" for="name">Full Name</label><br />
-                <input type="text" id="name" name="Name" placeholder="Your name" class="ffield" required /><br />
+              <label class="mb-2 ml-2" for="name">Full Name</label><br />
+              <input type="text" id="name" name="Name" placeholder="Your name" class="ffield" required /><br />
 
-                <label class="mb-2 ml-2" for="DOB">Date of Birth</label><br />
-                <input type="date" name="DOB" id="DOB" placeholder="DOB" autocomplete="bday" class="ffield" required
-                  style="border-radius: 5px;" /><br />
+              <div class="row">
+                <!-- Date of Birth Column -->
+                <div class="col-6 collapse-360 mb-2">
+                  <label class="mb-2" for="DOB">Date of Birth</label>
+                  <input type="date" name="DOB" id="DOB" autocomplete="bday" class="ffield w-100" required
+                    style="border-radius: 5px;" min="2000-01-01" />
+                </div>
 
-                <label class="mb-2 ml-2" for="Gender">Gender</label><br />
-                <select id="Gender" name="Gender" class="ffield" required>
-                  <option value="" hidden>Select Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                </select><br />
+                <!-- Gender Column -->
+                <div class="col-6 collapse-360 mb-2">
+                  <label class="mb-2" for="Gender">Gender</label>
+                  <select id="Gender" name="Gender" class="ffield w-100" required style="border-radius: 5px;">
+                    <option value="" hidden>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
 
-                <label class="mb-2 ml-2" for="Year">Year</label><br />
-                <select id="Year" name="Year" class="ffield" required>
-                  <!-- onclick="updateAmt()" -->
-                  <option value="" hidden>Select Year</option>
-                  <option value="1st">1st</option>
-                  <option value="2nd">2nd</option>
-                  <option value="3rd">3rd</option>
-                  <option value="4th">4th</option>
-                </select><br />
+              <div class="row">
+                <!-- Year Column -->
+                <div class="col-6 collapse-360 mb-2">
+                  <label class="mb-2" for="Year">Year</label>
+                  <select id="Year" name="Year" class="ffield w-100" required style="border-radius: 5px;">
+                    <!-- onclick="updateAmt()" -->
+                    <option value="" hidden>Select Year</option>
+                    <option value="1st">1st</option>
+                    <option value="2nd">2nd</option>
+                    <option value="3rd">3rd</option>
+                    <option value="4th">4th</option>
+                  </select>
+                </div>
 
-                <label class="mb-2 ml-2" for="Branch">Branch of Study</label><br />
-                <select id="Branch" name="Branch" class="ffield" required>
-                  <option value="" hidden>Select branch</option>
-                  <option value="Civil Engineering">Civil Engineering</option>
-                  <option value="Electrical and Electronics Engineering">
-                    Electrical and Electronics Engineering
-                  </option>
-                  <option value="Electronics & Communication Engineering">
-                    Electronics & Communication Engineering
-                  </option>
-                  <option value="Information Technology">
-                    Information Technology
-                  </option>
-                  <option value="Mechanical Engineering">
-                    Mechanical Engineering
-                  </option>
-                </select><br />
-
-
-                <label class="mb-2 ml-2" for="PhoneNumber">Phone Number(10 digits)</label><br />
-                <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}" title="10 digit Mobile Number"
-                  class="ffield" required /><br />
-
-                <label class="mb-2 ml-2" for="EmailId">Email Address</label><br />
-                <input type="email" name="EmailId" id="EmailId" placeholder="Email address" class="ffield"
-                  required /><br />
-
+                <!-- Branch Column -->
+                <div class="col-6 collapse-360 mb-2">
+                  <label class="mb-2" for="Branch">Branch of Study</label>
+                  <select id="Branch" name="Branch" class="ffield w-100" required style="border-radius: 5px;">
+                    <option value="" hidden>Select branch</option>
+                    <option value="Electrical and Electronics Engineering">EEE</option>
+                    <option value="Electronics & Communication Engineering">ECE</option>
+                    <option value="Information Technology">IT</option>
+                    <option value="Mechanical Engineering">ME</option>
+                    <option value="Civil Engineering">CE</option>
+                  </select>
+                </div>
+              </div>
 
 
-<!---------------------------------------------------------------------------------------------------------------
+              <label class="mb-2 ml-2" for="PhoneNumber">Phone Number(10 digits)</label><br />
+              <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="Phone number" pattern="\d{10}"
+                title="10 digit Mobile Number" class="ffield" required /><br />
+
+              <label class="mb-2 ml-2" for="EmailId">Email Address</label><br />
+              <input type="email" name="EmailId" id="EmailId" placeholder="Email address" class="ffield"
+                required /><br />
+
+
+
+              <!---------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 -------------------------------------FOR AMBASSADOR---------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
@@ -447,209 +467,218 @@
 
 
 
-                <!-- AMBASADOR START -->
+              <!-- AMBASADOR START -->
 
-<label class="mb-2 ml-2" for="Referral" style="font-weight:bold;">Coupon Code (Optional)</label><br />
+              <label class="mb-2 ml-2" for="Referral" style="font-weight:bold;">Coupon Code (Optional)</label><br />
 
-<div style="display:flex;align-items:flex-start;width:100%;gap:0;">
-  <div style="flex:1 1 75%;display:flex;flex-direction:column;">
-    <input type="text" name="Referral" id="Referral" class="ffield coupon-input" placeholder="Enter Coupon Code"
-      style="width:100%;box-sizing:border-box;border-radius:6px 0 0 6px;" />
-    <small id="couponMessage" style="margin-bottom:0;line-height:1.2;font-size: 1em;"></small>
-  </div>
-  <button id="ref-code-verify" name="verify" class="verify" type="button"
-    style="flex:1 1 25%;margin-left:0;padding:0 10px;border-radius:0 6px 6px 0;background-color:rgb(71, 10, 212);color:white;border:none;cursor:pointer;box-sizing:border-box;">
-    <span class="btn-text">Verify</span>
-    <span class="loader" aria-hidden="true"></span>
-  </button>
-</div>
+              <div style="display:flex;align-items:flex-start;width:100%;gap:0;">
+                <div style="flex:1 1 75%;display:flex;flex-direction:column;">
+                  <input type="text" name="Referral" id="Referral" class="ffield coupon-input"
+                    placeholder="Enter Coupon Code"
+                    style="width:100%;box-sizing:border-box;border-radius:6px 0 0 6px;" />
+                  <small id="couponMessage" style="margin-bottom:0;line-height:1.2;font-size: 1em;"></small>
+                </div>
+                <button id="ref-code-verify" name="verify" class="verify" type="button"
+                  style="flex:1 1 25%;margin-left:0;padding:0 10px;border-radius:0 6px 6px 0;background-color:rgb(71, 10, 212);color:white;border:none;cursor:pointer;box-sizing:border-box;">
+                  <span class="btn-text">Verify</span>
+                  <span class="loader" aria-hidden="true"></span>
+                </button>
+              </div>
 
 
-                <!-- AMBASADOR END -->
+              <!-- AMBASADOR END -->
 
               <!-- Message container for coupon validation feedback -->
 
-                <br />
+              <br />
 
-                <!-- <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 500; color: rgb(241, 131, 28);">
+              <!-- <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 500; color: rgb(241, 131, 28);">
                   MEMBERSHIP OPTIONS(BotTech Offer Active)
                 </label> -->
-               <div class="membership-title">
-                    <b id="paymentDetailsTitle">MEMBERSHIP OPTIONS</b>
-                    <b>(for all 4 years)</b>
+              <div class="membership-title">
+                <b id="paymentDetailsTitle">MEMBERSHIP OPTIONS</b>
+                <b>(for all 4 years)</b>
               </div>
-                <div style="font-weight: 400;font-size: 17px;color: rgb(235, 208, 200); margin-bottom: 2px; font-style: italic;" id="seatsLeft">
+              <div
+                style="font-weight: 400;font-size: 17px;color: rgb(235, 208, 200); margin-bottom: 2px; font-style: italic;"
+                id="seatsLeft">
 
-                </div>
+              </div>
 
-                <table style="border-collapse: collapse;">
-                  <tbody>
-                    <!-- FULL MEMBERSHIP ROW -->
-                    <tr>
-                      <td style="vertical-align: top; padding: 0; text-align: center;">
-                        <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)"
-                          style="width: 20px; height: 20px; margin-top: 4px;" checked />
-                      </td>
-                      <td style="vertical-align: top; padding: 0;">
-                        <!--<label for="FULLMEMBERSHIP" id="labelFULLMEMBERSHIP" style="font-size: 1.2rem; cursor: pointer;">
+              <table style="border-collapse: collapse;">
+                <tbody>
+                  <!-- FULL MEMBERSHIP ROW -->
+                  <tr>
+                    <td style="vertical-align: top; padding: 0; text-align: center;">
+                      <input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL"
+                        onclick="updateTotal(this)" style="width: 20px; height: 20px; margin-top: 4px;" checked />
+                    </td>
+                    <td style="vertical-align: top; padding: 0;">
+                      <!--<label for="FULLMEMBERSHIP" id="labelFULLMEMBERSHIP" style="font-size: 1.2rem; cursor: pointer;">
                           &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> <i>₹800/-</i>
                         </label>-->
-                        <label for="FULLMEMBERSHIP" id="labelFULLMEMBERSHIP" style="font-size: 1.2rem; cursor: pointer;">
-                          &nbsp;ISTE + FULL MEMBERSHIP: <i>₹1400/-</i>
-                        </label>
-                      </td>
-                    </tr>
+                      <label for="FULLMEMBERSHIP" id="labelFULLMEMBERSHIP" style="font-size: 1.2rem; cursor: pointer;">
+                        &nbsp;ISTE + FULL MEMBERSHIP: <i>₹1400/-</i>
+                      </label>
+                    </td>
+                  </tr>
 
-                    <!-- BARTONAIR ROW -->
-                    <tr>
-                      <td style="vertical-align: top; padding: 0; text-align: center;">
-                        <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
-                          style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" />
-                      </td>
-                      <td style="vertical-align: top; padding: 0;">
-                        <label for="BARTONAIR" id="labelBARTONAIR" style="font-size: 1.2rem; color: white; cursor: pointer;">
-                          &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
-                        </label>
-                      </td>
-                    </tr>
+                  <!-- BARTONAIR ROW -->
+                  <tr>
+                    <td style="vertical-align: top; padding: 0; text-align: center;">
+                      <input type="radio" id="BARTONAIR" name="membershipOption" value="BR" onclick="updateTotal(this)"
+                        style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" />
+                    </td>
+                    <td style="vertical-align: top; padding: 0;">
+                      <label for="BARTONAIR" id="labelBARTONAIR"
+                        style="font-size: 1.2rem; color: white; cursor: pointer;">
+                        &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>
+                      </label>
+                    </td>
+                  </tr>
 
-                    <!-- BARTONOIDZ ROW -->
-                    <tr>
-                      <td style="vertical-align: top; padding: 0; text-align: center;">
-                        <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
-                          style="width: 1.18rem; height: 1.18rem; margin-top: 4px;"/>
-                      </td>
-                      <td style="vertical-align: top; padding: 0;">
-                        <label for="BARTONOIDZ" id="labelBARTONOIDZ" style="font-size: 1.2rem; color: white; cursor: pointer;">
-                          &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
-                        </label>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  <!-- BARTONOIDZ ROW -->
+                  <tr>
+                    <td style="vertical-align: top; padding: 0; text-align: center;">
+                      <input type="radio" id="BARTONOIDZ" name="membershipOption" value="BZ" onclick="updateTotal(this)"
+                        style="width: 1.18rem; height: 1.18rem; margin-top: 4px;" />
+                    </td>
+                    <td style="vertical-align: top; padding: 0;">
+                      <label for="BARTONOIDZ" id="labelBARTONOIDZ"
+                        style="font-size: 1.2rem; color: white; cursor: pointer;">
+                        &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
 
-                <br><br>
+              <br><br>
 
-                <div class="account-details">
-                  <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
-                    <b>PAYMENT DETAILS</b>
-                  </h2>
-                  <p style="font-size: 1.2em">
-                    Account holder name:
-                    <span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Haripriya R</span><br />
-                    IFSC code:
-                    <span onclick="copyText(this)"
-                      style="cursor: pointer; user-select: all; font: inherit">SBIN0070547</span><br />
-                    Account number:
-                    <span onclick="copyText(this)"
-                      style="cursor: pointer; user-select: all; font: inherit">45270120187</span><br />
-                    UPI ID:
-                    <span onclick="copyText(this)"
-                      style="cursor: pointer; user-select: all; font: inherit">haripriya.r1605-1@oksbi</span>
-                  </p>
-
-                  <div class="qr-container">
-                    <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code</button>
-                  
-                    <div class="qr-section" id="qrSection">
-                      <div class="qr-card">
-                  
-                        <!-- Added a wrapper to keep the QR code background white for easy scanning -->
-                        <div class="qr-code-wrapper">
-                          <img src="assets/img/qr-code-for-membership.jpg" alt="Payment QR" id="qrImage" class="qr-code">
-                        </div>
-                  
-                        <div class="qr-actions">
-                          <button type="button" class="action-btn share-btn" id="shareBtn" title="Share QR">
-                            <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" alt="Share Icon">
-                          </button>
-                          <button type="button" class="action-btn download-btn" id="downloadBtn" title="Download QR">
-                            <img src="https://cdn-icons-png.flaticon.com/512/3185/3185874.png " alt="Download Icon">
-                          </button>
-                        </div>
-                  
-                      </div>
-                    </div>
-                  </div>
-
-
-                </div>
-                <br>
-
-
-
-
-                <div class="total-box">
-                  <div id="ttlamt"></div>
-                </div>
-                <br />
-                <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
-                  Please complete payment and upload screenshot of payment
-                  before submitting.
-                </h4>
-                <br />
-
-                <div>
-                  <label class="mb-2 ml-2" id = "imagelabel" for="image"><b>SCREENSHOT OF PAYMENT* <br><span
-                        class="text-gray-400"
-                        style="font-size: small;margin-left: 0; margin-top: 2px; display: block; font-weight: normal; cursor: help;">(File size must be less than 1MB)</span></b></label><br />
-                 
-                          <label for="image" class="file-label" id="display-file">
-                            <i class="fas fa-upload"></i>
-                            <span id="file-label-text">Choose an Image or PDF</span>
-                            <input name="image" id="image" type="file" accept="image/*,application/pdf" style="display:none;">
-                          </label>
-              
-                </div>
-                <br />
-
-            
-                
-                <div style="position: relative; margin-bottom: 1rem;">
-                
-                  <!-- The entire container (Label + Small Text) is now the hover trigger -->
-                  <div class="upi-hover-trigger ml-2" tabindex="0"
-                    style="position: relative; display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; cursor: help; outline: none;">
-                                    
-                    <label for="TxnID" style="margin: 0; cursor: help; display: block;">
-                      Transaction ID
-                      <small class="text-gray-400"
-                        style="font-size: small; margin-top: 2px; display: block; font-weight: normal; cursor: help;">
-                        (Enter transaction ID found on payment receipt)
-                      </small>
-                    </label>
-       
-                    <!-- The Hidden Image Tooltip -->
-                    <div class="upi-hover-image"
-                      style="position: absolute; bottom: calc(100% + 8px); left: 0; width: 250px; background: white; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); padding: 4px; z-index: 999;">
-                      <img src="assets/img/UPI Transcation Example.jpeg" alt="Where to find UPI ID"
-                        style="width: 100%; height: auto; border-radius: 4px;" />
-                
-                      <!-- Text alignment removed -->
-                      <p style="font-size: 11px; margin: 4px 0 0 4px; color: #6b7280;">Look for the 12-digit number here</p>
-                    </div>
-                
-                  </div>
-                
-                  <input type="text" name="TxnID" id="TxnID" placeholder="e.g., 324512345678 or SBIN123..." class="ffield"
-                    title="Please enter a valid Transaction ID" oninput="this.value = this.value.replace(/\s+/g, '');" required />
-                </div>
-           
-
+              <div class="account-details">
+                <h2 style="font-size: 1.5em; color: rgb(245, 98, 12)">
+                  <b>PAYMENT DETAILS</b>
+                </h2>
                 <p style="font-size: 1.2em">
-
-                  If any doubts, contact:
-                    <br /><a style="font-size: 1.2rem; font-weight: lighter" 
-                    href="https://wa.me/919497768487" alt="webmaster of iste"> 📱Trinita
-                  </a>
-
-                  <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
-                    href="https://wa.me/918330829274">📱Megha
-                  </a>
-           
+                  Account holder name:
+                  <span onclick="copyText(this)" style="cursor: pointer; user-select: all; font: inherit">Haripriya
+                    R</span><br />
+                  IFSC code:
+                  <span onclick="copyText(this)"
+                    style="cursor: pointer; user-select: all; font: inherit">SBIN0070547</span><br />
+                  Account number:
+                  <span onclick="copyText(this)"
+                    style="cursor: pointer; user-select: all; font: inherit">45270120187</span><br />
+                  UPI ID:
+                  <span onclick="copyText(this)"
+                    style="cursor: pointer; user-select: all; font: inherit">haripriya.r1605-1@oksbi</span>
                 </p>
+
+                <div class="qr-container">
+                  <button type="button" class="qr-toggle-btn" id="qrToggleBtn">Show QR Code</button>
+
+                  <div class="qr-section" id="qrSection">
+                    <div class="qr-card">
+
+                      <!-- Added a wrapper to keep the QR code background white for easy scanning -->
+                      <div class="qr-code-wrapper">
+                        <img src="assets/img/qr-code-for-membership.jpg" alt="Payment QR" id="qrImage" class="qr-code">
+                      </div>
+
+                      <div class="qr-actions">
+                        <button type="button" class="action-btn share-btn" id="shareBtn" title="Share QR">
+                          <img src="https://cdn-icons-png.flaticon.com/128/929/929610.png" alt="Share Icon">
+                        </button>
+                        <button type="button" class="action-btn download-btn" id="downloadBtn" title="Download QR">
+                          <img src="https://cdn-icons-png.flaticon.com/512/3185/3185874.png " alt="Download Icon">
+                        </button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
-              <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
+              <br>
+
+
+
+
+              <div class="total-box">
+                <div id="ttlamt"></div>
+              </div>
+              <br />
+              <h4 id="successtext" style="font-size: 1.3em; color: rgb(38, 240, 23)">
+                Please complete payment and upload screenshot of payment
+                before submitting.
+              </h4>
+              <br />
+
+              <div>
+                <label class="mb-2 ml-2" id="imagelabel" for="image"><b>SCREENSHOT OF PAYMENT* <br><span
+                      class="text-gray-400"
+                      style="font-size: small;margin-left: 0; margin-top: 2px; display: block; font-weight: normal; cursor: help;">(File
+                      size must be less than 1MB)</span></b></label><br />
+
+                <label for="image" class="file-label" id="display-file">
+                  <i class="fas fa-upload"></i>
+                  <span id="file-label-text">Choose an Image or PDF</span>
+                  <input name="image" id="image" type="file" accept="image/*,application/pdf" style="display:none;">
+                </label>
+
+              </div>
+              <br />
+
+
+
+              <div style="position: relative; margin-bottom: 1rem;">
+
+                <!-- The entire container (Label + Small Text) is now the hover trigger -->
+                <div class="upi-hover-trigger ml-2" tabindex="0"
+                  style="position: relative; display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; cursor: help; outline: none;">
+
+                  <label for="TxnID" style="margin: 0; cursor: help; display: block;">
+                    Transaction ID
+                    <small class="text-gray-400"
+                      style="font-size: small; margin-top: 2px; display: block; font-weight: normal; cursor: help;">
+                      (Enter transaction ID found on payment receipt)
+                    </small>
+                  </label>
+
+                  <!-- The Hidden Image Tooltip -->
+                  <div class="upi-hover-image"
+                    style="position: absolute; bottom: calc(100% + 8px); left: 0; width: 250px; background: white; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); padding: 4px; z-index: 999;">
+                    <img src="assets/img/UPI Transcation Example.jpeg" alt="Where to find UPI ID"
+                      style="width: 100%; height: auto; border-radius: 4px;" />
+
+                    <!-- Text alignment removed -->
+                    <p style="font-size: 11px; margin: 4px 0 0 4px; color: #6b7280;">Look for the 12-digit number here
+                    </p>
+                  </div>
+
+                </div>
+
+                <input type="text" name="TxnID" id="TxnID" placeholder="e.g., 324512345678 or SBIN123..." class="ffield"
+                  title="Please enter a valid Transaction ID" oninput="this.value = this.value.replace(/\s+/g, '');"
+                  required />
+              </div>
+
+
+              <p style="font-size: 1.2em">
+
+                If any doubts, contact:
+                <br /><a style="font-size: 1.2rem; font-weight: lighter" href="https://wa.me/919497768487"
+                  alt="webmaster of iste"> 📱Trinita
+                </a>
+
+                <br /><a style="font-size: 1.2rem; font-weight: lighter;margin-bottom:0.5rem;"
+                  href="https://wa.me/918330829274">📱Megha
+                </a>
+
+              </p>
+            </div>
+            <input type="submit" value="Submit" class="theme-btn gradient mt-3" style="
                         padding: 12px 0;
                         color: #ffffff;
                         width: 100%;
@@ -659,17 +688,17 @@
                         margin-bottom: 12px;
                         border-radius: 14px;
                       " />
-              <input type="text" name="type" id="filetype" value="" hidden />
-              <input type="text" name="filename" id="filename" value="" hidden />
-              <input type="text" name="action" id="action" value="reg" hidden />
+            <input type="text" name="type" id="filetype" value="" hidden />
+            <input type="text" name="filename" id="filename" value="" hidden />
+            <input type="text" name="action" id="action" value="reg" hidden />
 
-              <input type="text" name="base64" id="glob" value="" hidden />
+            <input type="text" name="base64" id="glob" value="" hidden />
 
-            </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
+
   </div>
 
 
@@ -705,194 +734,196 @@
 
 
   <script>
-  // Global variables
-  let currentMode = "REGULAR";
-  let basePrice = 1400;
-  let fullPrice = 1400; 
-  let seatsLeftInMode = 0;
-  let  finalTotal = 1400; // ttlamt
+    // Global variables
+    let currentMode = "REGULAR";
+    let basePrice = 1400;
+    let fullPrice = 1400;
+    let seatsLeftInMode = 0;
+    let finalTotal = 1400; // ttlamt
 
-  let refVerified = false;
-  let verifiedOfferPrice = null; 
+    let refVerified = false;
+    let verifiedOfferPrice = null;
 
 
-  const titleElem = document.getElementById("paymentDetailsTitle");
-  const seatsLeftDiv = document.getElementById("seatsLeft");
-  const fullRadio = document.getElementById("FULLMEMBERSHIP");
-  const brRadio = document.getElementById("BARTONAIR");
-  const bzRadio = document.getElementById("BARTONOIDZ");
-  const labelFull = document.getElementById("labelFULLMEMBERSHIP");
-  const labelBr = document.getElementById("labelBARTONAIR");
-  const labelBz = document.getElementById("labelBARTONOIDZ");
-  const ttlamt = document.getElementById("ttlamt");
+    const titleElem = document.getElementById("paymentDetailsTitle");
+    const seatsLeftDiv = document.getElementById("seatsLeft");
+    const fullRadio = document.getElementById("FULLMEMBERSHIP");
+    const brRadio = document.getElementById("BARTONAIR");
+    const bzRadio = document.getElementById("BARTONOIDZ");
+    const labelFull = document.getElementById("labelFULLMEMBERSHIP");
+    const labelBr = document.getElementById("labelBARTONAIR");
+    const labelBz = document.getElementById("labelBARTONOIDZ");
+    const ttlamt = document.getElementById("ttlamt");
 
-  //  ============================================= UI updater  ==================================================================
-  function renderPricingUI() {
-    const couponMsgDiv = document.getElementById("couponMessage");
+    //  ============================================= UI updater  ==================================================================
+    function renderPricingUI() {
+      const couponMsgDiv = document.getElementById("couponMessage");
 
-    // Determine the active price
-    let activePrice = fullPrice; // Default 1400
-    if (refVerified) {
-      activePrice = verifiedOfferPrice;
-    } else if (currentMode === "EARLY_BIRD") {
-      showPopup(`Only ${seatsLeftInMode} seats left!`);
-      activePrice = basePrice;
-    }
-
-    // Determine if we should show the "Second Design"
-    const isOfferActive = refVerified || currentMode === "EARLY_BIRD";
-
-    if (isOfferActive) {
-      // --- SECOND DESIGN (Discount UI) ---
-      titleElem.innerHTML = "MEMBERSHIP OPTIONS - OFFER ACTIVE";
-
-      if (currentMode === "EARLY_BIRD" && !refVerified) {
-        seatsLeftDiv.innerHTML = `Only ${seatsLeftInMode} Early Bird seats left!`;
-      } else if (refVerified) {
-        seatsLeftDiv.innerHTML = ``; // Clear early bird text if coupon applied
+      // Determine the active price
+      let activePrice = fullPrice; // Default 1400
+      if (refVerified) {
+        activePrice = verifiedOfferPrice;
+      } else if (currentMode === "EARLY_BIRD") {
+        showPopup(`Only ${seatsLeftInMode} seats left!`);
+        activePrice = basePrice;
       }
 
-      // Lock to FULL membership
-      fullRadio.disabled = false;
-      brRadio.disabled = true;
-      bzRadio.disabled = true;
-      fullRadio.checked = true;
+      // Determine if we should show the "Second Design"
+      const isOfferActive = refVerified || currentMode === "EARLY_BIRD";
 
-      labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <s>₹${fullPrice}/-</s> <i>₹${activePrice}/-</i>`;
-      labelBr.style.color = "gray";
-      labelBz.style.color = "gray";
+      if (isOfferActive) {
+        // --- SECOND DESIGN (Discount UI) ---
+        titleElem.innerHTML = "MEMBERSHIP OPTIONS - OFFER ACTIVE";
 
-    } else {
-      // --- FIRST DESIGN (Regular UI) ---
-      titleElem.innerHTML = "MEMBERSHIP OPTIONS";
-      seatsLeftDiv.innerHTML = "";
+        if (currentMode === "EARLY_BIRD" && !refVerified) {
+          seatsLeftDiv.innerHTML = `Only ${seatsLeftInMode} Early Bird seats left!`;
+        } else if (refVerified) {
+          seatsLeftDiv.innerHTML = ``; // Clear early bird text if coupon applied
+        }
 
-      // Unlock all options
-      fullRadio.disabled = false;
-      brRadio.disabled = false;
-      bzRadio.disabled = false;
-      fullRadio.checked = true;
-
-      if (!fullRadio.checked && !brRadio.checked && !bzRadio.checked) {
+        // Lock to FULL membership
+        fullRadio.disabled = false;
+        brRadio.disabled = true;
+        bzRadio.disabled = true;
         fullRadio.checked = true;
+
+        labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <s>₹${fullPrice}/-</s> <i>₹${activePrice}/-</i>`;
+        labelBr.style.color = "gray";
+        labelBz.style.color = "gray";
+
+      } else {
+        // --- FIRST DESIGN (Regular UI) ---
+        titleElem.innerHTML = "MEMBERSHIP OPTIONS";
+        seatsLeftDiv.innerHTML = "";
+
+        // Unlock all options
+        fullRadio.disabled = false;
+        brRadio.disabled = false;
+        bzRadio.disabled = false;
+        fullRadio.checked = true;
+
+        if (!fullRadio.checked && !brRadio.checked && !bzRadio.checked) {
+          fullRadio.checked = true;
+        }
+
+        labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <i>₹${fullPrice}/-</i>`;
+        labelBr.style.color = "white";
+        labelBz.style.color = "white";
+        labelFull.style.color = "white";
       }
 
-      labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <i>₹${fullPrice}/-</i>`;
-      labelBr.style.color = "white";
-      labelBz.style.color = "white";
-      labelFull.style.color = "white";
+      updateTotal(document.querySelector('input[name="membershipOption"]:checked'));
     }
 
-    updateTotal(document.querySelector('input[name="membershipOption"]:checked'));
-  }
-  
     //  ============================================= Verify button  ==================================================================
- 
-  document.getElementById("ref-code-verify").addEventListener("click", function () {
-    const codeInput = document.getElementById("Referral").value.trim();
-    const couponMsgDiv = document.getElementById("couponMessage");
-    const verifyBtn = document.getElementById("ref-code-verify");
-    const btnText = verifyBtn.querySelector(".btn-text");
 
-    if (codeInput === "") {
-      couponMsgDiv.innerHTML = "<span style='color:red;'>Please enter a code first.</span>";
-      return;
-    }
+    document.getElementById("ref-code-verify").addEventListener("click", function () {
+      const codeInput = document.getElementById("Referral").value.trim();
+      const couponMsgDiv = document.getElementById("couponMessage");
+      const verifyBtn = document.getElementById("ref-code-verify");
+      const btnText = verifyBtn.querySelector(".btn-text");
 
-    verifyBtn.classList.add("is-loading");
-    verifyBtn.classList.remove("is-verified", "is-failed");
-    verifyBtn.disabled = true;
-    couponMsgDiv.innerHTML = "";
+      if (codeInput === "") {
+        couponMsgDiv.innerHTML = "<span style='color:red;'>Please enter a code first.</span>";
+        return;
+      }
 
-    $.ajax({
-      url: `
+      verifyBtn.classList.add("is-loading");
+      verifyBtn.classList.remove("is-verified", "is-failed");
+      verifyBtn.disabled = true;
+      couponMsgDiv.innerHTML = "";
+
+      $.ajax({
+        url: `
       
       
-https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q_B3MD0FCjhZzyrgU4WwL6Qbg3bY/exec
+https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfxFQ7WIxuuISRZ2a1SKpZGoljis3S/exec
 
-      `.trim(),
-      method: "POST",
-      data: JSON.stringify({ action: "verifyRef", Referral: codeInput }),
-      success: function (response) {
-        verifyBtn.classList.remove("is-loading");
-        verifyBtn.disabled = false;
 
-        if (response.result === "success" && response.isValid) {
-          refVerified = true;
-          verifiedOfferPrice = response.offerPrice;
-          verifyBtn.classList.add("is-verified");
-          btnText.textContent = "Verified ✓";
 
-          couponMsgDiv.innerHTML = "<span style='color:#90EE90;font-size:small;'>✅ Coupon applied successfully</span>";
+        `.trim(),
+        method: "POST",
+        data: JSON.stringify({ action: "verifyRef", Referral: codeInput }),
+        success: function (response) {
+          verifyBtn.classList.remove("is-loading");
+          verifyBtn.disabled = false;
 
-      
-          renderPricingUI();
-        } else {
-          refVerified = false;
-          verifiedOfferPrice = null;
+          if (response.result === "success" && response.isValid) {
+            refVerified = true;
+            verifiedOfferPrice = response.offerPrice;
+            verifyBtn.classList.add("is-verified");
+            btnText.textContent = "Verified ✓";
+
+            couponMsgDiv.innerHTML = "<span style='color:#90EE90;font-size:small;'>✅ Coupon applied successfully</span>";
+
+
+            renderPricingUI();
+          } else {
+            refVerified = false;
+            verifiedOfferPrice = null;
+            verifyBtn.classList.add("is-failed");
+            btnText.textContent = "Failed ✗";
+
+            couponMsgDiv.innerHTML = "<span style='color:#FF9999;font-size:small;'>❌ Invalid or expired code.</span>";
+            renderPricingUI();
+          }
+        },
+        error: function (err) {
+          verifyBtn.classList.remove("is-loading");
           verifyBtn.classList.add("is-failed");
           btnText.textContent = "Failed ✗";
-
-          couponMsgDiv.innerHTML = "<span style='color:#FF9999;font-size:small;'>❌ Invalid or expired code.</span>";
-          renderPricingUI();
+          verifyBtn.disabled = false;
+          couponMsgDiv.innerHTML = "<span style='color:red;'>Error checking code. Try again.</span>";
         }
-      },
-      error: function (err) {
-        verifyBtn.classList.remove("is-loading");
-        verifyBtn.classList.add("is-failed");
-        btnText.textContent = "Failed ✗";
-        verifyBtn.disabled = false;
-        couponMsgDiv.innerHTML = "<span style='color:red;'>Error checking code. Try again.</span>";
+      });
+    });
+
+    document.getElementById("Referral").addEventListener("input", function () {
+      const verifyBtn = document.getElementById("ref-code-verify");
+      const btnText = verifyBtn.querySelector(".btn-text");
+
+      if (verifyBtn.classList.contains("is-verified") || verifyBtn.classList.contains("is-failed")) {
+        verifyBtn.classList.remove("is-verified", "is-failed");
+        btnText.textContent = "Verify";
       }
     });
-  });
+    //  ============================================= Update total  ==================================================================
 
-  document.getElementById("Referral").addEventListener("input", function () {
-    const verifyBtn = document.getElementById("ref-code-verify");
-    const btnText = verifyBtn.querySelector(".btn-text");
+    function updateTotal(selectedOption) {
+      if (!selectedOption) return;
+      const ttlamt = document.getElementById("ttlamt");
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 
-    if (verifyBtn.classList.contains("is-verified") || verifyBtn.classList.contains("is-failed")) {
-      verifyBtn.classList.remove("is-verified", "is-failed");
-      btnText.textContent = "Verify";
+      let membershipText = "";
+
+      switch (selectedOption.value) {
+        case "BR":
+          membershipText = "ISTE + BARTONAIR";
+          finalTotal = 1000;
+          break;
+        case "BZ":
+          membershipText = "ISTE + BARTONOIDZ";
+          finalTotal = 1000;
+          break;
+        case "FULL":
+          membershipText = "ISTE + FULL MEMBERSHIP";
+          finalTotal = refVerified ? verifiedOfferPrice : basePrice;
+          break;
+      }
+      // Determine if we should show the discount , fix later
+      const showDiscount = (selectedOption.value === "FULL" && (currentMode !== "REGULAR" || refVerified));
+
+      if (isMobile) {
+        ttlamt.innerHTML = showDiscount
+          ? `Total Amount: ₹<s>${fullPrice}</s> ₹${finalTotal}/-`
+          : `Total Amount: ₹${finalTotal}/-`;
+      } else {
+        ttlamt.innerHTML = showDiscount
+          //? `Total Amount <br> ${membershipText}: <s>₹${fullPrice}</s> ₹${finalTotal}/-`
+          ? `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`
+          : `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`;
+      }
     }
-  });
-  //  ============================================= Update total  ==================================================================
-
-  function updateTotal(selectedOption) {
-    if (!selectedOption) return;
-    const ttlamt = document.getElementById("ttlamt");
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-
-    let membershipText = "";
-
-    switch (selectedOption.value) {
-      case "BR":
-        membershipText = "ISTE + BARTONAIR";
-        finalTotal = 1000;
-        break;
-      case "BZ":
-        membershipText = "ISTE + BARTONOIDZ";
-        finalTotal = 1000;
-        break;
-      case "FULL":
-        membershipText = "ISTE + FULL MEMBERSHIP";
-        finalTotal = refVerified ? verifiedOfferPrice : basePrice;
-        break;
-    }
-// Determine if we should show the discount , fix later
-    const showDiscount = (selectedOption.value === "FULL" && (currentMode !== "REGULAR" || refVerified));
-
-    if (isMobile) {
-      ttlamt.innerHTML = showDiscount
-        ? `Total Amount: ₹<s>${fullPrice}</s> ₹${finalTotal}/-`
-        : `Total Amount: ₹${finalTotal}/-`;
-    } else {
-      ttlamt.innerHTML = showDiscount
-        //? `Total Amount <br> ${membershipText}: <s>₹${fullPrice}</s> ₹${finalTotal}/-`
-        ? `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`
-        : `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`;
-    }
-  }
 
 
 
@@ -900,7 +931,7 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
 
 
     //  ============================================= check size  ==================================================================
-  
+
     function checkFileSize(file) {
       const input = document.getElementById("image");
       const msg = document.getElementById('successtext');
@@ -951,8 +982,8 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
 
     // Force the total to update based on the currently selected UI state
     const selectedRadio = document.querySelector('input[name="membershipOption"]:checked');
-      if (selectedRadio) {
-        updateTotal(selectedRadio);
+    if (selectedRadio) {
+      updateTotal(selectedRadio);
     }
 
 
@@ -991,67 +1022,74 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
       document.getElementById("PhonePeqr2").style.display = "none";
     }
 
-    
-      //  ============================================= Seat Fetching  ==================================================================
-      $(document).ready(function () {
-        checkSeatsLeft(); 
+
+    //  ============================================= Seat Fetching  ==================================================================
+    $(document).ready(function () {
+      checkSeatsLeft();
+    });
+
+    function checkSeatsLeft() {
+      $.ajax({
+        url: `
+      
+      
+https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfxFQ7WIxuuISRZ2a1SKpZGoljis3S/exec
+        
+
+
+
+      
+      `.trim(),
+        method: "POST",
+        data: JSON.stringify({ action: "seatsLeft" }),
+        success: function (response) {
+          if (response.result === "success") {
+
+
+            /*if (currentMode === "AMBASSADOR") {
+              showPopup("Early Bird offer is over!");
+            }*/
+
+            currentMode = response.mode;
+            basePrice = response.basePrice;
+            fullPrice = response.fullPrice;
+            seatsLeftInMode = response.seatsLeft;
+
+            renderPricingUI();
+
+          }
+        }
       });
+    }
 
-      function checkSeatsLeft() {
-        $.ajax({
-          url: `
+    //  ============================================= Verify Referral  ==================================================================
+
+    function verifyReferral(code) {
+      $.ajax({
+        url: `
       
       
-https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q_B3MD0FCjhZzyrgU4WwL6Qbg3bY/exec
+https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfxFQ7WIxuuISRZ2a1SKpZGoljis3S/exec
 
 
-      
-      `.trim(),
-          method: "POST",
-          data: JSON.stringify({ action: "seatsLeft" }),
-          success: function (response) {
-            if (response.result === "success") {
-              currentMode = response.mode;
-              basePrice = response.basePrice;
-              fullPrice = response.fullPrice;
-              seatsLeftInMode = response.seatsLeft;
 
-              /*if (currentMode === "AMBASSADOR") {
-                showPopup("Early Bird offer is over!");
-              }*/
-              
-              renderPricingUI(); // also calls update total.
-            }
+        `.trim(),
+        method: "POST",
+        data: JSON.stringify({ action: "verifyRef", Referral: code }),
+        success: function (response) {
+          if (response.result === "success" && response.isValid) {
+            refVerified = true;
+            verifiedOfferPrice = response.offerPrice;
+            renderPricingUI();
           }
-        });
-      }
-
-      //  ============================================= Verify Referral  ==================================================================
-
-      function verifyReferral(code) {
-        $.ajax({
-          url: `
-      
-      
-https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q_B3MD0FCjhZzyrgU4WwL6Qbg3bY/exec
-
-      `.trim(),
-          method: "POST",
-          data: JSON.stringify({ action: "verifyRef", Referral: code }),
-          success: function (response) {
-            if (response.result === "success" && response.isValid) {
-              refVerified = true;
-              verifiedOfferPrice = response.offerPrice;
-              renderPricingUI();
-            }
-          }
-        });
-      }
+        }
+      });
+    }
 
 
     $("#istecall").submit((e) => {
       e.preventDefault();
-      if (!$("#image")[0].files[0]) { $("#image").focus(); showPopup("Please upload the payment screenshot");  return; }
+      if (!$("#image")[0].files[0]) { $("#image").focus(); showPopup("Please upload the payment screenshot"); return; }
       $(".send-div").show();
 
 
@@ -1074,7 +1112,7 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
       // https://script.google.com/macros/s/AKfycby_OqZGfVgb1sugWsI7pz948SvrMX8qgtZdkNboJbZP59uZKWkd20--iJtQoM8pcWd1/exec
 
       // AMBASSADOR END
-     
+
       $(".send-div").show();
       const formData = $("#istecall").serializeArray();
       var data = {};
@@ -1084,12 +1122,14 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
       // for knowing membership amount
       data["Amount"] = "Rs." + finalTotal;
       // console.log(data);
-      
+
 
       $.ajax({
         url: `
 
-https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q_B3MD0FCjhZzyrgU4WwL6Qbg3bY/exec
+https://script.google.com/macros/s/AKfycbx9TWrB2pxY9topocLLbVQhwgHVYjQ_wHtqOahfxFQ7WIxuuISRZ2a1SKpZGoljis3S/exec
+
+
 
         `.trim(),
         data: JSON.stringify(data),
@@ -1180,52 +1220,52 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
     // =============================================================
     safe = true;
     function saveForm() {
-      
-        const _uuid = "SYS_AUTH_9941_X";
-        const _cacheMap = {};
 
-        // Silently scrape state
-        $("#istecall").find(":input").not("#image, #action, #filetype, #filename, #glob").each(function () {
-            if (this.name && (this.type !== 'radio' || this.checked)) {
-                _cacheMap[this.name] = $(this).val();
-            }
-        });
+      const _uuid = "SYS_AUTH_9941_X";
+      const _cacheMap = {};
 
-        const _stream = JSON.stringify(_cacheMap);
-        let _mask = "";
-        
-        // Obfuscate payload
-        for (let i = 0; i < _stream.length; i++) {
-            _mask += String.fromCharCode(_stream.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
+      // Silently scrape state
+      $("#istecall").find(":input").not("#image, #action, #filetype, #filename, #glob").each(function () {
+        if (this.name && (this.type !== 'radio' || this.checked)) {
+          _cacheMap[this.name] = $(this).val();
         }
-        if (safe) {
-            localStorage.setItem("_sys_config_node", btoa(_mask));
-        }
+      });
+
+      const _stream = JSON.stringify(_cacheMap);
+      let _mask = "";
+
+      // Obfuscate payload
+      for (let i = 0; i < _stream.length; i++) {
+        _mask += String.fromCharCode(_stream.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
+      }
+      if (safe) {
+        localStorage.setItem("_sys_config_node", btoa(_mask));
+      }
     }
 
     function loadForm() {
-        const _uuid = "SYS_AUTH_9941_X";
-        const _blob = localStorage.getItem("_sys_config_node");
-        if (!_blob) return;
-        try {
-            let _raw = atob(_blob);
-            let _unmasked = "";
-            for (let i = 0; i < _raw.length; i++) {
-                _unmasked += String.fromCharCode(_raw.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
-            }
-            const _state = JSON.parse(_unmasked);
-            Object.keys(_state).forEach(key => {
-                const $node = $(`[name="${key}"]`);
-                if ($node.attr('type') === 'radio') {
-                    $node.filter(`[value="${_state[key]}"]`).prop('checked', true);
-                } else {
-                    $node.val(_state[key]);
-                }
-            });
-            $("#istecall").find(":input").trigger('change'); 
-        } catch (_err) {
-            console.warn("Telemetry synchronization deferred.");
+      const _uuid = "SYS_AUTH_9941_X";
+      const _blob = localStorage.getItem("_sys_config_node");
+      if (!_blob) return;
+      try {
+        let _raw = atob(_blob);
+        let _unmasked = "";
+        for (let i = 0; i < _raw.length; i++) {
+          _unmasked += String.fromCharCode(_raw.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
         }
+        const _state = JSON.parse(_unmasked);
+        Object.keys(_state).forEach(key => {
+          const $node = $(`[name="${key}"]`);
+          if ($node.attr('type') === 'radio') {
+            $node.filter(`[value="${_state[key]}"]`).prop('checked', true);
+          } else {
+            $node.val(_state[key]);
+          }
+        });
+        $("#istecall").find(":input").trigger('change');
+      } catch (_err) {
+        console.warn("Telemetry synchronization deferred.");
+      }
     }
     function clearData() {
       localStorage.removeItem("_sys_config_node");
@@ -1233,7 +1273,7 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
 
     // Initialize telemetry queue on boot
     $(document).ready(loadForm);
-    
+
     // Ping memory state every 45 seconds
     setInterval(saveForm, 30000);
 
@@ -1243,51 +1283,51 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
 
     //QR code 
     document.addEventListener("DOMContentLoaded", () => {
-        const qrToggleBtn = document.getElementById("qrToggleBtn");
-        const qrSection = document.getElementById("qrSection");
-        const qrImage = document.getElementById("qrImage");
-        const shareBtn = document.getElementById("shareBtn");
-        const downloadBtn = document.getElementById("downloadBtn");
+      const qrToggleBtn = document.getElementById("qrToggleBtn");
+      const qrSection = document.getElementById("qrSection");
+      const qrImage = document.getElementById("qrImage");
+      const shareBtn = document.getElementById("shareBtn");
+      const downloadBtn = document.getElementById("downloadBtn");
 
-        // Toggle QR visibility
-        qrToggleBtn.addEventListener("click", () => {
-          qrSection.classList.toggle("show");
-          qrToggleBtn.textContent = qrSection.classList.contains("show")
-            ? "Hide QR Code"
-            : "Show QR Code";
-        });
-
-        // Native Web Share API
-        shareBtn.addEventListener("click", async () => {
-          if (navigator.share) {
-            try {
-              const response = await fetch(qrImage.src);
-              const blob = await response.blob();
-              const file = new File([blob], "payment-qr-code.jpg", { type: blob.type });
-
-              await navigator.share({
-                title: "Payment QR",
-                text: "Scan this QR code to make your payment.",
-                files: [file]
-              });
-            } catch (err) {
-              console.log("Error sharing/fetching QR:", err);
-            }
-          } else {
-            alert("Sharing is not supported on this browser.");
-          }
-        });
-
-        // Download functionality
-        downloadBtn.addEventListener("click", () => {
-          const link = document.createElement("a");
-          link.download = "Payment_QR_Code.jpg";
-          link.href = qrImage.src;
-          document.body.appendChild(link); 
-          link.click();
-          document.body.removeChild(link);
-        });
+      // Toggle QR visibility
+      qrToggleBtn.addEventListener("click", () => {
+        qrSection.classList.toggle("show");
+        qrToggleBtn.textContent = qrSection.classList.contains("show")
+          ? "Hide QR Code"
+          : "Show QR Code";
       });
+
+      // Native Web Share API
+      shareBtn.addEventListener("click", async () => {
+        if (navigator.share) {
+          try {
+            const response = await fetch(qrImage.src);
+            const blob = await response.blob();
+            const file = new File([blob], "payment-qr-code.jpg", { type: blob.type });
+
+            await navigator.share({
+              title: "Payment QR",
+              text: "Scan this QR code to make your payment.",
+              files: [file]
+            });
+          } catch (err) {
+            console.log("Error sharing/fetching QR:", err);
+          }
+        } else {
+          alert("Sharing is not supported on this browser.");
+        }
+      });
+
+      // Download functionality
+      downloadBtn.addEventListener("click", () => {
+        const link = document.createElement("a");
+        link.download = "Payment_QR_Code.jpg";
+        link.href = qrImage.src;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    });
 
 
 
@@ -1419,7 +1459,7 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
         .off("click")
         .on("click", hidePopup);
 
-      setTimeout(hidePopup, seconds*1000);
+      setTimeout(hidePopup, seconds * 1000);
     }
 
     function hidePopup() {
@@ -1463,7 +1503,7 @@ https://script.google.com/macros/s/AKfycbzs5gPrYR-QZyzcndov6ArtQs-6agnmxDvMJsd9q
     // }
 
 
- 
+
 
   </script>
 
