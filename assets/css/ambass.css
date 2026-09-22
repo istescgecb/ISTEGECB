@@ -1,0 +1,100 @@
+.leaderboard-row {
+    background: rgb(147, 84, 197);
+    background: linear-gradient(180deg, rgba(116, 84, 197, 1) 0%, rgba(81, 61, 145, 1) 100%);
+    color: #e5e2eb;
+    border-radius: 14px;
+    transform: scale(1);
+    border: 3px solid rgb(33, 21, 63);
+    transition: all 0.3s ease;
+    box-shadow: -1px 4px 8px 0px #0000004b, inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.leaderboard-row:hover {
+    transform: scale(1.01);
+    box-shadow: -1px 6px 12px 0px #0000006b;
+    transition: all 0.3s ease;
+}
+
+
+.leaderboard-text {
+    font-size: 1.5rem;
+
+    margin: 0;
+}
+
+.name-details {
+    font-size: 0.8em;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+    .leaderboard-text {
+        font-size: 1.2rem;
+
+    }
+
+    .leaderboard-row {
+        margin: 0.25rem 0 !important;
+
+    }
+}
+
+
+
+
+.mobile-tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+
+    max-width: 90vw;
+
+    background-color: #21153f;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border: 1px solid #7454c5;
+    pointer-events: none;
+}
+
+
+.leaderboard-row.show-tooltip .mobile-tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -42px;
+
+}
+
+
+.container,
+.container-sm {
+    min-width: 75%;
+    max-width: 1200px;
+
+}
+
+@media (min-width: 720px) {
+
+    .container,
+    .container-sm {
+        min-width: 500px;
+    }
+}
+
+@media (min-width: 576px) {
+
+    .container,
+    .container-sm {
+        max-width: 90%;
+    }
+}

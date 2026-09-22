@@ -28,6 +28,7 @@
 
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- <link rel="stylesheet" href="assets/css/ambass.css"> -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<title>Ambassador Leaderboard | ISTE GECBH</title>
@@ -58,7 +59,7 @@
 		}
 
 		.leaderboard-row:hover {
-			transform: scale(1.05);
+			transform: scale(1.01);
 			box-shadow: -1px 6px 12px 0px #0000006b;
 			transition: all 0.3s ease;
 		}
@@ -122,6 +123,31 @@
 			top: -42px;
 
 		}
+
+
+		.container,
+		.container-sm {
+			min-width: 75%;
+			max-width: 1200px;
+
+		}
+
+		@media (min-width: 720px) {
+
+			.container,
+			.container-sm {
+				min-width: 500px;
+			}
+		}
+
+		@media (min-width: 576px) {
+
+			.container,
+			.container-sm {
+				max-width: 90%;
+			}
+		}
+
 
 		/* sender box style */
 		.send-div {
@@ -476,6 +502,7 @@ https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imG
 			return `${(number * 100).toFixed(0)}%`;
 		}
 
+
 		function renderLeaderboard(data) {
 			container.innerHTML = "";
 
@@ -483,14 +510,15 @@ https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imG
 			header.className = "row w-100 align-items-center py-2 mx-0";
 
 			header.innerHTML = `
-        <div class="col-3 text-center leaderboard-header leaderboard-text" style="color: white; padding: 0;">Rank</div>
-        <div class="col-6 text-center leaderboard-header leaderboard-text" style="color: white; padding: 0;">Name</div>
+        <div class="col-2 text-center leaderboard-header leaderboard-text" style="color: white; padding: 0;">Rank</div>
+        <!-- Changed to text-start to align the header with the names below -->
+        <div class="col-7 text-start leaderboard-header leaderboard-text" style="color: white; padding: 0;">Name</div>
         <div class="col-3 text-center leaderboard-header leaderboard-text" style="color: white; padding: 0;">Percentile</div>
     `;
 
 			container.appendChild(header);
 
-			data.forEach(entry => {
+			data.forEach((entry, index) => {
 				const card = document.createElement("div");
 				card.className = "leaderboard-row mb-2 mx-1";
 				card.style.cursor = "pointer";
@@ -501,18 +529,16 @@ https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imG
 				const fullText = `${entry.Name} (${entry.Semester} ${entry.Branch})`;
 
 				row.innerHTML = `
-            <div class="col-3 text-center leaderboard-text" style="padding: 0;">${entry.Rank}</div>
-            
-            <!-- Added leaderboard-text to the parent container so both name and semester inherit normal font styling -->
-            <div class="col-6 d-flex justify-content-center align-items-center position-relative leaderboard-text" style="min-width: 0; padding: 0;">
+			<div class="col-2 text-center leaderboard-text" style="padding: 0;">${index === 0 ? "#" : ""}${entry.Rank}</div>            
+            <!-- Changed to justify-content-start so all names start exactly at the same vertical axis -->
+            <div class="col-7 d-flex justify-content-start align-items-center position-relative leaderboard-text" style="min-width: 0; padding: 0;">
                 <div class="mobile-tooltip">${fullText}</div>
                 
-                <!-- Name Container -->
-                <div class="text-truncate name-container" style="min-width: 0;">
+                <!-- Back to standard text-truncate which works perfectly with left-aligned flex items -->
+                <div class="text-truncate name-container" style="min-width: 0; text-align: left;">
                     ${entry.Name}
                 </div>
                 
-                <!-- Semester Container (removed the 'name-details' class completely) -->
                 <div class="ms-1 flex-shrink-0 text-nowrap">
                     (${entry.Semester} ${entry.Branch})
                 </div>
@@ -535,7 +561,7 @@ https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imG
 				const checkTruncationAndShow = (e) => {
 					const nameDiv = card.querySelector('.name-container');
 
-					// Check if the Name part is actually cut off
+					// Standard truncation check
 					if (nameDiv && nameDiv.scrollWidth > nameDiv.clientWidth) {
 						if (e.type === 'click') {
 							// Mobile Tap: Toggle it on/off and close others
@@ -574,7 +600,6 @@ https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imG
 				$("#slotsNotification").fadeOut();
 			}, 10000);
 		}
-
 
 
 		$(document).ready(function () {
