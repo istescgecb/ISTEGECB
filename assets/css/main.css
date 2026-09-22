@@ -1282,9 +1282,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   align-items: center;
 }
 .membership-form-card {
-  width: 75%;
   background: #5449a447;
   backdrop-filter: blur(6px);
+  max-width: 800px;
+  width: 80%;
+  margin-top: 3rem;
 }
 
 
@@ -1490,7 +1492,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .membership-form-card {
     width: 90%;
+    margin-top: 7rem;
   }
+
 
   .past-event-heading a {
     margin: 0 42px 0 0;
@@ -1757,10 +1761,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .membership-form-card{
     background-color: transparent;
-    margin: 0;
+    margin: 7rem 0 0 0;
     padding: 0;
     width: auto;
     height: 100%;
+    border-radius: 0;
     padding-bottom: 2rem;
   }
 
