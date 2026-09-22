@@ -185,6 +185,12 @@ a {
   --button-bits-color-hover: #ece8e1;
 }
 
+@media screen and (max-width:768px) {
+  .landing-section {
+    margin-top: 7rem;
+  }
+}
+
 
 
 /* custom css follows*/

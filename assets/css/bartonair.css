@@ -1385,3 +1385,9 @@ input[type=text]:focus,textarea:focus{
   opacity: 1;
   visibility: visible;
 }
+
+@media screen and (max-width:768px) {
+  .landing-section {
+    margin-top: 7rem;
+  }
+}

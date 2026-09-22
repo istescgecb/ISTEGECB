@@ -1481,7 +1481,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 @media screen and (max-width:768px) {
-
+  .landing-section {
+    margin-top: 7rem;
+  }
+  
   .on-contact {
     margin-top: 12%;
   }
