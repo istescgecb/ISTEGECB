@@ -43,9 +43,7 @@
     }
 
     .coupon-input {
-      height: 36px !important;
       margin-bottom: 12px !important;
-      padding: 8px 8px 8px 14px !important;
     }
 
     .verify:hover {
@@ -68,6 +66,8 @@
 
     .verify.is-loading .loader {
       display: inline-block;
+      margin-right: 10px;
+      margin-left: 15px;
     }
 
     .verify.is-verified {
@@ -161,6 +161,8 @@
       display: none;
       -webkit-appearance: none;
     }
+
+    
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -494,17 +496,17 @@
 
               <!-- AMBASADOR START -->
 
-              <label class="mb-2 ml-2" for="Referral" style="font-weight:bold;">Coupon Code (Optional)</label><br />
+              <label class="mb-2 ml-2" for="Referral">Coupon Code (Optional)</label><br />
 
               <div style="display:flex;align-items:flex-start;width:100%;gap:0;">
                 <div style="flex:1 1 75%;display:flex;flex-direction:column;">
-                  <input type="text" name="Referral" id="Referral" class="ffield coupon-input"
-                    placeholder="Enter Coupon Code"
-                    style="width:100%;box-sizing:border-box;border-radius:6px 0 0 6px;" />
+                  <input type="text" name="Referral" id="Referral" class="ffield coupon-input" placeholder="Enter Coupon Code"
+                    style="width:100%;box-sizing:border-box;border-radius:6px 0 0 6px;border-right-color: transparent;"
+                    oninput="this.value = this.value.toUpperCase().replace(/\s/g, '')" />
                   <small id="couponMessage" style="margin-bottom:0;line-height:1.2;font-size: 1em;"></small>
                 </div>
                 <button id="ref-code-verify" name="verify" class="verify" type="button"
-                  style="flex:1 1 25%;margin-left:0;padding:0 10px;border-radius:0 6px 6px 0;background-color:rgb(71, 10, 212);color:white;border:none;cursor:pointer;box-sizing:border-box;">
+                 style="display: flex;margin-left:0;padding:20px 20px 20px 15px ;border-radius:0 6px 6px 0;background-color:#230c67;color:white;border:none;cursor:pointer;box-sizing:border-box;">
                   <span class="btn-text">Verify</span>
                   <span class="loader" aria-hidden="true"></span>
                 </button>
@@ -517,13 +519,13 @@
 
               <br />
 
-              <!-- <label class="mb-2 ml-2" style="font-size: 1.5em; font-weight: 500; color: rgb(241, 131, 28);">
-                  MEMBERSHIP OPTIONS(BotTech Offer Active)
-                </label> -->
-              <div class="membership-title">
-                <b id="paymentDetailsTitle">MEMBERSHIP OPTIONS</b>
-                <b>(for all 4 years)</b>
-              </div>
+      
+<div class="membership-title" style="margin-bottom: 8px;">
+  <b id="paymentDetailsTitle">MEMBERSHIP OPTIONS</b>
+  <div style="font-size: 0.85em; font-weight: normal; color: rgba(243, 248, 248, 0.8); margin-top: 2px; margin-bottom: 0;">
+    One-time membership for all 4 years
+  </div>
+</div>
               <div
                 style="font-weight: 400;font-size: 17px;color: rgb(235, 208, 200); margin-bottom: 2px; font-style: italic;"
                 id="seatsLeft">
@@ -781,91 +783,94 @@
     const labelBz = document.getElementById("labelBARTONOIDZ");
     const ttlamt = document.getElementById("ttlamt");
 
-    //  ============================================= UI updater  ==================================================================
-    function renderPricingUI() {
-      // 1. Determine the active price and if an offer is currently valid
-      let activePrice = fullPrice;
-      let isOfferActive = false;
+      //  ============================================= UI updater  ==================================================================
+      function renderPricingUI() {
+        // 1. Determine the active price and if an offer is currently valid
+        let activePrice = fullPrice;
+        let isOfferActive = false;
 
-      if (refVerified) {
-        activePrice = verifiedOfferPrice;
-        isOfferActive = true;
-      } else if (currentMode === "EARLY_BIRD") {
-        activePrice = basePrice;
-        isOfferActive = true;
-      }
-
-      // 2. Update Headers & Banners
-      if (currentMode === "EARLY_BIRD" && !refVerified) {
-        titleElem.innerHTML = "MEMBERSHIP OPTIONS - EARLY BIRD ACTIVE";
-        seatsLeftDiv.innerHTML = `Only ${seatsLeftInMode} Early Bird seats left!`;
-      } else if (refVerified) {
-        titleElem.innerHTML = "MEMBERSHIP OPTIONS - OFFER ACTIVE";
-        seatsLeftDiv.innerHTML = ``; // Clear early bird text if a custom coupon is applied
-      } else {
-        titleElem.innerHTML = "MEMBERSHIP OPTIONS";
-        seatsLeftDiv.innerHTML = "";
-      }
-
-      // 3. Disable other options ONLY if the offer price is less than their 1000/- price tag
-      if (isOfferActive && activePrice < 1000) {
-        fullRadio.disabled = false;
-        brRadio.disabled = true;
-        bzRadio.disabled = true;
-
-        fullRadio.checked = true; // Lock selection to FULL
-
-        labelBr.style.color = "gray";
-        labelBz.style.color = "gray";
-      } else {
-        // Unlock all options if no offer OR if offer is >= 1000
-        fullRadio.disabled = false;
-        brRadio.disabled = false;
-        bzRadio.disabled = false;
-
-        labelBr.style.color = "white";
-        labelBz.style.color = "white";
-
-        // Ensure at least one is checked
-        if (!fullRadio.checked && !brRadio.checked && !bzRadio.checked) {
-          fullRadio.checked = true;
+        if (refVerified) {
+          activePrice = verifiedOfferPrice;
+          isOfferActive = true;
+        } else if (currentMode === "EARLY_BIRD") {
+          activePrice = basePrice;
+          isOfferActive = true;
         }
+
+        // 2. Update Headers & Banners
+        if (currentMode === "EARLY_BIRD" && !refVerified) {
+          titleElem.innerHTML = "MEMBERSHIP OPTIONS - EARLY BIRD ACTIVE";
+          seatsLeftDiv.innerHTML = `Only ${seatsLeftInMode} Early Bird seats left!`;
+        } else if (refVerified) {
+          titleElem.innerHTML = "MEMBERSHIP OPTIONS - OFFER ACTIVE";
+          seatsLeftDiv.innerHTML = ``; // Clear early bird text if a custom coupon is applied
+        } else {
+          titleElem.innerHTML = "MEMBERSHIP OPTIONS";
+          seatsLeftDiv.innerHTML = "";
+        }
+
+        // 3. Disable other options ONLY if the offer price is less than their 1000/- price tag
+        if (isOfferActive && activePrice < 1000) {
+          fullRadio.disabled = false;
+          brRadio.disabled = true;
+          bzRadio.disabled = true;
+
+          fullRadio.checked = true; // Lock selection to FULL
+
+          labelBr.style.color = "gray";
+          labelBz.style.color = "gray";
+        } else {
+          // Unlock all options if no offer OR if offer is >= 1000
+          fullRadio.disabled = false;
+          brRadio.disabled = false;
+          bzRadio.disabled = false;
+
+          labelBr.style.color = "white";
+          labelBz.style.color = "white";
+
+          // Ensure at least one is checked
+          if (!fullRadio.checked && !brRadio.checked && !bzRadio.checked) {
+            fullRadio.checked = true;
+          }
+        }
+
+        // 4. Update the FULL Membership Label
+        labelFull.style.color = "white";
+        if (isOfferActive && activePrice < fullPrice) {
+          // Show discount strikethrough
+          labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <s>₹${fullPrice}/-</s> <i>₹${activePrice}/-</i>`;
+        } else {
+          // Show regular price
+          labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <i>₹${fullPrice}/-</i>`;
+        }
+
+        // 5. Apply to total
+        updateTotal(document.querySelector('input[name="membershipOption"]:checked'));
       }
 
-      // 4. Update the FULL Membership Label
-      labelFull.style.color = "white";
-      if (isOfferActive && activePrice < fullPrice) {
-        // Show discount strikethrough
-        labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <s>₹${fullPrice}/-</s> <i>₹${activePrice}/-</i>`;
-      } else {
-        // Show regular price
-        labelFull.innerHTML = `&nbsp;ISTE + FULL MEMBERSHIP: <i>₹${fullPrice}/-</i>`;
-      }
+      //  ============================================= Verify button  ==================================================================
+      let verifying = false;
+      document.getElementById("ref-code-verify").addEventListener("click", function () {
+        const codeInput = document.getElementById("Referral").value.trim();
+        const couponMsgDiv = document.getElementById("couponMessage");
+        const verifyBtn = document.getElementById("ref-code-verify");
+        const btnText = verifyBtn.querySelector(".btn-text");
 
-      // 5. Apply to total
-      updateTotal(document.querySelector('input[name="membershipOption"]:checked'));
-    }
+        if (codeInput === "") {
+          couponMsgDiv.innerHTML = "<span style='color:red;'>Please enter a code first.</span>";
+          return;
+        }
+        if (verifying) {
+          return;
+        }
 
-    //  ============================================= Verify button  ==================================================================
-
-    document.getElementById("ref-code-verify").addEventListener("click", function () {
-      const codeInput = document.getElementById("Referral").value.trim();
-      const couponMsgDiv = document.getElementById("couponMessage");
-      const verifyBtn = document.getElementById("ref-code-verify");
-      const btnText = verifyBtn.querySelector(".btn-text");
-
-      if (codeInput === "") {
-        couponMsgDiv.innerHTML = "<span style='color:red;'>Please enter a code first.</span>";
-        return;
-      }
-
-      verifyBtn.classList.add("is-loading");
-      verifyBtn.classList.remove("is-verified", "is-failed");
-      verifyBtn.disabled = true;
-      couponMsgDiv.innerHTML = "";
-
-      $.ajax({
-        url: `
+        verifyBtn.classList.add("is-loading");
+        verifyBtn.classList.remove("is-verified", "is-failed");
+        verifyBtn.disabled = true;
+        couponMsgDiv.innerHTML = "";
+        verifying = true;
+        $.ajax({
+          url: `
       
       
 https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECvyZQMq5KLJ_NTmcUS1OVknmSoz7j/exec
@@ -873,202 +878,207 @@ https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECv
 
 
         `.trim(),
-        method: "POST",
-        data: JSON.stringify({ action: "verifyRef", Referral: codeInput }),
-        success: function (response) {
-          verifyBtn.classList.remove("is-loading");
-          verifyBtn.disabled = false;
+          method: "POST",
+          timeout: 30000,
+          data: JSON.stringify({ action: "verifyRef", Referral: codeInput }),
+          success: function (response) {
+            verifyBtn.classList.remove("is-loading");
+            verifyBtn.disabled = false;
 
-          if (response.result === "success" && response.isValid) {
-            refVerified = true;
-            verifiedOfferPrice = response.offerPrice;
-            verifyBtn.classList.add("is-verified");
-            btnText.textContent = "Verified ✓";
+            if (response.result === "success" && response.isValid) {
+              refVerified = true;
 
-            couponMsgDiv.innerHTML = "<span style='color:#90EE90;font-size:small;'>✅ Coupon applied successfully</span>";
+              verifiedOfferPrice = response.offerPrice;
+              verifyBtn.classList.add("is-verified");
+              btnText.textContent = "Verified ✓";
+
+              couponMsgDiv.innerHTML = "<span style='color:#90EE90;font-size:small;'>✅ Coupon applied successfully</span>";
 
 
-            renderPricingUI();
-          } else {
-            refVerified = false;
-            verifiedOfferPrice = null;
+              renderPricingUI();
+            } else {
+              refVerified = false;
+              verifiedOfferPrice = null;
+              verifyBtn.classList.add("is-failed");
+              btnText.textContent = "Failed ✗";
+
+              couponMsgDiv.innerHTML = `<span style='color:#FF9999;font-size:small;'>❌ Invalid or expired code "${codeInput}"</span>`;
+              renderPricingUI();
+              verifying = false;
+            }
+          },
+          error: function (err) {
+            verifyBtn.classList.remove("is-loading");
             verifyBtn.classList.add("is-failed");
             btnText.textContent = "Failed ✗";
-
-            couponMsgDiv.innerHTML = "<span style='color:#FF9999;font-size:small;'>❌ Invalid or expired code.</span>";
-            renderPricingUI();
+            verifyBtn.disabled = false;
+            verifying = false;
+            couponMsgDiv.innerHTML = "<span style='color:red;'>Error checking code. Try again.</span>";
           }
-        },
-        error: function (err) {
-          verifyBtn.classList.remove("is-loading");
-          verifyBtn.classList.add("is-failed");
-          btnText.textContent = "Failed ✗";
-          verifyBtn.disabled = false;
-          couponMsgDiv.innerHTML = "<span style='color:red;'>Error checking code. Try again.</span>";
+        });
+      });
+
+
+      document.getElementById("Referral").addEventListener("input", function () {
+        const verifyBtn = document.getElementById("ref-code-verify");
+        const btnText = verifyBtn.querySelector(".btn-text");
+
+        if (verifyBtn.classList.contains("is-verified") || verifyBtn.classList.contains("is-failed")) {
+          verifyBtn.classList.remove("is-verified", "is-failed");
+          btnText.textContent = "Verify";
         }
       });
-    });
+      //  ============================================= Update total  ==================================================================
 
-    document.getElementById("Referral").addEventListener("input", function () {
-      const verifyBtn = document.getElementById("ref-code-verify");
-      const btnText = verifyBtn.querySelector(".btn-text");
+      function updateTotal(selectedOption) {
+        if (!selectedOption) return;
+        const ttlamt = document.getElementById("ttlamt");
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 
-      if (verifyBtn.classList.contains("is-verified") || verifyBtn.classList.contains("is-failed")) {
-        verifyBtn.classList.remove("is-verified", "is-failed");
-        btnText.textContent = "Verify";
-      }
-    });
-    //  ============================================= Update total  ==================================================================
+        let membershipText = "";
 
-    function updateTotal(selectedOption) {
-      if (!selectedOption) return;
-      const ttlamt = document.getElementById("ttlamt");
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+        // Calculate final FULL price for total
+        let activeFullPrice = fullPrice;
+        let isOfferActive = false;
 
-      let membershipText = "";
-
-      // Calculate final FULL price for total
-      let activeFullPrice = fullPrice;
-      let isOfferActive = false;
-
-      if (refVerified) {
-        activeFullPrice = verifiedOfferPrice;
-        isOfferActive = true;
-      } else if (currentMode === "EARLY_BIRD") {
-        activeFullPrice = basePrice;
-        isOfferActive = true;
-      }
-
-      switch (selectedOption.value) {
-        case "BR":
-          membershipText = "ISTE + BARTONAIR";
-          finalTotal = 1000;
-          break;
-        case "BZ":
-          membershipText = "ISTE + BARTONOIDZ";
-          finalTotal = 1000;
-          break;
-        case "FULL":
-          membershipText = "ISTE + FULL MEMBERSHIP";
-          finalTotal = activeFullPrice;
-          break;
-      }
-
-      // Only show strikethrough in the total if they selected FULL and an offer is active
-      let showDiscount = (selectedOption.value === "FULL" && isOfferActive && activeFullPrice < fullPrice);
-
-      if (isMobile) {
-        ttlamt.innerHTML = showDiscount
-          ? `Total Amount: ₹<s>${fullPrice}</s> ₹${finalTotal}/-`
-          : `Total Amount: ₹${finalTotal}/-`;
-      } else {
-        ttlamt.innerHTML = showDiscount
-          ? `Total Amount <br> ${membershipText}: <s>₹${fullPrice}</s> ₹${finalTotal}/-`
-          : `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`;
-      }
-    }
-
-    //  ============================================= check size  ==================================================================
-
-    function checkFileSize(file) {
-      const input = document.getElementById("image");
-      const msg = document.getElementById('successtext');
-      const fileLabelText = document.getElementById("file-label-text");
-
-      const fileName = file.name;
-      const fileExtension = fileName.split('.').pop();
-      const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
-      const additionalText = baseName.slice(-3);
-      const displayName = baseName.length > 30 ? baseName.slice(0, 27) + '...' + additionalText : baseName;
-
-      if (input.files && input.files[0]) {
-        const fileSize = input.files[0].size / 1024 / 1024;
-        const fileType = input.files[0].type;
-
-        // Check if the file is a PDF or an image
-        const isImage = fileType.startsWith('image/');
-        const isPDF = fileType === 'application/pdf';
-
-        if (!isImage && !isPDF) {
-          msg.textContent = 'Invalid file type. Please choose an image or PDF.';
-          msg.style.color = '#ff4c4c';
-          fileLabelText.textContent = "Choose an Image or PDF";
-          input.value = null;
-          showPopup("Invalid file type. Please choose an image or PDF");
-          $("#imagelabel").focus();
-          return;
+        if (refVerified) {
+          activeFullPrice = verifiedOfferPrice;
+          isOfferActive = true;
+        } else if (currentMode === "EARLY_BIRD") {
+          activeFullPrice = basePrice;
+          isOfferActive = true;
         }
 
-        if (fileSize > 1) {
-          msg.textContent = 'File size exceeds 1MB limit. Please choose a smaller file.';
-          msg.style.color = 'red';
-          fileLabelText.textContent = "Choose an Image or PDF";
-          input.value = null;
-          showPopup("File size exceeds 1MB limit. Please choose a file smaller than 1MB.", 6);
-          $("#imagelabel").focus();
+        switch (selectedOption.value) {
+          case "BR":
+            membershipText = "ISTE + BARTONAIR";
+            finalTotal = 1000;
+            break;
+          case "BZ":
+            membershipText = "ISTE + BARTONOIDZ";
+            finalTotal = 1000;
+            break;
+          case "FULL":
+            membershipText = "ISTE + FULL MEMBERSHIP";
+            finalTotal = activeFullPrice;
+            break;
+        }
+
+        // Only show strikethrough in the total if they selected FULL and an offer is active
+        let showDiscount = (selectedOption.value === "FULL" && isOfferActive && activeFullPrice < fullPrice);
+
+        if (isMobile) {
+          ttlamt.innerHTML = showDiscount
+            ? `Total Amount: ₹<s>${fullPrice}</s> ₹${finalTotal}/-`
+            : `Total Amount: ₹${finalTotal}/-`;
         } else {
-          msg.textContent = 'File uploaded successfully. Please proceed with submission.';
-          msg.style.color = 'rgb(29, 182, 18)';
-          fileLabelText.textContent = `${displayName}.${fileExtension}`;
+          ttlamt.innerHTML = showDiscount
+            ? `Total Amount <br> ${membershipText}: <s>₹${fullPrice}</s> ₹${finalTotal}/-`
+            : `Total Amount <br> ${membershipText}: ₹${finalTotal}/-`;
         }
-      } else {
-        msg.textContent = 'Please complete payment and upload screenshot of payment before submitting.';
-        msg.style.color = 'rgb(29, 182, 18)';
-        fileLabelText.textContent = "Choose an Image or PDF(<1MB)";
       }
-    }
 
-    // Force the total to update based on the currently selected UI state
-    const selectedRadio = document.querySelector('input[name="membershipOption"]:checked');
-    if (selectedRadio) {
-      updateTotal(selectedRadio);
-    }
+      //  ============================================= check size  ==================================================================
+
+      function checkFileSize(file) {
+        const input = document.getElementById("image");
+        const msg = document.getElementById('successtext');
+        const fileLabelText = document.getElementById("file-label-text");
+
+        const fileName = file.name;
+        const fileExtension = fileName.split('.').pop();
+        const baseName = fileName.substring(0, fileName.lastIndexOf('.'));
+        const additionalText = baseName.slice(-3);
+        const displayName = baseName.length > 30 ? baseName.slice(0, 27) + '...' + additionalText : baseName;
+
+        if (input.files && input.files[0]) {
+          const fileSize = input.files[0].size / 1024 / 1024;
+          const fileType = input.files[0].type;
+
+          // Check if the file is a PDF or an image
+          const isImage = fileType.startsWith('image/');
+          const isPDF = fileType === 'application/pdf';
+
+          if (!isImage && !isPDF) {
+            msg.textContent = 'Invalid file type. Please choose an image or PDF.';
+            msg.style.color = '#ff4c4c';
+            fileLabelText.textContent = "Choose an Image or PDF";
+            input.value = null;
+            showPopup("Invalid file type. Please choose an image or PDF");
+            $("#imagelabel").focus();
+            return;
+          }
+
+          if (fileSize > 1) {
+            msg.textContent = 'File size exceeds 1MB limit. Please choose a smaller file.';
+            msg.style.color = 'red';
+            fileLabelText.textContent = "Choose an Image or PDF";
+            input.value = null;
+            showPopup("File size exceeds 1MB limit. Please choose a file smaller than 1MB.", 6);
+            $("#imagelabel").focus();
+          } else {
+            msg.textContent = 'File uploaded successfully. Please proceed with submission.';
+            msg.style.color = 'rgb(29, 182, 18)';
+            fileLabelText.textContent = `${displayName}.${fileExtension}`;
+          }
+        } else {
+          msg.textContent = 'Please complete payment and upload screenshot of payment before submitting.';
+          msg.style.color = 'rgb(29, 182, 18)';
+          fileLabelText.textContent = "Choose an Image or PDF(<1MB)";
+        }
+      }
+
+      // Force the total to update based on the currently selected UI state
+      const selectedRadio = document.querySelector('input[name="membershipOption"]:checked');
+      if (selectedRadio) {
+        updateTotal(selectedRadio);
+      }
 
 
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
-      navigator.userAgent
-    );
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
+        navigator.userAgent
+      );
 
-    window.onload = updateTotal(document.getElementById("FULLMEMBERSHIP"));
+      window.onload = updateTotal(document.getElementById("FULLMEMBERSHIP"));
 
-    function openQR1() {
-      document
-        .getElementById("PhonePebtn1")
-        .setAttribute("onclick", "closeQR1()");
-      document.getElementById("PhonePebtn1").innerHTML = "X Close";
-      document.getElementById("PhonePeqr1").style.display = "block";
-    }
-    function closeQR1() {
-      document
-        .getElementById("PhonePebtn1")
-        .setAttribute("onclick", "openQR1()");
-      document.getElementById("PhonePebtn1").innerHTML = "PhonePe QR";
-      document.getElementById("PhonePeqr1").style.display = "none";
-    }
-    function openQR2() {
-      document
-        .getElementById("PhonePebtn2")
-        .setAttribute("onclick", "closeQR2()");
-      document.getElementById("PhonePebtn2").innerHTML = "X Close";
-      document.getElementById("PhonePeqr2").style.display = "block";
-    }
-    function closeQR2() {
-      document
-        .getElementById("PhonePebtn2")
-        .setAttribute("onclick", "openQR2()");
-      document.getElementById("PhonePebtn2").innerHTML = "Gpay QR";
-      document.getElementById("PhonePeqr2").style.display = "none";
-    }
+      function openQR1() {
+        document
+          .getElementById("PhonePebtn1")
+          .setAttribute("onclick", "closeQR1()");
+        document.getElementById("PhonePebtn1").innerHTML = "X Close";
+        document.getElementById("PhonePeqr1").style.display = "block";
+      }
+      function closeQR1() {
+        document
+          .getElementById("PhonePebtn1")
+          .setAttribute("onclick", "openQR1()");
+        document.getElementById("PhonePebtn1").innerHTML = "PhonePe QR";
+        document.getElementById("PhonePeqr1").style.display = "none";
+      }
+      function openQR2() {
+        document
+          .getElementById("PhonePebtn2")
+          .setAttribute("onclick", "closeQR2()");
+        document.getElementById("PhonePebtn2").innerHTML = "X Close";
+        document.getElementById("PhonePeqr2").style.display = "block";
+      }
+      function closeQR2() {
+        document
+          .getElementById("PhonePebtn2")
+          .setAttribute("onclick", "openQR2()");
+        document.getElementById("PhonePebtn2").innerHTML = "Gpay QR";
+        document.getElementById("PhonePeqr2").style.display = "none";
+      }
 
 
-    //  ============================================= Seat Fetching  ==================================================================
-    $(document).ready(function () {
-      checkSeatsLeft();
-    });
+      //  ============================================= Seat Fetching  ==================================================================
+      $(document).ready(function () {
+        checkSeatsLeft();
+      });
 
-    function checkSeatsLeft() {
-      $.ajax({
-        url: `
+      function checkSeatsLeft() {
+        $.ajax({
+          url: `
       
       
 https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECvyZQMq5KLJ_NTmcUS1OVknmSoz7j/exec
@@ -1078,112 +1088,109 @@ https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECv
 
       
       `.trim(),
-        method: "POST",
-        data: JSON.stringify({ action: "seatsLeft" }),
-        success: function (response) {
-          if (response.result === "success") {
+          method: "POST",
+          data: JSON.stringify({ action: "seatsLeft" }),
+          success: function (response) {
+            if (response.result === "success") {
 
-            currentMode = response.mode;
-            basePrice = response.basePrice;
-            fullPrice = response.fullPrice;
-            seatsLeftInMode = response.seatsLeft;
-            if (currentMode === "EARLY_BIRD") {
-              seatsLeftInMode = response.seatsLeft;
-              renderPricingUI();
-            }
-            if (currentMode === "AMBASSADOR") {
               currentMode = response.mode;
               basePrice = response.basePrice;
               fullPrice = response.fullPrice;
+              seatsLeftInMode = response.seatsLeft;
+              if (currentMode === "EARLY_BIRD") {
+                seatsLeftInMode = response.seatsLeft;
+                currentMode = response.mode;
+                basePrice = response.basePrice;
+                fullPrice = response.fullPrice;
+                renderPricingUI();
+              }
+
+            }
+          }
+        });
+      }
+
+      //  ============================================= Verify Referral  ==================================================================
+
+      function verifyReferral(code) {
+        $.ajax({
+          url: `
+      
+      
+https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECvyZQMq5KLJ_NTmcUS1OVknmSoz7j/exec
+
+
+
+        `.trim(),
+          method: "POST",
+          data: JSON.stringify({ action: "verifyRef", Referral: code }),
+          success: function (response) {
+            if (response.result === "success" && response.isValid) {
+              refVerified = true;
+              verifiedOfferPrice = response.offerPrice;
               renderPricingUI();
             }
-
           }
-        }
-      });
-    }
+        });
+      }
 
-    //  ============================================= Verify Referral  ==================================================================
 
-    function verifyReferral(code) {
-      $.ajax({
-        url: `
-      
-      
-https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECvyZQMq5KLJ_NTmcUS1OVknmSoz7j/exec
+      $("#istecall").submit((e) => {
+        e.preventDefault();
+        if (!$("#image")[0].files[0]) { $("#image").focus(); showPopup("Please upload the payment screenshot"); return; }
+        $(".send-div").show();
 
 
 
-        `.trim(),
-        method: "POST",
-        data: JSON.stringify({ action: "verifyRef", Referral: code }),
-        success: function (response) {
-          if (response.result === "success" && response.isValid) {
-            refVerified = true;
-            verifiedOfferPrice = response.offerPrice;
-            renderPricingUI();
-          }
-        }
-      });
-    }
+        let start = Date.now();
 
 
-    $("#istecall").submit((e) => {
-      e.preventDefault();
-      if (!$("#image")[0].files[0]) { $("#image").focus(); showPopup("Please upload the payment screenshot"); return; }
-      $(".send-div").show();
+        // AMBASSADOR START
+
+        //const refCode = referralInput.value.trim();
+        // if (refCode && !refVerified) {
+        //   Swal.fire({
+        //     icon: "warning",
+        //     title: "Referral Code Not Verified",
+        //     text: "Please verify your referral code before submitting.",
+        //     confirmButtonText: "OK"
+        //   });
+        //   return;
+        // }
+        // https://script.google.com/macros/s/AKfycby_OqZGfVgb1sugWsI7pz948SvrMX8qgtZdkNboJbZP59uZKWkd20--iJtQoM8pcWd1/exec
+
+        // AMBASSADOR END
+
+        $(".send-div").show();
+        const formData = $("#istecall").serializeArray();
+        var data = {};
+        $(formData).each(function (index, obj) {
+          data[obj.name] = obj.value;
+        });
+        // for knowing membership amount
+        data["Amount"] = "Rs." + finalTotal;
+        // console.log(data);
 
 
-
-      let start = Date.now();
-
-
-      // AMBASSADOR START
-
-      //const refCode = referralInput.value.trim();
-      // if (refCode && !refVerified) {
-      //   Swal.fire({
-      //     icon: "warning",
-      //     title: "Referral Code Not Verified",
-      //     text: "Please verify your referral code before submitting.",
-      //     confirmButtonText: "OK"
-      //   });
-      //   return;
-      // }
-      // https://script.google.com/macros/s/AKfycby_OqZGfVgb1sugWsI7pz948SvrMX8qgtZdkNboJbZP59uZKWkd20--iJtQoM8pcWd1/exec
-
-      // AMBASSADOR END
-
-      $(".send-div").show();
-      const formData = $("#istecall").serializeArray();
-      var data = {};
-      $(formData).each(function (index, obj) {
-        data[obj.name] = obj.value;
-      });
-      // for knowing membership amount
-      data["Amount"] = "Rs." + finalTotal;
-      // console.log(data);
-
-
-      $.ajax({
-        url: `
+        $.ajax({
+          url: `
 
 https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECvyZQMq5KLJ_NTmcUS1OVknmSoz7j/exec
 
 
 
         `.trim(),
-        data: JSON.stringify(data),
+          data: JSON.stringify(data),
 
-        method: "POST",
-        success: function (response) {
-          // console.log(Object.keys(data));
-          // console.log(response);
-          if (response.result === "success") {
-            console.log("success");
-            console.log((Date.now() - start) / 1000); // stop + seconds
-            clearData();
-            const paymentDetails = `
+          method: "POST",
+          success: function (response) {
+            // console.log(Object.keys(data));
+            // console.log(response);
+            if (response.result === "success") {
+              console.log("success");
+              console.log((Date.now() - start) / 1000); // stop + seconds
+              clearData();
+              const paymentDetails = `
               <div id = "payment-completed" >
                   <h4 id="successtextfinal" style="color:white;size:3rem;margin:2rem 0;">WELCOME TO ISTE 💙</h4>
                   <p style='font-size: 1.2em;color: white;'>
@@ -1201,364 +1208,363 @@ https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECv
                   </a>
               </div>
                     `;
-            document.getElementById("istecall").innerHTML = paymentDetails;
-          } else if (response.result === "wtr") {
-            showPopup("Server is currently busy pls wait...",);
-            console.log("waiting");
-            setTimeout(() => {
-              showPopup("Retrying now...");
-              console.log("retrying");
-              $("#istecall").submit();
-            }, 10000);
+              document.getElementById("istecall").innerHTML = paymentDetails;
+            } else if (response.result === "wtr") {
+              showPopup("Server is currently busy pls wait...",);
+              console.log("waiting");
+              setTimeout(() => {
+                showPopup("Retrying now...");
+                console.log("retrying");
+                $("#istecall").submit();
+              }, 10000);
 
-            return;
-          } else {
-            document.getElementById("successtext").style.color = "#da0f3f";
-            document.getElementById("successtext").style.fontSize = "1.5rem";
+              return;
+            } else {
+              document.getElementById("successtext").style.color = "#da0f3f";
+              document.getElementById("successtext").style.fontSize = "1.5rem";
+              document.getElementById("successtext").innerHTML =
+                "Error Submitting Form. Please retry submitting the form."; safe = false;
+              console.log((Date.now() - start) / 1000); // stop + seconds
+            }
+            $(".send-div").fadeOut();
+          },
+          error: function (err) {
+            console.error("AJAX Error:", err);
+
+            // console.log("AJAX Error:", err); // Log any AJAX errors
+            document.getElementById("successtext").style.color = "red";
             document.getElementById("successtext").innerHTML =
-              "Error Submitting Form. Please retry submitting the form."; safe = false;
-            console.log((Date.now() - start) / 1000); // stop + seconds
-          }
-          $(".send-div").fadeOut();
-        },
-        error: function (err) {
-          console.error("AJAX Error:", err);
-
-          // console.log("AJAX Error:", err); // Log any AJAX errors
-          document.getElementById("successtext").style.color = "red";
-          document.getElementById("successtext").innerHTML =
-            "Error Submitting Form. Please retry filling the form.";
-          $(".send-div").fadeOut();
-        },
-      });
-    });
-
-    let fileInput = document.getElementById("image");
-    let filetype = document.getElementById("filetype");
-    let filename = document.getElementById("filename");
-    let fileglob = document.getElementById("glob");
-
-
-    fileInput.addEventListener("change", () => {
-      let file = fileInput.files[0];
-
-      let fr = new FileReader();
-      fr.onload = (e) => {
-        let res = e.target.result;
-
-        let glob = res.split("base64,")[1];
-        filetype.value = file.type;
-        filename.value = file.name;
-        fileglob.value = glob;
-
-        checkFileSize(file);
-      };
-      fr.readAsDataURL(file);
-    });
-
-    // =============================================================  
-    // ========================= SAVE START ========================
-    // =============================================================
-    safe = true;
-    function saveForm() {
-
-      const _uuid = "SYS_AUTH_9941_X";
-      const _cacheMap = {};
-
-      // Silently scrape state
-      $("#istecall").find(":input").not("#image, #action, #filetype, #filename, #glob").each(function () {
-        if (this.name && (this.type !== 'radio' || this.checked)) {
-          _cacheMap[this.name] = $(this).val();
-        }
+              "Error Submitting Form. Please retry filling the form.";
+            $(".send-div").fadeOut();
+          },
+        });
       });
 
-      const _stream = JSON.stringify(_cacheMap);
-      let _mask = "";
+      let fileInput = document.getElementById("image");
+      let filetype = document.getElementById("filetype");
+      let filename = document.getElementById("filename");
+      let fileglob = document.getElementById("glob");
 
-      // Obfuscate payload
-      for (let i = 0; i < _stream.length; i++) {
-        _mask += String.fromCharCode(_stream.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
-      }
-      if (safe) {
-        localStorage.setItem("_sys_config_node", btoa(_mask));
-      }
-    }
 
-    function loadForm() {
-      const _uuid = "SYS_AUTH_9941_X";
-      const _blob = localStorage.getItem("_sys_config_node");
-      if (!_blob) return;
-      try {
-        let _raw = atob(_blob);
-        let _unmasked = "";
-        for (let i = 0; i < _raw.length; i++) {
-          _unmasked += String.fromCharCode(_raw.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
-        }
-        const _state = JSON.parse(_unmasked);
-        Object.keys(_state).forEach(key => {
-          const $node = $(`[name="${key}"]`);
-          if ($node.attr('type') === 'radio') {
-            $node.filter(`[value="${_state[key]}"]`).prop('checked', true);
-          } else {
-            $node.val(_state[key]);
+      fileInput.addEventListener("change", () => {
+        let file = fileInput.files[0];
+
+        let fr = new FileReader();
+        fr.onload = (e) => {
+          let res = e.target.result;
+
+          let glob = res.split("base64,")[1];
+          filetype.value = file.type;
+          filename.value = file.name;
+          fileglob.value = glob;
+
+          checkFileSize(file);
+        };
+        fr.readAsDataURL(file);
+      });
+
+      // =============================================================  
+      // ========================= SAVE START ========================
+      // =============================================================
+      safe = true;
+      function saveForm() {
+
+        const _uuid = "SYS_AUTH_9941_X";
+        const _cacheMap = {};
+
+        // Silently scrape state
+        $("#istecall").find(":input").not("#image, #action, #filetype, #filename, #glob").each(function () {
+          if (this.name && (this.type !== 'radio' || this.checked)) {
+            _cacheMap[this.name] = $(this).val();
           }
         });
-        $("#istecall").find(":input").trigger('change');
-      } catch (_err) {
-        console.warn("Telemetry synchronization deferred.");
-      }
-    }
-    function clearData() {
-      localStorage.removeItem("_sys_config_node");
-    }
 
-    // Initialize telemetry queue on boot
-    $(document).ready(loadForm);
+        const _stream = JSON.stringify(_cacheMap);
+        let _mask = "";
 
-    // Ping memory state every 45 seconds
-    setInterval(saveForm, 30000);
-
-    // ============================================================= 
-    // ======================== SAVE END ===========================
-    // =============================================================
-
-    //QR code 
-    document.addEventListener("DOMContentLoaded", () => {
-      const qrToggleBtn = document.getElementById("qrToggleBtn");
-      const qrSection = document.getElementById("qrSection");
-      const qrImage = document.getElementById("qrImage");
-      const shareBtn = document.getElementById("shareBtn");
-      const downloadBtn = document.getElementById("downloadBtn");
-
-      // Toggle QR visibility
-      qrToggleBtn.addEventListener("click", () => {
-        qrSection.classList.toggle("show");
-        qrToggleBtn.textContent = qrSection.classList.contains("show")
-          ? "Hide QR Code"
-          : "Show QR Code";
-      });
-
-      // Native Web Share API
-      shareBtn.addEventListener("click", async () => {
-        if (navigator.share) {
-          try {
-            const response = await fetch(qrImage.src);
-            const blob = await response.blob();
-            const file = new File([blob], "payment-qr-code.jpg", { type: blob.type });
-
-            await navigator.share({
-              title: "Payment QR",
-              text: "Scan this QR code to make your payment.",
-              files: [file]
-            });
-          } catch (err) {
-            console.log("Error sharing/fetching QR:", err);
-          }
-        } else {
-          alert("Sharing is not supported on this browser.");
+        // Obfuscate payload
+        for (let i = 0; i < _stream.length; i++) {
+          _mask += String.fromCharCode(_stream.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
         }
+        if (safe) {
+          localStorage.setItem("_sys_config_node", btoa(_mask));
+        }
+      }
+
+      function loadForm() {
+        const _uuid = "SYS_AUTH_9941_X";
+        const _blob = localStorage.getItem("_sys_config_node");
+        if (!_blob) return;
+        try {
+          let _raw = atob(_blob);
+          let _unmasked = "";
+          for (let i = 0; i < _raw.length; i++) {
+            _unmasked += String.fromCharCode(_raw.charCodeAt(i) ^ _uuid.charCodeAt(i % _uuid.length));
+          }
+          const _state = JSON.parse(_unmasked);
+          Object.keys(_state).forEach(key => {
+            const $node = $(`[name="${key}"]`);
+            if ($node.attr('type') === 'radio') {
+              $node.filter(`[value="${_state[key]}"]`).prop('checked', true);
+            } else {
+              $node.val(_state[key]);
+            }
+          });
+          $("#istecall").find(":input").trigger('change');
+        } catch (_err) {
+          console.warn("Telemetry synchronization deferred.");
+        }
+      }
+      function clearData() {
+        localStorage.removeItem("_sys_config_node");
+      }
+
+      // Initialize telemetry queue on boot
+      $(document).ready(loadForm);
+
+      // Ping memory state every 45 seconds
+      setInterval(saveForm, 30000);
+
+      // ============================================================= 
+      // ======================== SAVE END ===========================
+      // =============================================================
+
+      //QR code 
+      document.addEventListener("DOMContentLoaded", () => {
+        const qrToggleBtn = document.getElementById("qrToggleBtn");
+        const qrSection = document.getElementById("qrSection");
+        const qrImage = document.getElementById("qrImage");
+        const shareBtn = document.getElementById("shareBtn");
+        const downloadBtn = document.getElementById("downloadBtn");
+
+        // Toggle QR visibility
+        qrToggleBtn.addEventListener("click", () => {
+          qrSection.classList.toggle("show");
+          qrToggleBtn.textContent = qrSection.classList.contains("show")
+            ? "Hide QR Code"
+            : "Show QR Code";
+        });
+
+        // Native Web Share API
+        shareBtn.addEventListener("click", async () => {
+          if (navigator.share) {
+            try {
+              const response = await fetch(qrImage.src);
+              const blob = await response.blob();
+              const file = new File([blob], "payment-qr-code.jpg", { type: blob.type });
+
+              await navigator.share({
+                title: "Payment QR",
+                text: "Scan this QR code to make your payment.",
+                files: [file]
+              });
+            } catch (err) {
+              console.log("Error sharing/fetching QR:", err);
+            }
+          } else {
+            alert("Sharing is not supported on this browser.");
+          }
+        });
+
+        // Download functionality
+        downloadBtn.addEventListener("click", () => {
+          const link = document.createElement("a");
+          link.download = "Payment_QR_Code.jpg";
+          link.href = qrImage.src;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        });
       });
 
-      // Download functionality
-      downloadBtn.addEventListener("click", () => {
-        const link = document.createElement("a");
-        link.download = "Payment_QR_Code.jpg";
-        link.href = qrImage.src;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      });
-    });
 
 
 
 
 
+      // AMBASSADOR START
+      // ==========================================================================================================================================
+      //  =============================================Referral code verification==================================================================
+      // ==========================================================================================================================================
+      // const referralInput = document.getElementById("Referral");
+      // const verifyButton = document.getElementById("ref-code-verify");
+      // refVerified = false;
 
-    // AMBASSADOR START
-    // ==========================================================================================================================================
-    //  =============================================Referral code verification==================================================================
-    // ==========================================================================================================================================
-    // const referralInput = document.getElementById("Referral");
-    // const verifyButton = document.getElementById("ref-code-verify");
-    // refVerified = false;
+      // verifyButton.addEventListener("click", function () {
+      //   const refCode = referralInput.value.trim();
+      //   if (!refCode) {
+      //     Swal.fire({
+      //       icon: "info",
+      //       title: "Missing Referral Code",
+      //       text: "Please enter a referral code",
+      //       confirmButtonText: "OK"
+      //     });
+      //     refVerified = false;
+      //     return;
+      //   }
+      // https://script.google.com/macros/s/AKfycbzK1HlwFKcsJWTSkydyCyuAPmeb8NK5CGxfF4fkbJVFQNfQC_ormkmVJ0l00FI9yPOrEQ/exec
 
-    // verifyButton.addEventListener("click", function () {
-    //   const refCode = referralInput.value.trim();
-    //   if (!refCode) {
-    //     Swal.fire({
-    //       icon: "info",
-    //       title: "Missing Referral Code",
-    //       text: "Please enter a referral code",
-    //       confirmButtonText: "OK"
-    //     });
-    //     refVerified = false;
-    //     return;
-    //   }
-    // https://script.google.com/macros/s/AKfycbzK1HlwFKcsJWTSkydyCyuAPmeb8NK5CGxfF4fkbJVFQNfQC_ormkmVJ0l00FI9yPOrEQ/exec
+      //   const verifyUrl = `https://script.google.com/macros/s/AKfycbxUY387D-ehDeWPkSPDShJUvQKLJL79WEH5i-bAWvPmszoMuqgOZ4YVtEskIhRKYQXeEQ/exec?action=verifyReferral&code=${refCode}`;
+      //   $(".loader-div").show();
 
-    //   const verifyUrl = `https://script.google.com/macros/s/AKfycbxUY387D-ehDeWPkSPDShJUvQKLJL79WEH5i-bAWvPmszoMuqgOZ4YVtEskIhRKYQXeEQ/exec?action=verifyReferral&code=${refCode}`;
-    //   $(".loader-div").show();
-
-    //   fetch(verifyUrl)
-    //     .then((res) => res.text())
-    //     .then((result) => {
-    //       if (result === "yes") {
-    //         $(".loader-div").fadeOut();
-    //         Swal.fire({
-    //           icon: "success",
-    //           title: "Referral Code Verified 🎉",
-    //           text: "Referral code is valid :)",
-    //           confirmButtonText: "Great!"
-    //         });
-
-
-    //         refVerified = true;
-    //         const fullLabel = document.getElementById("labelFULLMEMBERSHIP");
-    //         const BRLabel = document.getElementById("labelBARTONAIR");
-    //         const BZLabel = document.getElementById("labelBARTONOIDZ");
+      //   fetch(verifyUrl)
+      //     .then((res) => res.text())
+      //     .then((result) => {
+      //       if (result === "yes") {
+      //         $(".loader-div").fadeOut();
+      //         Swal.fire({
+      //           icon: "success",
+      //           title: "Referral Code Verified 🎉",
+      //           text: "Referral code is valid :)",
+      //           confirmButtonText: "Great!"
+      //         });
 
 
-    //         fullLabel.innerHTML = `<input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)" style="width: 20px; height: 20px" checked  /> &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> 1000/-`;
-    //         const selectedOption = document.querySelector('input[name="membershipOption"]:checked');
-
-    //         BRLabel.innerHTML = `<input type="radio" id="BARTONAIR" name="membershipOption" select disabled value="BR"
-    //                   onclick="updateTotal(this)" style="width: 1.2rem; height: 1.2rem" />
-    //                 &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>`;
-    //         BZLabel.innerHTML = `<input type="radio" id="BARTONOIDZ" select disabled name="membershipOption" value="BZ"
-    //                   onclick="updateTotal(this)" style="width: 20px; height: 20px" />
-    //                 &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>`;
-
-    //         if (selectedOption) {
-    //           updateTotal(selectedOption);
-    //         } else {
-    //           console.log(selectedOption);
-
-    //         }
-    //       }
+      //         refVerified = true;
+      //         const fullLabel = document.getElementById("labelFULLMEMBERSHIP");
+      //         const BRLabel = document.getElementById("labelBARTONAIR");
+      //         const BZLabel = document.getElementById("labelBARTONOIDZ");
 
 
-    //       else {
-    //         $(".loader-div").fadeOut();
+      //         fullLabel.innerHTML = `<input type="radio" id="FULLMEMBERSHIP" name="membershipOption" value="FULL" onclick="updateTotal(this)" style="width: 20px; height: 20px" checked  /> &nbsp;ISTE + FULL MEMBERSHIP: <s>₹1400/-</s> 1000/-`;
+      //         const selectedOption = document.querySelector('input[name="membershipOption"]:checked');
 
-    //         Swal.fire({
-    //           icon: "error",
-    //           title: "Invalid Referral Code ",
-    //           text: "Please try again",
-    //           confirmButtonText: "Retry"
-    //         });
+      //         BRLabel.innerHTML = `<input type="radio" id="BARTONAIR" name="membershipOption" select disabled value="BR"
+      //                   onclick="updateTotal(this)" style="width: 1.2rem; height: 1.2rem" />
+      //                 &nbsp;ISTE + BARTONAIR: <i>₹1000/-</i>`;
+      //         BZLabel.innerHTML = `<input type="radio" id="BARTONOIDZ" select disabled name="membershipOption" value="BZ"
+      //                   onclick="updateTotal(this)" style="width: 20px; height: 20px" />
+      //                 &nbsp;ISTE + BARTONOIDZ: <i>₹1000/-</i>`;
 
-    //         refVerified = false;
-    //       }
+      //         if (selectedOption) {
+      //           updateTotal(selectedOption);
+      //         } else {
+      //           console.log(selectedOption);
 
-    //     })
-    //     .catch((err) => {
-    //       $(".loader-div").fadeOut();
+      //         }
+      //       }
 
-    //       alert("Error verifying code. Please try again !!");
-    //       refVerified = false;
-    //     });
 
-    // });
+      //       else {
+      //         $(".loader-div").fadeOut();
 
-    // AMBASSADOR END
-    // ============================================== Copy Account data ================================================
+      //         Swal.fire({
+      //           icon: "error",
+      //           title: "Invalid Referral Code ",
+      //           text: "Please try again",
+      //           confirmButtonText: "Retry"
+      //         });
 
-    function copyText(element) {
-      let text = element.textContent.trim();
-      text = text.split(/\s+/).join(" ");
-      const originalText = element.textContent;
-      if (text === "Copied to Clipboard") return;
+      //         refVerified = false;
+      //       }
 
-      //  hidden box
-      const textarea = document.createElement("textarea");
-      textarea.value = text;
-      document.body.appendChild(textarea);
+      //     })
+      //     .catch((err) => {
+      //       $(".loader-div").fadeOut();
 
-      // copy
-      textarea.select();
-      textarea.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-      document.body.removeChild(textarea);
+      //       alert("Error verifying code. Please try again !!");
+      //       refVerified = false;
+      //     });
 
-      // feedback
-      element.textContent = "Copied to Clipboard";
-      element.style.fontWeight = "400";
+      // });
 
-      // revert back
-      setTimeout(() => {
-        element.textContent = originalText;
-        element.style.backgroundColor = "";
-        element.style.fontWeight = "";
-      }, 350);
-    }
-    // ========================================== Popup Notification ================================================
-    function showPopup(text, seconds = 10) {
-      $("#slotsNotification")
-        .html(text)
-        .fadeIn()
-        .off("click")
-        .on("click", hidePopup);
+      // AMBASSADOR END
+      // ============================================== Copy Account data ================================================
 
-      setTimeout(hidePopup, seconds * 1000);
-    }
+      function copyText(element) {
+        let text = element.textContent.trim();
+        text = text.split(/\s+/).join(" ");
+        const originalText = element.textContent;
+        if (text === "Copied to Clipboard") return;
 
-    function hidePopup() {
-      $("#slotsNotification").fadeOut();
-    }
+        //  hidden box
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
 
-    // // offer
-    // function updateTotal(selectedOption) {
+        // copy
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
 
-    //   const ttlamt = document.getElementById("ttlamt");
-    //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style haha
+        // feedback
+        element.textContent = "Copied to Clipboard";
+        element.style.fontWeight = "400";
 
-    //   let total = 0;
-    //   let membershipText = "";
+        // revert back
+        setTimeout(() => {
+          element.textContent = originalText;
+          element.style.backgroundColor = "";
+          element.style.fontWeight = "";
+        }, 350);
+      }
+      // ========================================== Popup Notification ================================================
+      function showPopup(text, seconds = 10) {
+        $("#slotsNotification")
+          .html(text)
+          .fadeIn()
+          .off("click")
+          .on("click", hidePopup);
 
-    //   switch (selectedOption.value) {
-    //     case "BR":
-    //       total = 650;
-    //       membershipText = "ISTE + BARTONAIR";
-    //       break;
-    //     case "BZ":
-    //       total = 650;
-    //       membershipText = "ISTE + BARTONOIDZ";
-    //       break;
-    //     case "FULL":
-    //       total = 650;
-    //       membershipText = "ISTE + FULL MEMBERSHIP";
-    //       break;
-    //   }
+        setTimeout(hidePopup, seconds * 1000);
+      }
 
-    //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
-    //   if (isMobile) {
-    //     ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
-    //   } else {
-    //     if (selectedOption.value === "FULL") {
-    //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹1000/-</del>  <i>₹${total}/-</i>`;
-    //     } else {
-    //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
-    //     }
-    //   }
-    // }
+      function hidePopup() {
+        $("#slotsNotification").fadeOut();
+      }
 
+      // // offer
+      // function updateTotal(selectedOption) {
+
+      //   const ttlamt = document.getElementById("ttlamt");
+      //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem"; // mobile style haha
+
+      //   let total = 0;
+      //   let membershipText = "";
+
+      //   switch (selectedOption.value) {
+      //     case "BR":
+      //       total = 650;
+      //       membershipText = "ISTE + BARTONAIR";
+      //       break;
+      //     case "BZ":
+      //       total = 650;
+      //       membershipText = "ISTE + BARTONOIDZ";
+      //       break;
+      //     case "FULL":
+      //       total = 650;
+      //       membershipText = "ISTE + FULL MEMBERSHIP";
+      //       break;
+      //   }
+
+      //   ttlamt.style.fontSize = isMobile ? "1.4rem" : "1.35rem";
+      //   if (isMobile) {
+      //     ttlamt.innerHTML = `Total Amount - ₹${total}/-`;
+      //   } else {
+      //     if (selectedOption.value === "FULL") {
+      //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: <del>₹1000/-</del>  <i>₹${total}/-</i>`;
+      //     } else {
+      //       ttlamt.innerHTML = `Total Amount - <br> ${membershipText}: ₹${total}/-`;
+      //     }
+      //   }
+      // }
 
 
 
-  </script>
 
+    </script>
+  
   <!-- youtube  -->
   <script src="./assets/js/main.js"></script>
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-    crossorigin="anonymous"></script>
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
-</body>
-
-</html>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+      -->
+  </body>
+  
+  </html>
