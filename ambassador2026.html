@@ -149,7 +149,7 @@
 		}
 
 
-		/* sender box style */
+		
 		.send-div {
 			display: none;
 			position: fixed;
@@ -175,7 +175,7 @@
 		}
 
 
-		/* slots left popup */
+		
 		.slots-notification {
 			position: fixed;
 			top: 8%;
@@ -218,6 +218,88 @@
 				border-radius: 8px;
 			}
 		}
+
+
+		
+		
+		.progress-toast-container {
+			position: fixed;
+			top: 8%;
+			left: 50%;
+			
+			transform: translate(-50%, -50%) scale(0.8);
+			background: rgb(11, 16, 84);
+			padding: 25px 30px;
+			border-radius: 12px;
+			width: 340px;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+			z-index: 9999;
+			font-family: inherit;
+			text-align: center;
+			opacity: 0;
+			visibility: hidden;
+			
+			transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+
+		
+		.progress-toast-container.show {
+			opacity: 1;
+			visibility: visible;
+			transform: translate(-50%, -50%) scale(1);
+		}
+
+		
+		.progress-close-btn {
+			position: absolute;
+			top: 10px;
+			right: 15px;
+			border: none;
+			background: none;
+			font-size: 22px;
+			cursor: pointer;
+			color: #888;
+		}
+
+		.progress-close-btn:hover {
+			color: #333;
+		}
+
+		.progress-title {
+			margin-top: 0;
+			margin-bottom: 20px;
+			color: #f2f2fe;
+			font-weight: bold;
+			font-size: 24px;
+		}
+
+		.progress-bar-bg {
+			background: #e9ecef;
+			border-radius: 20px;
+			width: 100%;
+			height: 28px;
+			overflow: hidden;
+			border: 1px solid #ddd;
+			position: relative;
+		}
+
+		.progress-bar-fill {
+			background: #1e66a5;
+			
+			height: 100%;
+			width: 0%;
+			transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			padding-left: 12px;
+			color: white;
+			font-size: 14px;
+			font-weight: bold;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
 	</style>
 
 </head>
@@ -238,7 +320,7 @@
 		<div class="d-flex flex-wrap align-items-center justify-content-between mt-3 mx-5 py-2">
 			<div class="d-flex flex-wrap justify-content-center align-items-center" style="margin-left: 1rem;">
 				<img src="assets/img/ISTE logo White.png" alt="ISTE GECBH Logo" style="width: 70px; height: auto;">
-				<a href="" class="headingdropbtn" style="margin-left: 1rem;">ISTE GECBH</a>
+				<a href="index.html" class="headingdropbtn" style="margin-left: 1rem;">ISTE GECBH</a>
 			</div>
 			<div id="header" class="d-flex flex-wrap align-items-center justify-content-center header">
 				<a class="nav-item prsnt " href="index.html" alt="Home | ISTE GECBH">HOME</a>
@@ -251,9 +333,9 @@
 	<div class="mobile-nav container-fluid d-block d-md-none py-3 px-3 backdrop-blur">
 		<div class="d-flex flex-wrap align-items-center justify-content-between">
 			<img src="assets/img/ISTE logo White.png" alt="ISTE GECBH Logo" style="width: 48px; height: auto;">
-			<a href="" class="headingdropbtn">ISTE GECBH</a>
-			<a onclick="openNav()" alt="Open Menu(Mobile) | ISTE GECBH"><img src="assets/svg/menu.svg"
-					style="width: 33px;"></a>
+			<a href="index.html" class="headingdropbtn">ISTE GECBH</a>
+			<a onclick="openNav()" aria-label="Open Menu (Mobile) | ISTE GECBH" class="menu-btn"
+				aria-label="Open Menu (Mobile) | ISTE GECBH"><img src="assets/svg/menu.svg" style="width: 33px;"></a>
 		</div>
 	</div>
 	<!-- mobile drawer -->
@@ -442,6 +524,15 @@
 		</div>
 	</div>
 
+	<!-- Progress Popup Structure -->
+	<div id="progress-toast" class="progress-toast-container">
+		<button id="close-progress-toast" class="progress-close-btn">&times;</button>
+		<h3 class="progress-title">Progress</h3>
+		<div class="progress-bar-bg">
+			<div id="progress-bar-fill" class="progress-bar-fill"></div>
+		</div>
+	</div>
+
 	<!-- pop up count  -->
 	<!---div class="slots-notification" id="slotsNotification" style="display: none;">
 		Only <span id="slotsLeft">50</span> slots left!
@@ -450,11 +541,10 @@
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script>
 		const container = document.getElementById('leaderboard-container');
-		const seats = 120;
-		let count = 0;
 		const url = `
 	
-https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imGWQIb26QerLbYaNEgaXqXgD1w9BW/exec
+https://script.google.com/macros/s/AKfycbwXgVzRP24eH3fu6eSkvH5xNEigQeYIvpO3g9wp5i2H1v95eAtW1kue3YGdgZS-ReZ0/exec
+
 
 	`.trim() + "?action=getLeaderboard";
 
@@ -472,6 +562,7 @@ https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imG
 					$(".send-div").fadeOut();
 
 					renderLeaderboard(leaderboardData);
+					fetchProgress();
 
 
 				})
@@ -592,154 +683,90 @@ https://script.google.com/macros/s/AKfycbwq2RjhV8qv3345JDdtc2VgcaJTX1B0ivxkU9imG
 				});
 			});
 
-			let left = seats - count;
-			$("#slotsLeft").text(left);
-			$("#slotsNotification").fadeIn();
-			console.log("Seats left", left);
-			setTimeout(function () {
-				$("#slotsNotification").fadeOut();
-			}, 10000);
+			// let left = seats - count;
+			// $("#slotsLeft").text(left);
+			// $("#slotsNotification").fadeIn();
+			// // console.log("Seats left", left);
+			// setTimeout(function () {
+			// 	$("#slotsNotification").fadeOut();
+			// }, 10000);
 		}
 
 
-		$(document).ready(function () {
-			$("#slotsNotification").click(function () {
-				$("#slotsNotification").fadeOut();
-			});
-		});
+		// $(document).ready(function () {
+		// 	$("#slotsNotification").click(function () {
+		// 		$("#slotsNotification").fadeOut();
+		// 	});
+		// });
 
 
 		fetchLeaderboard();
 
 
+		// Base URL without the action parameter
+		const baseUrl = ` 
+
+https://script.google.com/macros/s/AKfycbwXgVzRP24eH3fu6eSkvH5xNEigQeYIvpO3g9wp5i2H1v95eAtW1kue3YGdgZS-ReZ0/exec
+
+
+		`.trim();
+
+		function fetchProgress() {
+			const progressUrl = baseUrl + "?action=getProgress";
+
+			fetch(progressUrl)
+				.then(response => {
+					if (!response.ok) {
+						throw new Error("Failed to fetch progress");
+					}
+					return response.json();
+				})
+				.then(progressData => {
+					showProgressPopup(progressData);
+				})
+				.catch(err => {
+					console.error("Error fetching progress:", err);
+				});
+		}
+
+		function showProgressPopup(data) {
+			const toast = document.getElementById('progress-toast');
+			const fill = document.getElementById('progress-bar-fill');
+
+
+			fill.style.width = '0%';
+			fill.innerText = '';
+
+
+			toast.classList.add('show');
+
+
+			setTimeout(() => {
+				fill.style.width = data.percentage + '%';
+
+				if (data.percentage > 10) {
+					fill.innerText = data.percentage + '%';
+				}
+			}, 200);
+
+
+			const autoFadeTimer = setTimeout(() => {
+				toast.classList.remove('show');
+			}, 4000);
+
+
+			document.getElementById('close-progress-toast').onclick = function () {
+				clearTimeout(autoFadeTimer); // Stop the auto-hide timer
+				toast.classList.remove('show');
+			};
+		}
+
+
+
+
+
+
 	</script>
-	<!-- <script>
-const leaderboardData = [
-  { team: "AGNI", score: 305, img: "assets/img/The-final-face-off/1.png" },
-  { team: "Quaternity", score: 229, img: "assets/img/The-final-face-off/2.png" },
-  { team: "Flaming Phoenix", score: 216, img: "assets/img/The-final-face-off/3.png" },
-  { team: "M 4 Mech", score: 191 },
-  { team: "Galaxy", score: 169 },
-  { team: "Lustre", score: 168 },
-  { team: "Dimensionless", score: 164 },
-  { team: "Fine Crew", score: 164 },
-  { team: "Civil Pros", score: 163 },
-  { team: "Pixelloid", score: 163 },
-  { team: "Magnum", score: 158 },
-  { team: "Megabytes", score: 158 },
-  { team: "AAVU", score: 150 },
-  { team: "Turbo Tech", score: 148 },
-  { team: "Excelsior", score: 144 },
-  { team: "Technologia Amante", score: 144 },
-  { team: "Techno Maniacs", score: 110 },
-  { team: "DRAG", score: 98 },
-  { team: "ACE", score: 94 },
-  { team: "Amigos", score: 93 },
-  { team: "Matrix", score: 93 },
-  { team: "Square", score: 93 },
-  { team: "Project Zero", score: 92 },
-  { team: "Navaik", score: 84 },
-  { team: "Google Boys", score: 88 },
-  { team: "Cerebro", score: 89 },
-  { team: "Ultron", score: 81 },
-  { team: "Lannisters", score: 81 },
-  { team: "United", score: 80 },
-  { team: "Eskimos", score: 75 }
-];
-
-const container = document.getElementById('leaderboard-container');
-
-leaderboardData.forEach((entry, index) => {
-  const card = document.createElement('div');
-  card.className = 'col-12 leaderboard-row mb-3';
-
-  const row = document.createElement('div');
-  row.className = 'd-flex justify-content-evenly align-items-center p-2';
-
-  row.innerHTML = `
-    <h4 class="col-3 p-0 m-0 text-start">${index + 1}</h4>
-    <h4 class="col-7 p-0 m-0 text-center">${entry.team} - ${entry.score}</h4>
-    ${
-      entry.img
-        ? `<img class="col-2 p-0 m-0" src="${entry.img}" style="width:28px;" alt="${entry.team}">`
-        : `<h4 class="col-2 p-0 m-0 text-center">-</h4>`
-    }
-  `;
-
-  card.appendChild(row);
-  container.appendChild(card);
-});
-</script> -->
-
-	<!-- 
-	<div data-aos="fade-up">
-		<h1 class="latest-news">CHALLENGE WINNERS</h1>
-	</div>
-    <div class="swiper mySwiper mt-3">
-		<div class="swiper-wrapper">
-
-			<div class="swiper-slide first-card latest-event">
-				<div class="event-card execom-poster-wrapper">
-						<img class="rounted" style="width: 100%; height:300px;" src="assets/img/The-final-face-off/WinSoarhigh.jpeg" alt="istegecbh">
-				</div>
-			</div>
-			<div class="swiper-slide  latest-event">
-				<div class="event-card execom-poster-wrapper">
-						<img class="rounted" style="width: 100%; height: 300px; " src ="assets/img/The-final-face-off/WinScrutiny.jpeg" alt="istegecbh">
-				</div>
-			</div>
-
-			<div class="swiper-slide  latest-event">
-				<div class="event-card execom-poster-wrapper">
-						<img class="rounted" style="width: 100%; height: 300px" src="assets/img/The-final-face-off/WinBuildCV.jpeg" alt="istegecbh">
-				</div>
-			</div>
-
-			<div class="swiper-slide  latest-event">
-				<div class="event-card execom-poster-wrapper">
-						<img class="rounted" style="width: 100%; height: 300px;" src="assets/img/The-final-face-off/WinPDC.jpeg" alt="istegecbh">
-				</div>
-			</div>
-			
-			
-
-		</div>
-	</div> -->
-
-	<!-- <div class="swiper mySwiper mt-3">
-		<div class="swiper-wrapper">
-
-			<div class="swiper-slide first-card latest-event">
-				<div class="event-card">
-					<div class="event-card-img rounded">
-						<img src="assets/img/state-student-convention/2.jpg" alt="">
-					</div>
-				</div>
-			</div>
-			<div class="swiper-slide latest-event">
-				<div class="event-card">
-					<div class="event-card-img rounded">
-						<img src="assets/img/state-student-convention/3.jpg" alt="">
-					</div>
-				</div>
-			</div>
-			<div class="swiper-slide latest-event">
-				<div class="event-card">
-					<div class="event-card-img rounded">
-						<img src="assets/img/state-student-convention/4.jpg" alt="">
-					</div>
-				</div>
-			</div>
-			<div class="swiper-slide latest-event">
-				<div class="event-card">
-					<div class="event-card-img rounded">
-						<img src="assets/img/state-student-convention/5.jpg" alt="">
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div> -->
 
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 

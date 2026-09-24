@@ -46,17 +46,34 @@ document.addEventListener("DOMContentLoaded", () => {
 //     naviContainer.classList.toggle('active')
 // }
 // mobile nav bar slider (above code has another logic)
+// 1. Create a named function to handle the outside click
+function handleOutsideClick(event) {
+    const navContainer = document.querySelector('.nav-container');
+    const menuButton = document.querySelector('.menu-btn'); // Replace with your actual open button class
+
+    if (!navContainer.contains(event.target) && !menuButton.contains(event.target)) {
+        closeNav();
+    }
+}
+
 function openNav() {
     const navContainer = document.querySelector('.nav-container');
     const closeBtn = document.querySelector('.closebtn');
-    navContainer.classList.toggle('active')
-    closeBtn.classList.toggle('active')
+
+    navContainer.classList.add('active');
+    closeBtn.classList.add('active');
+
+    document.addEventListener('click', handleOutsideClick);
 }
+
 function closeNav() {
     const navContainer = document.querySelector('.nav-container');
     const closeBtn = document.querySelector('.closebtn');
-    navContainer.classList.toggle('active')
-    closeBtn.classList.toggle('active')
+
+    navContainer.classList.remove('active');
+    closeBtn.classList.remove('active');
+
+    document.removeEventListener('click', handleOutsideClick);
 }
 
 
