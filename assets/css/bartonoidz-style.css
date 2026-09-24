@@ -185,6 +185,12 @@ a {
   --button-bits-color-hover: #ece8e1;
 }
 
+@media screen and (max-width:768px) {
+  .landing-section {
+    margin-top: 7rem;
+  }
+}
+
 
 
 /* custom css follows*/
@@ -339,7 +345,7 @@ a {
   margin-left: 50px;
 }
 .nav-container.active {
-  width: 80%;
+  width: min(365px,90%);
 }
 .nav-container ul {
   /* position: absolute;

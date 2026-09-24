@@ -126,7 +126,7 @@ body {
   margin-left: 50px;
 }
 .nav-container.active {
-  width: 80%;
+  width: min(365px,90%);
 }
 .nav-container ul {
   /* position: absolute;
