@@ -852,7 +852,7 @@
       //  ============================================= Verify button  ==================================================================
       let verifying = false;
       document.getElementById("ref-code-verify").addEventListener("click", function () {
-        const codeInput = document.getElementById("Referral").value.trim();
+        const codeInput = document.getElementById("Referral").toUpperCase().replace(/[^A-Z0-9\-_%$#@]/g, '');
         const couponMsgDiv = document.getElementById("couponMessage");
         const verifyBtn = document.getElementById("ref-code-verify");
         const btnText = verifyBtn.querySelector(".btn-text");
@@ -892,7 +892,7 @@ https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECv
               verifiedOfferPrice = response.offerPrice;
               verifyBtn.classList.add("is-verified");
               btnText.textContent = "Verified ✓";
-
+              verifying = false;
               couponMsgDiv.innerHTML = "<span style='color:#90EE90;font-size:small;'>✅ Coupon applied successfully</span>";
 
 
