@@ -852,7 +852,7 @@
       //  ============================================= Verify button  ==================================================================
       let verifying = false;
       document.getElementById("ref-code-verify").addEventListener("click", function () {
-        const codeInput = document.getElementById("Referral").toUpperCase().replace(/[^A-Z0-9\-_%$#@]/g, '');
+        const codeInput = document.getElementById("Referral").value.toUpperCase().replace(/[^A-Z0-9\-_%$#@]/g, '');
         const couponMsgDiv = document.getElementById("couponMessage");
         const verifyBtn = document.getElementById("ref-code-verify");
         const btnText = verifyBtn.querySelector(".btn-text");
