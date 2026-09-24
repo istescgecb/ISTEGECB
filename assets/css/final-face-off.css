@@ -335,7 +335,7 @@ a {
   margin-left: 50px;
 }
 .nav-container.active {
-  width: min(365px,90%);
+  width: 80%;
 }
 .nav-container ul {
   /* position: absolute;

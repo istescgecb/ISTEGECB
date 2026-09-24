@@ -335,7 +335,7 @@ a {
   margin-left: 50px;
 }
 .nav-container.active {
-  width: min(365px,90%);
+  width: 80%;
 }
 .nav-container ul {
   /* position: absolute;
@@ -1411,10 +1411,4 @@ input[type=text]:focus,textarea:focus{
 #back-to-top-button.show {
   opacity: 1;
   visibility: visible;
-}
-
-@media screen and (max-width:768px) {
-  .landing-section {
-    margin-top: 4rem;
-  }
 }

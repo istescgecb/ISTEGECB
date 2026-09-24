@@ -26,7 +26,6 @@ $exclude = @(
   "sample.html",
   "example.html",
   "help.html",
-  "deptmech.html",
   "components.html",
   "backupform.html",
   "event-page.html",
@@ -47,10 +46,7 @@ $exclude = @(
   "pdc2025.html",
   "pdc-2026.html",
   "pdc-gopika.html",
-  "pdc-backup.html",
-
-  # Old Ambassador Archives
-  "ambassador2025.html"
+  "pdc-backup.html"
 )
 
 $files = Get-ChildItem -Recurse -Filter *.html -File |

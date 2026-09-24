@@ -6,6 +6,7 @@ Allow: /llms-full.txt
 # Sitemap Allowed Pages
 Allow: /achievements.html
 Allow: /alumni.html
+Allow: /ambassador2025.html
 Allow: /bartonair.html
 Allow: /bartonoidz.html
 Allow: /BotTech.html
@@ -38,7 +39,6 @@ Allow: /career-details/EC.html
 Allow: /career-details/EEE.html
 Allow: /career-details/IT.html
 Allow: /career-details/ME.html
-Allow: /career-details/government-jobs.html
 Allow: /oracles/oracle_1.html
 Allow: /oracles/oracle_2.html
 Allow: /oracles/oracle_3.html
@@ -74,7 +74,6 @@ Allow: /specta-events/expos.html
 Allow: /specta-events/internships.html
 Allow: /specta-events/technicals.html
 Allow: /specta-events/workshops.html
-Allow: /ambassador2026.html
 
 # Block system and testing folders
 Disallow: /eventGenSrc/
@@ -110,10 +109,6 @@ Disallow: /pdc2025.html
 Disallow: /pdc-gopika.html
 Disallow: /pdc-backup.html
 Disallow: /pdc-2026.html
-
-# Old Ambassador Archives
-Disallow: /ambassador2025.html
-
 
 # Sitemap
 Sitemap: https://istegecb.in/sitemap.xml

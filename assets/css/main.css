@@ -335,7 +335,7 @@ a {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 .nav-container .closebtn {
   color: white;
@@ -346,7 +346,7 @@ a {
   margin-left: 50px;
 }
 .nav-container.active {
-  width: min(365px,90%);
+width: clamp(368px, 80%, 385px);
 }
 
 .nav-container ul {
@@ -1395,7 +1395,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
  color: white;
   font-weight: 300;
   margin: 5rem auto 3rem auto;
-  width: min(820px,90%);
+  width: 60%;
   padding: 31px 31px 18px 32px;
   border:1px solid white;
 }
@@ -1478,15 +1478,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 
-/* ==================================================================================== */
-/* ======================================= Mobile screen 768px ====================================== */
-/* ==================================================================================== */
+
 
 @media screen and (max-width:768px) {
-  .landing-section {
-    margin-top: 7rem;
-  }
-  
+
   .on-contact {
     margin-top: 12%;
   }
@@ -1500,6 +1495,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-top: 7rem;
   }
 
+
   .past-event-heading a {
     margin: 0 42px 0 0;
   }
@@ -1507,7 +1503,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       margin: 0rem 0 0 2rem;
   }
 }
-
 
 /* ==================================================================================== */
 /* ======================================= Mobile screen 600px ====================================== */
@@ -1557,7 +1552,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-top: 8rem;
     margin-bottom: 1.5rem;
   }
-
+    .job-profile-1 {
+      color: white;
+      font-weight: 300;
+      margin: 5rem auto 3rem auto;
+      width: 95%;
+      padding: 31px 31px 18px 32px;
+      border: 1px solid white;
+    }
   .landing-icons .bartonoidz-icon {
     width: 226px;
     cursor: pointer;
@@ -1773,20 +1775,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 
-/* ==================================================================================== */
-/* ======================================= Mobile screen 768px ====================================== */
-/* ==================================================================================== */
-
-@media screen and (max-width:800px) {
-  .job-profile-1 {
-    color: white;
-    font-weight: 300;
-    margin: 5rem auto 3rem auto;
-    width: 95%;
-    padding: 31px 31px 18px 32px;
-    border: 1px solid white;
-  }
-}
 
 
 
