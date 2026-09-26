@@ -93,19 +93,62 @@
 
     }
 
-    /* Style for the button when it's verified and disabled */
+
     #ref-code-verify.is-verified:disabled {
-      background-color: #e0e0e0 !important;
+      /* background-color: #e0e0e0 !important; */
       color: #888888 !important;
       cursor: not-allowed !important;
     }
 
-    /* Style for the input field when it's locked (readonly) */
+
     #Referral[readonly] {
-      border-color: #cccccc !important;
+      border-color: #888888 !important;
       color: #888888 !important;
-      background-color: #f9f9f9 !important;
       cursor: not-allowed;
+    }
+
+
+
+    .clear-btn {
+      position: absolute;
+      right: 6px;
+
+      top: calc(50% - 1px);
+      transform: translateY(-50%);
+
+
+      width: 30px !important;
+      height: 30px !important;
+      min-width: 30px !important;
+      min-height: 30px !important;
+      box-sizing: border-box;
+
+      border: none;
+      border-radius: 6px !important;
+      background: rgba(255, 255, 255, 0.05);
+
+      -webkit-backdrop-filter: blur(8px);
+      color: #e0eef0;
+
+
+      display: flex;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 !important;
+
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .clear-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f2f2fe !important;
+    }
+
+    .clear-btn svg {
+      display: block;
+      margin: 0;
     }
 
     .membership-title {
@@ -514,11 +557,28 @@
               <label class="mb-2 ml-2" for="Referral">Coupon Code (Optional)</label><br />
 
               <div style="display:flex;align-items:flex-start;width:100%;gap:0;">
+
                 <div style="flex:1 1 75%;display:flex;flex-direction:column;">
-                  <input type="text" name="Referral" id="Referral" class="ffield coupon-input"
-                    placeholder="Enter Coupon Code"
-                    style="width:100%;box-sizing:border-box;border-radius:6px 0 0 6px;border-right-color: transparent; margin-bottom: 2px;"
-                    oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9\-_%$#@]/g, '')" />
+
+                  <!-- WRAPPER: Isolates the relative positioning so error messages don't break alignment -->
+                  <div style="position: relative; width: 100%;">
+                    <input type="text" name="Referral" id="Referral" class="ffield coupon-input"
+                      placeholder="Enter Coupon Code"
+                      style="width:100%;box-sizing:border-box;border-radius:6px 0 0 6px;border-right-color: transparent; margin-bottom: 2px; padding-right: 40px;"
+                      oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9\-_%$#@]/g, ''); document.getElementById('clear-coupon').style.display = this.value.length > 0 ? 'flex' : 'none';" />
+
+                    <!-- The X Clear Button -->
+                    <button type="button" id="clear-coupon" class="clear-btn" title="Clear Code" style="display:none;">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <!-- The error message sits safely outside the relative wrapper -->
+                  <small id="couponMessage" style="margin-bottom:0; line-height:1.2; font-size: 1em;"></small>
                 </div>
 
                 <button id="ref-code-verify" name="verify" class="verify" type="button"
@@ -529,8 +589,6 @@
 
               </div>
               <small id="couponMessage" class="mb-2" style="line-height:1.2;font-size: 1em;"></small>
-
-
 
               <!-- AMBASADOR END -->
 
@@ -878,11 +936,49 @@
     document.getElementById("Referral").addEventListener("change", function () {
       const codeInput = this.value.trim();
       const verifyBtn = document.getElementById("ref-code-verify");
+      const couponMsgDiv = document.getElementById("couponMessage");
+
 
       // Only auto-verify if it's exactly 6 characters (adjust the number if needed)
       if (codeInput.length >= 6 && !verifyBtn.classList.contains("is-loading")) {
         verifyBtn.click();
+        couponMsgDiv.innerHTML = "<span style='font-size:small;'>Auto verifying coupon...</span>";
       }
+    });
+
+    //  ============================================= Clear verify button  ==================================================================
+
+    document.getElementById("clear-coupon").addEventListener("click", function () {
+      if (verifying) return;
+      const referralInput = document.getElementById("Referral");
+      const verifyBtn = document.getElementById("ref-code-verify");
+      const btnText = verifyBtn.querySelector(".btn-text");
+      const couponMsgDiv = document.getElementById("couponMessage");
+
+      // 1. Clear and Unlock the input
+      referralInput.value = "";
+      referralInput.readOnly = false;
+      this.style.display = "none"; // Hide the X button
+
+      // 2. Reset the Verify Button
+      verifyBtn.disabled = false;
+      verifyBtn.style.cursor = "pointer";
+      verifyBtn.classList.remove("is-verified", "is-failed", "is-loading");
+      btnText.textContent = "Verify";
+
+      // 3. Clear the success/error message
+      couponMsgDiv.innerHTML = "";
+
+      // 4. Reset global state variables
+      refVerified = false;
+      verifiedOfferPrice = null;
+      verifying = false;
+
+      // 5. Rerender the UI to default prices
+      renderPricingUI();
+
+      // 6. Bring focus back to the input for the user
+      referralInput.focus();
     });
     //  ============================================= Verify button  ==================================================================
     let verifying = false;
@@ -892,6 +988,7 @@
       const couponMsgDiv = document.getElementById("couponMessage");
       const verifyBtn = document.getElementById("ref-code-verify");
       const btnText = verifyBtn.querySelector(".btn-text");
+      const clearBtn = document.getElementById("clear-coupon"); // Get the clear button
 
       if (codeInput === "") {
         couponMsgDiv.innerHTML = "<span style='color:red;'>Please enter a coupon code first.</span>";
@@ -906,8 +1003,12 @@
       verifyBtn.disabled = true;
       referralInput.readOnly = true;
 
+      // HIDE the clear button while loading
+      if (clearBtn) clearBtn.style.display = "none";
+
       couponMsgDiv.innerHTML = "";
       verifying = true;
+
       $.ajax({
         url: `https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECvyZQMq5KLJ_NTmcUS1OVknmSoz7j/exec`.trim(),
         method: "POST",
@@ -915,6 +1016,9 @@
         data: JSON.stringify({ action: "verifyRef", Referral: codeInput }),
         success: function (response) {
           verifyBtn.classList.remove("is-loading");
+
+          // SHOW the clear button again so they can reset if they want to
+          if (clearBtn) clearBtn.style.display = "flex";
 
           if (response.result === "success" && response.isValid) {
             refVerified = true;
@@ -924,7 +1028,7 @@
             verifying = false;
             couponMsgDiv.innerHTML = "<span style='color:#90EE90;font-size:small;'>✅ Coupon applied successfully</span>";
 
-            verifyBtn.disabled = true;                 // Disables the button permanently
+            verifyBtn.disabled = true;                 // Disables the verify button permanently
             verifyBtn.style.cursor = "default";        // Removes the pointer cursor
             referralInput.readOnly = true;             // Keeps the input field locked
             renderPricingUI();
@@ -949,12 +1053,16 @@
           verifyBtn.disabled = false;
           referralInput.readOnly = false;
 
+          // SHOW the clear button again on error
+          if (clearBtn) clearBtn.style.display = "flex";
+
           verifying = false;
           couponMsgDiv.innerHTML = "<span style='color:red;'>Error checking code. Try again.</span>";
           referralInput.focus();
         }
       });
     });
+
     document.getElementById("Referral").addEventListener("input", function () {
       const verifyBtn = document.getElementById("ref-code-verify");
       const btnText = verifyBtn.querySelector(".btn-text");
