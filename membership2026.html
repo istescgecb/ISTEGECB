@@ -766,6 +766,7 @@
     let currentMode = "REGULAR";
     let basePrice = 1400; // OFFERPRICE
     let fullPrice = 1400;
+    let bzbrAmount = 1000;
     let seatsLeftInMode = 0;
     let finalTotal = 1400; // ttlamt
     let activePrice = fullPrice; // Default 1400
@@ -811,7 +812,7 @@
         }
 
         // 3. Disable other options ONLY if the offer price is less than their 1000/- price tag
-        if (isOfferActive && activePrice < 1000) {
+        if (isOfferActive && activePrice <= bzbrAmount) {
           fullRadio.disabled = false;
           brRadio.disabled = true;
           bzRadio.disabled = true;
@@ -953,17 +954,18 @@ https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECv
         switch (selectedOption.value) {
           case "BR":
             membershipText = "ISTE + BARTONAIR";
-            finalTotal = 1000;
+            finalTotal = bzbrAmount;
             break;
           case "BZ":
             membershipText = "ISTE + BARTONOIDZ";
-            finalTotal = 1000;
+            finalTotal = bzbrAmount;
             break;
           case "FULL":
             membershipText = "ISTE + FULL MEMBERSHIP";
             finalTotal = activeFullPrice;
             break;
         }
+        console.log("Total: Rs."+ finalTotal);  
 
         // Only show strikethrough in the total if they selected FULL and an offer is active
         let showDiscount = (selectedOption.value === "FULL" && isOfferActive && activeFullPrice < fullPrice);
