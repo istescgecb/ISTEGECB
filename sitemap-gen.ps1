@@ -5,7 +5,8 @@ $stripHTMLExtensionList = @(
   "developers.html",
   "events.html",
   "oracle.html",
-  "achievements.html"
+  "achievements.html",
+  "execom.html"
 
 
   # "about.html", 
