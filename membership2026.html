@@ -1296,8 +1296,8 @@ https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECv
       e.preventDefault();
       // image not uploaded
       if (!$("#image")[0].files[0]) { $("#image").focus(); showPopup("Please upload the payment screenshot"); return; }
-      // referral code not verified
-      if ($("#Referral").val().trim().length >= 4 && !refVerified) { $("#Referral").focus(); $("#couponMessage").html("<span style='color:#ffa500;font-size:small;'>Referral code not verified. Verifying...</span>"); showPopup("Referral code not verified. Verifying...", 4); $("#ref-code-verify").click(); return; }
+      // referral code not verified (activate this for ambassador program)
+     // if ($("#Referral").val().trim().length >= 4 && !refVerified) { $("#Referral").focus(); $("#couponMessage").html("<span style='color:#ffa500;font-size:small;'>Referral code not verified. Verifying...</span>"); showPopup("Referral code not verified. Verifying...", 4); $("#ref-code-verify").click(); return; }
 
       saveForm();
 
@@ -1330,6 +1330,8 @@ https://script.google.com/macros/s/AKfycbxM8Hjg8A-P6loZMeUa1rRH1uE-MwLrcGmYmJECv
       $(formData).each(function (index, obj) {
         data[obj.name] = obj.value;
       });
+      // de activate this for ambassador program
+      data.Referral = "-";
       // for knowing membership amount
       data["Amount"] = "Rs." + finalTotal;
       // console.log(data);
