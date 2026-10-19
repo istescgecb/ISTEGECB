@@ -524,14 +524,14 @@
 		</div>
 	</div>
 
-	<!-- Progress Popup Structure -->
-	<div id="progress-toast" class="progress-toast-container">
+	<!-- Progress Popup Structure (activate this for ambassador) -->
+	<!--<div id="progress-toast" class="progress-toast-container">
 		<button id="close-progress-toast" class="progress-close-btn">&times;</button>
 		<h3 class="progress-title">Progress</h3>
 		<div class="progress-bar-bg">
 			<div id="progress-bar-fill" class="progress-bar-fill"></div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- pop up count  -->
 	<!---div class="slots-notification" id="slotsNotification" style="display: none;">
@@ -620,7 +620,7 @@ https://script.google.com/macros/s/AKfycbz8zfpNgMGJM1RiuPAzVvtSCsmec64qRS_HqaUHq
 				const fullText = `${entry.Name} (${entry.Semester} ${entry.Branch})`;
 
 				row.innerHTML = `
-			<div class="col-2 text-center leaderboard-text" style="padding: 0;">${index === 0 ? "#" : ""}${entry.Rank}</div>            
+			<div class="col-2 text-center leaderboard-text" style="padding: 0;">${index === 0 || index === 1 ? "#" : ""}${entry.Rank}</div>            
             <!-- Changed to justify-content-start so all names start exactly at the same vertical axis -->
             <div class="col-7 d-flex justify-content-start align-items-center position-relative leaderboard-text" style="min-width: 0; padding: 0;">
                 <div class="mobile-tooltip">${fullText}</div>

@@ -567,14 +567,14 @@
                       style="width:100%;box-sizing:border-box;border-radius:6px 0 0 6px;border-right-color: transparent; margin-bottom: 2px; padding-right: 40px;"
                       oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9\-_%$#@]/g, ''); document.getElementById('clear-coupon').style.display = this.value.length > 0 ? 'flex' : 'none';" />
 
-                    <!-- The X Clear Button -->
-                    <button type="button" id="clear-coupon" class="clear-btn" title="Clear Code" style="display:none;">
+                    <!-- The X Clear Button (activate this for ambassador) -->
+                    <!--<button type="button" id="clear-coupon" class="clear-btn" title="Clear Code" style="display:none;">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
-                    </button>
+                    </button>-->
                   </div>
 
                   <!-- The error message sits safely outside the relative wrapper -->
@@ -931,9 +931,21 @@
       updateTotal(document.querySelector('input[name="membershipOption"]:checked'));
 
     }
+ //  =============================================  for time after ambassador program  ==================================================================
+    document.getElementById("ref-code-verify").addEventListener("click", function () {
+      const codeInput = document.getElementById("Referral");
+      const couponMessage = document.getElementById("couponMessage");
+      const code = codeInput.value.trim();
 
-    //  ============================================= Auto verify input  ==================================================================
-    document.getElementById("Referral").addEventListener("change", function () {
+      couponMessage.textContent = code
+        ? `Invalid or expired code "${code}"`
+        : "Invalid or expired code";
+      couponMessage.style.color = "#FF9999";
+      couponMessage.style.fontSize = "small";
+    });
+
+    //  ============================================= Auto verify input (activate this for ambassador) ==================================================================
+    /*document.getElementById("Referral").addEventListener("change", function () {
       const codeInput = this.value.trim();
       const verifyBtn = document.getElementById("ref-code-verify");
       const couponMsgDiv = document.getElementById("couponMessage");
@@ -980,8 +992,8 @@
       // 6. Bring focus back to the input for the user
       referralInput.focus();
     });
-    //  ============================================= Verify button  ==================================================================
-    let verifying = false;
+    //  ============================================= Verify button (activate this for ambassador)==================================================================
+   /* let verifying = false;
     document.getElementById("ref-code-verify").addEventListener("click", function () {
       const referralInput = document.getElementById("Referral");
       const codeInput = referralInput.value.toUpperCase().replace(/[^A-Z0-9\-_%$#@]/g, '');
@@ -1071,7 +1083,7 @@
         verifyBtn.classList.remove("is-verified", "is-failed");
         btnText.textContent = "Verify";
       }
-    });
+    });*/
     //  ============================================= Update total  ==================================================================
 
     function updateTotal(selectedOption) {
